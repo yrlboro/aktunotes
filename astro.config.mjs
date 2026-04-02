@@ -4,28 +4,119 @@ import mdx from '@astrojs/mdx';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
-/** Remark plugin: convert Obsidian [[wiki links]] to plain text */
+/**
+ * Remark plugin: convert Obsidian [[wiki links]] to real <a> links.
+ * Same-collection links: [[Note Name]] → /{collection}/{slug}
+ * Cross-collection links: [[CF2/Note Name]] → /CF2/{slug}
+ */
 function remarkWikiLink() {
-  /** @param {import('unist').Node} node */
-  function walk(node) {
-    if (node.type === 'text') {
-      // @ts-ignore
-      node.value = node.value.replace(
-        /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g,
-        /** @param {string} _ @param {string} link @param {string} [alias] */
-        (_, link, alias) => alias || link.split('/').pop() || link
-      );
-    }
-    // @ts-ignore
-    if (node.children) node.children.forEach(walk);
+  const WIKI_RE = /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g;
+
+  /** @param {string} str */
+  function makeSlug(str) {
+    return str.trim()
+      .replace(/\.mdx?$/, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9/_-]/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/\/-/g, '/')
+      .replace(/-\//g, '/');
   }
-  /** @param {import('unist').Node} tree */
-  return (tree) => walk(tree);
+
+  /**
+   * @param {string} link  — the raw link text inside [[ ]]
+   * @param {string} collection — current file's collection (CF1, CF2, etc.)
+   */
+  function wikiLinkToUrl(link, collection) {
+    const trimmed = link.trim();
+    const parts = trimmed.split('/');
+    if (parts.length >= 2) {
+      // Cross-collection: [[CF2/Note Name]] or [[AAMAI-101/Note]]
+      const base = parts[0].toUpperCase().replace('AAMAI-101', 'AAMAI101');
+      const rest = parts.slice(1).join('/');
+      return `/${base}/${makeSlug(rest)}`;
+    }
+    // Same-collection: [[Note Name]]
+    if (collection) return `/${collection}/${makeSlug(trimmed)}`;
+    return `/${makeSlug(trimmed)}`;
+  }
+
+  /**
+   * Split a text value by wiki link syntax; return mdast nodes.
+   * @param {string} value
+   * @param {string} collection
+   * @returns {any[]}
+   */
+  function parseText(value, collection) {
+    const nodes = [];
+    let lastIndex = 0;
+    let match;
+    WIKI_RE.lastIndex = 0;
+    while ((match = WIKI_RE.exec(value)) !== null) {
+      if (match.index > lastIndex) {
+        nodes.push({ type: 'text', value: value.slice(lastIndex, match.index) });
+      }
+      const link = match[1];
+      const alias = match[2];
+      const display = alias || link.split('/').pop() || link;
+      nodes.push({
+        type: 'link',
+        url: wikiLinkToUrl(link, collection),
+        title: null,
+        children: [{ type: 'text', value: display }],
+      });
+      lastIndex = match.index + match[0].length;
+    }
+    if (lastIndex < value.length) {
+      nodes.push({ type: 'text', value: value.slice(lastIndex) });
+    }
+    return nodes;
+  }
+
+  /**
+   * @param {any} node
+   * @param {string} collection
+   */
+  function walk(node, collection) {
+    if (!node.children) return;
+    const newChildren = [];
+    for (const child of node.children) {
+      if (child.type === 'text' && WIKI_RE.test(child.value)) {
+        WIKI_RE.lastIndex = 0;
+        newChildren.push(...parseText(child.value, collection));
+      } else {
+        walk(child, collection);
+        newChildren.push(child);
+      }
+    }
+    node.children = newChildren;
+  }
+
+  /** @param {any} tree @param {any} vFile */
+  return (tree, vFile) => {
+    // Detect collection from file path
+    const fp = (vFile.history?.[0] || '').replace(/\\/g, '/');
+    const colMatch = fp.match(/\/content\/(CF1|CF2|AAMAI-101|AAMAI101)\//i);
+    const collection = colMatch
+      ? colMatch[1].toUpperCase().replace('AAMAI-101', 'AAMAI101')
+      : '';
+    walk(tree, collection);
+  };
 }
 
 /**
  * Rehype plugin: Transform Obsidian callouts to styled <details> elements.
- * Supports: > [!TYPE]  (open), > [!TYPE]+  (open), > [!TYPE]-  (collapsed)
+ *
+ * Collapsible types (can be opened/closed by user):
+ *   [!example]   — default open, toggle allowed
+ *
+ * Static types (always open, cannot be closed):
+ *   everything else — always expanded
+ *
+ * Modifier: [!TYPE]+  force open, [!TYPE]-  force collapsed (example only)
+ *
+ * Bug fix: if the callout title and body are in the same <p> (joined by \n),
+ * we split at the first \n so body content is correctly placed in callout-body.
  */
 function rehypeCallouts() {
   const ICONS = /** @type {Record<string, string>} */ ({
@@ -44,12 +135,11 @@ function rehypeCallouts() {
 
   /** @param {any} node */
   function transform(node) {
-    // Post-order: process children first so nested callouts work correctly
+    // Post-order: process children first so nested callouts work
     if (Array.isArray(node.children)) node.children.forEach(transform);
 
     if (node.type !== 'element' || node.tagName !== 'blockquote') return;
 
-    // Find the first <p> child
     const pIdx = node.children.findIndex(
       /** @param {any} c */ (c) => c.type === 'element' && c.tagName === 'p'
     );
@@ -58,40 +148,68 @@ function rehypeCallouts() {
     const firstP = node.children[pIdx];
     if (!firstP.children || firstP.children.length === 0) return;
 
-    // The FIRST child of <p> must be a text node starting with [!TYPE]
     const firstChild = firstP.children[0];
     if (firstChild.type !== 'text') return;
 
-    // Match [!TYPE], [!TYPE]+, or [!TYPE]- at the very start, plus any trailing spaces
     const match = (firstChild.value || '').match(/^\[!(\w+)\]([+-]?)[ \t]*/);
     if (!match) return;
 
     const [fullMatch, type, modifier] = match;
     const slug = type.toLowerCase();
-    // Only summary and example are collapsible; all others are always-open static callouts
-    const isCollapsible = slug === 'summary' || slug === 'example';
+    // Only [!example] is collapsible; everything else is always-open static
+    const isCollapsible = slug === 'example';
     const isOpen = !isCollapsible || modifier !== '-';
     const icon = ICONS[slug] || '▸';
 
-    // Strip the [!TYPE] prefix from the first text node.
-    // Whatever remains (the title text on the same line) stays in the node.
     const remaining = firstChild.value.slice(fullMatch.length);
-    if (remaining) {
-      firstChild.value = remaining;
+    // ── Bug fix: split title and body at first \n in the same paragraph ──
+    const nlIdx = remaining.indexOf('\n');
+
+    /** @type {any[]} */ let labelChildren;
+    /** @type {any[]} */ let bodyChildren;
+
+    if (nlIdx !== -1) {
+      // Title text is before the newline; body content is after
+      const titleText = remaining.slice(0, nlIdx);
+      const bodyText = remaining.slice(nlIdx + 1);
+
+      // Label = title text (if any)
+      const labelTextNodes = titleText.trim()
+        ? [{ type: 'text', value: titleText }]
+        : [];
+
+      // Siblings after firstChild in firstP (e.g. <strong>, more text)
+      const restSiblings = firstP.children.slice(1);
+
+      // Body = bodyText + rest of firstP children, wrapped in <p>
+      const bodyParaNodes = [
+        ...(bodyText ? [{ type: 'text', value: bodyText }] : []),
+        ...restSiblings,
+      ];
+
+      node.children.splice(pIdx, 1);
+
+      const bodyFromFirstP = bodyParaNodes.length > 0
+        ? [{ type: 'element', tagName: 'p', properties: {}, children: bodyParaNodes }]
+        : [];
+
+      labelChildren = labelTextNodes.length > 0
+        ? labelTextNodes
+        : [{ type: 'text', value: slug.charAt(0).toUpperCase() + slug.slice(1) }];
+      bodyChildren = [...bodyFromFirstP, ...node.children];
     } else {
-      // Empty text node — remove it so the label shows what follows (e.g. <strong>)
-      firstP.children.shift();
+      // No newline — original behaviour
+      if (remaining) {
+        firstChild.value = remaining;
+      } else {
+        firstP.children.shift();
+      }
+      node.children.splice(pIdx, 1);
+      labelChildren = firstP.children.length > 0
+        ? firstP.children
+        : [{ type: 'text', value: slug.charAt(0).toUpperCase() + slug.slice(1) }];
+      bodyChildren = [...node.children];
     }
-
-    // The modified firstP becomes the rich-content label inside <summary>.
-    // Remove it from blockquote; remaining children become the body.
-    node.children.splice(pIdx, 1);
-
-    const labelChildren = firstP.children.length > 0
-      ? firstP.children
-      : [{ type: 'text', value: slug.charAt(0).toUpperCase() + slug.slice(1) }];
-
-    const bodyChildren = [...node.children];
 
     node.tagName = 'details';
     node.properties = {
@@ -99,7 +217,7 @@ function rehypeCallouts() {
         ? ['callout', `callout-${slug}`]
         : ['callout', `callout-${slug}`, 'callout-static'],
     };
-    if (isOpen) node.properties.open = '';
+    if (isOpen) node.properties.open = true;
 
     node.children = [
       {

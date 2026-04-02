@@ -80,3 +80,14 @@ code {
 
 strong { color: var(--pink); font-weight: 600; }
 em { font-style: italic; color: var(--ink3); }
+
+/* ── Mermaid diagrams ── */
+.mermaid {
+  margin: 1.5rem 0;
+  padding: 1.2rem;
+  background: var(--cream2);
+  border: 2px solid var(--ink);
+  overflow-x: auto;
+  text-align: center;
+}
+.mermaid svg { max-width: 100%; height: auto; }
