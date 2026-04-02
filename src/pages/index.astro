@@ -50,7 +50,7 @@ import NoteLayout from '../layouts/NoteLayout.astro';
         <div class="countdown-next">
           Jadwal PAI 2026<br/>
           <strong>Mei · Agustus · November</strong><br/>
-          <span style="color:rgba(255,255,255,0.25);font-size:0.54rem">*estimasi berdasarkan siklus PAI</span>
+          <span style="color:rgba(255,255,255,0.25);font-size:0.85rem">*estimasi berdasarkan siklus PAI</span>
         </div>
       </div>
     </div>
@@ -80,7 +80,7 @@ import NoteLayout from '../layouts/NoteLayout.astro';
       </div>
       <div class="quote-footer">
         <div class="quote-dots" id="quote-dots"></div>
-        <div style="display:flex;gap:0.5rem">
+        <div style="display:flex;gap:0.8rem">
           <button class="quote-nav-btn" id="quote-prev">← Prev</button>
           <button class="quote-nav-btn" id="quote-next">Next →</button>
         </div>
@@ -143,7 +143,7 @@ import NoteLayout from '../layouts/NoteLayout.astro';
 
     <a href="/CF4" class="module-card">
       <div class="module-card-code">CF4</div>
-      <div class="module-card-name">Akuntansi & Manaj. Keuangan</div>
+      <div class="module-card-name">Akuntansi & Manajemen Keuangan</div>
       <div class="module-card-desc">Laporan keuangan, manajemen modal, analisis rasio.</div>
       <div class="module-card-arrow">→</div>
     </a>
@@ -235,7 +235,7 @@ import NoteLayout from '../layouts/NoteLayout.astro';
   }
   .widget-label {
     font-family: var(--mono);
-    font-size: 0.52rem; letter-spacing: 0.14em;
+    font-size: 0.62rem; letter-spacing: 0.14em;
     text-transform: uppercase; color: var(--ink4);
     margin-bottom: 0.6rem;
     display: flex; align-items: center; gap: 0.4rem;
@@ -258,7 +258,7 @@ import NoteLayout from '../layouts/NoteLayout.astro';
   .countdown-left { flex-shrink: 0; }
   .countdown-label {
     font-family: var(--mono);
-    font-size: 0.52rem; letter-spacing: 0.16em;
+    font-size: 0.62rem; letter-spacing: 0.16em;
     text-transform: uppercase; color: var(--yellow);
     margin-bottom: 0.3rem;
     display: flex; align-items: center; gap: 0.4rem;
@@ -270,7 +270,7 @@ import NoteLayout from '../layouts/NoteLayout.astro';
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
   .countdown-exam-name {
     font-family: var(--ss4);
-    font-size: 1rem; font-weight: 600; font-style: italic;
+    font-size: 1.1rem; font-weight: 600; font-style: italic;
     color: #fff; letter-spacing: -0.01em; margin-bottom: 0.15rem;
   }
   .countdown-exam-date {
@@ -282,7 +282,7 @@ import NoteLayout from '../layouts/NoteLayout.astro';
   .countdown-unit { text-align: center; }
   .countdown-number {
     font-family: var(--ss4);
-    font-size: 2.4rem; font-weight: 700; line-height: 1;
+    font-size: 2.8rem; font-weight: 700; line-height: 1;
     color: var(--yellow); letter-spacing: -0.04em;
     font-optical-sizing: auto; display: block;
     min-width: 2.5ch; text-align: center;
@@ -290,7 +290,7 @@ import NoteLayout from '../layouts/NoteLayout.astro';
   .countdown-number.pink { color: var(--pink); }
   .countdown-unit-label {
     font-family: var(--mono);
-    font-size: 0.5rem; color: rgba(255,255,255,0.35);
+    font-size: 0.6rem; color: rgba(255,255,255,0.35);
     letter-spacing: 0.12em; text-transform: uppercase;
     display: block; margin-top: 0.15rem;
   }
@@ -302,7 +302,7 @@ import NoteLayout from '../layouts/NoteLayout.astro';
   .countdown-right { margin-left: auto; flex-shrink: 0; }
   .countdown-next {
     font-family: var(--mono);
-    font-size: 0.58rem; color: rgba(255,255,255,0.35);
+    font-size: 0.65rem; color: rgba(255,255,255,0.35);
     letter-spacing: 0.06em; text-align: right; line-height: 1.8;
   }
   .countdown-next strong { color: rgba(255,255,255,0.6); }
@@ -320,16 +320,16 @@ import NoteLayout from '../layouts/NoteLayout.astro';
   }
   .formula-display {
     text-align: center; padding: 0.5rem 0.3rem;
-    overflow-x: auto; font-size: 1.05rem;
+    overflow-x: auto; font-size: 1.2rem;
   }
   .formula-name {
     font-family: var(--ss4);
-    font-size: 0.78rem; font-style: italic; font-weight: 500;
+    font-size: 0.9rem; font-style: italic; font-weight: 500;
     color: var(--ink2); text-align: center; margin-bottom: 0.3rem;
   }
   .formula-context {
     font-family: var(--mono);
-    font-size: 0.56rem; color: var(--ink4);
+    font-size: 0.64rem; color: var(--ink4);
     text-align: center; margin-top: 0.5rem; letter-spacing: 0.06em;
   }
   .formula-refresh {
@@ -365,14 +365,14 @@ import NoteLayout from '../layouts/NoteLayout.astro';
   .quote-body { flex: 1; display: flex; flex-direction: column; justify-content: center; }
   .quote-text {
     font-family: var(--ss4);
-    font-size: 0.88rem; font-style: italic; font-weight: 400;
+    font-size: 1rem; font-style: italic; font-weight: 400;
     color: var(--ink); line-height: 1.7;
     margin-bottom: 0.7rem; position: relative; z-index: 1;
     transition: opacity 0.35s ease;
   }
   .quote-attribution {
     font-family: var(--mono);
-    font-size: 0.58rem; color: rgba(14,10,4,0.55); letter-spacing: 0.06em;
+    font-size: 0.65rem; color: rgba(14,10,4,0.55); letter-spacing: 0.06em;
   }
   .quote-attribution strong { color: var(--ink); font-weight: 500; }
   .quote-footer {
@@ -518,7 +518,7 @@ import NoteLayout from '../layouts/NoteLayout.astro';
   .module-card-aamai .module-card-code { color: var(--pink); }
   .module-card-code {
     font-family: var(--mono);
-    font-size: 0.65rem; font-weight: 500;
+    font-size: 0.72rem; font-weight: 500;
     color: var(--ink3); letter-spacing: 0.08em;
   }
   .module-card-name {
@@ -528,13 +528,13 @@ import NoteLayout from '../layouts/NoteLayout.astro';
   }
   .module-card-desc {
     font-family: var(--ss4);
-    font-size: 0.78rem; color: var(--ink4);
+    font-size: 0.92rem; color: var(--ink4);
     line-height: 1.5; margin-top: 0.2rem;
   }
   .module-card-arrow {
     font-family: var(--mono);
-    font-size: 0.8rem; color: var(--pink);
-    margin-top: 0.4rem; align-self: flex-end;
+    font-size: 1.2rem; color: var(--pink);
+    margin-top: 0.5rem; align-self: flex-end;
   }
 
   @media (max-width: 600px) {

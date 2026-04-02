@@ -13,7 +13,8 @@ const hasToc = Astro.slots.has('toc');
     </div>
     <div class="header-search-block">
       <span class="header-search-icon">⌕</span>
-      <input class="header-search" type="text" placeholder="Cari topik, rumus, soal ujian…" />
+      <input class="header-search" id="site-search" type="text" placeholder="Cari topik, rumus, soal ujian…" autocomplete="off" />
+      <div class="search-results" id="search-results" hidden></div>
     </div>
     <div class="header-badge-block">
       <div class="header-badge-text">Aktuaria<br/>Indonesia</div>
@@ -26,49 +27,19 @@ const hasToc = Astro.slots.has('toc');
     <!-- Left sidebar -->
     <aside class="sidebar-left">
       <div class="nav-section-header">▸ PAI Exams</div>
-      <a href="/CF1"    class={`nav-item ${mod === 'CF1'    ? 'active' : ''}`}>CF1 — Mat. Keuangan    <span class="pct">35%</span></a>
-      <a href="/CF2"    class={`nav-item ${mod === 'CF2'    ? 'active' : ''}`}>CF2 — Probabilitas     <span class="pct">15%</span></a>
-      <a href="/CF3"    class={`nav-item ${mod === 'CF3'    ? 'active' : ''}`}>CF3 — Ekonomi          <span class="pct">10%</span></a>
-      <a href="/CF4"    class={`nav-item ${mod === 'CF4'    ? 'active' : ''}`}>CF4 — Akuntansi        <span class="pct">5%</span></a>
-      <a href="/TA1"    class={`nav-item ${mod === 'TA1'    ? 'active' : ''}`}>TA1 — Statistika       <span class="pct">10%</span></a>
-      <a href="/TA2"    class={`nav-item ${mod === 'TA2'    ? 'active' : ''}`}>TA2 — Teori Risiko     <span class="pct">5%</span></a>
-      <a href="/TA3"    class={`nav-item ${mod === 'TA3'    ? 'active' : ''}`}>TA3 — Mat. Aktuaria    <span class="pct">—</span></a>
-      <a href="/BA4G"   class={`nav-item ${mod === 'BA4G'   ? 'active' : ''}`}>BA4G — Asuransi Umum   <span class="pct">—</span></a>
+      <a href="/CF1"    class={`nav-item ${mod === 'CF1'    ? 'active' : ''}`}>CF1 — Mat. Keuangan</a>
+      <a href="/CF2"    class={`nav-item ${mod === 'CF2'    ? 'active' : ''}`}>CF2 — Probabilitas</a>
+      <a href="/CF3"    class={`nav-item ${mod === 'CF3'    ? 'active' : ''}`}>CF3 — Ekonomi</a>
+      <a href="/CF4"    class={`nav-item ${mod === 'CF4'    ? 'active' : ''}`}>CF4 — Akuntansi</a>
+      <a href="/TA1"    class={`nav-item ${mod === 'TA1'    ? 'active' : ''}`}>TA1 — Statistika</a>
+      <a href="/TA2"    class={`nav-item ${mod === 'TA2'    ? 'active' : ''}`}>TA2 — Teori Risiko</a>
+      <a href="/TA3"    class={`nav-item ${mod === 'TA3'    ? 'active' : ''}`}>TA3 — Mat. Aktuaria</a>
+      <a href="/BA4G"   class={`nav-item ${mod === 'BA4G'   ? 'active' : ''}`}>BA4G — Asuransi Umum</a>
       <div class="nav-section-header">▸ AAMAI</div>
-      <a href="/AAMAI101" class={`nav-item ${mod === 'AAMAI101' ? 'active' : ''}`}>AAMAI 101              <span class="pct">70%</span></a>
+      <a href="/AAMAI101" class={`nav-item ${mod === 'AAMAI101' ? 'active' : ''}`}>AAMAI 101</a>
       <div class="nav-section-header">▸ Resources</div>
-      <a href="/formula-sheet" class="nav-item">Formula Sheet CF1     <span class="pct">↗</span></a>
-      <a href="/study-log"     class="nav-item">Study Log             <span class="pct">↗</span></a>
-
-      <!-- Progress block -->
-      <div class="sidebar-progress">
-        <div class="sidebar-progress-title">Progress Belajar</div>
-        <div class="prog-row">
-          <span class="prog-name">CF1</span>
-          <div class="prog-track"><div class="prog-fill" style="width:35%"></div></div>
-          <span class="prog-val">35%</span>
-        </div>
-        <div class="prog-row">
-          <span class="prog-name">AAMAI</span>
-          <div class="prog-track"><div class="prog-fill" style="width:70%"></div></div>
-          <span class="prog-val">70%</span>
-        </div>
-        <div class="prog-row">
-          <span class="prog-name">CF2</span>
-          <div class="prog-track"><div class="prog-fill" style="width:15%"></div></div>
-          <span class="prog-val">15%</span>
-        </div>
-        <div class="prog-row">
-          <span class="prog-name">TA1</span>
-          <div class="prog-track"><div class="prog-fill" style="width:10%"></div></div>
-          <span class="prog-val">10%</span>
-        </div>
-        <div class="prog-row">
-          <span class="prog-name">TA2</span>
-          <div class="prog-track"><div class="prog-fill" style="width:5%"></div></div>
-          <span class="prog-val">5%</span>
-        </div>
-      </div>
+      <a href="/formula-sheet" class="nav-item">Formula Sheet CF1</a>
+      <a href="/study-log"     class="nav-item">Study Log</a>
     </aside>
 
     <!-- Main content -->
@@ -125,14 +96,41 @@ const hasToc = Astro.slots.has('toc');
   .header-search:focus { border-bottom-color: var(--pink); }
   .header-search::placeholder { color: var(--ink4); font-style: italic; }
   .header-badge-block {
-    background: var(--yellow); padding: 0.6rem 1rem;
+    background: var(--yellow); padding: 0.7rem 1.2rem;
     display: flex; flex-direction: column;
-    justify-content: center; align-items: center; min-width: 80px;
+    justify-content: center; align-items: center; min-width: 100px;
   }
   .header-badge-text {
-    font-family: var(--mono); font-size: 0.58rem; color: var(--ink);
+    font-family: var(--mono); font-size: 0.6rem; color: var(--ink);
     letter-spacing: 0.1em; text-transform: uppercase;
-    text-align: center; line-height: 1.5; font-weight: 500;
+    text-align: center; line-height: 1.6; font-weight: 600;
+  }
+
+  /* ── Search results dropdown ── */
+  .header-search-block { position: relative; }
+  .search-results {
+    position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+    background: var(--cream); border: 2px solid var(--ink);
+    box-shadow: 4px 4px 0 rgba(14,10,4,0.15);
+    z-index: 200; max-height: 320px; overflow-y: auto;
+  }
+  .search-result-item {
+    display: block; padding: 0.5rem 0.9rem;
+    font-family: var(--mono); font-size: 0.65rem; color: var(--ink2);
+    text-decoration: none; border-bottom: 1px solid var(--border2);
+    transition: background 0.1s;
+  }
+  .search-result-item:last-child { border-bottom: none; }
+  .search-result-item:hover, .search-result-item.focused {
+    background: var(--yellow); color: var(--ink);
+  }
+  .search-result-item .sr-code {
+    color: var(--pink); font-weight: 600; margin-right: 0.4rem;
+  }
+  .search-result-empty {
+    padding: 0.6rem 0.9rem;
+    font-family: var(--mono); font-size: 0.62rem;
+    color: var(--ink4); font-style: italic;
   }
 
   .body-wrap {
@@ -167,42 +165,6 @@ const hasToc = Astro.slots.has('toc');
   .nav-item.active {
     background: var(--pink); color: #fff;
     border-left: 4px solid var(--ink); font-weight: 500;
-  }
-  .nav-item .pct { font-size: 0.58rem; opacity: 0.55; flex-shrink: 0; }
-  .nav-item.active .pct { opacity: 0.85; }
-
-  /* ── Sidebar progress ── */
-  .sidebar-progress {
-    margin-top: auto;
-    border-top: 3px solid var(--ink);
-    background: var(--yellow);
-    padding: 0.9rem;
-  }
-  .sidebar-progress-title {
-    font-family: var(--mono);
-    font-size: 0.6rem; font-weight: 500;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--ink); margin-bottom: 0.7rem;
-  }
-  .prog-row {
-    display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.42rem;
-  }
-  .prog-name {
-    font-family: var(--mono);
-    font-size: 0.6rem; color: var(--ink2); width: 44px; flex-shrink: 0;
-  }
-  .prog-track {
-    flex: 1; height: 5px;
-    background: rgba(14,10,4,0.12);
-  }
-  .prog-fill {
-    height: 100%; background: var(--pink);
-    box-shadow: 2px 0 0 rgba(232,23,93,0.3);
-  }
-  .prog-val {
-    font-family: var(--mono);
-    font-size: 0.58rem; color: var(--ink2);
-    width: 28px; text-align: right; flex-shrink: 0;
   }
 
   /* ── Main content ── */
@@ -376,4 +338,100 @@ const hasToc = Astro.slots.has('toc');
   .callout-cite .callout-title {
     background: var(--cream2); color: var(--ink3);
   }
+
+  /* ── Static callouts (non-collapsible) ── */
+  .callout-static .callout-title {
+    cursor: default;
+    pointer-events: none;
+  }
+  .callout-static .callout-fold { display: none; }
 </style>
+
+<script>
+  // ── Instant search ──
+  const SEARCH_INDEX = [
+    { code: 'CF1', title: 'Matematika Keuangan', url: '/CF1', tags: 'anuitas annuity bunga interest bond obligasi derivatif matematika keuangan' },
+    { code: 'CF2', title: 'Probabilitas & Statistika', url: '/CF2', tags: 'probabilitas statistika distribusi variabel acak peluang estimasi hipotesis' },
+    { code: 'CF3', title: 'Ekonomi & Pasar Keuangan', url: '/CF3', tags: 'ekonomi makro mikro pasar keuangan' },
+    { code: 'CF4', title: 'Akuntansi & Manaj. Keuangan', url: '/CF4', tags: 'akuntansi laporan keuangan manajemen modal rasio' },
+    { code: 'TA1', title: 'Metode Statistika', url: '/TA1', tags: 'regresi linear model statistika analisis data' },
+    { code: 'TA2', title: 'Teori Risiko', url: '/TA2', tags: 'risiko kredibilitas ruin theory model' },
+    { code: 'TA3', title: 'Matematika Aktuaria', url: '/TA3', tags: 'aktuaria asuransi jiwa anuitas hidup mortalitas' },
+    { code: 'BA4G', title: 'Asuransi Umum', url: '/BA4G', tags: 'asuransi umum rating klaim reasuransi cadangan' },
+    { code: '101', title: 'AAMAI 101 — Prinsip Asuransi', url: '/AAMAI101', tags: 'aamai prinsip asuransi risiko underwriting klaim' },
+    { code: 'CF1', title: '1.1 Interest Rates and Discount Rates', url: '/CF1/1-1-interest-rates-and-discount-rates', tags: 'interest discount rate effective nominal' },
+    { code: 'CF1', title: '1.2 Effective, Nominal, and Force of Interest', url: '/CF1/1-2-effective-nominal-and-force-of-interest', tags: 'effective nominal force interest' },
+    { code: 'CF1', title: '1.3 Cash Flow Equations and Inflation', url: '/CF1/1-3-cash-flow-equations-and-inflation', tags: 'cash flow inflation' },
+    { code: 'CF1', title: '1.4 Accumulation and Present Value', url: '/CF1/1-4-accumulation-and-present-value', tags: 'accumulation present value' },
+    { code: 'CF1', title: '1.5 NPV, IRR, DWRR, TWRR', url: '/CF1/1-5-npv-irr-dwrr-twrr', tags: 'npv irr dwrr twrr yield' },
+    { code: 'CF1', title: '2.1 Annuity-Immediate and Annuity-Due', url: '/CF1/2-1-annuity-immediate-and-annuity-due', tags: 'annuity immediate due anuitas' },
+    { code: 'CF1', title: '2.2 Perpetuity', url: '/CF1/2-2-perpetuity', tags: 'perpetuity perpetuitas' },
+    { code: 'CF1', title: '2.3 Varying Annuities', url: '/CF1/2-3-varying-annuities', tags: 'varying annuity anuitas berubah' },
+    { code: 'CF1', title: '3.3 Duration (Macaulay & Modified)', url: '/CF1/3-3-duration-macaulay-and-modified', tags: 'duration macaulay modified durasi' },
+    { code: 'CF1', title: '3.5 Immunization', url: '/CF1/3-5-immunization', tags: 'immunization imunisasi konveksitas' },
+    { code: 'CF1', title: '5.1 Bond Pricing', url: '/CF1/5-1-bond-pricing', tags: 'bond obligasi pricing harga' },
+    { code: 'CF2', title: '2.5 Distribusi Diskrit Umum', url: '/CF2/2-5-distribusi-diskrit-umum', tags: 'binomial poisson geometric distribusi diskrit' },
+    { code: 'CF2', title: '2.6 Distribusi Kontinu Umum', url: '/CF2/2-6-distribusi-kontinu-umum', tags: 'normal exponential gamma distribusi kontinu' },
+    { code: 'CF2', title: '4.3 Teorema Limit Pusat (CLT)', url: '/CF2/4-3-teorema-limit-pusat-clt', tags: 'clt central limit theorem' },
+    { code: 'CF2', title: '4.8 Uji Hipotesis', url: '/CF2/4-8-uji-hipotesis', tags: 'uji hipotesis hypothesis testing p-value' },
+  ];
+
+  const searchInput = document.getElementById('site-search') as HTMLInputElement | null;
+  const searchResults = document.getElementById('search-results') as HTMLDivElement | null;
+  if (!searchInput || !searchResults) throw new Error();
+
+  let focusedIdx = -1;
+
+  function renderResults(query: string) {
+    const q = query.trim().toLowerCase();
+    if (!q) { searchResults!.hidden = true; return; }
+
+    const matches = SEARCH_INDEX.filter(item =>
+      item.title.toLowerCase().includes(q) ||
+      item.code.toLowerCase().includes(q) ||
+      item.tags.toLowerCase().includes(q)
+    ).slice(0, 8);
+
+    if (matches.length === 0) {
+      searchResults!.innerHTML = `<div class="search-result-empty">Tidak ada hasil untuk "<em>${q}</em>"</div>`;
+    } else {
+      searchResults!.innerHTML = matches.map((item, i) =>
+        `<a class="search-result-item" href="${item.url}" data-idx="${i}">
+          <span class="sr-code">${item.code}</span>${item.title}
+        </a>`
+      ).join('');
+    }
+    searchResults!.hidden = false;
+    focusedIdx = -1;
+  }
+
+  searchInput.addEventListener('input', () => renderResults(searchInput.value));
+
+  searchInput.addEventListener('keydown', (e) => {
+    const items = searchResults!.querySelectorAll<HTMLElement>('.search-result-item');
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      focusedIdx = Math.min(focusedIdx + 1, items.length - 1);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      focusedIdx = Math.max(focusedIdx - 1, -1);
+    } else if (e.key === 'Enter' && focusedIdx >= 0) {
+      e.preventDefault();
+      items[focusedIdx]?.click();
+    } else if (e.key === 'Escape') {
+      searchResults!.hidden = true;
+    }
+    items.forEach((el, i) => el.classList.toggle('focused', i === focusedIdx));
+    if (focusedIdx >= 0) items[focusedIdx]?.scrollIntoView({ block: 'nearest' });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!searchInput.contains(e.target as Node) && !searchResults!.contains(e.target as Node)) {
+      searchResults!.hidden = true;
+    }
+  });
+
+  searchInput.addEventListener('focus', () => {
+    if (searchInput.value.trim()) renderResults(searchInput.value);
+  });
+</script>

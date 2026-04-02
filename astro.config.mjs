@@ -68,7 +68,9 @@ function rehypeCallouts() {
 
     const [fullMatch, type, modifier] = match;
     const slug = type.toLowerCase();
-    const isOpen = modifier !== '-';
+    // Only summary and example are collapsible; all others are always-open static callouts
+    const isCollapsible = slug === 'summary' || slug === 'example';
+    const isOpen = !isCollapsible || modifier !== '-';
     const icon = ICONS[slug] || '▸';
 
     // Strip the [!TYPE] prefix from the first text node.
@@ -92,7 +94,11 @@ function rehypeCallouts() {
     const bodyChildren = [...node.children];
 
     node.tagName = 'details';
-    node.properties = { className: ['callout', `callout-${slug}`] };
+    node.properties = {
+      className: isCollapsible
+        ? ['callout', `callout-${slug}`]
+        : ['callout', `callout-${slug}`, 'callout-static'],
+    };
     if (isOpen) node.properties.open = '';
 
     node.children = [
