@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Local reference/draft files — not part of the site
+ASAI Vault/
+aktunotes-riso-ss4.html
+aktunotes-widgets.html

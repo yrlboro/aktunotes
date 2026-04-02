@@ -1,17 +1,781 @@
 ---
-
+import NoteLayout from '../layouts/NoteLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<NoteLayout title="Home" description="Catatan belajar ujian PAI & AAMAI">
+
+  <div class="home-eyebrow">Navigating the Actuarial Maze</div>
+  <h1>Aktu<em>Notes</em></h1>
+  <div class="h1-rule">
+    <div class="h1-rule-line"></div>
+    <div class="h1-rule-dot"></div>
+    <div class="h1-rule-dot" style="background:var(--yellow)"></div>
+    <div class="h1-rule-dot" style="background:var(--ink)"></div>
+  </div>
+  <p>Catatan personal untuk persiapan ujian <strong>PAI</strong> dan <strong>AAMAI</strong>. Disusun sebagai dokumentasi mandiri agar materi bisa diakses kapan saja dan di mana saja.</p>
+
+  <!-- ═══ WIDGET GRID ═══ -->
+  <div class="widget-grid">
+
+    <!-- 1. EXAM COUNTDOWN -->
+    <div class="widget widget-countdown">
+      <div class="countdown-left">
+        <div class="countdown-label">Ujian Berikutnya</div>
+        <div class="countdown-exam-name">PAI — CF1 Examination</div>
+        <div class="countdown-exam-date" id="exam-date-display">Memuat tanggal…</div>
+      </div>
+      <div class="countdown-divider"></div>
+      <div class="countdown-units">
+        <div class="countdown-unit">
+          <span class="countdown-number pink" id="cd-days">--</span>
+          <span class="countdown-unit-label">Hari</span>
+        </div>
+        <div class="countdown-colon">:</div>
+        <div class="countdown-unit">
+          <span class="countdown-number" id="cd-hours">--</span>
+          <span class="countdown-unit-label">Jam</span>
+        </div>
+        <div class="countdown-colon">:</div>
+        <div class="countdown-unit">
+          <span class="countdown-number" id="cd-minutes">--</span>
+          <span class="countdown-unit-label">Menit</span>
+        </div>
+        <div class="countdown-colon">:</div>
+        <div class="countdown-unit">
+          <span class="countdown-number" id="cd-seconds">--</span>
+          <span class="countdown-unit-label">Detik</span>
+        </div>
+      </div>
+      <div class="countdown-right">
+        <div class="countdown-next">
+          Jadwal PAI 2026<br/>
+          <strong>Mei · Agustus · November</strong><br/>
+          <span style="color:rgba(255,255,255,0.25);font-size:0.54rem">*estimasi berdasarkan siklus PAI</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. FORMULA FLASH -->
+    <div class="widget widget-formula">
+      <div class="widget-label"><div class="dot"></div>Formula Flash — CF1</div>
+      <div class="formula-body">
+        <div class="formula-name" id="formula-name">Memuat…</div>
+        <div class="formula-display" id="formula-display"></div>
+        <div class="formula-context" id="formula-context"></div>
+      </div>
+      <div class="formula-refresh">
+        <button class="formula-refresh-btn" id="formula-btn">↺ Formula Lain</button>
+        <span class="formula-counter" id="formula-counter">— / —</span>
+      </div>
+    </div>
+
+    <!-- 3. ROTATING QUOTE -->
+    <div class="widget widget-quote">
+      <div class="widget-label"><div class="dot"></div>Kata Mereka</div>
+      <div class="quote-body">
+        <div class="quote-text" id="quote-text">Memuat…</div>
+        <div class="quote-attribution">
+          — <strong id="quote-author"></strong><span id="quote-role"></span>
+        </div>
+      </div>
+      <div class="quote-footer">
+        <div class="quote-dots" id="quote-dots"></div>
+        <div style="display:flex;gap:0.5rem">
+          <button class="quote-nav-btn" id="quote-prev">← Prev</button>
+          <button class="quote-nav-btn" id="quote-next">Next →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. DAILY PROBLEM -->
+    <div class="widget widget-problem">
+      <div class="widget-label"><div class="dot"></div>Soal Harian — Past Exam CF1</div>
+      <div class="problem-header">
+        <span class="problem-badge" id="problem-badge">CF1 · 2024</span>
+        <span class="problem-source" id="problem-source"></span>
+      </div>
+      <div class="problem-text" id="problem-text">Memuat soal…</div>
+      <div class="problem-math" id="problem-math"></div>
+      <div class="problem-options" id="problem-options"></div>
+      <div class="problem-answer" id="problem-answer"></div>
+      <div class="problem-footer">
+        <button class="problem-reveal-btn" id="reveal-btn">Lihat Jawaban</button>
+        <span class="problem-day-tag" id="problem-day-tag"></span>
+        <button class="problem-next-btn" id="problem-next">Soal Lain →</button>
+      </div>
+    </div>
+
+  </div>
+  <!-- end widget-grid -->
+
+  <!-- Section divider -->
+  <div class="section-divider">
+    <div class="sd-line"></div>
+    <div class="sd-mark">Modul</div>
+    <div class="sd-line"></div>
+  </div>
+
+  <!-- Module grid -->
+  <div class="module-grid">
+
+    <div class="section-label">▸ PAI Exams</div>
+
+    <a href="/CF1" class="module-card">
+      <div class="module-card-code">CF1</div>
+      <div class="module-card-name">Matematika Keuangan</div>
+      <div class="module-card-desc">Nilai waktu uang, anuitas, pinjaman, obligasi, derivatif.</div>
+      <div class="module-card-arrow">→</div>
+    </a>
+
+    <a href="/CF2" class="module-card">
+      <div class="module-card-code">CF2</div>
+      <div class="module-card-name">Probabilitas & Statistika</div>
+      <div class="module-card-desc">Distribusi peluang, variabel acak, teori estimasi.</div>
+      <div class="module-card-arrow">→</div>
+    </a>
+
+    <a href="/CF3" class="module-card">
+      <div class="module-card-code">CF3</div>
+      <div class="module-card-name">Ekonomi & Pasar Keuangan</div>
+      <div class="module-card-desc">Makroekonomi, mikroekonomi, ekonomi keuangan.</div>
+      <div class="module-card-arrow">→</div>
+    </a>
+
+    <a href="/CF4" class="module-card">
+      <div class="module-card-code">CF4</div>
+      <div class="module-card-name">Akuntansi & Manaj. Keuangan</div>
+      <div class="module-card-desc">Laporan keuangan, manajemen modal, analisis rasio.</div>
+      <div class="module-card-arrow">→</div>
+    </a>
+
+    <a href="/TA1" class="module-card">
+      <div class="module-card-code">TA1</div>
+      <div class="module-card-name">Metode Statistika</div>
+      <div class="module-card-desc">Analisis regresi, model linear, pengolahan data.</div>
+      <div class="module-card-arrow">→</div>
+    </a>
+
+    <a href="/TA2" class="module-card">
+      <div class="module-card-code">TA2</div>
+      <div class="module-card-name">Teori Risiko</div>
+      <div class="module-card-desc">Model risiko, teori kredibilitas, ruin theory.</div>
+      <div class="module-card-arrow">→</div>
+    </a>
+
+    <a href="/TA3" class="module-card">
+      <div class="module-card-code">TA3</div>
+      <div class="module-card-name">Matematika Aktuaria</div>
+      <div class="module-card-desc">Model asuransi jiwa jangka panjang dan anuitas hidup.</div>
+      <div class="module-card-arrow">→</div>
+    </a>
+
+    <a href="/BA4G" class="module-card">
+      <div class="module-card-code">BA4G</div>
+      <div class="module-card-name">Asuransi Umum</div>
+      <div class="module-card-desc">Rating, cadangan klaim, reasuransi asuransi umum.</div>
+      <div class="module-card-arrow">→</div>
+    </a>
+
+    <div class="section-label" style="margin-top:1rem">▸ AAMAI</div>
+
+    <a href="/AAMAI101" class="module-card module-card-aamai">
+      <div class="module-card-code">101</div>
+      <div class="module-card-name">AAMAI 101</div>
+      <div class="module-card-desc">Prinsip dasar asuransi dan manajemen risiko.</div>
+      <div class="module-card-arrow">→</div>
+    </a>
+
+  </div>
+
+</NoteLayout>
+
+<style>
+  /* ── Eyebrow & title ── */
+  .home-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.62rem; color: var(--pink);
+    letter-spacing: 0.16em; text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .home-eyebrow::before { content: '◆'; font-size: 0.42rem; }
+  h1 em { font-style: italic; font-weight: 300; color: var(--pink); }
+
+  .h1-rule {
+    display: flex; align-items: center; gap: 0.7rem;
+    margin: 0.6rem 0 1rem;
+  }
+  .h1-rule-line { flex: 1; height: 3px; background: var(--ink); }
+  .h1-rule-dot { width: 8px; height: 8px; background: var(--pink); flex-shrink: 0; }
+
+  /* ════════════════════
+     WIDGET GRID
+  ════════════════════ */
+  .widget-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 3px solid var(--ink);
+    margin: 1.5rem 0 2rem;
+    position: relative;
+  }
+  .widget-grid::after {
+    content: '';
+    position: absolute; inset: 0;
+    border: 3px solid var(--pink);
+    transform: translate(5px, 5px);
+    z-index: -1; opacity: 0.4;
+  }
+
+  /* Base widget */
+  .widget {
+    padding: 1.1rem 1.2rem;
+    border: 1px solid var(--border);
+    position: relative; overflow: hidden;
+  }
+  .widget-label {
+    font-family: var(--mono);
+    font-size: 0.52rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ink4);
+    margin-bottom: 0.6rem;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .widget-label .dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--pink); flex-shrink: 0;
+  }
+
+  /* ── Widget 1: Countdown ── */
+  .widget-countdown {
+    grid-column: 1 / -1;
+    background: var(--ink);
+    border: none;
+    border-bottom: 3px solid var(--yellow);
+    padding: 1.2rem 1.5rem;
+    display: flex; align-items: center; gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .countdown-left { flex-shrink: 0; }
+  .countdown-label {
+    font-family: var(--mono);
+    font-size: 0.52rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--yellow);
+    margin-bottom: 0.3rem;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .countdown-label::before {
+    content: '◉'; color: var(--pink); font-size: 0.5rem;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  .countdown-exam-name {
+    font-family: var(--ss4);
+    font-size: 1rem; font-weight: 600; font-style: italic;
+    color: #fff; letter-spacing: -0.01em; margin-bottom: 0.15rem;
+  }
+  .countdown-exam-date {
+    font-family: var(--mono);
+    font-size: 0.6rem; color: rgba(255,255,255,0.4); letter-spacing: 0.06em;
+  }
+  .countdown-divider { width: 2px; height: 50px; background: rgba(255,255,255,0.1); flex-shrink: 0; }
+  .countdown-units { display: flex; gap: 1rem; align-items: flex-end; }
+  .countdown-unit { text-align: center; }
+  .countdown-number {
+    font-family: var(--ss4);
+    font-size: 2.4rem; font-weight: 700; line-height: 1;
+    color: var(--yellow); letter-spacing: -0.04em;
+    font-optical-sizing: auto; display: block;
+    min-width: 2.5ch; text-align: center;
+  }
+  .countdown-number.pink { color: var(--pink); }
+  .countdown-unit-label {
+    font-family: var(--mono);
+    font-size: 0.5rem; color: rgba(255,255,255,0.35);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    display: block; margin-top: 0.15rem;
+  }
+  .countdown-colon {
+    font-family: var(--ss4);
+    font-size: 2rem; font-weight: 300; color: rgba(255,255,255,0.2);
+    line-height: 1; margin-bottom: 0.6rem;
+  }
+  .countdown-right { margin-left: auto; flex-shrink: 0; }
+  .countdown-next {
+    font-family: var(--mono);
+    font-size: 0.58rem; color: rgba(255,255,255,0.35);
+    letter-spacing: 0.06em; text-align: right; line-height: 1.8;
+  }
+  .countdown-next strong { color: rgba(255,255,255,0.6); }
+
+  /* ── Widget 2: Formula Flash ── */
+  .widget-formula {
+    background: var(--cream2);
+    border-right: 3px solid var(--ink);
+    border-top: 3px solid var(--ink);
+    min-height: 200px;
+    display: flex; flex-direction: column;
+  }
+  .formula-body {
+    flex: 1; display: flex; flex-direction: column; justify-content: center;
+  }
+  .formula-display {
+    text-align: center; padding: 0.5rem 0.3rem;
+    overflow-x: auto; font-size: 1.05rem;
+  }
+  .formula-name {
+    font-family: var(--ss4);
+    font-size: 0.78rem; font-style: italic; font-weight: 500;
+    color: var(--ink2); text-align: center; margin-bottom: 0.3rem;
+  }
+  .formula-context {
+    font-family: var(--mono);
+    font-size: 0.56rem; color: var(--ink4);
+    text-align: center; margin-top: 0.5rem; letter-spacing: 0.06em;
+  }
+  .formula-refresh {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 0.8rem; padding-top: 0.6rem;
+    border-top: 1px solid var(--border);
+  }
+  .formula-refresh-btn {
+    font-family: var(--mono); font-size: 0.58rem;
+    color: var(--pink); cursor: pointer;
+    background: none; border: 1.5px solid var(--pink);
+    padding: 0.2rem 0.6rem; transition: all 0.12s; letter-spacing: 0.06em;
+  }
+  .formula-refresh-btn:hover { background: var(--pink); color: var(--cream); }
+  .formula-counter { font-family: var(--mono); font-size: 0.55rem; color: var(--ink4); }
+
+  /* ── Widget 3: Rotating Quote ── */
+  .widget-quote {
+    background: var(--pink);
+    border-top: 3px solid var(--ink);
+    min-height: 200px;
+    display: flex; flex-direction: column;
+    position: relative; overflow: hidden;
+  }
+  .widget-quote::before {
+    content: '"';
+    position: absolute; top: -0.5rem; left: 0.8rem;
+    font-family: var(--ss4); font-size: 8rem; font-weight: 700;
+    color: rgba(14,10,4,0.07); line-height: 1; pointer-events: none;
+  }
+  .widget-quote .widget-label { color: rgba(14,10,4,0.45); }
+  .widget-quote .widget-label .dot { background: var(--ink); }
+  .quote-body { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .quote-text {
+    font-family: var(--ss4);
+    font-size: 0.88rem; font-style: italic; font-weight: 400;
+    color: var(--ink); line-height: 1.7;
+    margin-bottom: 0.7rem; position: relative; z-index: 1;
+    transition: opacity 0.35s ease;
+  }
+  .quote-attribution {
+    font-family: var(--mono);
+    font-size: 0.58rem; color: rgba(14,10,4,0.55); letter-spacing: 0.06em;
+  }
+  .quote-attribution strong { color: var(--ink); font-weight: 500; }
+  .quote-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 0.8rem; padding-top: 0.6rem;
+    border-top: 1px solid rgba(14,10,4,0.15);
+  }
+  .quote-dots { display: flex; gap: 0.3rem; }
+  .quote-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: rgba(14,10,4,0.2); cursor: pointer; transition: background 0.15s;
+  }
+  .quote-dot.active { background: var(--ink); }
+  .quote-nav-btn {
+    font-family: var(--mono); font-size: 0.6rem;
+    color: rgba(14,10,4,0.5); cursor: pointer;
+    background: none; border: none; padding: 0; transition: color 0.12s;
+  }
+  .quote-nav-btn:hover { color: var(--ink); }
+
+  /* ── Widget 4: Daily Problem ── */
+  .widget-problem {
+    grid-column: 1 / -1;
+    background: var(--yellow);
+    border: none; border-top: 3px solid var(--ink);
+  }
+  .widget-problem .widget-label { color: rgba(14,10,4,0.5); }
+  .widget-problem .widget-label .dot { background: var(--pink); }
+  .problem-header {
+    display: flex; align-items: flex-start;
+    justify-content: space-between; gap: 1rem; margin-bottom: 0.8rem;
+  }
+  .problem-badge {
+    font-family: var(--mono); font-size: 0.56rem;
+    background: var(--pink); color: #fff;
+    padding: 0.12rem 0.5rem; letter-spacing: 0.08em;
+    text-transform: uppercase; flex-shrink: 0;
+  }
+  .problem-source {
+    font-family: var(--mono); font-size: 0.56rem;
+    color: rgba(14,10,4,0.45); letter-spacing: 0.06em;
+  }
+  .problem-text {
+    font-family: var(--ss4);
+    font-size: 0.95rem; line-height: 1.75;
+    color: var(--ink2); margin-bottom: 1rem;
+  }
+  .problem-math {
+    text-align: center; padding: 0.5rem;
+    overflow-x: auto; margin-bottom: 0.8rem;
+  }
+  .problem-options {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0.4rem; margin-bottom: 0.9rem;
+  }
+  .problem-option {
+    font-family: var(--mono); font-size: 0.68rem;
+    padding: 0.4rem 0.7rem;
+    border: 2px solid rgba(14,10,4,0.2);
+    background: rgba(255,255,255,0.5);
+    color: var(--ink2); cursor: pointer;
+    transition: all 0.12s; letter-spacing: 0.02em;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .problem-option:hover { border-color: var(--ink); background: rgba(255,255,255,0.8); color: var(--ink); }
+  .problem-option.correct { border-color: var(--teal); background: rgba(29,122,107,0.12); color: var(--teal); }
+  .problem-option.wrong { border-color: var(--pink); background: rgba(232,23,93,0.08); color: var(--pink); text-decoration: line-through; }
+  .problem-option-key { font-weight: 500; flex-shrink: 0; width: 16px; text-align: center; }
+  .problem-answer {
+    font-family: var(--ss4);
+    font-size: 0.88rem; line-height: 1.7;
+    color: var(--ink2); padding: 0.8rem 1rem;
+    background: rgba(255,255,255,0.5);
+    border-left: 4px solid var(--teal);
+    display: none;
+  }
+  .problem-answer.visible { display: block; }
+  .problem-answer strong { color: var(--teal); }
+  .problem-footer {
+    display: flex; align-items: center;
+    justify-content: space-between; margin-top: 0.8rem;
+  }
+  .problem-reveal-btn {
+    font-family: var(--mono); font-size: 0.62rem;
+    background: var(--ink); color: var(--yellow);
+    border: none; padding: 0.38rem 0.9rem;
+    cursor: pointer; letter-spacing: 0.06em; transition: all 0.12s;
+  }
+  .problem-reveal-btn:hover { background: var(--pink); }
+  .problem-reveal-btn:disabled { opacity: 0.4; cursor: not-allowed; background: var(--ink); }
+  .problem-next-btn {
+    font-family: var(--mono); font-size: 0.58rem;
+    color: rgba(14,10,4,0.45); cursor: pointer;
+    background: none; border: 1.5px solid rgba(14,10,4,0.25);
+    padding: 0.28rem 0.7rem; transition: all 0.12s;
+  }
+  .problem-next-btn:hover { border-color: var(--ink); color: var(--ink); }
+  .problem-day-tag {
+    font-family: var(--mono); font-size: 0.56rem;
+    color: rgba(14,10,4,0.4); letter-spacing: 0.08em;
+  }
+
+  /* ── Section divider ── */
+  .section-divider {
+    display: flex; align-items: center; gap: 0.6rem; margin: 2rem 0;
+  }
+  .sd-line { flex: 1; height: 1px; background: var(--border); }
+  .sd-mark {
+    font-family: var(--mono); font-size: 0.56rem;
+    color: var(--cream); letter-spacing: 0.12em; text-transform: uppercase;
+    background: var(--pink); padding: 0.1rem 0.5rem; flex-shrink: 0;
+  }
+
+  /* ── Module grid ── */
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.6rem; color: var(--ink4);
+    letter-spacing: 0.14em; text-transform: uppercase;
+    margin: 1.5rem 0 0.5rem;
+    grid-column: 1 / -1;
+  }
+  .module-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0.6rem; margin-top: 1.5rem;
+  }
+  .module-card {
+    border: 2px solid var(--ink);
+    padding: 0.9rem 1rem;
+    background: var(--cream2);
+    text-decoration: none; color: inherit;
+    display: flex; flex-direction: column; gap: 0.2rem;
+    position: relative; transition: all 0.12s; cursor: pointer;
+  }
+  .module-card::after {
+    content: ''; position: absolute; bottom: -4px; right: -4px;
+    width: 100%; height: 100%;
+    border: 2px solid var(--pink);
+    z-index: -1; opacity: 0; transition: opacity 0.12s;
+  }
+  .module-card:hover { background: var(--yellow); }
+  .module-card:hover::after { opacity: 0.4; }
+  .module-card-aamai { border-color: var(--pink); }
+  .module-card-aamai .module-card-code { color: var(--pink); }
+  .module-card-code {
+    font-family: var(--mono);
+    font-size: 0.65rem; font-weight: 500;
+    color: var(--ink3); letter-spacing: 0.08em;
+  }
+  .module-card-name {
+    font-family: var(--ss4);
+    font-size: 0.95rem; font-weight: 600;
+    color: var(--ink); line-height: 1.2;
+  }
+  .module-card-desc {
+    font-family: var(--ss4);
+    font-size: 0.78rem; color: var(--ink4);
+    line-height: 1.5; margin-top: 0.2rem;
+  }
+  .module-card-arrow {
+    font-family: var(--mono);
+    font-size: 0.8rem; color: var(--pink);
+    margin-top: 0.4rem; align-self: flex-end;
+  }
+
+  @media (max-width: 600px) {
+    .module-grid { grid-template-columns: 1fr; }
+    .problem-options { grid-template-columns: 1fr; }
+    .widget-countdown { flex-direction: column; }
+    .countdown-right { margin-left: 0; }
+  }
+</style>
+
+<script>
+  import katex from 'katex';
+
+  // ═══════════════════════════════
+  // 1. EXAM COUNTDOWN
+  // ═══════════════════════════════
+  const examSchedule = [
+    { name: "PAI — CF1 Examination", date: new Date("2026-05-15T08:00:00+07:00") },
+    { name: "PAI — CF1 Examination", date: new Date("2026-08-14T08:00:00+07:00") },
+    { name: "PAI — CF1 Examination", date: new Date("2026-11-13T08:00:00+07:00") },
+  ];
+
+  function getNextExam() {
+    const now = new Date();
+    return examSchedule.find(e => e.date > now) || examSchedule[examSchedule.length - 1];
+  }
+
+  function updateCountdown() {
+    const exam = getNextExam();
+    const now = new Date();
+    const diff = exam.date.getTime() - now.getTime();
+    if (diff <= 0) {
+      ['cd-days','cd-hours','cd-minutes','cd-seconds'].forEach(id => {
+        document.getElementById(id)!.textContent = '00';
+      });
+      document.getElementById('exam-date-display')!.textContent = 'Ujian sudah berlangsung';
+      return;
+    }
+    const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    document.getElementById('cd-days')!.textContent    = String(days).padStart(2,'0');
+    document.getElementById('cd-hours')!.textContent   = String(hours).padStart(2,'0');
+    document.getElementById('cd-minutes')!.textContent = String(minutes).padStart(2,'0');
+    document.getElementById('cd-seconds')!.textContent = String(seconds).padStart(2,'0');
+    const opts = { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Jakarta' } as const;
+    document.getElementById('exam-date-display')!.textContent =
+      exam.date.toLocaleDateString('id-ID', opts) + ' · WIB';
+  }
+
+  // ═══════════════════════════════
+  // 2. FORMULA FLASH
+  // ═══════════════════════════════
+  const formulas = [
+    { name: "Bond Price — Basic Formula",  latex: "P = Fr \\cdot a_{\\overline{n}|i} + C \\cdot v^n",                                        context: "CF1 · Topik 5.1 · Bond Pricing" },
+    { name: "Makeham Formula",             latex: "P = C + (Fr - Ci) \\cdot a_{\\overline{n}|i}",                                            context: "CF1 · Topik 5.1 · Bond Pricing" },
+    { name: "Annuity-Immediate PV",        latex: "a_{\\overline{n}|i} = \\frac{1 - v^n}{i}",                                               context: "CF1 · Topik 2.1 · Anuitas" },
+    { name: "Force of Interest",           latex: "\\delta = \\ln(1 + i)",                                                                   context: "CF1 · Topik 1.2 · Force of Interest" },
+    { name: "Macaulay Duration",           latex: "D_{Mac} = \\frac{\\sum_{t} t \\cdot v^t \\cdot CF_t}{\\sum_{t} v^t \\cdot CF_t}",        context: "CF1 · Topik 3.3 · Duration" },
+    { name: "Modified Duration",           latex: "D_{Mod} = \\frac{D_{Mac}}{1 + i}",                                                        context: "CF1 · Topik 3.3 · Duration" },
+    { name: "NPV",                         latex: "NPV = \\sum_{t=0}^{n} CF_t \\cdot v^t",                                                   context: "CF1 · Topik 1.5 · NPV & IRR" },
+    { name: "Nominal Rate Conversion",     latex: "\\left(1 + \\frac{i^{(m)}}{m}\\right)^m = 1 + i",                                        context: "CF1 · Topik 1.2 · Nominal Rate" },
+    { name: "Perpetuity-Immediate",        latex: "a_{\\overline{\\infty}|} = \\frac{1}{i}",                                                context: "CF1 · Topik 2.2 · Perpetuity" },
+  ];
+
+  let currentFormula = Math.floor(Math.random() * formulas.length);
+
+  function renderFormula(idx: number) {
+    const f = formulas[idx];
+    document.getElementById('formula-name')!.textContent = f.name;
+    document.getElementById('formula-context')!.textContent = f.context;
+    document.getElementById('formula-counter')!.textContent = `${idx + 1} / ${formulas.length}`;
+    const display = document.getElementById('formula-display')!;
+    display.innerHTML = katex.renderToString(f.latex, { displayMode: true, throwOnError: false });
+  }
+
+  // ═══════════════════════════════
+  // 3. ROTATING QUOTE
+  // ═══════════════════════════════
+  const quotes = [
+    { text: "The actuary of the past dealt with problems of life and death. The actuary of the future will deal with problems of risk and uncertainty in all their forms.", author: "Frank Redington", role: ", Bapak Immunization Theory" },
+    { text: "Mathematics is not about numbers, equations, computations, or algorithms: it is about understanding.", author: "William Paul Thurston", role: ", Matematikawan" },
+    { text: "An actuary is someone who wanted to be an accountant but didn't have the personality for it — except the actuary is actually the interesting one.", author: "Unknown", role: " · Humor Aktuaria" },
+    { text: "The most important questions of life are indeed, for the most part, really only problems of probability.", author: "Pierre-Simon Laplace", role: ", Matematikawan & Fisikawan" },
+    { text: "In God we trust. All others must bring data.", author: "W. Edwards Deming", role: ", Statistikawan" },
+    { text: "Risk comes from not knowing what you're doing.", author: "Warren Buffett", role: ", Investor" },
+    { text: "Compound interest is the eighth wonder of the world. He who understands it, earns it; he who doesn't, pays it.", author: "Albert Einstein", role: " (attr.)" },
+    { text: "It is remarkable that a science which began with the consideration of games of chance should have become the most important object of human knowledge.", author: "Pierre-Simon Laplace", role: ", Théorie Analytique des Probabilités" },
+  ];
+
+  let currentQuote = 0;
+  let quoteInterval: ReturnType<typeof setInterval>;
+
+  function renderQuote(idx: number) {
+    const q = quotes[idx];
+    const textEl = document.getElementById('quote-text')!;
+    textEl.style.opacity = '0';
+    setTimeout(() => {
+      textEl.textContent = `"${q.text}"`;
+      document.getElementById('quote-author')!.textContent = q.author;
+      document.getElementById('quote-role')!.textContent = q.role;
+      textEl.style.opacity = '1';
+    }, 180);
+    const dots = document.getElementById('quote-dots')!;
+    dots.innerHTML = '';
+    quotes.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'quote-dot' + (i === idx ? ' active' : '');
+      dot.onclick = () => { currentQuote = i; renderQuote(i); resetQuoteInterval(); };
+      dots.appendChild(dot);
+    });
+  }
+
+  function nextQuote() { currentQuote = (currentQuote + 1) % quotes.length; renderQuote(currentQuote); resetQuoteInterval(); }
+  function prevQuote() { currentQuote = (currentQuote - 1 + quotes.length) % quotes.length; renderQuote(currentQuote); resetQuoteInterval(); }
+  function resetQuoteInterval() { clearInterval(quoteInterval); quoteInterval = setInterval(nextQuote, 8000); }
+
+  // ═══════════════════════════════
+  // 4. DAILY PROBLEM
+  // ═══════════════════════════════
+  const problems = [
+    {
+      badge: "CF1 · Okt 2024", source: "Past Exam PAI · Soal No. 12",
+      text: "Sebuah obligasi dengan face value F = 1.000 dan coupon rate r = 8% per tahun (dibayar semesteran) memiliki yield rate i = 6% per tahun. Jika obligasi jatuh tempo dalam 10 tahun, berapa harga obligasi tersebut?",
+      math: "", options: ["A. 1.128,97", "B. 1.148,77", "C. 1.162,22", "D. 1.100,00"], correct: 1,
+      explanation: "Per semester: r = 4%, i = 3%, n = 20. P = 40 × a(20|3%) + 1000 × v²⁰ = 595,10 + 553,68 = <strong>1.148,77</strong> (B). Karena coupon rate &gt; yield, harga &gt; par ✓"
+    },
+    {
+      badge: "CF1 · Agu 2024", source: "Past Exam PAI · Soal No. 8",
+      text: "Sebuah perpetuity-immediate membayar 500 per tahun. Jika yield rate adalah 5% per tahun efektif, berapa present value perpetuity tersebut?",
+      math: "", options: ["A. 8.000", "B. 9.500", "C. 10.000", "D. 12.500"], correct: 2,
+      explanation: "PV = CF / i = 500 / 0,05 = <strong>10.000</strong> (C). Formula: a(∞|i) = 1/i."
+    },
+    {
+      badge: "CF1 · Mei 2024", source: "Past Exam PAI · Soal No. 15",
+      text: "Investasi menghasilkan cash flows: 1.000 pada t=1, 2.000 pada t=2, dan 3.000 pada t=3. Jika force of interest δ = 0,05, berapa accumulated value pada t=3?",
+      math: "\\delta = 0{,}05 \\implies i = e^{\\delta} - 1",
+      options: ["A. 6.512,14", "B. 6.637,52", "C. 6.820,00", "D. 7.015,33"], correct: 1,
+      explanation: "i = e^0,05 - 1 = 0,05127. AV = 1000×1,10517 + 2000×1,05127 + 3000 = <strong>6.637,52</strong> (B)."
+    },
+    {
+      badge: "CF1 · Nov 2023", source: "Past Exam PAI · Soal No. 5",
+      text: "Sebuah annuity-due membayar 200 per bulan selama 5 tahun. Jika nominal rate i⁽¹²⁾ = 6% per tahun, berapa present value annuity tersebut?",
+      math: "\\ddot{a}_{\\overline{n}|} = \\frac{1 - v^n}{d}",
+      options: ["A. 10.345,11", "B. 10.398,54", "C. 10.519,20", "D. 10.620,75"], correct: 0,
+      explanation: "i/bulan = 0,5%, d = 0,004975, n = 60. PV = 200 × ä(60|0,5%) = <strong>10.345,11</strong> (A)."
+    },
+    {
+      badge: "CF1 · Agu 2023", source: "Past Exam PAI · Soal No. 19",
+      text: "Macaulay duration dari zero-coupon bond dengan maturity 8 tahun adalah…",
+      math: "", options: ["A. Kurang dari 8 tahun", "B. Sama dengan 8 tahun", "C. Lebih dari 8 tahun", "D. Bergantung pada yield rate"], correct: 1,
+      explanation: "Macaulay duration zero-coupon bond selalu <strong>sama dengan maturity-nya</strong> (B) — karena hanya ada satu cash flow di akhir."
+    },
+  ];
+
+  let currentProblem = Math.floor(Date.now() / 86400000) % problems.length;
+  let answered = false;
+
+  function renderProblem(idx: number) {
+    const p = problems[idx];
+    answered = false;
+    document.getElementById('problem-badge')!.textContent = p.badge;
+    document.getElementById('problem-source')!.textContent = p.source;
+    document.getElementById('problem-text')!.textContent = p.text;
+    const answerEl = document.getElementById('problem-answer')!;
+    answerEl.className = 'problem-answer';
+    answerEl.innerHTML = `<strong>Pembahasan:</strong><br>${p.explanation}`;
+
+    const revealBtn = document.getElementById('reveal-btn') as HTMLButtonElement;
+    revealBtn.disabled = false;
+    revealBtn.textContent = 'Lihat Jawaban';
+
+    const mathEl = document.getElementById('problem-math')!;
+    if (p.math) {
+      mathEl.style.display = 'block';
+      mathEl.innerHTML = katex.renderToString(p.math, { displayMode: true, throwOnError: false });
+    } else {
+      mathEl.style.display = 'none';
+    }
+
+    const now = new Date();
+    document.getElementById('problem-day-tag')!.textContent =
+      now.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'short' });
+
+    const optionsEl = document.getElementById('problem-options')!;
+    optionsEl.innerHTML = '';
+    p.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'problem-option';
+      btn.innerHTML = `<span class="problem-option-key">${['A','B','C','D'][i]}</span>${opt}`;
+      btn.onclick = () => selectOption(i);
+      optionsEl.appendChild(btn);
+    });
+  }
+
+  function selectOption(idx: number) {
+    if (answered) return;
+    answered = true;
+    const p = problems[currentProblem];
+    document.querySelectorAll('.problem-option').forEach((b, i) => {
+      if (i === p.correct) b.classList.add('correct');
+      else if (i === idx && idx !== p.correct) b.classList.add('wrong');
+    });
+    document.getElementById('problem-answer')!.classList.add('visible');
+    const revealBtn = document.getElementById('reveal-btn') as HTMLButtonElement;
+    revealBtn.disabled = true;
+    revealBtn.textContent = 'Jawaban Terlihat';
+  }
+
+  // ═══════════════════════════════
+  // INIT
+  // ═══════════════════════════════
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  renderFormula(currentFormula);
+  document.getElementById('formula-btn')!.onclick = () => {
+    currentFormula = (currentFormula + 1) % formulas.length;
+    renderFormula(currentFormula);
+  };
+
+  renderQuote(currentQuote);
+  quoteInterval = setInterval(nextQuote, 8000);
+  document.getElementById('quote-prev')!.onclick = prevQuote;
+  document.getElementById('quote-next')!.onclick = nextQuote;
+
+  renderProblem(currentProblem);
+  document.getElementById('reveal-btn')!.onclick = () => {
+    answered = true;
+    const p = problems[currentProblem];
+    document.querySelectorAll('.problem-option').forEach((b, i) => {
+      if (i === p.correct) b.classList.add('correct');
+    });
+    document.getElementById('problem-answer')!.classList.add('visible');
+    const revealBtn = document.getElementById('reveal-btn') as HTMLButtonElement;
+    revealBtn.disabled = true;
+    revealBtn.textContent = 'Jawaban Terlihat';
+  };
+  document.getElementById('problem-next')!.onclick = () => {
+    currentProblem = (currentProblem + 1) % problems.length;
+    renderProblem(currentProblem);
+  };
+</script>

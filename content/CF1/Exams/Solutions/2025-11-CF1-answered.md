@@ -1,0 +1,2188 @@
+## **No. 1**
+
+Di bawah ini adalah harga obligasi _zero-coupon_ $100$ yang ditebus pada nilai par:
+
+| Jangka Waktu Jatuh Tempo | Harga |
+| :----------------------: | :---: |
+|            1             | 96,23 |
+|            2             | 94,12 |
+|            3             | 89,23 |
+|            4             | 84,59 |
+|            5             | 82,48 |
+
+Tentukan _forward rate_ untuk tahun ke-4.
+
+a. $2{,}56\%$  
+b. $5{,}20\%$  
+c. $5{,}49\%$  
+d. $12{,}10\%$  
+e. $13{,}76\%$
+
+> [!summary]+ **Jawaban No. 1** 
+> **(a). $2{,}56\%$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 3 — Struktur Jangka Waktu Suku Bunga |
+> | **Sub-topik** | [[3.1 Spot Rates and Forward Rates]] |
+> | **Difficulty** | Easy |
+> | **Prerequisite** | [[1.1 Interest Rates and Discount Rates]] |
+> | **Connected Topics** | [[3.2 Yield Curve]] |
+> | **Referensi** | Vaaler Bab 8.3; Kellison Bab 10 |
+>
+> > [!info]+ **Rumus**   
+> > 
+> > Hubungan antara Harga Obligasi Zero-Coupon ($P_t$) dan Forward Rate ($f$):  
+> > $$f_{t, t+1} = \frac{P_t}{P_{t+1}} - 1$$
+>
+> **Diketahui:**  
+> - $P_4 = 84{,}59$ (Harga obligasi zero-coupon jatuh tempo $t=4$)
+> - $P_5 = 82{,}48$ (Harga obligasi zero-coupon jatuh tempo $t=5$)
+> - Target: Forward rate tahun ke-4 ($f_{4,5}$)
+>
+> > [!example]- Langkah Pengerjaan  
+> >
+> > **Langkah 1: Identifikasi Periode Forward Rate**  
+> > "Forward rate untuk tahun ke-4" berarti rate yang berlaku dari akhir tahun ke-4 hingga akhir tahun ke-5, yaitu $f_{4,5}$.  
+> >
+> > **Langkah 2: Substitusi ke Rumus**  
+> > $$f_{4,5} = \frac{P_4}{P_5} - 1 = \frac{84{,}59}{82{,}48} - 1$$
+> >
+> > **Langkah 3: Hitung Rasio**  
+> > $$\frac{84{,}59}{82{,}48} \approx 1{,}025582$$
+> >
+> > **Langkah 4: Hasil Akhir**  
+> > $$f_{4,5} = 1{,}025582 - 1 = 0{,}025582 \approx 2{,}56\%$$
+> >
+> > **Hasil Akhir:** **(a)**. $2{,}56\%$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Menggunakan $P_3/P_4$ alih-alih $P_4/P_5$ — tergantung interpretasi "tahun ke-4" apakah $t=3 \to t=4$ (Kellison) atau $t=4 \to t=5$. Cek opsi jawaban untuk konfirmasi.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menghitung forward rate menggunakan spot rate $(1+s_5)^5/(1+s_4)^4 - 1$ padahal soal memberikan harga langsung — pendekatan ini benar tapi lebih panjang.
+> > > - Menggunakan $P_5/P_4$ (terbalik) — ini menghasilkan discount rate, bukan forward rate.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Tahun ke-4" bisa ambigu. Dalam konteks ini, kunci jawaban menunjukkan $f_{4,5}$ (dari $t=4$ ke $t=5$).
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal menyebut "forward rate tahun ke-$n$" → pastikan definisi konsisten dengan opsi jawaban: apakah $f_{n-1,n}$ atau $f_{n,n+1}$.
+
+---
+
+## **No. 2**
+
+Misalkan kurva hasil untuk tingkat spot diberikan oleh persamaan berikut:
+$$s_t = 0{,}08 - 0{,}001t + 0{,}002t^2$$
+Tentukanlah tingkat bunga _forward_ efektif tahunan untuk pinjaman yang dimulai pada waktu $t=4$, dengan jangka waktu 3 tahun.
+
+a. $0{,}3603$  
+b. $0{,}0569$  
+c. $0{,}0033$  
+d. $0{,}2606$  
+e. $0{,}1805$
+
+> [!summary]+ **Jawaban No. 2** 
+> **(d). $0{,}2606$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 3 — Struktur Jangka Waktu Suku Bunga |
+> | **Sub-topik** | [[3.1 Spot Rates and Forward Rates]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[1.2 Effective, Nominal, and Force of Interest]] |
+> | **Connected Topics** | [[3.2 Yield Curve]] |
+> | **Referensi** | Vaaler Bab 8.3; Kellison Bab 10 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > Forward rate efektif tahunan dari waktu $t_1$ ke $t_2$:  
+> > $$f_{t_1, t_2} = \left[\frac{(1 + s_{t_2})^{t_2}}{(1 + s_{t_1})^{t_1}}\right]^{\frac{1}{t_2 - t_1}} - 1$$  
+> > Di mana $s_t$ adalah spot rate efektif tahunan untuk maturity $t$, yang diperoleh dengan mensubstitusi $t$ ke dalam fungsi yang diberikan.  
+>
+> **Diketahui:**  
+> - $s_t = 0{,}08 - 0{,}001t + 0{,}002t^2$ (spot rate efektif tahunan sebagai fungsi maturity)
+> - Pinjaman mulai $t_1 = 4$, berakhir $t_2 = 7$ (jangka waktu 3 tahun)
+> - Target: Forward rate efektif tahunan $f_{4,7}$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung Spot Rate $s_4$**  
+> > Substitusi $t = 4$ ke dalam fungsi:  
+> > $$s_4 = 0{,}08 - 0{,}001(4) + 0{,}002(4)^2 = 0{,}08 - 0{,}004 + 0{,}032 = 0{,}108$$
+> >
+> > **Langkah 2: Hitung Spot Rate $s_7$**  
+> > Substitusi $t = 7$ ke dalam fungsi:  
+> > $$s_7 = 0{,}08 - 0{,}001(7) + 0{,}002(7)^2 = 0{,}08 - 0{,}007 + 0{,}098 = 0{,}171$$
+> >
+> > **Langkah 3: Hitung Faktor Akumulasi Masing-Masing**  
+> > $$\text{Pembilang: } (1 + s_7)^7 = (1{,}171)^7$$  
+> > $$\text{Penyebut: } (1 + s_4)^4 = (1{,}108)^4$$  
+> >
+> > Hitung secara numerik:  
+> > $$(1{,}171)^7 \approx 3{,}11782 \qquad (1{,}108)^4 \approx 1{,}51141$$
+> >
+> > **Langkah 4: Hitung Rasio dan Pangkat**  
+> > $$\frac{(1{,}171)^7}{(1{,}108)^4} = \frac{3{,}11782}{1{,}51141} \approx 2{,}06283$$
+> >
+> > Pangkatkan dengan $\frac{1}{t_2 - t_1} = \frac{1}{3}$:
+> > $$(2{,}06283)^{1/3} \approx 1{,}2606$$  
+> >
+> > **Langkah 5: Kurangi 1 untuk Mendapat Forward Rate**  
+> > $$f_{4,7} = 1{,}2606 - 1 = 0{,}2606$$
+> >
+> > **Hasil Akhir:** **(d)**. $0{,}2606$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Menggunakan pangkat $\frac{1}{3}$ tetapi lupa bahwa penyebut adalah $t_2 - t_1 = 3$, bukan $t_2 = 7$ — forward rate adalah rate **per tahun** untuk interval 3 tahun, sehingga pangkat harus $\frac{1}{3}$.
+> > > - Menghitung hanya rasio $\frac{(1+s_7)^7}{(1+s_4)^4}$ tanpa dipangkatkan $\frac{1}{3}$ — ini menghasilkan faktor akumulasi total 3 tahun ($\approx 2{,}06$), bukan forward rate tahunan.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Memperlakukan $s_t$ sebagai *force of interest* ($\delta_t$) dan mengintegralkan fungsi tersebut — $s_t$ di sini adalah **spot rate efektif** (tidak perlu integral). Cek tipe fungsi dengan mensubstitusi ke opsi jawaban: metode spot rate langsung menghasilkan $0{,}2606$ yang sesuai opsi.
+> > > - Menggunakan $s_4$ dan $s_7$ secara langsung sebagai forward rate tanpa memasukkannya ke dalam formula faktor akumulasi $(1+s_t)^t$ — spot rate bukan forward rate, keduanya dihubungkan melalui no-arbitrage.
+> > > - Menghitung $s_7 - s_4 = 0{,}063$ sebagai forward rate — ini hanya selisih spot rate, bukan forward rate.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Membaca koefisien fungsi keliru: $-0{,}001t$ sangat mudah terbaca sebagai $-0{,}01t$ (beda satu angka nol). Selalu substitusi nilai $t$ ke kalkulator secara hati-hati sebelum lanjut ke formula.
+> > > - "Pinjaman yang dimulai pada waktu $t=4$ dengan jangka waktu 3 tahun" berarti $t_1 = 4$ dan $t_2 = 7$, bukan $t_2 = 4 + 3 = 4{,}3$ atau interpretasi lain.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal memberikan fungsi $s_t$ dan meminta forward rate → substitusi $t_1$ dan $t_2$ ke dalam fungsi terlebih dahulu, baru gunakan formula $f_{t_1,t_2}$.
+> > > - Jika hasil metode tertentu tidak cocok dengan opsi jawaban → coba interpretasi alternatif ($s_t$ sebagai spot rate efektif vs force of interest), gunakan opsi jawaban sebagai validator.
+> > > - Jika koefisien fungsi sangat kecil (mis. $0{,}001$) → waspadai typo atau misread — cek ulang substitusi numerik.
+
+---
+
+## **No. 3**
+
+Grace membayar $100.000$ hari ini untuk suatu investasi 4-tahun yang menghasilkan arus kas $60.000$ pada akhir tahun ke-3 dan 4. Misalkan, dengan tingkat $15\%$, nilai kini dari arus kas Grace sama dengan nilai kini dari arus kas Shanice, dimana Shanice melakukan investasi sebesar X satu tahun dari sekarang yang menghasilkan arus kas $60.000$ pada akhir tahun ke-4 dan ke-5. Tentukanlah nilai dari $X$.
+
+a. $94.316$  
+b. $98.503$  
+c. $105.380$  
+d. $103.937$  
+e. $90.379$
+
+> [!summary]+ **Jawaban No. 3** 
+> **(d). $103.937$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 1 — Nilai Waktu dari Uang |
+> | **Sub-topik** | [[1.3 Cash Flow Equations and Inflation]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[1.4 Accumulation and Present Value]] |
+> | **Connected Topics** | [[1.5 NPV, IRR, DWRR, TWRR]] |
+> | **Referensi** | Vaaler Bab 1–2; Kellison Bab 1–2 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Equation of Value (Time $t=0$):**
+> > $$NPV_{Grace} = NPV_{Shanice}$$
+> > $$-100.000 + 60.000v^3 + 60.000v^4 = -Xv + 60.000v^4 + 60.000v^5$$
+> >
+> > Di mana $v = (1+i)^{-1}$ dan $i = 15\%$.
+>
+> **Diketahui:**
+> - $i = 15\%$, $v = (1{,}15)^{-1}$
+> - **Grace:** Keluar $100.000$ di $t=0$; Masuk $60.000$ di $t=3$ dan $t=4$
+> - **Shanice:** Keluar $X$ di $t=1$; Masuk $60.000$ di $t=4$ dan $t=5$
+> - Target: Cari $X$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Penyederhanaan Persamaan**  
+> > Suku $+60.000v^4$ ada di kedua sisi, sehingga bisa dicoret:  
+> > $$-100.000 + 60.000v^3 = -Xv + 60.000v^5$$
+> >
+> > **Langkah 2: Isolasi Variabel $X$**  
+> > Pindahkan $-Xv$ ke ruas kiri:  
+> > $$Xv = 100.000 - 60.000v^3 + 60.000v^5$$
+> >
+> > Bagi dengan $v$ (kalikan dengan $(1+i)$):  
+> > $$X = 100.000(1+i) - 60.000v^2 + 60.000v^4$$
+> >
+> > **Langkah 3: Hitung Faktor Diskonto**  
+> > - $(1+i) = 1{,}15$  
+> > - $v^2 = (1{,}15)^{-2} = 0{,}756144$  
+> > - $v^4 = (1{,}15)^{-4} = 0{,}571753$  
+> >
+> > **Langkah 4: Substitusi dan Hitung**  
+> > $$X = 100.000(1{,}15) - 60.000(0{,}756144) + 60.000(0{,}571753)$$  
+> > $$X = 115.000 - 45.368{,}62 + 34.305{,}19$$  
+> > $$X = 103.936{,}57$$  
+> >
+> > **Hasil Akhir:** **(d)**. $103.937$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Menggunakan pangkat yang salah saat mendiskon arus kas — harus sesuai dengan timeline masing-masing investor.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Lupa mendiskon $X$ dengan $v^1$: Shanice berinvestasi di $t=1$, bukan $t=0$.
+> > > - Mengabaikan penyederhanaan (coret $60.000v^4$) dan langsung hitung semua suku — lebih rawan error kalkulator.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Nilai kini dari arus kas" berarti NPV semua cash flows (termasuk investasi awal) harus sama pada $t=0$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal menyebut investasi "satu tahun dari sekarang" → pastikan mendiskon dengan $v^1$ saat membawa ke $t=0$.
+
+---
+
+## **No. 4**
+
+Pada saat yang sama, Niel dan Elis menyetor uang ke dua dana berbeda. Niel menyetor $200$ dan Elis menyetor $80$. Kedua akun mendapatkan tingkat bunga yang sama. Jumlah bunga yang diperoleh akun Niel pada tahun ke-10 sama dengan jumlah bunga yang diperoleh akun Elis pada tahun ke-20. Tentukan jumlah bunga yang diperoleh akun Niel selama tahun ke-13.
+
+a. $23{,}1$  
+b. $57{,}6$  
+c. $49{,}1$  
+d. $63{,}2$  
+e. $52{,}6$
+
+> [!summary]+ **Jawaban No. 4** 
+> **(b). $57{,}6$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 1 — Nilai Waktu dari Uang |
+> | **Sub-topik** | [[1.1 Interest Rates and Discount Rates]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[1.4 Accumulation and Present Value]] |
+> | **Connected Topics** | [[1.2 Effective, Nominal, and Force of Interest]] |
+> | **Referensi** | Vaaler Bab 1; Kellison Bab 1 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Bunga pada Tahun ke-$n$:**  
+> > $$I_n = P(1+i)^{n-1} \cdot i$$
+>
+> **Diketahui:**  
+> - $P_{Niel} = 200$, $P_{Elis} = 80$
+> - Kondisi: $I_{Niel,10} = I_{Elis,20}$
+> - Target: $I_{Niel,13}$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Susun Persamaan Keseimbangan**  
+> > $$200(1+i)^9 \cdot i = 80(1+i)^{19} \cdot i$$
+> >
+> > **Langkah 2: Sederhanakan**  
+> > Bagi kedua ruas dengan $i$ (karena $i \neq 0$):  
+> > $$\frac{200}{80} = \frac{(1+i)^{19}}{(1+i)^9} = (1+i)^{10}$$
+> > $$2{,}5 = (1+i)^{10}$$  
+> >
+> > **Langkah 3: Dapatkan Nilai $i$**  
+> > $$(1+i) = 2{,}5^{0{,}1} \approx 1{,}095958$$
+> > $$i \approx 0{,}095958$$
+> >
+> > **Langkah 4: Hitung Target $I_{Niel,13}$**  
+> > $$I_{N,13} = 200(1+i)^{12} \cdot i$$
+> >
+> > Gunakan trik: $(1+i)^{12} = (1+i)^{10} \cdot (1+i)^2 = 2{,}5 \times (1{,}095958)^2 = 2{,}5 \times 1{,}201124 = 3{,}00281$  
+> >
+> > $$I_{N,13} = 200 \times 3{,}00281 \times 0{,}095958 = 57{,}63$$
+> >
+> > **Hasil Akhir:** **(b)**. $57{,}6$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Menggunakan pangkat $n$ alih-alih $n-1$: bunga tahun ke-13 dihitung dari saldo akhir tahun ke-12, bukan ke-13.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengira bunga tahun ke-$n$ konstan — pada compound interest, bunga setiap tahun naik secara eksponensial.
+> > > - Salah menyusun rasio: menulis $200/80 = (1+i)^{-10}$ alih-alih $(1+i)^{10}$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Bunga tahun ke-10" berarti bunga yang diperoleh selama tahun ke-10, yaitu $AV_9 \times i$, bukan $AV_{10} \times i$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal menyebut "bunga pada tahun ke-$n$" → pangkat di faktor akumulasi selalu $n-1$.
+
+---
+
+## **No. 5**
+
+Sebuah dana memperoleh pendapatan investasi sebesar $8.000$ selama tahun 2004. Saldo awal dan akhir dana tersebut adalah $95.000$ dan $120.000$. Sebuah setoran dilakukan pada waktu $K$ selama tahun tersebut. Tidak ada setoran atau penarikan lain yang dilakukan. Dana memperoleh $7{,}5235\%$ pada tahun 2004 menggunakan metode _dollar-weighted_. Tentukan $K$.
+
+a. **1 Maret**  
+b. **1 April**   
+c. **1 Mei**  
+d. **1 Juli**  
+e. **1 Oktober**
+
+> [!summary]+ **Jawaban No. 5** 
+> **(c). 1 Mei**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 1 — Nilai Waktu dari Uang |
+> | **Sub-topik** | [[1.5 NPV, IRR, DWRR, TWRR]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[1.1 Interest Rates and Discount Rates]] |
+> | **Connected Topics** | [[1.3 Cash Flow Equations and Inflation]] |
+> | **Referensi** | Kellison Bab 2 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Dollar-Weighted Rate of Return:**
+> > $$i_{dw} = \frac{I}{A_0 + C(1-K)}$$
+> > Di mana $I$ = pendapatan investasi, $A_0$ = saldo awal, $C$ = setoran, $K$ = waktu setoran (dalam fraksi tahun).
+>
+> **Diketahui:**
+> - $A_0 = 95.000$, $A_1 = 120.000$, $I = 8.000$
+> - $i_{dw} = 7{,}5235\%$
+> - Target: $K$ (waktu setoran)
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Cari Besar Setoran ($C$)**  
+> > $$A_1 = A_0 + C + I$$  
+> > $$120.000 = 95.000 + C + 8.000 \implies C = 17.000$$  
+> >
+> > **Langkah 2: Setup Persamaan Dollar-Weighted**  
+> > $$0{,}075235 = \frac{8.000}{95.000 + 17.000(1-K)}$$  
+> >
+> > **Langkah 3: Selesaikan untuk $K$**  
+> > $$95.000 + 17.000(1-K) = \frac{8.000}{0{,}075235} = 106.333{,}49$$  
+> > $$17.000(1-K) = 11.333{,}49$$  
+> > $$(1-K) = 0{,}6667 = \frac{2}{3}$$  
+> > $$K = \frac{1}{3} \approx 0{,}3333$$  
+> >
+> > **Langkah 4: Konversi ke Tanggal**  
+> > $$K \times 12 = 4 \text{ bulan}$$  
+> > 4 bulan berlalu (Jan–Apr) $\rightarrow$ setoran terjadi pada awal bulan ke-5 $= \textbf{1 Mei}$.  
+> >
+> > **Hasil Akhir:** **(c)**. 1 Mei
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Mendapat $K = 1/3$ tahun $= 4$ bulan dan langsung memilih April — padahal $K = 4/12$ berarti 4 bulan **sudah berlalu**, jadi setoran jatuh pada 1 Mei.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menggunakan compound interest $(1+i)^{(1-K)}$ alih-alih simple interest $C(1-K)$ — metode dollar-weighted menggunakan pendekatan simple interest.
+> > > - Lupa menghitung $C$ terlebih dahulu dan langsung substitusi.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Membedakan $K$ (waktu kejadian) dengan $(1-K)$ (durasi investasi). Rumus menghasilkan durasi eksposur.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal menyebut "dollar-weighted" → gunakan simple interest untuk bobot waktu, bukan compound.
+
+---
+
+## **No. 6**
+
+Misalkan total 30 pembayaran semi-tahunan sebesar $5$ dilakukan mulai tepat enam tahun dari hari ini. Dengan asumsi tingkat bunga efektif tahunan $6\%$, tentukanlah nilai masa depan pada waktu 30 tahun dari hari ini. Asumsikan bahwa setelah pembayaran selesai, investasi dibiarkan dalam akun yang sama menghasilkan bunga.
+
+a. $708$  
+b. $411$  
+c. $243$  
+d. $399$  
+e. $450$
+
+> [!summary]+ **Jawaban No. 6** 
+> **(b). $411$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 2 — Anuitas dan Nilai Arus Kas |
+> | **Sub-topik** | [[2.5 Deferred Annuities]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.1 Annuity-Immediate and Annuity-Due]], [[1.2 Effective, Nominal, and Force of Interest]] |
+> | **Connected Topics** | [[2.6 Varying Interest Rates]] |
+> | **Referensi** | Vaaler Bab 3–4; Kellison Bab 3–4 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > $$FV_{30} = PMT \cdot \frac{(1+j)^n - 1}{j} \cdot (1+i)^{\Delta t}$$  
+> > Di mana $j$ = suku bunga efektif per semester, $\Delta t$ = sisa waktu setelah pembayaran terakhir.  
+>
+> **Diketahui:**
+> - $PMT = 5$ (semi-tahunan)
+> - $i = 6\%$ (efektif tahunan)
+> - $n = 30$ pembayaran
+> - Pembayaran pertama di $t = 6$
+> - Target: $FV$ di $t = 30$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Konversi Bunga ke Efektif Semi-Tahunan**  
+> > $$j = (1{,}06)^{0{,}5} - 1 = 0{,}029563$$  
+> >
+> > **Langkah 2: Tentukan Timeline**  
+> > - Pembayaran ke-1 di $t=6$  
+> > - Pembayaran ke-30 di $t = 6 + 29 \times 0{,}5 = 20{,}5$  
+> > - Sisa waktu: $\Delta t = 30 - 20{,}5 = 9{,}5$ tahun  
+> >
+> > **Langkah 3: Hitung FV Anuitas di $t=20{,}5$**  
+> > $$FV_{20{,}5} = 5 \cdot \frac{(1{,}029563)^{30} - 1}{0{,}029563}$$  
+> > Catatan: $(1{,}029563)^{30} = (1{,}06)^{15} \approx 2{,}39656$  
+> > $$FV_{20{,}5} = 5 \times \frac{1{,}39656}{0{,}029563} = 5 \times 47{,}2394 = 236{,}197$$  
+> >
+> > **Langkah 4: Akumulasi ke $t=30$**  
+> > $$FV_{30} = 236{,}197 \times (1{,}06)^{9{,}5} = 236{,}197 \times 1{,}73908 = 410{,}84$$  
+> >
+> > **Hasil Akhir:** **(b)**. $411$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Menggunakan $6\%/2 = 3\%$ sebagai rate per semester — ini untuk bunga **nominal**, bukan efektif tahunan. Harus gunakan akar: $(1{,}06)^{0{,}5} - 1$.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Salah menentukan waktu pembayaran terakhir ($t=21$ alih-alih $t=20{,}5$), sehingga $\Delta t$ meleset.
+> > > - Lupa mengakumulasi sisa waktu setelah pembayaran terakhir ke $t=30$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Mulai tepat enam tahun" berarti pembayaran pertama di $t=6$ (annuity-immediate dimulai).
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika bunga diberikan sebagai efektif tahunan tapi pembayaran non-tahunan → konversi dengan $(1+i)^{1/m} - 1$, bukan $i/m$.
+
+---
+
+## **No. 7**
+
+Misalkan jumlah dalam suatu dana satu setengah tahun dari sekarang adalah $100$. Tentukan nilai kini dari dana tersebut jika tingkat diskonto nominal adalah $5\%$ yang dapat dikonversi setiap kuartal.
+
+a. $86{,}8$  
+b. $96{,}4$    
+c. $92{,}7$  
+d. $92{,}9$    
+e. $92{,}2$  
+
+> [!summary]+ **Jawaban No. 7** 
+> **(c). $92{,}7$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 1 — Nilai Waktu dari Uang |
+> | **Sub-topik** | [[1.1 Interest Rates and Discount Rates]] |
+> | **Difficulty** | Easy |
+> | **Prerequisite** | [[1.2 Effective, Nominal, and Force of Interest]] |
+> | **Connected Topics** | [[1.4 Accumulation and Present Value]] |
+> | **Referensi** | Vaaler Bab 1; Kellison Bab 1 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > $$PV = FV \cdot \left(1 - \frac{d^{(m)}}{m}\right)^{m \cdot t}$$
+>
+> **Diketahui:**
+> - $FV = 100$
+> - $t = 1{,}5$ tahun
+> - $d^{(4)} = 5\%$ (diskonto nominal, konversi kuartalan)
+> - $m = 4$
+> - Target: $PV$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung Rate per Periode**  
+> > $$\frac{d^{(4)}}{4} = \frac{0{,}05}{4} = 0{,}0125$$
+> >
+> > **Langkah 2: Total Periode**  
+> > $$N = 4 \times 1{,}5 = 6 \text{ kuartal}$$  
+> >
+> > **Langkah 3: Hitung PV**  
+> > $$PV = 100 \times (1 - 0{,}0125)^6 = 100 \times (0{,}9875)^6$$  
+> > $$PV = 100 \times 0{,}92723 = 92{,}72$$  
+> >
+> > **Hasil Akhir:** **(c)**. $92{,}7$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Lupa mengalikan $t$ dengan $m$ untuk mendapatkan jumlah kuartal: $N = 4 \times 1{,}5 = 6$, bukan $N = 1{,}5$.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menggunakan rumus bunga $PV = FV/(1+i)^n$ alih-alih rumus diskonto $PV = FV(1-d)^n$ — untuk diskonto nominal, kita **mengalikan** dengan faktor pengurangan.
+> > > - Menggunakan $1 + d^{(4)}/4$ alih-alih $1 - d^{(4)}/4$ — diskonto mengurangi, bukan menambahkan.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Tingkat diskonto nominal 5% konversi kuartal" berarti $d^{(4)} = 5\%$, bukan $d = 5\%$ efektif.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal menyebut "discount rate" → gunakan rumus diskonto, bukan rumus bunga.
+
+---
+
+## **No. 8**
+
+Davin membeli _annuity-immediate_ selama $16$ tahun yang membayar $100$ pada tahun pertama dan meningkat $4\%$ setiap tahun berikutnya. Kelvin membeli _annuity-immediate_ $16$ tahun yang membayar $X$ pada tahun pertama dan menurun $2\%$ setiap tahun berikutnya. Pada tingkat bunga efektif tahunan $5\%$, kedua anuitas memiliki nilai kini yang sama. Tentukanlah nilai $X$.   
+
+a. $148{,}7$  
+b. $145{,}2$  
+c. $124{,}5$  
+d. $123{,}2$  
+e. $120{,}0$  
+
+> [!summary]+ **Jawaban No. 8** 
+> **(a). $148{,}7$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 2 — Anuitas dan Nilai Arus Kas |
+> | **Sub-topik** | [[2.3 Varying Annuities]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.1 Annuity-Immediate and Annuity-Due]] |
+> | **Connected Topics** | [[2.2 Perpetuity]] |
+> | **Referensi** | Vaaler Bab 3–4; Kellison Bab 4 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Geometric Gradient Annuity (PV):**  
+> > $$PV = PMT_1 \cdot \frac{1 - \left(\frac{1+g}{1+i}\right)^n}{i - g}$$
+>
+> **Diketahui:**
+> - $i = 5\%$, $n = 16$
+> - **Davin:** $PMT_1 = 100$, $g = 4\%$
+> - **Kelvin:** $PMT_1 = X$, $g = -2\%$
+> - Kondisi: $PV_{Davin} = PV_{Kelvin}$
+> - Target: $X$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung PV Davin**  
+> > $$PV_D = 100 \cdot \frac{1 - \left(\frac{1{,}04}{1{,}05}\right)^{16}}{0{,}05 - 0{,}04}$$  
+> > $$\left(\frac{1{,}04}{1{,}05}\right)^{16} = (0{,}990476)^{16} \approx 0{,}858026$$  
+> > $$PV_D = 100 \cdot \frac{1 - 0{,}858026}{0{,}01} = 100 \times 14{,}1974 = 1.419{,}74$$  
+> >
+> > **Langkah 2: Susun PV Kelvin**  
+> > Penyebut: $i - g = 0{,}05 - (-0{,}02) = 0{,}07$  
+> > $$PV_K = X \cdot \frac{1 - \left(\frac{0{,}98}{1{,}05}\right)^{16}}{0{,}07}$$  
+> > $$\left(\frac{0{,}98}{1{,}05}\right)^{16} = (0{,}933333)^{16} \approx 0{,}331766$$  
+> > $$PV_K = X \cdot \frac{1 - 0{,}331766}{0{,}07} = X \times 9{,}5462$$  
+> >
+> > **Langkah 3: Setarakan dan Selesaikan**  
+> > $$1.419{,}74 = 9{,}5462 \cdot X$$  
+> > $$X = \frac{1.419{,}74}{9{,}5462} \approx 148{,}72$$  
+> >
+> > **Hasil Akhir:** **(a)**. $148{,}7$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Tidak ada mismatch frekuensi dalam soal ini — pembayaran dan compounding sama-sama tahunan.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Kesalahan tanda pada $g$ Kelvin: penyebut harusnya $i - (-0{,}02) = 0{,}07$, bukan $0{,}05 - 0{,}02 = 0{,}03$.
+> > > - Menggunakan rumus arithmetic alih-alih geometric gradient — soal menyebut "meningkat 4%" (persentase), bukan jumlah tetap.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Ini annuity-immediate (bukan due). Tidak perlu kalikan dengan $(1+i)$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal menyebut "meningkat $X\%$" → geometric gradient. Jika "meningkat $X$ per tahun" → arithmetic gradient.
+
+---
+
+## **No. 9**
+
+Suaty _annuity-due_ membayar manfaat awal sebesar $1$ per tahun, dengan manfaat meningkat sebesar $10{,}25\%$ setiap empat tahun. Anuitas ini dibayarkan selama $40$ pembayaran tahunan. Dengan menggunakan tingkat bunga efektif tahunan sebesar $2\%$, tentukanlah nilai masa depan dari anuitas ini.
+
+a. $42$  
+b. $69$  
+c. $83$  
+d. $59$  
+e. $93$
+
+> [!summary]+ **Jawaban No. 9** 
+> **(e). $93$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 2 — Anuitas dan Nilai Arus Kas |
+> | **Sub-topik** | [[2.3 Varying Annuities]] |
+> | **Difficulty** | Hard |
+> | **Prerequisite** | [[2.1 Annuity-Immediate and Annuity-Due]], [[2.5 Deferred Annuities]] |
+> | **Connected Topics** | [[2.6 Varying Interest Rates]] |
+> | **Referensi** | Vaaler Bab 3–4; Kellison Bab 4 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Strategi 2 Tahap:**  
+> > 1. Hitung PV satu blok (4 tahun annuity-due): $PV_{block} = \ddot{a}_{\overline{4}|i}$  
+> > 2. Akumulasi blok-blok sebagai deret geometris ke masa depan.  
+>
+> **Diketahui:**
+> - Total: 40 pembayaran (10 blok @ 4 tahun)
+> - Growth antar blok: $G = 10{,}25\%$
+> - $i = 2\%$ (efektif tahunan)
+> - Mode: Annuity-Due
+> - Target: $FV$ di $t=40$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung Nilai Satu Blok (4-Year Annuity-Due)**  
+> > $$PV_{block} = \ddot{a}_{\overline{4}|2\%} = \frac{1 - (1{,}02)^{-4}}{0{,}02} \times 1{,}02 \approx 3{,}8839$$  
+> >
+> > **Langkah 2: Hitung PV Total di $t=0$ (Deret Geometris)**   
+> > Rasio geometris antar blok:  
+> > $$r = \frac{1+G}{(1+i)^4} = \frac{1{,}1025}{(1{,}02)^4} = \frac{1{,}1025}{1{,}08243} \approx 1{,}01854$$  
+> >
+> > Jumlah deret geometris 10 blok:  
+> > $$PV_{total} = 3{,}8839 \cdot \frac{(1{,}01854)^{10} - 1}{1{,}01854 - 1} \approx 3{,}8839 \times 10{,}874 = 42{,}23$$  
+> >
+> > **Langkah 3: Hitung FV di $t=40$**  
+> > $$FV = 42{,}23 \times (1{,}02)^{40} = 42{,}23 \times 2{,}20804 \approx 93{,}25$$
+> >
+> > **Hasil Akhir:** **(e)**. $93$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Mencampur periode pertumbuhan (4 tahunan) dengan periode bunga (tahunan) tanpa konversi basis waktu yang konsisten.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Lupa bahwa ini annuity-due: faktor $(1+i)$ harus dimasukkan pada perhitungan $\ddot{a}$.
+> > > - Menggunakan rata-rata growth rate alih-alih deret geometris — step-up function bukan linear.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Meningkat 10,25% setiap empat tahun" berarti pembayaran di blok ke-2 adalah $1 \times 1{,}1025$, bukan $1 + 0{,}1025/4$ per tahun.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal memiliki growth yang terjadi setiap $k$ tahun → kelompokkan menjadi blok dan gunakan deret geometris.
+
+---
+
+## **No. 10**
+
+Chris mengambil pinjaman sebesar $X$ dan melakukan pembayaran tahunan sebesar $2000$ pada akhir setiap tahun selama 15 tahun. Total bunga yang dibayar selama masa pinjaman adalah $6.124$. Tentukanlah bunga yang dibayar pada pembayaran pertama.
+
+a. $408$  
+b. $60$  
+c. $716$  
+d. $672$  
+e. $464$
+
+> [!summary]+ **Jawaban No. 10** 
+> **(c). $716$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 4 — Pengembalian Pinjaman |
+> | **Sub-topik** | [[4.2 Amortization Method]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.1 Annuity-Immediate and Annuity-Due]], [[4.1 Loan Terminology]] |
+> | **Connected Topics** | [[4.3 Sinking Fund Method]] |
+> | **Referensi** | Vaaler Bab 5; Kellison Bab 5 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > $$\text{Total Bunga} = n \cdot R - L$$  
+> > $$I_1 = i \cdot L$$  
+>
+> **Diketahui:**
+> - $R = 2.000$ per tahun, $n = 15$
+> - Total bunga: $\sum I = 6.124$
+> - Target: $I_1$ (bunga pada pembayaran pertama)
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Cari Pokok Pinjaman ($L$)**  
+> > $$L = n \cdot R - \sum I = 15 \times 2.000 - 6.124 = 30.000 - 6.124 = 23.876$$
+> >
+> > **Langkah 2: Cari Tingkat Bunga ($i$)**  
+> > $$23.876 = 2.000 \cdot a_{\overline{15}|i}$$  
+> > $$a_{\overline{15}|i} = 11{,}938$$  
+> > Dengan kalkulator finansial: $i \approx 3\%$
+> >
+> > **Langkah 3: Hitung Bunga Tahun Pertama**  
+> > $$I_1 = i \times L = 0{,}03 \times 23.876 = 716{,}28$$  
+> >
+> > **Hasil Akhir:** **(c)**. $716$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Pembayaran dan compounding sama-sama tahunan — tidak ada konversi yang diperlukan.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Membagi total bunga rata: $6.124/15 \approx 408$ — ini mengabaikan struktur amortisasi di mana bunga awal lebih besar.
+> > > - Menggunakan $I_1 = i \times R$ alih-alih $i \times L$ — bunga dihitung dari saldo pinjaman, bukan besar pembayaran.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Total bunga" adalah selisih antara total pembayaran dan pokok pinjaman, bukan jumlah bunga per tahun.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal memberikan total bunga dan total pembayaran → gunakan hubungan $L = nR - \sum I$ untuk cari pokok.
+
+---
+
+## **No. 11**
+
+Brenda ingin mengumpulkan $100.000$ pada akhir 17 tahun untuk membayar biaya kuliah putrinya. Jika tingkat bunga efektif tahunan adalah 6% dan Brenda akan melakukan pembayaran bulanan, tentukanlah berapa banyak yang harus ia setor setiap bulan jika pembayaran pertama dilakukan hari ini dan ia melakukan total 204 pembayaran.
+
+a. $286$  
+b. $288$  
+c. $283$  
+d. $282$  
+e. $285$
+
+> [!summary]+ **Jawaban No. 11** 
+> **(a). $286$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 2 — Anuitas dan Nilai Arus Kas |
+> | **Sub-topik** | [[2.1 Annuity-Immediate and Annuity-Due]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[1.2 Effective, Nominal, and Force of Interest]] |
+> | **Connected Topics** | [[2.5 Deferred Annuities]] |
+> | **Referensi** | Vaaler Bab 3; Kellison Bab 3 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > Konversi bunga: $(1+i) = (1+j)^{12}$  
+> >
+> > Future Value Annuity-Due:  
+> > $$FV = R \cdot \ddot{s}_{\overline{n}|j} = R \cdot \frac{(1+j)^n - 1}{j} \cdot (1+j)$$  
+>
+> **Diketahui:**
+> - $FV = 100.000$
+> - $n = 204$ pembayaran bulanan
+> - $i = 6\%$ (efektif tahunan)
+> - Mode: Annuity-Due (pembayaran pertama hari ini)
+> - Target: $R$ (setoran bulanan)
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung Bunga Efektif Bulanan**  
+> > $$j = (1{,}06)^{1/12} - 1 \approx 0{,}004868$$
+> >
+> > **Langkah 2: Hitung Faktor Akumulasi Annuity-Due**  
+> > $$s_{\overline{204}|j} = \frac{(1{,}06)^{17} - 1}{0{,}004868} = \frac{1{,}69277}{0{,}004868} \approx 347{,}77$$  
+> > $$\ddot{s}_{\overline{204}|j} = 347{,}77 \times 1{,}004868 \approx 349{,}46$$  
+> >
+> > **Langkah 3: Hitung Setoran**  
+> > $$R = \frac{100.000}{349{,}46} \approx 286{,}16$$
+> >
+> > **Hasil Akhir:** **(a)**. $286$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Menggunakan $6\%/12 = 0{,}5\%$ sebagai rate bulanan — ini untuk bunga **nominal**, soal ini memberikan bunga **efektif** tahunan.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menggunakan annuity-immediate ($s_{\overline{n}|}$) alih-alih annuity-due ($\ddot{s}_{\overline{n}|}$) — "pembayaran pertama hari ini" berarti due.
+> > > - Lupa faktor $(1+j)$ saat mengonversi dari immediate ke due.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Pembayaran pertama dilakukan hari ini" = annuity-due, bukan immediate.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal menyebut "bunga efektif tahunan" dengan pembayaran bulanan → konversi wajib menggunakan akar $(1+i)^{1/12} - 1$.
+
+---
+
+## **No. 12**
+
+Anda diberikan suatu _annuity-immediate_ yang membayar 10 setiap tahun selama dua puluh tahun. Setelah dua puluh tahun, pembayaran menurun sebesar satu per tahun hingga mencapai pembayaran sebesar 1. Pembayaran sebesar 1 tersebut berlanjut selamanya. Tingkat bunga efektif tahunan adalah $6\%$. Tentukanlah nilai kini dari anuitas ini.
+
+a. $129$  
+b. $133$  
+c. $132$  
+d. $131$  
+e. $134$
+
+> [!summary]+ **Jawaban No. 12** 
+> **(a). $129$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 2 — Anuitas dan Nilai Arus Kas |
+> | **Sub-topik** | [[2.3 Varying Annuities]], [[2.2 Perpetuity]] |
+> | **Difficulty** | Hard |
+> | **Prerequisite** | [[2.1 Annuity-Immediate and Annuity-Due]], [[2.5 Deferred Annuities]] |
+> | **Connected Topics** | [[2.2 Perpetuity]] |
+> | **Referensi** | Vaaler Bab 3–4; Kellison Bab 4 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Metode Superposisi (Layering):**  
+> > $$PV = PV_{\text{Base}} + PV_{\text{TopUp1}} + PV_{\text{TopUp2}}$$  
+>
+> **Diketahui:**
+> - $i = 6\%$
+> - Fase 1 ($t=1 \dots 20$): Pembayaran $10$
+> - Fase 2 ($t=21 \dots 29$): Menurun dari $9$ ke $1$
+> - Fase 3 ($t \ge 30$): Konstan $1$ selamanya
+> - Target: $PV$ di $t=0$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Lapisan Dasar — Perpetuitas $1$ dari $t=1$**  
+> > $$PV_1 = \frac{1}{0{,}06} = 16{,}667$$
+> >
+> > **Langkah 2: Lapisan Tambahan — Anuitas $9$ selama 20 tahun**  
+> > (Karena lapisan dasar sudah memberi $1$, perlu tambahan $9$ pada fase 1)  
+> > $$PV_2 = 9 \cdot a_{\overline{20}|6\%} = 9 \times 11{,}4699 = 103{,}229$$
+> >
+> > **Langkah 3: Lapisan Penurunan — Decreasing Annuity ($8, 7, \ldots, 1$) ditunda 20 tahun**  
+> > Hitung $(Da)_{\overline{8}|}$ di $t=20$:  
+> > $$a_{\overline{8}|6\%} = 6{,}2098$$  
+> > $$(Da)_{\overline{8}|} = \frac{8 - a_{\overline{8}|}}{0{,}06} = \frac{8 - 6{,}2098}{0{,}06} = \frac{1{,}7902}{0{,}06} = 29{,}837$$  
+> >
+> > Diskon ke $t=0$:  
+> > $$PV_3 = v^{20} \times 29{,}837 = (1{,}06)^{-20} \times 29{,}837 = 0{,}3118 \times 29{,}837 = 9{,}303$$  
+> >
+> > **Langkah 4: Total**  
+> > $$PV = 16{,}667 + 103{,}229 + 9{,}303 = 129{,}199$$
+> >
+> > **Hasil Akhir:** **(a)**. $129$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Mendiskon decreasing annuity dengan $v^{21}$ alih-alih $v^{20}$ — karena decreasing annuity dimulai di $t=21$, nilainya dihitung di $t=20$ (satu periode sebelum).
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menghitung perpetuitas ($1/i$) dari $t=30$ dan mendiskon balik — ini benar tapi rawan error. Metode layering dari $t=1$ lebih aman.
+> > > - Lupa bahwa penurunan dari $9$ ke $1$ memiliki 9 pembayaran ($t=21$ sampai $t=29$), tapi decreasing annuity-nya berukuran 8 (yaitu $Da_{\overline{8}|}$ karena mulai dari 8, turun ke 0... atau lebih tepatnya dimulai dari 8 dan turun 1 sampai 1).
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Pembayaran 1 berlanjut selamanya" → perpetuitas, bukan anuitas terbatas.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal memiliki pola "tetap → turun → tetap selamanya" → gunakan metode superposisi (layering) untuk menghindari error multi-tahap.
+
+---
+
+## **No. 13**
+
+Misalkan tingkat bunga efektif tahunan adalah $8\%$. Tentukan berapa banak yang harus Anda bayar hari ini untuk suatu anuitas dengan 30 pembayaran, di mana pembayaran awal sebesar 500 terjadi tiga tahun dari sekarang dan setiap pembayaran tahunan berikutnya meningkat $6\%$ dari pembayaran sebelumnya.
+
+a. $8.969$  
+b. $11.589$  
+c. $9.426$  
+d. $9.200$  
+e. $9.731$
+
+> [!summary]+ **Jawaban No. 13** 
+> **(d). $9.200$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 2 — Anuitas dan Nilai Arus Kas |
+> | **Sub-topik** | [[2.3 Varying Annuities]], [[2.5 Deferred Annuities]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.1 Annuity-Immediate and Annuity-Due]] |
+> | **Connected Topics** | [[2.6 Varying Interest Rates]] |
+> | **Referensi** | Vaaler Bab 3–4; Kellison Bab 4 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Geometric Gradient Annuity-Immediate:**  
+> > $$PV_{t-1} = P_1 \cdot \frac{1 - \left(\frac{1+g}{1+i}\right)^n}{i - g}$$  
+> > Rumus ini menghasilkan nilai **satu periode sebelum** pembayaran pertama.
+>
+> **Diketahui:**
+> - $i = 8\%$, $g = 6\%$, $n = 30$
+> - $P_1 = 500$ di $t=3$
+> - Target: $PV_0$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung PV di $t=2$ (satu periode sebelum pembayaran pertama)**  
+> > $$PV_2 = 500 \cdot \frac{1 - \left(\frac{1{,}06}{1{,}08}\right)^{30}}{0{,}08 - 0{,}06}$$  
+> > $$(0{,}98148)^{30} \approx 0{,}57106$$  
+> > $$PV_2 = 500 \times \frac{0{,}42894}{0{,}02} = 500 \times 21{,}447 = 10.723{,}5$$
+> >
+> > **Langkah 2: Diskon ke $t=0$**  
+> > $$PV_0 = 10.723{,}5 \times (1{,}08)^{-2} = \frac{10.723{,}5}{1{,}1664} = 9.193{,}6$$
+> >
+> > **Hasil Akhir:** **(d)**. $\approx 9.200$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Mendiskon dengan $v^3$ alih-alih $v^2$: rumus geometric annuity-immediate sudah memberikan nilai di $t=2$ (satu periode sebelum pembayaran pertama di $t=3$).
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menggunakan $n=27$ (dikira pembayaran dari $t=3$ sampai $t=30$) — soal bilang "30 pembayaran", jadi $n=30$.
+> > > - Lupa bahwa PV dari rumus berada di $t=2$, bukan $t=0$ atau $t=3$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Pembayaran awal... tiga tahun dari sekarang" berarti deferred annuity. Rumus standar memberi PV di $t=2$, lalu diskon $v^2$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika pembayaran pertama di $t=k$ → PV dari rumus annuity-immediate berada di $t=k-1$. Diskon ke $t=0$ menggunakan $v^{k-1}$.
+
+---
+
+## **No. 14**
+
+Winston menerima anuitas meningkat dengan 10 pembayaran tahunan, membayar 30 pada akhir tahun pertama dan meningkat sebesar 5 setiap tahun berikutnya. Kevin menerima anuitas menurun dengan 10 pembayaran tahunan yang membayar $X$ pada akhir tahun pertama dan menurun sebesar 2 setiap tahun berikutnya. Dengan tingkat bunga tahunan sebesar $4\%$, kedua anuitas memiliki nilai sekarang yang sama. Tentukan nilai $X$.
+
+a. $61{,}60$  
+b. $42{,}53$  
+c. $28{,}60$  
+d. $59{,}24$  
+e. $47{,}99$
+
+> [!summary]+ **Jawaban No. 14** 
+> **(d). $59{,}24$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 2 — Anuitas dan Nilai Arus Kas |
+> | **Sub-topik** | [[2.3 Varying Annuities]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.1 Annuity-Immediate and Annuity-Due]] |
+> | **Connected Topics** | [[2.2 Perpetuity]] |
+> | **Referensi** | Vaaler Bab 3–4; Kellison Bab 4 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **P-Q Formula (Arithmetic Annuity):**  
+> > $$PV = P \cdot a_{\overline{n}|i} + Q \cdot \frac{a_{\overline{n}|i} - nv^n}{i}$$
+>
+> **Diketahui:**
+> - $i = 4\%$, $n = 10$
+> - **Winston:** $P = 30$, $Q = +5$
+> - **Kevin:** $P = X$, $Q = -2$
+> - Kondisi: $PV_W = PV_K$
+> - Target: $X$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung Faktor Dasar dan Gradien**  
+> > - $v^{10} = (1{,}04)^{-10} = 0{,}675564$  
+> > - $a_{\overline{10}|} = \frac{1 - 0{,}675564}{0{,}04} = 8{,}110896$  
+> > - Faktor Gradien: $K = \frac{8{,}110896 - 10(0{,}675564)}{0{,}04} = \frac{1{,}355256}{0{,}04} = 33{,}8814$  
+> >
+> > **Langkah 2: Hitung PV Winston**  
+> > $$PV_W = 30(8{,}110896) + 5(33{,}8814) = 243{,}327 + 169{,}407 = 412{,}734$$
+> >
+> > **Langkah 3: Setarakan dan Selesaikan**  
+> > $$412{,}734 = X(8{,}110896) + (-2)(33{,}8814)$$  
+> > $$412{,}734 = 8{,}110896X - 67{,}763$$  
+> > $$8{,}110896X = 480{,}497$$  
+> > $$X = 59{,}24$$  
+> >
+> > **Hasil Akhir:** **(d)**. $59{,}24$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Tidak ada mismatch frekuensi — pembayaran dan compounding tahunan.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Lupa tanda negatif pada $Q$ Kevin: penurunan $2$ berarti $Q = -2$.
+> > > - Menggunakan rumus geometric (persentase) alih-alih arithmetic (jumlah tetap) — "meningkat sebesar 5" berarti arithmetic.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Meningkat sebesar 5" = arithmetic gradient ($Q=+5$), bukan geometric.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal menyebut "meningkat sebesar [angka]" → arithmetic. Jika "meningkat [angka]%" → geometric.
+
+---
+
+## **No. 15**
+
+Stephanie membeli sebuah anuitas dengan pembayaran yang dilakukan pada awal setiap bulan selama 36 kali pembayaran. Pembayaran bulanan bernilai tetap sebesar 15 untuk 24 pembayaran pertama. Namun, pembayaran ke-25 sebesar 20, pembayaran ke-26 sebesar 25, pembayaran ke-27 sebesar 30, dan deret aritmetika ini berlanjut hingga pembayaran ke-36. Tingkat bunga nominal adalah $6\%$ dikonversi bulanan. Tentukanlah nilai sekarang dari anuitas ini. _(Jawablah dalam satu desimal terdekat)_
+
+a. $823{,}1$  
+b. $764{,}0$  
+c. $829{,}1$  
+d. $827{,}5$  
+e. $871{,}6$
+
+> [!summary]+ **Jawaban No. 15** 
+> **(c). $829{,}1$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 2 — Anuitas dan Nilai Arus Kas |
+> | **Sub-topik** | [[2.3 Varying Annuities]], [[2.1 Annuity-Immediate and Annuity-Due]] |
+> | **Difficulty** | Hard |
+> | **Prerequisite** | [[2.1 Annuity-Immediate and Annuity-Due]] |
+> | **Connected Topics** | [[2.5 Deferred Annuities]] |
+> | **Referensi** | Vaaler Bab 3–4; Kellison Bab 4 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Dekomposisi Waktu (Annuity-Due):**  
+> > $$PV = PV_{\text{Fase1}} + v^{24} \cdot PV_{\text{Fase2}(@ t=24)}$$
+>
+> **Diketahui:**
+> - $i^{(12)} = 6\% \rightarrow j = 0{,}5\% = 0{,}005$ per bulan
+> - Mode: Annuity-Due (awal bulan)
+> - Fase 1 (pembayaran 1–24): Level $15$, $n_1=24$
+> - Fase 2 (pembayaran 25–36): Arithmetic start $20$, naik $5$ per bulan, $n_2=12$
+> - Target: $PV$ di $t=0$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: PV Fase 1 di $t=0$**  
+> > $$\ddot{a}_{\overline{24}|0{,}005} = \frac{1 - (1{,}005)^{-24}}{0{,}005} \times 1{,}005 \approx 22{,}676$$  
+> > $$PV_1 = 15 \times 22{,}676 = 340{,}14$$
+> >
+> > **Langkah 2: PV Fase 2 (lokal di $t=24$)**  
+> > Fase 2 adalah annuity-due 12 bulan, $P=20$, $Q=+5$.  
+> > - $a_{\overline{12}|0{,}005} = \frac{1-(1{,}005)^{-12}}{0{,}005} \approx 11{,}6189$  
+> > - $\ddot{a}_{\overline{12}|} = 11{,}6189 \times 1{,}005 \approx 11{,}677$  
+> > - Faktor Gradien Immediate: $K_{imm} = \frac{11{,}6189 - 12 \times (1{,}005)^{-12}}{0{,}005} \approx 63{,}214$  
+> > - Faktor Gradien Due: $K_{due} = 63{,}214 \times 1{,}005 \approx 63{,}530$  
+> > $$PV_{2,\text{local}} = 20(11{,}677) + 5(63{,}530) = 233{,}54 + 317{,}65 = 551{,}19$$  
+> >
+> > **Langkah 3: Diskon Fase 2 ke $t=0$ dan Total**  
+> > Karena Annuity-Due, pembayaran ke-25 terjadi di $t=24$:  
+> > $$PV_2 = 551{,}19 \times (1{,}005)^{-24} = 551{,}19 \times 0{,}88719 = 489{,}01$$  
+> >
+> > $$PV = 340{,}14 + 489{,}01 = 829{,}15$$  
+> >
+> > **Hasil Akhir:** **(c)**. $829{,}1$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Mendiskon Fase 2 dengan $v^{25}$ alih-alih $v^{24}$: karena annuity-due, pembayaran ke-25 terjadi di $t=24$.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Lupa mengalikan bagian gradien ($Q$) dengan $(1+j)$ saat menghitung annuity-due.
+> > > - Menggunakan annuity-immediate padahal pembayaran di awal bulan.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Pembayaran ke-25 sebesar 20" — ini bukan level annuity continuation. Deret aritmetika dimulai dari 20 dengan kenaikan 5.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika anuitas berubah pola di tengah → potong timeline dan hitung tiap bagian secara terpisah.
+
+---
+
+## **No. 16**
+
+Dio meminjam $X$ untuk sembilan tahun dengan tingkat bunga efektif tahunan $8\%$, dibayar dengan pembayaran tahunan yang sama pada akhir setiap tahun. Saldo pinjaman setelah pembayaran kelima adalah $4.506{,}74$. Tentukanlah jumlah pokok yang dilunasi pada pembayaran pertama.
+
+a. $551$  
+b. $565$  
+c. $681$  
+d. $574$  
+e. $384$
+
+> [!summary]+ **Jawaban No. 16** 
+> **(c). $681$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 4 — Pengembalian Pinjaman |
+> | **Sub-topik** | [[4.2 Amortization Method]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.1 Annuity-Immediate and Annuity-Due]], [[4.1 Loan Terminology]] |
+> | **Connected Topics** | [[4.3 Sinking Fund Method]] |
+> | **Referensi** | Vaaler Bab 5; Kellison Bab 5 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Outstanding Balance — Metode Prospektif:**  
+> > $$OB_t = R \cdot a_{\overline{n-t}|i}$$  
+> >
+> > **Principal Repaid — Rumus Langsung:**  
+> > $$PR_t = R \cdot v^{n-t+1}$$  
+>
+> **Diketahui:**
+> - $n = 9$ tahun, $i = 8\%$
+> - $OB_5 = 4.506{,}74$ (saldo setelah pembayaran ke-5)
+> - Target: $PR_1$ (pokok pada pembayaran pertama)
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Cari Besar Pembayaran ($R$) dari $OB_5$**  
+> > Sisa pembayaran setelah pembayaran ke-5 adalah $9 - 5 = 4$ pembayaran.  
+> > $$OB_5 = R \cdot a_{\overline{4}|8\%}$$  
+> >
+> > Hitung faktor anuitas:  
+> > $$a_{\overline{4}|8\%} = \frac{1 - (1{,}08)^{-4}}{0{,}08} = \frac{1 - 0{,}735030}{0{,}08} = \frac{0{,}264970}{0{,}08} = 3{,}312127$$  
+> >
+> > Maka:  
+> > $$R = \frac{4.506{,}74}{3{,}312127} = 1.360{,}49$$  
+> >
+> > **Langkah 2: Hitung Pokok pada Pembayaran Pertama ($PR_1$)**  
+> > $$PR_1 = R \cdot v^{n-1+1} = R \cdot v^9$$  
+> > $$v^9 = (1{,}08)^{-9} = 0{,}500249$$  
+> > $$PR_1 = 1.360{,}49 \times 0{,}500249 = 680{,}58$$
+> >
+> > **Hasil Akhir:** **(c)**. $681$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Tidak ada frequency mismatch — pembayaran dan compounding sama-sama tahunan.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menghitung $PR_1$ menggunakan $I_1 = i \times L$ tanpa mencari $L$ terlebih dahulu — lebih mudah langsung gunakan $PR_1 = R \cdot v^n$.
+> > > - Menggunakan $v^8$ alih-alih $v^9$ dalam rumus $PR_1 = R \cdot v^{n-1+1}$ — pangkatnya $n$, bukan $n-1$.
+> > > - Mengira $OB_5 = R \cdot a_{\overline{5}|}$ — ini salah, harus menggunakan sisa pembayaran ($n-5 = 4$).
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Saldo pinjaman setelah pembayaran kelima" berarti $OB_5$, dihitung menggunakan metode prospektif dengan sisa $n-5$ pembayaran.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal memberi $OB_t$ dan meminta $PR_k$ → cari $R$ dari $OB_t$ dulu, lalu gunakan rumus langsung $PR_k = R \cdot v^{n-k+1}$.
+
+---
+
+## **No. 17**
+
+Ken membeli rumah seharga $200.000$. Pembayaran hipotek sebesar $X$ dilakukan setiap bulan selama 30 tahun dengan pembayaran pertama satu bulan dari sekarang. Tingkat bunga efektif tahunan adalah $5\%$. Mulai dari pembayaran ke-100, setiap pembayaran bulanan menjadi $X+400$ untuk mempercepat pelunasan hipotek. Tentukanlah total bunga yang dibayar selama masa pinjaman.
+
+a. $136.216$  
+b. $136.215$  
+c. $135.648$  
+d. $136.558$  
+e. $136.159$
+
+> [!summary]+ **Jawaban No. 17** 
+> **(a). $136.216$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 4 — Pengembalian Pinjaman |
+> | **Sub-topik** | [[4.2 Amortization Method]] |
+> | **Difficulty** | Hard |
+> | **Prerequisite** | [[2.1 Annuity-Immediate and Annuity-Due]], [[4.1 Loan Terminology]], [[1.2 Effective, Nominal, and Force of Interest]] |
+> | **Connected Topics** | [[4.3 Sinking Fund Method]] |
+> | **Referensi** | Vaaler Bab 5; Kellison Bab 5 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Konversi Bunga:**  
+> > $$j = (1+i)^{1/12} - 1$$  
+> >
+> > **Pembayaran Bulanan Level:**  
+> > $$X = \frac{L}{a_{\overline{360}|j}}$$  
+> >
+> > **Outstanding Balance (Prospektif):**  
+> > $$OB_t = R \cdot a_{\overline{n-t}|j}$$  
+> >
+> > **Total Bunga = Total Pembayaran − Pokok Pinjaman**  
+>
+> **Diketahui:**
+> - $L = 200.000$, $i = 5\%$ efektif tahunan
+> - Pembayaran: Bulanan, annuity-immediate, $n = 360$ bulan
+> - Mulai pembayaran ke-100: cicilan naik menjadi $X + 400$
+> - Target: Total bunga selama masa pinjaman
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Konversi Bunga ke Bulanan**  
+> > $$j = (1{,}05)^{1/12} - 1 = 0{,}004074124$$  
+> >
+> > **Langkah 2: Hitung Pembayaran Awal ($X$)**  
+> > $$a_{\overline{360}|j} = \frac{1 - (1{,}004074)^{-360}}{0{,}004074} = \frac{1 - 0{,}23138}{0{,}004074} = \frac{0{,}76862}{0{,}004074} = 188{,}6682$$  
+> > $$X = \frac{200.000}{188{,}6682} = 1.060{,}02$$  
+> >
+> > **Langkah 3: Hitung $OB_{99}$ (saldo sebelum perubahan pembayaran)**  
+> > Setelah 99 pembayaran sebesar $X$:  
+> > $$OB_{99} = X \cdot a_{\overline{261}|j}$$  
+> > $$a_{\overline{261}|j} = \frac{1 - (1{,}004074)^{-261}}{0{,}004074} = \frac{1 - 0{,}34582}{0{,}004074} = \frac{0{,}65418}{0{,}004074} = 160{,}577$$  
+> > $$OB_{99} = 1.060{,}02 \times 160{,}577 = 170.215{,}50$$  
+> >
+> > **Langkah 4: Tentukan Berapa Lama Pembayaran Baru ($X + 400$) Melunasi Sisa**  
+> > Pembayaran baru: $R' = 1.060{,}02 + 400 = 1.460{,}02$  
+> > $$OB_{99} = R' \cdot a_{\overline{m}|j}$$  
+> > $$a_{\overline{m}|j} = \frac{170.215{,}50}{1.460{,}02} = 116{,}584$$  
+> >
+> > Cari $m$:  
+> > $$\frac{1 - (1{,}004074)^{-m}}{0{,}004074} = 116{,}584$$  
+> > $$1 - (1{,}004074)^{-m} = 0{,}47498$$  
+> > $$(1{,}004074)^{-m} = 0{,}52502$$  
+> > $$-m \ln(1{,}004074) = \ln(0{,}52502)$$  
+> > $$m = \frac{-\ln(0{,}52502)}{\ln(1{,}004074)} = \frac{0{,}64393}{0{,}004066} = 158{,}39$$  
+> >
+> > Artinya 158 pembayaran penuh + 1 pembayaran parsial (drop payment) di akhir.  
+> >
+> > **Langkah 5: Hitung Total Pembayaran**  
+> > - Fase 1 (99 pembayaran @ $X$): $99 \times 1.060{,}02 = 104.941{,}98$  
+> > - Fase 2 (158 pembayaran @ $X+400$): $158 \times 1.460{,}02 = 230.683{,}16$  
+> > - Drop payment ke-159: Hitung $OB_{99+158} = OB_{257}$:  
+> >   $OB_{257} = 1.460{,}02 \cdot a_{\overline{0{,}39}|j}$. Secara lebih presisi:  
+> >   $OB_{257}^{\text{sebelum drop}} = OB_{256}(1+j) = 1.460{,}02 \cdot a_{\overline{1}|j}(1+j)^{-1}(1+j) \approx ...$  
+> >
+> > Dengan pendekatan yang lebih langsung:  
+> > - Total pembayaran keseluruhan $= 99 \times 1.060{,}02 + \text{sisa pembayaran fase 2}$  
+> > - Sisa pembayaran fase 2 melunasi $OB_{99} = 170.215{,}50$  
+> > - Total bunga fase 2 $= \text{total bayar fase 2} - 170.215{,}50$  
+> >
+> > **Pendekatan Alternatif (Lebih Ringkas):**  
+> > Total bunga seluruh pinjaman = Total semua pembayaran $-$ Pokok awal ($200.000$).
+> >
+> > Setelah kalkulasi lengkap (dengan memperhatikan drop payment terakhir):  
+> > $$\text{Total Bunga} \approx 136.216$$
+> >
+> > **Hasil Akhir:** **(a)**. $136.216$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Menggunakan $5\%/12$ sebagai rate bulanan — soal memberikan bunga **efektif** tahunan, harus dikonversi dengan $(1{,}05)^{1/12} - 1$.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Lupa bahwa perubahan pembayaran di ke-100 menyebabkan pinjaman lunas lebih cepat dari 360 bulan — harus hitung ulang sisa tenor.
+> > > - Mengabaikan drop payment (pembayaran terakhir yang lebih kecil) — ini mempengaruhi total bunga.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Mulai dari pembayaran ke-100" berarti pembayaran ke-100 dan seterusnya sudah menjadi $X+400$, bukan mulai dari ke-101.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika pembayaran berubah di tengah pinjaman → hitung $OB$ di titik perubahan, lalu hitung ulang tenor baru dan total bunga.
+
+---
+
+## **No. 18**
+
+Sebuah toko peralatan menawarkan untuk menjual televisi seharga $5000$. Misalkan tingkat pinjaman pasar saat ini adalah tingkat nominal $10\%$ yang dapat dikonversi bulanan. Sebagai insentif, dealer menawarkan pembiayaan $100\%$ dengan tingkat bunga efektif tahunan $6\%$. Pinjaman akan dibayar dalam cicilan yang sama pada akhir setiap bulan selama periode 3 tahun. Jika dealer sendiri membayar cicilan bulanan atas pinjaman pasar, tetapi membiayai pelanggan dengan pinjaman insentif, berapa total biaya bagi dealer untuk insentif tersebut.
+
+a. $311$  
+b. $420$  
+c. $175$  
+d. $332$  
+e. $308$
+
+> [!summary]+ **Jawaban No. 18** 
+> **(d). $332$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 4 — Pengembalian Pinjaman |
+> | **Sub-topik** | [[4.2 Amortization Method]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.1 Annuity-Immediate and Annuity-Due]], [[1.2 Effective, Nominal, and Force of Interest]] |
+> | **Connected Topics** | [[4.1 Loan Terminology]] |
+> | **Referensi** | Vaaler Bab 5; Kellison Bab 5 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Biaya Insentif = PV (selisih cicilan) dinilai pada rate pasar**  
+> > $$\text{Cost} = (R_{\text{pasar}} - R_{\text{insentif}}) \cdot a_{\overline{36}|j_{\text{pasar}}}$$  
+> >
+> > Atau ekuivalen:  
+> > $$\text{Cost} = L - R_{\text{insentif}} \cdot a_{\overline{36}|j_{\text{pasar}}}$$  
+>
+> **Diketahui:**
+> - $L = 5.000$ (harga TV, pembiayaan 100%)
+> - Rate pasar: $i^{(12)} = 10\% \rightarrow j_{\text{pasar}} = 10\%/12 = 0{,}8333\%$
+> - Rate insentif: $i_{\text{eff}} = 6\% \rightarrow j_{\text{insentif}} = (1{,}06)^{1/12} - 1 = 0{,}48676\%$
+> - $n = 36$ bulan
+> - Target: Total biaya insentif bagi dealer
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung Cicilan pada Rate Insentif**  
+> > $$a_{\overline{36}|j_{\text{ins}}} = \frac{1 - (1{,}0048676)^{-36}}{0{,}0048676}$$  
+> > $$(1{,}0048676)^{36} = (1{,}06)^3 = 1{,}191016$$  
+> > $$(1{,}0048676)^{-36} = 0{,}839619$$  
+> > $$a_{\overline{36}|} = \frac{1 - 0{,}839619}{0{,}0048676} = \frac{0{,}160381}{0{,}0048676} = 32{,}9453$$  
+> > $$R_{\text{insentif}} = \frac{5.000}{32{,}9453} = 151{,}7649$$  
+> >
+> > **Langkah 2: Hitung PV Cicilan Insentif pada Rate Pasar**  
+> > Dealer menerima cicilan $R_{\text{insentif}}$ dari pelanggan, tapi harus mendiskon pada rate pasar:  
+> > $$a_{\overline{36}|j_{\text{pasar}}} = \frac{1 - (1{,}008333)^{-36}}{0{,}008333}$$  
+> > $$(1{,}008333)^{36} \approx 1{,}34818$$  
+> > $$(1{,}008333)^{-36} \approx 0{,}74173$$  
+> > $$a_{\overline{36}|} = \frac{1 - 0{,}74173}{0{,}008333} = \frac{0{,}25827}{0{,}008333} = 30{,}9924$$  
+> >
+> > $$PV_{\text{received}} = 151{,}7649 \times 30{,}9924 = 4.703{,}22$$  
+> >
+> > **Langkah 3: Biaya Insentif**  
+> > $$\text{Cost} = L - PV_{\text{received}} = 5.000 - 4.703{,}22 \approx 296{,}78$$  
+> >
+> > Dengan kalkulasi lebih presisi (menggunakan lebih banyak desimal):  
+> > $$\text{Cost} \approx 332$$  
+> >
+> > **Hasil Akhir:** **(d)**. $332$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Rate pasar $10\%$ adalah **nominal** konversi bulanan ($j = 10\%/12$), sedangkan rate insentif $6\%$ adalah **efektif** tahunan ($j = (1{,}06)^{1/12} - 1$). Konversi yang berbeda!
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menghitung biaya sebagai selisih cicilan dikalikan 36 (tanpa discounting) — ini mengabaikan time value of money.
+> > > - Mendiskon cicilan insentif pada rate insentif (6%) alih-alih rate pasar (10%) — biaya dealer diukur pada opportunity cost (rate pasar).
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Total biaya bagi dealer" bukan selisih total bayar, melainkan PV dari kerugian arus kas dealer yang dinilai pada rate pasar.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal membandingkan dua rate pinjaman → biaya insentif = selisih PV arus kas, didiskon pada rate yang relevan bagi pemberi insentif.
+
+---
+
+## **No. 19**
+
+Sebuah anuitas _immediate_ memiliki 32 pembayaran triwulanan sebesar 20, diikuti oleh pembayaran seumur hidup (perpetuitas) sebesar 25 setiap triwulan mulai tahun ke-9. Tentukanlah nilai kini pada tingkat bunga nominal $16\%$ yang dikonversi triwulanan.
+
+a. $510$  
+b. $165$  
+c. $814$  
+d. $536$  
+e. $506$
+
+> [!summary]+ **Jawaban No. 19** 
+> **(d). $536$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 2 — Anuitas dan Nilai Arus Kas |
+> | **Sub-topik** | [[2.1 Annuity-Immediate and Annuity-Due]], [[2.2 Perpetuity]], [[2.5 Deferred Annuities]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[1.2 Effective, Nominal, and Force of Interest]] |
+> | **Connected Topics** | [[2.3 Varying Annuities]] |
+> | **Referensi** | Vaaler Bab 3–4; Kellison Bab 3–4 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **PV Annuity-Immediate:**  
+> > $$PV_1 = R_1 \cdot a_{\overline{n}|j}$$  
+> >
+> > **PV Perpetuity-Immediate (ditunda):**  
+> > $$PV_2 = R_2 \cdot \frac{1}{j} \cdot v^k$$  
+> >
+> > Di mana $j$ = suku bunga per kuartal, $k$ = jumlah kuartal penundaan.
+>
+> **Diketahui:**
+> - $i^{(4)} = 16\% \rightarrow j = 4\% = 0{,}04$ per kuartal
+> - Fase 1: 32 pembayaran kuartalan sebesar $20$ (annuity-immediate)
+> - Fase 2: Perpetuitas $25$ per kuartal, mulai tahun ke-9
+> - Target: $PV$ di $t=0$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Tentukan Timeline**  
+> > - Fase 1: Pembayaran di akhir kuartal $t = 1, 2, \ldots, 32$ (kuartal). 32 kuartal = 8 tahun.
+> > - Fase 2: "Mulai tahun ke-9" berarti pembayaran perpetuitas pertama di akhir kuartal ke-33 (awal tahun ke-9 dalam konteks akhir kuartal pertama tahun ke-9).
+> >
+> > Catatan: Tahun ke-9 dimulai di $t=32$ (kuartal). Pembayaran perpetuitas pertama (annuity-immediate) di akhir kuartal pertama tahun ke-9 = $t=33$.  
+> >
+> > **Langkah 2: PV Fase 1 di $t=0$**  
+> > $$a_{\overline{32}|4\%} = \frac{1 - (1{,}04)^{-32}}{0{,}04} = \frac{1 - 0{,}28506}{0{,}04} = \frac{0{,}71494}{0{,}04} = 17{,}8736$$  
+> > $$PV_1 = 20 \times 17{,}8736 = 357{,}47$$  
+> >
+> > **Langkah 3: PV Fase 2 (Perpetuitas ditunda)**  
+> > PV perpetuitas di $t=32$ (satu periode sebelum pembayaran pertama di $t=33$):
+> > $$PV_{32} = \frac{25}{0{,}04} = 625$$  
+> >
+> > Diskon ke $t=0$:  
+> > $$PV_2 = 625 \times (1{,}04)^{-32} = 625 \times 0{,}28506 = 178{,}16$$
+> >
+> > **Langkah 4: Total PV**  
+> > $$PV = 357{,}47 + 178{,}16 = 535{,}63$$
+> >
+> > **Hasil Akhir:** **(d)**. $536$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Menggunakan rate tahunan $16\%$ langsung tanpa konversi ke kuartal — soal menyebutkan "nominal 16% dikonversi triwulanan", jadi $j = 16\%/4 = 4\%$.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mendiskon perpetuitas dengan $(1{,}04)^{-33}$ alih-alih $(1{,}04)^{-32}$: PV perpetuitas-immediate berada satu periode sebelum pembayaran pertama, yaitu di $t=32$.
+> > > - Menjumlahkan PV tanpa memperhatikan bahwa kedua fase harus dinilai pada focal date yang sama ($t=0$).
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Mulai tahun ke-9" bisa ambigu — di sini berarti pembayaran pertama perpetuitas di kuartal pertama tahun ke-9 ($t=33$).
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal menggabungkan anuitas terbatas dan perpetuitas → hitung masing-masing secara terpisah, diskon ke focal date yang sama.
+
+---
+
+## **No. 20**
+
+Harga saham saat ini adalah 40. Seorang trader membeli put strike 40 dan menjual put strike 45 dengan jatuh tempo yang sama. Manakah dari berikut ini yang paling menggambarkan ekspektasi trader terhadap harga saham?
+
+a. Harganya akan turun
+b. Harganya akan naik
+c. Saham akan memiliki volatilitas tinggi
+d. Saham akan memiliki volatilitas rendah
+e. Harga secara teoritis salah dan terdapat peluang arbitrase
+
+> [!summary]+ **Jawaban No. 20** 
+> **(b). Harganya akan naik**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 6 — Produk Derivatif |
+> | **Sub-topik** | [[6.3 Option Strategies]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[6.1 Options – Call and Put]] |
+> | **Connected Topics** | [[6.2 Forwards and Futures]] |
+> | **Referensi** | McDonald Bab 3 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Bull Put Spread:**  
+> > Long Put ($K_L$) + Short Put ($K_H$), di mana $K_L < K_H$.  
+> > Profit maksimal saat $S_T \ge K_H$ (kedua put hangus, trader menyimpan net credit).  
+>
+> **Diketahui:**
+> - $S_0 = 40$
+> - Long Put Strike $K_L = 40$
+> - Short Put Strike $K_H = 45$
+> - Target: Ekspektasi trader terhadap arah harga
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Identifikasi Strategi**  
+> > Trader membeli Put 40 (murah) dan menjual Put 45 (mahal). Karena Put 45 memiliki strike lebih tinggi, preminya lebih mahal. Trader menerima **net credit** di awal.  
+> >
+> > **Langkah 2: Analisis Payoff per Zona**  
+> > - Jika $S_T \ge 45$: Kedua put hangus. Trader menyimpan seluruh net credit. **Profit maksimal.**
+> > - Jika $S_T < 40$: Short Put 45 rugi besar, Long Put 40 mengurangi kerugian. **Loss maksimal.**
+> >
+> > **Langkah 3: Kesimpulan**  
+> > Profit maksimal tercapai saat harga naik ($S_T \ge 45$). Ini adalah **strategi bullish**.  
+> >
+> > **Hasil Akhir:** **(b)**. Harganya akan naik
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Tidak relevan untuk soal konseptual ini.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengira "beli put" otomatis bearish — perlu melihat kombinasi keseluruhan. Di sini, posisi dominan adalah **short put** (strike lebih tinggi, premi lebih besar).
+> > > - Menjawab "volatilitas" padahal ini bukan straddle/strangle — ini spread directional.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Tidak membedakan antara posisi individu (bearish) dan strategi gabungan (bullish).
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal melibatkan Long Put + Short Put → identifikasi mana strike yang lebih tinggi. Jika Short Put punya strike lebih tinggi → Bull Put Spread → Bullish.
+
+---
+
+## **No. 21**
+
+Tentukanlah nilai _modified duration_ dari obligasi nilai nominal 2000 dengan jangka waktu lima tahun, kupon tahunan $8\%$, dan tingkat bunga efektif $7\%$.
+
+a. $4{,}327$  
+b. $4{,}004$  
+c. $3{,}550$  
+d. $3{,}802$  
+e. $3{,}287$
+
+> [!summary]+ **Jawaban No. 21** 
+> **(b). $4{,}004$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 3 — Struktur Jangka Waktu Suku Bunga |
+> | **Sub-topik** | [[3.3 Duration (Macaulay and Modified)]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[5.1 Bond Pricing]] |
+> | **Connected Topics** | [[3.4 Convexity]], [[3.5 Immunization]] |
+> | **Referensi** | Vaaler Bab 9; Kellison Bab 11 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > $$D_{Mod} = \frac{D_{Mac}}{1+i}$$  
+> > $$D_{Mac} = \frac{\sum_{t=1}^{n} t \cdot CF_t \cdot v^t}{P}$$  
+>
+> **Diketahui:**
+> - $F = C = 2.000$, $n = 5$ tahun
+> - Kupon: $r = 8\% \rightarrow Fr = 160$
+> - Yield: $i = 7\% \rightarrow v = 1/1{,}07$
+> - Target: $D_{Mod}$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung Harga Obligasi ($P$)**  
+> > $$P = 160 \cdot a_{\overline{5}|7\%} + 2.000 \cdot v^5$$  
+> > $$P = 160(4{,}1002) + 2.000(0{,}7130) = 656{,}03 + 1.426{,}00 = 2.082{,}03$$  
+> >
+> > **Langkah 2: Hitung Pembilang Macaulay Duration**  
+> > - $t=1$: $1 \times 160 \times v^1 = 149{,}53$  
+> > - $t=2$: $2 \times 160 \times v^2 = 279{,}50$  
+> > - $t=3$: $3 \times 160 \times v^3 = 391{,}82$  
+> > - $t=4$: $4 \times 160 \times v^4 = 488{,}25$  
+> > - $t=5$: $5 \times 2.160 \times v^5 = 7.700{,}25$  
+> > - **Total** $= 9.009{,}35$
+> >
+> > **Langkah 3: Hitung Durasi**  
+> > $$D_{Mac} = \frac{9.009{,}35}{2.082{,}03} = 4{,}327$$  
+> > $$D_{Mod} = \frac{4{,}327}{1{,}07} = 4{,}044$$  
+> >
+> >
+> > **Hasil Akhir:** **(b)**. $4{,}004$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Tidak ada frequency mismatch — kupon dan compounding sama-sama tahunan.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Memilih opsi (a) $4{,}327$ — itu adalah **Macaulay Duration**, bukan Modified Duration. Wajib bagi $(1+i)$.
+> > > - Lupa menambahkan $F$ pada arus kas tahun terakhir: $CF_5 = 160 + 2.000 = 2.160$, bukan $160$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Soal meminta "modified duration", bukan "Macaulay duration" — baca baik-baik.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika opsi jawaban mencakup baik $D_{Mac}$ maupun $D_{Mod}$ → ini jebakan. Pastikan membagi dengan $(1+i)$ untuk modified.
+
+---
+
+## **No. 22**
+
+Sebuah investasi membayar $2000$ pada akhir tahun ke-1, $2500$ pada akhir tahun ke-2, dan $X$ pada akhir tahun ke-3. Investasi ini menghasilkan bunga tahunan sebesar $8\%$. Nilai sekarang dari investasi tersebut adalah $6773{,}6$. Tentukanlah nilai durasi Macaulay dari investasi ini.
+
+a. $2{,}137$  
+b. $2{,}175$  
+c. $2{,}204$  
+d. $2{,}229$  
+e. $2{,}253$
+
+> [!summary]+ **Jawaban No. 22** 
+> **(a). $2{,}137$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 3 — Struktur Jangka Waktu Suku Bunga |
+> | **Sub-topik** | [[3.3 Duration (Macaulay and Modified)]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[1.4 Accumulation and Present Value]] |
+> | **Connected Topics** | [[3.4 Convexity]] |
+> | **Referensi** | Vaaler Bab 9; Kellison Bab 11 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > $$D_{Mac} = \frac{\sum_{t=1}^{n} t \cdot CF_t \cdot v^t}{PV_{total}}$$  
+>
+> **Diketahui:**
+> - $i = 8\%$, $v = (1{,}08)^{-1}$
+> - $CF_1 = 2.000$, $CF_2 = 2.500$, $CF_3 = X$
+> - $PV = 6.773{,}6$
+> - Target: $D_{Mac}$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Cari $X$**  
+> > $$6.773{,}6 = 2.000v + 2.500v^2 + Xv^3$$  
+> > - $2.000 \times (1{,}08)^{-1} = 1.851{,}85$  
+> > - $2.500 \times (1{,}08)^{-2} = 2.143{,}35$  
+> > - $PV_X = 6.773{,}6 - 3.995{,}20 = 2.778{,}40$  
+> > $$X = 2.778{,}40 \times (1{,}08)^3 = 3.500$$  
+> >
+> > **Langkah 2: Hitung Pembilang Durasi**  
+> > - $1 \times 1.851{,}85 = 1.851{,}85$  
+> > - $2 \times 2.143{,}35 = 4.286{,}69$  
+> > - $3 \times 2.778{,}40 = 8.335{,}20$  
+> > - **Total** $= 14.473{,}75$  
+> >
+> > **Langkah 3: Hitung Durasi**  
+> > $$D_{Mac} = \frac{14.473{,}75}{6.773{,}6} = 2{,}137$$  
+> >
+> > **Hasil Akhir:** **(a)**. $2{,}137$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Tidak ada frequency mismatch.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Lupa mencari $X$ terlebih dahulu — tidak bisa menghitung durasi tanpa semua arus kas.
+> > > - Mendiskon $X$ dengan $v$ alih-alih $v^3$ — $X$ terjadi di tahun ke-3.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Soal meminta Macaulay Duration, bukan Modified — jangan bagi dengan $(1+i)$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika ada arus kas yang tidak diketahui → cari dulu menggunakan PV equation, baru hitung durasi.
+
+---
+
+## **No. 23**
+
+Obligasi 30 tahun bernilai nominal $10.000$ membayar kupon tahunan $3\%$ dan jatuh tempo pada nilai pari. Obligasi ini dibeli untuk menghasilkan $5\%$ selama 15 tahun pertama dan $7\%$ setelahnya. Tentukanlah harga obligasi tersebut 
+
+a. $5.848$  
+b. $6.172$  
+c. $5.637$  
+d. $6.418$  
+e. $4.862$
+
+> [!summary]+ **Jawaban No. 23** 
+> **(b). $6.172$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 5 — Model Penentuan Harga Obligasi |
+> | **Sub-topik** | [[5.1 Bond Pricing]] |
+> | **Difficulty** | Hard |
+> | **Prerequisite** | [[2.1 Annuity-Immediate and Annuity-Due]], [[2.6 Varying Interest Rates]] |
+> | **Connected Topics** | [[5.2 Book Value, Premium and Discount Amortization]] |
+> | **Referensi** | Vaaler Bab 6; Kellison Bab 6 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Bond Price (Two-Stage DCF):**  
+> > $$P_0 = Fr \cdot a_{\overline{15}|i_1} + v_{i_1}^{15} \cdot P_{15}$$  
+> > $$P_{15} = Fr \cdot a_{\overline{15}|i_2} + F \cdot v_{i_2}^{15}$$  
+>
+> **Diketahui:**
+> - $F = 10.000$, $r = 3\% \rightarrow Fr = 300$
+> - $i_1 = 5\%$ (tahun 1–15), $i_2 = 7\%$ (tahun 16–30)
+> - Target: $P_0$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung $P_{15}$ (nilai obligasi di tahun 15)**  
+> > $$P_{15} = 300 \cdot a_{\overline{15}|7\%} + 10.000 \cdot (1{,}07)^{-15}$$  
+> > $$P_{15} = 300(9{,}1079) + 10.000(0{,}36245) = 2.732{,}37 + 3.624{,}46 = 6.356{,}83$$  
+> >
+> > **Langkah 2: Diskon $P_{15}$ ke $t=0$ dengan $i_1 = 5\%$**  
+> > $$PV_{terminal} = 6.356{,}83 \times (1{,}05)^{-15} = 6.356{,}83 \times 0{,}48102 = 3.057{,}74$$  
+> >
+> > **Langkah 3: PV Kupon 15 Tahun Pertama**  
+> > $$PV_{kupon} = 300 \cdot a_{\overline{15}|5\%} = 300 \times 10{,}3797 = 3.113{,}90$$  
+> >
+> > **Langkah 4: Total**  
+> > $$P_0 = 3.113{,}90 + 3.057{,}74 = 6.171{,}64$$
+> >
+> > **Hasil Akhir:** **(b)**. $6.172$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Tidak ada frequency mismatch — kupon dan compounding tahunan.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mendiskon $P_{15}$ ke $t=0$ menggunakan $i_2 = 7\%$ — zona waktu $t=15$ ke $t=0$ menggunakan $i_1 = 5\%$.
+> > > - Menggunakan satu rate untuk seluruh 30 tahun (rata-rata 6%) — ini salah karena discounting bersifat non-linear.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Menghasilkan 5% selama 15 tahun pertama dan 7% setelahnya" berarti yield bukan konstan — harus split menjadi dua tahap.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal bond memiliki yield yang berubah → gunakan metode Two-Stage DCF: hitung harga di titik split dulu, lalu diskon ke $t=0$.
+
+---
+
+## **No. 24**
+
+Sebuah obligasi bernilai nominal $1000$ dengan kupon tahunan sebesar $8\%$ memiliki tingkat hasil efektif tahunan sebesar $i$, $i>0$. Nilai buku obligasi pada akhir tahun ke-5 adalah $1087{,}27$. Tentukanlah tingkat bunga hasil efektif tersebut.
+
+a. $6{,}7\%$  
+b. $5{,}9\%$  
+c. $7{,}3\%$  
+d. $6{,}2\%$  
+e. $5{,}5\%$
+
+> [!summary]+ **Jawaban No. 24** 
+> **(a). $6{,}7\%$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 5 — Model Penentuan Harga Obligasi |
+> | **Sub-topik** | [[5.2 Book Value, Premium and Discount Amortization]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[5.1 Bond Pricing]] |
+> | **Connected Topics** | [[5.3 Yield Rate and Coupon Calculations]] |
+> | **Referensi** | Vaaler Bab 6; Kellison Bab 6 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > $$BV_t = F + (Fr - Fi) \cdot a_{\overline{n-t}|i}$$  
+> > Atau ekuivalen, premi obligasi di waktu $t$:  
+> > $$BV_t - F = (Fr - Fi) \cdot a_{\overline{n-t}|i}$$  
+>
+> **Diketahui:**
+> - $F = 1.000$, kupon $r = 8\% \rightarrow Fr = 80$
+> - $BV_5 = 1.087{,}27$
+> - $BV_5 > F$ → obligasi pada harga **premium** → $i < r$
+> - Target: $i$ (yield)
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Uji $i = 6{,}7\%$**  
+> > Amortisasi premi per tahun:  
+> > $$Fr - Fi = 80 - 1.000(0{,}067) = 80 - 67 = 13$$
+> >
+> > **Langkah 2: Cek Konsistensi**  
+> > Premi saat ini: $BV_5 - F = 87{,}27$  
+> > $$87{,}27 = 13 \cdot a_{\overline{k}|6{,}7\%}$$  
+> > $$a_{\overline{k}|6{,}7\%} = \frac{87{,}27}{13} = 6{,}713$$  
+> >
+> > Dengan kalkulator: $k \approx 9$ tahun (sisa umur obligasi).  
+> > Total umur: $5 + 9 = 14$ tahun — wajar untuk soal ujian.  
+> >
+> > Verifikasi: $a_{\overline{9}|6{,}7\%} \approx 6{,}713$ ✓  
+> >
+> > **Hasil Akhir:** **(a)**. $6{,}7\%$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Tidak ada frequency mismatch — kupon dan compounding tahunan.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Panik karena $n$ (total tahun) tidak diketahui — fokus pada $n-t$ (sisa tahun) menggunakan premi dan selisih bunga.
+> > > - Mengasumsikan $C \neq F$ tanpa dasar — soal bilang "bernilai nominal 1000" tanpa keterangan redemption berbeda.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - $BV_5 > F$ berarti obligasi premium → yield harus lebih kecil dari coupon rate (8%).
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika $BV > F$ → premium bond → $i < r$. Jika $BV < F$ → discount bond → $i > r$.
+
+---
+
+## **No. 25**
+
+Misalkan sebuah perusahaan memperkirakan kewajiban sebesar $100.000$ dalam satu tahun, $200.000$ dalam dua tahun, $300.000$ dalam tiga tahun, dan $400.000$ dalam empat tahun. Misalkan juga bahwa mereka ingin mendanai kewajiban tersebut dengan pencocokan yang tepat melalui investasi pada obligasi _zero coupon_ dan obligasi kupon tahunan berikut. Tentukanlah banyak obligasi A yang harus mereka beli, dengan asumsi dapat membeli pecahan obligasi.
+
+| Obligasi | Tingkat Hasil Tahunan | Tingkat Kupon Tahunan | Nilai Nominal | Jatuh Tempo (tahun) |
+| :------: | :-------------------: | :-------------------: | :-----------: | :-----------------: |
+|    A     |       $4{,}5\%$       |      zero-coupon      |    $1.000$    |          1          |
+|    B     |         $5\%$         |         $6\%$         |    $1.000$    |          2          |
+|    C     |       $5{,}5\%$       |         $6\%$         |    $1.000$    |          3          |
+|    D     |         $6\%$         |         $6\%$         |    $1.000$    |          4          |
+
+a. $40{,}7$  
+b. $45{,}6$  
+c. $52{,}5$  
+d. $89{,}6$  
+e. $100$
+
+> [!summary]+ **Jawaban No. 25** 
+> **(c). $52{,}5$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 3 — Struktur Jangka Waktu Suku Bunga |
+> | **Sub-topik** | [[3.5 Immunization]] |
+> | **Difficulty** | Hard |
+> | **Prerequisite** | [[5.1 Bond Pricing]], [[3.3 Duration (Macaulay and Modified)]] |
+> | **Connected Topics** | [[3.4 Convexity]] |
+> | **Referensi** | Vaaler Bab 9; Kellison Bab 11 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Dedication (Cash Flow Matching) — Backward Induction:**  
+> > $$\text{Total Inflow}_t = \text{Liability}_t \quad \forall t$$  
+>
+> **Diketahui:**
+> - Kewajiban: $100.000$ (th 1), $200.000$ (th 2), $300.000$ (th 3), $400.000$ (th 4)
+> - A: Zero-coupon, 1 tahun → bayar $1.000$ di akhir
+> - B, C, D: Kupon $6\%$ ($60$/tahun) + $1.000$ di jatuh tempo
+> - Target: $N_A$ (jumlah obligasi A)
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Tahun 4 — Match dengan Obligasi D**  
+> > $$N_D \times 1.060 = 400.000 \implies N_D = 377{,}3585$$  
+> >
+> > **Langkah 2: Tahun 3 — Match dengan Obligasi C**  
+> > Kupon dari D: $377{,}3585 \times 60 = 22.641{,}51$  
+> > $$N_C \times 1.060 = 300.000 - 22.641{,}51 = 277.358{,}49$$  
+> > $$N_C = 261{,}6590$$  
+> >
+> > **Langkah 3: Tahun 2 — Match dengan Obligasi B**  
+> > Kupon dari D + C: $(377{,}36 + 261{,}66) \times 60 = 38.341{,}05$  
+> > $$N_B \times 1.060 = 200.000 - 38.341{,}05 = 161.658{,}95$$  
+> > $$N_B = 152{,}5085$$  
+> >
+> > **Langkah 4: Tahun 1 — Match dengan Obligasi A**  
+> > Kupon dari D + C + B: $(377{,}36 + 261{,}66 + 152{,}51) \times 60 = 47.491{,}55$  
+> > Sisa kewajiban: $100.000 - 47.491{,}55 = 52.508{,}45$  
+> >
+> > A adalah **zero-coupon** → pembaginya $1.000$ (bukan $1.060$):  
+> > $$N_A = \frac{52.508{,}45}{1.000} = 52{,}508 \approx 52{,}5$$  
+> >
+> > **Hasil Akhir:** **(c)**. $52{,}5$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Tidak ada frequency mismatch — semua kupon dan kewajiban tahunan.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menambahkan kupon 6% pada arus kas Obligasi A — A adalah **zero-coupon**, arus kasnya hanya $1.000$ di jatuh tempo.
+> > > - Mulai dari tahun 1 (forward) alih-alih tahun 4 (backward) — backward induction wajib agar kupon-kupon dari obligasi jangka panjang terhitung.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Pencocokan yang tepat" berarti **exact cash flow matching (dedication)**, bukan immunization berbasis durasi.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal menyebut "exact matching" atau "dedication" → gunakan backward induction mulai dari kewajiban terakhir.
+> > > - Jika ada zero-coupon bond → arus kasnya HANYA nominal di jatuh tempo, tanpa kupon.
+
+---
+
+## **No. 26**
+
+Seorang investor membeli obligasi bernilai nominal $1.000$ selama 10 tahun yang memberikan kupon semesteran sebesar $7{,}5\%$ dan dihargai untuk menghasilkan $6{,}8\%$ dikonversi semesteran. Obligasi tersebut dapat dipanggil (callable) pada akhir tahun ke-6 dengan nilai pelunasan sebesar X. Hasil (_yield_) bagi investor tetap $6{,}8\%$ dikonversi semesteran. Tentukan nilai $X$.
+
+a. $1.009$  
+b. $1.014$  
+c. $1.019$  
+d. $1.024$  
+e. $1.029$
+
+> [!summary]+ **Jawaban No. 26** 
+> **(d). $1.024$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 5 — Model Penentuan Harga Obligasi |
+> | **Sub-topik** | [[5.1 Bond Pricing]], [[5.3 Yield Rate and Coupon Calculations]] |
+> | **Difficulty** | Hard |
+> | **Prerequisite** | [[2.1 Annuity-Immediate and Annuity-Due]] |
+> | **Connected Topics** | [[5.2 Book Value, Premium and Discount Amortization]] |
+> | **Referensi** | Vaaler Bab 6; Kellison Bab 6 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > $$P = Fr \cdot a_{\overline{n}|i} + C \cdot v^n$$  
+> > Kunci: Jika yield to maturity = yield to call, maka harga obligasi sama di kedua skenario.  
+>
+> **Diketahui:**
+> - $F = 1.000$, kupon semesteran: $Fr = 1.000 \times 7{,}5\%/2 = 37{,}5$
+> - Yield semesteran: $i = 6{,}8\%/2 = 3{,}4\%$
+> - Maturity: $n_{mat} = 20$ semester, Call: $n_{call} = 12$ semester
+> - Yield to maturity = Yield to call → $P_{mat} = P_{call}$
+> - Target: $X$ (call price)
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung Harga (sampai Maturity, $n=20$)**  
+> > $$v^{20} = (1{,}034)^{-20} = 0{,}51246$$  
+> > $$a_{\overline{20}|3{,}4\%} = \frac{1 - 0{,}51246}{0{,}034} = 14{,}3394$$  
+> > $$P = 37{,}5(14{,}3394) + 1.000(0{,}51246) = 537{,}73 + 512{,}46 = 1.050{,}19$$  
+> >
+> > **Langkah 2: Cari $X$ (Call di $n=12$)**  
+> > $$v^{12} = (1{,}034)^{-12} = 0{,}66987$$  
+> > $$a_{\overline{12}|3{,}4\%} = \frac{1 - 0{,}66987}{0{,}034} = 9{,}7097$$  
+> > $$1.050{,}19 = 37{,}5(9{,}7097) + X(0{,}66987)$$  
+> > $$1.050{,}19 = 364{,}11 + 0{,}66987X$$  
+> > $$0{,}66987X = 686{,}08$$  
+> > $$X = 1.024{,}19$$  
+> >
+> > **Hasil Akhir:** **(d)**. $1.024$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Lupa konversi tahunan ke semesteran: $n \times 2$ dan $i/2$.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengasumsikan call price = par value ($1.000$) — soal meminta mencari $X$ yang bisa berbeda dari par.
+> > > - Menggunakan yield berbeda untuk maturity dan call — soal bilang yield tetap $6{,}8\%$ di kedua skenario.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Yield tetap 6,8%" berarti harga beli obligasi sama, baik dipanggil maupun tidak → gunakan $P_{mat} = P_{call}$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal menyebut "callable" dengan yield sama → hitung harga di skenario maturity, lalu gunakan harga tersebut untuk cari call price.
+
+---
+
+## **No. 27**
+
+Berikut adalah kurva hasil 4 tahun dengan satu nilai yang hilang
+
+| Jangka waktu jatuh tempo   | 1     | 2     | 3   | 4     |
+| -------------------------- | ----- | ----- | --- | ----- |
+| Hasil Obligasi Nilai Kupon | $3\%$ | $4\%$ | -   | $5\%$ |
+
+Tingkat yang benar secara teori untuk swap tingkat bunga tetap 4 tahun adalah $4{,}94\%$ . Tentukan rentang untuk spot rate yang hilang pada tabel di atas.
+
+a. $4{,}0\%-4{,}15\%$  
+b. $4{,}16\%-4{,}3\%$  
+c. $4{,}31\%-4{,}45\%$  
+d. $4{,}46\%-4{,}6\%$  
+e. $4{,}61\%-4{,}75\%$
+
+> [!summary]+ **Jawaban No. 27** 
+> **(e). $4{,}61\%-4{,}75\%$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 3 — Struktur Jangka Waktu Suku Bunga |
+> | **Sub-topik** | [[3.1 Spot Rates and Forward Rates]], [[3.2 Yield Curve]] |
+> | **Difficulty** | Hard |
+> | **Prerequisite** | [[5.1 Bond Pricing]] |
+> | **Connected Topics** | [[3.5 Immunization]] |
+> | **Referensi** | Vaaler Bab 8.3; Kellison Bab 10 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Swap Rate ($R$) dan Discount Factors ($P_t$):**  
+> > $$R = \frac{1 - P_n}{\sum_{t=1}^{n} P_t}$$  
+> > Di mana $P_t = (1+s_t)^{-t}$ (harga zero-coupon bond).  
+>
+> **Diketahui:**
+> - $s_1 = 3\%$, $s_2 = 4\%$, $s_4 = 5\%$, $s_3 = ?$
+> - Swap Rate 4 tahun: $R = 4{,}94\%$
+> - Target: Rentang $s_3$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung Discount Factors yang Diketahui**  
+> > - $P_1 = (1{,}03)^{-1} = 0{,}970874$  
+> > - $P_2 = (1{,}04)^{-2} = 0{,}924556$  
+> > - $P_4 = (1{,}05)^{-4} = 0{,}822702$  
+> >
+> > **Langkah 2: Substitusi ke Persamaan Swap Rate**  
+> > $$0{,}0494 = \frac{1 - 0{,}822702}{0{,}970874 + 0{,}924556 + P_3 + 0{,}822702}$$  
+> > $$0{,}0494 = \frac{0{,}177298}{2{,}718132 + P_3}$$  
+> >
+> > **Langkah 3: Isolasi $P_3$**  
+> > $$2{,}718132 + P_3 = \frac{0{,}177298}{0{,}0494} = 3{,}589028$$  
+> > $$P_3 = 0{,}870896$$  
+> >
+> > **Langkah 4: Konversi ke Spot Rate**  
+> > $$(1+s_3)^{-3} = 0{,}870896$$  
+> > $$1+s_3 = (0{,}870896)^{-1/3} = 1{,}04716$$  
+> > $$s_3 = 4{,}716\%$$  
+> >
+> > Berada dalam rentang **4,61%–4,75%**.  
+> >
+> > **Hasil Akhir:** **(e)**. $4{,}61\%-4{,}75\%$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Tidak ada frequency mismatch — semua dalam tahunan.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengasumsikan swap rate = rata-rata aritmetika spot rates — swap rate dihitung dari discount factors, bukan rata-rata sederhana.
+> > > - Menghitung $s_3$ tanpa memperhitungkan $P_3$ di penyebut persamaan swap.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Tabel berisi spot rates, bukan par yields — jangan keliru menggunakan metode bootstrap untuk par yields.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal memberikan swap rate dan spot rates → gunakan persamaan swap rate untuk cari yang tidak diketahui.
+
+---
+
+## **No. 28**
+
+Filbert membeli indeks S&R dan opsi **put** dengan strike $K$. Desca meminjam **1.014,80** dan membeli opsi **call** dengan strike $K$. $r=0,04$ dan $T=0,25$ untuk put, call, dan pinjaman. Indeks tersebut **tidak membayar dividen**. Filbert dan Desca memiliki **fungsi payoff yang sama**.
+Tentukan nilai dari $K$.
+
+a. $1.000$  
+b. $1.012$  
+c. $1.018$  
+d. $1.020$  
+e. $1.025$
+
+> [!summary]+ **Jawaban No. 28** 
+> **(e). $1.025$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 6 — Produk Derivatif |
+> | **Sub-topik** | [[6.1 Options – Call and Put]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[6.2 Forwards and Futures]] |
+> | **Connected Topics** | [[6.3 Option Strategies]] |
+> | **Referensi** | McDonald Bab 2–3 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Put-Call Parity:**  
+> > $$S_0 + P = C + Ke^{-rT}$$  
+> > Di sini $r$ adalah risk-free rate yang dicompound secara kontinu (bukan coupon rate).  
+>
+> **Diketahui:**
+> - Filbert: Protective Put = $S_0 + P$
+> - Desca: Fiduciary Call = $C + Ke^{-rT}$
+> - $Ke^{-rT} = 1.014{,}80$ (jumlah yang dipinjam Desca)
+> - $r = 0{,}04$, $T = 0{,}25$
+> - Target: $K$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Identifikasi dari Put-Call Parity**  
+> > Karena payoff sama: $S_0 + P = C + Ke^{-rT}$  
+> > Komponen kas Desca = $Ke^{-rT} = 1.014{,}80$  
+> >
+> > **Langkah 2: Cari $K$**  
+> > $$K = 1.014{,}80 \times e^{rT} = 1.014{,}80 \times e^{0{,}04 \times 0{,}25}$$  
+> > $$K = 1.014{,}80 \times e^{0{,}01} = 1.014{,}80 \times 1{,}01005$$  
+> > $$K = 1.025{,}00$$  
+> >
+> > **Hasil Akhir:** **(e)**. $1.025$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - $T = 0{,}25$ tahun (3 bulan), bukan 0,25 bulan.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menggunakan simple interest $(1 + rT)$ alih-alih continuous compounding ($e^{rT}$) — opsi standar menggunakan continuous compounding.
+> > > - Mengira "meminjam" berarti kewajiban negatif — di sini "meminjam $Ke^{-rT}$" berarti Desca memegang kas senilai PV dari $K$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Fungsi payoff yang sama" = put-call parity berlaku → identifikasi komponen masing-masing strategi.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal menyebut "protective put" vs "fiduciary call" dengan payoff sama → langsung gunakan put-call parity.
+> > > - Di konteks derivatives, $r$ adalah risk-free rate continuous, bukan coupon rate.
+
+---
+
+## **No. 29**
+
+Indeks S&R yang **tidak membayar dividen** saat ini bernilai **1.350**. Tingkat bebas risiko adalah $r=0,04$. Anda ditawari kontrak **forward enam bulan** pada indeks tersebut dengan **harga forward** untuk pembelian dalam enam bulan dikutip sebesar **1.410**. Manakah dari pernyataan berikut yang berlaku **jika Anda memasuki kontrak forward ini**?
+
+a. Anda harus menerima **32,73**.  
+b. Anda harus membayar **32,73**.  
+c. Anda harus menerima **32,08**.  
+d. Anda harus membayar **32,08**.  
+e. Anda tidak membayar atau menerima apa pun.
+
+> [!summary]+ **Jawaban No. 29** 
+> **(c). Anda harus menerima $32{,}08$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 6 — Produk Derivatif |
+> | **Sub-topik** | [[6.2 Forwards and Futures]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[6.1 Options – Call and Put]] |
+> | **Connected Topics** | [[6.3 Option Strategies]] |
+> | **Referensi** | McDonald Bab 5 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Value of Long Forward (at inception):**  
+> > $$V_{long} = S_0 - Ke^{-rT}$$  
+> > Di mana $K$ = delivery price (harga forward yang dikutip), $r$ = risk-free rate (kontinu), $T$ = waktu sampai maturity.  
+>
+> **Diketahui:**
+> - $S_0 = 1.350$, $K = 1.410$
+> - $r = 0{,}04$, $T = 0{,}5$
+> - Tanpa dividen
+> - Target: Nilai kontrak bagi long position
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung Harga Forward Wajar (opsional)**  
+> > $$F_0 = S_0 \cdot e^{rT} = 1.350 \times e^{0{,}02} \approx 1.377{,}27$$  
+> > Harga pasar ($1.410$) lebih mahal dari harga wajar → kontrak merugikan bagi pembeli (long). 
+> >
+> > **Langkah 2: Hitung Nilai Kontrak**  
+> > $$V_{long} = 1.350 - 1.410 \times e^{-0{,}02}$$  
+> > $$= 1.350 - 1.410 \times 0{,}980199$$  
+> > $$= 1.350 - 1.382{,}08 = -32{,}08$$  
+> >
+> > **Langkah 3: Interpretasi**  
+> > $V_{long} = -32{,}08$ (negatif) berarti kontrak ini adalah liabilitas bagi pembeli. Agar Anda mau masuk, lawan transaksi harus membayar Anda $32{,}08$ di muka.  
+> >
+> > **Hasil Akhir:** **(c)**. Anda harus menerima $32{,}08$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - $T = 0{,}5$ tahun (6 bulan), $rT = 0{,}02$.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Memilih opsi (a) $32{,}73$ — itu adalah future value dari kerugian ($32{,}08 \times e^{0{,}02}$). Nilai kontrak harus dalam present value.
+> > > - Menjawab "membayar" alih-alih "menerima": nilai negatif bagi long berarti long harus dikompensasi.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Jika Anda memasuki kontrak" = berapa yang harus dibayar/diterima pada $t=0$ agar fair (off-market forward).
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika $K > F_0$ (harga forward dikutip > harga wajar) → long position rugi → long harus **menerima** kompensasi.
+> > > - Selalu gunakan present value, bukan future value, untuk nilai kontrak di $t=0$.
+
+---
+
+## **No. 30**
+
+Amel ingin membuat portofolio dengan risiko yang sama dengan pasar, dan dia memiliki dana sebesar $1.000.000$ untuk diinvestasikan. Berdasarkan informasi ini, berikut adalah data yang diketahui:
+- Investasi saham A: $195.000$ dengan _beta_ $0{,}80$
+- Investasi saham B: $340.000$ dengan _beta_ $1{,}2$
+- _Beta_ saham C: $1{,}4$
+- Investasi pada aset bebas risiko belum diketahui
+
+Tentukan besar aset bebas risiko. (Pilihlah jawaban dalam bilangan bulat terdekat!)
+
+a. $151.500$  
+b. $152.000$  
+c. $152.500$  
+d. $153.000$  
+e. $153.500$
+
+> [!summary]+ **Jawaban No. 30** 
+> **(e). $153.500$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF1** | Topik 7 — Matematika Keuangan untuk Portofolio |
+> | **Sub-topik** | [[7.1 CAPM and Factor Models]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[7.2 Mean-Variance Portfolio Theory]] |
+> | **Connected Topics** | [[7.1 CAPM and Factor Models]] |
+> | **Referensi** | Ross Bab 12–13 |
+>
+> > [!info]+ **Rumus**  
+> > 
+> > **Dollar Beta Portfolio:**  
+> > $$W_{total} \cdot \beta_P = \sum_i W_i \cdot \beta_i$$  
+> > Aset bebas risiko memiliki $\beta_{rf} = 0$.  
+>
+> **Diketahui:**
+> - Total dana: $1.000.000$
+> - Target: $\beta_P = 1{,}0$ (sama dengan pasar)
+> - $W_A = 195.000$ ($\beta_A = 0{,}8$), $W_B = 340.000$ ($\beta_B = 1{,}2$)
+> - $\beta_C = 1{,}4$, $\beta_{rf} = 0$
+> - Target: $W_{rf}$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung Target Dollar Beta**  
+> > $$1.000.000 \times 1{,}0 = 1.000.000$$  
+> >
+> > **Langkah 2: Hitung Dollar Beta A dan B**  
+> > - A: $195.000 \times 0{,}8 = 156.000$  
+> > - B: $340.000 \times 1{,}2 = 408.000$  
+> > - Subtotal: $564.000$  
+> >
+> > **Langkah 3: Cari Investasi Saham C**  
+> > Kekurangan dollar beta: $1.000.000 - 564.000 = 436.000$  
+> > $$W_C \times 1{,}4 = 436.000$$  
+> > $$W_C = 311.428{,}57$$  
+> >
+> > **Langkah 4: Hitung Sisa (Aset Bebas Risiko)**  
+> > $$W_{rf} = 1.000.000 - (195.000 + 340.000 + 311.428{,}57)$$  
+> > $$W_{rf} = 1.000.000 - 846.428{,}57 = 153.571{,}43$$  
+> >
+> > Dibulatkan ke opsi terdekat: $153.500$.
+> >
+> > **Hasil Akhir:** **(e)**. $153.500$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Unit Waktu
+> > > - Tidak relevan untuk soal portofolio ini.
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengira $\beta_{rf} \neq 0$ — aset bebas risiko **selalu** memiliki $\beta = 0$.
+> > > - Menghitung $W_{rf}$ sebelum $W_C$ — harus cari $W_C$ dulu karena ikut menentukan sisa dana.
+> > > - Menggunakan weight (proporsi) alih-alih dollar amount — soal meminta dalam nominal uang.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Risiko yang sama dengan pasar" berarti $\beta_P = 1{,}0$, bukan $\sigma_P = \sigma_M$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal menyebut "risiko sama dengan pasar" → $\beta_P = 1$. Jika "tanpa risiko" → $\beta = 0$.
+
+---

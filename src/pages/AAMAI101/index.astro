@@ -1,0 +1,71 @@
+---
+import { getCollection } from 'astro:content';
+import NoteLayout from '../../layouts/NoteLayout.astro';
+
+const allEntries = await getCollection('aamai101');
+
+const perBab = allEntries
+  .filter(e => e.id.startsWith('kumpulan-soal-per-bab/'))
+  .sort((a, b) => a.id.localeCompare(b.id));
+
+const others = allEntries
+  .filter(e => !e.id.startsWith('kumpulan-soal-per-bab/'))
+  .sort((a, b) => a.id.localeCompare(b.id));
+---
+
+<NoteLayout title="AAMAI 101" module="AAMAI101">
+
+  <div class="page-eyebrow">AAMAI · Modul 101</div>
+  <h1>AAMAI <em>101</em></h1>
+  <div class="h1-rule">
+    <div class="h1-rule-line"></div>
+    <div class="h1-rule-dot"></div>
+    <div class="h1-rule-dot" style="background:var(--yellow)"></div>
+    <div class="h1-rule-dot" style="background:var(--ink)"></div>
+  </div>
+  <p>Modul AAMAI 101: <strong>Prinsip Dasar Asuransi</strong> dan manajemen risiko. Mencakup 8 bab dari hubungan risiko-asuransi hingga supervisi industri.</p>
+
+  <h2>▸ Kumpulan Soal</h2>
+  <div class="topic-list">
+    {others.map(entry => (
+      <a href={`/AAMAI101/${entry.id}`} class="topic-item">
+        <span class="topic-num">✎</span>
+        <span class="topic-name">
+          {entry.data.title || entry.id.split('/').pop()?.replace(/-/g, ' ')?.replace(/\b\w/g, c => c.toUpperCase())}
+        </span>
+        <span class="topic-arrow">→</span>
+      </a>
+    ))}
+  </div>
+
+  <h2>▸ Soal per Bab</h2>
+  <div class="topic-list">
+    {perBab.map(entry => (
+      <a href={`/AAMAI101/${entry.id}`} class="topic-item">
+        <span class="topic-num bab-icon">§</span>
+        <span class="topic-name">
+          {entry.id.split('/').pop()?.replace(/-/g, ' ')?.replace(/\b\w/g, c => c.toUpperCase())}
+        </span>
+        <span class="topic-arrow">→</span>
+      </a>
+    ))}
+  </div>
+
+</NoteLayout>
+
+<style>
+  .page-eyebrow { font-family: var(--mono); font-size: 0.62rem; color: var(--pink); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+  .page-eyebrow::before { content: '◆'; font-size: 0.42rem; }
+  h1 em { font-style: italic; font-weight: 300; color: var(--pink); }
+  .h1-rule { display: flex; align-items: center; gap: 0.7rem; margin: 0.6rem 0 1.2rem; }
+  .h1-rule-line { flex: 1; height: 3px; background: var(--ink); }
+  .h1-rule-dot { width: 8px; height: 8px; background: var(--pink); flex-shrink: 0; }
+  .topic-list { display: flex; flex-direction: column; border: 2px solid var(--ink); margin-bottom: 2rem; }
+  .topic-item { display: flex; align-items: center; gap: 1rem; padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: background 0.1s; }
+  .topic-item:last-child { border-bottom: none; }
+  .topic-item:hover { background: var(--yellow); }
+  .topic-num { font-family: var(--mono); font-size: 0.7rem; color: var(--teal); min-width: 1.5rem; }
+  .bab-icon { color: var(--pink); }
+  .topic-name { font-family: var(--ss4); font-size: 0.95rem; font-weight: 500; color: var(--ink); flex: 1; }
+  .topic-arrow { font-family: var(--mono); font-size: 0.8rem; color: var(--pink); }
+</style>

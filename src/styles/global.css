@@ -1,0 +1,82 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --cream:     #faf5e4;
+  --cream2:    #f3ecda;
+  --cream3:    #ece3cd;
+  --pink:      #e8175d;
+  --pink2:     #ff4080;
+  --pink-dim:  rgba(232,23,93,0.08);
+  --yellow:    #f7e03c;
+  --yellow2:   #f0d420;
+  --teal:      #1d7a6b;
+  --ink:       #0e0a04;
+  --ink2:      #2a1e10;
+  --ink3:      #6a5840;
+  --ink4:      #9a8868;
+  --border:    rgba(14,10,4,0.12);
+  --border2:   rgba(14,10,4,0.06);
+  --ss4:  'Source Serif 4', serif;
+  --mono: 'Geist Mono', monospace;
+}
+
+body {
+  background: var(--cream);
+  font-family: var(--ss4);
+  font-size: 15px;
+  color: var(--ink);
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 32px, rgba(14,10,4,0.025) 32px, rgba(14,10,4,0.025) 33px),
+    repeating-linear-gradient(90deg, transparent, transparent 32px, rgba(14,10,4,0.025) 32px, rgba(14,10,4,0.025) 33px);
+}
+
+p {
+  font-family: var(--ss4);
+  font-size: 1rem; line-height: 1.88;
+  color: var(--ink2); margin-bottom: 1rem;
+  font-optical-sizing: auto;
+}
+
+h1 {
+  font-family: var(--ss4);
+  font-size: 2.8rem; font-weight: 600;
+  color: var(--ink); line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-optical-sizing: auto;
+}
+h1 em { font-style: italic; font-weight: 300; color: var(--pink); }
+
+h2 {
+  font-family: var(--ss4);
+  font-size: 1.25rem; font-weight: 600;
+  color: var(--ink); line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 2rem 0 0.8rem;
+  font-optical-sizing: auto;
+}
+
+h3 {
+  font-family: var(--ss4);
+  font-size: 1rem; font-weight: 600;
+  color: var(--ink); margin: 1.5rem 0 0.5rem;
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.83em;
+  background: rgba(14,10,4,0.07);
+  border: 1px solid var(--border);
+  padding: 0.08rem 0.38rem;
+  color: var(--teal);
+}
+
+strong { color: var(--pink); font-weight: 600; }
+em { font-style: italic; color: var(--ink3); }

@@ -1,0 +1,379 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { title, description, module: mod } = Astro.props;
+const hasToc = Astro.slots.has('toc');
+---
+<BaseLayout title={title} description={description}>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-logo-block">
+      <div class="header-logo">Aktu<br/>Notes</div>
+      <div class="header-logo-sub">PAI · AAMAI · 2026</div>
+    </div>
+    <div class="header-search-block">
+      <span class="header-search-icon">⌕</span>
+      <input class="header-search" type="text" placeholder="Cari topik, rumus, soal ujian…" />
+    </div>
+    <div class="header-badge-block">
+      <div class="header-badge-text">Aktuaria<br/>Indonesia</div>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class={`body-wrap${hasToc ? '' : ' body-no-toc'}`}>
+
+    <!-- Left sidebar -->
+    <aside class="sidebar-left">
+      <div class="nav-section-header">▸ PAI Exams</div>
+      <a href="/CF1"    class={`nav-item ${mod === 'CF1'    ? 'active' : ''}`}>CF1 — Mat. Keuangan    <span class="pct">35%</span></a>
+      <a href="/CF2"    class={`nav-item ${mod === 'CF2'    ? 'active' : ''}`}>CF2 — Probabilitas     <span class="pct">15%</span></a>
+      <a href="/CF3"    class={`nav-item ${mod === 'CF3'    ? 'active' : ''}`}>CF3 — Ekonomi          <span class="pct">10%</span></a>
+      <a href="/CF4"    class={`nav-item ${mod === 'CF4'    ? 'active' : ''}`}>CF4 — Akuntansi        <span class="pct">5%</span></a>
+      <a href="/TA1"    class={`nav-item ${mod === 'TA1'    ? 'active' : ''}`}>TA1 — Statistika       <span class="pct">10%</span></a>
+      <a href="/TA2"    class={`nav-item ${mod === 'TA2'    ? 'active' : ''}`}>TA2 — Teori Risiko     <span class="pct">5%</span></a>
+      <a href="/TA3"    class={`nav-item ${mod === 'TA3'    ? 'active' : ''}`}>TA3 — Mat. Aktuaria    <span class="pct">—</span></a>
+      <a href="/BA4G"   class={`nav-item ${mod === 'BA4G'   ? 'active' : ''}`}>BA4G — Asuransi Umum   <span class="pct">—</span></a>
+      <div class="nav-section-header">▸ AAMAI</div>
+      <a href="/AAMAI101" class={`nav-item ${mod === 'AAMAI101' ? 'active' : ''}`}>AAMAI 101              <span class="pct">70%</span></a>
+      <div class="nav-section-header">▸ Resources</div>
+      <a href="/formula-sheet" class="nav-item">Formula Sheet CF1     <span class="pct">↗</span></a>
+      <a href="/study-log"     class="nav-item">Study Log             <span class="pct">↗</span></a>
+
+      <!-- Progress block -->
+      <div class="sidebar-progress">
+        <div class="sidebar-progress-title">Progress Belajar</div>
+        <div class="prog-row">
+          <span class="prog-name">CF1</span>
+          <div class="prog-track"><div class="prog-fill" style="width:35%"></div></div>
+          <span class="prog-val">35%</span>
+        </div>
+        <div class="prog-row">
+          <span class="prog-name">AAMAI</span>
+          <div class="prog-track"><div class="prog-fill" style="width:70%"></div></div>
+          <span class="prog-val">70%</span>
+        </div>
+        <div class="prog-row">
+          <span class="prog-name">CF2</span>
+          <div class="prog-track"><div class="prog-fill" style="width:15%"></div></div>
+          <span class="prog-val">15%</span>
+        </div>
+        <div class="prog-row">
+          <span class="prog-name">TA1</span>
+          <div class="prog-track"><div class="prog-fill" style="width:10%"></div></div>
+          <span class="prog-val">10%</span>
+        </div>
+        <div class="prog-row">
+          <span class="prog-name">TA2</span>
+          <div class="prog-track"><div class="prog-fill" style="width:5%"></div></div>
+          <span class="prog-val">5%</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content">
+      <slot />
+    </main>
+
+    <!-- Right TOC -->
+    <aside class="sidebar-right">
+      <slot name="toc" />
+    </aside>
+
+  </div>
+
+</BaseLayout>
+
+<style is:global>
+  .header {
+    position: sticky; top: 0; z-index: 100;
+    display: grid;
+    grid-template-columns: 210px 1fr auto;
+    align-items: stretch;
+    border-bottom: 4px solid var(--ink);
+    background: var(--cream);
+  }
+  .header-logo-block {
+    background: var(--pink);
+    padding: 0.75rem 1.2rem;
+    border-right: 3px solid var(--ink);
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .header-logo {
+    font-family: var(--ss4);
+    font-size: 1.55rem; font-weight: 700;
+    color: var(--ink); line-height: 1; letter-spacing: -0.03em;
+  }
+  .header-logo-sub {
+    font-family: var(--mono);
+    font-size: 0.55rem; color: rgba(14,10,4,0.55);
+    letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem;
+  }
+  .header-search-block {
+    display: flex; align-items: center;
+    padding: 0 1.5rem; gap: 0.8rem;
+    border-right: 3px solid var(--ink);
+  }
+  .header-search-icon { color: var(--ink3); font-size: 0.85rem; }
+  .header-search {
+    width: 100%; background: none; border: none; outline: none;
+    font-family: var(--ss4); font-size: 0.92rem; color: var(--ink);
+    border-bottom: 2px solid transparent; padding: 0.2rem 0;
+    transition: border-color 0.15s;
+  }
+  .header-search:focus { border-bottom-color: var(--pink); }
+  .header-search::placeholder { color: var(--ink4); font-style: italic; }
+  .header-badge-block {
+    background: var(--yellow); padding: 0.6rem 1rem;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center; min-width: 80px;
+  }
+  .header-badge-text {
+    font-family: var(--mono); font-size: 0.58rem; color: var(--ink);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    text-align: center; line-height: 1.5; font-weight: 500;
+  }
+
+  .body-wrap {
+    display: grid;
+    grid-template-columns: 210px 1fr 175px;
+    min-height: calc(100vh - 68px);
+    position: relative; z-index: 1;
+  }
+
+  /* ── Sidebar left ── */
+  .sidebar-left {
+    border-right: 3px solid var(--ink);
+    background: var(--cream);
+    display: flex; flex-direction: column;
+    overflow-y: auto;
+  }
+  .nav-section-header {
+    background: var(--ink); color: var(--yellow);
+    font-family: var(--mono); font-size: 0.55rem;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 0.42rem 0.9rem;
+  }
+  .nav-item {
+    font-family: var(--mono); font-size: 0.65rem; color: var(--ink2);
+    padding: 0.42rem 0.9rem;
+    border-bottom: 1px solid var(--border2);
+    cursor: pointer; display: flex;
+    align-items: center; justify-content: space-between;
+    transition: all 0.1s; text-decoration: none; gap: 0.5rem;
+  }
+  .nav-item:hover { background: var(--yellow); color: var(--ink); }
+  .nav-item.active {
+    background: var(--pink); color: #fff;
+    border-left: 4px solid var(--ink); font-weight: 500;
+  }
+  .nav-item .pct { font-size: 0.58rem; opacity: 0.55; flex-shrink: 0; }
+  .nav-item.active .pct { opacity: 0.85; }
+
+  /* ── Sidebar progress ── */
+  .sidebar-progress {
+    margin-top: auto;
+    border-top: 3px solid var(--ink);
+    background: var(--yellow);
+    padding: 0.9rem;
+  }
+  .sidebar-progress-title {
+    font-family: var(--mono);
+    font-size: 0.6rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink); margin-bottom: 0.7rem;
+  }
+  .prog-row {
+    display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.42rem;
+  }
+  .prog-name {
+    font-family: var(--mono);
+    font-size: 0.6rem; color: var(--ink2); width: 44px; flex-shrink: 0;
+  }
+  .prog-track {
+    flex: 1; height: 5px;
+    background: rgba(14,10,4,0.12);
+  }
+  .prog-fill {
+    height: 100%; background: var(--pink);
+    box-shadow: 2px 0 0 rgba(232,23,93,0.3);
+  }
+  .prog-val {
+    font-family: var(--mono);
+    font-size: 0.58rem; color: var(--ink2);
+    width: 28px; text-align: right; flex-shrink: 0;
+  }
+
+  /* ── Main content ── */
+  .content {
+    padding: 2.5rem 3rem 4rem;
+    max-width: 740px;
+    overflow-y: auto;
+  }
+
+  /* ── Sidebar right ── */
+  .sidebar-right {
+    border-left: 3px solid var(--ink);
+    background: var(--cream2);
+    padding: 1.5rem 1rem;
+    overflow-y: auto;
+  }
+
+  /* ── No-TOC: hide right sidebar, content fills full column ── */
+  .body-wrap.body-no-toc {
+    grid-template-columns: 210px 1fr;
+  }
+  .body-wrap.body-no-toc .sidebar-right { display: none; }
+  .body-wrap.body-no-toc .content { max-width: none; }
+
+  @media (max-width: 768px) {
+    .header { grid-template-columns: 1fr auto; }
+    .header-badge-block { display: none; }
+    .body-wrap { grid-template-columns: 1fr; }
+    .sidebar-left, .sidebar-right { display: none; }
+    .content { padding: 1.5rem; max-width: 100%; }
+  }
+
+  /* ══════════════════════════════════
+     OBSIDIAN CALLOUTS
+  ══════════════════════════════════ */
+  details.callout {
+    border: 2px solid;
+    margin: 1rem 0;
+    overflow: hidden;
+  }
+
+  .callout-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.9rem;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+  .callout-title::-webkit-details-marker { display: none; }
+
+  .callout-icon { flex-shrink: 0; }
+  .callout-label { flex: 1; }
+  .callout-fold {
+    font-size: 1rem; font-weight: 300;
+    transition: transform 0.2s;
+    display: inline-block;
+  }
+  details.callout[open] .callout-fold { transform: rotate(90deg); }
+
+  .callout-body {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+  .callout-body > *:last-child { margin-bottom: 0; }
+
+  /* Nested callouts */
+  .callout-body details.callout { margin: 0.6rem 0; }
+
+  /* ── Callout type colors ── */
+
+  /* note / info */
+  .callout-note, .callout-info, .callout-todo {
+    border-color: #3b82f6;
+  }
+  .callout-note .callout-title,
+  .callout-info .callout-title,
+  .callout-todo .callout-title {
+    background: #dbeafe; color: #1d4ed8;
+  }
+
+  /* tip / hint / important */
+  .callout-tip, .callout-hint, .callout-important {
+    border-color: #059669;
+  }
+  .callout-tip .callout-title,
+  .callout-hint .callout-title,
+  .callout-important .callout-title {
+    background: #d1fae5; color: #065f46;
+  }
+
+  /* abstract / summary / tldr */
+  .callout-abstract, .callout-summary, .callout-tldr {
+    border-color: #6366f1;
+  }
+  .callout-abstract .callout-title,
+  .callout-summary .callout-title,
+  .callout-tldr .callout-title {
+    background: #e0e7ff; color: #4338ca;
+  }
+
+  /* success / check / done */
+  .callout-success, .callout-check, .callout-done {
+    border-color: #22c55e;
+  }
+  .callout-success .callout-title,
+  .callout-check .callout-title,
+  .callout-done .callout-title {
+    background: #dcfce7; color: #15803d;
+  }
+
+  /* question / help / faq */
+  .callout-question, .callout-help, .callout-faq {
+    border-color: #eab308;
+  }
+  .callout-question .callout-title,
+  .callout-help .callout-title,
+  .callout-faq .callout-title {
+    background: #fefce8; color: #854d0e;
+  }
+
+  /* warning / caution / attention */
+  .callout-warning, .callout-caution, .callout-attention {
+    border-color: #f97316;
+  }
+  .callout-warning .callout-title,
+  .callout-caution .callout-title,
+  .callout-attention .callout-title {
+    background: #ffedd5; color: #c2410c;
+  }
+
+  /* bug */
+  .callout-bug {
+    border-color: #ef4444;
+  }
+  .callout-bug .callout-title {
+    background: #fee2e2; color: #b91c1c;
+  }
+
+  /* failure / fail / missing / danger / error */
+  .callout-failure, .callout-fail, .callout-missing,
+  .callout-danger, .callout-error {
+    border-color: var(--pink);
+  }
+  .callout-failure .callout-title,
+  .callout-fail .callout-title,
+  .callout-missing .callout-title,
+  .callout-danger .callout-title,
+  .callout-error .callout-title {
+    background: var(--pink-dim); color: var(--pink);
+  }
+
+  /* example */
+  .callout-example {
+    border-color: #8b5cf6;
+  }
+  .callout-example .callout-title {
+    background: #f5f3ff; color: #6d28d9;
+  }
+
+  /* quote / cite */
+  .callout-quote, .callout-cite {
+    border-color: var(--ink3);
+  }
+  .callout-quote .callout-title,
+  .callout-cite .callout-title {
+    background: var(--cream2); color: var(--ink3);
+  }
+</style>

@@ -1,0 +1,158 @@
+---
+import { getCollection } from 'astro:content';
+import NoteLayout from '../../layouts/NoteLayout.astro';
+
+const allEntries = await getCollection('cf1');
+const notes = allEntries
+  .filter(e => !e.id.startsWith('exams/'))
+  .sort((a, b) => a.id.localeCompare(b.id));
+const exams = allEntries
+  .filter(e => e.id.startsWith('exams/') && !e.id.includes('solutions/'))
+  .sort((a, b) => b.id.localeCompare(a.id));
+---
+
+<NoteLayout title="CF1 — Matematika Keuangan" description="Catatan CF1: Nilai waktu uang, anuitas, pinjaman, obligasi, dan derivatif." module="CF1">
+
+  <div class="page-eyebrow">CF1 · Matematika Keuangan</div>
+  <h1>Matematika<br/><em>Keuangan</em></h1>
+
+  <div class="h1-rule">
+    <div class="h1-rule-line"></div>
+    <div class="h1-rule-dot"></div>
+    <div class="h1-rule-dot" style="background:var(--yellow)"></div>
+    <div class="h1-rule-dot" style="background:var(--ink)"></div>
+  </div>
+
+  <p>
+    Modul CF1 mencakup konsep dasar <strong>nilai waktu uang</strong>, anuitas, amortisasi pinjaman,
+    penilaian obligasi, dan pengantar derivatif keuangan.
+    Materi ini menjadi fondasi untuk seluruh ujian aktuaria lanjutan.
+  </p>
+
+  <h2>▸ Daftar Topik</h2>
+
+  <div class="topic-list">
+    {notes.map(entry => (
+      <a href={`/CF1/${entry.id}`} class="topic-item">
+        <span class="topic-num">{entry.data.topic_id || '—'}</span>
+        <span class="topic-name">{entry.data.topic || entry.id.split('/').pop()?.replace(/-/g, ' ')}</span>
+        {entry.data.difficulty && <span class="topic-diff">{entry.data.difficulty}</span>}
+        <span class="topic-arrow">→</span>
+      </a>
+    ))}
+  </div>
+
+  {exams.length > 0 && (
+    <>
+      <h2>▸ Past Exams</h2>
+      <div class="topic-list">
+        {exams.map(entry => (
+          <a href={`/CF1/${entry.id}`} class="topic-item topic-exam">
+            <span class="topic-num exam-icon">✎</span>
+            <span class="topic-name">{entry.id.split('/').pop()?.replace(/-/g, ' ').toUpperCase()}</span>
+            <span class="topic-arrow">→</span>
+          </a>
+        ))}
+      </div>
+    </>
+  )}
+
+  <h2>▸ Formula Kunci</h2>
+
+  <div class="formula-card">
+    <div class="formula-label">Present Value (Lump Sum)</div>
+    <div class="formula-body">
+      <code>PV = FV · (1 + i)⁻ⁿ</code>
+    </div>
+  </div>
+
+  <div class="formula-card">
+    <div class="formula-label">Anuitas Tetap (Immediate Annuity)</div>
+    <div class="formula-body">
+      <code>a&#818;n&#773;|i = (1 − vⁿ) / i</code>
+      &nbsp; di mana &nbsp; <code>v = 1/(1+i)</code>
+    </div>
+  </div>
+
+  <div class="formula-card">
+    <div class="formula-label">Harga Obligasi</div>
+    <div class="formula-body">
+      <code>P = Fr · a&#818;n&#773;|j + C · vⁿ</code>
+    </div>
+    <div class="formula-note">F = face value, r = coupon rate, C = redemption value, j = yield</div>
+  </div>
+
+</NoteLayout>
+
+<style>
+  .page-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.62rem; color: var(--pink);
+    letter-spacing: 0.16em; text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .page-eyebrow::before { content: '◆'; font-size: 0.42rem; }
+
+  h1 em { font-style: italic; font-weight: 300; color: var(--pink); }
+
+  .h1-rule {
+    display: flex; align-items: center; gap: 0.7rem;
+    margin: 0.6rem 0 1.2rem;
+  }
+  .h1-rule-line { flex: 1; height: 3px; background: var(--ink); }
+  .h1-rule-dot { width: 8px; height: 8px; background: var(--pink); flex-shrink: 0; }
+
+  .topic-list {
+    display: flex; flex-direction: column;
+    border: 2px solid var(--ink);
+    margin-bottom: 2rem;
+  }
+  .topic-item {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none; color: inherit;
+    transition: background 0.1s;
+  }
+  .topic-item:last-child { border-bottom: none; }
+  .topic-item:hover { background: var(--yellow); }
+  .topic-num {
+    font-family: var(--mono); font-size: 0.6rem;
+    color: var(--ink4); letter-spacing: 0.08em; min-width: 1.8rem;
+  }
+  .topic-name {
+    font-family: var(--ss4); font-size: 0.95rem; font-weight: 500;
+    color: var(--ink); flex: 1;
+  }
+  .topic-arrow {
+    font-family: var(--mono); font-size: 0.8rem; color: var(--pink);
+  }
+  .topic-diff { font-family: var(--mono); font-size: 0.54rem; color: var(--ink4); background: var(--cream3); padding: 0.08rem 0.4rem; flex-shrink: 0; }
+  .topic-exam:hover { background: var(--cream3); }
+  .exam-icon { color: var(--teal); }
+
+  .formula-card {
+    border: 2px solid var(--ink);
+    background: var(--cream2);
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 0.6rem;
+  }
+  .formula-label {
+    font-family: var(--mono); font-size: 0.58rem;
+    color: var(--ink4); letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .formula-body {
+    font-family: var(--mono); font-size: 1rem;
+    color: var(--ink);
+  }
+  .formula-body code {
+    background: none; border: none; padding: 0;
+    font-size: 1rem; color: var(--teal);
+  }
+  .formula-note {
+    font-family: var(--ss4); font-size: 0.78rem;
+    color: var(--ink4); margin-top: 0.4rem; font-style: italic;
+  }
+</style>
