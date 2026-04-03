@@ -21,7 +21,10 @@ const { title = 'AktuNotes', description = 'Catatan belajar ujian PAI & AAMAI' }
   // ── Mermaid: render graph/flowchart code blocks ──
   import mermaid from 'mermaid';
 
-  const blocks = document.querySelectorAll<HTMLElement>('pre code.language-mermaid');
+  // Shiki transforms code blocks: the pre gets data-language="mermaid", not a class on code
+  const blocks = document.querySelectorAll<HTMLElement>(
+    'pre code.language-mermaid, pre[data-language="mermaid"] code'
+  );
   if (blocks.length > 0) {
     mermaid.initialize({
       startOnLoad: false,

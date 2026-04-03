@@ -406,13 +406,13 @@ import NoteLayout from '../layouts/NoteLayout.astro';
     justify-content: space-between; gap: 1rem; margin-bottom: 0.8rem;
   }
   .problem-badge {
-    font-family: var(--mono); font-size: 0.56rem;
+    font-family: var(--mono); font-size: 0.68rem;
     background: var(--pink); color: #fff;
-    padding: 0.12rem 0.5rem; letter-spacing: 0.08em;
-    text-transform: uppercase; flex-shrink: 0;
+    padding: 0.15rem 0.65rem; letter-spacing: 0.08em;
+    text-transform: uppercase; flex-shrink: 0; font-weight: 600;
   }
   .problem-source {
-    font-family: var(--mono); font-size: 0.56rem;
+    font-family: var(--mono); font-size: 0.66rem;
     color: rgba(14,10,4,0.45); letter-spacing: 0.06em;
   }
   .problem-text {
@@ -481,18 +481,20 @@ import NoteLayout from '../layouts/NoteLayout.astro';
   }
   .sd-line { flex: 1; height: 1px; background: var(--border); }
   .sd-mark {
-    font-family: var(--mono); font-size: 0.56rem;
+    font-family: var(--mono); font-size: 0.7rem;
     color: var(--cream); letter-spacing: 0.12em; text-transform: uppercase;
-    background: var(--pink); padding: 0.1rem 0.5rem; flex-shrink: 0;
+    background: var(--pink); padding: 0.15rem 0.7rem; flex-shrink: 0;
+    font-weight: 600;
   }
 
   /* ── Module grid ── */
   .section-label {
     font-family: var(--mono);
-    font-size: 0.6rem; color: var(--ink4);
+    font-size: 0.75rem; color: var(--ink3);
     letter-spacing: 0.14em; text-transform: uppercase;
     margin: 1.5rem 0 0.5rem;
     grid-column: 1 / -1;
+    font-weight: 600;
   }
   .module-grid {
     display: grid; grid-template-columns: 1fr 1fr;
@@ -725,7 +727,7 @@ import NoteLayout from '../layouts/NoteLayout.astro';
     p.options.forEach((opt, i) => {
       const btn = document.createElement('button');
       btn.className = 'problem-option';
-      btn.innerHTML = `<span class="problem-option-key">${['A','B','C','D'][i]}</span>${opt}`;
+      btn.innerHTML = `<span class="problem-option-key">${['A','B','C','D'][i]}</span>${opt.replace(/^[A-D]\.\s*/, '')}`;
       btn.onclick = () => selectOption(i);
       optionsEl.appendChild(btn);
     });

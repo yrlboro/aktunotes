@@ -7,10 +7,11 @@ const hasToc = Astro.slots.has('toc');
 
   <!-- HEADER -->
   <header class="header">
-    <div class="header-logo-block">
+    <a href="/" class="header-logo-block">
       <div class="header-logo">Aktu<br/>Notes</div>
       <div class="header-logo-sub">PAI · AAMAI · 2026</div>
-    </div>
+    </a>
+    <button class="mob-menu-btn" id="mob-menu-btn" aria-label="Menu">☰</button>
     <div class="header-search-block">
       <span class="header-search-icon">⌕</span>
       <input class="header-search" id="site-search" type="text" placeholder="Cari topik, rumus, soal ujian…" autocomplete="off" />
@@ -54,6 +55,26 @@ const hasToc = Astro.slots.has('toc');
 
   </div>
 
+  <!-- Mobile nav overlay -->
+  <div class="mob-nav-overlay" id="mob-nav-overlay">
+    <nav class="mob-nav-panel" id="mob-nav-panel">
+      <button class="mob-nav-close" id="mob-nav-close">✕ &nbsp;Tutup</button>
+      <div class="nav-section-header">▸ PAI Exams</div>
+      <a href="/CF1"    class="nav-item">CF1 — Mat. Keuangan</a>
+      <a href="/CF2"    class="nav-item">CF2 — Probabilitas</a>
+      <a href="/CF3"    class="nav-item">CF3 — Ekonomi</a>
+      <a href="/CF4"    class="nav-item">CF4 — Akuntansi</a>
+      <a href="/TA1"    class="nav-item">TA1 — Statistika</a>
+      <a href="/TA2"    class="nav-item">TA2 — Teori Risiko</a>
+      <a href="/TA3"    class="nav-item">TA3 — Mat. Aktuaria</a>
+      <a href="/BA4G"   class="nav-item">BA4G — Asuransi Umum</a>
+      <div class="nav-section-header">▸ AAMAI</div>
+      <a href="/AAMAI101" class="nav-item">AAMAI 101</a>
+      <div class="nav-section-header">▸ Resources</div>
+      <a href="/formula-sheet" class="nav-item">Formula Sheet CF1</a>
+    </nav>
+  </div>
+
 </BaseLayout>
 
 <style is:global>
@@ -70,6 +91,7 @@ const hasToc = Astro.slots.has('toc');
     padding: 0.75rem 1.2rem;
     border-right: 3px solid var(--ink);
     display: flex; flex-direction: column; justify-content: center;
+    text-decoration: none;
   }
   .header-logo {
     font-family: var(--ss4);
@@ -189,12 +211,109 @@ const hasToc = Astro.slots.has('toc');
   .body-wrap.body-no-toc .sidebar-right { display: none; }
   .body-wrap.body-no-toc .content { max-width: none; }
 
-  @media (max-width: 768px) {
-    .header { grid-template-columns: 1fr auto; }
+  /* ── Hamburger button (mobile only) ── */
+  .mob-menu-btn {
+    display: none;
+    background: var(--ink); color: var(--yellow);
+    border: none; padding: 0 1rem;
+    font-size: 1.1rem; cursor: pointer;
+    font-family: var(--mono);
+    border-left: 3px solid var(--pink);
+  }
+
+  /* ── Mobile nav overlay ── */
+  .mob-nav-overlay {
+    display: none;
+    position: fixed; inset: 0; background: rgba(14,10,4,0.5);
+    z-index: 150; backdrop-filter: blur(2px);
+  }
+  .mob-nav-panel {
+    position: absolute; top: 0; left: 0;
+    width: 240px; height: 100%;
+    background: var(--cream); border-right: 3px solid var(--ink);
+    display: flex; flex-direction: column;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.22s ease;
+  }
+  .mob-nav-overlay.open { display: block; }
+  .mob-nav-overlay.open .mob-nav-panel { transform: translateX(0); }
+  .mob-nav-close {
+    font-family: var(--mono); font-size: 0.6rem;
+    color: var(--ink4); letter-spacing: 0.1em;
+    padding: 0.6rem 0.9rem; cursor: pointer;
+    border-bottom: 2px solid var(--ink);
+    background: var(--ink); color: var(--yellow);
+    text-transform: uppercase; border: none;
+    text-align: left;
+  }
+
+  /* ── TOC sidebar ── */
+  .toc-wrap { font-family: var(--mono); }
+  .toc-header {
+    font-size: 0.6rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink4); padding: 0.7rem 0 0.5rem;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 0.5rem;
+  }
+  .toc-group {
+    border-bottom: 1px solid var(--border2);
+    margin-bottom: 0;
+  }
+  .toc-group-title {
+    font-size: 0.6rem; font-weight: 600;
+    color: var(--ink2); letter-spacing: 0.04em;
+    padding: 0.4rem 0.3rem;
+    cursor: pointer; list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+    transition: background 0.1s;
+  }
+  .toc-group-title::-webkit-details-marker { display: none; }
+  .toc-group-title:hover { color: var(--pink); }
+  .toc-group-title::after {
+    content: '›'; font-size: 0.9rem; font-weight: 300;
+    transition: transform 0.15s; opacity: 0.5;
+  }
+  .toc-group[open] .toc-group-title::after { transform: rotate(90deg); }
+  .toc-group-items { padding: 0.1rem 0 0.4rem 0.8rem; }
+  .toc-item {
+    display: block; font-size: 0.58rem;
+    color: var(--ink4); text-decoration: none;
+    padding: 0.22rem 0.2rem;
+    border-left: 2px solid transparent;
+    transition: all 0.1s;
+  }
+  .toc-item:hover { color: var(--pink); border-left-color: var(--pink); padding-left: 0.5rem; }
+  .toc-h2-solo {
+    font-size: 0.6rem; font-weight: 600; color: var(--ink2);
+    display: block; padding: 0.4rem 0.3rem; text-decoration: none;
+    border-bottom: 1px solid var(--border2);
+    transition: color 0.1s;
+  }
+  .toc-h2-solo:hover { color: var(--pink); }
+
+  @media (max-width: 900px) {
+    .header { grid-template-columns: auto 1fr auto; }
     .header-badge-block { display: none; }
     .body-wrap { grid-template-columns: 1fr; }
-    .sidebar-left, .sidebar-right { display: none; }
-    .content { padding: 1.5rem; max-width: 100%; }
+    .sidebar-left { display: none; }
+    .body-wrap.body-no-toc { grid-template-columns: 1fr; }
+    .mob-menu-btn { display: flex; align-items: center; }
+    .sidebar-right {
+      border-left: none; border-top: 3px solid var(--ink);
+      background: var(--cream2); padding: 1rem 1.2rem;
+      max-height: 280px;
+    }
+    .content { padding: 1.5rem 1.2rem 3rem; max-width: 100%; }
+  }
+
+  @media (max-width: 600px) {
+    .header { grid-template-columns: auto 1fr auto; }
+    .header-search-block { padding: 0 0.8rem; }
+    .header-search { font-size: 0.82rem; }
+    .content { padding: 1.2rem 1rem 3rem; }
+    .sidebar-right { display: none; }
   }
 
   /* ══════════════════════════════════
@@ -433,5 +552,15 @@ const hasToc = Astro.slots.has('toc');
 
   searchInput.addEventListener('focus', () => {
     if (searchInput.value.trim()) renderResults(searchInput.value);
+  });
+
+  // ── Mobile nav ──
+  const menuBtn = document.getElementById('mob-menu-btn');
+  const overlay = document.getElementById('mob-nav-overlay');
+  const closeBtn = document.getElementById('mob-nav-close');
+  menuBtn?.addEventListener('click', () => overlay?.classList.add('open'));
+  closeBtn?.addEventListener('click', () => overlay?.classList.remove('open'));
+  overlay?.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.classList.remove('open');
   });
 </script>

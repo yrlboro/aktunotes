@@ -11,10 +11,18 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 
 const isExam     = entry.id.startsWith('exams/');
 const isSolution = entry.id.includes('solutions/');
+
+type Heading = { depth: number; slug: string; text: string };
+const h2Groups: { h2: Heading; children: Heading[] }[] = [];
+for (const h of headings) {
+  if (h.depth === 2) h2Groups.push({ h2: h, children: [] });
+  else if (h.depth === 3 && h2Groups.length > 0) h2Groups[h2Groups.length - 1].children.push(h);
+}
+const hasTocContent = h2Groups.length > 0;
 
 function formatTitle(id: string): string {
   return id.split('/').pop()!
@@ -27,6 +35,25 @@ const tags: string[] = Array.isArray(entry.data.tags) ? entry.data.tags : [];
 ---
 
 <NoteLayout title={title} module="CF2">
+  {hasTocContent && (
+    <div slot="toc" class="toc-wrap">
+      <div class="toc-header">Daftar Isi</div>
+      {h2Groups.map(({ h2, children }) =>
+        children.length > 0 ? (
+          <details class="toc-group" open>
+            <summary class="toc-group-title">{h2.text}</summary>
+            <div class="toc-group-items">
+              {children.map(h3 => (
+                <a href={`#${h3.slug}`} class="toc-item">{h3.text}</a>
+              ))}
+            </div>
+          </details>
+        ) : (
+          <a href={`#${h2.slug}`} class="toc-h2-solo">{h2.text}</a>
+        )
+      )}
+    </div>
+  )}
 
   <div class="note-eyebrow">
     CF2 · {isExam ? (isSolution ? 'Pembahasan' : 'Past Exam') : 'Materi'}

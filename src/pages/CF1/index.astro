@@ -132,6 +132,14 @@ const exams = allEntries
   .topic-exam:hover { background: var(--cream3); }
   .exam-icon { color: var(--teal); }
 
+  @media (max-width: 600px) {
+    .topic-item { gap: 0.6rem; padding: 0.7rem 0.8rem; }
+    .topic-num { min-width: 1.5rem; font-size: 0.55rem; }
+    .topic-name { font-size: 0.88rem; }
+    .topic-diff { display: none; }
+    .topic-arrow { font-size: 0.7rem; }
+  }
+
   .formula-card {
     border: 2px solid var(--ink);
     background: var(--cream2);
