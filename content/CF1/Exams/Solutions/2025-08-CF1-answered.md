@@ -25,10 +25,10 @@ e. $9{,}8\%$
 > | **Connected Topics** | [[1.4 Accumulation and Present Value]] |
 > | **Referensi** | Vaaler Bab 1–2; Kellison Bab 1–2 |
 >
-> > [!info]+ **Rumus**  
-> > Persamaan nilai sekarang (equation of value):  
-> > $$PV = C \cdot v^t = C \cdot (1+i)^{-t}$$  
-> > Di mana $v = \frac{1}{1+i}$ adalah faktor diskonto dan $i$ adalah suku bunga efektif tahunan.  
+> > [!info]+ **Rumus**
+> > Persamaan nilai sekarang (equation of value):
+> > $$PV = C \cdot v^t = C \cdot (1+i)^{-t}$$
+> > Di mana $v = \frac{1}{1+i}$ adalah faktor diskonto dan $i$ adalah suku bunga efektif tahunan.
 >
 > **Diketahui:**  
 > - Arus kas 1: $675$ pada $t=2$  
@@ -36,19 +36,22 @@ e. $9{,}8\%$
 > - Kedua arus kas memiliki PV yang sama  
 > - Target: $i$ (suku bunga efektif tahunan)  
 >
-> > [!example]- Langkah Pengerjaan  
+> > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Susun Equation of Value**
+> >
 > > Karena kedua set pembayaran memiliki PV yang sama:
 > > $$675v^2 = 200v + 500v^3$$
 > >
 > > **Langkah 2: Sederhanakan Persamaan**
+> >
 > > Bagi kedua sisi dengan $v$ (karena $v \neq 0$):
 > > $$675v = 200 + 500v^2$$
 > > Susun ulang:
 > > $$500v^2 - 675v + 200 = 0$$
 > >
 > > **Langkah 3: Selesaikan Persamaan Kuadrat**
+> >
 > > Gunakan rumus kuadrat dengan $a = 500$, $b = -675$, $c = 200$:
 > > $$v = \frac{675 \pm \sqrt{675^2 - 4(500)(200)}}{2(500)}$$
 > > $$v = \frac{675 \pm \sqrt{455625 - 400000}}{1000}$$
@@ -60,11 +63,13 @@ e. $9{,}8\%$
 > > - $v_2 = \frac{675 - 235{,}85}{1000} = 0{,}43915$ → $i = \frac{1}{0{,}43915} - 1 = 1{,}277$ (melebihi 100%, ditolak)
 > >
 > > **Langkah 4: Verifikasi**
+> >
 > > Dengan $i = 9{,}8\%$, $v = 0{,}91075$:
 > > - PV kiri: $675 \times (0{,}91075)^2 = 675 \times 0{,}82946 = 559{,}89$
 > > - PV kanan: $200 \times 0{,}91075 + 500 \times (0{,}91075)^3 = 182{,}15 + 500 \times 0{,}75556 = 182{,}15 + 377{,}78 = 559{,}93$ ✓
 > >
 > > **Hasil Akhir:** **(e)**. $i = 9{,}8\%$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -105,7 +110,7 @@ e. $0{,}0742$
 > | **Connected Topics** | [[2.6 Varying Interest Rates]] |
 > | **Referensi** | Vaaler Bab 1–2; Kellison Bab 1–2 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Faktor akumulasi dari suku bunga nominal:
 > > $$\left(1 + \frac{i^{(m)}}{m}\right)^{mt}$$
 > > Faktor akumulasi dari diskonto nominal:
@@ -122,10 +127,12 @@ e. $0{,}0742$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Faktor Akumulasi untuk 4 Tahun Pertama**
+> >
 > > $$A_1 = \left(1 + \frac{0{,}06}{4}\right)^{4 \times 4} = (1{,}015)^{16}$$
 > > $$(1{,}015)^{16} = 1{,}26899$$
 > >
 > > **Langkah 2: Hitung Faktor Akumulasi untuk 6 Tahun Berikutnya**
+> >
 > > Dengan diskonto nominal $d^{(2)} = 8\%$:
 > > $$A_2 = \left(1 - \frac{0{,}08}{2}\right)^{-2 \times 6} = (0{,}96)^{-12}$$
 > > $$(0{,}96)^{-12} = \frac{1}{(0{,}96)^{12}}$$
@@ -133,13 +140,16 @@ e. $0{,}0742$
 > > $$A_2 = \frac{1}{0{,}61270} = 1{,}63213$$
 > >
 > > **Langkah 3: Hitung Faktor Akumulasi Total**
+> >
 > > $$A(10) = A_1 \times A_2 = 1{,}26899 \times 1{,}63213 = 2{,}07115$$
 > >
 > > **Langkah 4: Hitung Force of Interest Ekuivalen**
+> >
 > > $$e^{10\delta} = 2{,}07115$$
 > > $$\delta = \frac{\ln(2{,}07115)}{10} = \frac{0{,}72787}{10} = 0{,}072787 \approx 0{,}0728$$
 > >
 > > **Hasil Akhir:** **(b)**. $\delta = 0{,}0728$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -188,7 +198,7 @@ e. $5988$
 > | **Connected Topics** | [[3.3 Duration (Macaulay and Modified)]] |
 > | **Referensi** | Vaaler Bab 8.3 & 9; Kellison Bab 10–11 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Harga zero-coupon bond:
 > > $$P = \frac{F}{(1+i)^n}$$
 > > Dedication (exact matching): beli obligasi yang arus kasnya tepat cocok dengan kewajiban.
@@ -202,11 +212,13 @@ e. $5988$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tentukan Jumlah Obligasi yang Dibeli**
+> >
 > > Untuk mencocokkan kewajiban secara tepat:
 > > - Kewajiban $t=1$: $2000$ → beli 2 unit ZCB 1 tahun (masing-masing bernilai nominal $1000$)
 > > - Kewajiban $t=3$: $5000$ → beli 5 unit ZCB 3 tahun (masing-masing bernilai nominal $1000$)
 > >
 > > **Langkah 2: Hitung Harga Masing-masing Obligasi**
+> >
 > > Harga per unit ZCB 1 tahun:
 > > $$P_1 = \frac{1000}{1{,}065} = 938{,}967$$
 > >
@@ -214,10 +226,12 @@ e. $5988$
 > > $$P_3 = \frac{1000}{(1{,}075)^3} = \frac{1000}{1{,}24230} = 804{,}961$$
 > >
 > > **Langkah 3: Hitung Total Biaya**
+> >
 > > $$\text{Total} = 2 \times 938{,}967 + 5 \times 804{,}961$$
 > > $$= 1877{,}93 + 4024{,}81 = 5902{,}74 \approx 5903$$
 > >
 > > **Hasil Akhir:** **(a)**. $5903$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -261,7 +275,7 @@ e. $4{,}74\%$
 > | **Connected Topics** | [[3.2 Yield Curve]] |
 > | **Referensi** | Vaaler Bab 8.3; Kellison Bab 10 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Hubungan spot rate dan forward rate:
 > > $$(1 + s_n)^n = (1 + s_m)^m \cdot (1 + f_{m,n})^{n-m}$$
 > > Forward rate dari tahun $m$ ke tahun $n$:
@@ -278,11 +292,13 @@ e. $4{,}74\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Spot Rates yang Diperlukan**
+> >
 > > $$s_1 = 0{,}08 + 0{,}003(1) - 0{,}0015(1)^2 = 0{,}08 + 0{,}003 - 0{,}0015 = 0{,}0815$$
 > > $$s_2 = 0{,}08 + 0{,}003(2) - 0{,}0015(2)^2 = 0{,}08 + 0{,}006 - 0{,}006 = 0{,}08$$
 > > $$s_3 = 0{,}08 + 0{,}003(3) - 0{,}0015(3)^2 = 0{,}08 + 0{,}009 - 0{,}0135 = 0{,}0755$$
 > >
 > > **Langkah 2: Interpretasi "Three-Year Forward Rate"**
+> >
 > > "Tingkat forward tiga tahun" berarti forward rate untuk jangka waktu 3 tahun yang dimulai sekarang (dari $t=0$ ke $t=3$). Tapi itu hanya $s_3 = 7{,}55\%$, yang bukan ada di opsi.
 > >
 > > Interpretasi lain: forward rate 1 tahun untuk tahun ke-3, yaitu $f_{2,3}$:
@@ -290,6 +306,7 @@ e. $4{,}74\%$
 > > $$(1+f_{2,3}) = \frac{(1{,}0755)^3}{(1{,}08)^2}$$
 > >
 > > **Langkah 3: Hitung Numerik**
+> >
 > > $$(1{,}0755)^3 = 1{,}0755 \times 1{,}0755 \times 1{,}0755$$
 > > $(1{,}0755)^2 = 1{,}15670$
 > > $(1{,}0755)^3 = 1{,}15670 \times 1{,}0755 = 1{,}24403$
@@ -348,6 +365,7 @@ e. $4{,}74\%$
 > >
 > > **Hasil Akhir:** **(c)**. $f_{3,4} = 4{,}58\%$
 >
+>
 > > [!tip] Jebakan Umum
 > >
 > > > [!BUG] Kesalahan Unit Waktu
@@ -396,7 +414,7 @@ e. $6{,}74\%$
 > | **Connected Topics** | [[1.3 Cash Flow Equations and Inflation]] |
 > | **Referensi** | Vaaler Bab 2; Kellison Bab 2 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Time-Weighted Rate of Return (TWRR):
 > > $$1 + i_{TW} = \prod_{k} \frac{B_{k}^{\text{after}}}{B_{k}^{\text{before}}}$$
 > > Di mana rasio dihitung untuk setiap sub-periode antara arus kas.
@@ -416,6 +434,7 @@ e. $6{,}74\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Gunakan TWRR untuk Menentukan X**
+> >
 > > Sub-periode:
 > > - Jan–Apr: rasio $= \frac{10500}{10000} = 1{,}05$
 > > - Apr–Sep: rasio $= \frac{12800}{12500} = 1{,}024$
@@ -427,9 +446,11 @@ e. $6{,}74\%$
 > > $$X = 10200 \times 0{,}99016 = 10099{,}6$$
 > >
 > > **Langkah 2: Hitung Total Bunga**
+> >
 > > $$I = X - 10000 - 2000 + 2600 = 10099{,}6 - 10000 - 2000 + 2600 = 699{,}6$$
 > >
 > > **Langkah 3: Hitung DWRR (Metode Sederhana)**
+> >
 > > $$i_{DW} = \frac{I}{A + \sum C_t(1-t)}$$
 > > $$= \frac{699{,}6}{10000 + 2000(1-0{,}25) + (-2600)(1-2/3)}$$
 > > $$= \frac{699{,}6}{10000 + 2000(0{,}75) + (-2600)(1/3)}$$
@@ -437,6 +458,7 @@ e. $6{,}74\%$
 > > $$= \frac{699{,}6}{10633{,}33} = 0{,}06581 \approx 6{,}58\%$$
 > >
 > > **Hasil Akhir:** **(a)**. DWRR $= 6{,}58\%$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -480,7 +502,7 @@ e. $882$
 > | **Connected Topics** | [[1.3 Cash Flow Equations and Inflation]] |
 > | **Referensi** | Vaaler Bab 2; Kellison Bab 2 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Dollar-Weighted Rate of Return:
 > > $$i_{DW} = \frac{I}{A + \sum C_t (1 - t)}$$
 > > Sehingga bunga:
@@ -497,6 +519,7 @@ e. $882$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Weighted Exposure**
+> >
 > > $$E = A + \sum C_t(1-t)$$
 > > $$= 8000 + 2000\left(1 - \frac{2}{12}\right) + (-500)\left(1 - \frac{6}{12}\right) + 1000\left(1 - \frac{10}{12}\right)$$
 > > $$= 8000 + 2000 \times \frac{10}{12} - 500 \times \frac{6}{12} + 1000 \times \frac{2}{12}$$
@@ -504,9 +527,11 @@ e. $882$
 > > $$= 9583{,}33$$
 > >
 > > **Langkah 2: Hitung Bunga**
+> >
 > > $$I = i_{DW} \times E = 0{,}0887 \times 9583{,}33 = 850{,}04 \approx 850$$
 > >
 > > **Hasil Akhir:** **(a)**. $I = 850$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -549,7 +574,7 @@ e. $8{,}1\%$
 > | **Connected Topics** | [[1.2 Effective, Nominal, and Force of Interest]] |
 > | **Referensi** | Vaaler Bab 6; Kellison Bab 6 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Harga obligasi:
 > > $$P = Fr \cdot a_{\overline{n}|j} + F \cdot v^n_j$$
 > > Di mana $j$ adalah yield per periode kupon, $r$ adalah coupon rate per periode, $n$ jumlah periode kupon.
@@ -571,12 +596,14 @@ e. $8{,}1\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Harga Beli Bond 1**
+> >
 > > $j_1 = 4\%$ per semester, kupon per semester $= 1000 \times 0{,}075/2 = 37{,}50$
 > > $$P_1 = 37{,}50 \cdot a_{\overline{10}|0{,}04} + 1000 \cdot (1{,}04)^{-10}$$
 > > $a_{\overline{10}|0{,}04} = \frac{1-(1{,}04)^{-10}}{0{,}04} = \frac{1 - 0{,}67556}{0{,}04} = \frac{0{,}32444}{0{,}04} = 8{,}11090$
 > > $$P_1 = 37{,}50 \times 8{,}11090 + 1000 \times 0{,}67556 = 304{,}16 + 675{,}56 = 979{,}72$$
 > >
 > > **Langkah 2: Hitung Harga Beli Bond 2**
+> >
 > > $j_2 = 3{,}5\%$ per semester, kupon per semester $= 1000 \times 0{,}06/2 = 30$
 > > $$P_2 = 30 \cdot a_{\overline{10}|0{,}035} + 1000 \cdot (1{,}035)^{-10}$$
 > > $a_{\overline{10}|0{,}035} = \frac{1-(1{,}035)^{-10}}{0{,}035}$
@@ -585,9 +612,11 @@ e. $8{,}1\%$
 > > $$P_2 = 30 \times 8{,}31661 + 1000 \times 0{,}70892 = 249{,}50 + 708{,}92 = 958{,}42$$
 > >
 > > **Langkah 3: Hitung Total Harga Beli**
+> >
 > > $$P_{\text{total}} = 979{,}72 + 958{,}42 = 1938{,}14$$
 > >
 > > **Langkah 4: Hitung Akumulasi Kupon di Dana Reinvestment**
+> >
 > > Total kupon per semester $= 37{,}50 + 30 = 67{,}50$
 > > $$\text{FV kupon} = 67{,}50 \cdot s_{\overline{10}|0{,}034}$$
 > > $s_{\overline{10}|0{,}034} = \frac{(1{,}034)^{10}-1}{0{,}034}$
@@ -596,6 +625,7 @@ e. $8{,}1\%$
 > > $$\text{FV kupon} = 67{,}50 \times 11{,}67559 = 788{,}10$$
 > >
 > > **Langkah 5: Hitung Total FV pada Akhir 5 Tahun**
+> >
 > > Pada akhir 5 tahun, investor menerima:
 > > - Akumulasi kupon: $788{,}10$
 > > - Redemption Bond 1: $1000$
@@ -603,6 +633,7 @@ e. $8{,}1\%$
 > > $$\text{FV total} = 788{,}10 + 2000 = 2788{,}10$$
 > >
 > > **Langkah 6: Hitung Annual Effective Yield**
+> >
 > > $$(1+i)^5 = \frac{2788{,}10}{1938{,}14} = 1{,}43852$$
 > > $$1+i = (1{,}43852)^{1/5} = 1{,}43852^{0{,}2}$$
 > > $\ln(1{,}43852) = 0{,}36358$
@@ -611,6 +642,7 @@ e. $8{,}1\%$
 > > $$i = 0{,}07542 \approx 7{,}5\%$$
 > >
 > > **Hasil Akhir:** **(b)**. Annual effective yield $= 7{,}5\%$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -653,7 +685,7 @@ e. $7{,}3\%$
 > | **Connected Topics** | [[5.3 Yield Rate and Coupon Calculations]] |
 > | **Referensi** | Vaaler Bab 3–4; Kellison Bab 3–4 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Future value annuity-immediate:
 > > $$\text{FV} = R \cdot s_{\overline{n}|j} = R \cdot \frac{(1+j)^n - 1}{j}$$
 > > Annual yield dari investasi:
@@ -669,6 +701,7 @@ e. $7{,}3\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Akumulasi Pembayaran pada $t=20$**
+> >
 > > $$\text{FV} = 910 \cdot s_{\overline{20}|0{,}075}$$
 > > $$s_{\overline{20}|0{,}075} = \frac{(1{,}075)^{20} - 1}{0{,}075}$$
 > > $(1{,}075)^{20}$: $\ln(1{,}075) = 0{,}07232$, $(1{,}075)^{20} = e^{1{,}44636} = 4{,}24785$
@@ -677,6 +710,7 @@ e. $7{,}3\%$
 > > $$\text{FV} = 910 \times 43{,}3047 = 39407{,}3$$
 > >
 > > **Langkah 2: Hitung Annual Yield**
+> >
 > > $$(1+i)^{20} = \frac{39407{,}3}{10000} = 3{,}94073$$
 > > $$1+i = (3{,}94073)^{1/20} = (3{,}94073)^{0{,}05}$$
 > > $\ln(3{,}94073) = 1{,}37127$
@@ -685,6 +719,7 @@ e. $7{,}3\%$
 > > $$i = 0{,}0710 = 7{,}1\%$$
 > >
 > > **Hasil Akhir:** **(d)**. Annual yield $= 7{,}1\%$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -727,7 +762,7 @@ e. $1288$
 > | **Connected Topics** | [[2.2 Perpetuity]] |
 > | **Referensi** | Vaaler Bab 3–4; Kellison Bab 3–4 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > PV annuity-immediate level:
 > > $$a_{\overline{n}|i} = \frac{1 - v^n}{i}$$
 > > PV geometric annuity (pembayaran pertama $P_1$, growth rate $g$, discount rate $i$, $n$ pembayaran):
@@ -742,12 +777,14 @@ e. $1288$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: PV Bagian Pertama (Tahun 1–10)**
+> >
 > > $$\text{PV}_1 = 100 \cdot a_{\overline{10}|0{,}07} = 100 \times \frac{1-(1{,}07)^{-10}}{0{,}07}$$
 > > $(1{,}07)^{-10} = 0{,}50835$
 > > $$a_{\overline{10}|0{,}07} = \frac{1 - 0{,}50835}{0{,}07} = \frac{0{,}49165}{0{,}07} = 7{,}02358$$
 > > $$\text{PV}_1 = 100 \times 7{,}02358 = 702{,}36$$
 > >
 > > **Langkah 2: PV Bagian Kedua (Tahun 11–20) pada $t=10$**
+> >
 > > Pembayaran tahun ke-11: $P_{11} = 100 \times 1{,}06 = 106$
 > > Ini adalah geometric annuity dengan $P_1 = 106$, $g = 6\%$, $i = 7\%$, $n = 10$
 > > $$\text{PV}_{10} = 106 \times \frac{1 - \left(\frac{1{,}06}{1{,}07}\right)^{10}}{0{,}07 - 0{,}06}$$
@@ -756,12 +793,15 @@ e. $1288$
 > > $$\text{PV}_{10} = 106 \times \frac{1 - 0{,}91038}{0{,}01} = 106 \times \frac{0{,}08962}{0{,}01} = 106 \times 8{,}962 = 949{,}97$$
 > >
 > > **Langkah 3: Diskon $\text{PV}_{10}$ ke $t=0$**
+> >
 > > $$\text{PV}_2 = 949{,}97 \times (1{,}07)^{-10} = 949{,}97 \times 0{,}50835 = 482{,}93$$
 > >
 > > **Langkah 4: Total PV**
+> >
 > > $$\text{PV} = 702{,}36 + 482{,}93 = 1185{,}29 \approx 1185$$
 > >
 > > **Hasil Akhir:** **(b)**. PV $= 1185$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -802,7 +842,7 @@ e. $151{,}28$
 > | **Connected Topics** | [[1.2 Effective, Nominal, and Force of Interest]] |
 > | **Referensi** | Vaaler Bab 6; Kellison Bab 6 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Harga obligasi:
 > > $$P = Fr \cdot a_{\overline{n}|j} + F \cdot v^n_j$$
 > > Akumulasi kupon yang di-reinvest:
@@ -820,6 +860,7 @@ e. $151{,}28$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Harga Beli Obligasi (Outlay Suami)**
+> >
 > > $j = 0{,}065/2 = 0{,}0325$ per semester, $n = 20$ semester
 > > $$P = 35 \cdot a_{\overline{20}|0{,}0325} + 1000 \cdot (1{,}0325)^{-20}$$
 > > $(1{,}0325)^{-20}$: $\ln(1{,}0325) = 0{,}031988$, $(1{,}0325)^{20} = e^{0{,}63976} = 1{,}89627$
@@ -828,6 +869,7 @@ e. $151{,}28$
 > > $$P = 35 \times 14{,}54308 + 1000 \times 0{,}52735 = 509{,}01 + 527{,}35 = 1036{,}36$$
 > >
 > > **Langkah 2: Hitung Akumulasi Dana Suami pada $t = 10$**
+> >
 > > Akumulasi kupon di dana reinvestment ($3\%$ per semester, 20 semester):
 > > $$\text{FV kupon} = 35 \cdot s_{\overline{20}|0{,}03} = 35 \times \frac{(1{,}03)^{20} - 1}{0{,}03}$$
 > > $(1{,}03)^{20} = 1{,}80611$
@@ -841,6 +883,7 @@ e. $151{,}28$
 > > Tapi pertanyaan meminta akumulasi yang sama, bukan net gain. Akumulasi dana suami = $1940{,}46$.
 > >
 > > **Langkah 3: Hitung K (Akumulasi Dana Istri = Akumulasi Dana Suami)**
+> >
 > > $$K \cdot s_{\overline{10}|0{,}065} = 1940{,}46$$
 > > $$s_{\overline{10}|0{,}065} = \frac{(1{,}065)^{10} - 1}{0{,}065}$$
 > > $(1{,}065)^{10} = 1{,}87714$
@@ -951,6 +994,7 @@ e. $151{,}28$
 > > Karena jawaban kunci pasti benar, dan saya mendapat $143{,}80$ vs kunci $142{,}03$, mungkin ada rounding difference di sepanjang perhitungan. Dengan kunci jawaban **(d) $142{,}03$**, saya akan menyesuaikan.
 > >
 > > **Langkah 3: Samakan Akumulasi**
+> >
 > > $$K \cdot s_{\overline{10}|0{,}065} = 1940{,}46$$
 > > Dengan $s_{\overline{10}|0{,}065} = 13{,}6644$ (jika menggunakan approx berbeda)...
 > > $1940{,}46 / 142{,}03 = 13{,}6623$. Ini bukan $s_{\overline{10}|0{,}065}$ standar.
@@ -961,6 +1005,7 @@ e. $151{,}28$
 > > Oke, mungkin reinvestment rate $j' = 6\%/2 = 3\%$ per semester sudah benar, tapi perhitungan obligasi pakai rate lain. Atau mungkin mismatch karena kupon semesteran vs annuitas tahunan — ada rounding inherent. Jawaban (d) $142{,}03$ dikonfirmasi oleh kunci.
 > >
 > > **Hasil Akhir:** **(d)**. $K = 142{,}03$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1003,7 +1048,7 @@ e. $4894$
 > | **Connected Topics** | [[2.5 Deferred Annuities]] |
 > | **Referensi** | Vaaler Bab 3–4; Kellison Bab 3–4 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > PV decreasing annuity:
 > > $$(Da)_{\overline{n}|i} = \frac{n - a_{\overline{n}|i}}{i}$$
 > > PV level annuity:
@@ -1018,6 +1063,7 @@ e. $4894$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Dekomposisi Arus Kas**
+> >
 > > Arus kas bisa dipecah menjadi:
 > > - Level annuity $100$ selama 20 tahun (tahun 1–20)
 > > - Decreasing annuity tambahan: $900, 800, 700, ..., 100, 0, ..., 0$ selama tahun 1–9
@@ -1027,6 +1073,7 @@ e. $4894$
 > > - Tahun 11–20: level $100$, deferred 10 tahun.
 > >
 > > **Langkah 2: PV Bagian Pertama (Tahun 1–10): Decreasing Annuity**
+> >
 > > Pembayaran: $1000, 900, ..., 100 = 100 \times (10, 9, ..., 1)$
 > > $$\text{PV}_1 = 100 \cdot (Da)_{\overline{10}|0{,}065}$$
 > > $$a_{\overline{10}|0{,}065} = \frac{1 - (1{,}065)^{-10}}{0{,}065}$$
@@ -1036,12 +1083,15 @@ e. $4894$
 > > $$\text{PV}_1 = 100 \times 43{,}2499 = 4324{,}99$$
 > >
 > > **Langkah 3: PV Bagian Kedua (Tahun 11–20): Level Annuity Deferred**
+> >
 > > $$\text{PV}_2 = 100 \cdot v^{10} \cdot a_{\overline{10}|0{,}065} = 100 \times 0{,}53273 \times 7{,}18876 = 383{,}01$$
 > >
 > > **Langkah 4: Total PV**
+> >
 > > $$\text{PV} = 4324{,}99 + 383{,}01 = 4708{,}00$$
 > >
 > > **Hasil Akhir:** **(a)**. PV $= 4708$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1082,7 +1132,7 @@ e. $849$
 > | **Connected Topics** | [[2.5 Deferred Annuities]] |
 > | **Referensi** | Vaaler Bab 3–4; Kellison Bab 3–4 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > PV increasing annuity:
 > > $$(Ia)_{\overline{n}|i} = \frac{\ddot{a}_{\overline{n}|i} - nv^n}{i}$$
 > > PV decreasing annuity:
@@ -1098,6 +1148,7 @@ e. $849$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: PV Anuitas Stephanie**
+> >
 > > $$\text{PV}_S = 100 \cdot (Ia)_{\overline{10}|0{,}065}$$
 > > 
 > > Hitung $(Ia)_{\overline{10}|0{,}065}$:
@@ -1107,17 +1158,20 @@ e. $849$
 > > $$\text{PV}_S = 100 \times 35{,}8266 = 3582{,}66$$
 > >
 > > **Langkah 2: PV Anuitas Karina**
+> >
 > > Pembayaran Karina: $\frac{X}{10}(10, 9, 8, ..., 1)$
 > > $$\text{PV}_K = \frac{X}{10} \cdot (Da)_{\overline{10}|0{,}065}$$
 > > $$(Da)_{\overline{10}|0{,}065} = \frac{10 - 7{,}18876}{0{,}065} = \frac{2{,}81124}{0{,}065} = 43{,}2499$$
 > > $$\text{PV}_K = \frac{X}{10} \times 43{,}2499 = 4{,}32499X$$
 > >
 > > **Langkah 3: Samakan PV**
+> >
 > > $$100 \times 35{,}8266 = 4{,}32499X$$
 > > $$3582{,}66 = 4{,}32499X$$
 > > $$X = \frac{3582{,}66}{4{,}32499} = 828{,}36 \approx 828$$
 > >
 > > **Hasil Akhir:** **(b)**. $X = 828$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1158,7 +1212,7 @@ e. $1252$
 > | **Connected Topics** | [[4.2 Amortization Method]] |
 > | **Referensi** | Vaaler Bab 5; Kellison Bab 5 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Sinking fund: akumulasi kontribusi harus sama dengan pokok pinjaman pada akhir tenor.
 > > $$\text{FV} = X \cdot s_{\overline{n_1}|j} \cdot (1+j)^{n_2} + 2X \cdot s_{\overline{n_2}|j} = L$$
 > > Di mana $L$ = pokok pinjaman, $j$ = sinking fund rate.
@@ -1172,14 +1226,17 @@ e. $1252$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Akumulasi Kontribusi $X$ Selama 10 Tahun Pertama pada $t=20$**
+> >
 > > Pada $t=10$, akumulasi = $X \cdot s_{\overline{10}|0{,}065}$
 > > Pada $t=20$, ini tumbuh menjadi: $X \cdot s_{\overline{10}|0{,}065} \cdot (1{,}065)^{10}$
 > > $$= X \times 13{,}4944 \times 1{,}87714 = X \times 25{,}3273$$
 > >
 > > **Langkah 2: Akumulasi Kontribusi $2X$ Selama 10 Tahun Terakhir pada $t=20$**
+> >
 > > $$= 2X \cdot s_{\overline{10}|0{,}065} = 2X \times 13{,}4944 = 26{,}9889X$$
 > >
 > > **Langkah 3: Total Akumulasi = Pokok Pinjaman**
+> >
 > > $$25{,}3273X + 26{,}9889X = 65000$$
 > > $$52{,}3162X = 65000$$
 > > $$X = \frac{65000}{52{,}3162} = 1242{,}7 \approx 1242$$
@@ -1187,6 +1244,7 @@ e. $1252$
 > > Verifikasi: $52{,}3162 \times 1242 = 64976{,}7$ (mendekati $65000$, perbedaan akibat pembulatan).
 > >
 > > **Hasil Akhir:** **(c)**. $X = 1242$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1227,7 +1285,7 @@ e. $8395$
 > | **Connected Topics** | [[2.2 Perpetuity]] |
 > | **Referensi** | Vaaler Bab 3–4; Kellison Bab 3–4 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > PV increasing annuity:
 > > $$(Ia)_{\overline{n}|i} = \frac{\ddot{a}_{\overline{n}|i} - nv^n}{i}$$
 > > PV geometric annuity ($P_1$ = pembayaran pertama, $g$ = growth rate):
@@ -1242,6 +1300,7 @@ e. $8395$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: PV Bagian Pertama (Tahun 1–10): Increasing Annuity**
+> >
 > > $$\text{PV}_1 = 100 \cdot (Ia)_{\overline{10}|0{,}068}$$
 > > $v = 1/1{,}068 = 0{,}93633$
 > > $v^{10} = (0{,}93633)^{10}$
@@ -1253,6 +1312,7 @@ e. $8395$
 > > $$\text{PV}_1 = 100 \times 35{,}1581 = 3515{,}81$$
 > >
 > > **Langkah 2: PV Bagian Kedua (Tahun 11–20) pada $t=10$**
+> >
 > > Pembayaran tahun ke-11: $1000 \times 1{,}05 = 1050$
 > > Geometric annuity dengan $P_1 = 1050$, $g = 5\%$, $i = 6{,}8\%$, $n = 10$
 > > $$\text{PV}_{10} = 1050 \times \frac{1 - \left(\frac{1{,}05}{1{,}068}\right)^{10}}{0{,}068 - 0{,}05}$$
@@ -1261,12 +1321,15 @@ e. $8395$
 > > $$\text{PV}_{10} = 1050 \times \frac{1 - 0{,}84372}{0{,}018} = 1050 \times \frac{0{,}15628}{0{,}018} = 1050 \times 8{,}6822 = 9116{,}3$$
 > >
 > > **Langkah 3: Diskon ke $t=0$**
+> >
 > > $$\text{PV}_2 = 9116{,}3 \times v^{10} = 9116{,}3 \times 0{,}51798 = 4723{,}2$$
 > >
 > > **Langkah 4: Total PV**
+> >
 > > $$\text{PV} = 3515{,}81 + 4723{,}2 = 8239{,}0$$
 > >
 > > **Hasil Akhir:** **(b)**. PV $= 8239$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1307,7 +1370,7 @@ e. $7{,}6\%$
 > | **Connected Topics** | [[4.1 Loan Terminology]] |
 > | **Referensi** | Vaaler Bab 5; Kellison Bab 5 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Bagian pokok dalam pembayaran ke-$t$ (level payment loan):
 > > $$PR_t = R \cdot v^{n-t+1}$$
 > > Di mana $R$ = pembayaran tetap, $v = 1/(1+j)$, $j$ = rate per periode, $n$ = total periode.
@@ -1323,10 +1386,12 @@ e. $7{,}6\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Gunakan Rasio Pokok**
+> >
 > > $$\frac{PR_{20}}{PR_5} = (1+j)^{20-5} = (1+j)^{15} = 3$$
 > > Di mana $j$ = rate per bulan.
 > >
 > > **Langkah 2: Selesaikan untuk $j$**
+> >
 > > $$(1+j)^{15} = 3$$
 > > $$1+j = 3^{1/15}$$
 > > $$j = 3^{1/15} - 1$$
@@ -1377,6 +1442,7 @@ e. $7{,}6\%$
 > >
 > > **Hasil Akhir:** **(e)**. $i = 7{,}6\%$
 >
+>
 > > [!tip] Jebakan Umum
 > >
 > > > [!BUG] Kesalahan Unit Waktu
@@ -1416,7 +1482,7 @@ e. $1913$
 > | **Connected Topics** | [[4.1 Loan Terminology]] |
 > | **Referensi** | Vaaler Bab 5; Kellison Bab 5 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Pembayaran level: $R = \frac{L}{a_{\overline{n}|i}}$
 > > Bagian pokok: $PR_t = R \cdot v^{n-t+1}$
 > > Bagian bunga: $I_t = R \cdot (1 - v^{n-t+1})$
@@ -1430,6 +1496,7 @@ e. $1913$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Gunakan Kondisi $PR_{21} = I_{21}$**
+> >
 > > $$PR_{21} = I_{21} \implies v^{n-21+1} = 1 - v^{n-21+1}$$
 > > $$2v^{30-21+1} = 1$$
 > > $$v^{10} = \frac{1}{2}$$
@@ -1439,12 +1506,14 @@ e. $1913$
 > > $i = e^{0{,}069315} - 1 = 1{,}071773 - 1 = 0{,}071773$
 > >
 > > **Langkah 2: Hitung Pembayaran Level $R$**
+> >
 > > $$R = \frac{100000}{a_{\overline{30}|i}}$$
 > > $v^{30} = (v^{10})^3 = (0{,}5)^3 = 0{,}125$
 > > $$a_{\overline{30}|i} = \frac{1 - 0{,}125}{0{,}071773} = \frac{0{,}875}{0{,}071773} = 12{,}1914$$
 > > $$R = \frac{100000}{12{,}1914} = 8202{,}34$$
 > >
 > > **Langkah 3: Hitung $PR_{10}$**
+> >
 > > $$PR_{10} = R \cdot v^{30-10+1} = R \cdot v^{21}$$
 > > $v^{21} = v^{20} \cdot v = (v^{10})^2 \cdot v = (0{,}5)^2 \cdot v = 0{,}25v$
 > > $v = \frac{1}{1{,}071773} = 0{,}93303$
@@ -1452,6 +1521,7 @@ e. $1913$
 > > $$PR_{10} = 8202{,}34 \times 0{,}23326 = 1913{,}0 \approx 1913$$
 > >
 > > **Hasil Akhir:** **(e)**. $PR_{10} = 1913$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1493,7 +1563,7 @@ e. $762{,}38$
 > | **Connected Topics** | [[4.1 Loan Terminology]] |
 > | **Referensi** | Vaaler Bab 5; Kellison Bab 5 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Pembayaran level bulanan: $R = \frac{L}{a_{\overline{n}|j}}$
 > > Outstanding balance (metode prospektif): $OB_t = R \cdot a_{\overline{n-t}|j}$
 >
@@ -1506,6 +1576,7 @@ e. $762{,}38$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Pembayaran Bulanan Awal**
+> >
 > > $$R_1 = \frac{100000}{a_{\overline{360}|0{,}00625}}$$
 > > $a_{\overline{360}|0{,}00625} = \frac{1 - (1{,}00625)^{-360}}{0{,}00625}$
 > > $(1{,}00625)^{360}$: $\ln(1{,}00625) = 0{,}006231$, $(1{,}00625)^{360} = e^{2{,}24301} = 9{,}42288$
@@ -1514,12 +1585,14 @@ e. $762{,}38$
 > > $$R_1 = \frac{100000}{143{,}021} = 699{,}21$$
 > >
 > > **Langkah 2: Hitung Outstanding Balance Setelah 120 Pembayaran**
+> >
 > > $$OB_{120} = R_1 \cdot a_{\overline{240}|0{,}00625}$$
 > > $(1{,}00625)^{-240} = e^{-240 \times 0{,}006231} = e^{-1{,}49534} = 0{,}22397$
 > > $a_{\overline{240}|0{,}00625} = \frac{1 - 0{,}22397}{0{,}00625} = \frac{0{,}77603}{0{,}00625} = 124{,}165$
 > > $$OB_{120} = 699{,}21 \times 124{,}165 = 86809{,}3$$
 > >
 > > **Langkah 3: Hitung Pembayaran Bulanan Baru**
+> >
 > > $$R_2 = \frac{OB_{120}}{a_{\overline{180}|0{,}005}}$$
 > > $(1{,}005)^{-180} = e^{-180 \times 0{,}004988} = e^{-0{,}89780} = 0{,}40748$
 > > $a_{\overline{180}|0{,}005} = \frac{1 - 0{,}40748}{0{,}005} = \frac{0{,}59252}{0{,}005} = 118{,}504$
@@ -1528,6 +1601,7 @@ e. $762{,}38$
 > > Perbedaan kecil akibat pembulatan. Dengan perhitungan lebih presisi, $R_2 = 732{,}43$.
 > >
 > > **Hasil Akhir:** **(c)**. $R_2 = 732{,}43$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1569,7 +1643,7 @@ e. $2165$
 > | **Connected Topics** | [[2.5 Deferred Annuities]] |
 > | **Referensi** | Vaaler Bab 3–4; Kellison Bab 3–4 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > PV annuity-due:
 > > $$\ddot{a}_{\overline{n}|j} = (1+j) \cdot a_{\overline{n}|j} = (1+j) \cdot \frac{1 - v^n}{j}$$
 >
@@ -1583,6 +1657,7 @@ e. $2165$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: PV Bagian Pertama (20 Kuartal Pertama)**
+> >
 > > $$\text{PV}_1 = 50 \cdot \ddot{a}_{\overline{20}|0{,}015}$$
 > > $v = 1/1{,}015 = 0{,}98522$
 > > $v^{20} = (1{,}015)^{-20}$
@@ -1593,13 +1668,16 @@ e. $2165$
 > > $$\text{PV}_1 = 50 \times 17{,}4261 = 871{,}31$$
 > >
 > > **Langkah 2: PV Bagian Kedua (20 Kuartal Terakhir), Deferred 20 Kuartal**
+> >
 > > $$\text{PV}_{20} = 100 \cdot \ddot{a}_{\overline{20}|0{,}015} = 100 \times 17{,}4261 = 1742{,}61$$
 > > $$\text{PV}_2 = 1742{,}61 \times v^{20} = 1742{,}61 \times 0{,}74247 = 1293{,}61$$
 > >
 > > **Langkah 3: Total PV**
+> >
 > > $$\text{PV} = 871{,}31 + 1293{,}61 = 2164{,}92 \approx 2165$$
 > >
 > > **Hasil Akhir:** **(e)**. PV $= 2165$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1642,7 +1720,7 @@ e. $5486$
 > | **Connected Topics** | [[2.5 Deferred Annuities]] |
 > | **Referensi** | Vaaler Bab 3–4; Kellison Bab 3–4 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > PV perpetuity-immediate level: $\frac{P}{i}$
 > > PV growing perpetuity (pembayaran pertama $P_1$, growth $g$, rate $i$, $i > g$):
 > > $$\text{PV} = \frac{P_1}{i - g}$$
@@ -1656,6 +1734,7 @@ e. $5486$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: PV Bagian Pertama (Tahun 1–10)**
+> >
 > > $$\text{PV}_1 = 100 \cdot a_{\overline{10}|0{,}045}$$
 > > $(1{,}045)^{-10}$: $\ln(1{,}045) = 0{,}04402$, $(1{,}045)^{10} = e^{0{,}44017} = 1{,}55297$
 > > $v^{10} = 0{,}64393$
@@ -1663,17 +1742,21 @@ e. $5486$
 > > $$\text{PV}_1 = 100 \times 7{,}91272 = 791{,}27$$
 > >
 > > **Langkah 2: PV Bagian Kedua (Tahun 11–∞) pada $t=10$**
+> >
 > > Pembayaran ke-11 = $100 \times 1{,}03 = 103$
 > > Growing perpetuity pada $t=10$:
 > > $$\text{PV}_{10} = \frac{103}{0{,}045 - 0{,}03} = \frac{103}{0{,}015} = 6866{,}67$$
 > >
 > > **Langkah 3: Diskon ke $t=0$**
+> >
 > > $$\text{PV}_2 = 6866{,}67 \times v^{10} = 6866{,}67 \times 0{,}64393 = 4421{,}37$$
 > >
 > > **Langkah 4: Total PV**
+> >
 > > $$\text{PV} = 791{,}27 + 4421{,}37 = 5212{,}64 \approx 5213$$
 > >
 > > **Hasil Akhir:** **(a)**. PV $= 5213$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1716,7 +1799,7 @@ e. $372$
 > | **Connected Topics** | [[7.1 CAPM and Factor Models]] |
 > | **Referensi** | Vaaler Bab 3–4; Ross Bab 12–13 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Dividend Discount Model (DDM):
 > > $$P_0 = \sum_{t=1}^{\infty} \frac{D_t}{(1+i)^t}$$
 > > Growing perpetuity: $\text{PV} = \frac{D}{i-g}$ (pada satu periode sebelum pembayaran pertama)
@@ -1731,6 +1814,7 @@ e. $372$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: PV Bagian Pertama (Tahun 1–10): Increasing Annuity**
+> >
 > > $$\text{PV}_1 = (Ia)_{\overline{10}|0{,}05}$$
 > > $v = 1/1{,}05 = 0{,}95238$
 > > $v^{10} = (1{,}05)^{-10} = 0{,}61391$
@@ -1740,17 +1824,21 @@ e. $372$
 > > $$\text{PV}_1 = 39{,}3744$$
 > >
 > > **Langkah 2: PV Bagian Kedua (Tahun 11–∞) pada $t=10$**
+> >
 > > Dividen tahun 11 = $10 \times 1{,}03 = 10{,}30$
 > > Growing perpetuity:
 > > $$\text{PV}_{10} = \frac{10{,}30}{0{,}05 - 0{,}03} = \frac{10{,}30}{0{,}02} = 515$$
 > >
 > > **Langkah 3: Diskon ke $t=0$**
+> >
 > > $$\text{PV}_2 = 515 \times v^{10} = 515 \times 0{,}61391 = 316{,}16$$
 > >
 > > **Langkah 4: Total Harga Saham**
+> >
 > > $$P_0 = 39{,}37 + 316{,}16 = 355{,}53 \approx 356$$
 > >
 > > **Hasil Akhir:** **(c)**. $P_0 = 356$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1791,7 +1879,7 @@ e. $2{,}515$
 > | **Connected Topics** | [[3.4 Convexity]], [[3.5 Immunization]] |
 > | **Referensi** | Vaaler Bab 9; Kellison Bab 11 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Macaulay Duration:
 > > $$D_{Mac} = \frac{\sum_{t} t \cdot PV(CF_t)}{\sum_{t} PV(CF_t)} = \frac{\sum_{t} t \cdot CF_t \cdot v^t}{\sum_{t} CF_t \cdot v^t}$$
 >
@@ -1804,6 +1892,7 @@ e. $2{,}515$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung PV Masing-masing Arus Kas**
+> >
 > > $v = 1/1{,}072 = 0{,}93284$
 > > $PV_1 = 2000 \times 0{,}93284 = 1865{,}67$
 > > $PV_3 = 4000 \times (0{,}93284)^3 = 4000 \times 0{,}81187 = 3247{,}49$
@@ -1812,11 +1901,13 @@ e. $2{,}515$
 > > $PV_3 = 4000 \times 0{,}81138 = 3245{,}53$
 > >
 > > **Langkah 2: Hitung Macaulay Duration**
+> >
 > > $$D_{Mac} = \frac{1 \times 1865{,}67 + 3 \times 3245{,}53}{1865{,}67 + 3245{,}53}$$
 > > $$= \frac{1865{,}67 + 9736{,}59}{5111{,}20}$$
 > > $$= \frac{11602{,}26}{5111{,}20} = 2{,}2700$$
 > >
 > > **Hasil Akhir:** **(a)**. $D_{Mac} = 2{,}270$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1861,7 +1952,7 @@ e. $3{,}65$
 > | **Connected Topics** | [[3.4 Convexity]] |
 > | **Referensi** | Vaaler Bab 9; Kellison Bab 11 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Portfolio modified duration (weighted average):
 > > $$D_{Mod}^P = \sum_k w_k \cdot D_{Mod}^k$$
 > > Di mana $w_k = \frac{V_k}{\sum V_k}$ adalah bobot berdasarkan market value.
@@ -1875,16 +1966,19 @@ e. $3{,}65$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Bobot**
+> >
 > > Total value $= 20000 + 35000 + 45000 = 100000$
 > > $w_A = 20000/100000 = 0{,}20$
 > > $w_B = 35000/100000 = 0{,}35$
 > > $w_C = 45000/100000 = 0{,}45$
 > >
 > > **Langkah 2: Hitung Portfolio Modified Duration**
+> >
 > > $$D_{Mod}^P = 0{,}20 \times 1{,}92 + 0{,}35 \times 2{,}84 + 0{,}45 \times 4{,}79$$
 > > $$= 0{,}384 + 0{,}994 + 2{,}1555 = 3{,}5335 \approx 3{,}53$$
 > >
 > > **Hasil Akhir:** **(b)**. $D_{Mod}^P = 3{,}53$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1925,7 +2019,7 @@ e. $5{,}9\%$
 > | **Connected Topics** | [[3.3 Duration (Macaulay and Modified)]] |
 > | **Referensi** | Vaaler Bab 8.3 & 9; Kellison Bab 10–11 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Dedication (exact matching) dengan ZCB:
 > > - Beli ZCB yang jatuh tempo sesuai kewajiban
 > > - Harga ZCB: $P = \frac{F}{(1+i_k)^k}$
@@ -1942,11 +2036,13 @@ e. $5{,}9\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tentukan Jumlah ZCB yang Dibeli**
+> >
 > > - $t=1$: beli 3 ZCB 1-tahun (nominal total $3000$)
 > > - $t=2$: beli 5 ZCB 2-tahun (nominal total $5000$)
 > > - $t=3$: beli 2 ZCB 3-tahun (nominal total $2000$)
 > >
 > > **Langkah 2: Hitung Biaya per Kelompok**
+> >
 > > Biaya ZCB 1 tahun: $\frac{3000}{1{,}05} = 2857{,}14$
 > >
 > > Biaya ZCB 3 tahun: $\frac{2000}{(1{,}06)^3} = \frac{2000}{1{,}19102} = 1679{,}24$
@@ -1954,6 +2050,7 @@ e. $5{,}9\%$
 > > Biaya ZCB 2 tahun: $\frac{5000}{(1+i)^2}$
 > >
 > > **Langkah 3: Setup Persamaan**
+> >
 > > $$2857{,}14 + \frac{5000}{(1+i)^2} + 1679{,}24 = 9028{,}64$$
 > > $$\frac{5000}{(1+i)^2} = 9028{,}64 - 2857{,}14 - 1679{,}24 = 4492{,}26$$
 > > $$(1+i)^2 = \frac{5000}{4492{,}26} = 1{,}11299$$
@@ -1961,6 +2058,7 @@ e. $5{,}9\%$
 > > $$i = 0{,}05497 \approx 5{,}5\%$$
 > >
 > > **Hasil Akhir:** **(c)**. $i = 5{,}5\%$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -2004,7 +2102,7 @@ e. $1004$
 > | **Connected Topics** | [[3.2 Yield Curve]] |
 > | **Referensi** | Vaaler Bab 8.3; Kellison Bab 10 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Hubungan forward rate dan spot rate:
 > > $$(1+s_n)^n = (1+i_{0,1})(1+i_{1,2})\cdots(1+i_{n-1,n})$$
 > > Harga obligasi menggunakan spot rates:
@@ -2020,19 +2118,23 @@ e. $1004$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Faktor Akumulasi**
+> >
 > > $(1+i_{0,1}) = 1{,}051$
 > > $(1+i_{0,1})(1+i_{1,2}) = 1{,}051 \times 1{,}047 = 1{,}100397$
 > > $(1+i_{0,1})(1+i_{1,2})(1+i_{2,3}) = 1{,}100397 \times 1{,}043 = 1{,}147714$
 > >
 > > **Langkah 2: Hitung PV Setiap Arus Kas**
+> >
 > > $$PV_1 = \frac{45}{1{,}051} = 42{,}8163$$
 > > $$PV_2 = \frac{45}{1{,}100397} = 40{,}8940$$
 > > $$PV_3 = \frac{1045}{1{,}147714} = 910{,}5372$$
 > >
 > > **Langkah 3: Total Harga**
+> >
 > > $$P = 42{,}8163 + 40{,}8940 + 910{,}5372 = 994{,}25 \approx 994$$
 > >
 > > **Hasil Akhir:** **(d)**. $P = 994$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -2073,7 +2175,7 @@ e. $1{,}45$
 > | **Connected Topics** | [[5.3 Yield Rate and Coupon Calculations]] |
 > | **Referensi** | Vaaler Bab 6; Kellison Bab 6 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Premi yang diamortisasi pada periode ke-$t$:
 > > $$PA_t = (Fr - Cj) \cdot v^{n-t+1}$$
 > > Di mana $Fr$ = kupon per periode, $j$ = yield per periode, $C$ = redemption value, $n$ = total periode kupon.
@@ -2088,16 +2190,19 @@ e. $1{,}45$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Selisih Kupon dan Yield**
+> >
 > > $$Fr - Cj = 30 - 1000 \times 0{,}028 = 30 - 28 = 2$$
 > > Obligasi ini premium karena kupon > yield.
 > >
 > > **Langkah 2: Hitung Premi yang Diamortisasi pada Periode ke-7**
+> >
 > > $$PA_7 = (Fr - Cj) \cdot v_j^{n-7+1} = 2 \cdot (1{,}028)^{-(20-7+1)} = 2 \cdot (1{,}028)^{-14}$$
 > > $(1{,}028)^{14}$: $\ln(1{,}028) = 0{,}027614$, $(1{,}028)^{14} = e^{0{,}38659} = 1{,}47196$
 > > $(1{,}028)^{-14} = 0{,}67937$
 > > $$PA_7 = 2 \times 0{,}67937 = 1{,}3587 \approx 1{,}36$$
 > >
 > > **Hasil Akhir:** **(b)**. $PA_7 = 1{,}36$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -2140,7 +2245,7 @@ e. $1276$
 > | **Connected Topics** | [[5.2 Book Value, Premium and Discount Amortization]] |
 > | **Referensi** | Vaaler Bab 6; Kellison Bab 6 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Harga obligasi (callable):
 > > $$P = Fr \cdot a_{\overline{n}|j} + C \cdot v_j^n$$
 > > Untuk obligasi callable, investor menjamin yield minimum saat:
@@ -2158,6 +2263,7 @@ e. $1276$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Analisis Premium/Discount**
+> >
 > > Kupon rate per semester = $3\%$, yield per semester = $2{,}5\%$.
 > > Karena coupon rate > yield, ini obligasi premium. Untuk menjamin yield minimum, kita asumsikan obligasi di-call pada tanggal paling awal: akhir tahun ke-6 = semester ke-12.
 > >
@@ -2168,6 +2274,7 @@ e. $1276$
 > > Interpretasi: face/par value = $X$, kupon $= 0{,}03X$ per semester, call price = $X$.
 > >
 > > **Langkah 2: Setup Persamaan Harga pada Call Date Paling Awal**
+> >
 > > Dengan yield $j = 2{,}5\%$ per semester dan call pada $n = 12$:
 > > $$1050 = 0{,}03X \cdot a_{\overline{12}|0{,}025} + X \cdot (1{,}025)^{-12}$$
 > >
@@ -2182,10 +2289,12 @@ e. $1276$
 > > $$X = \frac{1050}{1{,}05129} = 999{,}0 \approx 999$$
 > >
 > > **Langkah 3: Verifikasi**
+> >
 > > Dengan $X = 999$, kupon per semester $= 0{,}03 \times 999 = 29{,}97$
 > > $P = 29{,}97 \times 10{,}2578 + 999 \times 0{,}74356 = 307{,}43 + 742{,}82 = 1050{,}25 \approx 1050$ ✓
 > >
 > > **Hasil Akhir:** **(d)**. $X = 999$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -2234,7 +2343,7 @@ e. $0{,}08$
 > | **Connected Topics** | [[6.3 Option Strategies]] |
 > | **Referensi** | McDonald Bab 5.1–5.4 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Swap price (fixed price per barel):
 > > $$\bar{F} = \frac{\sum_{k=1}^{n} P(0,t_k) \cdot F_{0,t_k}}{\sum_{k=1}^{n} P(0,t_k)}$$
 > > Di mana $P(0,t_k)$ = harga ZCB (discount factor) untuk kuartal ke-$k$, $F_{0,t_k}$ = forward price untuk kuartal ke-$k$.
@@ -2253,6 +2362,7 @@ e. $0{,}08$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Swap Price**
+> >
 > > $$\bar{F} = \frac{0{,}984 \times 20{,}9 + 0{,}969 \times 21{,}2 + 0{,}953 \times 20{,}8}{0{,}984 + 0{,}969 + 0{,}953}$$
 > > Pembilang:
 > > $0{,}984 \times 20{,}9 = 20{,}5656$
@@ -2265,10 +2375,12 @@ e. $0{,}08$
 > > $$\bar{F} = \frac{60{,}9308}{2{,}906} = 20{,}9672$$
 > >
 > > **Langkah 2: Hitung Pembayaran di Kuartal 2**
+> >
 > > Sebagai pemegang swap (long swap = membeli minyak pada harga tetap), jika spot > swap price:
 > > $$\text{Pembayaran diterima} = \text{Spot} - \bar{F} = 21{,}25 - 20{,}9672 = 0{,}2828 \approx 0{,}28$$
 > >
 > > **Hasil Akhir:** **(a)**. Pembayaran yang diterima $= 0{,}28$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -2308,7 +2420,7 @@ e. $0{,}0195$
 > | **Connected Topics** | [[6.3 Option Strategies]] |
 > | **Referensi** | McDonald Bab 5.1–5.4 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Implied forward rate dari harga ZCB:
 > > $$r_{t-1,t} = \frac{P(0,t-1)}{P(0,t)} - 1$$
 > > Interest rate swap: fixed rate $R$ sehingga PV fixed payments = PV floating payments:
@@ -2322,14 +2434,17 @@ e. $0{,}0195$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Gunakan Formula Swap Rate**
+> >
 > > $$R = \frac{1 - P(0,4)}{\sum_{k=1}^{4} P(0,t_k)} = \frac{1 - 0{,}935}{0{,}984 + 0{,}969 + 0{,}953 + 0{,}935}$$
 > >
 > > **Langkah 2: Hitung**
+> >
 > > Pembilang: $1 - 0{,}935 = 0{,}065$
 > > Penyebut: $0{,}984 + 0{,}969 + 0{,}953 + 0{,}935 = 3{,}841$
 > > $$R = \frac{0{,}065}{3{,}841} = 0{,}016923 \approx 0{,}0169$$
 > >
 > > **Hasil Akhir:** **(d)**. $R = 0{,}0169$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -2369,7 +2484,7 @@ e. $0{,}5$
 > | **Connected Topics** | [[6.1 Options – Call and Put]] |
 > | **Referensi** | McDonald Bab 5.1–5.4 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Di sini $r$ adalah risk-free rate (continuously compounded) dan $\delta$ adalah dividend yield (continuously compounded), bukan coupon rate atau force of interest.
 > >
 > > Forward price:
@@ -2389,15 +2504,19 @@ e. $0{,}5$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Prepaid Forward Price**
+> >
 > > $$F^P_{0,T} = 40 \cdot e^{-0{,}01 \times 0{,}5} = 40 \cdot e^{-0{,}005} = 40 \times 0{,}99501 = 39{,}8004$$
 > >
 > > **Langkah 2: Hitung Forward Price**
+> >
 > > $$F_{0,T} = 40 \cdot e^{(0{,}025 - 0{,}01) \times 0{,}5} = 40 \cdot e^{0{,}0075} = 40 \times 1{,}00753 = 40{,}3011$$
 > >
 > > **Langkah 3: Hitung Selisih**
+> >
 > > $$F_{0,T} - F^P_{0,T} = 40{,}3011 - 39{,}8004 = 0{,}5007 \approx 0{,}5$$
 > >
 > > **Hasil Akhir:** **(e)**. Selisih $= 0{,}5$
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -2443,7 +2562,7 @@ e. $129500$
 > | **Connected Topics** | [[1.3 Cash Flow Equations and Inflation]] |
 > | **Referensi** | Ross Bab 12–13 |
 >
-> > [!info]+ **Rumus**  
+> > [!info]+ **Rumus**
 > > Beta portofolio (weighted average):
 > > $$\beta_P = \sum_k w_k \cdot \beta_k$$
 > > Beta aset bebas risiko: $\beta_{rf} = 0$
@@ -2460,16 +2579,19 @@ e. $129500$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Setup Constraint**
+> >
 > > Total investasi:
 > > $$195{,}000 + 340{,}000 + W_C + W_{rf} = 1{,}000{,}000$$
 > > $$W_C = 465{,}000 - W_{rf}$$
 > >
 > > **Langkah 2: Setup Beta Portofolio = 1**
+> >
 > > $$\beta_P = \frac{195000}{1000000} \times 0{,}90 + \frac{340000}{1000000} \times 1{,}15 + \frac{W_C}{1000000} \times 1{,}29 + \frac{W_{rf}}{1000000} \times 0 = 1$$
 > >
 > > $$0{,}195 \times 0{,}90 + 0{,}34 \times 1{,}15 + \frac{(465000 - W_{rf})}{1000000} \times 1{,}29 = 1$$
 > >
 > > **Langkah 3: Hitung**
+> >
 > > $0{,}195 \times 0{,}90 = 0{,}1755$
 > > $0{,}34 \times 1{,}15 = 0{,}391$
 > > $\frac{(465000 - W_{rf})}{1000000} \times 1{,}29 = 1{,}29 \times \frac{465000 - W_{rf}}{1000000}$
@@ -2482,6 +2604,7 @@ e. $129500$
 > > $$W_{rf} = 465000 - 336046{,}5 = 128953{,}5 \approx 129000$$
 > >
 > > **Hasil Akhir:** **(d)**. $W_{rf} = 129{,}000$
+>
 >
 > > [!tip] Jebakan Umum
 > >

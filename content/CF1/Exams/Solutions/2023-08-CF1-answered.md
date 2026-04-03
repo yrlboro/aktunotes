@@ -35,6 +35,7 @@ e. 20, 100, 100, 40, dan 40 pada setiap akhir tahun
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Analisis total pembayaran**
+> >
 > > Semua opsi memiliki total pembayaran yang sama:
 > > - (a): $0 + 100 + 100 + 100 + 0 = 300$
 > > - (b): $60 \times 5 = 300$
@@ -43,9 +44,11 @@ e. 20, 100, 100, 40, dan 40 pada setiap akhir tahun
 > > - (e): $20 + 100 + 100 + 40 + 40 = 300$
 > >
 > > **Langkah 2: Prinsip Time Value of Money**
+> >
 > > Karena total sama, IRR lebih besar jika pembayaran terkonsentrasi di tahun-tahun awal. Semakin cepat uang diterima, semakin tinggi present value pada rate tertentu, sehingga IRR yang menyamakan PV = X akan lebih besar.
 > >
 > > **Langkah 3: Bandingkan PV relatif**
+> >
 > > Hitung "weighted time" = $\sum t \cdot CF_t / 300$:
 > > - (a): $(0 \cdot 1 + 100 \cdot 2 + 100 \cdot 3 + 100 \cdot 4 + 0 \cdot 5)/300 = 900/300 = 3{,}00$
 > > - (b): $(60 \cdot 1 + 60 \cdot 2 + 60 \cdot 3 + 60 \cdot 4 + 60 \cdot 5)/300 = 900/300 = 3{,}00$
@@ -54,6 +57,7 @@ e. 20, 100, 100, 40, dan 40 pada setiap akhir tahun
 > > - (e): $(20 \cdot 1 + 100 \cdot 2 + 100 \cdot 3 + 40 \cdot 4 + 40 \cdot 5)/300 = 880/300 = 2{,}93$
 > >
 > > **Langkah 4: Kesimpulan**
+> >
 > > Opsi (d) memiliki weighted time terkecil (2,50), artinya pembayaran paling terkonsentrasi di awal → PV tertinggi → IRR terbesar.
 > >
 > > **Hasil Akhir:** **(d)**. Pola 75, 75, 75, 75, dan 0
@@ -114,9 +118,11 @@ e. 0,84
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung integral force of interest**
+> >
 > > $$\int_0^3 \delta_t \, dt = \int_0^3 \frac{t^3}{100} \, dt = \frac{1}{100} \cdot \frac{t^4}{4}\Big|_0^3 = \frac{1}{100} \cdot \frac{81}{4} = \frac{81}{400} = 0{,}2025$$
 > >
 > > **Langkah 2: Hitung investasi awal**
+> >
 > > $$PV = FV \cdot e^{-0{,}2025} = 1 \times e^{-0{,}2025}$$
 > > $$e^{-0{,}2025} = 0{,}81681 \approx 0{,}82$$
 > >
@@ -191,9 +197,11 @@ e. 1.031
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tulis persamaan nilai di $t = 10$**
+> >
 > > $$10{,}000(1{,}04)^{10} - \frac{K}{0{,}95}(1{,}04)^6 - \frac{K}{0{,}95}(1{,}04)^5 - K(1{,}04)^4 - K(1{,}04)^3 = 10{,}000$$
 > >
 > > **Langkah 2: Hitung komponen**
+> >
 > > $(1{,}04)^{10} = 1{,}48024$
 > > $(1{,}04)^6 = 1{,}26532$
 > > $(1{,}04)^5 = 1{,}21665$
@@ -201,6 +209,7 @@ e. 1.031
 > > $(1{,}04)^3 = 1{,}12486$
 > >
 > > **Langkah 3: Substitusi**
+> >
 > > $$10{,}000 \times 1{,}48024 - K\left[\frac{1{,}26532}{0{,}95} + \frac{1{,}21665}{0{,}95} + 1{,}16986 + 1{,}12486\right] = 10{,}000$$
 > > $$14{,}802{,}4 - K\left[1{,}33192 + 1{,}28069 + 1{,}16986 + 1{,}12486\right] = 10{,}000$$
 > > $$14{,}802{,}4 - K \times 4{,}90733 = 10{,}000$$
@@ -268,10 +277,12 @@ e. $X \ge 1.400$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tulis equation of value di $t = 0$**
+> >
 > > PV setoran Yonas = PV pembayaran perusahaan:
 > > $$2Xv^3 + Xv^6 = 2{,}000v^4 + 3{,}000v^8$$
 > >
 > > **Langkah 2: Hitung faktor diskonto**
+> >
 > > $v = 1/1{,}08 = 0{,}92593$
 > > $v^3 = 0{,}79383$
 > > $v^4 = 0{,}73503$
@@ -279,12 +290,14 @@ e. $X \ge 1.400$
 > > $v^8 = 0{,}54027$
 > >
 > > **Langkah 3: Substitusi dan selesaikan**
+> >
 > > $$X(2 \times 0{,}79383 + 0{,}63017) = 2{,}000 \times 0{,}73503 + 3{,}000 \times 0{,}54027$$
 > > $$X(1{,}58766 + 0{,}63017) = 1{,}470{,}06 + 1{,}620{,}81$$
 > > $$X \times 2{,}21783 = 3{,}090{,}87$$
 > > $$X = \frac{3{,}090{,}87}{2{,}21783} = 1{,}393{,}7$$
 > >
 > > **Langkah 4: Tentukan interval**
+> >
 > > $1.350 \le 1.393{,}7 < 1.400$ → jawaban (d).
 > >
 > > **Hasil Akhir:** **(d)**. $1.350 \le X < 1.400$
@@ -348,11 +361,13 @@ e. Tidak ada jawaban yang benar
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Evaluasi ekspresi (ii)**
+> >
 > > $$v^{10}\ddot{s}_{10|} - a_{9|}$$
 > > Gunakan $v^{10}\ddot{s}_{10|} = \ddot{a}_{10|} = 1 + a_{9|}$:
 > > $$= (1 + a_{9|}) - a_{9|} = 1 \quad \checkmark$$
 > >
 > > **Langkah 2: Evaluasi ekspresi (iii)**
+> >
 > > $$(1+i)^{10}a_{10|} - \ddot{s}_{9|}$$
 > > Gunakan $(1+i)^{10}a_{10|} = s_{10|}$ dan $\ddot{s}_{9|} = (1+i)s_{9|}$:
 > > $$= s_{10|} - (1+i)s_{9|}$$
@@ -360,6 +375,7 @@ e. Tidak ada jawaban yang benar
 > > $$s_{10|} - (1+i)s_{9|} = \frac{(1+i)^{10} - 1}{i} - \frac{(1+i)^{10} - (1+i)}{i} = \frac{(1+i) - 1}{i} = \frac{i}{i} = 1 \quad \checkmark$$
 > >
 > > **Langkah 3: Evaluasi ekspresi (i)**
+> >
 > > $$\frac{a_{n|}}{(1+i)s_{10|}} + \ddot{s}_{9|}$$
 > > Perhatikan ekspresi menggunakan $a_{n|}$ (bukan $a_{10|}$). Jika $n = 10$:
 > > $$\frac{a_{10|}}{(1+i)s_{10|}} + \ddot{s}_{9|}$$
@@ -436,6 +452,7 @@ e. 149
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung pokok pinjaman awal**
+> >
 > > $a_{\overline{10}|0{,}04} = \frac{1 - (1{,}04)^{-10}}{0{,}04} = \frac{1 - 0{,}67556}{0{,}04} = 8{,}11090$
 > > $a_{\overline{5}|0{,}04} = \frac{1 - (1{,}04)^{-5}}{0{,}04} = \frac{1 - 0{,}82193}{0{,}04} = 4{,}45182$
 > > $v^{10} = 0{,}67556$
@@ -443,9 +460,11 @@ e. 149
 > > $$L = 100 \times 8{,}11090 + 200 \times 0{,}67556 \times 4{,}45182 = 811{,}09 + 601{,}49 = 1{,}412{,}58$$
 > >
 > > **Langkah 2: Pokok yang seharusnya (10% lebih tinggi)**
+> >
 > > $$L' = 1{,}10 \times 1{,}412{,}58 = 1{,}553{,}84$$
 > >
 > > **Langkah 3: OLB di akhir tahun ke-5**
+> >
 > > Cicilan yang sudah dibayar tahun 1–5 = 100 per tahun (skema lama).
 > > $$OLB'_5 = L'(1{,}04)^5 - 100 \cdot s_{\overline{5}|0{,}04}$$
 > > $s_{\overline{5}|0{,}04} = \frac{(1{,}04)^5 - 1}{0{,}04} = \frac{0{,}21665}{0{,}04} = 5{,}41632$
@@ -453,6 +472,7 @@ e. 149
 > > $$OLB'_5 = 1{,}553{,}84 \times 1{,}21665 - 100 \times 5{,}41632 = 1{,}890{,}40 - 541{,}63 = 1{,}348{,}77$$
 > >
 > > **Langkah 4: Persamaan nilai di $t = 5$**
+> >
 > > $$OLB'_5 = K \cdot a_{\overline{5}|} + 200 \cdot v^5 \cdot a_{\overline{5}|}$$
 > > $$1{,}348{,}77 = K \times 4{,}45182 + 200 \times 0{,}82193 \times 4{,}45182$$
 > > $$1{,}348{,}77 = 4{,}45182K + 731{,}73$$
@@ -519,15 +539,19 @@ e. $\dfrac{(1+i)^{k-1}}{d}$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: PV dari $n$ pembayaran reguler**
+> >
 > > $$PV_1 = \ddot{a}_{\overline{n}|} = \frac{1 - v^n}{d}$$
 > >
 > > **Langkah 2: PV total**
+> >
 > > $$PV_{total} = \frac{1 - v^{n+k}}{d}$$
 > >
 > > **Langkah 3: PV pembayaran terakhir**
+> >
 > > $$PV_X = PV_{total} - PV_1 = \frac{1 - v^{n+k}}{d} - \frac{1 - v^n}{d} = \frac{v^n - v^{n+k}}{d} = \frac{v^n(1 - v^k)}{d}$$
 > >
 > > **Langkah 4: Hubungkan dengan $X$**
+> >
 > > Pembayaran $X$ di waktu $t = n + k - 1$:
 > > $$PV_X = X \cdot v^{n+k-1}$$
 > > $$X \cdot v^{n+k-1} = \frac{v^n(1 - v^k)}{d}$$
@@ -612,6 +636,7 @@ e. 19
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Gunakan relasi porsi pokok**
+> >
 > > $$\sum_{t=1}^{3} P_t = P_1 + P_2 + P_3 = R(v^n + v^{n-1} + v^{n-2}) = Rv^{n-2}(v^2 + v + 1) = Rv^{n-2} \cdot s_{\overline{3}|}/v^0$$
 > >
 > > Lebih mudah:
@@ -622,6 +647,7 @@ e. 19
 > > $P_4 + P_5 + P_6 = R(v^{n-3} + v^{n-4} + v^{n-5})$
 > >
 > > **Langkah 2: Rasio kedua kelompok**
+> >
 > > $$\frac{P_4 + P_5 + P_6}{P_1 + P_2 + P_3} = \frac{v^{n-3} + v^{n-4} + v^{n-5}}{v^n + v^{n-1} + v^{n-2}} = \frac{v^{n-5}(v^2 + v + 1)}{v^{n-2}(v^2 + v + 1)} \cdot \frac{1}{v^{-3}} = (1+i)^3$$
 > >
 > > Hmm sebenarnya:
@@ -634,6 +660,7 @@ e. 19
 > > $$i \approx 3{,}85\%$$
 > >
 > > **Langkah 3: Cari $n$ dari total pokok 3 cicilan pertama**
+> >
 > > $$P_1 + P_2 + P_3 = 1{,}000 \cdot v^{n-2}(1 + v + v^2) = 1{,}579{,}13$$
 > >
 > > $v = 1/1{,}03848 = 0{,}96294$
@@ -708,6 +735,7 @@ e. 666
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung OLB di akhir tahun ke-11**
+> >
 > > $$OLB_{11} = 20{,}000(1{,}0565)^{11} - 2{,}000 \cdot s_{\overline{11}|0{,}0565}$$
 > >
 > > $(1{,}0565)^{11}$: Hitung secara bertahap.
@@ -719,6 +747,7 @@ e. 666
 > > $$OLB_{11} = 20{,}000 \times 1{,}83027 - 2{,}000 \times 14{,}69504 = 36{,}605{,}4 - 29{,}390{,}1 = 7{,}215{,}3$$
 > >
 > > **Langkah 2: Cari jumlah pembayaran penuh 1.200**
+> >
 > > $$7{,}215{,}3 = 1{,}200 \cdot a_{\overline{m}|0{,}0565} + X \cdot v^{m+1}$$
 > >
 > > Cari $m$ sehingga $1{,}200 \cdot a_{\overline{m}|} < 7{,}215{,}3$:
@@ -736,6 +765,7 @@ e. 666
 > > Jadi ada 7 pembayaran penuh 1.200, lalu pembayaran terakhir $X$ di tahun ke-19 (= tahun 11 + 8).
 > >
 > > **Langkah 3: Hitung $X$**
+> >
 > > $$OLB_{18} = OLB_{11}(1{,}0565)^7 - 1{,}200 \cdot s_{\overline{7}|0{,}0565}$$
 > > $s_{\overline{7}|} = \frac{(1{,}0565)^7 - 1}{0{,}0565} = \frac{0{,}46912}{0{,}0565} = 8{,}30305$
 > > $$OLB_{18} = 7{,}215{,}3 \times 1{,}46912 - 1{,}200 \times 8{,}30305 = 10{,}603{,}9 - 9{,}963{,}7 = 640{,}2$$
@@ -811,11 +841,13 @@ e. 24.910
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung deposit sinking fund normal**
+> >
 > > $$D = \frac{100{,}000}{s_{\overline{10}|0{,}04}}$$
 > > $s_{\overline{10}|0{,}04} = \frac{(1{,}04)^{10} - 1}{0{,}04} = \frac{1{,}48024 - 1}{0{,}04} = \frac{0{,}48024}{0{,}04} = 12{,}00611$
 > > $$D = \frac{100{,}000}{12{,}00611} = 8{,}329{,}1$$
 > >
 > > **Langkah 2: Akumulasi SF dengan hanya 8 setoran**
+> >
 > > Yuki membayar setoran tahun 1–8, tidak membayar tahun 9–10.
 > > SF di akhir tahun 8 = $D \cdot s_{\overline{8}|0{,}04}$
 > > $s_{\overline{8}|0{,}04} = \frac{(1{,}04)^8 - 1}{0{,}04} = \frac{1{,}36857 - 1}{0{,}04} = \frac{0{,}36857}{0{,}04} = 9{,}21423$
@@ -828,6 +860,7 @@ e. 24.910
 > > $SF_{10} = 8{,}329{,}1 \times 9{,}96595 = 83{,}009$
 > >
 > > **Langkah 3: Sisa hutang**
+> >
 > > $$\text{Sisa} = 100{,}000 - 83{,}009 = 16{,}991$$
 > >
 > > **Hasil Akhir:** **(b)**. Sisa hutang $= 16{,}991$
@@ -893,11 +926,13 @@ e. 1.200
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Identifikasi cash flows**
+> >
 > > Sisa pokok awal bulan $k$: $1{,}200 - 100(k-1)$
 > > Kupon bulan $k$: $0{,}015 \times [1{,}200 - 100(k-1)] = 18 - 1{,}5(k-1) = 19{,}5 - 1{,}5k$
 > > Total CF bulan $k$: $100 + 19{,}5 - 1{,}5k = 119{,}5 - 1{,}5k$
 > >
 > > **Langkah 2: Hitung PV**
+> >
 > > $$P = \sum_{k=1}^{12} (119{,}5 - 1{,}5k) v^k = 119{,}5 \sum_{k=1}^{12} v^k - 1{,}5 \sum_{k=1}^{12} k \cdot v^k$$
 > > $$= 119{,}5 \cdot a_{\overline{12}|0{,}02} - 1{,}5 \cdot (Ia)_{\overline{12}|0{,}02}$$
 > >
@@ -908,6 +943,7 @@ e. 1.200
 > > $(Ia)_{\overline{12}|0{,}02} = \frac{\ddot{a}_{\overline{12}|} - 12v^{12}}{0{,}02} = \frac{10{,}78685 - 12(0{,}78849)}{0{,}02} = \frac{10{,}78685 - 9{,}46188}{0{,}02} = \frac{1{,}32497}{0{,}02} = 66{,}24850$
 > >
 > > **Langkah 3: Hitung harga**
+> >
 > > $$P = 119{,}5 \times 10{,}57534 - 1{,}5 \times 66{,}24850 = 1{,}263{,}7 - 99{,}4 = 1{,}164{,}3 \approx 1{,}164$$
 > >
 > > **Hasil Akhir:** **(c)**. Harga $= 1{,}164$
@@ -972,6 +1008,7 @@ e. $X$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tulis premium/diskon untuk setiap obligasi**
+> >
 > > Misalkan $A = F \cdot a_{\overline{20}|i} = 1{,}000 \cdot a_{\overline{20}|i}$ dan $j$ = yield per semester.
 > >
 > > Obligasi 1: $P_1 - 1{,}000 = 1{,}000(0{,}04 - j) \cdot a_{\overline{20}|j}$
@@ -983,6 +1020,7 @@ e. $X$
 > > $2X = 1{,}000(0{,}05 - j) \cdot a_{\overline{20}|j}$ ... (2)
 > >
 > > **Langkah 2: Dari (1) dan (2), cari $j$**
+> >
 > > Bagi (2) dengan (1) (ubah tanda):
 > > $$\frac{2X}{X} = \frac{0{,}05 - j}{j - 0{,}04}$$
 > > $$2 = \frac{0{,}05 - j}{j - 0{,}04}$$
@@ -992,6 +1030,7 @@ e. $X$
 > > $$j = 0{,}04\overline{3} = 4{,}\overline{3}\%$$
 > >
 > > **Langkah 3: Hitung $Y$**
+> >
 > > Obligasi 2: $-Y = 1{,}000(0{,}045 - j) \cdot a_{\overline{20}|j}$
 > > Dari (1): $-X = 1{,}000(0{,}04 - j) \cdot a_{\overline{20}|j}$
 > >
@@ -1065,6 +1104,7 @@ e. 133
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung selisih harga**
+> >
 > > $$P_2 - P_1 = 100 \times 0{,}02 \times a_{\overline{15}|0{,}04} = 2 \times a_{\overline{15}|0{,}04}$$
 > >
 > > $a_{\overline{15}|0{,}04} = \frac{1 - (1{,}04)^{-15}}{0{,}04}$
@@ -1074,6 +1114,7 @@ e. 133
 > > $$P_2 - P_1 = 2 \times 11{,}11839 = 22{,}237$$
 > >
 > > **Langkah 2: Hitung harga obligasi 2**
+> >
 > > $$P_2 = 111{,}12 + 22{,}237 = 133{,}36 \approx 133$$
 > >
 > > **Hasil Akhir:** **(e)**. Harga obligasi kedua $\approx 133$
@@ -1140,20 +1181,24 @@ e. $i > 4{,}2\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tulis ketidaksamaan**
+> >
 > > $$432v + 300v^2 < 82{,}56 + 250v + 400v^2$$
 > > $$182v - 100v^2 < 82{,}56$$
 > > $$100v^2 - 182v + 82{,}56 > 0$$
 > >
 > > **Langkah 2: Selesaikan persamaan kuadrat $100v^2 - 182v + 82{,}56 = 0$**
+> >
 > > $$v = \frac{182 \pm \sqrt{182^2 - 4(100)(82{,}56)}}{2(100)} = \frac{182 \pm \sqrt{33{,}124 - 33{,}024}}{200} = \frac{182 \pm \sqrt{100}}{200} = \frac{182 \pm 10}{200}$$
 > >
 > > $$v_1 = \frac{192}{200} = 0{,}96, \quad v_2 = \frac{172}{200} = 0{,}86$$
 > >
 > > **Langkah 3: Konversi ke $i$**
+> >
 > > $v_1 = 0{,}96 \implies i_1 = 1/0{,}96 - 1 = 0{,}04167 \approx 4{,}17\% \approx 4{,}2\%$
 > > $v_2 = 0{,}86 \implies i_2 = 1/0{,}86 - 1 = 0{,}16279 \approx 16{,}3\%$
 > >
 > > **Langkah 4: Analisis tanda**
+> >
 > > $100v^2 - 182v + 82{,}56 > 0$ ketika $v < 0{,}86$ atau $v > 0{,}96$.
 > > Karena $v = 1/(1+i)$: $v < 0{,}86 \iff i > 16{,}3\%$; $v > 0{,}96 \iff i < 4{,}2\%$.
 > >
@@ -1221,6 +1266,7 @@ e. 95,0%
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Cari $X$ dari DWRR**
+> >
 > > Interest earned: $I = B_1 - B_0 - X = 1{,}625 - 1{,}000 - X = 625 - X$
 > > $$i_{DW} = \frac{625 - X}{1{,}000 + X \cdot 0{,}5} = 0{,}10$$
 > > $$625 - X = 0{,}10(1{,}000 + 0{,}5X) = 100 + 0{,}05X$$
@@ -1228,6 +1274,7 @@ e. 95,0%
 > > $$X = 500$$
 > >
 > > **Langkah 2: Hitung TWRR**
+> >
 > > Periode 1 (Jan–Jul): $\frac{B_{0{,}5}}{B_0} = \frac{600}{1{,}000} = 0{,}6$
 > > Periode 2 (Jul–Des): $\frac{B_1}{B_{0{,}5} + X} = \frac{1{,}625}{600 + 500} = \frac{1{,}625}{1{,}100} = 1{,}47727$
 > >
@@ -1295,18 +1342,22 @@ e. Paling sedikit 90
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung rate per 2 tahun**
+> >
 > > $$j = (1{,}13)^2 - 1 = 1{,}2769 - 1 = 0{,}2769$$
 > >
 > > **Langkah 2: Cari porsi pokok cicilan ke-4**
+> >
 > > $$P_4 = R - I_4 = 2{,}500 - 2{,}458 = 42$$
 > >
 > > **Langkah 3: Hitung porsi pokok cicilan ke-7**
+> >
 > > $$P_7 = P_4 \cdot (1+j)^3 = 42 \times (1{,}2769)^3$$
 > > $(1{,}2769)^2 = 1{,}63047$
 > > $(1{,}2769)^3 = 1{,}63047 \times 1{,}2769 = 2{,}08224$
 > > $$P_7 = 42 \times 2{,}08224 = 87{,}45$$
 > >
 > > **Langkah 4: Tentukan interval**
+> >
 > > $80 \le 87{,}45 < 90$ → jawaban (d).
 > >
 > > **Hasil Akhir:** **(d)**. Paling sedikit 80, tapi kurang dari 90
@@ -1365,19 +1416,23 @@ e. 14,72%
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung $i$ efektif tahunan**
+> >
 > > $$1 + i = (1{,}0375)^2 = 1{,}07641$$
 > > $$i = 7{,}641\%$$
 > >
 > > **Langkah 2: Hitung $\delta$**
+> >
 > > $$\delta = \ln(1{,}07641) = 0{,}07359 = 7{,}359\%$$
 > >
 > > **Langkah 3: Hitung $d^{(4)}$**
+> >
 > > $$d^{(4)} = 4[1 - (1{,}07641)^{-1/4}]$$
 > > $(1{,}07641)^{1/4} = e^{0{,}07359/4} = e^{0{,}01840} = 1{,}01857$
 > > $(1{,}07641)^{-1/4} = 1/1{,}01857 = 0{,}98177$
 > > $$d^{(4)} = 4(1 - 0{,}98177) = 4 \times 0{,}01823 = 0{,}07292 = 7{,}292\%$$
 > >
 > > **Langkah 4: Jumlahkan**
+> >
 > > $$\delta + d^{(4)} = 7{,}359\% + 7{,}292\% = 14{,}651\% \approx 14{,}66\%$$
 > >
 > > **Hasil Akhir:** **(c)**. $\delta + d^{(4)} = 14{,}66\%$
@@ -1484,6 +1539,7 @@ e. 6,23%
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung $i_{Max}$ dari $d^{(4)} = 6\%$**
+> >
 > > $$v = (1 - d^{(4)}/4)^4 = (1 - 0{,}015)^4 = (0{,}985)^4$$
 > > $(0{,}985)^2 = 0{,}970225$
 > > $(0{,}985)^4 = (0{,}970225)^2 = 0{,}941337$
@@ -1491,6 +1547,7 @@ e. 6,23%
 > > $$i_{Max} = 6{,}232\%$$
 > >
 > > **Langkah 2: Bunga tahun ke-2**
+> >
 > > Bunga tahun ke-2 = $100 \cdot i \cdot (1+i)$
 > > Sama untuk Joel dan Max: $i_J(1+i_J) = i_M(1+i_M)$
 > > Ini berarti $(1+i_J)^2 - (1+i_J) = (1+i_M)^2 - (1+i_M)$, yaitu $i_J = i_M$.
@@ -1498,6 +1555,7 @@ e. 6,23%
 > > Jadi $i_J = i_M = 6{,}232\%$.
 > >
 > > **Langkah 3: Konversi $i_J$ ke $X = i^{(2)}$**
+> >
 > > $$(1 + X/2)^2 = 1{,}06232$$
 > > $$1 + X/2 = (1{,}06232)^{1/2} = 1{,}03069$$
 > > $$X = 2 \times 0{,}03069 = 0{,}06138 = 6{,}14\%$$
@@ -1562,9 +1620,11 @@ e. 4,25%
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Konversi rate ke bulanan**
+> >
 > > $j = (1{,}06)^{1/12} - 1 = e^{\ln(1{,}06)/12} - 1 = e^{0{,}004868} - 1 = 0{,}004868 = 0{,}4868\%$
 > >
 > > **Langkah 2: Hitung akumulasi tabungan di akhir tahun ke-35**
+> >
 > > $$FV = 1{,}000 \cdot \ddot{s}_{\overline{420}|j} = 1{,}000 \cdot \frac{(1+j)^{420} - 1}{j} \cdot (1+j)$$
 > > $(1+j)^{420} = (1{,}06)^{35}$
 > > $(1{,}06)^{35} = e^{35 \ln(1{,}06)} = e^{35 \times 0{,}05827} = e^{2{,}03944} = 7{,}68609$
@@ -1575,10 +1635,12 @@ e. 4,25%
 > > $FV = 1{,}000 \times 1{,}380{,}11 = 1{,}380{,}110$
 > >
 > > **Langkah 3: Persamaan untuk $i$**
+> >
 > > $$1{,}380{,}110 = 75{,}000 \cdot a_{\overline{30}|i}$$
 > > $$a_{\overline{30}|i} = \frac{1{,}380{,}110}{75{,}000} = 18{,}4015$$
 > >
 > > **Langkah 4: Cari $i$ dengan trial**
+> >
 > > $a_{\overline{30}|3{,}5\%} = \frac{1 - (1{,}035)^{-30}}{0{,}035}$
 > > $(1{,}035)^{30} = e^{30 \times 0{,}03440} = e^{1{,}03200} = 2{,}80679$
 > > $v^{30} = 0{,}35628$
@@ -1644,6 +1706,7 @@ e. $\dfrac{n^2 - n}{n+1}(n+1)^{-n+1}$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Substitusi ke formula**
+> >
 > > $$PV = n \cdot \frac{1 - v^n}{i} = n \cdot \frac{1 - \left(\frac{n}{n+1}\right)^n}{1/n}$$
 > > $$= n \cdot n \cdot \left[1 - \left(\frac{n}{n+1}\right)^n\right]$$
 > > $$= n^2 \left[1 - \left(\frac{n}{n+1}\right)^n\right]$$
@@ -1711,6 +1774,7 @@ e. 9,29%
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Identifikasi cash flow ke dana Y setiap akhir tahun**
+> >
 > > Saldo X awal tahun $k$: $1{,}000 - 100(k-1) = 1{,}100 - 100k$
 > > Bunga X tahun $k$: $0{,}06(1{,}100 - 100k)$
 > > Total ditarik tahun $k$: $C_k = 100 + 0{,}06(1{,}100 - 100k) = 100 + 66 - 6k = 166 - 6k$
@@ -1719,6 +1783,7 @@ e. 9,29%
 > > $C_1 = 160, C_2 = 154, C_3 = 148, \ldots, C_{10} = 106$
 > >
 > > **Langkah 2: Akumulasi dana Y di akhir tahun ke-10**
+> >
 > > $$FV_Y = \sum_{k=1}^{10} C_k \cdot (1{,}09)^{10-k}$$
 > > $$= \sum_{k=1}^{10} (166 - 6k)(1{,}09)^{10-k}$$
 > > $$= 166 \cdot s_{\overline{10}|0{,}09} - 6 \cdot (Is)_{\overline{10}|0{,}09}$$
@@ -1732,6 +1797,7 @@ e. 9,29%
 > > $$FV_Y = 166 \times 15{,}19293 - 6 \times 72{,}89211 = 2{,}522{,}03 - 437{,}35 = 2{,}084{,}68$$
 > >
 > > **Langkah 3: Hitung effective annual return**
+> >
 > > Total investasi: 1.000 di $t = 0$. Total akumulasi di $t = 10$: $FV_Y = 2{,}084{,}68$ (Dana X habis).
 > > $$1{,}000(1+r)^{10} = 2{,}084{,}68$$
 > > $$(1+r)^{10} = 2{,}08468$$
@@ -1841,6 +1907,7 @@ e. $P > 0{,}675$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung cicilan tahunan**
+> >
 > > $$R = \frac{L}{a_{\overline{30}|0{,}09}}$$
 > > $a_{\overline{30}|0{,}09} = \frac{1 - (1{,}09)^{-30}}{0{,}09}$
 > > $(1{,}09)^{30} = e^{30 \times 0{,}08618} = e^{2{,}58535} = 13{,}26768$
@@ -1849,11 +1916,13 @@ e. $P > 0{,}675$
 > > $$R = \frac{300{,}000}{10{,}27367} = 29{,}201$$
 > >
 > > **Langkah 2: Hitung $P$**
+> >
 > > Total cicilan = $30 \times 29{,}201 = 876{,}030$
 > > Total bunga = $876{,}030 - 300{,}000 = 576{,}030$
 > > $$P = \frac{576{,}030}{876{,}030} = 0{,}6576$$
 > >
 > > **Langkah 3: Atau, metode langsung**
+> >
 > > $$P = 1 - \frac{L}{nR} = 1 - \frac{a_{\overline{30}|}}{30} = 1 - \frac{10{,}27367}{30} = 1 - 0{,}34246 = 0{,}65754$$
 > >
 > > $0{,}625 < 0{,}658 \le 0{,}675$ → jawaban (d).
@@ -1921,6 +1990,7 @@ e. 5,82%
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tulis persamaan**
+> >
 > > Dana A di $t = 10$: tetap 1.000 (karena bunga ditarik).
 > > Dana B di $t = 10$: $1{,}000i \cdot s_{\overline{10}|3i/4}$
 > >
@@ -1928,6 +1998,7 @@ e. 5,82%
 > > $$1{,}000i \cdot s_{\overline{10}|3i/4} = 400$$
 > >
 > > **Langkah 2: Trial and error**
+> >
 > > Coba $i = 3{,}54\% = 0{,}0354$: $3i/4 = 0{,}02655$
 > > $s_{\overline{10}|0{,}02655} = \frac{(1{,}02655)^{10} - 1}{0{,}02655}$
 > > $(1{,}02655)^{10} = e^{10 \times 0{,}02620} = e^{0{,}2620} = 1{,}29944$
@@ -1996,12 +2067,15 @@ e. 4,6%
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung akumulasi dana A**
+> >
 > > $$a_A(8) = e^{0{,}4} = 1{,}49182$$
 > >
 > > **Langkah 2: Hitung akumulasi dana B**
+> >
 > > $$a_B(8) = \frac{a_A(8)}{1{,}05} = \frac{1{,}49182}{1{,}05} = 1{,}42078$$
 > >
 > > **Langkah 3: Cari $j$**
+> >
 > > $$(1 + j/2)^{16} = 1{,}42078$$
 > > $$1 + j/2 = (1{,}42078)^{1/16}$$
 > > $\ln(1{,}42078) = 0{,}35153$
@@ -2069,15 +2143,18 @@ e. 12.100
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tulis NPV**
+> >
 > > $$2{,}500 = -50{,}000 + X \cdot v^2 \cdot a_{\overline{8}|0{,}10}$$
 > > $$52{,}500 = X \cdot v^2 \cdot a_{\overline{8}|0{,}10}$$
 > >
 > > **Langkah 2: Hitung komponen**
+> >
 > > $v^2 = (1/1{,}10)^2 = 1/1{,}21 = 0{,}82645$
 > > $a_{\overline{8}|0{,}10} = \frac{1 - (1{,}10)^{-8}}{0{,}10} = \frac{1 - 0{,}46651}{0{,}10} = \frac{0{,}53349}{0{,}10} = 5{,}33493$
 > > $v^2 \cdot a_{\overline{8}|} = 0{,}82645 \times 5{,}33493 = 4{,}40901$
 > >
 > > **Langkah 3: Hitung $X$**
+> >
 > > $$X = \frac{52{,}500}{4{,}40901} = 11{,}907 \approx 11{,}900$$
 > >
 > > **Hasil Akhir:** **(d)**. $X \approx 11{,}900$
@@ -2150,14 +2227,17 @@ e. 5,52%
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tulis persamaan untuk masing-masing**
+> >
 > > $$P_A - 100 = 100(0{,}08 - i)a_{\overline{n}|} \implies 40{,}25 = 100(0{,}08 - i)a_{\overline{n}|}$$
 > > $$P_B - 100 = 100(0{,}03 - i)a_{\overline{n}|} \implies -19{,}83 = 100(0{,}03 - i)a_{\overline{n}|}$$
 > >
 > > **Langkah 2: Bagi kedua persamaan**
+> >
 > > $$\frac{40{,}25}{-19{,}83} = \frac{0{,}08 - i}{0{,}03 - i}$$
 > > $$-2{,}02975 = \frac{0{,}08 - i}{0{,}03 - i}$$
 > >
 > > **Langkah 3: Selesaikan untuk $i$**
+> >
 > > $$-2{,}02975(0{,}03 - i) = 0{,}08 - i$$
 > > $$-0{,}060893 + 2{,}02975i = 0{,}08 - i$$
 > > $$3{,}02975i = 0{,}140893$$
@@ -2229,12 +2309,14 @@ e. 26,0
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: PV tiga dividen pertama**
+> >
 > > $v = 1/1{,}14$
 > > $$PV_1 = 1{,}25 \cdot v^{0{,}5} = 1{,}25 \times (1{,}14)^{-0{,}5} = 1{,}25 \times 0{,}93633 = 1{,}17041$$
 > > $$PV_2 = 1{,}75 \cdot v^{1{,}5} = 1{,}75 \times (1{,}14)^{-1{,}5} = 1{,}75 \times 0{,}82134 = 1{,}43735$$
 > > $$PV_3 = 2{,}00 \cdot v^{2{,}5} = 2{,}00 \times (1{,}14)^{-2{,}5} = 2{,}00 \times 0{,}72048 = 1{,}44095$$
 > >
 > > **Langkah 2: PV growing perpetuity mulai $t = 3{,}5$**
+> >
 > > Di $t = 2{,}5$ (satu tahun sebelum $D_4$), PV growing perpetuity:
 > > $$PV_{t=2{,}5} = \frac{D_4}{i - g} = \frac{2{,}12}{0{,}14 - 0{,}06} = \frac{2{,}12}{0{,}08} = 26{,}50$$
 > >
@@ -2242,6 +2324,7 @@ e. 26,0
 > > $$PV_{perp} = 26{,}50 \times v^{2{,}5} = 26{,}50 \times 0{,}72048 = 19{,}093$$
 > >
 > > **Langkah 3: Total harga saham**
+> >
 > > $$P = 1{,}17041 + 1{,}43735 + 1{,}44095 + 19{,}093 = 23{,}142 \approx 23{,}1$$
 > >
 > > **Hasil Akhir:** **(a)**. Harga saham $\approx 23{,}1$
@@ -2317,6 +2400,7 @@ e. 3.196
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Analisis per semester**
+> >
 > > Setiap semester (misal Jan–Jun):
 > > - Saldo awal: $B$
 > > - Penarikan 100 di 31 Maret (tanpa bunga pro-rata): saldo menjadi $B - 100$
@@ -2332,6 +2416,7 @@ e. 3.196
 > > $= 1{,}025B - 102{,}5 - 100 = 1{,}025B - 202{,}5$
 > >
 > > **Langkah 2: Persamaan rekursif**
+> >
 > > $B_{k+1} = 1{,}025B_k - 202{,}5$ dengan $B_0 = X$ dan $B_{20} = 0$ (habis setelah 20 semester).
 > >
 > > Ini adalah relasi linier: $B_k = (X - C)(1{,}025)^k + C$ di mana $C$ adalah titik tetap:

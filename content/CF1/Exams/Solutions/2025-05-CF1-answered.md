@@ -43,19 +43,25 @@ e. $2{,}2\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Identifikasi Forward Rate yang Diminta**
+> >
 > > "Forward rate tahun keempat" berarti forward rate untuk periode dari tahun ke-3 ke tahun ke-4, yaitu $f_{3,4}$.
 > >
 > > **Langkah 2: Terapkan Rumus Forward Rate**
+> >
 > > $$f_{3,4} = \frac{(1 + s_4)^4}{(1 + s_3)^3} - 1 = \frac{(1{,}045)^4}{(1{,}05)^3} - 1$$
 > >
 > > **Langkah 3: Hitung Pembilang dan Penyebut**
+> >
 > > $$(1{,}045)^4 = 1{,}19252$$
 > > $$(1{,}05)^3 = 1{,}15763$$
 > >
 > > **Langkah 4: Hitung Forward Rate**
+> >
 > > $$f_{3,4} = \frac{1{,}19252}{1{,}15763} - 1 = 1{,}03014 - 1 \approx 0{,}020 = 2{,}0\%$$
 > >
 > > **Hasil Akhir:** **(c)**. $f_{3,4} = 2{,}0\%$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -109,27 +115,34 @@ e. $0{,}131$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Tingkat Diskonto Efektif**
+> >
 > > $$1 - d = \left(1 - \frac{d^{(4)}}{4}\right)^4 = \left(1 - \frac{0{,}064}{4}\right)^4 = (1 - 0{,}016)^4 = (0{,}984)^4$$
 > > $$(0{,}984)^4 = 0{,}93744$$
 > > Jadi $d = 1 - 0{,}93744 = 0{,}06256$.
 > >
 > > **Langkah 2: Hitung Suku Bunga Efektif $i$**
+> >
 > > $$v = 1 - d = 0{,}93744$$
 > > $$1 + i = \frac{1}{v} = \frac{1}{0{,}93744} = 1{,}06674$$
 > > $$i = 0{,}06674$$
 > >
 > > **Langkah 3: Hitung Force of Interest $\delta$**
+> >
 > > $$\delta = \ln(1 + i) = \ln(1{,}06674) = 0{,}06458$$
 > >
 > > **Langkah 4: Hitung Suku Bunga Nominal $i^{(6)}$**
+> >
 > > $$i^{(6)} = 6\left[(1 + i)^{1/6} - 1\right] = 6\left[(1{,}06674)^{1/6} - 1\right]$$
 > > $$(1{,}06674)^{1/6} = 1{,}01082$$
 > > $$i^{(6)} = 6 \times 0{,}01082 = 0{,}06493$$
 > >
 > > **Langkah 5: Hitung $\delta + i^{(6)}$**
+> >
 > > $$\delta + i^{(6)} = 0{,}06458 + 0{,}06493 = 0{,}12951 \approx 0{,}129$$
 > >
 > > **Hasil Akhir:** **(d)**. $\delta + i^{(6)} = 0{,}129$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -188,20 +201,25 @@ e. $925$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Susun Equation of Value di $t=0$**
+> >
 > > Karena kedua cara bernilai sama:
 > > $$475 + 475v = 570v^2 + 570v^3$$
 > > $$475(1 + v) = 570v^2(1 + v)$$
 > >
 > > **Langkah 2: Sederhanakan**
+> >
 > > Bagi kedua sisi dengan $(1 + v)$ (karena $v > 0$, maka $1 + v \neq 0$):
 > > $$475 = 570v^2$$
 > > $$v^2 = \frac{475}{570} = \frac{5}{6} = 0{,}83333$$
 > > $$v = \sqrt{0{,}83333} = 0{,}91287$$
 > >
 > > **Langkah 3: Hitung $K$**
+> >
 > > $$K = 475 + 475v = 475(1 + v) = 475(1 + 0{,}91287) = 475 \times 1{,}91287 = 908{,}61 \approx 909$$
 > >
 > > **Hasil Akhir:** **(c)**. $K = 909$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -258,12 +276,15 @@ e. $7{,}0\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Accumulated Value Shanice di $t=4$**
+> >
 > > $$AV_S = 1{,}000(1+i)^4$$
 > >
 > > **Langkah 2: Hitung Accumulated Value Grace di $t=4$**
+> >
 > > $$AV_G = 500(1+i)^3 + 600(1+i)^2$$
 > >
 > > **Langkah 3: Samakan dan Selesaikan**
+> >
 > > $$1{,}000(1+i)^4 = 500(1+i)^3 + 600(1+i)^2$$
 > > Bagi kedua sisi dengan $(1+i)^2$:
 > > $$1{,}000(1+i)^2 = 500(1+i) + 600$$
@@ -274,12 +295,15 @@ e. $7{,}0\%$
 > > $$10x^2 - 5x - 6 = 0$$
 > >
 > > **Langkah 4: Gunakan Rumus Kuadrat**
+> >
 > > $$x = \frac{5 \pm \sqrt{25 + 240}}{20} = \frac{5 \pm \sqrt{265}}{20} = \frac{5 \pm 16{,}279}{20}$$
 > > Ambil akar positif:
 > > $$x = \frac{5 + 16{,}279}{20} = \frac{21{,}279}{20} = 1{,}0640$$
 > > $$i = x - 1 = 0{,}0640 = 6{,}4\%$$
 > >
 > > **Hasil Akhir:** **(b)**. $i = 6{,}4\%$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -343,20 +367,25 @@ e. $18{,}5\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Identifikasi Sub-Periode dan Saldo**
+> >
 > > - Sub-periode 1 (1 Jan – 1 Mar): Awal = $100{,}000$, Akhir sebelum deposit = $105{,}000$
 > > - Sub-periode 2 (1 Mar – 1 Sep): Awal = $105{,}000 + 10{,}000 = 115{,}000$, Akhir sebelum penarikan = $112{,}000$
 > > - Sub-periode 3 (1 Sep – 31 Des): Awal = $112{,}000 - 30{,}000 = 82{,}000$, Akhir = $95{,}000$
 > >
 > > **Langkah 2: Hitung Growth Factor Tiap Sub-Periode**
+> >
 > > $$r_1 = \frac{105{,}000}{100{,}000} = 1{,}05$$
 > > $$r_2 = \frac{112{,}000}{115{,}000} = 0{,}97391$$
 > > $$r_3 = \frac{95{,}000}{82{,}000} = 1{,}15854$$
 > >
 > > **Langkah 3: Hitung TWRR**
+> >
 > > $$1 + i_{TW} = r_1 \times r_2 \times r_3 = 1{,}05 \times 0{,}97391 \times 1{,}15854 = 1{,}18469$$
 > > $$i_{TW} = 0{,}18469 \approx 18{,}5\%$$
 > >
 > > **Hasil Akhir:** **(e)**. $i_{TW} = 18{,}5\%$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -412,19 +441,24 @@ e. $16{,}4\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Interest Earned**
+> >
 > > $$I = \text{Saldo akhir} - \text{Saldo awal} - \text{Net cash flow}$$
 > > $$I = 95{,}000 - 100{,}000 - (10{,}000 - 30{,}000) = 95{,}000 - 100{,}000 + 20{,}000 = 15{,}000$$
 > >
 > > **Langkah 2: Hitung Exposure (Weighted Capital)**
+> >
 > > $$E = A + \sum C_k(1 - t_k)$$
 > > $$E = 100{,}000 + 10{,}000 \times \left(1 - \frac{2}{12}\right) + (-30{,}000) \times \left(1 - \frac{8}{12}\right)$$
 > > $$E = 100{,}000 + 10{,}000 \times \frac{10}{12} - 30{,}000 \times \frac{4}{12}$$
 > > $$E = 100{,}000 + 8{,}333 - 10{,}000 = 98{,}333$$
 > >
 > > **Langkah 3: Hitung DWRR**
+> >
 > > $$i_{DW} = \frac{15{,}000}{98{,}333} = 0{,}15254 \approx 15{,}3\%$$
 > >
 > > **Hasil Akhir:** **(b)**. $i_{DW} = 15{,}3\%$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -480,26 +514,34 @@ e. $6{,}04\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Accumulation Factor Periode 1**
+> >
 > > $$AF_1 = e^{0{,}05 \times 5} = e^{0{,}25} = 1{,}28403$$
 > >
 > > **Langkah 2: Hitung Suku Bunga Efektif Periode 2**
+> >
 > > $$1 - d = \left(1 - \frac{0{,}06}{4}\right)^4 = (0{,}985)^4 = 0{,}94148$$
 > > $$1 + i_2 = \frac{1}{0{,}94148} = 1{,}06215$$
 > >
 > > **Langkah 3: Hitung Accumulation Factor Periode 2**
+> >
 > > $$AF_2 = (1{,}06215)^{10} = 1{,}82226$$
 > >
 > > **Langkah 4: Hitung Accumulation Factor Total 15 Tahun**
+> >
 > > $$AF_{15} = AF_1 \times AF_2 = 1{,}28403 \times 1{,}82226 = 2{,}34025$$
 > >
 > > **Langkah 5: Hitung Suku Bunga Efektif Tahunan Keseluruhan**
+> >
 > > $$1 + i = (AF_{15})^{1/15} = (2{,}34025)^{1/15} = 1{,}05844$$
 > > $$i = 0{,}05844$$
 > >
 > > **Langkah 6: Konversi ke Nominal Bulanan**
+> >
 > > $$i^{(12)} = 12\left[(1{,}05844)^{1/12} - 1\right] = 12 \times 0{,}004757 = 0{,}05709 \approx 5{,}71\%$$
 > >
 > > **Hasil Akhir:** **(b)**. $i^{(12)} = 5{,}71\%$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -556,15 +598,18 @@ e. $3.333$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Suku Bunga Efektif Tahunan**
+> >
 > > $$1 + i = (1{,}02)^4 = 1{,}08243$$
 > > $$i_{\text{eff}} = 0{,}08243$$
 > >
 > > **Langkah 2: Hitung PV 4 Pembayaran Kuartalan untuk 1 Tahun**
+> >
 > > Setiap tahun memiliki 4 pembayaran kuartalan masing-masing sebesar $P_k$ (konstan dalam satu tahun).
 > > PV dari 4 pembayaran kuartalan di awal tahun ke-$k$:
 > > $$a_{\overline{4}|0{,}02} = \frac{1 - (1{,}02)^{-4}}{0{,}02} = \frac{1 - 0{,}92385}{0{,}02} = \frac{0{,}07615}{0{,}02} = 3{,}80773$$
 > >
 > > **Langkah 3: Hitung PV di $t=0$ untuk Setiap Tahun**
+> >
 > > Pembayaran tahun ke-$(k+1)$ = $100 \times (1{,}05)^k$ per kuartal.
 > > PV di awal tahun ke-$(k+1)$ dari 4 pembayaran = $100 \times (1{,}05)^k \times 3{,}80773$.
 > > Diskonto ke $t=0$:
@@ -572,15 +617,19 @@ e. $3.333$
 > > $$PV = 100 \times 3{,}80773 \times \sum_{k=0}^{9} \left(\frac{1{,}05}{1{,}08243}\right)^k$$
 > >
 > > **Langkah 4: Hitung Rasio dan Geometric Series**
+> >
 > > $$r = \frac{1{,}05}{1{,}08243} = 0{,}97004$$
 > > $$\sum_{k=0}^{9} r^k = \frac{1 - (0{,}97004)^{10}}{1 - 0{,}97004} = \frac{1 - 0{,}73843}{0{,}02996} = \frac{0{,}26157}{0{,}02996} = 8{,}73064$$
 > >
 > > **Langkah 5: Hitung PV Total**
+> >
 > > $$PV = 100 \times 3{,}80773 \times 8{,}73064 = 100 \times 33{,}234 = 3{,}323$$
 > >
 > > Ini mendekati $3{,}333$.
 > >
 > > **Hasil Akhir:** **(e)**. $PV = 3{,}333$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -634,18 +683,22 @@ e. $8{,}0\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Gunakan Hubungan Annuity**
+> >
 > > $$a_{\overline{20}|} = a_{\overline{10}|}(1 + v^{10})$$
 > > $$1{,}5X = X(1 + v^{10})$$
 > > $$1{,}5 = 1 + v^{10}$$
 > > $$v^{10} = 0{,}5$$
 > >
 > > **Langkah 2: Selesaikan untuk $i$**
+> >
 > > $$v^{10} = (1+i)^{-10} = 0{,}5$$
 > > $$(1+i)^{10} = 2$$
 > > $$1 + i = 2^{1/10} = 2^{0{,}1} = 1{,}07177$$
 > > $$i = 0{,}07177 \approx 7{,}2\%$$
 > >
 > > **Hasil Akhir:** **(a)**. $i = 7{,}2\%$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -705,29 +758,36 @@ e. $2{,}24$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung $s_{\overline{300}|j}$**
+> >
 > > $$s_{\overline{300}|0{,}00525} = \frac{(1{,}00525)^{300} - 1}{0{,}00525}$$
 > > $$(1{,}00525)^{300} = e^{300 \ln(1{,}00525)} = e^{300 \times 0{,}005236} = e^{1{,}5709} = 4{,}81124$$
 > > $$s_{\overline{300}|} = \frac{4{,}81124 - 1}{0{,}00525} = \frac{3{,}81124}{0{,}00525} = 725{,}951$$
 > >
 > > **Langkah 2: Hitung $\ddot{s}_{\overline{300}|j}$**
+> >
 > > $$\ddot{s}_{\overline{300}|} = s_{\overline{300}|} \times (1 + j) = 725{,}951 \times 1{,}00525 = 729{,}762$$
 > >
 > > **Langkah 3: Hitung $(Is)_{\overline{300}|j}$**
+> >
 > > $$(Is)_{\overline{300}|} = \frac{\ddot{s}_{\overline{300}|} - n}{j} = \frac{729{,}762 - 300}{0{,}00525} = \frac{429{,}762}{0{,}00525} = 81{,}859{,}4$$
 > >
 > > **Langkah 4: Setup Equation of Value**
+> >
 > > Pembayaran pada bulan ke-$t$ = $100 + (t-1)X$. Ini bisa didekomposisi: level annuity $100$ plus increasing annuity $X(0, 1, 2, \ldots, 299)$.
 > > $$250{,}000 = 100 \cdot s_{\overline{300}|} + X \cdot (Is)_{\overline{300}|}$$
 > > $$250{,}000 = 100 \times 725{,}951 + X \times 81{,}859{,}4$$
 > > $$250{,}000 = 72{,}595{,}1 + 81{,}859{,}4 \cdot X$$
 > >
 > > **Langkah 5: Selesaikan untuk $X$**
+> >
 > > $$81{,}859{,}4 \cdot X = 250{,}000 - 72{,}595{,}1 = 177{,}404{,}9$$
 > > $$X = \frac{177{,}404{,}9}{81{,}859{,}4} = 2{,}167$$
 > >
 > > Mendekati $2{,}19$.
 > >
 > > **Hasil Akhir:** **(d)**. $X = 2{,}19$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -784,6 +844,7 @@ e. $459$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung FV Setoran 10 Tahun Pertama di $t=20$**
+> >
 > > $$FV_1 = 100 \cdot s_{\overline{120}|0{,}005} \cdot (1{,}005)^{120}$$
 > > $$s_{\overline{120}|0{,}005} = \frac{(1{,}005)^{120} - 1}{0{,}005}$$
 > > $$(1{,}005)^{120} = 1{,}81940$$
@@ -791,12 +852,15 @@ e. $459$
 > > $$FV_1 = 100 \times 163{,}879 \times 1{,}81940 = 29{,}816{,}6$$
 > >
 > > **Langkah 2: Hitung FV Setoran 10 Tahun Kedua di $t=20$**
+> >
 > > $$FV_2 = 200 \cdot s_{\overline{120}|0{,}005} = 200 \times 163{,}879 = 32{,}775{,}9$$
 > >
 > > **Langkah 3: Total Dana Pensiun**
+> >
 > > $$FV = FV_1 + FV_2 = 29{,}816{,}6 + 32{,}775{,}9 = 62{,}592{,}5$$
 > >
 > > **Langkah 4: Hitung Pembayaran Anuitas**
+> >
 > > $$FV = R \cdot a_{\overline{360}|j_2}$$
 > > $$j_2 = 8\%/12 = 0{,}00\overline{6}$$
 > > $$a_{\overline{360}|j_2} = \frac{1 - (1 + j_2)^{-360}}{j_2}$$
@@ -810,6 +874,8 @@ e. $459$
 > > $$R = \frac{62{,}592{,}5}{136{,}283} = 459{,}3 \approx 459$$
 > >
 > > **Hasil Akhir:** **(e)**. $R = 459$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -865,6 +931,7 @@ e. $6.700$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung PV Bagian Increasing (Tahun 1–10)**
+> >
 > > Pembayaran = $100 \times k$ untuk $k = 1, 2, \ldots, 10$.
 > > $$PV_1 = 100 \cdot (Ia)_{\overline{10}|0{,}075}$$
 > >
@@ -878,13 +945,17 @@ e. $6.700$
 > > $$PV_1 = 100 \times 33{,}694 = 3{,}369{,}4$$
 > >
 > > **Langkah 2: Hitung PV Bagian Level (Tahun 11–20)**
+> >
 > > $1{,}000$ per tahun selama 10 tahun, deferred 10 tahun:
 > > $$PV_2 = 1{,}000 \cdot v^{10} \cdot a_{\overline{10}|} = 1{,}000 \times 0{,}48519 \times 6{,}86414 = 3{,}330{,}2$$
 > >
 > > **Langkah 3: Total PV**
+> >
 > > $$PV = PV_1 + PV_2 = 3{,}369{,}4 + 3{,}330{,}2 = 6{,}699{,}6 \approx 6{,}700$$
 > >
 > > **Hasil Akhir:** **(e)**. $PV = 6{,}700$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -941,6 +1012,7 @@ e. $1.225$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung PV Bagian Level (Tahun 1–10, annuity-due)**
+> >
 > > $$PV_1 = 100 \cdot \ddot{a}_{\overline{10}|0{,}08}$$
 > > $$v = 1/1{,}08 = 0{,}92593$$
 > > $$v^{10} = 0{,}46319$$
@@ -949,6 +1021,7 @@ e. $1.225$
 > > $$PV_1 = 100 \times 7{,}24689 = 724{,}69$$
 > >
 > > **Langkah 2: Hitung PV Bagian Geometrik (Pembayaran 11–20)**
+> >
 > > Pembayaran ke-11 (di awal tahun 11, yaitu $t=10$): $100 \times 1{,}06 = 106$.
 > > Pembayaran ke-12: $106 \times 1{,}06 = 112{,}36$, dst.
 > >
@@ -974,12 +1047,16 @@ e. $1.225$
 > > Namun ini adalah PV di awal tahun 11 ($t = 10$), sebagai annuity-due (pembayaran pertama langsung di $t=10$).
 > >
 > > **Langkah 3: Diskonto ke $t=0$**
+> >
 > > $$PV_2 = PV_{10} \times v^{10} = 973{,}9 \times 0{,}46319 = 451{,}1$$
 > >
 > > **Langkah 4: Total PV**
+> >
 > > $$PV = PV_1 + PV_2 = 724{,}69 + 451{,}1 = 1{,}175{,}8 \approx 1{,}177$$
 > >
 > > **Hasil Akhir:** **(a)**. $PV = 1{,}177$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1037,21 +1114,26 @@ e. $11{,}35$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung FV Tasya**
+> >
 > > $$FV_T = 100 \cdot s_{\overline{20}|0{,}05}$$
 > > $$(1{,}05)^{20} = 2{,}65330$$
 > > $$s_{\overline{20}|} = \frac{2{,}65330 - 1}{0{,}05} = 33{,}066$$
 > > $$FV_T = 100 \times 33{,}066 = 3{,}306{,}6$$
 > >
 > > **Langkah 2: Hitung FV Putri**
+> >
 > > $$FV_P = P \cdot (Is)_{\overline{20}|0{,}05}$$
 > > $$\ddot{s}_{\overline{20}|} = 33{,}066 \times 1{,}05 = 34{,}719$$
 > > $$(Is)_{\overline{20}|} = \frac{34{,}719 - 20}{0{,}05} = \frac{14{,}719}{0{,}05} = 294{,}39$$
 > >
 > > **Langkah 3: Samakan dan Selesaikan**
+> >
 > > $$3{,}306{,}6 = P \times 294{,}39$$
 > > $$P = \frac{3{,}306{,}6}{294{,}39} = 11{,}232 \approx 11{,}23$$
 > >
 > > **Hasil Akhir:** **(d)**. $P = 11{,}23$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1108,16 +1190,20 @@ e. $8{,}8\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Gunakan Rasio Principal Repaid**
+> >
 > > $$\frac{PR_{25}}{PR_{20}} = (1+i)^{25-20} = (1+i)^5$$
 > > $$\frac{244{,}78}{166{,}59} = (1+i)^5$$
 > > $$1{,}46933 = (1+i)^5$$
 > >
 > > **Langkah 2: Selesaikan untuk $i$**
+> >
 > > $$1 + i = (1{,}46933)^{1/5} = (1{,}46933)^{0{,}2}$$
 > > $$1 + i = 1{,}07999 \approx 1{,}08$$
 > > $$i = 0{,}08 = 8{,}0\%$$
 > >
 > > **Hasil Akhir:** **(b)**. $i = 8{,}0\%$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1171,6 +1257,7 @@ e. $726$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Cari $i$ dari Rasio Principal**
+> >
 > > $$\frac{PR_{10}}{PR_5} = (1+i)^5$$
 > > $$\frac{213{,}73}{159{,}68} = (1+i)^5$$
 > > $$1{,}33843 = (1+i)^5$$
@@ -1178,6 +1265,7 @@ e. $726$
 > > $$i = 6\%$$
 > >
 > > **Langkah 2: Cari $R$ dari $PR_5$**
+> >
 > > $$PR_5 = R \cdot v^{n-5+1} = R \cdot v^{26}$$
 > > $$v = 1/1{,}06 = 0{,}94340$$
 > > $$v^{26} = (0{,}94340)^{26} = (1{,}06)^{-26} = 0{,}21981$$
@@ -1185,6 +1273,8 @@ e. $726$
 > > $$R = \frac{159{,}68}{0{,}21981} = 726{,}3 \approx 726$$
 > >
 > > **Hasil Akhir:** **(e)**. $R = 726$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1238,6 +1328,7 @@ e. $253{,}80$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Cari $R$ dari $I_{10}$**
+> >
 > > $$I_{10} = R(1 - v^{n-10+1}) = R(1 - v^{21})$$
 > > $$v = 1/1{,}07 = 0{,}93458$$
 > > $$v^{21} = (1{,}07)^{-21} = 0{,}24151$$
@@ -1245,11 +1336,14 @@ e. $253{,}80$
 > > $$R = \frac{366{,}74}{0{,}75849} = 483{,}42$$
 > >
 > > **Langkah 2: Hitung $I_{20}$**
+> >
 > > $$I_{20} = R(1 - v^{n-20+1}) = R(1 - v^{11})$$
 > > $$v^{11} = (1{,}07)^{-11} = 0{,}47509$$
 > > $$I_{20} = 483{,}42 \times (1 - 0{,}47509) = 483{,}42 \times 0{,}52491 = 253{,}76 \approx 253{,}80$$
 > >
 > > **Hasil Akhir:** **(e)**. $I_{20} = 253{,}80$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1307,9 +1401,11 @@ e. $248$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Suku Bunga Efektif Tahunan**
+> >
 > > $$i_{\text{eff}} = (1{,}005)^{12} - 1 = 1{,}061678 - 1 = 0{,}061678$$
 > >
 > > **Langkah 2: Hitung PV Penarikan di Saat Pensiun**
+> >
 > > PV geometric annuity-immediate dengan $P = 10{,}000$, $g = 3\%$, $i = 6{,}1678\%$, $n = 25$:
 > > $$PV_{25} = 10{,}000 \times \frac{1 - \left(\frac{1{,}03}{1{,}061678}\right)^{25}}{0{,}061678 - 0{,}03}$$
 > > $$\frac{1{,}03}{1{,}061678} = 0{,}97016$$
@@ -1317,15 +1413,19 @@ e. $248$
 > > $$PV_{25} = 10{,}000 \times \frac{1 - 0{,}46616}{0{,}031678} = 10{,}000 \times \frac{0{,}53384}{0{,}031678} = 10{,}000 \times 16{,}855 = 168{,}550$$
 > >
 > > **Langkah 3: Hitung FV Akumulasi**
+> >
 > > $$FV = X \cdot s_{\overline{300}|0{,}005}$$
 > > $$(1{,}005)^{300} = (1{,}061678)^{25} = 4{,}46497$$
 > > $$s_{\overline{300}|} = \frac{4{,}46497 - 1}{0{,}005} = \frac{3{,}46497}{0{,}005} = 692{,}994$$
 > >
 > > **Langkah 4: Samakan FV = PV Penarikan**
+> >
 > > $$X \times 692{,}994 = 168{,}550$$
 > > $$X = \frac{168{,}550}{692{,}994} = 243{,}2 \approx 242$$
 > >
 > > **Hasil Akhir:** **(c)**. $X = 242$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1383,18 +1483,23 @@ e. $9.264$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Suku Bunga Efektif Tahunan**
+> >
 > > $$i = \left(1 + \frac{0{,}06}{4}\right)^4 - 1 = (1{,}015)^4 - 1 = 1{,}06136 - 1 = 0{,}06136$$
 > >
 > > **Langkah 2: Hitung PV Perpetuitas Tahunan**
+> >
 > > $$PV_1 = \frac{6{,}000}{0{,}06136} = 97{,}779{,}6$$
 > >
 > > **Langkah 3: Hitung PV Perpetuitas Setiap 4 Tahun**
+> >
 > > $$PV_2 = \frac{8{,}000}{(1{,}06136)^4 - 1} = \frac{8{,}000}{1{,}26824 - 1} = \frac{8{,}000}{0{,}26824} = 29{,}825{,}5$$
 > >
 > > **Langkah 4: Total PV**
+> >
 > > $$PV_{\text{total}} = PV_1 + PV_2 = 97{,}779{,}6 + 29{,}825{,}5 = 127{,}605{,}1$$
 > >
 > > **Langkah 5: Hitung $X$**
+> >
 > > $$PV_{\text{total}} = X \cdot a_{\overline{30}|0{,}06136}$$
 > > $$v = 1/1{,}06136 = 0{,}94218$$
 > > $$v^{30} = (0{,}94218)^{30} = 0{,}16510$$
@@ -1404,6 +1509,8 @@ e. $9.264$
 > > Mendekati $9{,}400$.
 > >
 > > **Hasil Akhir:** **(b)**. $X = 9{,}400$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1459,13 +1566,17 @@ e. $8{,}54\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Terapkan Gordon Growth Model**
+> >
 > > $$39{,}35 = \frac{1{,}00}{i - 0{,}06}$$
 > >
 > > **Langkah 2: Selesaikan untuk $i$**
+> >
 > > $$i - 0{,}06 = \frac{1{,}00}{39{,}35} = 0{,}02541$$
 > > $$i = 0{,}06 + 0{,}02541 = 0{,}08541 \approx 8{,}54\%$$
 > >
 > > **Hasil Akhir:** **(e)**. $i = 8{,}54\%$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1521,18 +1632,23 @@ e. $14{,}3$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Total Nilai Portofolio**
+> >
 > > $$V = 3{,}000 + 7{,}000 + 10{,}000 = 20{,}000$$
 > >
 > > **Langkah 2: Hitung Bobot**
+> >
 > > $$w_1 = 3{,}000/20{,}000 = 0{,}15$$
 > > $$w_2 = 7{,}000/20{,}000 = 0{,}35$$
 > > $$w_3 = 10{,}000/20{,}000 = 0{,}50$$
 > >
 > > **Langkah 3: Hitung Durasi Modifikasi Portofolio**
+> >
 > > $$D_{Mod,P} = 0{,}15 \times 4{,}615 + 0{,}35 \times 9{,}323 + 0{,}50 \times 19{,}085$$
 > > $$= 0{,}6923 + 3{,}2631 + 9{,}5425 = 13{,}498 \approx 13{,}5$$
 > >
 > > **Hasil Akhir:** **(a)**. $D_{Mod,P} = 13{,}5$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1588,6 +1704,7 @@ e. $8{,}0$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Komponen**
+> >
 > > $$v = 1/1{,}065 = 0{,}93897$$
 > > $$v^{10} = (0{,}93897)^{10} = 0{,}53273$$
 > > $$a_{\overline{10}|} = \frac{1 - 0{,}53273}{0{,}065} = \frac{0{,}46727}{0{,}065} = 7{,}18878$$
@@ -1595,13 +1712,17 @@ e. $8{,}0$
 > > $$(Ia)_{\overline{10}|} = \frac{\ddot{a}_{\overline{10}|} - 10v^{10}}{0{,}065} = \frac{7{,}65605 - 5{,}3273}{0{,}065} = \frac{2{,}32875}{0{,}065} = 35{,}827$$
 > >
 > > **Langkah 2: Hitung Harga Bond**
+> >
 > > $$P = 80 \times 7{,}18878 + 1{,}000 \times 0{,}53273 = 575{,}10 + 532{,}73 = 1{,}107{,}83$$
 > >
 > > **Langkah 3: Hitung Durasi Macaulay**
+> >
 > > $$D_{Mac} = \frac{80 \times 35{,}827 + 10 \times 1{,}000 \times 0{,}53273}{1{,}107{,}83}$$
 > > $$= \frac{2{,}866{,}16 + 5{,}327{,}30}{1{,}107{,}83} = \frac{8{,}193{,}46}{1{,}107{,}83} = 7{,}396 \approx 7{,}4$$
 > >
 > > **Hasil Akhir:** **(b)**. $D_{Mac} = 7{,}4$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1659,6 +1780,7 @@ e. $7{,}63\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Harga Beli**
+> >
 > > $$P = 40 \cdot a_{\overline{20}|0{,}0375} + 1{,}000 \cdot (1{,}0375)^{-20}$$
 > > $$(1{,}0375)^{20} = 2{,}09757$$
 > > $$v^{20} = 0{,}47674$$
@@ -1666,15 +1788,18 @@ e. $7{,}63\%$
 > > $$P = 40 \times 13{,}9536 + 1{,}000 \times 0{,}47674 = 558{,}14 + 476{,}74 = 1{,}034{,}88$$
 > >
 > > **Langkah 2: Hitung FV Kupon yang Diinvestasikan Kembali**
+> >
 > > $$FV_{\text{coupons}} = 40 \cdot s_{\overline{20}|0{,}035}$$
 > > $$(1{,}035)^{20} = 1{,}98979$$
 > > $$s_{\overline{20}|} = \frac{1{,}98979 - 1}{0{,}035} = \frac{0{,}98979}{0{,}035} = 28{,}2797$$
 > > $$FV_{\text{coupons}} = 40 \times 28{,}2797 = 1{,}131{,}19$$
 > >
 > > **Langkah 3: Total FV di Akhir 20 Semester**
+> >
 > > $$FV = 1{,}131{,}19 + 1{,}000 = 2{,}131{,}19$$
 > >
 > > **Langkah 4: Hitung Realized Yield per Semester**
+> >
 > > $$P(1+y)^{20} = FV$$
 > > $$1{,}034{,}88(1+y)^{20} = 2{,}131{,}19$$
 > > $$(1+y)^{20} = \frac{2{,}131{,}19}{1{,}034{,}88} = 2{,}05937$$
@@ -1682,9 +1807,12 @@ e. $7{,}63\%$
 > > $$y = 0{,}03680$$
 > >
 > > **Langkah 5: Konversi ke Nominal Semi-Annual**
+> >
 > > $$i^{(2)} = 2 \times y = 2 \times 0{,}03680 = 0{,}07360 = 7{,}36\%$$
 > >
 > > **Hasil Akhir:** **(a)**. $i^{(2)}_{\text{realized}} = 7{,}36\%$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1741,9 +1869,11 @@ e. $6{,}8\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Harga Beli Bond 1 (Zero-Coupon)**
+> >
 > > $$P_1 = 1{,}000 \times (1{,}06)^{-5} = 1{,}000 \times 0{,}74726 = 747{,}26$$
 > >
 > > **Langkah 2: Hitung Harga Beli Bond 2 (Coupon)**
+> >
 > > $j = 7\%/2 = 3{,}5\%$, $n = 10$ semester:
 > > $$(1{,}035)^{10} = 1{,}41060$$
 > > $$v^{10} = 0{,}70892$$
@@ -1751,9 +1881,11 @@ e. $6{,}8\%$
 > > $$P_2 = 40 \times 8{,}31660 + 1{,}000 \times 0{,}70892 = 332{,}66 + 708{,}92 = 1{,}041{,}58$$
 > >
 > > **Langkah 3: Total Investasi Awal**
+> >
 > > $$P = P_1 + P_2 = 747{,}26 + 1{,}041{,}58 = 1{,}788{,}84$$
 > >
 > > **Langkah 4: Hitung FV di Akhir 5 Tahun**
+> >
 > > Bond 1 FV: $1{,}000$ (redemption)
 > > Bond 2 FV: $1{,}000$ (redemption) + reinvested coupons
 > > $$FV_c = 40 \times s_{\overline{10}|0{,}0325}$$
@@ -1765,12 +1897,15 @@ e. $6{,}8\%$
 > > $$FV = 1{,}000 + 1{,}000 + 463{,}87 = 2{,}463{,}87$$
 > >
 > > **Langkah 5: Hitung Realized Effective Annual Yield**
+> >
 > > $$1{,}788{,}84(1+y)^5 = 2{,}463{,}87$$
 > > $$(1+y)^5 = \frac{2{,}463{,}87}{1{,}788{,}84} = 1{,}37735$$
 > > $$1+y = (1{,}37735)^{0{,}2} = 1{,}06594$$
 > > $$y = 0{,}06594 \approx 6{,}6\%$$
 > >
 > > **Hasil Akhir:** **(d)**. $y = 6{,}6\%$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1828,6 +1963,7 @@ e. $-160$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Harga Beli $B_0$**
+> >
 > > Karena yield berubah di tahun 13, kita hitung dari belakang.
 > >
 > > PV di $t = 12$ (dari tahun 13–20, yield $6\%$, sisa 8 tahun):
@@ -1843,6 +1979,7 @@ e. $-160$
 > > $$B_0 = 200 \times 8{,}86325 + 4{,}379{,}01 \times 0{,}55684 = 1{,}772{,}65 + 2{,}438{,}73 = 4{,}211{,}38$$
 > >
 > > **Langkah 2: Hitung Book Value $B_8$ (Prospektif)**
+> >
 > > Di $t = 8$, sisa 12 tahun: 4 tahun yield $5\%$ + 8 tahun yield $6\%$.
 > >
 > > PV di $t = 12$ (sudah dihitung): $B_{12} = 4{,}379{,}01$
@@ -1854,6 +1991,7 @@ e. $-160$
 > > $$B_8 = 200 \times 3{,}54595 + 4{,}379{,}01 \times 0{,}82270 = 709{,}19 + 3{,}603{,}19 = 4{,}312{,}38$$
 > >
 > > **Langkah 3: Hitung Akumulasi Diskonto**
+> >
 > > Akumulasi diskonto sampai kupon ke-8:
 > > $$\text{Akumulasi diskonto} = B_8 - B_0 = 4{,}312{,}38 - 4{,}211{,}38 = 101{,}00$$
 > >
@@ -1877,6 +2015,8 @@ e. $-160$
 > > Jadi jawaban = $-15$ (diskonto yang diamortisasi sebesar $+15$, tapi dalam konteks "akumulasi diskonto" = $-15$).
 > >
 > > **Hasil Akhir:** **(a)**. Akumulasi diskonto kupon ke-8 $= -15$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -1932,6 +2072,7 @@ e. $2.411$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tentukan Nilai Par $X$**
+> >
 > > Kupon per semester = $0{,}05/2 \times X = 0{,}025X$.
 > > Karena harga $2{,}345 > X$ kemungkinan besar (premium bond), callable worst case = earliest call (akhir tahun 10 = semester 20).
 > >
@@ -1945,6 +2086,7 @@ e. $2.411$
 > > $$X = \frac{2{,}345}{1{,}08176} = 2{,}167{,}8 \approx 2{,}168$$
 > >
 > > **Langkah 2: Hitung Harga Kelvin (Non-Callable, 15 Tahun)**
+> >
 > > Kelvin's bond: same par $X = 2{,}168$, kupon $5\%$ semi-annual, tenor 15 tahun = 30 semester, yield $j = 2\%$.
 > >
 > > $$P_K = 0{,}025 \times 2{,}168 \times a_{\overline{30}|0{,}02} + 2{,}168 \times (1{,}02)^{-30}$$
@@ -1958,6 +2100,8 @@ e. $2.411$
 > > $$= 1{,}213{,}89 + 1{,}196{,}89 = 2{,}410{,}78 \approx 2{,}411$$
 > >
 > > **Hasil Akhir:** **(e)**. $P_K = 2{,}411$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -2019,15 +2163,18 @@ e. $6{,}3\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Setup Par Bond Equation**
+> >
 > > Swap rate = coupon rate bond yang dijual at par (harga = 1 per unit face):
 > > $$\frac{0{,}07}{1{,}052} + \frac{0{,}07}{(1+s_2)^2} + \frac{1{,}07}{(1{,}071)^3} = 1$$
 > >
 > > **Langkah 2: Hitung Komponen yang Diketahui**
+> >
 > > $$\frac{0{,}07}{1{,}052} = 0{,}06654$$
 > > $$(1{,}071)^3 = 1{,}22848$$
 > > $$\frac{1{,}07}{1{,}22848} = 0{,}87102$$
 > >
 > > **Langkah 3: Selesaikan untuk $s_2$**
+> >
 > > $$0{,}06654 + \frac{0{,}07}{(1+s_2)^2} + 0{,}87102 = 1$$
 > > $$\frac{0{,}07}{(1+s_2)^2} = 1 - 0{,}06654 - 0{,}87102 = 0{,}06244$$
 > > $$(1+s_2)^2 = \frac{0{,}07}{0{,}06244} = 1{,}12107$$
@@ -2035,6 +2182,8 @@ e. $6{,}3\%$
 > > $$s_2 = 0{,}05881 \approx 5{,}9\%$$
 > >
 > > **Hasil Akhir:** **(a)**. $s_2 = 5{,}9\%$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -2090,21 +2239,26 @@ e. $85{,}93$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Terapkan Put-Call Parity**
+> >
 > > $$C - P = S_0 e^{-\delta T} - K e^{-rT}$$
 > > $$4{,}91 - 4{,}56 = 85 \cdot e^{-0{,}02 \times 0{,}5} - K \cdot e^{-0{,}04 \times 0{,}5}$$
 > > $$0{,}35 = 85 \cdot e^{-0{,}01} - K \cdot e^{-0{,}02}$$
 > >
 > > **Langkah 2: Hitung Komponen**
+> >
 > > $$e^{-0{,}01} = 0{,}99005$$
 > > $$e^{-0{,}02} = 0{,}98020$$
 > > $$85 \times 0{,}99005 = 84{,}154$$
 > >
 > > **Langkah 3: Selesaikan untuk $K$**
+> >
 > > $$0{,}35 = 84{,}154 - 0{,}98020 K$$
 > > $$0{,}98020 K = 84{,}154 - 0{,}35 = 83{,}804$$
 > > $$K = \frac{83{,}804}{0{,}98020} = 85{,}497 \approx 85{,}5$$
 > >
 > > **Hasil Akhir:** **(d)**. $K = 85{,}5$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -2160,14 +2314,18 @@ e. $0{,}75$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung PV Strike Price**
+> >
 > > $$Ke^{-rT} = 95 \times e^{-0{,}05 \times 0{,}5} = 95 \times e^{-0{,}025}$$
 > > $$e^{-0{,}025} = 0{,}97531$$
 > > $$95 \times 0{,}97531 = 92{,}654$$
 > >
 > > **Langkah 2: Terapkan Put-Call Parity**
+> >
 > > $$P = C - S_0 + Ke^{-rT} = 8 - 100 + 92{,}654 = 0{,}654 \approx 0{,}65$$
 > >
 > > **Hasil Akhir:** **(c)**. $P = 0{,}65$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -2224,15 +2382,19 @@ e. $114{,}3\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Total Return per Lembar**
+> >
 > > $$\text{Capital gain} = P_1 - P_0 = 2{,}680 - 2{,}450 = 230$$
 > > $$\text{Total return} = 230 + 120 = 350$$
 > >
 > > **Langkah 2: Hitung ROI**
+> >
 > > $$ROI = \frac{350}{2{,}450} = 0{,}14286 = 14{,}3\%$$
 > >
 > > Catatan: ROI per lembar sama dengan ROI total karena jumlah lembar membatalkan diri ($200 \times 350 / (200 \times 2{,}450) = 350/2{,}450$).
 > >
 > > **Hasil Akhir:** **(d)**. $ROI = 14{,}3\%$
+>
+>
 >
 > > [!tip] Jebakan Umum
 > >

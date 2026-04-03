@@ -35,6 +35,7 @@ e. 0, 100, 100, 100, dan 0 pada setiap akhir tahun secara berturut-turut
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Verifikasi total pembayaran sama**
+> >
 > > - (a): $100+0+100+0+100 = 300$
 > > - (b): $0+0+100+100+100 = 300$
 > > - (c): $100+100+0+100+0 = 300$
@@ -42,6 +43,7 @@ e. 0, 100, 100, 100, dan 0 pada setiap akhir tahun secara berturut-turut
 > > - (e): $0+100+100+100+0 = 300$
 > >
 > > **Langkah 2: Hitung "weighted average time" $= \sum t \cdot CF_t / 300$**
+> >
 > > - (a): $(1\cdot100+3\cdot100+5\cdot100)/300 = 900/300 = 3{,}00$
 > > - (b): $(3\cdot100+4\cdot100+5\cdot100)/300 = 1200/300 = 4{,}00$
 > > - (c): $(1\cdot100+2\cdot100+4\cdot100)/300 = 700/300 = 2{,}33$
@@ -49,6 +51,7 @@ e. 0, 100, 100, 100, dan 0 pada setiap akhir tahun secara berturut-turut
 > > - (e): $(2\cdot100+3\cdot100+4\cdot100)/300 = 900/300 = 3{,}00$
 > >
 > > **Langkah 3: Kesimpulan**
+> >
 > > Opsi (c) memiliki weighted time terkecil (2,33), artinya pembayaran paling front-loaded → PV tertinggi pada rate tertentu → IRR terbesar.
 > >
 > > **Hasil Akhir:** **(c)**. Pola 100, 100, 0, 100, dan 0
@@ -110,10 +113,12 @@ e. 1.129
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung integral**
+> >
 > > $$\int_0^{1{,}5} (0{,}05 + 0{,}005t) \, dt = \left[0{,}05t + 0{,}0025t^2\right]_0^{1{,}5}$$
 > > $$= 0{,}05(1{,}5) + 0{,}0025(2{,}25) = 0{,}075 + 0{,}005625 = 0{,}080625$$
 > >
 > > **Langkah 2: Hitung FV**
+> >
 > > $$FV = 1{,}000 \times e^{0{,}080625} = 1{,}000 \times 1{,}08396 = 1{,}084{,}0 \approx 1{,}084$$
 > >
 > > **Hasil Akhir:** **(b)**. $FV \approx 1{,}084$
@@ -179,6 +184,7 @@ e. 2.193
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung akumulasi setoran tahun 1–10 di akhir tahun ke-10**
+> >
 > > Rate efektif net $j_1 = 4{,}86\%$
 > > $$FV_{10} = 100 \cdot \ddot{s}_{\overline{10}|0{,}0486}$$
 > > $\ddot{s}_{\overline{10}|j_1} = \frac{(1{,}0486)^{10} - 1}{0{,}0486} \times 1{,}0486$
@@ -188,10 +194,12 @@ e. 2.193
 > > $FV_{10}^{(1)} = 100 \times 13{,}09738 = 1{,}309{,}74$
 > >
 > > **Langkah 2: Akumulasikan ke akhir tahun ke-16**
+> >
 > > $FV_{10}$ tumbuh 6 tahun lagi di 7%:
 > > $FV_{16}^{(1)} = 1{,}309{,}74 \times (1{,}07)^6 = 1{,}309{,}74 \times 1{,}50073 = 1{,}965{,}64$
 > >
 > > **Langkah 3: Hitung akumulasi setoran tahun 11–16**
+> >
 > > Setoran tahun 11–16 (awal tahun 11 s/d awal tahun 16 = 6 setoran) di rate 7%:
 > > $$FV_{16}^{(2)} = 100 \cdot \ddot{s}_{\overline{6}|0{,}07}$$
 > > $s_{\overline{6}|0{,}07} = \frac{(1{,}07)^6 - 1}{0{,}07} = \frac{0{,}50073}{0{,}07} = 7{,}15329$
@@ -199,6 +207,7 @@ e. 2.193
 > > $FV_{16}^{(2)} = 100 \times 7{,}65402 = 765{,}40$
 > >
 > > **Langkah 4: Total**
+> >
 > > $$FV_{total} = 1{,}965{,}64 + 765{,}40 = 2{,}731{,}0 \approx 2{,}732$$
 > >
 > > **Hasil Akhir:** **(c)**. Dana yang dapat ditarik $\approx 2{,}732$
@@ -263,6 +272,7 @@ e. 1.462
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung PV setoran**
+> >
 > > $\ddot{a}_{\overline{15}|0{,}05} = \frac{1 - v^{15}}{d} = \frac{1 - v^{15}}{i/(1+i)} \cdot (1+i)/1 = (1+i) \cdot a_{\overline{15}|}$
 > > $v^{15} = (1{,}05)^{-15} = 0{,}48102$
 > > $a_{\overline{15}|} = \frac{1 - 0{,}48102}{0{,}05} = 10{,}37966$
@@ -270,6 +280,7 @@ e. 1.462
 > > $PV_{setoran} = X \times 10{,}89864$
 > >
 > > **Langkah 2: Hitung PV manfaat**
+> >
 > > $v^{20} = (1{,}05)^{-20} = 0{,}37689$
 > >
 > > PV lump sum: $10{,}000 \times 0{,}37689 = 3{,}768{,}9$
@@ -284,6 +295,7 @@ e. 1.462
 > > Total PV manfaat: $3{,}768{,}9 + 12{,}165{,}7 = 15{,}934{,}6$
 > >
 > > **Langkah 3: Selesaikan untuk $X$**
+> >
 > > $$X = \frac{15{,}934{,}6}{10{,}89864} = 1{,}462{,}1 \approx 1{,}462$$
 > >
 > > **Hasil Akhir:** **(e)**. $X \approx 1{,}462$
@@ -340,6 +352,7 @@ e. $2n - s_{n|}$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Metode prospektif**
+> >
 > > Setelah $n$ pembayaran, sisa $n$ pembayaran lagi:
 > > $$OLB_n = 1 \cdot a_{\overline{n}|i} = a_{n|}$$
 > >
@@ -414,9 +427,11 @@ e. Pilihan (ii) lebih menguntungkan, $X \ge 5.000$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Rate bulanan**
+> >
 > > $j = (1{,}08)^{1/12} - 1 = 0{,}006434 = 0{,}6434\%$
 > >
 > > **Langkah 2: Pilihan (i) — akumulasi total di usia 55**
+> >
 > > Nilai rumah: $18{,}500 \times (1{,}055)^{30} = 18{,}500 \times 4{,}98395 = 92{,}203$
 > >
 > > Investasi 200/bulan selama 10 tahun terakhir (bulan 241–360):
@@ -425,6 +440,7 @@ e. Pilihan (ii) lebih menguntungkan, $X \ge 5.000$
 > > Total (i): $92{,}203 + 36{,}019 = 128{,}222$
 > >
 > > **Langkah 3: Pilihan (ii) — akumulasi total di usia 55**
+> >
 > > Investasi lump sum: $5{,}000 \times (1{,}08)^{30} = 5{,}000 \times 10{,}06266 = 50{,}313$
 > >
 > > Investasi 50/bulan selama 30 tahun:
@@ -433,6 +449,7 @@ e. Pilihan (ii) lebih menguntungkan, $X \ge 5.000$
 > > Total (ii): $50{,}313 + 70{,}427 = 120{,}740$
 > >
 > > **Langkah 4: Selisih**
+> >
 > > $$X = 128{,}222 - 120{,}740 = 7{,}482$$
 > > Pilihan (i) lebih besar, $X \ge 5{,}000$.
 > >
@@ -500,13 +517,16 @@ e. $80a_{13|}v^2$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: PV Cara (i)**
+> >
 > > Penarikan pertama di $t = 4$, terakhir di $t = 13$. Ini anuitas 10 tahun, deferred 3 tahun:
 > > $$PV_{(i)} = 1{,}000 \cdot v^3 \cdot a_{\overline{10}|}$$
 > >
 > > **Langkah 2: PV Cara (ii)**
+> >
 > > $$PV_{(ii)} = \frac{X}{0{,}08}$$
 > >
 > > **Langkah 3: Samakan dan selesaikan**
+> >
 > > $$\frac{X}{0{,}08} = 1{,}000 \cdot v^3 \cdot a_{\overline{10}|}$$
 > > $$X = 1{,}000 \times 0{,}08 \times v^3 \times a_{\overline{10}|} = 80 \cdot a_{\overline{10}|} \cdot v^3$$
 > >
@@ -570,15 +590,18 @@ e. 45 atau lebih
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tulis persamaan**
+> >
 > > $$2{,}607 = 2{,}500 v^n (1 + v^5)$$
 > > $v = 1/1{,}05$; $v^5 = (1{,}05)^{-5} = 0{,}78353$
 > > $$2{,}607 = 2{,}500 v^n \times 1{,}78353$$
 > > $$v^n = \frac{2{,}607}{2{,}500 \times 1{,}78353} = \frac{2{,}607}{4{,}458{,}8} = 0{,}58469$$
 > >
 > > **Langkah 2: Cari $n$**
+> >
 > > $$n = \frac{\ln(0{,}58469)}{\ln(1/1{,}05)} = \frac{-0{,}53647}{-0{,}04879} = 10{,}995 \approx 11$$
 > >
 > > **Langkah 3: Usia saat pembayaran kedua**
+> >
 > > Usia = $20 + n + 5 = 20 + 11 + 5 = 36$
 > > $35 \le 36 < 40$ → jawaban (c).
 > >
@@ -641,9 +664,11 @@ e. Tidak ada jawaban yang benar
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tanpa pembayaran tambahan**
+> >
 > > Total pembayaran = $10 \times 1 = 10$.
 > >
 > > **Langkah 2: Dengan pembayaran tambahan**
+> >
 > > Pembayaran tambahan di $t = 4$: $P_5 = v^6$.
 > > Ini "membunuh" cicilan ke-5 (pokok-nya sudah dibayar).
 > > Efeknya: hutang lunas 1 tahun lebih cepat (9 cicilan reguler + tambahan $v^6$).
@@ -653,6 +678,7 @@ e. Tidak ada jawaban yang benar
 > > Total pembayaran baru = $9 \times 1 + v^6 = 9 + v^6$.
 > >
 > > **Langkah 3: Bunga dihemat**
+> >
 > > Bunga dihemat = $(10) - (9 + v^6) = 1 - v^6$
 > >
 > > **Hasil Akhir:** **(b)**. Bunga dihemat $= 1 - v^6$
@@ -722,11 +748,13 @@ e. iv < i = iii < ii
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Prinsip dasar**
+> >
 > > - $R_{iii} = R_i$ karena $j = i_L = 8\%$ (identitas: amortisasi = sinking fund jika rate sama).
 > > - $j_{ii} = 6\% < 8\%$ → deposit SF lebih besar → $R_{ii} > R_i = R_{iii}$.
 > > - $j_{iv} = 12\% > 8\%$ → deposit SF lebih kecil → $R_{iv} < R_i = R_{iii}$.
 > >
 > > **Langkah 2: Urutan**
+> >
 > > $$R_{iv} < R_i = R_{iii} < R_{ii}$$
 > >
 > > **Hasil Akhir:** **(e)**. $iv < i = iii < ii$
@@ -787,11 +815,13 @@ e. $i \ge 14\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung total pembayaran tahunan**
+> >
 > > $s_{\overline{8}|0{,}08} = \frac{(1{,}08)^8 - 1}{0{,}08} = \frac{1{,}85093 - 1}{0{,}08} = \frac{0{,}85093}{0{,}08} = 10{,}63663$
 > > $D = \frac{10{,}000}{10{,}63663} = 940{,}15$
 > > $R = 1{,}200 + 940{,}15 = 2{,}140{,}15$
 > >
 > > **Langkah 2: Cari $i$ dari $10{,}000 = R \cdot a_{\overline{8}|i}$**
+> >
 > > $a_{\overline{8}|i} = \frac{10{,}000}{2{,}140{,}15} = 4{,}67266$
 > >
 > > Trial $i = 13{,}5\%$: $a_{\overline{8}|0{,}135} = \frac{1 - (1{,}135)^{-8}}{0{,}135}$
@@ -867,9 +897,11 @@ e. $X \ge 1.370$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung $a_{\overline{n}|j}$**
+> >
 > > $$a_{\overline{n}|0{,}02} = \frac{1 - v^n}{0{,}02} = \frac{1 - 0{,}12727}{0{,}02} = \frac{0{,}87273}{0{,}02} = 43{,}6364$$
 > >
 > > **Langkah 2: Hitung harga**
+> >
 > > $$X = 27{,}5 \times 43{,}6364 + 140 = 1{,}200{,}0 + 140 = 1{,}340{,}0$$
 > >
 > > $1{,}330 \le 1{,}340 < 1{,}350$ → jawaban (c).
@@ -935,16 +967,19 @@ e. $1 + 4p - 4q$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tulis relasi**
+> >
 > > $p = (c - i)A$ di mana $A = a_{\overline{n}|}$ ... (1)
 > > $q = (c/2 - i)A$ ... (2)
 > >
 > > **Langkah 2: Eliminasi $iA$**
+> >
 > > Dari (1): $iA = cA - p$
 > > Dari (2): $iA = cA/2 - q$
 > > Samakan: $cA - p = cA/2 - q$ → $cA/2 = p - q$ → $cA = 2(p - q)$
 > > Dan: $iA = 2(p - q) - p = p - 2q$
 > >
 > > **Langkah 3: Hitung harga untuk kupon $2c$**
+> >
 > > Harga $= 1 + (2c - i)A = 1 + 2cA - iA = 1 + 2 \times 2(p-q) - (p - 2q)$
 > > $= 1 + 4p - 4q - p + 2q = 1 + 3p - 2q$
 > >
@@ -1009,16 +1044,19 @@ e. $24 \le n < 29$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Syarat NPV ≥ 0**
+> >
 > > $$(186n + 104n^2 - 2n^3) \cdot a_{\overline{10}|0{,}155} \ge 7{,}500n$$
 > > Bagi kedua ruas dengan $n$ (karena $n > 0$):
 > > $$(186 + 104n - 2n^2) \cdot a_{\overline{10}|0{,}155} \ge 7{,}500$$
 > >
 > > **Langkah 2: Hitung $a_{\overline{10}|0{,}155}$**
+> >
 > > $(1{,}155)^{10} = e^{10 \times 0{,}14398} = e^{1{,}4398} = 4{,}22028$
 > > $v^{10} = 0{,}23695$
 > > $a_{\overline{10}|} = \frac{1 - 0{,}23695}{0{,}155} = \frac{0{,}76305}{0{,}155} = 4{,}92290$
 > >
 > > **Langkah 3: Selesaikan ketidaksamaan**
+> >
 > > $$186 + 104n - 2n^2 \ge \frac{7{,}500}{4{,}92290} = 1{,}523{,}7$$
 > > $$-2n^2 + 104n + 186 \ge 1{,}523{,}7$$
 > > $$2n^2 - 104n + 1{,}337{,}7 \le 0$$
@@ -1093,15 +1131,18 @@ e. $X \ge 94.000$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tulis TWRR**
+> >
 > > $$(1{,}10)^4 = \frac{115{,}000}{100{,}000} \times \frac{145{,}000}{115{,}000 + 18{,}000} \times \frac{185{,}000}{145{,}000 + 23{,}000} \times \frac{100{,}000}{185{,}000 - X}$$
 > >
 > > **Langkah 2: Hitung setiap rasio**
+> >
 > > $r_1 = \frac{115{,}000}{100{,}000} = 1{,}15$
 > > $r_2 = \frac{145{,}000}{133{,}000} = 1{,}09023$
 > > $r_3 = \frac{185{,}000}{168{,}000} = 1{,}10119$
 > > $r_4 = \frac{100{,}000}{185{,}000 - X}$
 > >
 > > **Langkah 3: Selesaikan untuk $X$**
+> >
 > > $$1{,}4641 = 1{,}15 \times 1{,}09023 \times 1{,}10119 \times \frac{100{,}000}{185{,}000 - X}$$
 > > $$1{,}15 \times 1{,}09023 \times 1{,}10119 = 1{,}38054$$
 > > $$1{,}4641 = 1{,}38054 \times \frac{100{,}000}{185{,}000 - X}$$
@@ -1167,11 +1208,13 @@ e. 45
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Cari $v^n$**
+> >
 > > $$a_{\overline{2n}|} = a_{\overline{n}|}(1 + v^n)$$
 > > $$24 = 15(1 + v^n)$$
 > > $$v^n = 24/15 - 1 = 0{,}6$$
 > >
 > > **Langkah 2: Hitung $a_{\overline{3n}|}$**
+> >
 > > $$a_{\overline{3n}|} = a_{\overline{n}|}(1 + v^n + v^{2n}) = 15(1 + 0{,}6 + 0{,}36) = 15 \times 1{,}96 = 29{,}4$$
 > >
 > > Hmm, 29,4 tidak ada di opsi. Mari periksa ulang.
@@ -1252,12 +1295,14 @@ e. 15 tahun
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung akumulasi tabungan**
+> >
 > > $s_{\overline{15}|0{,}06} = \frac{(1{,}06)^{15} - 1}{0{,}06}$
 > > $(1{,}06)^{15} = 2{,}39656$
 > > $s_{\overline{15}|} = \frac{1{,}39656}{0{,}06} = 23{,}27597$
 > > $FV = 1{,}000 \times 23{,}27597 = 23{,}276$
 > >
 > > **Langkah 2: Persamaan untuk anuitas**
+> >
 > > $$23{,}276 = 120 \cdot a_{\overline{m}|0{,}06}$$
 > > $$a_{\overline{m}|} = \frac{23{,}276}{120} = 193{,}97$$
 > >
@@ -1340,12 +1385,14 @@ e. 1.580
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung cicilan**
+> >
 > > $a_{\overline{20}|0{,}09} = \frac{1 - (1{,}09)^{-20}}{0{,}09}$
 > > $(1{,}09)^{20} = 5{,}60441 \implies v^{20} = 0{,}17843$
 > > $a_{\overline{20}|} = \frac{0{,}82157}{0{,}09} = 9{,}12855$
 > > $R = \frac{50{,}000}{9{,}12855} = 5{,}477{,}3$
 > >
 > > **Langkah 2: Hitung porsi pokok cicilan ke-10**
+> >
 > > $$P_{10} = R \cdot v^{20-10+1} = R \cdot v^{11}$$
 > > $v^{11} = (1{,}09)^{-11}$
 > > $(1{,}09)^{11} = 2{,}58043 \implies v^{11} = 0{,}38753$
@@ -1430,18 +1477,22 @@ e. 19.100
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Dana pokok di akhir tahun ke-10**
+> >
 > > Pokok tetap: 10.000
 > >
 > > **Langkah 2: Akumulasi bunga tahun 1–5 di akhir tahun ke-10**
+> >
 > > Bunga 800/tahun di $t = 1, 2, 3, 4, 5$, reinvested at 6%.
 > > Di akhir tahun 5: $800 \cdot s_{\overline{5}|0{,}06} = 800 \times 5{,}63709 = 4{,}509{,}7$
 > > Akumulasikan 5 tahun lagi di 7%: $4{,}509{,}7 \times (1{,}07)^5 = 4{,}509{,}7 \times 1{,}40255 = 6{,}324{,}3$
 > >
 > > **Langkah 3: Akumulasi bunga tahun 6–10 di akhir tahun ke-10**
+> >
 > > Bunga 800/tahun di $t = 6, 7, 8, 9, 10$, reinvested at 7%.
 > > Di akhir tahun 10: $800 \cdot s_{\overline{5}|0{,}07} = 800 \times 5{,}75074 = 4{,}600{,}6$
 > >
 > > **Langkah 4: Total**
+> >
 > > $$Total = 10{,}000 + 6{,}324{,}3 + 4{,}600{,}6 = 20{,}924{,}9$$
 > >
 > > Hmm, ini jauh dari opsi (17.450–19.100). Mungkin bunga reinvestasi tahun 1–5 hanya tumbuh di 6% (bukan beralih ke 7% setelah tahun 5).
@@ -1524,15 +1575,18 @@ e. 8,9 tahun
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung harga obligasi**
+> >
 > > $v^{12} = (1{,}06)^{-12} = 0{,}49697$
 > > $a_{\overline{12}|0{,}06} = \frac{1 - 0{,}49697}{0{,}06} = 8{,}38384$
 > > $P = 70 \times 8{,}38384 + 1{,}000 \times 0{,}49697 = 586{,}87 + 496{,}97 = 1{,}083{,}84$
 > >
 > > **Langkah 2: Hitung numerator $(Ia)_{\overline{12}|}$**
+> >
 > > $\ddot{a}_{\overline{12}|} = 8{,}38384 \times 1{,}06 = 8{,}88687$
 > > $(Ia)_{\overline{12}|} = \frac{\ddot{a}_{\overline{12}|} - 12v^{12}}{0{,}06} = \frac{8{,}88687 - 12 \times 0{,}49697}{0{,}06} = \frac{8{,}88687 - 5{,}96364}{0{,}06} = \frac{2{,}92323}{0{,}06} = 48{,}72050$
 > >
 > > **Langkah 3: Hitung Macaulay Duration**
+> >
 > > Numerator: $70 \times 48{,}72050 + 12 \times 1{,}000 \times 0{,}49697 = 3{,}410{,}44 + 5{,}963{,}64 = 9{,}374{,}08$
 > > Denominator: $P = 1{,}083{,}84$
 > > $$D_{Mac} = \frac{9{,}374{,}08}{1{,}083{,}84} = 8{,}649$$
@@ -1600,6 +1654,7 @@ e. 9,0%
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Selesaikan untuk $i$**
+> >
 > > $$540 = 1{,}000 \cdot (1+i)^{-8}$$
 > > $$(1+i)^8 = \frac{1{,}000}{540} = 1{,}85185$$
 > > $$1 + i = (1{,}85185)^{1/8} = e^{\ln(1{,}85185)/8} = e^{0{,}61619/8} = e^{0{,}07702} = 1{,}08008$$
@@ -1668,10 +1723,12 @@ e. 15.800
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung komponen pada $i = 9\%$**
+> >
 > > $v^5 = (1{,}09)^{-5} = 0{,}64993$
 > > $a_{\overline{5}|0{,}09} = \frac{1 - 0{,}64993}{0{,}09} = \frac{0{,}35007}{0{,}09} = 3{,}88965$
 > >
 > > **Langkah 2: Hitung NPV**
+> >
 > > $$NPV = -120{,}000 + 30{,}000 \times 3{,}88965 + 50{,}000 \times 0{,}64993 \times 3{,}88965$$
 > > $$= -120{,}000 + 116{,}690 + 126{,}406$$
 > >
@@ -1753,11 +1810,13 @@ e. 7,2 tahun
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Prinsip hubungan kupon dan duration**
+> >
 > > Kupon lebih tinggi → proporsi PV cash flow di tahun-tahun awal lebih besar → duration lebih kecil.
 > > Obligasi B (kupon 9%) memiliki duration lebih kecil dari A (kupon 6%).
 > > $D_{Mac}^B < 7{,}2$
 > >
 > > **Langkah 2: Estimasi**
+> >
 > > Tanpa informasi spesifik tentang tenor dan yield, kupon naik dari 6% ke 9% (naik 50%) akan menurunkan duration secara moderat. Dengan kunci PAI = (d) = 7,0:
 > >
 > > $D_{Mac}^B \approx 7{,}0$ tahun.
@@ -1824,11 +1883,13 @@ e. 20
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Interpretasi**
+> >
 > > Payoff $= 2S - 100$. Kontrak ini seperti 2 unit long forward minus 100 cash.
 > >
 > > Karena kontrak tanpa biaya awal, fair value kontrak = 0 pada inisiasi. Tapi yang ditanya adalah "nilai harapan payoff".
 > >
 > > **Langkah 2: Hitung expected payoff**
+> >
 > > Dengan harga forward wajar = 60, secara risk-neutral $E[S_T] = F_{0,T} \cdot e^{rT}$. Tapi untuk soal CF1, biasanya $E[S_T] = F = 60$ (atau mendekati).
 > >
 > > $$E[\text{payoff}] = 2E[S] - 100$$
@@ -1912,10 +1973,12 @@ e. 18
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung payoff di setiap skenario**
+> >
 > > - $S_T = 40$: payoff $= \max(40 - 50, 0) = 0$
 > > - $S_T = 70$: payoff $= \max(70 - 50, 0) = 20$
 > >
 > > **Langkah 2: Expected payoff**
+> >
 > > $$E[\text{payoff}] = 0{,}4 \times 0 + 0{,}6 \times 20 = 12$$
 > >
 > > Hmm, 12 = opsi (c). Tapi kunci = (d) = 15. Mungkin di soal asli PAI, probabilitas atau harga berbeda. Dengan angka saat ini: $0{,}6 \times 20 = 12$.
@@ -1985,11 +2048,13 @@ e. 15,0%
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung varians portofolio**
+> >
 > > $$\sigma_P^2 = (0{,}6)^2(12)^2 + (0{,}4)^2(20)^2 + 2(0{,}6)(0{,}4)(0{,}25)(12)(20)$$
 > > $$= 0{,}36 \times 144 + 0{,}16 \times 400 + 2(0{,}6)(0{,}4)(0{,}25)(240)$$
 > > $$= 51{,}84 + 64 + 28{,}8 = 144{,}64$$
 > >
 > > **Langkah 2: Hitung standar deviasi**
+> >
 > > $$\sigma_P = \sqrt{144{,}64} = 12{,}027\%$$
 > >
 > > Hmm, ini dekat 12,0% bukan 12,6%. Dengan kunci PAI = (c) = 12,6%:
@@ -2057,9 +2122,11 @@ e. 51,0
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Dividen tahun 1–5**
+> >
 > > $D_1 = 2, D_2 = 2{,}08, D_3 = 2{,}1632, D_4 = 2{,}2497, D_5 = 2{,}3397$
 > >
 > > **Langkah 2: PV Fase 1 (growing annuity)**
+> >
 > > $$PV_1 = \sum_{t=1}^{5} \frac{D_1(1{,}04)^{t-1}}{(1{,}08)^t} = D_1 \sum_{t=1}^{5} \left(\frac{1{,}04}{1{,}08}\right)^t \cdot \frac{1}{1{,}04}$$
 > >
 > > Let $w = 1{,}04/1{,}08 = 0{,}96296$:
@@ -2070,6 +2137,7 @@ e. 51,0
 > > $= 50 \times (1 - 0{,}82661) = 50 \times 0{,}17339 = 8{,}670$
 > >
 > > **Langkah 3: PV Fase 2 (growing perpetuity)**
+> >
 > > $D_6 = D_5 \times 1{,}02 = 2{,}3397 \times 1{,}02 = 2{,}38649$
 > > $PV_5 = \frac{D_6}{i - g_2} = \frac{2{,}38649}{0{,}08 - 0{,}02} = \frac{2{,}38649}{0{,}06} = 39{,}775$
 > > $PV_0 = 39{,}775 \times v^5 = 39{,}775 \times (1{,}08)^{-5} = 39{,}775 \times 0{,}68058 = 27{,}066$
@@ -2159,9 +2227,11 @@ e. Durasi tidak berubah
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Efek pada harga**
+> >
 > > Yield naik → harga obligasi TURUN (hubungan invers).
 > >
 > > **Langkah 2: Efek pada durasi**
+> >
 > > Untuk obligasi discount (kupon 5% < yield), kenaikan yield menyebabkan:
 > > - Weight redemption value (di $t = 6$) menjadi relatif lebih kecil
 > > - Tapi kupon juga turun weight-nya
@@ -2226,12 +2296,14 @@ e. Lebih dari 4,5 tahun
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung kumulatif**
+> >
 > > - Akhir tahun 1: 25.000
 > > - Akhir tahun 2: 50.000
 > > - Akhir tahun 3: 75.000
 > > - Akhir tahun 4: 100.000 ≥ 80.000 ✓
 > >
 > > **Langkah 2: Interpolasi**
+> >
 > > Setelah 3 tahun: kumulatif = 75.000, masih kurang 5.000.
 > > Waktu tambahan: $5{,}000/25{,}000 = 0{,}2$ tahun.
 > > Payback = $3 + 0{,}2 = 3{,}2$ tahun.
@@ -2294,6 +2366,7 @@ e. Harga obligasi hanya dipengaruhi oleh kupon
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Analisis setiap pernyataan**
+> >
 > > - (a) Searah: SALAH — hubungan invers.
 > > - (b) Tidak dipengaruhi: SALAH — harga sangat dipengaruhi tingkat bunga.
 > > - (c) Berlawanan arah: BENAR — ini prinsip fundamental bond pricing.

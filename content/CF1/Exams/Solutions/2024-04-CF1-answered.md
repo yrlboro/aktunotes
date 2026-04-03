@@ -35,12 +35,15 @@ e. $0{,}918$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung $i_5$**
+> >
 > > $$i_5 = \frac{A(5) - A(4)}{A(4)} = \frac{(100+25) - (100+20)}{100+20} = \frac{5}{120} = \frac{1}{24}$$
 > >
 > > **Langkah 2: Hitung $i_{10}$**
+> >
 > > $$i_{10} = \frac{A(10) - A(9)}{A(9)} = \frac{(100+50) - (100+45)}{100+45} = \frac{5}{145} = \frac{1}{29}$$
 > >
 > > **Langkah 3: Hitung selisih**
+> >
 > > $$i_5 - i_{10} = \frac{1}{24} - \frac{1}{29} = \frac{29 - 24}{24 \times 29} = \frac{5}{696} \approx 0{,}00719$$
 > >
 > > Dalam persen: $\approx 0{,}719\%$
@@ -104,14 +107,17 @@ e. $13{,}00$ juta
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung faktor akumulasi dari tahun 4 ke tahun 7**
+> >
 > > $$A(7) = A(4) \cdot (1+i_5)(1+i_6)(1+i_7)$$
 > > $$= 10 \times (1{,}05)(1{,}06)(1{,}07)$$
 > >
 > > **Langkah 2: Hitung perkalian**
+> >
 > > $$(1{,}05)(1{,}06) = 1{,}113$$
 > > $$1{,}113 \times 1{,}07 = 1{,}19091$$
 > >
 > > **Langkah 3: Hitung $A(7)$**
+> >
 > > $$A(7) = 10 \times 1{,}19091 = 11{,}9091 \approx 11{,}91 \text{ juta}$$
 > >
 > > **Hasil Akhir:** **(b)**. $11{,}91$ juta
@@ -179,9 +185,11 @@ e. $5{,}836$ juta
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tentukan $rt$ dari Investasi A**
+> >
 > > $$11{,}1 = 10(1 + rt) \implies 1 + rt = 1{,}11 \implies rt = 0{,}11$$
 > >
 > > **Langkah 2: Hitung akumulasi Investasi B**
+> >
 > > $$A_B = 5\left(1 + \frac{3}{4}r \cdot 2t\right) = 5\left(1 + \frac{3}{2}rt\right)$$
 > > $$= 5\left(1 + \frac{3}{2} \times 0{,}11\right) = 5(1 + 0{,}165) = 5 \times 1{,}165 = 5{,}825 \text{ juta}$$
 > >
@@ -241,16 +249,19 @@ e. $75{,}0$ juta
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tentukan $v^{10}$**
+> >
 > > $(1+i)^{30} = 8 \implies (1+i)^{10} = 8^{1/3} = 2$
 > >
 > > Maka $v^{10} = \frac{1}{(1+i)^{10}} = \frac{1}{2} = 0{,}5$
 > >
 > > **Langkah 2: Hitung $v^{20}, v^{40}, v^{60}$**
+> >
 > > - $v^{20} = (v^{10})^2 = 0{,}5^2 = 0{,}25$
 > > - $v^{40} = (v^{10})^4 = 0{,}5^4 = 0{,}0625$
 > > - $v^{60} = (v^{10})^6 = 0{,}5^6 = 0{,}015625$
 > >
 > > **Langkah 3: Hitung PV total**
+> >
 > > $$\text{PV} = 100(0{,}25 + 0{,}0625 + 0{,}015625) = 100 \times 0{,}328125 = 32{,}8125 \approx 32{,}8 \text{ juta}$$
 > >
 > > **Hasil Akhir:** **(c)**. $32{,}8$ juta
@@ -310,23 +321,27 @@ e. $25$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Substitusi hubungan nominal-efektif**
+> >
 > > Kita tahu bahwa $1 + \frac{i^{(m)}}{m} = (1+i)^{1/m}$ untuk suku bunga efektif $i$ yang sama.
 > >
 > > Maka ruas kanan:
 > > $$(1+i)^{1/4} \cdot (1+i)^{1/5} = (1+i)^{1/4 + 1/5} = (1+i)^{9/20}$$
 > >
 > > **Langkah 2: Samakan dengan ruas kiri**
+> >
 > > Ruas kiri: $1 + \frac{i^{(n)}}{n} = (1+i)^{1/n}$
 > >
 > > Sehingga:
 > > $$(1+i)^{1/n} = (1+i)^{9/20}$$
 > >
 > > **Langkah 3: Samakan eksponen**
+> >
 > > $$\frac{1}{n} = \frac{9}{20} \implies n = \frac{20}{9}$$
 > >
 > > Hmm, ini bukan bilangan bulat. Mari kita tinjau ulang interpretasi soal.
 > >
 > > **Langkah 3 (Revisi): Interpretasi alternatif**
+> >
 > > Perhatikan bahwa $\frac{i^{(m)}}{m}$ adalah suku bunga per periode $1/m$ tahun. Jika kita menginterpretasikan sisi kiri sebagai akumulasi selama $1/n$ tahun dan sisi kanan sebagai akumulasi selama $1/4$ tahun diikuti $1/5$ tahun, maka panjang total interval sisi kanan adalah $\frac{1}{4} + \frac{1}{5} = \frac{9}{20}$ tahun.
 > >
 > > Untuk sisi kiri mewakili interval yang sama: $\frac{1}{n} = \frac{9}{20}$, maka $n = 20/9$.
@@ -342,6 +357,7 @@ e. $25$
 > > Namun, jika kita membaca persamaan secara **aljabar murni** tanpa asumsi bahwa semua $i^{(m)}$ merujuk pada $i$ efektif yang sama, melainkan persamaan itu sendiri sebagai constraint, kita perlu pendekatan lain.
 > >
 > > **Langkah 4: Pendekatan numerik**
+> >
 > > Misalkan $i = 0{,}10$ (10%), maka:
 > > - $i^{(4)} = 4[(1{,}1)^{1/4} - 1] = 4(0{,}02411) = 0{,}09645$
 > > - $i^{(5)} = 5[(1{,}1)^{1/5} - 1] = 5(0{,}01923) = 0{,}09614$
@@ -354,6 +370,7 @@ e. $25$
 > > Sehingga $n = 20/9 \approx 2{,}22$, yang bukan opsi jawaban.
 > >
 > > **Langkah 5: Reinterpretasi — $n$ sebagai frekuensi compounding total**
+> >
 > > Jika persamaan dibaca sebagai: dalam satu tahun, compounding $n$ kali setara dengan compounding 4 kali lalu compounding 5 kali, maka:
 > > $$(1+i)^{1} = \left(1+\frac{i^{(n)}}{n}\right)^n = \left(1+\frac{i^{(4)}}{4}\right)^4 \cdot \left(1+\frac{i^{(5)}}{5}\right)^5$$
 > >
@@ -363,6 +380,7 @@ e. $25$
 > > Ini tidak konsisten. Jadi interpretasi yang tepat: **perkalian dalam soal mewakili akumulasi multi-tahun**.
 > >
 > > **Langkah 6: Interpretasi yang menghasilkan $n=20$**
+> >
 > > Misalkan persamaan menghubungkan faktor akumulasi per sub-periode dari frekuensi berbeda. Jika kita mengangkat kedua sisi ke pangkat yang sesuai:
 > >
 > > Ruas kiri pangkat $n$: $(1+i^{(n)}/n)^n = 1+i$
@@ -446,6 +464,7 @@ e. $19{,}52$ juta
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Konversi ke suku bunga efektif tahunan**
+> >
 > > $$i = \left(1 + \frac{0{,}06}{4}\right)^4 - 1 = (1{,}015)^4 - 1$$
 > > $$(1{,}015)^2 = 1{,}030225$$
 > > $$(1{,}015)^4 = (1{,}030225)^2 = 1{,}06136355$$
@@ -453,9 +472,11 @@ e. $19{,}52$ juta
 > > $$v = \frac{1}{1{,}06136355} = 0{,}94218$$
 > >
 > > **Langkah 2: Setup equation of value di $t=0$**
+> >
 > > $$30 + Xv^3 = 20v^4 + 50v^{10}$$
 > >
 > > **Langkah 3: Hitung faktor diskonto**
+> >
 > > Lebih mudah menggunakan $v = 1/1{,}015^4$:
 > > - $v^3 = 1/(1{,}015)^{12}$
 > > - $v^4 = 1/(1{,}015)^{16}$
@@ -475,6 +496,7 @@ e. $19{,}52$ juta
 > > - $v^{10} = 1/1{,}81402 = 0{,}55126$
 > >
 > > **Langkah 4: Substitusi dan selesaikan**
+> >
 > > $$30 + 0{,}83639X = 20(0{,}78803) + 50(0{,}55126)$$
 > > $$30 + 0{,}83639X = 15{,}7606 + 27{,}5630$$
 > > $$30 + 0{,}83639X = 43{,}3236$$
@@ -538,15 +560,18 @@ e. $38{,}39$ tahun
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Setup persamaan**
+> >
 > > $$10(1{,}06)^t = 2 \times 10(1{,}04)^t$$
 > > $$\frac{(1{,}06)^t}{(1{,}04)^t} = 2$$
 > > $$\left(\frac{1{,}06}{1{,}04}\right)^t = 2$$
 > >
 > > **Langkah 2: Ambil logaritma natural**
+> >
 > > $$t \cdot \ln\left(\frac{1{,}06}{1{,}04}\right) = \ln 2$$
 > > $$t = \frac{\ln 2}{\ln(1{,}06/1{,}04)} = \frac{\ln 2}{\ln(1{,}01923)}$$
 > >
 > > **Langkah 3: Hitung**
+> >
 > > $$t = \frac{0{,}693147}{0{,}019040} = 36{,}405 \approx 36{,}39$$
 > >
 > > **Hasil Akhir:** **(a)**. $36{,}39$ tahun
@@ -616,14 +641,17 @@ e. $4{,}98\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung PV aliran (i)**
+> >
 > > $$v^{2n} = (v^n)^2 = (0{,}75941)^2 = 0{,}576704$$
 > > $$\text{PV}_{\text{(i)}} = 10 + 20(0{,}75941) + 30(0{,}576704) = 10 + 15{,}1882 + 17{,}3011 = 42{,}4893$$
 > >
 > > **Langkah 2: Setup persamaan dan selesaikan $v^{10}$**
+> >
 > > $$42{,}4893 = 60v^{10}$$
 > > $$v^{10} = \frac{42{,}4893}{60} = 0{,}708155$$
 > >
 > > **Langkah 3: Hitung $i$**
+> >
 > > $$v^{10} = \frac{1}{(1+i)^{10}} = 0{,}708155$$
 > > $$(1+i)^{10} = \frac{1}{0{,}708155} = 1{,}41213$$
 > > $$1+i = 1{,}41213^{1/10} = 1{,}41213^{0{,}1}$$
@@ -698,18 +726,21 @@ e. $13{,}00$ juta
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Identifikasi rate per sub-periode**
+> >
 > > - Tahun 0–7: rate per semester $= i/2$, jumlah semester dalam 7 tahun $= 14$
 > > - Tahun 7–10,5: rate per kuartal $= 2i/4 = i/2$, jumlah kuartal dalam 3,5 tahun $= 14$
 > >
 > > Perhatikan bahwa rate per sub-periode sama: $i/2$!
 > >
 > > **Langkah 2: Hitung akumulasi di $t = 10{,}5$**
+> >
 > > $$A(10{,}5) = 10 \cdot \left(1 + \frac{i}{2}\right)^{14} \cdot \left(1 + \frac{i}{2}\right)^{14} = 10 \cdot \left(1 + \frac{i}{2}\right)^{28}$$
 > >
 > > $$19{,}8 = 10 \cdot \left(1 + \frac{i}{2}\right)^{28}$$
 > > $$\left(1 + \frac{i}{2}\right)^{28} = 1{,}98$$
 > >
 > > **Langkah 3: Hitung $A(5) = X$**
+> >
 > > Dalam 5 tahun pertama (masih di rezim semi-annual), jumlah semester $= 10$.
 > > $$X = 10 \cdot \left(1 + \frac{i}{2}\right)^{10}$$
 > >
@@ -719,6 +750,7 @@ e. $13{,}00$ juta
 > > $$(1 + i/2)^{10} = 1{,}98^{10/28} = 1{,}98^{5/14}$$
 > >
 > > **Langkah 4: Hitung numerik**
+> >
 > > $$\ln(1{,}98) = 0{,}68310$$
 > > $$\frac{5}{14} \times 0{,}68310 = 0{,}24397$$
 > > $$e^{0{,}24397} = 1{,}27616$$
@@ -790,11 +822,13 @@ e. $7{,}52$ juta
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung $s_{\overline{10}|7\%}$**
+> >
 > > $$s_{\overline{10}|} = \frac{(1{,}07)^{10} - 1}{0{,}07}$$
 > > $(1{,}07)^{10} = 1{,}96715$
 > > $$s_{\overline{10}|} = \frac{1{,}96715 - 1}{0{,}07} = \frac{0{,}96715}{0{,}07} = 13{,}8164$$
 > >
 > > **Langkah 2: Setup equation of value di $t=20$**
+> >
 > > - 10 juta per tahun selama 20 tahun: FV $= 10 \cdot s_{\overline{20}|}$
 > > - Tambahan $X$ juta per tahun selama 10 tahun terakhir: FV $= X \cdot s_{\overline{10}|}$
 > >
@@ -805,6 +839,7 @@ e. $7{,}52$ juta
 > > $$10 \cdot s_{\overline{10}|} \cdot (1{,}07)^{10} + (10+X) \cdot s_{\overline{10}|} = 500$$
 > >
 > > **Langkah 3: Substitusi nilai**
+> >
 > > $$10 \times 13{,}8164 \times 1{,}96715 + (10+X) \times 13{,}8164 = 500$$
 > > $$271{,}815 + 138{,}164 + 13{,}8164X = 500$$
 > > $$409{,}979 + 13{,}8164X = 500$$
@@ -875,11 +910,13 @@ e. $114{,}47$ juta
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung total bunga Beni**
+> >
 > > Beni membayar bunga $200 \times 0{,}085 = 17$ juta per tahun selama 8 tahun, lalu lunasi pokok 200 juta.
 > > $$\text{Total pembayaran Beni} = 17 \times 8 + 200 = 136 + 200 = 336 \text{ juta}$$
 > > $$I_B = 336 - 200 = 136 \text{ juta}$$
 > >
 > > **Langkah 2: Hitung cicilan Andi**
+> >
 > > $$a_{\overline{8}|8{,}5\%} = \frac{1 - v^8}{0{,}085}$$
 > > $v = 1/1{,}085 = 0{,}92166$
 > > $v^8 = 0{,}92166^8$
@@ -894,10 +931,12 @@ e. $114{,}47$ juta
 > > $$R = \frac{200}{5{,}63918} = 35{,}4660 \text{ juta}$$
 > >
 > > **Langkah 3: Hitung total bunga Andi**
+> >
 > > $$\text{Total pembayaran Andi} = 8 \times 35{,}4660 = 283{,}728 \text{ juta}$$
 > > $$I_A = 283{,}728 - 200 = 83{,}728 \text{ juta}$$
 > >
 > > **Langkah 4: Hitung selisih**
+> >
 > > $$I_B - I_A = 136 - 83{,}728 = 52{,}272 \approx 52{,}27 \text{ juta}$$
 > >
 > > **Hasil Akhir:** **(a)**. $52{,}27$ juta
@@ -968,6 +1007,7 @@ e. $\dfrac{36}{49}$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Ekspresikan PV tiap porsi**
+> >
 > > - $\text{PV}_A = a_{\overline{n}|}$
 > > - $\text{PV}_B = v^n \cdot a_{\overline{n}|}$
 > > - $\text{PV}_C = v^{2n} \cdot a_{\overline{n}|}$
@@ -976,11 +1016,13 @@ e. $\dfrac{36}{49}$
 > > Atau alternatif: $\text{PV}_D = v^{3n} \cdot \frac{a_{\overline{n}|}}{1 - v^n}$ (karena $a_{\overline{\infty}|} = a_{\overline{n}|}/(1-v^n)$)
 > >
 > > **Langkah 2: Gunakan rasio C/A**
+> >
 > > $$\frac{\text{PV}_C}{\text{PV}_A} = \frac{v^{2n} \cdot a_{\overline{n}|}}{a_{\overline{n}|}} = v^{2n} = 0{,}49$$
 > >
 > > Maka $v^n = \sqrt{0{,}49} = 0{,}7$
 > >
 > > **Langkah 3: Hitung PV_B dan PV_D**
+> >
 > > - $\text{PV}_B = v^n \cdot a_{\overline{n}|} = 0{,}7 \cdot a_{\overline{n}|}$
 > >
 > > Untuk $\text{PV}_D$: Total perpetuity $= a_{\overline{\infty}|} = 1/i$
@@ -995,6 +1037,7 @@ e. $\dfrac{36}{49}$
 > > Juga: $\text{PV}_D = v^{3n} \cdot \frac{1}{i}$
 > >
 > > **Langkah 4: Hitung rasio B/D**
+> >
 > > $$\frac{\text{PV}_B}{\text{PV}_D} = \frac{v^n \cdot a_{\overline{n}|}}{v^{3n}/i} = \frac{v^n \cdot \frac{1-v^n}{i}}{v^{3n}/i} = \frac{v^n(1-v^n)}{v^{3n}} = \frac{1-v^n}{v^{2n}}$$
 > >
 > > Substitusi $v^n = 0{,}7$:
@@ -1059,6 +1102,7 @@ e. (i), (ii), dan (iii)
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Verifikasi formula (i)**
+> >
 > > $$\frac{\bar{a}_{\overline{10}|}}{(1+i)\bar{s}_{\overline{10}|}}$$
 > >
 > > Kita tahu $\bar{s}_{\overline{n}|} = (1+i)^n \bar{a}_{\overline{n}|}$, maka:
@@ -1185,10 +1229,12 @@ e. $8{,}69\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Setup dua persamaan**
+> >
 > > $$10 = 1{,}538 \cdot a_{\overline{10}|i} \quad \Rightarrow \quad a_{\overline{10}|i} = \frac{10}{1{,}538} = 6{,}5020$$
 > > $$10 = 1{,}072 \cdot a_{\overline{20}|i} \quad \Rightarrow \quad a_{\overline{20}|i} = \frac{10}{1{,}072} = 9{,}3284$$
 > >
 > > **Langkah 2: Gunakan hubungan $a_{\overline{20}|}$ dan $a_{\overline{10}|}$**
+> >
 > > $$a_{\overline{20}|} = a_{\overline{10}|} + v^{10} \cdot a_{\overline{10}|}= a_{\overline{10}|}(1 + v^{10})$$
 > >
 > > $$9{,}3284 = 6{,}5020 \cdot (1 + v^{10})$$
@@ -1196,6 +1242,7 @@ e. $8{,}69\%$
 > > $$v^{10} = 0{,}43467$$
 > >
 > > **Langkah 3: Hitung $i$**
+> >
 > > $$(1+i)^{10} = \frac{1}{0{,}43467} = 2{,}30065$$
 > > $$1+i = 2{,}30065^{0{,}1}$$
 > > $$\ln(1+i) = \frac{\ln(2{,}30065)}{10} = \frac{0{,}83341}{10} = 0{,}083341$$
@@ -1273,6 +1320,7 @@ e. $9{,}9$ juta
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tentukan dampak penarikan pada deposito**
+> >
 > > - Penarikan $K$ di $t=4$: Michael menerima $K$, tetapi bank mengurangi saldo sebesar $K/0{,}95$ (karena $K = 0{,}95 \times \text{jumlah yang didebit}$, artinya jumlah yang didebit $= K/0{,}95$)
 > >
 > > Sebenarnya, "penalti 5% dari nilai penarikan" berarti Michael menarik $K$ tetapi bank mengurangi saldo sebesar $K + 0{,}05K = 1{,}05K$ — atau interpretasi lain: Michael ingin $K$ tapi hanya menerima $0{,}95K$ karena penalti.
@@ -1286,9 +1334,11 @@ e. $9{,}9$ juta
 > > Tapi interpretasi lain yang lebih umum: Michael menarik $K$ dan bank memotong penalti $0{,}05K$ dari saldo tambahan, sehingga total pengurangan saldo = $K + 0{,}05K = 1{,}05K$.
 > >
 > > **Langkah 2: Setup equation of value di $t=10$**
+> >
 > > $$100(1{,}04)^{10} - 1{,}05K(1{,}04)^6 - 1{,}05K(1{,}04)^5 - K(1{,}04)^4 - K(1{,}04)^3 = 100$$
 > >
 > > **Langkah 3: Hitung faktor**
+> >
 > > $(1{,}04)^{10} = 1{,}48024$
 > > $(1{,}04)^6 = 1{,}26532$
 > > $(1{,}04)^5 = 1{,}21665$
@@ -1296,6 +1346,7 @@ e. $9{,}9$ juta
 > > $(1{,}04)^3 = 1{,}12486$
 > >
 > > **Langkah 4: Substitusi**
+> >
 > > $$100 \times 1{,}48024 - K[1{,}05(1{,}26532) + 1{,}05(1{,}21665) + 1{,}16986 + 1{,}12486] = 100$$
 > > $$148{,}024 - K[1{,}32859 + 1{,}27748 + 1{,}16986 + 1{,}12486] = 100$$
 > > $$148{,}024 - K \times 4{,}90079 = 100$$
@@ -1366,10 +1417,12 @@ e. $785{,}12$ juta
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Identifikasi tipe anuitas**
+> >
 > > Pembayaran dimulai "sekarang" ($t=0$), jadi ini annuity-due geometrik.
 > > Pembayaran di $t=k$: $60(1{,}05)^k$ untuk $k = 0, 1, \ldots, 19$.
 > >
 > > **Langkah 2: Hitung PV**
+> >
 > > $$PV = \sum_{k=0}^{19} 60(1{,}05)^k \cdot v^k = 60 \sum_{k=0}^{19} \left(\frac{1{,}05}{1{,}1025}\right)^k$$
 > >
 > > Rasio: $r = \frac{1{,}05}{1{,}1025} = 0{,}952381$
@@ -1377,11 +1430,13 @@ e. $785{,}12$ juta
 > > $$PV = 60 \cdot \frac{1 - (0{,}952381)^{20}}{1 - 0{,}952381} = 60 \cdot \frac{1 - (0{,}952381)^{20}}{0{,}047619}$$
 > >
 > > **Langkah 3: Hitung $(0{,}952381)^{20}$**
+> >
 > > $\ln(0{,}952381) = -0{,}048790$
 > > $20 \times (-0{,}048790) = -0{,}97580$
 > > $(0{,}952381)^{20} = e^{-0{,}97580} = 0{,}37689$
 > >
 > > **Langkah 4: Selesaikan**
+> >
 > > $$PV = 60 \cdot \frac{1 - 0{,}37689}{0{,}047619} = 60 \cdot \frac{0{,}62311}{0{,}047619} = 60 \times 13{,}0853 = 785{,}12 \text{ juta}$$
 > >
 > > **Hasil Akhir:** **(e)**. $785{,}12$ juta
@@ -1448,9 +1503,11 @@ e. $113{,}09$ juta
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Konversi ke rate per 6 bulan**
+> >
 > > $$j = (1{,}08)^{0{,}5} - 1 = 1{,}03923 - 1 = 0{,}03923 = 3{,}923\%$$
 > >
 > > **Langkah 2: Hitung PV perpetuity-due geometrik**
+> >
 > > Pembayaran di periode $k$ ($k=0,1,2,\ldots$): $1 \times (1{,}03)^k$ juta
 > >
 > > $$PV = \sum_{k=0}^{\infty} (1{,}03)^k \cdot \frac{1}{(1+j)^k} = \sum_{k=0}^{\infty} \left(\frac{1{,}03}{1{,}03923}\right)^k$$
@@ -1460,6 +1517,7 @@ e. $113{,}09$ juta
 > > $$PV = \frac{1}{1 - \frac{1{,}03}{1{,}03923}} = \frac{1}{\frac{1{,}03923 - 1{,}03}{1{,}03923}} = \frac{1{,}03923}{0{,}00923}$$
 > >
 > > **Langkah 3: Hitung**
+> >
 > > $$PV = \frac{1{,}03923}{0{,}00923} = 112{,}59 \text{ juta}$$
 > >
 > > **Hasil Akhir:** **(d)**. $112{,}59$ juta
@@ -1524,9 +1582,11 @@ e. $55$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Gunakan identitas integral**
+> >
 > > $$\int_0^n \bar{a}_{\overline{t}|} \, dt = \frac{n - \bar{a}_{\overline{n}|}}{\delta}$$
 > >
 > > **Langkah 2: Substitusi**
+> >
 > > $$= \frac{n - (n-4)}{\delta} = \frac{4}{\delta} = \frac{4}{0{,}1} = 40$$
 > >
 > > **Hasil Akhir:** **(b)**. $40$
@@ -1589,16 +1649,20 @@ e. $188{,}17$ juta
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tentukan faktor diskonto**
+> >
 > > $v^4 = 0{,}5$, $v^8 = 0{,}25$, $v^{12} = 0{,}125$
 > >
 > > **Langkah 2: Hitung $a_{\overline{12}|}$ dan $a_{\overline{8}|}$**
+> >
 > > $$a_{\overline{12}|} = \frac{1 - v^{12}}{i}= \frac{1 - 0{,}125}{i} = \frac{0{,}875}{i}$$
 > > $$a_{\overline{8}|} = \frac{1 - v^{8}}{i} = \frac{1 - 0{,}25}{i} = \frac{0{,}75}{i}$$
 > >
 > > **Langkah 3: Hitung cicilan $R$**
+> >
 > > $$R = \frac{200}{a_{\overline{12}|}} = \frac{200}{\frac{0{,}875}{i}} = \frac{200i}{0{,}875}$$
 > >
 > > **Langkah 4: Hitung sisa pinjaman $B_4$ (metode prospektif)**
+> >
 > > $$B_4 = R \cdot a_{\overline{8}|} = \frac{200i}{0{,}875} \cdot \frac{0{,}75}{i} = \frac{200 \times 0{,}75}{0{,}875} = \frac{150}{0{,}875} = 171{,}4286 \approx 171{,}43 \text{ juta}$$
 > >
 > > Perhatikan bahwa $i$ cancel out — kita tidak perlu menghitung $i$ eksplisit!
@@ -1668,6 +1732,7 @@ e. $7{,}4$ juta
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Setup rasio porsi bunga**
+> >
 > > $$\frac{I_8}{I_{22}} = \frac{R(1-v^{28})}{R(1-v^{14})} = \frac{1-v^{28}}{1-v^{14}}$$
 > >
 > > Faktorisasi: $1 - v^{28} = (1-v^{14})(1+v^{14})$
@@ -1677,9 +1742,11 @@ e. $7{,}4$ juta
 > > Maka $v^{14} = 0{,}25$, sehingga $v^7 = \sqrt{0{,}25} = 0{,}5$.
 > >
 > > **Langkah 2: Hitung rasio $I_{22}$ dan $I_{29}$**
+> >
 > > $$\frac{I_{22}}{I_{29}} = \frac{1-v^{14}}{1-v^7} = \frac{(1-v^7)(1+v^7)}{1-v^7} = 1 + v^7 = 1 + 0{,}5 = 1{,}5$$
 > >
 > > **Langkah 3: Hitung $I_{29}$**
+> >
 > > $$I_{29} = \frac{I_{22}}{1{,}5} = \frac{10{,}8}{1{,}5} = 7{,}2 \text{ juta}$$
 > >
 > > **Hasil Akhir:** **(d)**. $I_{29} = 7{,}2$ juta
@@ -1733,6 +1800,7 @@ e. Investor hanya dapat memegang portofolio dengan ekspektasi maksimum pada ting
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Review asumsi CAPM**
+> >
 > > Asumsi utama CAPM meliputi:
 > > 1. Competitive markets → investor price takers (opsi a)
 > > 2. Risk-free borrowing/lending → investor bisa pinjam/pinjamkan di $r_f$ (opsi b)
@@ -1741,6 +1809,7 @@ e. Investor hanya dapat memegang portofolio dengan ekspektasi maksimum pada ting
 > > 5. Mean-variance optimization → investor memilih portofolio efisien (opsi e — tapi ini bukan asumsi homogeneous expectations)
 > >
 > > **Langkah 2: Identifikasi jawaban**
+> >
 > > Homogeneous expectations assumption secara spesifik menyatakan bahwa **semua investor memiliki estimasi yang sama** tentang expected return, variance, dan covariance dari semua sekuritas. Ini adalah opsi **(d)**.
 > >
 > > **Hasil Akhir:** **(d)**. Seluruh investor memiliki estimasi yang identik mengenai volatilitas, korelasi, dan nilai ekspektasi sekuritas
@@ -1809,6 +1878,7 @@ e. $115$ juta
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Ekspresikan harga obligasi**
+> >
 > > Karena kupon > yield (6% > 5%), obligasi diperdagangkan dengan **premium**.
 > >
 > > $$P_n = 100 + (6 - 5) \cdot a_{\overline{2n}|5\%} = 100 + a_{\overline{2n}|5\%}$$
@@ -1816,6 +1886,7 @@ e. $115$ juta
 > > $$P_{2n} = 100 + a_{\overline{4n}|5\%}$$
 > >
 > > **Langkah 2: Setup persamaan dari kondisi selisih**
+> >
 > > $$P_n - P_{2n} = 5$$
 > > $$(100 + a_{\overline{2n}|}) - (100 + a_{\overline{4n}|}) = 5$$
 > > $$a_{\overline{2n}|} - a_{\overline{4n}|} = 5$$
@@ -1931,6 +2002,7 @@ e. $6{,}67$ juta
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung $B_6$ (book value setelah kupon ke-6)**
+> >
 > > $$B_6 = 100 + (8 - 6) \cdot a_{\overline{4}|6\%}$$
 > > $$a_{\overline{4}|6\%} = \frac{1 - (1{,}06)^{-4}}{0{,}06}$$
 > >
@@ -1941,6 +2013,7 @@ e. $6{,}67$ juta
 > > $$B_6 = 100 + 2 \times 3{,}46511 = 100 + 6{,}93022 = 106{,}930$$
 > >
 > > **Langkah 2: Hitung porsi bunga**
+> >
 > > $$I_7 = 0{,}06 \times 106{,}930 = 6{,}4158 \approx 6{,}42 \text{ juta}$$
 > >
 > > **Hasil Akhir:** **(b)**. $I_7 = 6{,}42$ juta
@@ -2009,9 +2082,11 @@ e. $15{,}26$ juta
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung tingkat bunga pasar (nominal)**
+> >
 > > $$i_{market} = (1{,}04)(1{,}05) - 1 = 1{,}092 - 1 = 0{,}092 = 9{,}2\%$$
 > >
 > > **Langkah 2: Hitung NPV**
+> >
 > > $$NPV = -300 + \frac{160}{1{,}092} + \frac{160}{1{,}092^2}$$
 > >
 > > $$= -300 + \frac{160}{1{,}092} + \frac{160}{1{,}192464}$$
@@ -2086,14 +2161,17 @@ e. $88{,}17$ juta
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung $s_1$**
+> >
 > > $$P_1 = \frac{100}{1+s_1} = 94{,}340 \implies 1+s_1 = \frac{100}{94{,}340} = 1{,}05999 \approx 1{,}06$$
 > > $$s_1 = 6\%$$
 > >
 > > **Langkah 2: Gunakan forward rate untuk menghitung $s_2$**
+> >
 > > $$(1+s_2)^2 = (1+s_1)(1+f_{1,2}) = (1{,}06)(1{,}08) = 1{,}1448$$
 > > $$1+s_2 = \sqrt{1{,}1448} = 1{,}06994$$
 > >
 > > **Langkah 3: Hitung $X$**
+> >
 > > $$X = \frac{100}{(1+s_2)^2} = \frac{100}{1{,}1448} = 87{,}352 \approx 87{,}35 \text{ juta}$$
 > >
 > > **Hasil Akhir:** **(b)**. $X = 87{,}35$ juta
@@ -2159,6 +2237,7 @@ e. $6{,}75\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Gunakan hubungan forward rate dan harga ZCB**
+> >
 > > $$1 + f_{3,4} = \frac{(1+s_4)^4}{(1+s_3)^3}$$
 > >
 > > Karena $P_n = 100/(1+s_n)^n$, maka $(1+s_n)^n = 100/P_n$.
@@ -2166,6 +2245,7 @@ e. $6{,}75\%$
 > > $$1 + f_{3,4} = \frac{100/P_4}{100/P_3} = \frac{P_3}{P_4} = \frac{84{,}56}{79{,}21}$$
 > >
 > > **Langkah 2: Hitung**
+> >
 > > $$1 + f_{3,4} = \frac{84{,}56}{79{,}21} = 1{,}06755$$
 > > $$f_{3,4} = 0{,}06755 = 6{,}76\%$$
 > >
@@ -2240,6 +2320,7 @@ e. $7{,}63$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung PV tiap cash flow**
+> >
 > > - $CF_1 \cdot v^1 = 1/1{,}1 = 0{,}90909$
 > > - $CF_2 \cdot v^2 = 3/1{,}21 = 2{,}47934$
 > > - $CF_3 \cdot v^3 = 7/1{,}331 = 5{,}25919$
@@ -2247,6 +2328,7 @@ e. $7{,}63$
 > > Total PV $= 0{,}90909 + 2{,}47934 + 5{,}25919 = 8{,}64762$
 > >
 > > **Langkah 2: Hitung konveksitas (Macaulay)**
+> >
 > > $$C_{Mac} = \frac{\sum t^2 \cdot CF_t \cdot v^t}{P}$$
 > >
 > > - $t=1$: $1^2 \times 0{,}90909 = 0{,}90909$
@@ -2258,6 +2340,7 @@ e. $7{,}63$
 > > Ini mendekati opsi (d) $6{,}94$ tapi tidak tepat.
 > >
 > > **Langkah 3: Hitung Modified Convexity**
+> >
 > > $$C_{Mod} = \frac{\sum t(t+1) \cdot CF_t \cdot v^{t+2}}{P}$$
 > >
 > > - $t=1$: $1 \times 2 \times 1 \times v^3 = 2/1{,}331 = 1{,}50263$
@@ -2319,6 +2402,7 @@ e. Untuk mendapatkan dana sekarang dan menunda pajak
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Review alasan penggunaan derivatif**
+> >
 > > Menurut McDonald, alasan utama penggunaan derivatif:
 > > 1. **Risk management** (hedging) → opsi (a) ✓
 > > 2. **Speculation / leverage** → opsi (d) ✓
@@ -2326,6 +2410,7 @@ e. Untuk mendapatkan dana sekarang dan menunda pajak
 > > 4. **Regulatory arbitrage / tax deferral** → opsi (e) ✓
 > >
 > > **Langkah 2: Identifikasi yang bukan alasan**
+> >
 > > Opsi (b): "Untuk membeli komoditas secara langsung" — ini adalah transaksi **spot**, bukan derivatif. Derivatif adalah kontrak yang nilainya *derived* dari underlying asset, bukan pembelian langsung aset itu sendiri.
 > >
 > > **Hasil Akhir:** **(b)**. Untuk membeli komoditas secara langsung
@@ -2386,12 +2471,14 @@ e. $100$ juta
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Setup persamaan payoff**
+> >
 > > Payoff long forward $= S_T - F$
 > >
 > > Saat spot $= S$: $S - F = -10$ ... (1)
 > > Saat spot $= 1{,}2S$: $1{,}2S - F = 8$ ... (2)
 > >
 > > **Langkah 2: Eliminasi $F$**
+> >
 > > Persamaan (2) $-$ (1):
 > > $$1{,}2S - S = 8 - (-10)$$
 > > $$0{,}2S = 18$$
@@ -2465,6 +2552,7 @@ e. (ii) dan (iii) saja
 > > **(iii) Long indeks saham:** Memegang indeks langsung. Jika harga naik → **UNTUNG** ✓
 > >
 > > **Langkah 2: Pilih jawaban**
+> >
 > > Posisi (i) dan (iii) mendapat keuntungan.
 > >
 > > **Hasil Akhir:** **(d)**. (i) dan (iii) saja
