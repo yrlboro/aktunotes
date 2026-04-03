@@ -82,9 +82,9 @@ Modul CF1 mencakup konsep nilai waktu uang, anuitas, pinjaman, obligasi, dan der
 
 ### Past Exams
 
-| Periode | Soal | Pembahasan |
-|---------|------|------------|
-| Nov 2025 | [[2025-11-CF1]] | — |
+| Periode  | Soal            | Pembahasan               |
+| -------- | --------------- | ------------------------ |
+| Nov 2025 | [[2025-11-CF1]] | [[2025-11-CF1-answered]] |
 | Agu 2025 | [[2025-08-CF1]] | [[2025-08-CF1-answered]] |
 | Mei 2025 | [[2025-05-CF1]] | [[2025-05-CF1-answered]] |
 | Okt 2024 | [[2024-10-CF1]] | [[2024-10-CF1-answered]] |
@@ -95,5 +95,5 @@ Modul CF1 mencakup konsep nilai waktu uang, anuitas, pinjaman, obligasi, dan der
 | Mei 2023 | [[2023-05-CF1]] | [[2023-05-CF1-answered]] |
 | Des 2022 | [[2022-12-CF1]] | [[2022-12-CF1-answered]] |
 | Agu 2022 | [[2022-08-cf1]] | [[2022-08-CF1-answered]] |
-| Apr 2022 | [[2022-04-CF1]] | — |
-| Nov 2021 | [[2021-11-cf1]] | — |
+| Apr 2022 | [[2022-04-CF1]] | —                        |
+| Nov 2021 | [[2021-11-cf1]] | —                        |
