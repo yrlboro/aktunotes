@@ -38,7 +38,8 @@ function parseExam(content: string): Question[] {
     const options = optMatches.map(m => ({ letter: m[1], text: m[2].trim() }));
 
     const firstOptPos = preSummary.search(/^[a-e]\./m);
-    const text = preSummary.slice(preSummary.indexOf('\n') + 1, firstOptPos < 0 ? undefined : firstOptPos).trim();
+    const headerLineEnd = block.indexOf('\n', numMatch.index!) + 1;
+    const text = preSummary.slice(headerLineEnd, firstOptPos < 0 ? undefined : firstOptPos).trim();
 
     const answerMatch = block.match(/> \*\*\(([a-e])\)\./);
     const answer = answerMatch?.[1] ?? null;
