@@ -47,16 +47,21 @@ const { title = 'AktuNotes', description = 'Catatan belajar ujian PAI & AAMAI' }
       },
     });
 
-    blocks.forEach((el) => {
+    let idx = 0;
+    for (const el of blocks) {
       const pre = el.parentElement!;
-      const code = el.textContent || '';
-      const div = document.createElement('div');
-      div.className = 'mermaid';
-      div.textContent = code;
-      pre.replaceWith(div);
-    });
-
-    await mermaid.run();
+      const code = (el.textContent || '').trim();
+      const id = `mermaid-${idx++}`;
+      try {
+        const { svg } = await mermaid.render(id, code);
+        const div = document.createElement('div');
+        div.className = 'mermaid';
+        div.innerHTML = svg;
+        pre.replaceWith(div);
+      } catch (err) {
+        console.warn('Mermaid render failed for block:', id, err);
+      }
+    }
   }
 </script>
 </html>
