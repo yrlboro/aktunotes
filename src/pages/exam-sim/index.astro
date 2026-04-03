@@ -66,7 +66,7 @@ const examMeta = { id: EXAM_ID, label: EXAM_LABEL, total: questions.length, dura
 
 <BaseLayout title={`Simulasi Ujian — ${examMeta.label}`} description="Simulasi ujian CBT interaktif CF1">
   <!-- Inline data for client JS -->
-  <script type="application/json" id="exam-data" set:text={JSON.stringify({ questions, examMeta })} />
+  <script type="application/json" id="exam-data" set:html={JSON.stringify({ questions, examMeta })} />
 
   <!-- ══ HEADER BAR ══ -->
   <div class="sim-header" id="timer-bar">
