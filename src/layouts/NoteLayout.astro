@@ -59,6 +59,7 @@ const hasToc = Astro.slots.has('toc');
       <div class="nav-section-header">▸ Resources</div>
       <a href="/formula-sheet" class="nav-item">Formula Sheet CF1</a>
       <a href="/study-log"     class="nav-item">Study Log</a>
+      <a href="/exam-sim"      class="nav-item nav-item-sim">Simulasi Ujian CF1</a>
     </aside>
 
     <!-- Main content -->
@@ -205,6 +206,7 @@ const hasToc = Astro.slots.has('toc');
     transition: all 0.1s; text-decoration: none; gap: 0.5rem;
   }
   .nav-item:hover { background: var(--yellow); color: var(--ink); }
+  .nav-item-sim { color: var(--pink); font-weight: 500; }
   .nav-item.active {
     background: var(--pink); color: #fff;
     border-left: 4px solid var(--ink); font-weight: 500;
