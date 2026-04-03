@@ -169,6 +169,7 @@ const examMeta = { id: EXAM_ID, label: EXAM_LABEL, total: questions.length, dura
       <span class="sim-title">Review Jawaban</span>
       <span class="rv-counter" id="rv-counter"></span>
     </div>
+    <div class="rv-nav-strip" id="rv-nav-strip"></div>
     <div class="review-body">
       <div class="q-header">
         <span class="q-num" id="rv-num"></span>
@@ -516,9 +517,25 @@ const examMeta = { id: EXAM_ID, label: EXAM_LABEL, total: questions.length, dura
     font-family: var(--mono); font-size: 0.6rem; color: rgba(255,255,255,0.5);
     margin-left: auto;
   }
+  .rv-nav-strip {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    padding: 0.5rem 1.5rem; background: var(--cream2);
+    border-bottom: 1px solid var(--border); flex-shrink: 0;
+  }
+  .rv-nav-btn {
+    font-family: var(--mono); font-size: 0.55rem;
+    width: 24px; height: 24px; border: 1.5px solid var(--border);
+    background: var(--cream3); cursor: pointer; color: var(--ink4);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.1s;
+  }
+  .rv-nav-btn.rv-correct { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .rv-nav-btn.rv-wrong   { background: var(--pink); border-color: var(--pink); color: #fff; }
+  .rv-nav-btn.rv-skip    { background: var(--ink4); border-color: var(--ink4); color: #fff; }
+  .rv-nav-btn.rv-current { outline: 2px solid var(--ink); outline-offset: 1px; }
   .review-body {
     flex: 1; overflow-y: auto; padding: 2rem 2.5rem 4rem;
-    max-width: 740px;
+    max-width: 740px; margin: 0 auto; width: 100%;
   }
 </style>
 
@@ -793,12 +810,30 @@ const examMeta = { id: EXAM_ID, label: EXAM_LABEL, total: questions.length, dura
   document.getElementById('btn-review')!.onclick = () => {
     document.getElementById('score-overlay')!.hidden = true;
     document.getElementById('review-overlay')!.hidden = false;
+    buildReviewStrip();
     showReviewQuestion(1);
   };
   document.getElementById('rv-back')!.onclick = () => {
     document.getElementById('review-overlay')!.hidden = true;
     document.getElementById('score-overlay')!.hidden = false;
   };
+
+  function buildReviewStrip() {
+    const strip = document.getElementById('rv-nav-strip')!;
+    strip.innerHTML = '';
+    QUESTIONS.forEach(q => {
+      const btn = document.createElement('button');
+      btn.className = 'rv-nav-btn';
+      btn.textContent = String(q.num);
+      btn.title = `No. ${q.num}`;
+      const ans = state.answers[q.num];
+      if (!ans) btn.classList.add('rv-skip');
+      else if (ans === q.answer) btn.classList.add('rv-correct');
+      else btn.classList.add('rv-wrong');
+      btn.onclick = () => showReviewQuestion(q.num);
+      strip.appendChild(btn);
+    });
+  }
 
   function showReviewQuestion(num: number) {
     const q = QUESTIONS.find(q => q.num === num)!;
@@ -821,6 +856,11 @@ const examMeta = { id: EXAM_ID, label: EXAM_LABEL, total: questions.length, dura
       btn.innerHTML = `<span class="opt-key">${opt.letter}</span><span class="opt-text">${renderMd(opt.text)}</span>`;
       btn.disabled = true;
       optEl.appendChild(btn);
+    });
+
+    // Highlight current in strip
+    document.querySelectorAll('.rv-nav-btn').forEach((b, i) => {
+      b.classList.toggle('rv-current', QUESTIONS[i].num === num);
     });
 
     (document.getElementById('rv-prev') as HTMLButtonElement).disabled = num <= 1;
