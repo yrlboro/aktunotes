@@ -14,8 +14,8 @@ import NoteLayout from '../layouts/NoteLayout.astro';
   </div>
   <p>Catatan personal untuk persiapan ujian <strong>PAI</strong> dan <strong>AAMAI</strong>. Disusun sebagai dokumentasi mandiri agar materi bisa diakses kapan saja dan di mana saja.</p>
 
-  <!-- ═══ WIDGET GRID ═══ -->
-  <div class="widget-grid">
+  <!-- ═══ COUNTDOWN (standalone) ═══ -->
+  <div class="widget-grid widget-grid-countdown">
 
     <!-- 1. EXAM COUNTDOWN -->
     <div class="widget widget-countdown">
@@ -55,58 +55,8 @@ import NoteLayout from '../layouts/NoteLayout.astro';
       </div>
     </div>
 
-    <!-- 2. FORMULA FLASH -->
-    <div class="widget widget-formula">
-      <div class="widget-label"><div class="dot"></div>Formula Flash — CF1</div>
-      <div class="formula-body">
-        <div class="formula-name" id="formula-name">Memuat…</div>
-        <div class="formula-display" id="formula-display"></div>
-        <div class="formula-context" id="formula-context"></div>
-      </div>
-      <div class="formula-refresh">
-        <button class="formula-refresh-btn" id="formula-btn">↺ Formula Lain</button>
-        <span class="formula-counter" id="formula-counter">— / —</span>
-      </div>
-    </div>
-
-    <!-- 3. ROTATING QUOTE -->
-    <div class="widget widget-quote">
-      <div class="widget-label"><div class="dot"></div>Kata Mereka</div>
-      <div class="quote-body">
-        <div class="quote-text" id="quote-text">Memuat…</div>
-        <div class="quote-attribution">
-          — <strong id="quote-author"></strong><span id="quote-role"></span>
-        </div>
-      </div>
-      <div class="quote-footer">
-        <div class="quote-dots" id="quote-dots"></div>
-        <div style="display:flex;gap:0.8rem">
-          <button class="quote-nav-btn" id="quote-prev">← Prev</button>
-          <button class="quote-nav-btn" id="quote-next">Next →</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4. DAILY PROBLEM -->
-    <div class="widget widget-problem">
-      <div class="widget-label"><div class="dot"></div>Soal Harian — Past Exam CF1</div>
-      <div class="problem-header">
-        <span class="problem-badge" id="problem-badge">CF1 · 2024</span>
-        <span class="problem-source" id="problem-source"></span>
-      </div>
-      <div class="problem-text" id="problem-text">Memuat soal…</div>
-      <div class="problem-math" id="problem-math"></div>
-      <div class="problem-options" id="problem-options"></div>
-      <div class="problem-answer" id="problem-answer"></div>
-      <div class="problem-footer">
-        <button class="problem-reveal-btn" id="reveal-btn">Lihat Jawaban</button>
-        <span class="problem-day-tag" id="problem-day-tag"></span>
-        <button class="problem-next-btn" id="problem-next">Soal Lain →</button>
-      </div>
-    </div>
-
   </div>
-  <!-- end widget-grid -->
+  <!-- end countdown grid -->
 
   <!-- Section divider -->
   <div class="section-divider">
@@ -187,6 +137,69 @@ import NoteLayout from '../layouts/NoteLayout.astro';
 
   </div>
 
+  <!-- Section divider -->
+  <div class="section-divider">
+    <div class="sd-line"></div>
+    <div class="sd-mark">Widget</div>
+    <div class="sd-line"></div>
+  </div>
+
+  <!-- ═══ WIDGET GRID (formula, quote, daily) ═══ -->
+  <div class="widget-grid">
+
+    <!-- 2. FORMULA FLASH -->
+    <div class="widget widget-formula">
+      <div class="widget-label"><div class="dot"></div>Formula Flash — CF1</div>
+      <div class="formula-body">
+        <div class="formula-name" id="formula-name">Memuat…</div>
+        <div class="formula-display" id="formula-display"></div>
+        <div class="formula-context" id="formula-context"></div>
+      </div>
+      <div class="formula-refresh">
+        <button class="formula-refresh-btn" id="formula-btn">↺ Formula Lain</button>
+        <span class="formula-counter" id="formula-counter">— / —</span>
+      </div>
+    </div>
+
+    <!-- 3. ROTATING QUOTE -->
+    <div class="widget widget-quote">
+      <div class="widget-label"><div class="dot"></div>Kata Mereka</div>
+      <div class="quote-body">
+        <div class="quote-text" id="quote-text">Memuat…</div>
+        <div class="quote-attribution">
+          — <strong id="quote-author"></strong><span id="quote-role"></span>
+        </div>
+      </div>
+      <div class="quote-footer">
+        <div class="quote-dots" id="quote-dots"></div>
+        <div style="display:flex;gap:0.8rem">
+          <button class="quote-nav-btn" id="quote-prev">← Prev</button>
+          <button class="quote-nav-btn" id="quote-next">Next →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. DAILY PROBLEM -->
+    <div class="widget widget-problem">
+      <div class="widget-label"><div class="dot"></div>Soal Harian — Past Exam CF1</div>
+      <div class="problem-header">
+        <span class="problem-badge" id="problem-badge">CF1 · 2024</span>
+        <span class="problem-source" id="problem-source"></span>
+      </div>
+      <div class="problem-text" id="problem-text">Memuat soal…</div>
+      <div class="problem-math" id="problem-math"></div>
+      <div class="problem-options" id="problem-options"></div>
+      <div class="problem-answer" id="problem-answer"></div>
+      <div class="problem-footer">
+        <button class="problem-reveal-btn" id="reveal-btn">Lihat Jawaban</button>
+        <span class="problem-day-tag" id="problem-day-tag"></span>
+        <button class="problem-next-btn" id="problem-next">Soal Lain →</button>
+      </div>
+    </div>
+
+  </div>
+  <!-- end widget-grid -->
+
 </NoteLayout>
 
 <style>
@@ -212,6 +225,10 @@ import NoteLayout from '../layouts/NoteLayout.astro';
   /* ════════════════════
      WIDGET GRID
   ════════════════════ */
+  .widget-grid-countdown {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
   .widget-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

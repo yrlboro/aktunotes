@@ -9,6 +9,9 @@ const notes = allEntries
 const exams = allEntries
   .filter(e => e.id.startsWith('exams/') && !e.id.includes('solutions/'))
   .sort((a, b) => b.id.localeCompare(a.id));
+const solutions = allEntries
+  .filter(e => e.id.includes('solutions/'))
+  .sort((a, b) => b.id.localeCompare(a.id));
 ---
 
 <NoteLayout title="CF1 — Matematika Keuangan" description="Catatan CF1: Nilai waktu uang, anuitas, pinjaman, obligasi, dan derivatif." module="CF1">
@@ -49,6 +52,21 @@ const exams = allEntries
         {exams.map(entry => (
           <a href={`/CF1/${entry.id}`} class="topic-item topic-exam">
             <span class="topic-num exam-icon">✎</span>
+            <span class="topic-name">{entry.id.split('/').pop()?.replace(/-/g, ' ').toUpperCase()}</span>
+            <span class="topic-arrow">→</span>
+          </a>
+        ))}
+      </div>
+    </>
+  )}
+
+  {solutions.length > 0 && (
+    <>
+      <h2>▸ Past Exam Solutions</h2>
+      <div class="topic-list">
+        {solutions.map(entry => (
+          <a href={`/CF1/${entry.id}`} class="topic-item topic-solution">
+            <span class="topic-num solution-icon">✔</span>
             <span class="topic-name">{entry.id.split('/').pop()?.replace(/-/g, ' ').toUpperCase()}</span>
             <span class="topic-arrow">→</span>
           </a>
@@ -131,6 +149,8 @@ const exams = allEntries
   .topic-diff { font-family: var(--mono); font-size: 0.54rem; color: var(--ink4); background: var(--cream3); padding: 0.08rem 0.4rem; flex-shrink: 0; }
   .topic-exam:hover { background: var(--cream3); }
   .exam-icon { color: var(--teal); }
+  .topic-solution:hover { background: #d1fae5; }
+  .solution-icon { color: #059669; }
 
   @media (max-width: 600px) {
     .topic-item { gap: 0.6rem; padding: 0.7rem 0.8rem; }
