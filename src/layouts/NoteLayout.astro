@@ -1,6 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-const { title, description, module: mod } = Astro.props;
+const { title, description, module: mod, backHref } = Astro.props;
 const hasToc = Astro.slots.has('toc');
 ---
 <BaseLayout title={title} description={description}>
@@ -28,16 +28,34 @@ const hasToc = Astro.slots.has('toc');
     <!-- Left sidebar -->
     <aside class="sidebar-left">
       <div class="nav-section-header">▸ PAI Exams</div>
-      <a href="/CF1"    class={`nav-item ${mod === 'CF1'    ? 'active' : ''}`}>CF1 — Mat. Keuangan</a>
-      <a href="/CF2"    class={`nav-item ${mod === 'CF2'    ? 'active' : ''}`}>CF2 — Probabilitas</a>
-      <a href="/CF3"    class={`nav-item ${mod === 'CF3'    ? 'active' : ''}`}>CF3 — Ekonomi</a>
-      <a href="/CF4"    class={`nav-item ${mod === 'CF4'    ? 'active' : ''}`}>CF4 — Akuntansi</a>
-      <a href="/TA1"    class={`nav-item ${mod === 'TA1'    ? 'active' : ''}`}>TA1 — Statistika</a>
-      <a href="/TA2"    class={`nav-item ${mod === 'TA2'    ? 'active' : ''}`}>TA2 — Teori Risiko</a>
-      <a href="/TA3"    class={`nav-item ${mod === 'TA3'    ? 'active' : ''}`}>TA3 — Mat. Aktuaria</a>
-      <a href="/BA4G"   class={`nav-item ${mod === 'BA4G'   ? 'active' : ''}`}>BA4G — Asuransi Umum</a>
+
+      <details class="nav-group" open={mod === 'CF1' ? true : undefined}>
+        <summary class={`nav-group-title${mod === 'CF1' ? ' active' : ''}`}>CF1 — Mat. Keuangan</summary>
+        <a href="/CF1"          class="nav-sub-item">Materi & Topik</a>
+        <a href="/CF1#past-exams"  class="nav-sub-item">Past Exams</a>
+        <a href="/CF1#solutions"   class="nav-sub-item">Solutions</a>
+      </details>
+
+      <details class="nav-group" open={mod === 'CF2' ? true : undefined}>
+        <summary class={`nav-group-title${mod === 'CF2' ? ' active' : ''}`}>CF2 — Probabilitas</summary>
+        <a href="/CF2"          class="nav-sub-item">Materi & Topik</a>
+        <a href="/CF2#past-exams"  class="nav-sub-item">Past Exams</a>
+        <a href="/CF2#solutions"   class="nav-sub-item">Solutions</a>
+      </details>
+
+      <a href="/CF3"  class={`nav-item ${mod === 'CF3'  ? 'active' : ''}`}>CF3 — Ekonomi</a>
+      <a href="/CF4"  class={`nav-item ${mod === 'CF4'  ? 'active' : ''}`}>CF4 — Akuntansi</a>
+      <a href="/TA1"  class={`nav-item ${mod === 'TA1'  ? 'active' : ''}`}>TA1 — Statistika</a>
+      <a href="/TA2"  class={`nav-item ${mod === 'TA2'  ? 'active' : ''}`}>TA2 — Teori Risiko</a>
+      <a href="/TA3"  class={`nav-item ${mod === 'TA3'  ? 'active' : ''}`}>TA3 — Mat. Aktuaria</a>
+      <a href="/BA4G" class={`nav-item ${mod === 'BA4G' ? 'active' : ''}`}>BA4G — Asuransi Umum</a>
+
       <div class="nav-section-header">▸ AAMAI</div>
-      <a href="/AAMAI101" class={`nav-item ${mod === 'AAMAI101' ? 'active' : ''}`}>AAMAI 101</a>
+      <details class="nav-group" open={mod === 'AAMAI101' ? true : undefined}>
+        <summary class={`nav-group-title${mod === 'AAMAI101' ? ' active' : ''}`}>AAMAI 101</summary>
+        <a href="/AAMAI101" class="nav-sub-item">Materi & Topik</a>
+      </details>
+
       <div class="nav-section-header">▸ Resources</div>
       <a href="/formula-sheet" class="nav-item">Formula Sheet CF1</a>
       <a href="/study-log"     class="nav-item">Study Log</a>
@@ -45,6 +63,9 @@ const hasToc = Astro.slots.has('toc');
 
     <!-- Main content -->
     <main class="content">
+      {backHref && (
+        <a href={backHref} class="back-link">← Kembali</a>
+      )}
       <slot />
     </main>
 
@@ -189,18 +210,66 @@ const hasToc = Astro.slots.has('toc');
     border-left: 4px solid var(--ink); font-weight: 500;
   }
 
+  /* ── Nav groups (collapsible) ── */
+  .nav-group { border-bottom: 1px solid var(--border2); }
+  .nav-group-title {
+    font-family: var(--mono); font-size: 0.65rem; color: var(--ink2);
+    padding: 0.42rem 0.9rem;
+    cursor: pointer; list-style: none;
+    display: flex; align-items: center; justify-content: space-between;
+    user-select: none; transition: all 0.1s;
+  }
+  .nav-group-title::-webkit-details-marker { display: none; }
+  .nav-group-title::after {
+    content: '›'; font-size: 0.95rem; font-weight: 300;
+    opacity: 0.4; transition: transform 0.15s; flex-shrink: 0;
+  }
+  .nav-group[open] > .nav-group-title::after { transform: rotate(90deg); }
+  .nav-group-title:hover { background: var(--yellow); color: var(--ink); }
+  .nav-group-title.active {
+    background: var(--pink); color: #fff;
+    border-left: 4px solid var(--ink); font-weight: 500;
+  }
+  .nav-group-title.active::after { opacity: 0.6; }
+  .nav-sub-item {
+    font-family: var(--mono); font-size: 0.6rem; color: var(--ink3);
+    padding: 0.3rem 0.9rem 0.3rem 1.6rem;
+    display: block; text-decoration: none;
+    border-bottom: 1px solid var(--border2);
+    transition: all 0.1s;
+  }
+  .nav-sub-item:last-child { border-bottom: none; }
+  .nav-sub-item::before { content: '↳ '; opacity: 0.5; }
+  .nav-sub-item:hover { background: var(--cream2); color: var(--pink); padding-left: 1.9rem; }
+
   /* ── Main content ── */
   .content {
     padding: 2.5rem 3rem 4rem;
     overflow-y: auto;
   }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    font-family: var(--mono); font-size: 0.62rem;
+    color: var(--ink4); text-decoration: none;
+    letter-spacing: 0.06em; margin-bottom: 1.2rem;
+    padding: 0.2rem 0.5rem 0.2rem 0;
+    border-bottom: 1px solid transparent;
+    transition: color 0.12s, border-color 0.12s;
+  }
+  .back-link:hover { color: var(--pink); border-bottom-color: var(--pink); }
 
   /* ── Sidebar right ── */
   .sidebar-right {
     border-left: 3px solid var(--ink);
     background: var(--cream2);
-    padding: 1.5rem 1rem;
+  }
+  /* TOC content is sticky within the sidebar column */
+  .toc-wrap {
+    position: sticky;
+    top: 68px;
+    max-height: calc(100vh - 68px);
     overflow-y: auto;
+    padding: 1.5rem 1rem;
   }
 
   /* ── No-TOC: hide right sidebar, content fills full column ── */
@@ -458,11 +527,11 @@ const hasToc = Astro.slots.has('toc');
   }
 
   /* ── Static callouts (non-collapsible) ── */
-  .callout-static .callout-title {
+  .callout-static > .callout-title {
     cursor: default;
     pointer-events: none;
   }
-  .callout-static .callout-fold { display: none; }
+  .callout-static > .callout-title .callout-fold { display: none; }
 </style>
 
 <script>

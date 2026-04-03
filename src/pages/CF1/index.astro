@@ -32,7 +32,7 @@ const solutions = allEntries
     Materi ini menjadi fondasi untuk seluruh ujian aktuaria lanjutan.
   </p>
 
-  <h2>▸ Daftar Topik</h2>
+  <h2 id="topik">▸ Daftar Topik</h2>
 
   <div class="topic-list">
     {notes.map(entry => (
@@ -47,7 +47,7 @@ const solutions = allEntries
 
   {exams.length > 0 && (
     <>
-      <h2>▸ Past Exams</h2>
+      <h2 id="past-exams">▸ Past Exams</h2>
       <div class="topic-list">
         {exams.map(entry => (
           <a href={`/CF1/${entry.id}`} class="topic-item topic-exam">
@@ -62,7 +62,7 @@ const solutions = allEntries
 
   {solutions.length > 0 && (
     <>
-      <h2>▸ Past Exam Solutions</h2>
+      <h2 id="solutions">▸ Past Exam Solutions</h2>
       <div class="topic-list">
         {solutions.map(entry => (
           <a href={`/CF1/${entry.id}`} class="topic-item topic-solution">

@@ -40,7 +40,7 @@ const module = 'CF1';
 const tags: string[]   = Array.isArray(entry.data.tags) ? entry.data.tags : [];
 ---
 
-<NoteLayout title={title} module={module}>
+<NoteLayout title={title} module={module} backHref="/CF1">
   {hasTocContent && (
     <div slot="toc" class="toc-wrap">
       <div class="toc-header">Daftar Isi</div>

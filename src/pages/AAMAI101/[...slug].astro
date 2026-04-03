@@ -33,7 +33,7 @@ const tags: string[] = Array.isArray(entry.data.tags) ? entry.data.tags : [];
 const isPerBab = entry.id.startsWith('kumpulan-soal-per-bab/');
 ---
 
-<NoteLayout title={title} module="AAMAI101">
+<NoteLayout title={title} module="AAMAI101" backHref="/AAMAI101">
   {hasTocContent && (
     <div slot="toc" class="toc-wrap">
       <div class="toc-header">Daftar Isi</div>

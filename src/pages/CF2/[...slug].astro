@@ -34,7 +34,7 @@ const title = entry.data.topic || entry.data.title || formatTitle(entry.id);
 const tags: string[] = Array.isArray(entry.data.tags) ? entry.data.tags : [];
 ---
 
-<NoteLayout title={title} module="CF2">
+<NoteLayout title={title} module="CF2" backHref="/CF2">
   {hasTocContent && (
     <div slot="toc" class="toc-wrap">
       <div class="toc-header">Daftar Isi</div>

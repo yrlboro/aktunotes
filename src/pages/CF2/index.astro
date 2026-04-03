@@ -26,7 +26,7 @@ const exams = allEntries
   </div>
   <p>Modul CF2 mencakup <strong>probabilitas</strong>, variabel acak, distribusi peluang, dan <strong>inferensi statistika</strong>.</p>
 
-  <h2>▸ Materi</h2>
+  <h2 id="topik">▸ Materi</h2>
   <div class="topic-list">
     {notes.map(entry => (
       <a href={`/CF2/${entry.id}`} class="topic-item">
@@ -40,7 +40,7 @@ const exams = allEntries
 
   {exams.length > 0 && (
     <>
-      <h2>▸ Past Exams</h2>
+      <h2 id="past-exams">▸ Past Exams</h2>
       <div class="topic-list">
         {exams.map(entry => (
           <a href={`/CF2/${entry.id}`} class="topic-item topic-exam">
