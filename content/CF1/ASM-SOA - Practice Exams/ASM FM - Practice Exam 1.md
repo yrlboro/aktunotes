@@ -1,12 +1,3 @@
-# ASM FM 16th Edition — Practice Exam 1
-
-> [!info] Tentang File Ini
-> File ini berisi pembahasan lengkap **Practice Exam 1** dari ASM FM 16th Edition.
-> Format mengikuti standar pembahasan CF1 PAI — setiap soal dilengkapi rumus, diketahui, langkah pengerjaan, dan jebakan umum.
-> **Kunci Jawaban:** 1(A) 2(C) 3(D) 4(E) 5(D) 6(A) 7(E) 8(E) 9(B) 10(D) 11(D) 12(C) 13(C) 14(C) 15(D) 16(C) 17(D) 18(B) 19(E) 20(E) 21(B) 22(D) 23(E) 24(C) 25(B) 26(A) 27(E) 28(E) 29(A) 30(D)
-
----
-
 ## **No. 1**
 
 Which of the following is *not* correct with respect to an annual effective interest rate of $i = 10\%$?
@@ -37,13 +28,17 @@ Which of the following is *not* correct with respect to an annual effective inte
 > > [!info]+ **Rumus**
 > >
 > > Hubungan antara force of interest $\delta$ dan suku bunga efektif $i$:
+> > 
 > > $$e^{\delta} = 1 + i \implies \delta = \ln(1 + i)$$
 > >
 > > Suku bunga nominal compounded $m$-kali:
+> > 
 > > $$\left(1 + \frac{i^{(m)}}{m}\right)^m = 1 + i$$
 > >
 > > Tingkat diskonto efektif dan nominal:
+> > 
 > > $$d = \frac{i}{1+i}, \qquad \left(1 - \frac{d^{(m)}}{m}\right)^m = 1 - d = v = \frac{1}{1+i}$$
+> > 
 >
 > **Diketahui:**
 > - $i = 10\% = 0.10$ (suku bunga efektif tahunan)
@@ -52,23 +47,35 @@ Which of the following is *not* correct with respect to an annual effective inte
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Periksa Opsi (A)**
+> > 
 > > Opsi (A) mengklaim $\delta = e^{0.10} - 1$.
+> > 
 > > Hubungan yang benar adalah $e^{\delta} = 1 + i$, bukan $\delta = e^i - 1$.
+> > 
 > > Yang benar adalah: $\delta = \ln(1 + i) = \ln(1.10) \approx 0.09531$
+> > 
 > > Sedangkan $e^{0.10} - 1 \approx 0.10517 \neq 0.09531$.
+> > 
 > > **Opsi (A) salah.**
 > >
 > > **Langkah 2: Verifikasi Opsi (B)**
+> > 
 > > $i^{(2)} = 2 \times [(1+i)^{1/2} - 1] = 2 \times [(1.10)^{0.50} - 1] \approx 2 \times 0.04881 = 0.09762$
+> > 
 > > Ini adalah formula baku konversi nominal ke efektif. **Benar.**
 > >
 > > **Langkah 3: Verifikasi Opsi (C)**
+> > 
 > > $\delta = \ln(1+i) = \ln(1.10) \approx 0.09531$. **Benar.**
 > >
 > > **Langkah 4: Verifikasi Opsi (D)**
+> > 
+> > 
 > > $d = \dfrac{i}{1+i} = \dfrac{0.10}{1.10} \approx 0.09091$. **Benar.**
 > >
 > > **Langkah 5: Verifikasi Opsi (E)**
+> > 
+> > 
 > > $d^{(4)} = 4 \times [1 - (1+i)^{-1/4}] = 4 \times [1 - (1.10)^{-0.25}] \approx 4 \times 0.02299 = 0.09196$. **Benar.**
 > >
 > > **Hasil Akhir:** **(A)**. $\delta = e^{0.10} - 1$ — pernyataan yang salah. Relasi yang benar adalah $\delta = \ln(1+i)$, bukan $\delta = e^i - 1$.
@@ -128,23 +135,30 @@ You can receive one of the following two sets of cash flows. Under Option A, you
 > **Diketahui:**
 > - Option A: 10 pembayaran tahunan \$1,000, pembayaran pertama di $t=4$
 > - Option B: perpetuity-immediate dengan pembayaran $X$, pembayaran pertama di $t=1$
-> - $i = 8\%$
+> - &nbsp;$i = 8\%$
 > - Target: persamaan untuk $X$ agar indifferent
 >
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung PV Option A**
+> > 
 > > Pembayaran pertama di $t=4$, sehingga formula $a_{\overline{10}|}$ memberikan PV pada $t=3$ (satu periode sebelum pembayaran pertama).
 > > Untuk mendiskon ke $t=0$, perlu dikalikan $v^3$:
+> > 
 > > $$\text{PV}_A = 1{,}000 \cdot a_{\overline{10}|0.08} \cdot v^3$$
 > >
 > > **Langkah 2: Hitung PV Option B**
+> > 
 > > Perpetuity-immediate dengan pembayaran pertama di $t=1$:
+> > 
 > > $$\text{PV}_B = \frac{X}{0.08} = \frac{X}{i}$$
 > >
 > > **Langkah 3: Set Indifference**
+> > 
 > > $$\text{PV}_A = \text{PV}_B$$
+> > 
 > > $$1{,}000 \cdot a_{\overline{10}|} \cdot v^3 = \frac{X}{0.08}$$
+> > 
 > > $$X = 1{,}000 \times 0.08 \times a_{\overline{10}|} \times v^3 = 80 \cdot a_{\overline{10}|} \cdot v^3$$
 > >
 > > **Hasil Akhir:** **(C)**. Persamaan yang benar adalah $80a_{\overline{10}|}v^3 = X$.
@@ -199,27 +213,41 @@ An annuity will pay you \$500 two years from now, and another \$1,000 four years
 >
 > **Diketahui:**
 > - $C_1 = 500$ di $t = 2$, $C_2 = 1{,}000$ di $t = 4$
-> - $\text{PV} = 1{,}200$
+> - &nbsp;$\text{PV} = 1{,}200$
 > - Target: nilai $i$
 >
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tulis Persamaan PV**
+> > 
 > > $$1{,}200 = 500v^2 + 1{,}000v^4$$
 > >
 > > **Langkah 2: Substitusi $x = v^2$**
+> > 
 > > $$1{,}200 = 500x + 1{,}000x^2$$
+> > 
 > > $$1{,}000x^2 + 500x - 1{,}200 = 0$$
+> > 
 > > Bagi semua dengan 100:
+> > 
 > > $$10x^2 + 5x - 12 = 0$$
 > >
 > > **Langkah 3: Selesaikan dengan Rumus Kuadrat**
+> > 
+> > 
 > > $$x = \frac{-5 \pm \sqrt{25 + 480}}{20} = \frac{-5 \pm \sqrt{505}}{20}$$
+> > 
+> > 
 > > $$x = \frac{-5 + 22.472}{20} = \frac{17.472}{20} = 0.8736$$
+> > 
 > > (akar negatif diabaikan karena $v^2 > 0$)
 > >
 > > **Langkah 4: Hitung $i$**
+> > 
+> > 
 > > $$v^2 = 0.8736 \implies v = \sqrt{0.8736} = 0.93466$$
+> > 
+> > 
 > > $$i = \frac{1}{v} - 1 = \frac{1}{0.93466} - 1 \approx 0.0699 = 6.99\%$$
 > >
 > > **Hasil Akhir:** **(D)**. $i \approx 6.99\%$, berada dalam interval $6.5\% < i \leq 7.5\%$.
@@ -269,9 +297,11 @@ An investor took out a 30-year loan which he repays with annual payments of 1,50
 > > [!info]+ **Rumus**
 > >
 > > Outstanding balance (prospective) setelah pembayaran ke-$k$:
+> > 
 > > $$B_k = R \cdot a_{\overline{n-k}|i}$$
 > >
 > > Revised payment $P$ setelah pelunasan sebagian:
+> > 
 > > $$P \cdot a_{\overline{m}|i} = B_k - \text{extra payment}$$
 >
 > **Diketahui:**
@@ -283,19 +313,30 @@ An investor took out a 30-year loan which he repays with annual payments of 1,50
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Outstanding Balance setelah Pembayaran ke-12**
+> > 
 > > Masih ada $30 - 12 = 18$ pembayaran tersisa:
+> > 
 > > $$B_{12} = 1{,}500 \cdot a_{\overline{18}|0.04}$$
+> > 
 > > $$a_{\overline{18}|0.04} = \frac{1 - (1.04)^{-18}}{0.04} = \frac{1 - 0.49363}{0.04} = \frac{0.50637}{0.04} = 12.6593$$
+> > 
 > > $$B_{12} = 1{,}500 \times 12.6593 = 18{,}988.95$$
 > >
 > > **Langkah 2: Kurangi Pembayaran Tambahan**
+> > 
 > > Balance setelah pembayaran ekstra:
+> > 
 > > $$B_{12}^* = 18{,}988.95 - 4{,}000 = 14{,}988.95$$
 > >
 > > **Langkah 3: Hitung Revised Annual Payment**
+> > 
+> > 
 > > Lunasi $14{,}988.95$ dalam 10 tahun pada $i = 4\%$:
+> > 
 > > $$P \cdot a_{\overline{10}|0.04} = 14{,}988.95$$
+> > 
 > > $$a_{\overline{10}|0.04} = \frac{1 - (1.04)^{-10}}{0.04} = \frac{1 - 0.67556}{0.04} = 8.1109$$
+> > 
 > > $$P = \frac{14{,}988.95}{8.1109} = 1{,}848.00$$
 > >
 > > **Hasil Akhir:** **(E)**. Revised annual payment = **1,848**.
@@ -344,32 +385,43 @@ A 25-year loan is being paid off via level amortization payments made at the end
 > > [!info]+ **Rumus**
 > >
 > > Principal dalam pembayaran ke-$t$ (amortisasi):
+> > 
 > > $$P_t = R \cdot v^{n-t+1}$$
+> > 
 > > di mana $n$ = jumlah total periode pembayaran, $v = \dfrac{1}{1+j}$, $j$ = rate efektif per periode pembayaran.
 > >
 > > Rasio principal berturutan:
+> > 
 > > $$\frac{P_{t_2}}{P_{t_1}} = (1+j)^{t_2 - t_1}$$
 >
 > **Diketahui:**
 > - Pinjaman 25 tahun, pembayaran kuartalan ($n = 100$ kali)
 > - $i^{(12)} = 12\%$ per tahun (nominal, compounded bulanan)
-> - $P_{29} = 1{,}860$
+> - &nbsp;$P_{29} = 1{,}860$
 > - Target: $P_{61}$
 >
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Konversi Rate ke Efektif per Kuartal**
+> > 
 > > Rate bulanan: $i_m = 12\%/12 = 1\%$ per bulan.
+> > 
 > > Rate kuartalan efektif:
 > > $$j = (1 + 0.01)^3 - 1 = (1.01)^3 - 1 = 0.030301 \text{ per kuartal}$$
 > >
 > > **Langkah 2: Gunakan Sifat Multiplikatif Principal**
+> > 
 > > Karena $P_t = R \cdot v^{n-t+1}$, maka:
+> > 
 > > $$P_{61} = P_{29} \cdot (1+j)^{61-29} = 1{,}860 \cdot (1.030301)^{32}$$
 > >
 > > **Langkah 3: Hitung $(1.030301)^{32}$**
+> > 
+> > 
 > > $$(1.030301)^{32} = [(1.01)^3]^{32} = (1.01)^{96}$$
+> > 
 > > $$(1.01)^{96} \approx 2.5993$$
+> > 
 > > $$P_{61} = 1{,}860 \times 2.5993 \approx 4{,}834.7 \approx 4{,}835$$
 > >
 > > **Hasil Akhir:** **(D)**. $P_{61} \approx 4{,}835$.
@@ -419,9 +471,12 @@ Suppose you are the actuary for an insurance company. Your company, in response 
 > > [!info]+ **Rumus**
 > >
 > > Growing annuity-due dengan $n$ pembayaran, pertumbuhan $g$, rate efektif $i$:
+> > 
 > > $$\text{PV (satu periode sebelum pembayaran pertama)} = C \cdot \frac{1 - \left(\frac{1+g}{1+i}\right)^n}{i - g}$$
 > >
-> > Rate nominal dengan inflasi: $i_{\text{nom}} = (1 + i_{\text{real}})(1 + g) - 1$
+> > Rate nominal dengan inflasi: 
+> > 
+> > $i_{\text{nom}} = (1 + i_{\text{real}})(1 + g) - 1$
 >
 > **Diketahui:**
 > - Pembayaran pertama \$100,000 pada 1 Jan 2008; terakhir 1 Jan 2031 → $n = 24$ pembayaran
@@ -431,23 +486,31 @@ Suppose you are the actuary for an insurance company. Your company, in response 
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Rate Nominal**
+> > 
 > > $$i_{\text{nom}} = (1 + 0.03)(1 + 0.05) - 1 = 1.0815 - 1 = 8.15\%$$
 > >
 > > **Langkah 2: Hitung PV per 31 Des 2006 (= 1 tahun sebelum pembayaran pertama)**
+> > 
 > > Ini adalah growing annuity-immediate (24 pembayaran, pertama di 1 Jan 2008 = 1 tahun setelah 31 Des 2006):
 > >
 > > Menggunakan nominal rate $i_{\text{nom}} = 8.15\%$ dan $g = 5\%$:
+> > 
 > > $$\text{PV}_{2006} = v_i \cdot 100{,}000 \cdot \frac{1 - \left(\frac{1.05}{1.0815}\right)^{24}}{0.0815 - 0.05}$$
 > >
 > > Karena menggunakan real rate:
+> > 
+> > 
 > > $$\text{PV (di 1 Jan 2007)} = 100{,}000 \cdot a_{\overline{24}|i_r=3\%}$$
+> > 
 > > $$= 100{,}000 \cdot \frac{1 - (1.03)^{-24}}{0.03} = 100{,}000 \times 16.9355 = 1{,}693{,}546$$
 > >
 > > **Langkah 3: Diskon ke 31 Des 2005 (2 tahun mundur)**
+> > 
 > > Pembayaran pertama 1 Jan 2008 = 2 tahun dari 1 Jan 2006 ≈ 2.003 tahun dari 31 Des 2005.
 > > Lebih tepat: PV di atas ada di 1 Jan 2007, perlu diskon 1 tahun lagi ke 31 Des 2005:
 > >
 > > Menggunakan pendekatan ASM:
+> > 
 > > $$\text{PV}_{2005} = v_i \cdot 100{,}000 \cdot \frac{1 - \left(\frac{1.05}{1.0815}\right)^{24}}{0.0815 - 0.05} = 1{,}491{,}363$$
 > >
 > > **Hasil Akhir:** **(A)**. PV ≈ **1,491,000**.
@@ -512,30 +575,40 @@ The company achieves Redington immunization by purchasing assets that have two c
 > **Diketahui:**
 > - Liabilitas: 1,000 di $t=2$, $X$ di $t=4$, 1,000 di $t=6$
 > - Aset: 733 di $t=1$, $Y$ di $t=5$
-> - $i = 10\%$, $v = 1/1.1$
+> - &nbsp;$i = 10\%$, $v = 1/1.1$
 > - Target: $Y$
 >
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Kondisi 1 — $P_A = P_L$**
+> > 
 > > $$733v + Yv^5 = 1{,}000v^2 + Xv^4 + 1{,}000v^6 \quad \cdots (1)$$
 > >
 > > **Langkah 2: Kondisi 2 — $P'_A = P'_L$ (bagi persamaan turunan dengan $-v^2$)**
+> > 
 > > Dari syarat durasi dollar (setelah manipulasi aljabar, bagi persamaan (1) oleh $v$):
+> > 
 > > $$733 + Yv^4 = 1{,}000v + Xv^3 + 1{,}000v^5 \quad \cdots (2)$$
 > >
 > > Kondisi durasi (bagi persamaan turunan $P'_A = P'_L$ dengan $-v^2$):
+> > 
 > > $$733 + 5Yv^4 = 2{,}000v + 4Xv^3 + 6{,}000v^5 \quad \cdots (4)$$
 > >
 > > **Langkah 3: Selesaikan Sistem Persamaan**
+> > 
 > > Kalikan (2) dengan 4:
+> > 
 > > $$2{,}932 + 4Yv^4 = 4{,}000v + 4Xv^3 + 4{,}000v^5 \quad \cdots (5)$$
 > >
 > > Kurangi (5) dari (4):
+> > 
 > > $$-2{,}199 + Yv^4 = -2{,}000v + 2{,}000v^5$$
+> > 
 > > $$Yv^4 = 2{,}000v^5 - 2{,}000v + 2{,}199$$
 > >
 > > Dengan $v = 1/1.1$:
+> > 
+> > 
 > > $$Y = \frac{2{,}000v^5 - 2{,}000v + 2{,}199}{v^4} = 2{,}000v - 2{,}000v^{-3} + 2{,}199v^{-4}$$
 > >
 > > Substitusi nilai numerik: $Y \approx 2{,}375.74 \approx 2{,}376$
@@ -583,7 +656,9 @@ An investment is expected to pay 2 one year from now, and 3 two years from now. 
 > > [!info]+ **Rumus**
 > >
 > > PV geometric series tak hingga (geometrically growing perpetuity, mulai dari $t=k$, payment pertama $C$, growth $g\%$):
+> > 
 > > $$\text{PV} = \frac{C \cdot v^k}{1 - (1 + g/100) \cdot v}$$
+> > 
 > > dengan syarat $(1 + g/100) \cdot v < 1$, i.e., $g/100 < i$.
 >
 > **Diketahui:**
@@ -594,21 +669,32 @@ An investment is expected to pay 2 one year from now, and 3 two years from now. 
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Pisahkan Cash Flow**
+> > 
 > > $$112.50 = 2v + 3v^2 + 3\left(1 + \frac{g}{100}\right)v^3 + 3\left(1 + \frac{g}{100}\right)^2 v^4 + \cdots$$
 > >
 > > Suku dari $t=2$ ke tak hingga adalah growing perpetuity immediate dimulai dari $t=2$:
+> > 
 > > $$112.50 = 2v + \frac{3v^2}{1 - (1 + g/100) \cdot v}$$
 > >
 > > **Langkah 2: Substitusi $v = 1/1.085$**
+> > 
 > > $$v = \frac{1}{1.085} = 0.92166$$
+> > 
 > > $$112.50 = \frac{2}{1.085} + \frac{3 \cdot (0.92166)^2}{1 - (1 + g/100) \cdot 0.92166}$$
+> > 
 > > $$112.50 = 1.8433 + \frac{3 \times 0.84946}{0.085 - g/100 \cdot 0.92166 - g/100 + g/100}$$
 > >
 > > Lebih sederhana (dari solusi ASM):
+> > 
+> > 
 > > $$112.50 = \frac{2}{1.085} + \frac{3(1.085)^{-1}}{0.085 - g/100}$$
+> > 
 > > $$110.657 = \frac{3/1.085}{0.085 - g/100} = \frac{2.7650}{0.085 - g/100}$$
+> > 
 > > $$0.085 - g/100 = \frac{2.7650}{110.657} = 0.02499$$
+> > 
 > > $$g/100 = 0.085 - 0.02499 = 0.06001$$
+> > 
 > > $$g \approx 6.0$$
 > >
 > > **Hasil Akhir:** **(E)**. $g = 6.0$.
@@ -654,6 +740,7 @@ At any moment $t$, a continuously-varying continuous 5-year annuity makes paymen
 > > [!info]+ **Rumus**
 > >
 > > PV continuously-varying annuity dengan payment rate $\rho(t)$ dan force of interest $\delta$:
+> > 
 > > $$\text{PV} = \int_0^n \rho(t) \cdot e^{-\delta t}\,dt$$
 > >
 > > Faktor diskonto kontinu dari $t$ ke $0$: $e^{-\delta t}$.
@@ -667,9 +754,11 @@ At any moment $t$, a continuously-varying continuous 5-year annuity makes paymen
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Terapkan Formula PV Continuous Annuity**
+> > 
 > > $$\text{PV} = \int_0^5 \rho(t) \cdot e^{-\delta t}\,dt = \int_0^5 t^2 \cdot e^{-0.06t}\,dt$$
 > >
 > > **Langkah 2: Verifikasi Opsi**
+> > 
 > > - (A): $e^{+0.06t}$ = faktor akumulasi, bukan diskonto. **Salah.**
 > > - (B): $t^2 e^{-0.06t}$ persis sesuai formula. **Benar.**
 > > - (C): $te^{-0.12t}$ — integrand salah ($t$ bukan $t^2$, dan exponent $0.12$ bukan $0.06$). **Salah.**
@@ -723,6 +812,7 @@ A loan of 45,000 is being repaid with level annual payments of 3,200 for as long
 > > Rasio: $\dfrac{P_9}{P_2} = (1+i)^{9-2} = (1+i)^7$
 > >
 > > Drop payment (pembayaran terakhir lebih kecil):
+> > 
 > > $$L = R \cdot a_{\overline{n}|i} + \text{drop} \cdot v^{n+1}$$
 >
 > **Diketahui:**
@@ -732,18 +822,28 @@ A loan of 45,000 is being repaid with level annual payments of 3,200 for as long
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Temukan $i$ dari Rasio Principal**
+> > 
 > > $$\frac{P_9}{P_2} = (1+i)^7 = 1.5$$
+> > 
 > > $$(1+i) = 1.5^{1/7} - 1 \implies i = 1.5^{1/7} - 1 \approx 0.059634 = 5.9634\%$$
 > >
 > > **Langkah 2: Hitung Jumlah Pembayaran Penuh**
+> > 
 > > Cari $n$ dari $45{,}000 = 3{,}200 \cdot a_{\overline{n}|i}$:
+> > 
 > > $$a_{\overline{n}|} = \frac{45{,}000}{3{,}200} = 14.0625$$
+> > 
 > > Selesaikan: $n \approx 31.49$, jadi ada 31 pembayaran penuh dan 1 drop payment di $t = 32$.
 > >
 > > **Langkah 3: Hitung Drop Payment**
+> > 
+> > 
 > > $$45{,}000 = 3{,}200 \cdot a_{\overline{31}|i} + \text{drop} \cdot v^{32}$$
+> > 
 > > $$3{,}200 \cdot a_{\overline{31}|i} \approx 44{,}751.76$$
+> > 
 > > $$\text{drop} \cdot v^{32} = 45{,}000 - 44{,}751.76 = 248.24$$
+> > 
 > > $$\text{drop} = 248.24 \times (1.059634)^{32} \approx 248.24 \times 6.382 \approx 1{,}584.37$$
 > >
 > > **Hasil Akhir:** **(D)**. Drop payment ≈ **1,584**.
@@ -790,6 +890,7 @@ A project requires an investment of 50,000 now (time 0), and will provide return
 > > [!info]+ **Rumus**
 > >
 > > $$\text{NPV} = -C_0 + X \cdot v^2 \cdot a_{\overline{8}|i}$$
+> > 
 > > di mana $v^2$ mendiskon 8-tahun annuity (tahun 3–10) ke $t=0$.
 > >
 > > Deferred annuity: pembayaran di $t=3$ sampai $t=10$ = $a_{\overline{8}|}$ yang di-defer 2 periode.
@@ -803,15 +904,21 @@ A project requires an investment of 50,000 now (time 0), and will provide return
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tulis Persamaan NPV**
+> > 
 > > $$\text{NPV} = -50{,}000 + X \cdot v^2 \cdot a_{\overline{8}|0.10} = 2{,}500$$
 > >
 > > **Langkah 2: Hitung $v^2 \cdot a_{\overline{8}|}$**
+> > 
 > > $$a_{\overline{8}|0.10} = \frac{1 - (1.1)^{-8}}{0.10} = \frac{1 - 0.46651}{0.10} = 5.3349$$
+> > 
 > > $$v^2 = (1.1)^{-2} = 0.82645$$
+> > 
 > > $$v^2 \cdot a_{\overline{8}|} = 0.82645 \times 5.3349 = 4.4090$$
 > >
 > > **Langkah 3: Selesaikan untuk $X$**
+> > 
 > > $$2{,}500 = -50{,}000 + X \times 4.4090$$
+> > 
 > > $$X = \frac{52{,}500}{4.4090} = 11{,}907.38 \approx 11{,}900$$
 > >
 > > **Hasil Akhir:** **(D)**. $X \approx 11{,}900$.
@@ -870,14 +977,21 @@ Two growing perpetuities have the same yield rate. The first perpetuity—a perp
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Temukan $i$ dari Perpetuity 1**
+> > 
 > > $$9{,}500 = \frac{500}{i - 0.04}$$
+> > 
 > > $$i - 0.04 = \frac{500}{9{,}500} = 0.052632$$
+> > 
 > > $$i = 0.092632 \approx 9.2632\%$$
 > >
 > > **Langkah 2: Hitung PV Perpetuity 2 (Aritmatika)**
+> > 
 > > $$P = \frac{400}{i} + \frac{20}{i^2}$$
+> > 
 > > $$= \frac{400}{0.092632} + \frac{20}{(0.092632)^2}$$
+> > 
 > > $$= 4{,}319.58 + \frac{20}{0.008581}$$
+> > 
 > > $$= 4{,}319.58 + 2{,}329.44 = 6{,}649.02$$
 > >
 > > **Hasil Akhir:** **(C)**. $P \approx 6{,}649$, berada dalam interval $6{,}600 < P \leq 6{,}700$.
@@ -924,7 +1038,9 @@ Jenna purchased an $n$-year \$1,000 par value bond at a discount to yield 4.2% c
 > > [!info]+ **Rumus**
 > >
 > > Harga obligasi:
+> > 
 > > $$P = Fr \cdot a_{\overline{2n}|j} + C \cdot v_j^{2n}$$
+> > 
 > > di mana $j$ = yield per periode, $Fr$ = kupon per periode, $C$ = redemption value.
 >
 > **Diketahui:**
@@ -936,15 +1052,22 @@ Jenna purchased an $n$-year \$1,000 par value bond at a discount to yield 4.2% c
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tulis Persamaan Harga**
+> > 
 > > $$1{,}035 = 18 \cdot a_{\overline{2n}|2.1\%} + 1{,}150 \cdot v^{2n}_{2.1\%}$$
 > >
 > > **Langkah 2: Selesaikan dengan Kalkulator**
+> > 
 > > Menggunakan BAII Plus atau trial: $2n = 24$ memberikan:
+> > 
 > > $$18 \cdot a_{\overline{24}|2.1\%} + 1{,}150 \cdot (1.021)^{-24}$$
+> > 
 > > $$= 18 \times 18.424 + 1{,}150 \times 0.6130$$
+> > 
 > > $$= 331.63 + 704.95 = 1{,}036.58 \approx 1{,}035$$
 > >
-> > Dengan kalkulator keuangan: $PV = -1035$, $PMT = 18$, $FV = 1150$, $I/Y = 2.1$ → $N = 24$, sehingga $n = 12$.
+> > Dengan kalkulator keuangan: 
+> > 
+> > $PV = -1035$, $PMT = 18$, $FV = 1150$, $I/Y = 2.1$ → $N = 24$, sehingga $n = 12$.
 > >
 > > **Hasil Akhir:** **(C)**. $n = 12$ tahun.
 >
@@ -992,8 +1115,10 @@ A 10-year 200,000 loan is being paid off with level amortization payments at the
 > > [!info]+ **Rumus**
 > >
 > > Bunga dalam pembayaran ke-$t$:
+> > 
 > > $$I_t = R \cdot (1 - v^{n-t+1})$$
-> > ekivalen dengan $I_t = i \cdot B_{t-1}$ di mana $B_{t-1} = R \cdot a_{\overline{n-t+1}|j}$.
+> > 
+> > ekuivalen dengan $I_t = i \cdot B_{t-1}$ di mana $B_{t-1} = R \cdot a_{\overline{n-t+1}|j}$.
 >
 > **Diketahui:**
 > - $L = 200{,}000$, $n = 120$ bulan, $i_{\text{eff annual}} = 15\%$
@@ -1002,15 +1127,21 @@ A 10-year 200,000 loan is being paid off with level amortization payments at the
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Konversi Rate ke Efektif per Bulan**
+> > 
 > > $$j = (1.15)^{1/12} - 1 = 0.011715 \text{ per bulan}$$
 > >
 > > **Langkah 2: Hitung Monthly Payment $R$**
+> > 
 > > $$200{,}000 = R \cdot a_{\overline{120}|j}$$
+> > 
 > > $$R = \frac{200{,}000}{a_{\overline{120}|0.011715}} = \frac{200{,}000}{64.2186} = 3{,}112.30$$
 > >
 > > **Langkah 3: Hitung Bunga Pembayaran ke-56**
+> > 
 > > $$I_{56} = R \cdot (1 - v^{n - 56 + 1}) = R \cdot (1 - v^{65})$$
+> > 
 > > $$v^{65} = (1.011715)^{-65} = 0.46905$$
+> > 
 > > $$I_{56} = 3{,}112.30 \times (1 - 0.46905) = 3{,}112.30 \times 0.53095 = 1{,}652.47$$
 > >
 > > **Hasil Akhir:** **(C)**. $I_{56} \approx 1{,}652$.
@@ -1070,15 +1201,21 @@ A 30-year \$300,000 loan involves level amortization payments at the end of each
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Annual Payment $R$**
+> > 
 > > $$300{,}000 = R \cdot a_{\overline{30}|0.09}$$
+> > 
 > > $$a_{\overline{30}|0.09} = \frac{1 - (1.09)^{-30}}{0.09} = \frac{1 - 0.07537}{0.09} = 10.274$$
+> > 
 > > $$R = \frac{300{,}000}{10.274} = 29{,}200.91$$
 > >
 > > **Langkah 2: Hitung Total Pembayaran dan Total Bunga**
+> > 
 > > $$\text{Total pembayaran} = 30 \times 29{,}200.91 = 876{,}027.3$$
+> > 
 > > $$\text{Total bunga} = 876{,}027.3 - 300{,}000 = 576{,}027.3$$
 > >
 > > **Langkah 3: Hitung Rasio $P$**
+> > 
 > > $$P = \frac{576{,}027.3}{876{,}027.3} = 0.6576 \approx 0.658$$
 > >
 > > **Hasil Akhir:** **(D)**. $P \approx 0.658$, berada dalam $0.625 < P \leq 0.675$.
@@ -1130,8 +1267,12 @@ The effective annual interest rate is 10%. Find the present value, at time $t = 
 > >
 > > Anuitas palindromik (naik lalu turun simetris): Pola 100, 200, ..., 1000, 900, ..., 100 selama 19 periode.
 > >
-> > Pendekatan: $\text{PV} = 100 \cdot a_{\overline{10}|} \cdot \ddot{a}_{\overline{10}|}$
+> > Pendekatan: 
+> > 
+> > $\text{PV} = 100 \cdot a_{\overline{10}|} \cdot \ddot{a}_{\overline{10}|}$
+> > 
 > > atau menggunakan $(Ia)$ dan $(Da)$:
+> > 
 > > $$\text{PV} = 100(Ia)_{\overline{10}|} + v^{10} \cdot 100(Da)_{\overline{9}|}$$
 >
 > **Diketahui:**
@@ -1142,11 +1283,15 @@ The effective annual interest rate is 10%. Find the present value, at time $t = 
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Identifikasi Pola**
+> > 
 > > $t=1$: 100, $t=2$: 200, ..., $t=10$: 1000, $t=11$: 900, ..., $t=19$: 100.
+> > 
 > > Ini adalah **anuitas palindromik** (increasing lalu decreasing).
 > >
 > > **Langkah 2: Gunakan Pendekatan $(Ia)$ dan $(Da)$**
+> > 
 > > Bagian naik ($t=1$ s.d. $t=10$): $100(Ia)_{\overline{10}|0.10}$
+> > 
 > > Bagian turun ($t=11$ s.d. $t=19$): $v^{10} \times 100(Da)_{\overline{9}|0.10}$
 > >
 > > $(Ia)_{\overline{10}|0.10} = \frac{\ddot{a}_{\overline{10}|} - 10v^{10}}{i} = \frac{7.2330 - 10 \times 0.38554}{0.10} = \frac{7.2330 - 3.8554}{0.10} = 33.776$
@@ -1154,9 +1299,11 @@ The effective annual interest rate is 10%. Find the present value, at time $t = 
 > > $(Da)_{\overline{9}|0.10} = \frac{9 - a_{\overline{9}|}}{i} = \frac{9 - 5.7590}{0.10} = 32.41$
 > >
 > > $\text{PV} = 100 \times 33.776 + (1.1)^{-10} \times 100 \times 32.41$
+> > 
 > > $= 3{,}377.6 + 0.38554 \times 3{,}241 = 3{,}377.6 + 1{,}249.0 = 4{,}626.6$
 > >
 > > **Langkah 3: Pendekatan Alternatif (ASM)**
+> > 
 > > $\text{PV} = 100 \cdot a_{\overline{10}|} \cdot \ddot{a}_{\overline{10}|} = 100 \times 6.1446 \times 6.7590 = 100 \times 41.528 = 4{,}152.8 \approx 4{,}153$
 > >
 > > (Formula: PV palindromic annuity = $C \cdot a_{\overline{n}|} \cdot \ddot{a}_{\overline{n}|}$ ketika $n$ periode naik + $n-1$ periode turun)
@@ -1204,7 +1351,9 @@ An investment opportunity has the following characteristics: payments of \$10,00
 > > [!info]+ **Rumus**
 > >
 > > Accumulated value annuity-due dengan reinvestment interest:
+> > 
 > > $$A(20) = n \cdot R + R \cdot i_1 \cdot (Is)_{\overline{n}|i_2}$$
+> > 
 > > di mana $i_1$ = rate rekening utama, $i_2$ = rate reinvestment.
 >
 > **Diketahui:**
@@ -1216,18 +1365,27 @@ An investment opportunity has the following characteristics: payments of \$10,00
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Akumulasi Total di $t=20$**
+> > 
 > > Pokok yang masuk: $20 \times 10{,}000 = 200{,}000$ (sudah ada di rekening utama)
+> > 
 > > Bunga dari rekening utama ($7\%$ per tahun dari balance yang berkembang) diinvestasikan ulang di $4\%$:
+> > 
 > > $$A(20) = 200{,}000 + 700 \cdot (Is)_{\overline{20}|0.04}$$
+> > 
 > > di mana bunga tahun $k$ = $700k$ (dari annuity-due dengan pembayaran pertama 10,000):
 > >
 > > Lebih tepat (dari solusi ASM):
+> > 
 > > $$A(20) = 20(10{,}000) + 700 \cdot (Is)_{\overline{20}|0.04}$$
+> > 
 > > $$(Is)_{\overline{20}|0.04} = \frac{s_{\overline{20}|0.04} - 20}{0.04} = \frac{29.778 - 20}{0.04} = 244.45$$
+> > 
 > > $$700 \times 244.45 = 191{,}115 \quad \text{(dari tabel/kalkulator: } 191{,}961\text{)}$$
+> > 
 > > $$A(20) = 200{,}000 + 191{,}961 = 391{,}961$$
 > >
 > > **Langkah 2: Hitung Purchase Price**
+> > 
 > > $$P = \frac{A(20)}{(1.06)^{20}} = \frac{391{,}961}{3.2071} = 122{,}215$$
 > >
 > > **Hasil Akhir:** **(D)**. Purchase price $\approx 122{,}215 \approx 122{,}000$.
@@ -1273,6 +1431,7 @@ A 30-year bond with par value 1,000 has annual coupons and sells for 1,300. The 
 > > [!info]+ **Rumus**
 > >
 > > Obligasi premium ($P > C$): write-down (amortisasi premium) per periode $t$:
+> > 
 > > $$\text{Write-down}_t = (Fr - Ci) \cdot v^{n-t+1}$$
 > >
 > > Total write-down selama $n$ periode = total premium = $P - C$.
@@ -1280,6 +1439,7 @@ A 30-year bond with par value 1,000 has annual coupons and sells for 1,300. The 
 > > Jumlah total write-down: $\sum_{t=1}^{n} \text{WD}_t = (Fr - Ci) \cdot a_{\overline{n}|i} = P - C$
 > >
 > > Sifat: write-down membentuk geometric series dengan ratio $(1+i)$.
+> > 
 > > $$\text{WD}_1 + \text{WD}_2(1+i) + \ldots = 300 \implies (4.60) \cdot s_{\overline{30}|i} = 300$$
 >
 > **Diketahui:**
@@ -1289,13 +1449,19 @@ A 30-year bond with par value 1,000 has annual coupons and sells for 1,300. The 
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hubungkan Write-Down dengan Premium**
+> > 
 > > Total premium = $P - C = 1{,}300 - 1{,}000 = 300$.
+> > 
 > > Write-down membentuk GP dengan rasio $(1+i)$:
+> > 
 > > $$\text{WD}_1 \cdot [1 + (1+i) + (1+i)^2 + \cdots + (1+i)^{29}] = 300$$
+> > 
 > > $$4.60 \cdot s_{\overline{30}|i} = 300$$
+> > 
 > > $$s_{\overline{30}|i} = \frac{300}{4.60} = 65.217$$
 > >
 > > **Langkah 2: Selesaikan untuk $i$**
+> > 
 > > Dengan kalkulator: $s_{\overline{30}|i} = 65.217$ → $i \approx 4.89\%$.
 > >
 > > Verifikasi: $s_{\overline{30}|4.89\%} \approx 65.2$ ✓
@@ -1343,7 +1509,9 @@ A \$7,600 loan is being repaid by level installments at the end of each year for
 > > [!info]+ **Rumus**
 > >
 > > Dengan varying interest rates, PV loan = PV seluruh pembayaran:
+> > 
 > > $$L = X \cdot a_{\overline{6}|4\%} + X \cdot a_{\overline{8}|5\%} \cdot v_{4\%}^6$$
+> > 
 > > di mana $v_{4\%}^6$ mendiskon blok 8 pembayaran terakhir dari $t=6$ ke $t=0$.
 >
 > **Diketahui:**
@@ -1354,16 +1522,23 @@ A \$7,600 loan is being repaid by level installments at the end of each year for
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung PV 6 Pembayaran Pertama**
+> > 
 > > Pada $t = 0$, PV 6 pembayaran pertama:
+> > 
 > > $$\text{PV}_1 = X \cdot a_{\overline{6}|4\%}$$
 > >
 > > **Langkah 2: Hitung PV 8 Pembayaran Terakhir**
+> > 
 > > Nilai $a_{\overline{8}|5\%}$ memberikan PV di $t=6$ untuk 8 pembayaran ($t=7$ s.d. $t=14$).
+> > 
 > > Untuk mendiskon ke $t=0$ menggunakan rate $4\%$ selama 6 tahun:
+> > 
 > > $$\text{PV}_2 = X \cdot a_{\overline{8}|5\%} \cdot (1.04)^{-6}$$
 > >
 > > **Langkah 3: Set Persamaan**
+> > 
 > > $$7{,}600 = X \cdot a_{\overline{6}|4\%} + X \cdot a_{\overline{8}|5\%} \cdot (1.04)^{-6}$$
+> > 
 > > $$X = \frac{7{,}600}{a_{\overline{6}|4\%} + a_{\overline{8}|5\%}(1.04)^{-6}}$$
 > >
 > > **Hasil Akhir:** **(E)**.
@@ -1409,7 +1584,9 @@ A 20-year 100 par value bond with 8% semiannual coupons is purchased for 108.50.
 > > [!info]+ **Rumus**
 > >
 > > Book value (prospective) setelah kupon ke-$k$:
+> > 
 > > $$B_k = Fr \cdot a_{\overline{2n-k}|j} + C \cdot v_j^{2n-k}$$
+> > 
 > > di mana $j$ = yield semianual, $2n$ = total kupon.
 >
 > **Diketahui:**
@@ -1420,13 +1597,19 @@ A 20-year 100 par value bond with 8% semiannual coupons is purchased for 108.50.
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Temukan Yield Semianual $j$**
+> > 
 > > Dari harga: $108.50 = 4 \cdot a_{\overline{40}|j} + 100 \cdot v_j^{40}$
+> > 
 > > Dengan kalkulator: $j = 3.596\%$ per semester.
 > >
 > > **Langkah 2: Hitung Book Value Setelah Kupon ke-13**
+> > 
 > > Sisa kupon setelah ke-13: $40 - 13 = 27$ kupon.
+> > 
 > > $$B_{13} = 4 \cdot a_{\overline{27}|3.596\%} + 100 \cdot v_{3.596\%}^{27}$$
+> > 
 > > $$= 4 \times 17.348 + 100 \times 0.37577$$
+> > 
 > > $$= 69.39 + 37.58 = 106.97 \approx 106.91$$
 > >
 > > **Hasil Akhir:** **(E)**. $B_{13} \approx 106.91$.
@@ -1472,9 +1655,11 @@ Yield rates to maturity for zero coupon bonds are currently quoted at 6% for one
 > > [!info]+ **Rumus**
 > >
 > > Forward rate dari $t_1$ ke $t_2$:
+> > 
 > > $$(1 + s_{t_2})^{t_2} = (1 + s_{t_1})^{t_1} \cdot (1 + f_{t_1, t_2})^{t_2 - t_1}$$
 > >
 > > PV di $t=2$ dari 1,000 di $t=3$:
+> > 
 > > $$\text{PV}_{t=2} = \frac{1{,}000}{1 + f_{2,3}}$$
 >
 > **Diketahui:**
@@ -1485,8 +1670,11 @@ Yield rates to maturity for zero coupon bonds are currently quoted at 6% for one
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Forward Rate $f_{2,3}$**
+> > 
 > > $$(1.075)^3 = (1.07)^2 \cdot (1 + f_{2,3})$$
+> > 
 > > $$1 + f_{2,3} = \frac{(1.075)^3}{(1.07)^2} = \frac{1.242297}{1.1449} = 1.085070$$
+> > 
 > > $$f_{2,3} = 8.5070\%$$
 > >
 > > **Langkah 2: Hitung PV di $t=2$**

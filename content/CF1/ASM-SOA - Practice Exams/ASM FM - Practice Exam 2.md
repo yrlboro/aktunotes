@@ -1,16 +1,12 @@
-# ASM FM 16th Edition — Practice Exam 2
-
-> Sumber: ASM FM 16th Edition, Practice Exam 2
-> Format: Pembahasan CF1 — Profesor Aktuaria & Matematika Keuangan
-> Referensi: Vaaler, Kellison, McDonald, Ross
-
----
-
 ## **No. 1**
 
-On November 1, 2006, Abby invests $1,000 in an account earning 10% simple annual interest. On the same day, Ben invests $1,000 at a nominal annual interest rate of $X$, convertible monthly. On September 1, 2010, the accumulated values of Abby's and Ben's investments are equal. Calculate $X$.
+On November 1, 2006, Abby invests \$1,000 in an account earning 10% simple annual interest. On the same day, Ben invests \$1,000 at a nominal annual interest rate of $X$, convertible monthly. On September 1, 2010, the accumulated values of Abby's and Ben's investments are equal. Calculate $X$.
 
-(A) 8.48% \n(B) 8.50% \n(C) 8.52% \n(D) 8.54% \n(E) 8.56%
+(A) 8.48%  
+(B) 8.50%  
+(C) 8.52%  
+(D) 8.54%  
+(E) 8.56%  
 
 > [!summary]+ **Jawaban No. 1**
 >
@@ -93,7 +89,11 @@ Option B: You can pay $x$% below the current retail price two years from now.
 
 Given an annual nominal interest rate of 8% convertible quarterly, calculate the value of $x$ for which you are indifferent between these two options.
 
-(A) 3.9 \n(B) 4.8 \n(C) 5.5 \n(D) 6.3 \n(E) 7.7
+(A) 3.9  
+(B) 4.8  
+(C) 5.5  
+(D) 6.3  
+(E) 7.7  
 
 > [!summary]+ **Jawaban No. 2**
 >
@@ -125,21 +125,25 @@ Given an annual nominal interest rate of 8% convertible quarterly, calculate the
 >
 > > [!example]- Langkah Pengerjaan
 > >
-> > **Langkah 1: Konversi Rate ke Efektif Kuartalan**
+> > **Langkah 1: Konversi Rate ke Efektif Kuartalan**  
 > > Rate per kuartal $= \frac{8\%}{4} = 2\%$. Untuk 2 tahun (8 kuartal):
 > > $$v^8 = (1.02)^{-8}$$
 > >
-> > **Langkah 2: Set Up Kondisi Indifferent**
-> > Indifferent artinya PV kedua opsi sama. Biarkan $P$ = harga retail:
-> > $$PV_A = (1 - 0.20)P = 0.80P$$
-> > $$PV_B = \left(1 - \frac{x}{100}\right)P \cdot v^8_{0.02}$$
+> > **Langkah 2: Set Up Kondisi Indifferent**  
+> > Indifferent artinya PV kedua opsi sama. Biarkan $P$ = harga retail:  
+> > $$PV_A = (1 - 0.20)P = 0.80P$$  
+> > $$PV_B = \left(1 - \frac{x}{100}\right)P \cdot v^8_{0.02}$$  
 > >
-> > **Langkah 3: Samakan PV**
-> > $$0.80P = \left(1 - \frac{x}{100}\right)P \cdot (1.02)^{-8}$$
-> > $$0.80 = \left(1 - \frac{x}{100}\right)(1.02)^{-8}$$
-> > $$1 - \frac{x}{100} = \frac{0.80}{(1.02)^{-8}} = 0.80 \times (1.02)^{8}$$
-> > $$= 0.80 \times 1.17166 = 0.93733$$
-> > $$\frac{x}{100} = 1 - 0.93733 = 0.06267 \implies x = 6.267 \approx 6.3$$
+> > **Langkah 3: Samakan PV**  
+> > $$0.80P = \left(1 - \frac{x}{100}\right)P \cdot (1.02)^{-8}$$  
+> > 
+> > $$0.80 = \left(1 - \frac{x}{100}\right)(1.02)^{-8}$$  
+> > 
+> > $$1 - \frac{x}{100} = \frac{0.80}{(1.02)^{-8}} = 0.80 \times (1.02)^{8}$$  
+> > 
+> > $$= 0.80 \times 1.17166 = 0.93733$$  
+> > 
+> > $$\frac{x}{100} = 1 - 0.93733 = 0.06267 \implies x = 6.267 \approx 6.3$$  
 > >
 > > **Hasil Akhir:** **(D)**. $x = 6.3$
 >
@@ -162,7 +166,11 @@ Given an annual nominal interest rate of 8% convertible quarterly, calculate the
 
 You are given that the accumulation function for a certain investment is $a(t) = 1 + .02t + .005t^2$, where $t$ is the time in years measured from January 1, 2020. An investment of 100 is made on January 1, 2022 and an investment of 200 is made on January 1, 2025. What is the accumulated value of the two investments on January 1, 2030?
 
-(A) 329 \n(B) 352 \n(C) 393 \n(D) 438 \n(E) 462
+(A) 329  
+(B) 352  
+(C) 393  
+(D) 438  
+(E) 462  
 
 > [!summary]+ **Jawaban No. 3**
 >
@@ -193,18 +201,24 @@ You are given that the accumulation function for a certain investment is $a(t) =
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Nilai $a(t)$ yang Diperlukan**
+> > 
 > > $$a(2) = 1 + 0.02(2) + 0.005(4) = 1 + 0.04 + 0.02 = 1.06$$
+> > 
 > > $$a(5) = 1 + 0.02(5) + 0.005(25) = 1 + 0.10 + 0.125 = 1.225$$
+> > 
 > > $$a(10) = 1 + 0.02(10) + 0.005(100) = 1 + 0.20 + 0.50 = 1.70$$
 > >
 > > **Langkah 2: Hitung AV Investasi 1 (100 pada $t=2$)**
+> > 
 > > $$AV_1 = 100 \times \frac{a(10)}{a(2)} = 100 \times \frac{1.70}{1.06} = 100 \times 1.60377 = 160.377$$
 > >
 > > **Langkah 3: Hitung AV Investasi 2 (200 pada $t=5$)**
+> > 
 > > $$AV_2 = 200 \times \frac{a(10)}{a(5)} = 200 \times \frac{1.70}{1.225} = 200 \times 1.38776 = 277.551$$
 > >
-> > **Langkah 4: Total AV**
-> > $$AV = AV_1 + AV_2 = 160.377 + 277.551 = 437.93 \approx 438$$
+> > **Langkah 4: Total AV**  
+> > 
+> > $$AV = AV_1 + AV_2 = 160.377 + 277.551 = 437.93 \approx 438$$  
 > >
 > > **Hasil Akhir:** **(D)**. $AV = 438$
 >
@@ -227,7 +241,11 @@ You are given that the accumulation function for a certain investment is $a(t) =
 
 At an annual effective rate of interest $i$, payments of \$100 now, \$200 two years from now, and \$100 four years from now have a total present value of \$300. Calculate $i$.
 
-(A) 11.7% \n(B) 13.0% \n(C) 14.5% \n(D) 15.8% \n(E) 16.9%
+(A) 11.7%  
+(B) 13.0%  
+(C) 14.5%  
+(D) 15.8%  
+(E) 16.9%  
 
 > [!summary]+ **Jawaban No. 4**
 >
@@ -244,8 +262,10 @@ At an annual effective rate of interest $i$, payments of \$100 now, \$200 two ye
 >
 > > [!info]+ **Rumus**
 > >
-> > PV dari cash flow stream:
-> > $$PV = \sum_{k} CF_k \cdot v^{t_k} \quad \text{di mana } v = \frac{1}{1+i}$$
+> > PV dari cash flow stream:  
+> > 
+> > $$PV = \sum_{k} CF_k \cdot v^{t_k} \quad \text{di mana } v = \frac{1}{1+i}$$  
+> > 
 > >
 > > Persamaan kuadrat: $v^2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
 >
@@ -256,22 +276,35 @@ At an annual effective rate of interest $i$, payments of \$100 now, \$200 two ye
 >
 > > [!example]- Langkah Pengerjaan
 > >
-> > **Langkah 1: Set Up Persamaan PV**
+> > **Langkah 1: Set Up Persamaan PV**  
+> > 
 > > $$PV = 100 + 200v^2 + 100v^4 = 300$$
 > >
 > > **Langkah 2: Sederhanakan**
+> > 
 > > $$200 = 200v^2 + 100v^4$$
+> > 
 > > $$2 = 2v^2 + v^4$$
+> > 
 > > Misalkan $u = v^2$:
+> > 
 > > $$u^2 + 2u - 2 = 0$$
 > >
 > > **Langkah 3: Selesaikan dengan Rumus Kuadrat**
-> > $$u = \frac{-2 \pm \sqrt{4 + 8}}{2} = \frac{-2 \pm \sqrt{12}}{2} = \frac{-2 \pm 2\sqrt{3}}{2} = -1 \pm \sqrt{3}$$
-> > Ambil nilai positif: $u = -1 + \sqrt{3} = -1 + 1.73205 = 0.73205$
+> > 
+> > $$u = \frac{-2 \pm \sqrt{4 + 8}}{2} = \frac{-2 \pm \sqrt{12}}{2} = \frac{-2 \pm 2\sqrt{3}}{2} = -1 \pm \sqrt{3}$$  
+> > 
+> > Ambil nilai positif:  
+> > $u = -1 + \sqrt{3} = -1 + 1.73205 = 0.73205$
 > >
 > > **Langkah 4: Hitung $i$**
-> > $$v^2 = 0.73205 \implies v = \sqrt{0.73205} = 0.855597$$
-> > $$\frac{1}{1+i} = 0.855597 \implies 1+i = \frac{1}{0.855597} = 1.168771$$
+> > 
+> > $$v^2 = 0.73205 \implies v = \sqrt{0.73205} = 0.855597$$  
+> >
+> >
+> > $$\frac{1}{1+i} = 0.855597 \implies 1+i = \frac{1}{0.855597} = 1.168771$$  
+> >
+> >
 > > $$i = 0.168771 \approx 16.9\%$$
 > >
 > > **Hasil Akhir:** **(E)**. $i = 16.9\%$
@@ -295,11 +328,15 @@ At an annual effective rate of interest $i$, payments of \$100 now, \$200 two ye
 
 A 30-year annuity pays \$100 per quarter for the first ten years, and \$200 per quarter for the last 20 years. The first payment is scheduled for July 1, 2007. The nominal annual interest rate, convertible quarterly, is 12%. Calculate the present value of this annuity as of January 1, 2007.
 
-(A) \$4,040 \n(B) \$4,140 \n(C) \$4,240 \n(D) \$4,340 \n(E) \$4,440
+(A) \$4,040  
+(B) \$4,140  
+(C) \$4,240  
+(D) \$4,340  
+(E) \$4,440
 
 > [!summary]+ **Jawaban No. 5**
 >
-> **(A). PV $= \$4{,}041.87 \approx \$4{,}040$**
+> **$$(A). PV = \$4,041.87 \approx \$4,040$$**
 >
 > | Field | Isi |
 > |-------|-----|
@@ -313,9 +350,11 @@ A 30-year annuity pays \$100 per quarter for the first ten years, and \$200 per 
 > > [!info]+ **Rumus**
 > >
 > > PV annuity-immediate:
+> > 
 > > $$a_{\overline{n}|j} = \frac{1 - v^n}{j}$$
 > >
 > > PV deferred annuity:
+> > 
 > > $$_{m|}a_{\overline{n}|j} = v^m \cdot a_{\overline{n}|j}$$
 >
 > **Diketahui:**
@@ -328,31 +367,41 @@ A 30-year annuity pays \$100 per quarter for the first ten years, and \$200 per 
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Identifikasi Rate Per Kuartal**
+> > 
 > > $$j = \frac{12\%}{4} = 3\% \text{ per kuartal}$$
 > >
 > > **Langkah 2: Dekomposisi Cash Flow**
+> > 
 > > Annuitas dapat dilihat sebagai:
+> > 
 > > - $100$ per kuartal selama 120 kuartal (seluruh 30 tahun)
 > > - Tambahan $100$ per kuartal selama 80 kuartal terakhir (tahun 11–30)
+> >
 > > Atau lebih mudah: annuitas-immediate standar dimulai dari 1 kuartal sebelum pembayaran pertama, yaitu dari 1 April 2007 (1 kuartal sebelum 1 Juli 2007). Karena tanggal valuasi adalah 1 Jan 2007, kita perlu diskon 1 kuartal ekstra.
 > >
 > > **Langkah 3: Hitung PV pada 1 April 2007 (satu kuartal sebelum pembayaran pertama)**
+> > 
 > > $$PV_{Apr} = 100 \cdot a_{\overline{40}|0.03} + v^{40}_{0.03} \cdot 200 \cdot a_{\overline{80}|0.03}$$
+> > 
 > > $$= 100 \cdot a_{\overline{40}|0.03} + 200 \cdot v^{40}_{0.03} \cdot a_{\overline{80}|0.03}$$
 > >
 > > **Langkah 4: Diskon Balik 1 Kuartal ke 1 Jan 2007**
+> > 
 > > $$PV_{Jan} = v_{0.03} \cdot PV_{Apr} = (1.03)^{-1} \left[100 \cdot a_{\overline{40}|0.03} + 200 \cdot v^{40}_{0.03} \cdot a_{\overline{80}|0.03}\right]$$
+> > 
 > > $$= v_{0.03}\left[100 \cdot a_{\overline{40}|0.03} + v^{40}_{0.03}(200)a_{\overline{80}|0.03}\right]$$
 > >
 > > Dengan nilai numerik:
-> > - $a_{\overline{40}|0.03} = \frac{1-(1.03)^{-40}}{0.03} = 23.1148$
-> > - $a_{\overline{80}|0.03} = \frac{1-(1.03)^{-80}}{0.03} = 30.2008$
-> > - $v^{40}_{0.03} = (1.03)^{-40} = 0.30656$
+> > 
+> > - &nbsp;$a_{\overline{40}|0.03} = \frac{1-(1.03)^{-40}}{0.03} = 23.1148$  
+> > - &nbsp;$a_{\overline{80}|0.03} = \frac{1-(1.03)^{-80}}{0.03} = 30.2008$  
+> > - &nbsp;$v^{40}_{0.03} = (1.03)^{-40} = 0.30656$  
 > >
-> > $$PV_{Apr} = 100(23.1148) + 200(0.30656)(30.2008) = 2311.48 + 1852.03 = 4163.51$$
-> > $$PV_{Jan} = \frac{4163.51}{1.03} = 4041.27 \approx \$4{,}040$$
+> > $$PV_{Apr} = 100(23.1148) + 200(0.30656)(30.2008) = 2311.48 + 1852.03 = 4163.51$$  
+> > 
+> > $$PV_{Jan} = \frac{4163.51}{1.03} = 4041.27 \approx \$4{,}040$$  
 > >
-> > **Hasil Akhir:** **(A)**. PV $= \$4{,}040$
+> > **Hasil Akhir:** (A). $$PV \approx \$4{,}040$$
 >
 > > [!tip] Jebakan Umum
 > >
@@ -373,11 +422,15 @@ A 30-year annuity pays \$100 per quarter for the first ten years, and \$200 per 
 
 You decide to provide yourself with a retirement account by depositing $X$ into an account at the beginning of each year for the next 40 years. One year after your final deposit, you want to purchase, with your accumulated funds, a 25-year annuity-immediate that pays \$25,000 every six months. Assume that the effective annual rate of interest is 7% for the first 40 years, and 5% thereafter. Find $X$, the amount of your annual deposit necessary to achieve your retirement annuity purchase.
 
-(A) \$3,100 \n(B) \$3,220 \n(C) \$3,340 \n(D) \$3,460 \n(E) \$3,580
+(A) \$3,100  
+(B) \$3,220  
+(C) \$3,340  
+(D) \$3,460  
+(E) \$3,580
 
 > [!summary]+ **Jawaban No. 6**
 >
-> **(C). $X = \$3{,}340$**
+> **(C). X = \$3,340**
 >
 > | Field | Isi |
 > |-------|-----|
@@ -391,12 +444,15 @@ You decide to provide yourself with a retirement account by depositing $X$ into 
 > > [!info]+ **Rumus**
 > >
 > > FV annuity-due:
+> > 
 > > $$\ddot{s}_{\overline{n}|i} = s_{\overline{n}|i}(1+i)$$
 > >
 > > PV annuity-immediate (semi-annual payments, rate $j$):
+> > 
 > > $$a_{\overline{n}|j} = \frac{1-v^n}{j}$$
 > >
 > > Konversi effective annual ke effective semi-annual:
+> > 
 > > $$(1+j)^2 = 1+i \implies j = (1+i)^{0.5} - 1$$
 >
 > **Diketahui:**
@@ -408,18 +464,25 @@ You decide to provide yourself with a retirement account by depositing $X$ into 
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Rate Efektif Semi-Annual untuk Fase Pensiun**
+> > 
 > > $$j = (1.05)^{0.5} - 1 = 1.024695 - 1 = 0.024695 \text{ per 6 bulan}$$
 > >
 > > **Langkah 2: Hitung PV Annuity Pensiun pada $t=41$**
+> > 
 > > Annuity-immediate 50 pembayaran (25 tahun × 2):
+> > 
 > > $$PV_{ret} = 25{,}000 \cdot a_{\overline{50}|j} = 25{,}000 \cdot \frac{1-(1.024695)^{-50}}{0.024695}$$
+> > 
 > > $$= 25{,}000 \times 28.5630 = 714{,}075$$
 > >
 > > **Langkah 3: Hubungkan AV Tabungan dengan PV Pensiun**
+> > 
 > > Depositor menyimpan annuity-due selama 40 tahun pada $i = 7\%$.
 > > AV pada akhir tahun 40 ($t=40$) adalah $X \cdot \ddot{s}_{\overline{40}|0.07}$.
 > > Namun pembelian annuity terjadi 1 tahun kemudian ($t=41$), sehingga AV tumbuh satu tahun lagi:
+> > 
 > > $$X \cdot \ddot{s}_{\overline{40}|0.07} = PV_{ret}$$
+> > 
 > > (Karena annuity-due FV sudah mengakumulasi sampai akhir tahun ke-40, dan pembelian di awal tahun ke-41 → dana sudah tersedia)
 > >
 > > Sebenarnya: deposit annuity-due berarti FV pada saat deposit terakhir = $X \cdot \ddot{s}_{\overline{40}|0.07}$.
@@ -427,11 +490,14 @@ You decide to provide yourself with a retirement account by depositing $X$ into 
 > > Dana pada $t=41$ = $X \cdot \ddot{s}_{\overline{40}|0.07}$ (tidak perlu tumbuh lagi karena $\ddot{s}$ sudah mengakumulasikan hingga akhir periode terakhir).
 > >
 > > Ekuivalensi:
+> > 
 > > $$X \cdot \ddot{s}_{\overline{40}|0.07} = 25{,}000 \cdot a_{\overline{50}|j}$$
+> > 
 > > $$\ddot{s}_{\overline{40}|0.07} = s_{\overline{40}|0.07} \times 1.07 = 199.6351 \times 1.07 = 213.6096$$
+> > 
 > > $$X = \frac{714{,}075}{213.6096} = 3{,}340$$
 > >
-> > **Hasil Akhir:** **(C)**. $X = \$3{,}340$
+> > **Hasil Akhir:** **(C)**. X = \$3,340
 >
 > > [!tip] Jebakan Umum
 > >
@@ -453,11 +519,15 @@ You decide to provide yourself with a retirement account by depositing $X$ into 
 
 A perpetuity-immediate pays \$50 per quarter, and has a present value of \$2,000 at an annual effective interest rate of $i$. A 30-year annuity pays \$10,000 at the end of every two years. Using interest rate $i$, calculate the present value of the 30-year annuity three years prior to its first payment.
 
-(A) \$39,340 \n(B) \$40,340 \n(C) \$41,340 \n(D) \$42,340 \n(E) \$43,340
+(A) \$39,340  
+(B) \$40,340  
+(C) \$41,340  
+(D) \$42,340  
+(E) \$43,340
 
 > [!summary]+ **Jawaban No. 7**
 >
-> **(A). PV $= \$39{,}337.90 \approx \$39{,}340$**
+> **$$(A). PV = \$39{,}337.90 \approx \$39{,}340$$**
 >
 > | Field | Isi |
 > |-------|-----|
@@ -484,29 +554,41 @@ A perpetuity-immediate pays \$50 per quarter, and has a present value of \$2,000
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Cari Rate Kuartalan dari Perpetuity**
+> > 
 > > $$2000 = \frac{50}{j} \implies j = \frac{50}{2000} = 0.025 \text{ per kuartal}$$
 > >
 > > **Langkah 2: Cari Rate Efektif per 2 Tahun**
+> > 
 > > $$1+k = (1.025)^8 = 1.218403 \implies k = 0.218403 \text{ per 2 tahun}$$
 > >
 > > **Langkah 3: Hitung PV Annuity pada 1 Period Sebelum Pembayaran Pertama**
+> > 
 > > PV annuity-immediate 15 pembayaran (rate per 2 tahun = $k$):
+> > 
 > > $$a_{\overline{15}|k} = \frac{1-(1.218403)^{-15}}{0.218403} = \frac{1-0.06763}{0.218403} = \frac{0.93237}{0.218403} = 4.26914$$
+> > 
 > > $$PV_{\text{1 period before}} = 10{,}000 \times 4.26914 = 42{,}691.4$$
 > >
 > > **Langkah 4: Diskon 3 Tahun = 1.5 Two-Year Periods**
+> > 
 > > Titik valuasi adalah 3 tahun sebelum pembayaran pertama. PV pada langkah 3 sudah berada 1 period (2 tahun) sebelum pembayaran pertama, jadi kita perlu diskon 0.5 period lagi:
+> > 
 > > $$PV = v_k^{0.5} \times 42{,}691.4 = (1.218403)^{-0.5} \times 42{,}691.4$$
+> > 
 > > $$= \frac{42{,}691.4}{1.10381} = 38{,}674$$
+> > 
 > > Atau lebih tepat: 3 tahun sebelum pembayaran pertama = 6 kuartal = $v_{0.025}^6$ dari satu periode sebelum pembayaran pertama (2 tahun = 8 kuartal):
+> > 
 > > $$PV = (1.025)^{-6} \times 10{,}000 \times a_{\overline{15}|k}$$
+> > 
 > > $$= (1.025)^{-6} \times 42{,}691 = 0.86230 \times 42{,}691 = 36{,}810$$
 > >
 > > **Koreksi — Interpretasi ASM:**
 > > ASM menggunakan: annuity-immediate menghasilkan PV *satu periode (2 tahun) sebelum* pembayaran pertama. "3 tahun sebelum pembayaran pertama" = 3 tahun = 1.5 two-year periods sebelum pembayaran pertama, sehingga kita berada $1.5 - 1 = 0.5$ two-year periods sebelum titik referensi annuity:
+> > 
 > > $$PV = v_k^{0.5} \times 10{,}000 \times a_{\overline{15}|k} = (1.218403)^{-0.5} \times 42{,}691 = 39{,}337.90$$
 > >
-> > **Hasil Akhir:** **(A)**. PV $= \$39{,}340$
+> > **Hasil Akhir:** **(A)**. PV = \$39,340
 >
 > > [!tip] Jebakan Umum
 > >
@@ -528,11 +610,15 @@ A perpetuity-immediate pays \$50 per quarter, and has a present value of \$2,000
 
 Abby offers to pay you at the rate of \$5,000 per annum, continuously, for the next 10 years. Ben offers to make payments to you at the end of each of the next ten years; the first payment will be $X$, and the amount of each subsequent payment will be larger than the prior payment by $X$. The effective annual interest rate is 8%. Calculate the value of $X$ for which you are indifferent between these two offers.
 
-(A) \$1,067 \n(B) \$1,098 \n(C) \$1,152 \n(D) \$1,290 \n(E) \$1,406
+(A) \$1,067  
+(B) \$1,098  
+(C) \$1,152  
+(D) \$1,290  
+(E) \$1,406
 
 > [!summary]+ **Jawaban No. 8**
 >
-> **(A). $X = \$1{,}066.95 \approx \$1{,}067$**
+> **$$(A). X = \$1{,}066.95 \approx \$1{,}067$$**
 >
 > | Field | Isi |
 > |-------|-----|
@@ -560,25 +646,36 @@ Abby offers to pay you at the rate of \$5,000 per annum, continuously, for the n
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung PV Annuity Abby (Continuous)**
+> > 
 > > $$\delta = \ln(1.08) = 0.076961$$
+> > 
 > > $$PV_{Abby} = 5{,}000 \cdot \bar{a}_{\overline{10}|} = 5{,}000 \cdot \frac{1-e^{-10\delta}}{\delta}$$
+> > 
 > > $$e^{-10\delta} = (1.08)^{-10} = 0.46319$$
+> > 
 > > $$\bar{a}_{\overline{10}|} = \frac{1-0.46319}{0.076961} = \frac{0.53681}{0.076961} = 6.97673$$
+> > 
 > > $$PV_{Abby} = 5{,}000 \times 6.97673 = 34{,}883.65$$
 > >
 > > **Langkah 2: Hitung PV Annuity Ben (Increasing)**
+> > 
 > > Pembayaran Ben: $X$ pada $t=1$, $2X$ pada $t=2$, ..., $10X$ pada $t=10$.
+> > 
 > > $$PV_{Ben} = X \cdot (Ia)_{\overline{10}|0.08}$$
 > >
 > > $$(Ia)_{\overline{10}|0.08} = \frac{\ddot{a}_{\overline{10}|0.08} - 10v^{10}}{0.08}$$
+> > 
 > > $$\ddot{a}_{\overline{10}|0.08} = a_{\overline{10}|0.08} \times 1.08 = 6.71008 \times 1.08 = 7.24689$$
+> > 
 > > $$(Ia)_{\overline{10}|0.08} = \frac{7.24689 - 10(0.46319)}{0.08} = \frac{7.24689 - 4.63193}{0.08} = \frac{2.61496}{0.08} = 32.687$$
 > >
 > > **Langkah 3: Set PV Sama**
+> > 
 > > $$34{,}883.65 = X \times 32.687$$
+> > 
 > > $$X = \frac{34{,}883.65}{32.687} = 1{,}066.95 \approx \$1{,}067$$
 > >
-> > **Hasil Akhir:** **(A)**. $X = \$1{,}067$
+> > **Hasil Akhir:** **(A)**. X = \$1,067
 >
 > > [!tip] Jebakan Umum
 > >
@@ -599,8 +696,12 @@ Abby offers to pay you at the rate of \$5,000 per annum, continuously, for the n
 
 You continuously receive payments, at a continuously-varying annual rate of $e^{0.5t}$, for twenty years, i.e., from $t = 0$ to $t = 20$. You have a 9% annual effective interest rate. Which of the following would you solve to determine the present value, at $t = 0$, of these payments?
 
-$$\text{(A) } \int_0^{20}\left(\frac{e^{0.5}}{1.09}\right)^{20-t}dt \quad \text{(B) } \int_0^{20}\left(\frac{e^{0.9}}{1.05}\right)^t dt \quad \text{(C) } \int_0^{20} e^{0.5t}(1.09)^{20-t}dt$$
-$$\text{(D) } \int_0^{20} e^{0.5t}(1.09)^t dt \quad \text{(E) } \int_0^{20}\left(\frac{e^{0.5}}{1.09}\right)^t dt$$
+(A) $\int_0^{20}\left(\frac{e^{0.5}}{1.09}\right)^{20-t}dt$  
+(B) $\int_0^{20}\left(\frac{e^{0.9}}{1.05}\right)^t dt$  
+(C) $\int_0^{20} e^{0.5t}(1.09)^{20-t}dt$  
+(D) $\int_0^{20} e^{0.5t}(1.09)^{-t}dt$  
+(E) $\int_0^{20} \left(\frac{e^{0.5}}{1.09}\right)^t dt$  
+
 
 > [!summary]+ **Jawaban No. 9**
 >
@@ -631,16 +732,18 @@ $$\text{(D) } \int_0^{20} e^{0.5t}(1.09)^t dt \quad \text{(E) } \int_0^{20}\left
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Setup Formula PV Kontinu**
+> > 
 > > PV dari "slice" pembayaran pada waktu $t$ dengan tebal $dt$:
+> > 
 > > $$dPV = \rho(t) \cdot v^t \, dt = e^{0.5t} \cdot (1.09)^{-t} \, dt$$
 > >
 > > **Langkah 2: Integrasikan**
+> > 
 > > $$PV = \int_0^{20} e^{0.5t} \cdot (1.09)^{-t} \, dt = \int_0^{20} e^{0.5t} \cdot \left(\frac{1}{1.09}\right)^t dt$$
 > >
 > > **Langkah 3: Sederhanakan Integrand**
+> > 
 > > $$PV = \int_0^{20} \left(e^{0.5}\right)^t \cdot \left(\frac{1}{1.09}\right)^t dt = \int_0^{20} \left(\frac{e^{0.5}}{1.09}\right)^t dt$$
-> >
-> > Ini sesuai dengan opsi **(E)**.
 > >
 > > **Hasil Akhir:** **(E)**. $\displaystyle\int_0^{20}\left(\frac{e^{0.5}}{1.09}\right)^t dt$
 >
@@ -663,7 +766,11 @@ $$\text{(D) } \int_0^{20} e^{0.5t}(1.09)^t dt \quad \text{(E) } \int_0^{20}\left
 
 Hal borrows 100,000 from Gloria for 10 years. Hal makes payments to Gloria at the end of each year equal to the sum of (a) a constant payment toward principal and (b) interest on the outstanding balance at an annual effective rate of 4%. Gloria reinvests the interest payments at an annual effective rate of 5%. At the end of 10 years, the accumulated value of Gloria's reinvested interest payments is $X$. Determine $X$.
 
-(A) 18,226 \n(B) 18,891 \n(C) 22,000 \n(D) 27,963 \n(E) 29,688
+(A) 18,226  
+(B) 18,891  
+(C) 22,000  
+(D) 27,963  
+(E) 29,688
 
 > [!summary]+ **Jawaban No. 10**
 >
@@ -698,23 +805,36 @@ Hal borrows 100,000 from Gloria for 10 years. Hal makes payments to Gloria at th
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Identifikasi Pembayaran Bunga Setiap Tahun**
+> > 
 > > Principal konstan: $10{,}000$ per tahun.
+> > 
 > > Saldo awal: $B_0 = 100{,}000$, $B_1 = 90{,}000$, ..., $B_9 = 10{,}000$
+> > 
 > > Bunga tahun ke-$t$: $I_t = 0.04 \times B_{t-1} = 0.04 \times (100{,}000 - (t-1) \times 10{,}000)$
+> > 
 > > $$I_1 = 4{,}000; \quad I_2 = 3{,}600; \quad \ldots; \quad I_{10} = 400$$
+> > 
 > > Pola: $I_t = 4{,}000 - 400(t-1)$ → *decreasing arithmetic* dengan $I_1 = 4{,}000$ dan decrement $= 400$.
 > >
 > > **Langkah 2: AV dari Seri Bunga yang Direinvestasi**
+> > 
 > > Seri bunga: $4{,}000, 3{,}600, 3{,}200, \ldots, 400$ (menurun $400$ per tahun).
+> > 
 > > AV dari decreasing annuity dengan pembayaran pertama = $D$ dan decrement = $d$:
+> > 
 > > $$AV = d \cdot (Ds)_{\overline{n}|j} = 400 \cdot (Ds)_{\overline{10}|0.05}$$
+> > 
 > > Di mana $(Ds)_{\overline{n}|j} = \frac{n \cdot s_{\overline{1}|} - \ddot{s}_{\overline{n}|}}{j}$... 
 > >
 > > Lebih praktis: gunakan hasil ASM:
+> > 
 > > $$AV = 400 \cdot (Ds)_{\overline{10}|0.05} = 400 \times \frac{10(1.05)^{10} - s_{\overline{10}|0.05}}{0.05}$$
-> > $$s_{\overline{10}|0.05} = 12.5779; \quad (1.05)^{10} = 1.62889$$
-> > $$AV = 400 \times \frac{10(1.62889) - 12.5779}{0.05} = 400 \times \frac{16.2889 - 12.5779}{0.05}$$
-> > $$= 400 \times \frac{3.711}{0.05} = 400 \times 74.22 = 29{,}688$$
+> > 
+> > $$s_{\overline{10}|0.05} = 12.5779; \quad (1.05)^{10} = 1.62889$$  
+> > 
+> > $$AV = 400 \times \frac{10(1.62889) - 12.5779}{0.05} = 400 \times \frac{16.2889 - 12.5779}{0.05}$$  
+> > 
+> > $$= 400 \times \frac{3.711}{0.05} = 400 \times 74.22 = 29{,}688$$  
 > >
 > > **Hasil Akhir:** **(E)**. $X = 29{,}688$
 >
@@ -737,11 +857,15 @@ Hal borrows 100,000 from Gloria for 10 years. Hal makes payments to Gloria at th
 
 An investment opportunity has the following characteristics. You deposit 10,000 into an account (Account A) at the end of each year for 10 years. This account earns an annual rate of 8% effective. At the end of each year, the interest on this account is paid to you; this interest is then reinvested in another account (Account B), earning an annual rate of 5% effective. Determine your total accumulated amount (the sum of Accounts A and B) after 10 years.
 
-(A) \$140,250 \n(B) \$141,250 \n(C) \$142,250 \n(D) \$143,250 \n(E) \$144,250
+(A) \$140,250  
+(B) \$141,250  
+(C) \$142,250  
+(D) \$143,250  
+(E) \$144,250
 
 > [!summary]+ **Jawaban No. 11**
 >
-> **(B). Total AV $= \$141{,}246.28 \approx \$141{,}250$**
+> (B). \$141,250
 >
 > | Field | Isi |
 > |-------|-----|
@@ -755,12 +879,15 @@ An investment opportunity has the following characteristics. You deposit 10,000 
 > > [!info]+ **Rumus**
 > >
 > > AV sinking fund (Account A):
+> > 
 > > $$AV_A = n \times P = 10 \times 10{,}000 = 100{,}000$$
 > >
 > > Bunga dari Account A pada akhir tahun ke-$t$:
+> > 
 > > $$I_t = 8\% \times t \times 10{,}000 = 800t$$
 > >
 > > AV dari increasing annuity (Account B):
+> > 
 > > $$AV_B = 800 \cdot (Is)_{\overline{9}|0.05}$$
 >
 > **Diketahui:**
@@ -771,29 +898,44 @@ An investment opportunity has the following characteristics. You deposit 10,000 
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: AV Account A**
+> > 
 > > Account A hanya berisi principal tanpa bunga dikompound (bunga langsung dikeluarkan):
+> > 
 > > $$AV_A = 10 \times 10{,}000 = 100{,}000$$
 > >
 > > **Langkah 2: Pola Bunga yang Masuk ke Account B**
+> > 
 > > Deposit ke Account A dilakukan di akhir tahun 1, 2, ..., 10.
+> > 
 > > Bunga dari deposit ke-1 pertama kali dibayar di akhir tahun 2 (= $800$).
+> > 
 > > Bunga dari deposit ke-1 dan ke-2 dibayar di akhir tahun 3 (= $1{,}600$). Dst.
+> > 
 > > Di akhir tahun ke-$k$ ($k = 2, 3, \ldots, 10$): bunga $= 800(k-1)$.
+> > 
 > > Di akhir tahun 10: 9 kali distribusi bunga, pertama $800$ dan terakhir $7{,}200$.
 > >
 > > **Langkah 3: AV Account B**
+> > 
 > > Distribusi bunga: $800$ di $t=2$, $1{,}600$ di $t=3$, ..., $7{,}200$ di $t=10$.
+> > 
 > > Ini adalah annuity-immediate increasing dengan payment pertama $800$ dan increment $800$, mulai dari $t=2$ (ada 9 payments total).
+> > 
 > > $$AV_B = 800 \cdot (Is)_{\overline{9}|0.05}$$
+> > 
 > > $$(Is)_{\overline{9}|0.05} = \frac{\ddot{s}_{\overline{9}|} - 9}{0.05}$$
+> > 
 > > $$s_{\overline{9}|0.05} = 11.0266; \quad \ddot{s}_{\overline{9}|0.05} = 11.0266 \times 1.05 = 11.5779$$
-> > $$(Is)_{\overline{9}|0.05} = \frac{11.5779 - 9}{0.05} = \frac{2.5779}{0.05} = 51.558$$
+> > 
+> > $$(Is)_{\overline{9}|0.05} = \frac{11.5779 - 9}{0.05} = \frac{2.5779}{0.05} = 51.558$$  
+> > 
 > > $$AV_B = 800 \times 51.558 = 41{,}246.28$$
 > >
 > > **Langkah 4: Total AV**
+> > 
 > > $$AV = AV_A + AV_B = 100{,}000 + 41{,}246.28 = 141{,}246.28 \approx \$141{,}250$$
 > >
-> > **Hasil Akhir:** **(B)**. Total AV $= \$141{,}250$
+> > **Hasil Akhir:** **(B)**. Total AV = \$141,250
 >
 > > [!tip] Jebakan Umum
 > >
@@ -813,11 +955,15 @@ An investment opportunity has the following characteristics. You deposit 10,000 
 
 A 25-year loan is being paid off via level amortization payments made at the end of each quarter. The nominal annual interest rate is 12% convertible monthly. The amount of principal in the 29th payment is \$1,860. Determine the amount of principal in the 61st payment.
 
-(A) \$4,535 \n(B) \$4,635 \n(C) \$4,735 \n(D) \$4,835 \n(E) \$4,935
+(A) \$4,535  
+(B) \$4,635  
+(C) \$4,735  
+(D) \$4,835  
+(E) \$4,935
 
 > [!summary]+ **Jawaban No. 12**
 >
-> **(D). $P_{61} = \$4{,}834.65 \approx \$4{,}835$**
+> **$$(D). P_{61} = \$4{,}834.65 \approx \$4{,}835$$**
 >
 > | Field | Isi |
 > |-------|-----|
@@ -954,7 +1100,7 @@ $$\text{(D) } R = \left(\frac{300{,}000}{a_{\overline{180}|0.005}}\right)\left(\
 
 A 1,000 par value bond with 6.50% semiannual coupons and a maturity value of 1,100 at the end of $N$ years is purchased for 1,357.24 to yield a nominal rate of 4% compounded semiannually. Determine $N$.
 
-(A) 13 \n(B) 14 \n(C) 15 \n(D) 16 \n(E) 17
+(A) 13  (B) 14  (C) 15  (D) 16  (E) 17
 
 > [!summary]+ **Jawaban No. 14**
 >
@@ -1016,7 +1162,7 @@ A 1,000 par value bond with 6.50% semiannual coupons and a maturity value of 1,1
 > > > - Lupa bahwa "6.50% semiannual coupons" berarti coupon rate adalah $6.5\%/2 = 3.25\%$ per periode.
 > >
 > > > [!BUG] Kesalahan Interpretasi Soal
-> > > - Mengira $C = F = 1{,}000$ (par) — soal menyebut maturity value $= 1{,}100$, jadi $C \neq F$.
+> > > - Mengira $C = F = 1{,}000$ (par) — soal menyebut maturity value $= 1{,}100$, jadi $C  eq F$.
 > >
 > > > [!CAUTION] Red Flags
 > > > - "Semiannual coupons" tanpa penjelasan rate → periksa apakah rate sudah per-semi-annual atau masih harus dibagi 2.
@@ -1028,7 +1174,7 @@ A 1,000 par value bond with 6.50% semiannual coupons and a maturity value of 1,1
 
 A company has a liability of 50,000 to be paid 4 years from now. The company would like to be fully immunized against any change in yield rate. The only investments available are two-year and five-year zero-coupon bonds. The yield curve is flat at 3% annual effective interest rate. If $X$ and $Y$ are the face values of the two-year bond and five-year bond, respectively, compute the difference $Y - X$.
 
-(A) 15,710 \n(B) 16,825 \n(C) 17,932 \n(D) 18,623 \n(E) 19,273
+(A) 15,710  (B) 16,825  (C) 17,932  (D) 18,623  (E) 19,273
 
 > [!summary]+ **Jawaban No. 15**
 >
@@ -1110,7 +1256,7 @@ A company has a liability of 50,000 to be paid 4 years from now. The company wou
 
 You take out a 30-year, \$400,000 mortgage, to be repaid with level amortization payments at the end of each year, at an annual effective rate of 9%. You make the first 12 payments, and then go on a humanitarian mission for five years. During this five-year period, the lender allows you to skip your regular amortization payments, but does insist that interest continue to accumulate on the loan, and that the loan be paid off by the end of the original 30-year period. To do this, a new level year-end payment, $R$, is calculated. Calculate $R$.
 
-(A) \$69,050 \n(B) \$70,050 \n(C) \$71,050 \n(D) \$72,050 \n(E) \$73,050
+(A) \$69,050  (B) \$70,050  (C) \$71,050  (D) \$72,050  (E) \$73,050
 
 > [!summary]+ **Jawaban No. 16**
 >
@@ -1178,7 +1324,7 @@ You take out a 30-year, \$400,000 mortgage, to be repaid with level amortization
 
 Assume that the term structure of interest rates (the yield curve) has the following form: $r(t) = 3t$, where $r(t)$ is the spot rate of interest for an investment of length $t$, expressed as an annual percentage rate. Based on this yield curve, calculate the yield-to-maturity of a three-year, 1,000 face value, 8% annual coupon bond.
 
-(A) 6.4% \n(B) 6.9% \n(C) 7.5% \n(D) 8.2% \n(E) 8.7%
+(A) 6.4%  (B) 6.9%  (C) 7.5%  (D) 8.2%  (E) 8.7%
 
 > [!summary]+ **Jawaban No. 17**
 >
@@ -1239,7 +1385,7 @@ Assume that the term structure of interest rates (the yield curve) has the follo
 
 A 20-year 1,000 par value bond with 7% annual coupons can be called by the issuer at par on any coupon date immediately after the coupon has been paid, starting with the 8th coupon date. Sandy wants to buy this bond at a price $X$ that will guarantee that she will earn a yield rate of 5% or more. Determine $X$.
 
-(A) 870.74 \n(B) 1,000.00 \n(C) 1,129.26 \n(D) 1,142.16 \n(E) 1,186.13
+(A) 870.74  (B) 1,000.00  (C) 1,129.26  (D) 1,142.16  (E) 1,186.13
 
 > [!summary]+ **Jawaban No. 18**
 >
@@ -1297,7 +1443,7 @@ A 20-year 1,000 par value bond with 7% annual coupons can be called by the issue
 
 Consider a three-year bond, with a 1,000 par value and a 10% annual coupon rate, which was bought to yield 8% annually. Calculate the "amount for amortization of premium" during the second year of the bond's life.
 
-(A) 14 \n(B) 17 \n(C) 19 \n(D) 28 \n(E) 36
+(A) 14  (B) 17  (C) 19  (D) 28  (E) 36
 
 > [!summary]+ **Jawaban No. 19**
 >
@@ -1361,7 +1507,7 @@ Consider a three-year bond, with a 1,000 par value and a 10% annual coupon rate,
 
 A 20-year, 12% annual coupon bond has a par value of \$1,000. Assume an effective annual interest rate of 10%. Calculate the modified duration (or the "volatility") of the bond.
 
-(A) 7.5 \n(B) 8.3 \n(C) 9.1 \n(D) 10.0 \n(E) 11.2
+(A) 7.5  (B) 8.3  (C) 9.1  (D) 10.0  (E) 11.2
 
 > [!summary]+ **Jawaban No. 20**
 >
@@ -1428,7 +1574,7 @@ A 20-year, 12% annual coupon bond has a par value of \$1,000. Assume an effectiv
 
 A bond sells at a price of 1,115 for an annual effective yield rate of 10%. The Macaulay duration of the bond is 12 years using an effective yield rate of 10%. $X$ is the estimate of the bond's price at an annual effective yield rate of 9.5% using the first-order Macaulay approximation. $Y$ is the estimate of the bond's price at an annual effective yield rate of 9.5% using the first-order modified approximation. Determine $X - Y$.
 
-(A) −126.22 \n(B) −120.14 \n(C) −4.25 \n(D) 1.83 \n(E) 123.47
+(A) −126.22  (B) −120.14  (C) −4.25  (D) 1.83  (E) 123.47
 
 > [!summary]+ **Jawaban No. 21**
 >
@@ -1494,7 +1640,7 @@ A bond sells at a price of 1,115 for an annual effective yield rate of 10%. The 
 
 A 20-year 6% annual coupon bond has a par value of \$1,000. When you originally purchased this bond, the effective annual interest rate was 6%. Suppose that seven years after purchase, the effective annual interest rate is 8%. Calculate the difference between the book and market values of the bond at that point in time (i.e., seven years after purchase).
 
-(A) \$119 \n(B) \$131 \n(C) \$143 \n(D) \$158 \n(E) \$170
+(A) \$119  (B) \$131  (C) \$143  (D) \$158  (E) \$170
 
 > [!summary]+ **Jawaban No. 22**
 >
@@ -1555,7 +1701,7 @@ A 20-year 6% annual coupon bond has a par value of \$1,000. When you originally 
 
 Tim borrows \$100,000 from Usury Loan Corp. at a nominal annual interest rate of 6% compounded quarterly. Tim agrees to pay back the loan with level payments of \$4250 at the end of each quarter with a final smaller payment one quarter after the final regular payment. Determine the amount of the final payment to the nearest \$1.
 
-(A) 1004 \n(B) 1019 \n(C) 1452 \n(D) 1467 \n(E) 1483
+(A) 1004  (B) 1019  (C) 1452  (D) 1467  (E) 1483
 
 > [!summary]+ **Jawaban No. 23**
 >
@@ -1628,7 +1774,7 @@ Tim borrows \$100,000 from Usury Loan Corp. at a nominal annual interest rate of
 
 You purchase a 30-year 10% annual coupon corporate bond with a par value of 1,000 at a yield rate of 8%. The amount you pay for the bond is based on your (erroneous) assumption that the bond is not callable. However, it turns out that the bond actually *is* callable, with a call price of 1,050, and can be called by the issuing corporation after five years. Immediately after the 17th coupon payment, the issuing corporation redeems the bond. Calculate the effective annual yield you actually achieved on this 17-year investment.
 
-(A) 6.9% \n(B) 7.3% \n(C) 7.7% \n(D) 8.0% \n(E) 8.4%
+(A) 6.9%  (B) 7.3%  (C) 7.7%  (D) 8.0%  (E) 8.4%
 
 > [!summary]+ **Jawaban No. 24**
 >
@@ -1689,7 +1835,7 @@ You purchase a 30-year 10% annual coupon corporate bond with a par value of 1,00
 
 A 10-year \$200,000 mortgage will be paid off with level quarterly amortization payments. Assume that the interest rate on the mortgage is 10%, convertible quarterly, and that payments are made at the end of each quarter. Calculate the Macaulay duration (in years) of this mortgage.
 
-(A) 4.3 \n(B) 4.6 \n(C) 5.0 \n(D) 5.2 \n(E) 5.5
+(A) 4.3  (B) 4.6  (C) 5.0  (D) 5.2  (E) 5.5
 
 > [!summary]+ **Jawaban No. 25**
 >
@@ -1751,7 +1897,7 @@ A 10-year \$200,000 mortgage will be paid off with level quarterly amortization 
 
 Suppose that, in response to a claim that resulted in physical injury, an insurance company is responsible for making 25 annual medical payments. The first payment, to be made now, will be 50,000. After that, the payments will increase annually for inflation, at a rate of 6% per year. The real interest rate is 4% per year. Calculate the present value of these 25 payments.
 
-(A) \$772,000 \n(B) \$782,000 \n(C) \$792,000 \n(D) \$802,000 \n(E) \$812,000
+(A) \$772,000  (B) \$782,000  (C) \$792,000  (D) \$802,000  (E) \$812,000
 
 > [!summary]+ **Jawaban No. 26**
 >
@@ -1826,7 +1972,7 @@ Bond B: A 2-year 12% annual coupon bond with a yield rate of 11%.
 
 Calculate the total cost to the insurer of purchasing the bonds needed to exactly match its obligations.
 
-(A) \$8,600 \n(B) \$8,700 \n(C) \$8,800 \n(D) \$8,900 \n(E) \$9,000
+(A) \$8,600  (B) \$8,700  (C) \$8,800  (D) \$8,900  (E) \$9,000
 
 > [!summary]+ **Jawaban No. 27**
 >
@@ -1904,7 +2050,7 @@ At the end of each of the next 30 years, you expect to receive some money, accor
 
 The above schedule also shows the effective annual interest rate during each of the next 30 years. Determine the present value of this series of 30 payments.
 
-(A) 22,200 \n(B) 23,200 \n(C) 24,200 \n(D) 25,200 \n(E) 26,200
+(A) 22,200  (B) 23,200  (C) 24,200  (D) 25,200  (E) 26,200
 
 > [!summary]+ **Jawaban No. 28**
 >
@@ -1967,7 +2113,7 @@ The above schedule also shows the effective annual interest rate during each of 
 
 A \$300,000 loan is being paid off, over 30 years, with level payments at the end of each month. The nominal interest rate is 8% convertible quarterly. Find the amount of interest included in the 103rd payment.
 
-(A) 399 \n(B) 842 \n(C) 1,095 \n(D) 1,348 \n(E) 1,791
+(A) 399  (B) 842  (C) 1,095  (D) 1,348  (E) 1,791
 
 > [!summary]+ **Jawaban No. 29**
 >
@@ -2033,7 +2179,7 @@ A \$300,000 loan is being paid off, over 30 years, with level payments at the en
 
 Suppose that a 3-year financial instrument is expected to make increasing payments to you at the end of each of the next three years. Specifically, the payments will be $CF(t) = 1{,}000t$, for $t = 1$, 2, and 3. Assume that you purchase this financial instrument, at time 0, at a price which provides an annual effective yield of 8%. Calculate the modified duration of this financial instrument.
 
-(A) 2.01 \n(B) 2.12 \n(C) 2.29 \n(D) 2.43 \n(E) 2.56
+(A) 2.01  (B) 2.12  (C) 2.29  (D) 2.43  (E) 2.56
 
 > [!summary]+ **Jawaban No. 30**
 >
