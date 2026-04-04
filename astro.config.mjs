@@ -246,15 +246,39 @@ function rehypeCallouts() {
  * within a paragraph (preceded and/or followed by a break node) to block math
  * nodes, splitting the paragraph around them.
  *
- * This fixes the common Obsidian authoring pattern where $$formula$$ is written
- * on its own line inside a callout paragraph (separated from label text by two
- * trailing spaces), which remark-math parses as inline rather than display math.
+ * Root cause: remark-math parses $$formula$$ as inlineMath (not math/display)
+ * when the $$ appears inside a paragraph — even on its own line, because the
+ * hard-break (two trailing spaces) keeps it in the same paragraph block.
+ * rehype-katex renders inlineMath with class "math-inline" → small, left-aligned.
+ *
+ * Fix: detect inlineMath bounded on both sides by a break (or paragraph edge),
+ * split the paragraph, and rebuild the node with the exact data structure that
+ * remark-math produces for a real display-math block so rehype-katex renders
+ * it centred in display mode.
  */
 function remarkPromoteIsolatedMathToDisplay() {
   function cleanBreaks(arr) {
     while (arr.length > 0 && arr[0].type === 'break') arr.shift();
     while (arr.length > 0 && arr[arr.length - 1].type === 'break') arr.pop();
     return arr;
+  }
+
+  /** Build a display-math node with the same data shape remark-math uses. */
+  function makeDisplayMath(value) {
+    return {
+      type: 'math',
+      meta: null,
+      value,
+      data: {
+        hName: 'pre',
+        hChildren: [{
+          type: 'element',
+          tagName: 'code',
+          properties: { className: ['language-math', 'math-display'] },
+          children: [{ type: 'text', value }],
+        }],
+      },
+    };
   }
 
   function splitParagraph(para) {
@@ -280,8 +304,8 @@ function remarkPromoteIsolatedMathToDisplay() {
           buf = [];
           // Skip following break
           if (next && next.type === 'break') i++;
-          // Promote to display math
-          result.push({ type: 'math', value: child.value, data: child.data });
+          // Promote to display math with correct hast data
+          result.push(makeDisplayMath(child.value));
         } else {
           buf.push(child);
         }
