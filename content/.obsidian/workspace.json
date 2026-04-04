@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CF1/Exams/Solutions/2025-11-CF1-answered.md",
+                "file": "CF1/Exams/Solutions/2025-08-CF1-answered.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-11-CF1-answered"
+              "title": "2025-08-CF1-answered"
             }
           }
         ],
@@ -200,6 +200,7 @@
   },
   "active": "43cbba7ac52df875",
   "lastOpenFiles": [
+    "CF1/Exams/Solutions/2025-11-CF1-answered.md",
     "CF1/Exams/Solutions/2023-05-CF1-answered.md",
     "CF1/Exams/Solutions/2023-05-CF1-answered-fixed.md",
     "CF1/Exams/Solutions/2023-08-CF1-answered.md",
@@ -223,7 +224,6 @@
     "Prompt_Pembahasan_Exam_CF1_FINAL.md",
     "exam-sim-soal-cf1-nov2025.md",
     "elegant-nibbling-honey.md",
-    "CF1/Exams/Solutions/2025-11-CF1-answered.md",
     "CF1/index.md"
   ]
 }

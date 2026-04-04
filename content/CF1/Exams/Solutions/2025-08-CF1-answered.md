@@ -14,6 +14,7 @@ d. $9{,}6\%$
 e. $9{,}8\%$
 
 > [!summary]+ **Jawaban No. 1** 
+>
 > **(e). $9{,}8\%$**
 >
 > | Field | Isi |
@@ -26,8 +27,10 @@ e. $9{,}8\%$
 > | **Referensi** | Vaaler Bab 1–2; Kellison Bab 1–2 |
 >
 > > [!info]+ **Rumus**
+> > 
 > > Persamaan nilai sekarang (equation of value):
-> > $$PV = C \cdot v^t = C \cdot (1+i)^{-t}$$
+>>
+> > $$PV = C \cdot v^t = C \cdot (1+i)^{-t}$$  
 > > Di mana $v = \frac{1}{1+i}$ adalah faktor diskonto dan $i$ adalah suku bunga efektif tahunan.
 >
 > **Diketahui:**  
@@ -99,7 +102,8 @@ d. $0{,}0737$
 e. $0{,}0742$
 
 > [!summary]+ **Jawaban No. 2** 
-> **(b). $0{,}0728$**
+> 
+> **(b). $0{,}0728$**  
 >
 > | Field | Isi |
 > |-------|-----|
@@ -111,11 +115,12 @@ e. $0{,}0742$
 > | **Referensi** | Vaaler Bab 1–2; Kellison Bab 1–2 |
 >
 > > [!info]+ **Rumus**
-> > Faktor akumulasi dari suku bunga nominal:
-> > $$\left(1 + \frac{i^{(m)}}{m}\right)^{mt}$$
-> > Faktor akumulasi dari diskonto nominal:
-> > $$\left(1 - \frac{d^{(p)}}{p}\right)^{-pt}$$
-> > Force of interest ekuivalen:
+> > 
+> > Faktor akumulasi dari suku bunga nominal:  
+> > $$\left(1 + \frac{i^{(m)}}{m}\right)^{mt}$$  
+> > Faktor akumulasi dari diskonto nominal:  
+> > $$\left(1 - \frac{d^{(p)}}{p}\right)^{-pt}$$  
+> > Force of interest ekuivalen:  
 > > $$e^{\delta \cdot T} = A(T) \implies \delta = \frac{\ln A(T)}{T}$$
 >
 > **Diketahui:**
@@ -187,6 +192,7 @@ d. $5972$
 e. $5988$
 
 > [!summary]+ **Jawaban No. 3** 
+> 
 > **(a). $5903$**
 >
 > | Field | Isi |
@@ -199,6 +205,7 @@ e. $5988$
 > | **Referensi** | Vaaler Bab 8.3 & 9; Kellison Bab 10–11 |
 >
 > > [!info]+ **Rumus**
+> > 
 > > Harga zero-coupon bond:
 > > $$P = \frac{F}{(1+i)^n}$$
 > > Dedication (exact matching): beli obligasi yang arus kasnya tepat cocok dengan kewajiban.
@@ -276,6 +283,7 @@ e. $4{,}74\%$
 > | **Referensi** | Vaaler Bab 8.3; Kellison Bab 10 |
 >
 > > [!info]+ **Rumus**
+> > 
 > > Hubungan spot rate dan forward rate:
 > > $$(1 + s_n)^n = (1 + s_m)^m \cdot (1 + f_{m,n})^{n-m}$$
 > > Forward rate dari tahun $m$ ke tahun $n$:

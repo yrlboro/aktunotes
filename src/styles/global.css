@@ -93,3 +93,10 @@ em { font-style: italic; color: var(--ink3); }
   text-align: center;
 }
 .mermaid svg { max-width: 100%; height: auto; }
+
+/* ── KaTeX: display equations always centered with breathing room ── */
+.katex-display {
+  text-align: center;
+  margin: 0.75em 0;
+  overflow-x: auto;
+}
