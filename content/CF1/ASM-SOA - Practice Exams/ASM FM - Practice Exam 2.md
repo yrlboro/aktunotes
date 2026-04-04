@@ -10,7 +10,7 @@
 
 On November 1, 2006, Abby invests $1,000 in an account earning 10% simple annual interest. On the same day, Ben invests $1,000 at a nominal annual interest rate of $X$, convertible monthly. On September 1, 2010, the accumulated values of Abby's and Ben's investments are equal. Calculate $X$.
 
-(A) 8.48% &emsp; (B) 8.50% &emsp; (C) 8.52% &emsp; (D) 8.54% &emsp; (E) 8.56%
+(A) 8.48% \n(B) 8.50% \n(C) 8.52% \n(D) 8.54% \n(E) 8.56%
 
 > [!summary]+ **Jawaban No. 1**
 >
@@ -93,7 +93,7 @@ Option B: You can pay $x$% below the current retail price two years from now.
 
 Given an annual nominal interest rate of 8% convertible quarterly, calculate the value of $x$ for which you are indifferent between these two options.
 
-(A) 3.9 &emsp; (B) 4.8 &emsp; (C) 5.5 &emsp; (D) 6.3 &emsp; (E) 7.7
+(A) 3.9 \n(B) 4.8 \n(C) 5.5 \n(D) 6.3 \n(E) 7.7
 
 > [!summary]+ **Jawaban No. 2**
 >
@@ -162,7 +162,7 @@ Given an annual nominal interest rate of 8% convertible quarterly, calculate the
 
 You are given that the accumulation function for a certain investment is $a(t) = 1 + .02t + .005t^2$, where $t$ is the time in years measured from January 1, 2020. An investment of 100 is made on January 1, 2022 and an investment of 200 is made on January 1, 2025. What is the accumulated value of the two investments on January 1, 2030?
 
-(A) 329 &emsp; (B) 352 &emsp; (C) 393 &emsp; (D) 438 &emsp; (E) 462
+(A) 329 \n(B) 352 \n(C) 393 \n(D) 438 \n(E) 462
 
 > [!summary]+ **Jawaban No. 3**
 >
@@ -227,7 +227,7 @@ You are given that the accumulation function for a certain investment is $a(t) =
 
 At an annual effective rate of interest $i$, payments of \$100 now, \$200 two years from now, and \$100 four years from now have a total present value of \$300. Calculate $i$.
 
-(A) 11.7% &emsp; (B) 13.0% &emsp; (C) 14.5% &emsp; (D) 15.8% &emsp; (E) 16.9%
+(A) 11.7% \n(B) 13.0% \n(C) 14.5% \n(D) 15.8% \n(E) 16.9%
 
 > [!summary]+ **Jawaban No. 4**
 >
@@ -295,7 +295,7 @@ At an annual effective rate of interest $i$, payments of \$100 now, \$200 two ye
 
 A 30-year annuity pays \$100 per quarter for the first ten years, and \$200 per quarter for the last 20 years. The first payment is scheduled for July 1, 2007. The nominal annual interest rate, convertible quarterly, is 12%. Calculate the present value of this annuity as of January 1, 2007.
 
-(A) \$4,040 &emsp; (B) \$4,140 &emsp; (C) \$4,240 &emsp; (D) \$4,340 &emsp; (E) \$4,440
+(A) \$4,040 \n(B) \$4,140 \n(C) \$4,240 \n(D) \$4,340 \n(E) \$4,440
 
 > [!summary]+ **Jawaban No. 5**
 >
@@ -373,7 +373,7 @@ A 30-year annuity pays \$100 per quarter for the first ten years, and \$200 per 
 
 You decide to provide yourself with a retirement account by depositing $X$ into an account at the beginning of each year for the next 40 years. One year after your final deposit, you want to purchase, with your accumulated funds, a 25-year annuity-immediate that pays \$25,000 every six months. Assume that the effective annual rate of interest is 7% for the first 40 years, and 5% thereafter. Find $X$, the amount of your annual deposit necessary to achieve your retirement annuity purchase.
 
-(A) \$3,100 &emsp; (B) \$3,220 &emsp; (C) \$3,340 &emsp; (D) \$3,460 &emsp; (E) \$3,580
+(A) \$3,100 \n(B) \$3,220 \n(C) \$3,340 \n(D) \$3,460 \n(E) \$3,580
 
 > [!summary]+ **Jawaban No. 6**
 >
@@ -453,7 +453,7 @@ You decide to provide yourself with a retirement account by depositing $X$ into 
 
 A perpetuity-immediate pays \$50 per quarter, and has a present value of \$2,000 at an annual effective interest rate of $i$. A 30-year annuity pays \$10,000 at the end of every two years. Using interest rate $i$, calculate the present value of the 30-year annuity three years prior to its first payment.
 
-(A) \$39,340 &emsp; (B) \$40,340 &emsp; (C) \$41,340 &emsp; (D) \$42,340 &emsp; (E) \$43,340
+(A) \$39,340 \n(B) \$40,340 \n(C) \$41,340 \n(D) \$42,340 \n(E) \$43,340
 
 > [!summary]+ **Jawaban No. 7**
 >
@@ -528,7 +528,7 @@ A perpetuity-immediate pays \$50 per quarter, and has a present value of \$2,000
 
 Abby offers to pay you at the rate of \$5,000 per annum, continuously, for the next 10 years. Ben offers to make payments to you at the end of each of the next ten years; the first payment will be $X$, and the amount of each subsequent payment will be larger than the prior payment by $X$. The effective annual interest rate is 8%. Calculate the value of $X$ for which you are indifferent between these two offers.
 
-(A) \$1,067 &emsp; (B) \$1,098 &emsp; (C) \$1,152 &emsp; (D) \$1,290 &emsp; (E) \$1,406
+(A) \$1,067 \n(B) \$1,098 \n(C) \$1,152 \n(D) \$1,290 \n(E) \$1,406
 
 > [!summary]+ **Jawaban No. 8**
 >
@@ -663,7 +663,7 @@ $$\text{(D) } \int_0^{20} e^{0.5t}(1.09)^t dt \quad \text{(E) } \int_0^{20}\left
 
 Hal borrows 100,000 from Gloria for 10 years. Hal makes payments to Gloria at the end of each year equal to the sum of (a) a constant payment toward principal and (b) interest on the outstanding balance at an annual effective rate of 4%. Gloria reinvests the interest payments at an annual effective rate of 5%. At the end of 10 years, the accumulated value of Gloria's reinvested interest payments is $X$. Determine $X$.
 
-(A) 18,226 &emsp; (B) 18,891 &emsp; (C) 22,000 &emsp; (D) 27,963 &emsp; (E) 29,688
+(A) 18,226 \n(B) 18,891 \n(C) 22,000 \n(D) 27,963 \n(E) 29,688
 
 > [!summary]+ **Jawaban No. 10**
 >
@@ -737,7 +737,7 @@ Hal borrows 100,000 from Gloria for 10 years. Hal makes payments to Gloria at th
 
 An investment opportunity has the following characteristics. You deposit 10,000 into an account (Account A) at the end of each year for 10 years. This account earns an annual rate of 8% effective. At the end of each year, the interest on this account is paid to you; this interest is then reinvested in another account (Account B), earning an annual rate of 5% effective. Determine your total accumulated amount (the sum of Accounts A and B) after 10 years.
 
-(A) \$140,250 &emsp; (B) \$141,250 &emsp; (C) \$142,250 &emsp; (D) \$143,250 &emsp; (E) \$144,250
+(A) \$140,250 \n(B) \$141,250 \n(C) \$142,250 \n(D) \$143,250 \n(E) \$144,250
 
 > [!summary]+ **Jawaban No. 11**
 >
@@ -813,7 +813,7 @@ An investment opportunity has the following characteristics. You deposit 10,000 
 
 A 25-year loan is being paid off via level amortization payments made at the end of each quarter. The nominal annual interest rate is 12% convertible monthly. The amount of principal in the 29th payment is \$1,860. Determine the amount of principal in the 61st payment.
 
-(A) \$4,535 &emsp; (B) \$4,635 &emsp; (C) \$4,735 &emsp; (D) \$4,835 &emsp; (E) \$4,935
+(A) \$4,535 \n(B) \$4,635 \n(C) \$4,735 \n(D) \$4,835 \n(E) \$4,935
 
 > [!summary]+ **Jawaban No. 12**
 >
@@ -954,7 +954,7 @@ $$\text{(D) } R = \left(\frac{300{,}000}{a_{\overline{180}|0.005}}\right)\left(\
 
 A 1,000 par value bond with 6.50% semiannual coupons and a maturity value of 1,100 at the end of $N$ years is purchased for 1,357.24 to yield a nominal rate of 4% compounded semiannually. Determine $N$.
 
-(A) 13 &emsp; (B) 14 &emsp; (C) 15 &emsp; (D) 16 &emsp; (E) 17
+(A) 13 \n(B) 14 \n(C) 15 \n(D) 16 \n(E) 17
 
 > [!summary]+ **Jawaban No. 14**
 >
@@ -1028,7 +1028,7 @@ A 1,000 par value bond with 6.50% semiannual coupons and a maturity value of 1,1
 
 A company has a liability of 50,000 to be paid 4 years from now. The company would like to be fully immunized against any change in yield rate. The only investments available are two-year and five-year zero-coupon bonds. The yield curve is flat at 3% annual effective interest rate. If $X$ and $Y$ are the face values of the two-year bond and five-year bond, respectively, compute the difference $Y - X$.
 
-(A) 15,710 &emsp; (B) 16,825 &emsp; (C) 17,932 &emsp; (D) 18,623 &emsp; (E) 19,273
+(A) 15,710 \n(B) 16,825 \n(C) 17,932 \n(D) 18,623 \n(E) 19,273
 
 > [!summary]+ **Jawaban No. 15**
 >
@@ -1110,7 +1110,7 @@ A company has a liability of 50,000 to be paid 4 years from now. The company wou
 
 You take out a 30-year, \$400,000 mortgage, to be repaid with level amortization payments at the end of each year, at an annual effective rate of 9%. You make the first 12 payments, and then go on a humanitarian mission for five years. During this five-year period, the lender allows you to skip your regular amortization payments, but does insist that interest continue to accumulate on the loan, and that the loan be paid off by the end of the original 30-year period. To do this, a new level year-end payment, $R$, is calculated. Calculate $R$.
 
-(A) \$69,050 &emsp; (B) \$70,050 &emsp; (C) \$71,050 &emsp; (D) \$72,050 &emsp; (E) \$73,050
+(A) \$69,050 \n(B) \$70,050 \n(C) \$71,050 \n(D) \$72,050 \n(E) \$73,050
 
 > [!summary]+ **Jawaban No. 16**
 >
@@ -1178,7 +1178,7 @@ You take out a 30-year, \$400,000 mortgage, to be repaid with level amortization
 
 Assume that the term structure of interest rates (the yield curve) has the following form: $r(t) = 3t$, where $r(t)$ is the spot rate of interest for an investment of length $t$, expressed as an annual percentage rate. Based on this yield curve, calculate the yield-to-maturity of a three-year, 1,000 face value, 8% annual coupon bond.
 
-(A) 6.4% &emsp; (B) 6.9% &emsp; (C) 7.5% &emsp; (D) 8.2% &emsp; (E) 8.7%
+(A) 6.4% \n(B) 6.9% \n(C) 7.5% \n(D) 8.2% \n(E) 8.7%
 
 > [!summary]+ **Jawaban No. 17**
 >
@@ -1239,7 +1239,7 @@ Assume that the term structure of interest rates (the yield curve) has the follo
 
 A 20-year 1,000 par value bond with 7% annual coupons can be called by the issuer at par on any coupon date immediately after the coupon has been paid, starting with the 8th coupon date. Sandy wants to buy this bond at a price $X$ that will guarantee that she will earn a yield rate of 5% or more. Determine $X$.
 
-(A) 870.74 &emsp; (B) 1,000.00 &emsp; (C) 1,129.26 &emsp; (D) 1,142.16 &emsp; (E) 1,186.13
+(A) 870.74 \n(B) 1,000.00 \n(C) 1,129.26 \n(D) 1,142.16 \n(E) 1,186.13
 
 > [!summary]+ **Jawaban No. 18**
 >
@@ -1297,7 +1297,7 @@ A 20-year 1,000 par value bond with 7% annual coupons can be called by the issue
 
 Consider a three-year bond, with a 1,000 par value and a 10% annual coupon rate, which was bought to yield 8% annually. Calculate the "amount for amortization of premium" during the second year of the bond's life.
 
-(A) 14 &emsp; (B) 17 &emsp; (C) 19 &emsp; (D) 28 &emsp; (E) 36
+(A) 14 \n(B) 17 \n(C) 19 \n(D) 28 \n(E) 36
 
 > [!summary]+ **Jawaban No. 19**
 >
@@ -1361,7 +1361,7 @@ Consider a three-year bond, with a 1,000 par value and a 10% annual coupon rate,
 
 A 20-year, 12% annual coupon bond has a par value of \$1,000. Assume an effective annual interest rate of 10%. Calculate the modified duration (or the "volatility") of the bond.
 
-(A) 7.5 &emsp; (B) 8.3 &emsp; (C) 9.1 &emsp; (D) 10.0 &emsp; (E) 11.2
+(A) 7.5 \n(B) 8.3 \n(C) 9.1 \n(D) 10.0 \n(E) 11.2
 
 > [!summary]+ **Jawaban No. 20**
 >
@@ -1428,7 +1428,7 @@ A 20-year, 12% annual coupon bond has a par value of \$1,000. Assume an effectiv
 
 A bond sells at a price of 1,115 for an annual effective yield rate of 10%. The Macaulay duration of the bond is 12 years using an effective yield rate of 10%. $X$ is the estimate of the bond's price at an annual effective yield rate of 9.5% using the first-order Macaulay approximation. $Y$ is the estimate of the bond's price at an annual effective yield rate of 9.5% using the first-order modified approximation. Determine $X - Y$.
 
-(A) −126.22 &emsp; (B) −120.14 &emsp; (C) −4.25 &emsp; (D) 1.83 &emsp; (E) 123.47
+(A) −126.22 \n(B) −120.14 \n(C) −4.25 \n(D) 1.83 \n(E) 123.47
 
 > [!summary]+ **Jawaban No. 21**
 >
@@ -1494,7 +1494,7 @@ A bond sells at a price of 1,115 for an annual effective yield rate of 10%. The 
 
 A 20-year 6% annual coupon bond has a par value of \$1,000. When you originally purchased this bond, the effective annual interest rate was 6%. Suppose that seven years after purchase, the effective annual interest rate is 8%. Calculate the difference between the book and market values of the bond at that point in time (i.e., seven years after purchase).
 
-(A) \$119 &emsp; (B) \$131 &emsp; (C) \$143 &emsp; (D) \$158 &emsp; (E) \$170
+(A) \$119 \n(B) \$131 \n(C) \$143 \n(D) \$158 \n(E) \$170
 
 > [!summary]+ **Jawaban No. 22**
 >
@@ -1555,7 +1555,7 @@ A 20-year 6% annual coupon bond has a par value of \$1,000. When you originally 
 
 Tim borrows \$100,000 from Usury Loan Corp. at a nominal annual interest rate of 6% compounded quarterly. Tim agrees to pay back the loan with level payments of \$4250 at the end of each quarter with a final smaller payment one quarter after the final regular payment. Determine the amount of the final payment to the nearest \$1.
 
-(A) 1004 &emsp; (B) 1019 &emsp; (C) 1452 &emsp; (D) 1467 &emsp; (E) 1483
+(A) 1004 \n(B) 1019 \n(C) 1452 \n(D) 1467 \n(E) 1483
 
 > [!summary]+ **Jawaban No. 23**
 >
@@ -1628,7 +1628,7 @@ Tim borrows \$100,000 from Usury Loan Corp. at a nominal annual interest rate of
 
 You purchase a 30-year 10% annual coupon corporate bond with a par value of 1,000 at a yield rate of 8%. The amount you pay for the bond is based on your (erroneous) assumption that the bond is not callable. However, it turns out that the bond actually *is* callable, with a call price of 1,050, and can be called by the issuing corporation after five years. Immediately after the 17th coupon payment, the issuing corporation redeems the bond. Calculate the effective annual yield you actually achieved on this 17-year investment.
 
-(A) 6.9% &emsp; (B) 7.3% &emsp; (C) 7.7% &emsp; (D) 8.0% &emsp; (E) 8.4%
+(A) 6.9% \n(B) 7.3% \n(C) 7.7% \n(D) 8.0% \n(E) 8.4%
 
 > [!summary]+ **Jawaban No. 24**
 >
@@ -1689,7 +1689,7 @@ You purchase a 30-year 10% annual coupon corporate bond with a par value of 1,00
 
 A 10-year \$200,000 mortgage will be paid off with level quarterly amortization payments. Assume that the interest rate on the mortgage is 10%, convertible quarterly, and that payments are made at the end of each quarter. Calculate the Macaulay duration (in years) of this mortgage.
 
-(A) 4.3 &emsp; (B) 4.6 &emsp; (C) 5.0 &emsp; (D) 5.2 &emsp; (E) 5.5
+(A) 4.3 \n(B) 4.6 \n(C) 5.0 \n(D) 5.2 \n(E) 5.5
 
 > [!summary]+ **Jawaban No. 25**
 >
@@ -1751,7 +1751,7 @@ A 10-year \$200,000 mortgage will be paid off with level quarterly amortization 
 
 Suppose that, in response to a claim that resulted in physical injury, an insurance company is responsible for making 25 annual medical payments. The first payment, to be made now, will be 50,000. After that, the payments will increase annually for inflation, at a rate of 6% per year. The real interest rate is 4% per year. Calculate the present value of these 25 payments.
 
-(A) \$772,000 &emsp; (B) \$782,000 &emsp; (C) \$792,000 &emsp; (D) \$802,000 &emsp; (E) \$812,000
+(A) \$772,000 \n(B) \$782,000 \n(C) \$792,000 \n(D) \$802,000 \n(E) \$812,000
 
 > [!summary]+ **Jawaban No. 26**
 >
@@ -1826,7 +1826,7 @@ Bond B: A 2-year 12% annual coupon bond with a yield rate of 11%.
 
 Calculate the total cost to the insurer of purchasing the bonds needed to exactly match its obligations.
 
-(A) \$8,600 &emsp; (B) \$8,700 &emsp; (C) \$8,800 &emsp; (D) \$8,900 &emsp; (E) \$9,000
+(A) \$8,600 \n(B) \$8,700 \n(C) \$8,800 \n(D) \$8,900 \n(E) \$9,000
 
 > [!summary]+ **Jawaban No. 27**
 >
@@ -1904,7 +1904,7 @@ At the end of each of the next 30 years, you expect to receive some money, accor
 
 The above schedule also shows the effective annual interest rate during each of the next 30 years. Determine the present value of this series of 30 payments.
 
-(A) 22,200 &emsp; (B) 23,200 &emsp; (C) 24,200 &emsp; (D) 25,200 &emsp; (E) 26,200
+(A) 22,200 \n(B) 23,200 \n(C) 24,200 \n(D) 25,200 \n(E) 26,200
 
 > [!summary]+ **Jawaban No. 28**
 >
@@ -1967,7 +1967,7 @@ The above schedule also shows the effective annual interest rate during each of 
 
 A \$300,000 loan is being paid off, over 30 years, with level payments at the end of each month. The nominal interest rate is 8% convertible quarterly. Find the amount of interest included in the 103rd payment.
 
-(A) 399 &emsp; (B) 842 &emsp; (C) 1,095 &emsp; (D) 1,348 &emsp; (E) 1,791
+(A) 399 \n(B) 842 \n(C) 1,095 \n(D) 1,348 \n(E) 1,791
 
 > [!summary]+ **Jawaban No. 29**
 >
@@ -2033,7 +2033,7 @@ A \$300,000 loan is being paid off, over 30 years, with level payments at the en
 
 Suppose that a 3-year financial instrument is expected to make increasing payments to you at the end of each of the next three years. Specifically, the payments will be $CF(t) = 1{,}000t$, for $t = 1$, 2, and 3. Assume that you purchase this financial instrument, at time 0, at a price which provides an annual effective yield of 8%. Calculate the modified duration of this financial instrument.
 
-(A) 2.01 &emsp; (B) 2.12 &emsp; (C) 2.29 &emsp; (D) 2.43 &emsp; (E) 2.56
+(A) 2.01 \n(B) 2.12 \n(C) 2.29 \n(D) 2.43 \n(E) 2.56
 
 > [!summary]+ **Jawaban No. 30**
 >

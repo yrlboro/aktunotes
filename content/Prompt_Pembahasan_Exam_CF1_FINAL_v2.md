@@ -339,7 +339,6 @@ Jika suatu soal **ambigu, kekurangan informasi, atau diketahui dianulir oleh PAI
 > [teks soal asli — PERSIS seperti di file input, tanpa modifikasi]
 >
 > > [!summary]+ **Jawaban No. N** 
-> > 
 > > **([opsi huruf]). $[\text{nilai jawaban}]$**
 > >
 > > | Field | Isi |
@@ -352,7 +351,6 @@ Jika suatu soal **ambigu, kekurangan informasi, atau diketahui dianulir oleh PAI
 > > | **Referensi** | [Buku & bab] |
 > >
 > > > [!info]+ **Rumus**
-> > > 
 > > > [Rumus utama dalam LaTeX]
 > > > [Deklarasi simbol jika ada potensi ambiguitas — wajib untuk simbol dalam Collision Warning]
 > >
@@ -363,12 +361,15 @@ Jika suatu soal **ambigu, kekurangan informasi, atau diketahui dianulir oleh PAI
 > > > [!example]- Langkah Pengerjaan
 > > >
 > > > **Langkah 1: [Judul Langkah]**
+> > >
 > > > [Penjelasan + LaTeX. Setiap klaim matematis harus justified.]
 > > >
 > > > **Langkah 2: [Judul Langkah]**
+> > >
 > > > ...
 > > >
 > > > **Hasil Akhir:** **([opsi huruf])**. $[\text{jawaban final}]$ 
+> >
 > >
 > > > [!tip] Jebakan Umum
 > > >
@@ -397,7 +398,6 @@ Jika suatu soal **ambigu, kekurangan informasi, atau diketahui dianulir oleh PAI
 > **([opsi huruf]). $[\text{nilai jawaban}]$**
 ```
 Contoh: `> [!summary]+ **Jawaban No. 1** 
-
 **(c). $1{,}234{,}56$**`
 
 > [!DANGER] SINKRONISASI WAJIB
@@ -429,7 +429,6 @@ Contoh: `> [!summary]+ **Jawaban No. 1**
 
 ```
 > > [!info]+ **Rumus**
-> > 
 > > [Rumus utama dalam LaTeX]
 > > [Deklarasi simbol jika ada potensi ambiguitas — wajib untuk simbol dalam Collision Warning]
 ```
@@ -461,9 +460,11 @@ Contoh: `> [!summary]+ **Jawaban No. 1**
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: [Judul Langkah]**
+> >
 > > [Penjelasan + LaTeX. Setiap klaim matematis harus justified.]
 > >
 > > **Langkah 2: [Judul Langkah]**
+> >
 > > ...
 > >
 > > **Hasil Akhir:** **([opsi huruf])**. $[\text{jawaban final}]$ 
@@ -474,6 +475,28 @@ Contoh: `> [!summary]+ **Jawaban No. 1**
 - Tidak boleh ada lompatan logika — setiap baris harus mengikuti dari baris sebelumnya
 - **`Hasil Akhir` selalu mencantumkan nilai numerik DAN opsi huruf dalam format `**(x)**`**
 - Untuk soal Kasus Khusus (lihat seksi di atas): ikuti prosedur wajib yang sudah ditetapkan
+
+> [!WARNING] ATURAN SPACING WAJIB — ASTRO/REMARK PARSER
+>
+> Dua aturan ini **wajib dipatuhi** agar output render dengan benar di Astro (tidak menumpuk/run-on):
+>
+> **Aturan 1 — Blank line setelah setiap judul Langkah:**
+> Setelah baris `**Langkah N: Judul**`, wajib ada satu baris kosong dengan tanda `> >` sebelum konten langkah dimulai.
+> ```
+> > > **Langkah 1: Judul**        ← judul
+> > >                              ← baris kosong (> >) WAJIB
+> > > Konten langkah di sini...   ← baru konten
+> ```
+> Tanpa blank line ini, judul dan konten akan menjadi satu paragraf dan menumpuk di Astro.
+>
+> **Aturan 2 — Blank line setelah [!example] sebelum [!tip]:**
+> Setelah callout `[!example]` ditutup, wajib ada satu baris kosong `>` sebelum `[!tip]` dibuka.
+> ```
+> >                           ← penutup [!example]
+> >                           ← baris kosong WAJIB (satu ">" saja)
+> > > [!tip] Jebakan Umum    ← baru [!tip]
+> ```
+> Tanpa blank line ini, dua callout akan collapse dan kontennya menempel.
 
 ---
 
@@ -515,7 +538,6 @@ Seseorang menerima pembayaran tahunan sebesar Rp 10.000 selama 5 tahun, pembayar
 a. Rp $40{,}000$  b. Rp $41{,}243$  c. Rp $42{,}124$  d. Rp $43{,}295$  e. Rp $44{,}000$
 
 > [!summary]+ **Jawaban No. 1** 
-> 
 > **(b). Rp $41{,}243$**
 >
 > | Field | Isi |
@@ -528,7 +550,6 @@ a. Rp $40{,}000$  b. Rp $41{,}243$  c. Rp $42{,}124$  d. Rp $43{,}295$  e. Rp $4
 > | **Referensi** | Vaaler Bab 3–4; Kellison Bab 3 |
 >
 > > [!info]+ **Rumus**
-> > 
 > > Nilai sekarang annuity-immediate:
 > > $$\text{PV} = R \cdot a_{\overline{n}|i} = R \cdot \frac{1 - v^n}{i}$$
 > > Di mana $v = \frac{1}{1+i}$ dan $i$ adalah suku bunga efektif **per periode pembayaran**.
@@ -545,19 +566,24 @@ a. Rp $40{,}000$  b. Rp $41{,}243$  c. Rp $42{,}124$  d. Rp $43{,}295$  e. Rp $4
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Konversi Rate ke Efektif Tahunan**
+> >
 > > Karena pembayaran tahunan tetapi compounding kuartalan, kita perlu konversi $i^{(4)}$ menjadi $i$ efektif tahunan:
 > > $$i = \left(1 + \frac{0{,}08}{4}\right)^4 - 1 = (1{,}02)^4 - 1 = 1{,}08243216 - 1 = 0{,}08243216$$
 > >
 > > **Langkah 2: Hitung Faktor Diskonto**
+> >
 > > $$v = \frac{1}{1 + i} = \frac{1}{1{,}08243216} = 0{,}923845$$
 > >
 > > **Langkah 3: Hitung PV Anuitas**
+> >
 > > $$a_{\overline{5}|i} = \frac{1 - v^5}{i} = \frac{1 - (0{,}923845)^5}{0{,}08243216} = \frac{1 - 0{,}660156}{0{,}08243216} = \frac{0{,}339844}{0{,}08243216} = 4{,}1243$$
 > >
 > > **Langkah 4: Hitung Total PV**
+> >
 > > $$\text{PV} = R \cdot a_{\overline{5}|i} = 10{,}000 \times 4{,}1243 = 41{,}243$$
 > >
 > > **Hasil Akhir:** **(b)**. Rp $41{,}243$ 
+>
 >
 > > [!tip] Jebakan Umum
 > >
@@ -587,7 +613,6 @@ a. Rp $40{,}000$  b. Rp $41{,}243$  c. Rp $42{,}124$  d. Rp $43{,}295$  e. Rp $4
 [teks soal asli]
 
 > [!summary]+ **Jawaban No. 8** 
-> 
 > **⚠️ DIANULIR oleh PAI**
 >
 > | Field | Isi |

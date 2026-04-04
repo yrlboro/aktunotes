@@ -18,7 +18,8 @@ c. $5{,}49\%$
 d. $12{,}10\%$  
 e. $13{,}76\%$
 
-> [!summary]+ **Jawaban No. 1** 
+> [!summary]+ **Jawaban No. 1**
+> 
 > **(a). $2{,}56\%$**
 >
 > | Field | Isi |
@@ -75,8 +76,8 @@ e. $13{,}76\%$
 
 ## **No. 2**
 
-Misalkan kurva hasil untuk tingkat spot diberikan oleh persamaan berikut:
-$$s_t = 0{,}08 - 0{,}001t + 0{,}002t^2$$
+Misalkan kurva hasil untuk tingkat spot diberikan oleh persamaan berikut:  
+$$s_t = 0{,}08 - 0{,}001t + 0{,}002t^2$$  
 Tentukanlah tingkat bunga _forward_ efektif tahunan untuk pinjaman yang dimulai pada waktu $t=4$, dengan jangka waktu 3 tahun.
 
 a. $0{,}3603$  
@@ -86,6 +87,7 @@ d. $0{,}2606$
 e. $0{,}1805$
 
 > [!summary]+ **Jawaban No. 2** 
+>
 > **(d). $0{,}2606$**
 >
 > | Field | Isi |
@@ -169,6 +171,7 @@ d. $103.937$
 e. $90.379$
 
 > [!summary]+ **Jawaban No. 3** 
+>
 > **(d). $103.937$**
 >
 > | Field | Isi |
@@ -182,9 +185,12 @@ e. $90.379$
 >
 > > [!info]+ **Rumus**  
 > > 
-> > **Equation of Value (Time $t=0$):**
-> > $$NPV_{Grace} = NPV_{Shanice}$$
-> > $$-100.000 + 60.000v^3 + 60.000v^4 = -Xv + 60.000v^4 + 60.000v^5$$
+> > **Equation of Value (Time $t=0$):**    
+> > 
+> > $$NPV_{Grace} = NPV_{Shanice}$$    
+> > 
+> >   
+> > $$-100.000 + 60.000v^3 + 60.000v^4 = -Xv + 60.000v^4 + 60.000v^5$$  
 > >
 > > Di mana $v = (1+i)^{-1}$ dan $i = 15\%$.
 >
@@ -247,6 +253,7 @@ d. $63{,}2$
 e. $52{,}6$
 
 > [!summary]+ **Jawaban No. 4** 
+>
 > **(b). $57{,}6$**
 >
 > | Field | Isi |
@@ -275,17 +282,20 @@ e. $52{,}6$
 > >
 > > **Langkah 2: Sederhanakan**  
 > > Bagi kedua ruas dengan $i$ (karena $i \neq 0$):  
-> > $$\frac{200}{80} = \frac{(1+i)^{19}}{(1+i)^9} = (1+i)^{10}$$
+> > 
+> > $$\frac{200}{80} = \frac{(1+i)^{19}}{(1+i)^9} = (1+i)^{10}$$  
 > > $$2{,}5 = (1+i)^{10}$$  
 > >
 > > **Langkah 3: Dapatkan Nilai $i$**  
 > > $$(1+i) = 2{,}5^{0{,}1} \approx 1{,}095958$$
+> > 
 > > $$i \approx 0{,}095958$$
 > >
 > > **Langkah 4: Hitung Target $I_{Niel,13}$**  
 > > $$I_{N,13} = 200(1+i)^{12} \cdot i$$
 > >
-> > Gunakan trik: $(1+i)^{12} = (1+i)^{10} \cdot (1+i)^2 = 2{,}5 \times (1{,}095958)^2 = 2{,}5 \times 1{,}201124 = 3{,}00281$  
+> > Gunakan trik: 
+>> $(1+i)^{12} = (1+i)^{10} \cdot (1+i)^2 = 2{,}5 \times (1{,}095958)^2 = 2{,}5 \times 1{,}201124 = 3{,}00281$  
 > >
 > > $$I_{N,13} = 200 \times 3{,}00281 \times 0{,}095958 = 57{,}63$$
 > >
@@ -319,6 +329,7 @@ d. **1 Juli**
 e. **1 Oktober**
 
 > [!summary]+ **Jawaban No. 5** 
+>
 > **(c). 1 Mei**
 >
 > | Field | Isi |
@@ -333,7 +344,8 @@ e. **1 Oktober**
 > > [!info]+ **Rumus**  
 > > 
 > > **Dollar-Weighted Rate of Return:**
-> > $$i_{dw} = \frac{I}{A_0 + C(1-K)}$$
+>>
+> > $$i_{dw} = \frac{I}{A_0 + C(1-K)}$$  
 > > Di mana $I$ = pendapatan investasi, $A_0$ = saldo awal, $C$ = setoran, $K$ = waktu setoran (dalam fraksi tahun).
 >
 > **Diketahui:**
@@ -390,6 +402,7 @@ d. $399$
 e. $450$
 
 > [!summary]+ **Jawaban No. 6** 
+>
 > **(b). $411$**
 >
 > | Field | Isi |
@@ -461,6 +474,7 @@ d. $92{,}9$
 e. $92{,}2$  
 
 > [!summary]+ **Jawaban No. 7** 
+>
 > **(c). $92{,}7$**
 >
 > | Field | Isi |
@@ -477,10 +491,10 @@ e. $92{,}2$
 > > $$PV = FV \cdot \left(1 - \frac{d^{(m)}}{m}\right)^{m \cdot t}$$
 >
 > **Diketahui:**
-> - $FV = 100$
+> - Future Value $(FV) = 100$
 > - $t = 1{,}5$ tahun
 > - $d^{(4)} = 5\%$ (diskonto nominal, konversi kuartalan)
-> - $m = 4$
+> - Periode konversi: kuartalan $(m) = 4$
 > - Target: $PV$
 >
 > > [!example]- Langkah Pengerjaan
@@ -525,6 +539,7 @@ d. $123{,}2$
 e. $120{,}0$  
 
 > [!summary]+ **Jawaban No. 8** 
+>
 > **(a). $148{,}7$**
 >
 > | Field | Isi |
@@ -595,6 +610,7 @@ d. $59$
 e. $93$
 
 > [!summary]+ **Jawaban No. 9** 
+>
 > **(e). $93$**
 >
 > | Field | Isi |
@@ -664,6 +680,7 @@ d. $672$
 e. $464$
 
 > [!summary]+ **Jawaban No. 10** 
+>
 > **(c). $716$**
 >
 > | Field | Isi |
@@ -693,7 +710,7 @@ e. $464$
 > > **Langkah 2: Cari Tingkat Bunga ($i$)**  
 > > $$23.876 = 2.000 \cdot a_{\overline{15}|i}$$  
 > > $$a_{\overline{15}|i} = 11{,}938$$  
-> > Dengan kalkulator finansial: $i \approx 3\%$
+> > Dengan kalkulator diperoleh $i \approx 3\%$
 > >
 > > **Langkah 3: Hitung Bunga Tahun Pertama**  
 > > $$I_1 = i \times L = 0{,}03 \times 23.876 = 716{,}28$$  
@@ -728,6 +745,7 @@ d. $282$
 e. $285$
 
 > [!summary]+ **Jawaban No. 11** 
+>
 > **(a). $286$**
 >
 > | Field | Isi |
@@ -747,7 +765,7 @@ e. $285$
 > > $$FV = R \cdot \ddot{s}_{\overline{n}|j} = R \cdot \frac{(1+j)^n - 1}{j} \cdot (1+j)$$  
 >
 > **Diketahui:**
-> - $FV = 100.000$
+> - Target dana yang terkumpul $(FV) = 100.000$
 > - $n = 204$ pembayaran bulanan
 > - $i = 6\%$ (efektif tahunan)
 > - Mode: Annuity-Due (pembayaran pertama hari ini)
@@ -795,6 +813,7 @@ d. $131$
 e. $134$
 
 > [!summary]+ **Jawaban No. 12** 
+>
 > **(a). $129$**
 >
 > | Field | Isi |
@@ -812,7 +831,7 @@ e. $134$
 > > $$PV = PV_{\text{Base}} + PV_{\text{TopUp1}} + PV_{\text{TopUp2}}$$  
 >
 > **Diketahui:**
-> - $i = 6\%$
+> - Tinkat bunga efektif tahunan $(i) = 6\%$
 > - Fase 1 ($t=1 \dots 20$): Pembayaran $10$
 > - Fase 2 ($t=21 \dots 29$): Menurun dari $9$ ke $1$
 > - Fase 3 ($t \ge 30$): Konstan $1$ selamanya
@@ -868,6 +887,7 @@ d. $9.200$
 e. $9.731$
 
 > [!summary]+ **Jawaban No. 13** 
+>
 > **(d). $9.200$**
 >
 > | Field | Isi |
@@ -930,6 +950,7 @@ d. $59{,}24$
 e. $47{,}99$
 
 > [!summary]+ **Jawaban No. 14** 
+>
 > **(d). $59{,}24$**
 >
 > | Field | Isi |
@@ -956,9 +977,9 @@ e. $47{,}99$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Faktor Dasar dan Gradien**  
-> > - $v^{10} = (1{,}04)^{-10} = 0{,}675564$  
-> > - $a_{\overline{10}|} = \frac{1 - 0{,}675564}{0{,}04} = 8{,}110896$  
-> > - Faktor Gradien: $K = \frac{8{,}110896 - 10(0{,}675564)}{0{,}04} = \frac{1{,}355256}{0{,}04} = 33{,}8814$  
+> > - &nbsp;$v^{10} = (1{,}04)^{-10} = 0{,}675564$  
+> > - &nbsp;$a_{\overline{10}|} = \frac{1 - 0{,}675564}{0{,}04} = 8{,}110896$  
+> > - &nbsp;Faktor Gradien: $K = \frac{8{,}110896 - 10(0{,}675564)}{0{,}04} = \frac{1{,}355256}{0{,}04} = 33{,}8814$  
 > >
 > > **Langkah 2: Hitung PV Winston**  
 > > $$PV_W = 30(8{,}110896) + 5(33{,}8814) = 243{,}327 + 169{,}407 = 412{,}734$$
@@ -999,6 +1020,7 @@ d. $827{,}5$
 e. $871{,}6$
 
 > [!summary]+ **Jawaban No. 15** 
+>
 > **(c). $829{,}1$**
 >
 > | Field | Isi |
@@ -1030,10 +1052,10 @@ e. $871{,}6$
 > >
 > > **Langkah 2: PV Fase 2 (lokal di $t=24$)**  
 > > Fase 2 adalah annuity-due 12 bulan, $P=20$, $Q=+5$.  
-> > - $a_{\overline{12}|0{,}005} = \frac{1-(1{,}005)^{-12}}{0{,}005} \approx 11{,}6189$  
-> > - $\ddot{a}_{\overline{12}|} = 11{,}6189 \times 1{,}005 \approx 11{,}677$  
-> > - Faktor Gradien Immediate: $K_{imm} = \frac{11{,}6189 - 12 \times (1{,}005)^{-12}}{0{,}005} \approx 63{,}214$  
-> > - Faktor Gradien Due: $K_{due} = 63{,}214 \times 1{,}005 \approx 63{,}530$  
+> > - &nbsp;$a_{\overline{12}|0{,}005} = \frac{1-(1{,}005)^{-12}}{0{,}005} \approx 11{,}6189$  
+> > - &nbsp;$\ddot{a}_{\overline{12}|} = 11{,}6189 \times 1{,}005 \approx 11{,}677$  
+> > - &nbsp;Faktor Gradien Immediate: $K_{imm} = \frac{11{,}6189 - 12 \times (1{,}005)^{-12}}{0{,}005} \approx 63{,}214$  
+> > - &nbsp;Faktor Gradien Due: $K_{due} = 63{,}214 \times 1{,}005 \approx 63{,}530$  
 > > $$PV_{2,\text{local}} = 20(11{,}677) + 5(63{,}530) = 233{,}54 + 317{,}65 = 551{,}19$$  
 > >
 > > **Langkah 3: Diskon Fase 2 ke $t=0$ dan Total**  
@@ -1072,6 +1094,7 @@ d. $574$
 e. $384$
 
 > [!summary]+ **Jawaban No. 16** 
+>
 > **(c). $681$**
 >
 > | Field | Isi |
@@ -1144,6 +1167,7 @@ d. $136.558$
 e. $136.159$
 
 > [!summary]+ **Jawaban No. 17** 
+>
 > **(a). $136.216$**
 >
 > | Field | Isi |
@@ -1251,6 +1275,7 @@ d. $332$
 e. $308$
 
 > [!summary]+ **Jawaban No. 18** 
+>
 > **(d). $332$**
 >
 > | Field | Isi |
@@ -1331,6 +1356,7 @@ d. $536$
 e. $506$
 
 > [!summary]+ **Jawaban No. 19** 
+>
 > **(d). $536$**
 >
 > | Field | Isi |
@@ -1410,6 +1436,7 @@ d. Saham akan memiliki volatilitas rendah
 e. Harga secara teoritis salah dan terdapat peluang arbitrase
 
 > [!summary]+ **Jawaban No. 20** 
+>
 > **(b). Harganya akan naik**
 >
 > | Field | Isi |
@@ -1475,6 +1502,7 @@ d. $3{,}802$
 e. $3{,}287$
 
 > [!summary]+ **Jawaban No. 21** 
+>
 > **(b). $4{,}004$**
 >
 > | Field | Isi |
@@ -1546,6 +1574,7 @@ d. $2{,}229$
 e. $2{,}253$
 
 > [!summary]+ **Jawaban No. 22** 
+>
 > **(a). $2{,}137$**
 >
 > | Field | Isi |
@@ -1571,16 +1600,16 @@ e. $2{,}253$
 > >
 > > **Langkah 1: Cari $X$**  
 > > $$6.773{,}6 = 2.000v + 2.500v^2 + Xv^3$$  
-> > - $2.000 \times (1{,}08)^{-1} = 1.851{,}85$  
-> > - $2.500 \times (1{,}08)^{-2} = 2.143{,}35$  
-> > - $PV_X = 6.773{,}6 - 3.995{,}20 = 2.778{,}40$  
+> > $2.000 \times (1{,}08)^{-1} = 1.851{,}85$  
+> > $2.500 \times (1{,}08)^{-2} = 2.143{,}35$  
+> > $PV_X = 6.773{,}6 - 3.995{,}20 = 2.778{,}40$  
 > > $$X = 2.778{,}40 \times (1{,}08)^3 = 3.500$$  
 > >
 > > **Langkah 2: Hitung Pembilang Durasi**  
-> > - $1 \times 1.851{,}85 = 1.851{,}85$  
-> > - $2 \times 2.143{,}35 = 4.286{,}69$  
-> > - $3 \times 2.778{,}40 = 8.335{,}20$  
-> > - **Total** $= 14.473{,}75$  
+> > $1 \times 1.851{,}85 = 1.851{,}85$  
+> > $2 \times 2.143{,}35 = 4.286{,}69$  
+> > $3 \times 2.778{,}40 = 8.335{,}20$  
+> > **Total** $= 14.473{,}75$  
 > >
 > > **Langkah 3: Hitung Durasi**  
 > > $$D_{Mac} = \frac{14.473{,}75}{6.773{,}6} = 2{,}137$$  
@@ -1615,6 +1644,7 @@ d. $6.418$
 e. $4.862$
 
 > [!summary]+ **Jawaban No. 23** 
+>
 > **(b). $6.172$**
 >
 > | Field | Isi |
@@ -1682,6 +1712,7 @@ d. $6{,}2\%$
 e. $5{,}5\%$
 
 > [!summary]+ **Jawaban No. 24** 
+>
 > **(a). $6{,}7\%$**
 >
 > | Field | Isi |
@@ -1701,7 +1732,7 @@ e. $5{,}5\%$
 >
 > **Diketahui:**
 > - $F = 1.000$, kupon $r = 8\% \rightarrow Fr = 80$
-> - $BV_5 = 1.087{,}27$
+> - &nbsp;$BV_5 = 1.087{,}27$
 > - $BV_5 > F$ → obligasi pada harga **premium** → $i < r$
 > - Target: $i$ (yield)
 >
@@ -1758,6 +1789,7 @@ d. $89{,}6$
 e. $100$
 
 > [!summary]+ **Jawaban No. 25** 
+>
 > **(c). $52{,}5$**
 >
 > | Field | Isi |
@@ -1833,6 +1865,7 @@ d. $1.024$
 e. $1.029$
 
 > [!summary]+ **Jawaban No. 26** 
+>
 > **(d). $1.024$**
 >
 > | Field | Isi |
@@ -1907,6 +1940,7 @@ d. $4{,}46\%-4{,}6\%$
 e. $4{,}61\%-4{,}75\%$
 
 > [!summary]+ **Jawaban No. 27** 
+>
 > **(e). $4{,}61\%-4{,}75\%$**
 >
 > | Field | Isi |
@@ -1932,9 +1966,9 @@ e. $4{,}61\%-4{,}75\%$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung Discount Factors yang Diketahui**  
-> > - $P_1 = (1{,}03)^{-1} = 0{,}970874$  
-> > - $P_2 = (1{,}04)^{-2} = 0{,}924556$  
-> > - $P_4 = (1{,}05)^{-4} = 0{,}822702$  
+> > - &nbsp;$P_1 = (1{,}03)^{-1} = 0{,}970874$  
+> > - &nbsp;$P_2 = (1{,}04)^{-2} = 0{,}924556$  
+> > - &nbsp;$P_4 = (1{,}05)^{-4} = 0{,}822702$  
 > >
 > > **Langkah 2: Substitusi ke Persamaan Swap Rate**  
 > > $$0{,}0494 = \frac{1 - 0{,}822702}{0{,}970874 + 0{,}924556 + P_3 + 0{,}822702}$$  
@@ -1982,6 +2016,7 @@ d. $1.020$
 e. $1.025$
 
 > [!summary]+ **Jawaban No. 28** 
+>
 > **(e). $1.025$**
 >
 > | Field | Isi |
@@ -2048,6 +2083,7 @@ d. Anda harus membayar **32,08**.
 e. Anda tidak membayar atau menerima apa pun.
 
 > [!summary]+ **Jawaban No. 29** 
+>
 > **(c). Anda harus menerima $32{,}08$**
 >
 > | Field | Isi |
@@ -2122,6 +2158,7 @@ d. $153.000$
 e. $153.500$
 
 > [!summary]+ **Jawaban No. 30** 
+>
 > **(e). $153.500$**
 >
 > | Field | Isi |

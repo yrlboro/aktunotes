@@ -19,6 +19,191 @@ Semua penjelasan HARUS:
 
 ────────────────────────────────────
 
+## FASE 1 — KONVERSI PDF SOAL → MARKDOWN [OPSIONAL, JIKA INPUT BERUPA PDF MENTAH]
+
+> [!NOTE] Jalankan Fase 1 **hanya jika** file input berupa PDF soal mentah yang belum dikonversi.
+> Jika file `.md` sudah tersedia dengan template callout kosong, langsung ke **Fase 2**.
+
+### Tujuan
+Mengkonversi soal ujian CF1 dari PDF ke format Markdown terstruktur, siap diisi jawaban di Fase 2.
+
+---
+
+### Format Output Fase 1
+
+Setiap soal mengikuti template berikut:
+
+```
+## **No. [N]**
+
+[Teks narasi soal]
+
+[Tabel / persamaan jika ada]
+
+[Pertanyaan utama soal]
+
+a. [Pilihan A]  
+b. [Pilihan B]  
+c. [Pilihan C]  
+d. [Pilihan D]  
+e. [Pilihan E]
+
+> [!summary]+ **Jawaban No. [N]** 
+> 
+> **[Jawaban Belum Tersedia]**
+> 
+> > [!info]+ **Rumus**
+> > 
+
+---
+```
+
+---
+
+### Aturan Formatting Fase 1
+
+#### 1. Heading & Spacing
+
+- Gunakan `## **No. N**` untuk setiap soal
+- Selalu ada **satu baris kosong** antara heading dan teks soal
+- Selalu ada **satu baris kosong** antara teks soal dan persamaan/tabel
+- Selalu ada **satu baris kosong** antara persamaan/tabel dan pilihan jawaban
+- Pilihan jawaban diakhiri dengan **dua spasi** (untuk line break) sebelum newline
+- Selalu ada **satu baris kosong** antara pilihan jawaban terakhir dan callout
+
+#### 2. LaTeX — Konvensi Indonesia
+
+- Gunakan `$...$` untuk ekspresi inline
+- Gunakan `$$...$$` untuk persamaan display (baris tersendiri)
+- **Koma desimal Indonesia:** gunakan `{,}` bukan `.`
+  ```
+  ✓ $0{,}44$    ✗ $0.44$
+  ```
+- **Titik ribuan Indonesia:** gunakan `{.}`
+  ```
+  ✓ $1{.}000$   ✗ $1.000$
+  ```
+- Pecahan: `\frac{a}{b}` atau `\dfrac{a}{b}` untuk display lebih besar
+- Piecewise function:
+  ```latex
+  $$f(x) = \begin{cases} \text{ekspresi}_1, & \text{kondisi}_1 \\ \text{ekspresi}_2, & \text{kondisi}_2 \end{cases}$$
+  ```
+- Kombinatorik: `\binom{n}{k}` atau `\dbinom{n}{k}`
+- Pangkat pecahan: `x^{3/2}` atau `x^{1/2}`
+- Set/interval: `$[a, b]$`
+
+#### 3. Tabel
+
+- Gunakan format tabel Markdown standar dengan alignment center (`:-:`)
+- Contoh:
+  ```
+  | Kolom 1 | Kolom 2 | Kolom 3 |
+  |:-:|:-:|:-:|
+  | $0{,}06$ | $0{,}08$ | $18$-$20$ |
+  ```
+
+#### 4. List Bernomor Romawi
+
+Jika soal memiliki poin-poin romawi, tuliskan sebagai:
+```
+(i) ...  
+(ii) ...  
+(iii) ...  
+```
+dengan **dua spasi** di akhir setiap baris agar tampil sebagai baris terpisah.
+
+#### 5. Callout Placeholder (Output Fase 1)
+
+Setiap soal diakhiri dengan callout kosong berikut — **jangan diubah formatnya**:
+```
+> [!summary]+ **Jawaban No. [N]** 
+> 
+> **[Jawaban Belum Tersedia]**
+> 
+> > [!info]+ **Rumus**
+> > 
+```
+> **Perhatian:** Ada **satu baris kosong** di dalam callout (`> `) sebelum nested callout dimulai.
+
+#### 6. Separator
+
+Gunakan `---` setelah setiap callout untuk memisahkan soal.
+
+#### 7. Instruksi Tambahan
+
+- Jaga semua teks bahasa Indonesia apa adanya — jangan diterjemahkan
+- Pertahankan kalimat "(Pilihlah jawaban yang paling mendekati!)" jika ada
+- Jangan tambahkan penjelasan atau komentar di luar format soal
+- Mulai langsung dari `## **No. 1**` tanpa header tambahan
+- Jika pilihan jawaban berupa fungsi piecewise, tuliskan inline menggunakan `$\begin{cases}...\end{cases}$`
+
+---
+
+### Contoh Output Fase 1
+
+**Soal dengan tabel data:**
+```markdown
+## **No. 1**
+
+PT Asuransi Gemilang Sejahtera memiliki suatu produk asuransi kendaraan bermotor
+yang memberikan perlindungan kepada pengendara hingga usia 65 tahun.
+
+| Rentang Usia Pengendara | Peluang Kecelakaan | Porsi Pengendara |
+|:-:|:-:|:-:|
+| $18$-$20$ | $0{,}06$ | $0{,}08$ |
+| $21$-$30$ | $0{,}03$ | $0{,}15$ |
+
+Tentukan peluang bahwa pengendara tersebut berada pada rentang usia 18-20!
+(Pilihlah jawaban yang paling mendekati!)
+
+a. $0{,}13$  
+b. $0{,}16$  
+c. $0{,}19$  
+d. $0{,}23$  
+e. $0{,}40$
+
+> [!summary]+ **Jawaban No. 1** 
+> 
+> **[Jawaban Belum Tersedia]**
+> 
+> > [!info]+ **Rumus**
+> > 
+
+---
+```
+
+**Soal dengan poin romawi:**
+```markdown
+## **No. 16**
+
+Berdasarkan hasil riset yang ia lakukan, didapatkan informasi sebagai berikut:
+
+(i) $14\%$ memiliki tekanan darah tinggi  
+(ii) $22\%$ memiliki tekanan darah rendah  
+(iii) $15\%$ memiliki detak jantung tidak normal  
+
+Berapakah porsi dari pasien yang memiliki detak jantung normal dan tekanan darah rendah?
+
+a. $2\%$  
+b. $5\%$  
+c. $8\%$  
+d. $9\%$  
+e. $20\%$
+
+> [!summary]+ **Jawaban No. 16** 
+> 
+> **[Jawaban Belum Tersedia]**
+> 
+> > [!info]+ **Rumus**
+> > 
+
+---
+```
+
+────────────────────────────────────
+
+## FASE 2 — PENGISIAN JAWABAN LENGKAP [INSTRUKSI UTAMA]
+
 ## INSTRUKSI PEMROSESAN FILE INPUT [WAJIB DIBACA PERTAMA]
 
 > [!DANGER] BACA INI SEBELUM MELAKUKAN APA PUN
@@ -28,9 +213,11 @@ Semua penjelasan HARUS:
 >
 > ```
 > > [!summary]+ **Jawaban No. X** 
+> > 
 > > **[Jawaban Belum Tersedia]**
 > >
 > > > [!info]+ **Rumus**
+> > > 
 > ```
 >
 > **Tugasmu: MENGISI template yang sudah ada — BUKAN menambahkan blok baru.**
@@ -60,7 +247,9 @@ Semua penjelasan HARUS:
 Jika suatu soal **ambigu, kekurangan informasi, atau diketahui dianulir oleh PAI**, gunakan format berikut sebagai pengganti blok Rumus + Diketahui + Langkah Pengerjaan:
 
 ```
-> [!summary]+ **Jawaban No. N** **⚠️ DIANULIR oleh PAI**
+> [!summary]+ **Jawaban No. N** 
+> 
+> **⚠️ DIANULIR oleh PAI**
 >
 > | Field | Isi |
 > |-------|-----|
@@ -229,9 +418,6 @@ Jika suatu soal **ambigu, kekurangan informasi, atau diketahui dianulir oleh PAI
 3. Jelaskan mengapa konversi diperlukan dalam satu kalimat
 4. Di **Jebakan Umum → [!BUG] Kesalahan Unit Waktu**, tambahkan: *"Menggunakan $i^{(m)}$ langsung tanpa konversi ke rate efektif per periode pembayaran"*
 
-**Contoh notasi yang benar:**
-- *"Diketahui: pembayaran tahunan, compounding semesteran $i^{(2)} = 8\%$. Konversi ke $i$ efektif tahunan: $(1 + 0.08/2)^2 - 1 = 0.0816$"*
-
 ---
 
 ### KK-2 — Soal Annuity dengan Rate Berubah
@@ -394,11 +580,10 @@ Jika suatu soal **ambigu, kekurangan informasi, atau diketahui dianulir oleh PAI
 #### Baris Judul Summary
 ```
 > [!summary]+ **Jawaban No. N** 
+> 
 > **([opsi huruf]). $[\text{nilai jawaban}]$**
 ```
-Contoh: `> [!summary]+ **Jawaban No. 1** 
-
-**(c). $1{,}234{,}56$**`
+Contoh: `> [!summary]+ **Jawaban No. 1**`  → baris berikutnya: `**(c). $1{,}234{,}56$**`
 
 > [!DANGER] SINKRONISASI WAJIB
 > Label di baris `[!summary]` **harus identik** dengan `**Hasil Akhir:**` di dalam `[!example]`.
@@ -512,7 +697,11 @@ Contoh: `> [!summary]+ **Jawaban No. 1**
 
 Seseorang menerima pembayaran tahunan sebesar Rp 10.000 selama 5 tahun, pembayaran pertama diterima pada akhir tahun pertama. Jika suku bunga nominal $i^{(4)} = 8\%$ per tahun (compounded kuartalan), berapakah nilai sekarang dari anuitas ini?
 
-a. Rp $40{,}000$  b. Rp $41{,}243$  c. Rp $42{,}124$  d. Rp $43{,}295$  e. Rp $44{,}000$
+a. Rp $40{,}000$  
+b. Rp $41{,}243$  
+c. Rp $42{,}124$  
+d. Rp $43{,}295$  
+e. Rp $44{,}000$
 
 > [!summary]+ **Jawaban No. 1** 
 > 
@@ -575,7 +764,7 @@ a. Rp $40{,}000$  b. Rp $41{,}243$  c. Rp $42{,}124$  d. Rp $43{,}295$  e. Rp $4
 > > > [!CAUTION] Red Flags
 > > > - Jika soal menyebut nominal rate $i^{(m)}$ dengan $m \neq 1$ → SELALU konversi ke efektif sesuai periode pembayaran.
 > > > - Jika frequency pembayaran ≠ frequency compounding → konversi wajib di Langkah 1.
->
+
 ---
 ```
 
@@ -611,7 +800,7 @@ a. Rp $40{,}000$  b. Rp $41{,}243$  c. Rp $42{,}124$  d. Rp $43{,}295$  e. Rp $4
 > >
 > > > [!CAUTION] Red Flags
 > > > - Jika soal bond tidak menyebutkan "redeemed at par" atau "redemption value = ...", minta klarifikasi atau tandai sebagai ambigu.
->
+
 ---
 ```
 ```
