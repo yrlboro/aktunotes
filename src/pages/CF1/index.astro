@@ -4,7 +4,7 @@ import NoteLayout from '../../layouts/NoteLayout.astro';
 
 const allEntries = await getCollection('cf1');
 const notes = allEntries
-  .filter(e => !e.id.startsWith('exams/'))
+  .filter(e => !e.id.startsWith('exams/') && !e.id.startsWith('asm-soa-practice-exams/'))
   .sort((a, b) => a.id.localeCompare(b.id));
 const exams = allEntries
   .filter(e => e.id.startsWith('exams/') && !e.id.includes('solutions/'))
@@ -12,6 +12,9 @@ const exams = allEntries
 const solutions = allEntries
   .filter(e => e.id.includes('solutions/'))
   .sort((a, b) => b.id.localeCompare(a.id));
+const asmExams = allEntries
+  .filter(e => e.id.startsWith('asm-soa-practice-exams/'))
+  .sort((a, b) => a.id.localeCompare(b.id));
 ---
 
 <NoteLayout title="CF1 — Matematika Keuangan" description="Catatan CF1: Nilai waktu uang, anuitas, pinjaman, obligasi, dan derivatif." module="CF1">
@@ -68,6 +71,21 @@ const solutions = allEntries
           <a href={`/CF1/${entry.id}`} class="topic-item topic-solution">
             <span class="topic-num solution-icon">✔</span>
             <span class="topic-name">{entry.id.split('/').pop()?.replace(/-/g, ' ').toUpperCase()}</span>
+            <span class="topic-arrow">→</span>
+          </a>
+        ))}
+      </div>
+    </>
+  )}
+
+  {asmExams.length > 0 && (
+    <>
+      <h2 id="asm-soa">▸ ASM-SOA Practice Exams</h2>
+      <div class="topic-list">
+        {asmExams.map(entry => (
+          <a href={`/CF1/${entry.id}`} class="topic-item topic-asm">
+            <span class="topic-num asm-icon">◉</span>
+            <span class="topic-name">{entry.data.title || entry.id.split('/').pop()?.replace(/-/g, ' ')}</span>
             <span class="topic-arrow">→</span>
           </a>
         ))}
@@ -151,6 +169,8 @@ const solutions = allEntries
   .exam-icon { color: var(--teal); }
   .topic-solution:hover { background: #d1fae5; }
   .solution-icon { color: #059669; }
+  .topic-asm:hover { background: #ede9fe; }
+  .asm-icon { color: #7c3aed; }
 
   @media (max-width: 600px) {
     .topic-item { gap: 0.6rem; padding: 0.7rem 0.8rem; }
