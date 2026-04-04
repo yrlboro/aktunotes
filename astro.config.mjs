@@ -241,11 +241,86 @@ function rehypeCallouts() {
   return (tree) => transform(tree);
 }
 
+/**
+ * Remark plugin: promote inlineMath nodes that sit alone on their own "line"
+ * within a paragraph (preceded and/or followed by a break node) to block math
+ * nodes, splitting the paragraph around them.
+ *
+ * This fixes the common Obsidian authoring pattern where $$formula$$ is written
+ * on its own line inside a callout paragraph (separated from label text by two
+ * trailing spaces), which remark-math parses as inline rather than display math.
+ */
+function remarkPromoteIsolatedMathToDisplay() {
+  function cleanBreaks(arr) {
+    while (arr.length > 0 && arr[0].type === 'break') arr.shift();
+    while (arr.length > 0 && arr[arr.length - 1].type === 'break') arr.pop();
+    return arr;
+  }
+
+  function splitParagraph(para) {
+    const kids = para.children;
+    const result = [];
+    let buf = [];
+
+    for (let i = 0; i < kids.length; i++) {
+      const child = kids[i];
+
+      if (child.type === 'inlineMath') {
+        const prev = buf[buf.length - 1];
+        const next = kids[i + 1];
+        const afterBreak = !prev || prev.type === 'break';
+        const beforeBreak = !next || next.type === 'break';
+
+        if (afterBreak && beforeBreak) {
+          // Remove the preceding break from buf
+          if (prev && prev.type === 'break') buf.pop();
+          // Flush buf as a paragraph
+          const flushed = cleanBreaks([...buf]);
+          if (flushed.length > 0) result.push({ type: 'paragraph', children: flushed });
+          buf = [];
+          // Skip following break
+          if (next && next.type === 'break') i++;
+          // Promote to display math
+          result.push({ type: 'math', value: child.value, data: child.data });
+        } else {
+          buf.push(child);
+        }
+      } else {
+        buf.push(child);
+      }
+    }
+
+    const remaining = cleanBreaks(buf);
+    if (remaining.length > 0) result.push({ type: 'paragraph', children: remaining });
+    return result.length > 0 ? result : [para];
+  }
+
+  function walk(node) {
+    if (!node.children) return;
+    node.children.forEach(walk);
+
+    const next = [];
+    let changed = false;
+    for (const child of node.children) {
+      if (child.type === 'paragraph') {
+        const parts = splitParagraph(child);
+        next.push(...parts);
+        if (parts.length !== 1 || parts[0] !== child) changed = true;
+      } else {
+        next.push(child);
+      }
+    }
+    if (changed) node.children = next;
+  }
+
+  return walk;
+}
+
 export default defineConfig({
   site: 'https://aktunotes.my.id',
   integrations: [mdx()],
   markdown: {
-    remarkPlugins: [remarkMath, remarkWikiLink],
+    remarkPlugins: [remarkMath, remarkWikiLink, remarkPromoteIsolatedMathToDisplay],
     rehypePlugins: [rehypeKatex, rehypeCallouts],
   },
 });
