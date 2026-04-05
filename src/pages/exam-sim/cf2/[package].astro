@@ -1,0 +1,786 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+
+// ── Package → file mapping ──
+const CF2_PACKAGES: Record<string, { file: string; label: string }> = {
+  p1: { file: '2025-11-CF2-Pembahasan.md', label: 'CF2 · Paket 1' },
+  p2: { file: '2025-08-CF2-Pembahasan.md', label: 'CF2 · Paket 2' },
+  p3: { file: '2025-05-CF2-Pembahasan.md', label: 'CF2 · Paket 3' },
+  p4: { file: '2024-10-CF2-Pembahasan.md', label: 'CF2 · Paket 4' },
+  p5: { file: '2024-07-CF2-Pembahasan.md', label: 'CF2 · Paket 5' },
+  p6: { file: '2024-04-CF2-Pembahasan.md', label: 'CF2 · Paket 6' },
+  p7: { file: '2023-08-CF2-Pembahasan.md', label: 'CF2 · Paket 7' },
+};
+
+export function getStaticPaths() {
+  return Object.keys(CF2_PACKAGES).map(pkg => ({ params: { package: pkg } }));
+}
+
+const { package: pkg } = Astro.params;
+const meta = CF2_PACKAGES[pkg!];
+if (!meta) return Astro.redirect('/exam-sim/cf2');
+
+const EXAM_ID      = `CF2-${pkg}`;
+const EXAM_LABEL   = meta.label;
+const DURATION_SEC = 10800; // 180 min
+
+const raw = readFileSync(
+  resolve(`./content/CF2/Exams/Solutions/${meta.file}`),
+  'utf-8'
+);
+
+interface Question {
+  num: number;
+  text: string;
+  options: { letter: string; text: string }[];
+  answer: string;
+  difficulty: string | null;
+  topic: string | null;
+}
+
+function parseExam(content: string): Question[] {
+  const blocks = content.split(/\n---\n/);
+  const out: Question[] = [];
+
+  for (const block of blocks) {
+    const numMatch = block.match(/^## \*\*No\. (\d+)\*\*/m);
+    if (!numMatch) continue;
+    const num = parseInt(numMatch[1]);
+
+    const preSummary = block.split(/^> \[!summary\]/m)[0] ?? block;
+
+    const optMatches = [...preSummary.matchAll(/^([a-e])\.\s*(.+?)(?=\n[a-e]\.\s|\n\n|\n>|$)/gms)];
+    if (optMatches.length < 2) continue;
+    const options = optMatches.map(m => ({ letter: m[1], text: m[2].trim() }));
+
+    const firstOptPos = preSummary.search(/^[a-e]\./m);
+    const headerLineEnd = block.indexOf('\n', numMatch.index!) + 1;
+    const text = preSummary.slice(headerLineEnd, firstOptPos < 0 ? undefined : firstOptPos).trim();
+
+    const answerMatch = block.match(/> \*\*\(([a-e])\)\./);
+    const answer = answerMatch?.[1] ?? null;
+    if (!answer) continue;
+
+    const diffMatch  = block.match(/\*\*Difficulty\*\*\s*\|\s*(\w+)/);
+    const topicMatch = block.match(/\*\*Topik CF2\*\*\s*\|\s*(.+?)\s*\|/);
+
+    out.push({
+      num,
+      text,
+      options,
+      answer,
+      difficulty: diffMatch?.[1] ?? null,
+      topic: topicMatch?.[1]?.trim() ?? null,
+    });
+  }
+
+  return out;
+}
+
+const questions = parseExam(raw);
+const examMeta = { id: EXAM_ID, label: EXAM_LABEL, total: questions.length, durationSec: DURATION_SEC };
+---
+
+<BaseLayout title={`Simulasi Ujian — ${examMeta.label}`} description="Simulasi ujian CBT interaktif CF2">
+  <script type="application/json" id="exam-data" set:html={JSON.stringify({ questions, examMeta })} />
+
+  <!-- ══ HEADER BAR ══ -->
+  <div class="sim-header" id="timer-bar">
+    <div class="sim-header-left">
+      <a href="/exam-sim/cf2" class="sim-back">← Pilih Paket</a>
+      <span class="sim-title">Simulasi Ujian · {examMeta.label}</span>
+    </div>
+    <div class="sim-timer" id="timer-display">03:00:00</div>
+    <button class="sim-submit-btn" id="btn-submit">Selesai &amp; Kumpulkan</button>
+  </div>
+
+  <!-- ══ MAIN BODY ══ -->
+  <div class="sim-body">
+
+    <!-- Question area -->
+    <div class="sim-main" id="question-area">
+      <div class="q-header">
+        <div class="q-num-row">
+          <span class="q-num" id="q-num">No. 1</span>
+          <span class="q-meta" id="q-meta"></span>
+        </div>
+      </div>
+      <div class="q-divider"></div>
+      <div class="q-body" id="q-body"></div>
+      <div class="q-options" id="q-options"></div>
+      <div class="q-footer">
+        <button class="btn-ghost" id="btn-prev">← Prev</button>
+        <button class="btn-flag" id="btn-flag">⚑ Ragu-Ragu</button>
+        <button class="btn-ghost" id="btn-next">Next →</button>
+      </div>
+    </div>
+
+    <!-- Navigator panel -->
+    <aside class="sim-panel">
+      <div class="panel-section-title">Navigasi Soal</div>
+      <div class="nav-grid" id="nav-grid"></div>
+
+      <div class="legend">
+        <div class="legend-item"><span class="leg-dot unanswered"></span>Belum dijawab</div>
+        <div class="legend-item"><span class="leg-dot answered"></span>Sudah dijawab</div>
+        <div class="legend-item"><span class="leg-dot flagged"></span>Ragu-ragu</div>
+      </div>
+
+      <div class="panel-stats" id="panel-stats"></div>
+    </aside>
+  </div>
+
+  <!-- ══ SUBMIT CONFIRM MODAL ══ -->
+  <div class="modal-overlay" id="confirm-overlay" hidden>
+    <div class="modal-box">
+      <div class="modal-title">Kumpulkan Ujian?</div>
+      <div class="modal-body" id="confirm-stats"></div>
+      <div class="modal-footer">
+        <button class="btn-ghost" id="btn-cancel-submit">Batal</button>
+        <button class="btn-danger" id="btn-confirm-submit">Ya, Kumpulkan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SCORE DASHBOARD ══ -->
+  <div class="score-overlay" id="score-overlay" hidden>
+    <div class="score-card">
+      <div class="score-header">Hasil Ujian · {examMeta.label}</div>
+      <div class="score-main">
+        <div class="score-big" id="score-value">—</div>
+        <div class="score-pct" id="score-pct">—</div>
+        <div class="score-verdict" id="score-verdict"></div>
+      </div>
+      <div class="score-section-title">Performa per Topik</div>
+      <table class="score-table">
+        <thead><tr><th>Topik</th><th>Benar</th><th>%</th></tr></thead>
+        <tbody id="topic-tbody"></tbody>
+      </table>
+      <div class="score-actions">
+        <button class="btn-review" id="btn-review">Lihat Review</button>
+        <a href="/exam-sim/cf2" class="btn-ghost-link">← Pilih Paket</a>
+        <button class="btn-ghost" id="btn-retake">Ulangi Ujian</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ REVIEW MODE ══ -->
+  <div class="review-overlay" id="review-overlay" hidden>
+    <div class="review-bar">
+      <button class="sim-back" id="rv-back">← Hasil</button>
+      <span class="sim-title">Review Jawaban</span>
+      <span class="rv-counter" id="rv-counter"></span>
+    </div>
+    <div class="rv-nav-strip" id="rv-nav-strip"></div>
+    <div class="review-body">
+      <div class="q-header">
+        <span class="q-num" id="rv-num"></span>
+        <span class="q-meta" id="rv-meta"></span>
+      </div>
+      <div class="q-divider"></div>
+      <div class="q-body" id="rv-body"></div>
+      <div class="q-options" id="rv-options"></div>
+      <div class="q-footer">
+        <button class="btn-ghost" id="rv-prev">← Prev</button>
+        <button class="btn-ghost" id="rv-next">Next →</button>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  body { background: var(--cream); margin: 0; }
+
+  .sim-header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    display: flex; align-items: center; gap: 1rem;
+    padding: 0 1.5rem; height: 52px;
+    background: var(--ink); border-bottom: 3px solid var(--yellow);
+    transition: background 0.4s, border-color 0.4s;
+  }
+  .sim-header.warning { background: #6b4800; border-color: var(--yellow); }
+  .sim-header.danger  { background: #6b0019; border-color: var(--pink); }
+
+  .sim-header-left { display: flex; align-items: center; gap: 1rem; flex: 1; min-width: 0; }
+
+  .sim-back {
+    font-family: var(--mono); font-size: 0.6rem; color: rgba(255,255,255,0.45);
+    text-decoration: none; letter-spacing: 0.06em; flex-shrink: 0;
+    transition: color 0.1s;
+  }
+  .sim-back:hover { color: var(--yellow); }
+
+  .sim-title {
+    font-family: var(--mono); font-size: 0.65rem; color: rgba(255,255,255,0.6);
+    letter-spacing: 0.08em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+
+  .sim-timer {
+    font-family: var(--ss4); font-size: 1.4rem; font-weight: 600;
+    color: var(--yellow); letter-spacing: -0.02em;
+    min-width: 8ch; text-align: center;
+  }
+  .sim-header.warning .sim-timer { color: var(--yellow); animation: tick 1s ease infinite; }
+  .sim-header.danger  .sim-timer { color: var(--pink);   animation: tick 0.5s ease infinite; }
+  @keyframes tick { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  .sim-submit-btn {
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em;
+    background: var(--pink); color: #fff; border: none; padding: 0.4rem 1rem;
+    cursor: pointer; text-transform: uppercase; transition: background 0.12s; flex-shrink: 0;
+  }
+  .sim-submit-btn:hover { background: #c0103d; }
+
+  .sim-body {
+    display: grid; grid-template-columns: 1fr 220px; gap: 0;
+    padding-top: 52px; min-height: 100vh;
+  }
+
+  .sim-main {
+    padding: 2rem 2.5rem 4rem;
+    border-right: 3px solid var(--ink); overflow-y: auto;
+  }
+
+  .q-header { margin-bottom: 0.8rem; }
+  .q-num-row { display: flex; align-items: baseline; gap: 1rem; }
+  .q-num { font-family: var(--ss4); font-size: 1.5rem; font-weight: 600; color: var(--ink); }
+  .q-meta { font-family: var(--mono); font-size: 0.6rem; color: var(--ink4); letter-spacing: 0.06em; }
+  .q-divider { height: 2px; background: var(--ink); margin: 0.6rem 0 1.2rem; }
+
+  .q-body {
+    font-family: var(--ss4); font-size: 1rem; line-height: 1.8;
+    color: var(--ink2); margin-bottom: 1.5rem;
+  }
+  .q-body p { margin: 0 0 0.6rem; }
+  .q-body .katex-display { overflow-x: auto; padding: 0.5rem 0; }
+  .q-body .q-table { width: 100%; border-collapse: collapse; margin: 0.8rem 0; font-size: 0.9rem; }
+  .q-body .q-table th {
+    font-family: var(--mono); font-size: 0.6rem; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--ink4); text-align: center;
+    padding: 0.4rem 0.7rem; border-bottom: 2px solid var(--ink);
+  }
+  .q-body .q-table td {
+    text-align: center; padding: 0.4rem 0.7rem;
+    border-bottom: 1px solid var(--border); color: var(--ink2);
+  }
+
+  .q-options { display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 2rem; }
+  .option-btn {
+    display: flex; align-items: flex-start; gap: 0.8rem;
+    padding: 0.65rem 0.9rem; border: 2px solid var(--border); background: var(--cream2);
+    cursor: pointer; transition: all 0.12s;
+    font-family: var(--ss4); font-size: 0.95rem; color: var(--ink2);
+    text-align: left; width: 100%;
+  }
+  .option-btn:hover { border-color: var(--ink); background: var(--cream3); }
+  .option-btn.selected { border-color: var(--ink); background: var(--yellow); color: var(--ink); }
+  .option-btn.correct { border-color: var(--teal); background: rgba(29,122,107,0.1); color: var(--teal); }
+  .option-btn.wrong { border-color: var(--pink); background: rgba(232,23,93,0.07); color: var(--pink); text-decoration: line-through; }
+  .opt-key {
+    font-family: var(--mono); font-size: 0.65rem; font-weight: 600;
+    min-width: 18px; color: var(--ink3); flex-shrink: 0; padding-top: 0.15rem;
+  }
+  .option-btn.selected .opt-key { color: var(--ink); }
+  .option-btn.correct .opt-key  { color: var(--teal); }
+  .option-btn.wrong   .opt-key  { color: var(--pink); }
+  .opt-text .katex-display { overflow-x: auto; }
+
+  .q-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 1rem; border-top: 1px solid var(--border);
+  }
+  .btn-ghost {
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em;
+    background: none; border: 1.5px solid var(--border);
+    padding: 0.35rem 0.8rem; cursor: pointer; color: var(--ink3); transition: all 0.12s;
+  }
+  .btn-ghost:hover:not(:disabled) { border-color: var(--ink); color: var(--ink); }
+  .btn-ghost:disabled { opacity: 0.3; cursor: not-allowed; }
+
+  .btn-flag {
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em;
+    background: none; border: 1.5px solid var(--border);
+    padding: 0.35rem 0.9rem; cursor: pointer; color: var(--ink4); transition: all 0.12s;
+  }
+  .btn-flag.active { border-color: var(--yellow2); background: var(--yellow); color: var(--ink); }
+  .btn-flag:hover  { border-color: var(--yellow2); }
+
+  .sim-panel {
+    background: var(--cream2); padding: 1.2rem 1rem;
+    display: flex; flex-direction: column; gap: 1rem;
+    border-left: 3px solid var(--ink);
+    position: sticky; top: 52px; height: calc(100vh - 52px); overflow-y: auto;
+  }
+
+  .panel-section-title {
+    font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ink4);
+    border-bottom: 1px solid var(--border); padding-bottom: 0.4rem;
+  }
+
+  .nav-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; }
+  .nav-q {
+    font-family: var(--mono); font-size: 0.6rem;
+    padding: 0.3rem 0; border: 1.5px solid var(--border);
+    background: var(--cream3); cursor: pointer; color: var(--ink3);
+    transition: all 0.1s; text-align: center;
+  }
+  .nav-q:hover { border-color: var(--ink); }
+  .nav-q.answered { background: var(--teal); color: #fff; border-color: var(--teal); }
+  .nav-q.flagged:not(.answered) { background: var(--yellow); color: var(--ink); border-color: var(--yellow2); }
+  .nav-q.answered.flagged { background: var(--teal); border-color: var(--yellow2); border-width: 2px; }
+  .nav-q.current { outline: 2px solid var(--pink); outline-offset: 1px; }
+
+  .legend { display: flex; flex-direction: column; gap: 0.3rem; }
+  .legend-item {
+    display: flex; align-items: center; gap: 0.4rem;
+    font-family: var(--mono); font-size: 0.56rem; color: var(--ink4);
+  }
+  .leg-dot { width: 10px; height: 10px; flex-shrink: 0; border: 1.5px solid var(--border); }
+  .leg-dot.unanswered { background: var(--cream3); }
+  .leg-dot.answered   { background: var(--teal); border-color: var(--teal); }
+  .leg-dot.flagged    { background: var(--yellow); border-color: var(--yellow2); }
+
+  .panel-stats {
+    font-family: var(--mono); font-size: 0.58rem; color: var(--ink4);
+    line-height: 1.7; margin-top: auto;
+  }
+
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(14,10,4,0.5);
+    z-index: 400; display: flex; align-items: center; justify-content: center;
+    backdrop-filter: blur(2px);
+  }
+  .modal-overlay[hidden] { display: none; }
+  .modal-box {
+    background: var(--cream); border: 3px solid var(--ink);
+    padding: 2rem; width: 360px; box-shadow: 8px 8px 0 rgba(14,10,4,0.15);
+  }
+  .modal-title {
+    font-family: var(--ss4); font-size: 1.2rem; font-weight: 600;
+    color: var(--ink); margin-bottom: 1rem;
+  }
+  .modal-body { font-family: var(--mono); font-size: 0.68rem; color: var(--ink3); line-height: 2; margin-bottom: 1.5rem; }
+  .modal-footer { display: flex; gap: 0.8rem; justify-content: flex-end; }
+  .btn-danger {
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em;
+    background: var(--pink); color: #fff; border: none;
+    padding: 0.4rem 1rem; cursor: pointer; text-transform: uppercase; transition: background 0.12s;
+  }
+  .btn-danger:hover { background: #c0103d; }
+
+  .score-overlay {
+    position: fixed; inset: 0; background: var(--cream);
+    z-index: 500; overflow-y: auto;
+    display: flex; align-items: flex-start; justify-content: center; padding: 4rem 1rem;
+  }
+  .score-overlay[hidden] { display: none; }
+  .score-card {
+    width: 100%; max-width: 600px;
+    border: 3px solid var(--ink); padding: 2.5rem;
+    box-shadow: 8px 8px 0 rgba(14,10,4,0.12);
+  }
+  .score-header {
+    font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink4);
+    border-bottom: 2px solid var(--ink); padding-bottom: 0.6rem; margin-bottom: 1.5rem;
+  }
+  .score-main { text-align: center; margin-bottom: 2rem; }
+  .score-big {
+    font-family: var(--ss4); font-size: 4rem; font-weight: 700;
+    color: var(--ink); line-height: 1; margin-bottom: 0.3rem;
+  }
+  .score-pct { font-family: var(--mono); font-size: 1.1rem; color: var(--ink3); margin-bottom: 0.8rem; }
+  .score-verdict {
+    font-family: var(--mono); font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase; padding: 0.4rem 1.2rem; display: inline-block;
+  }
+  .score-verdict.pass { background: var(--teal); color: #fff; }
+  .score-verdict.fail { background: var(--pink); color: #fff; }
+  .score-section-title {
+    font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ink4);
+    border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; margin-bottom: 0.8rem;
+  }
+  .score-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
+  .score-table th {
+    font-family: var(--mono); font-size: 0.58rem; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--ink4); text-align: left;
+    padding: 0.4rem 0.6rem; border-bottom: 2px solid var(--ink);
+  }
+  .score-table td {
+    font-family: var(--mono); font-size: 0.68rem; color: var(--ink2);
+    padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--border);
+  }
+  .score-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .btn-review {
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em;
+    background: var(--ink); color: var(--yellow); border: none;
+    padding: 0.45rem 1.1rem; cursor: pointer; text-transform: uppercase; transition: background 0.12s;
+  }
+  .btn-review:hover { background: var(--ink2); }
+  .btn-ghost-link {
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.06em;
+    color: var(--ink3); text-decoration: none;
+    border: 1.5px solid var(--border); padding: 0.4rem 0.8rem; transition: all 0.12s;
+  }
+  .btn-ghost-link:hover { border-color: var(--ink); color: var(--ink); }
+
+  .review-overlay {
+    position: fixed; inset: 0; background: var(--cream);
+    z-index: 500; display: flex; flex-direction: column; overflow: hidden;
+  }
+  .review-overlay[hidden] { display: none; }
+  .review-bar {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 0.8rem 1.5rem; background: var(--ink);
+    border-bottom: 3px solid var(--yellow); flex-shrink: 0;
+  }
+  .rv-counter {
+    font-family: var(--mono); font-size: 0.6rem; color: rgba(255,255,255,0.5); margin-left: auto;
+  }
+  .rv-nav-strip {
+    display: flex; flex-wrap: wrap; gap: 3px;
+    padding: 0.5rem 1.5rem; background: var(--cream2);
+    border-bottom: 1px solid var(--border); flex-shrink: 0;
+  }
+  .rv-nav-btn {
+    font-family: var(--mono); font-size: 0.55rem;
+    width: 24px; height: 24px; border: 1.5px solid var(--border);
+    background: var(--cream3); cursor: pointer; color: var(--ink4);
+    display: flex; align-items: center; justify-content: center; transition: all 0.1s;
+  }
+  .rv-nav-btn.rv-correct { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .rv-nav-btn.rv-wrong   { background: var(--pink); border-color: var(--pink); color: #fff; }
+  .rv-nav-btn.rv-skip    { background: var(--ink4); border-color: var(--ink4); color: #fff; }
+  .rv-nav-btn.rv-current { outline: 2px solid var(--ink); outline-offset: 1px; }
+  .review-body {
+    flex: 1; overflow-y: auto; padding: 2rem 2.5rem 4rem;
+    max-width: 740px; margin: 0 auto; width: 100%;
+  }
+</style>
+
+<script>
+  import katex from 'katex';
+
+  const { questions: QUESTIONS, examMeta: EXAM } = JSON.parse(
+    document.getElementById('exam-data')!.textContent!
+  ) as {
+    questions: Array<{
+      num: number; text: string;
+      options: Array<{ letter: string; text: string }>;
+      answer: string; difficulty: string | null; topic: string | null;
+    }>;
+    examMeta: { id: string; label: string; total: number; durationSec: number };
+  };
+
+  const STORAGE_KEY = `aktunotes-exam-${EXAM.id}`;
+  interface State {
+    exam: string;
+    answers: Record<number, string | null>;
+    flagged: number[];
+    currentQ: number;
+    startTime: string;
+    submitted: boolean;
+  }
+
+  function freshState(): State {
+    return {
+      exam: EXAM.id,
+      answers: Object.fromEntries(QUESTIONS.map(q => [q.num, null])) as Record<number, null>,
+      flagged: [],
+      currentQ: 1,
+      startTime: new Date().toISOString(),
+      submitted: false,
+    };
+  }
+
+  function loadState(): State {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const s = JSON.parse(saved) as State;
+        if (s.exam === EXAM.id && !s.submitted) return s;
+      }
+    } catch {}
+    return freshState();
+  }
+
+  let state = loadState();
+  function saveState() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+
+  function renderMd(raw: string): string {
+    let text = raw;
+    text = text.replace(/\$\$([^$]+?)\$\$/gs, (_, m) => {
+      try { return katex.renderToString(m.trim(), { displayMode: true, throwOnError: false }); }
+      catch { return `<code>${m}</code>`; }
+    });
+    text = text.replace(/\$([^$\n]+?)\$/g, (_, m) => {
+      try { return katex.renderToString(m.trim(), { displayMode: false, throwOnError: false }); }
+      catch { return `<code>${m}</code>`; }
+    });
+    text = text.replace(/(\|.+\|\n(?:\|[-:| ]+\|\n)?(?:\|.+\|\n?)+)/g, (tableStr) => {
+      const rows = tableStr.trim().split('\n').filter(r => r.trim().startsWith('|'));
+      const dataRows = rows.filter(r => !/^\|[-:| ]+\|$/.test(r.trim()));
+      const html = dataRows.map((row, i) => {
+        const cells = row.split('|').slice(1, -1).map(c => c.trim());
+        const tag = i === 0 ? 'th' : 'td';
+        return `<tr>${cells.map(c => `<${tag}>${c}</${tag}>`).join('')}</tr>`;
+      }).join('');
+      return `<table class="q-table">${html}</table>`;
+    });
+    text = text.replace(/\*\*([^*\n]+?)\*\*/g, '<strong>$1</strong>');
+    text = text.replace(/(?<!\w)_([^_\n]+?)_(?!\w)/g, '<em>$1</em>');
+    const paras = text.split(/\n\n+/).filter(Boolean);
+    return paras.map(p => {
+      if (p.startsWith('<table') || p.startsWith('<div')) return p;
+      return `<p>${p.replace(/\n/g, '<br>')}</p>`;
+    }).join('');
+  }
+
+  function getRemaining(): number {
+    const elapsed = (Date.now() - new Date(state.startTime).getTime()) / 1000;
+    return Math.max(0, EXAM.durationSec - elapsed);
+  }
+
+  function formatTime(s: number): string {
+    const h = Math.floor(s / 3600);
+    const m = Math.floor((s % 3600) / 60);
+    const sec = Math.floor(s % 60);
+    return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+  }
+
+  const timerEl  = document.getElementById('timer-display')!;
+  const timerBar = document.getElementById('timer-bar')!;
+
+  function updateTimer() {
+    if (state.submitted) return;
+    const rem = getRemaining();
+    timerEl.textContent = formatTime(rem);
+    timerBar.className = 'sim-header' +
+      (rem <= 600 ? ' danger' : rem <= 1800 ? ' warning' : '');
+    if (rem <= 0) autoSubmit();
+  }
+
+  let timerInterval = setInterval(updateTimer, 1000);
+  updateTimer();
+
+  function updatePanelStats() {
+    const answered  = QUESTIONS.filter(q => state.answers[q.num]).length;
+    const flagged   = state.flagged.length;
+    const unanswered = QUESTIONS.length - answered;
+    document.getElementById('panel-stats')!.innerHTML =
+      `Dijawab: <strong>${answered}</strong> / ${QUESTIONS.length}<br>` +
+      `Belum: <strong>${unanswered}</strong><br>` +
+      `Ragu-ragu: <strong>${flagged}</strong>`;
+  }
+
+  function updateNavigator() {
+    const grid = document.getElementById('nav-grid')!;
+    grid.innerHTML = '';
+    QUESTIONS.forEach(q => {
+      const btn = document.createElement('button');
+      btn.className = 'nav-q';
+      btn.textContent = String(q.num);
+      if (state.answers[q.num]) btn.classList.add('answered');
+      if (state.flagged.includes(q.num)) btn.classList.add('flagged');
+      if (q.num === state.currentQ) btn.classList.add('current');
+      btn.onclick = () => showQuestion(q.num);
+      grid.appendChild(btn);
+    });
+    updatePanelStats();
+  }
+
+  function showQuestion(num: number) {
+    state.currentQ = num;
+    saveState();
+
+    const q = QUESTIONS.find(q => q.num === num)!;
+    document.getElementById('q-num')!.textContent = `No. ${q.num}`;
+    document.getElementById('q-meta')!.textContent =
+      [q.difficulty, q.topic].filter(Boolean).join(' · ');
+    document.getElementById('q-body')!.innerHTML = renderMd(q.text);
+
+    const optEl = document.getElementById('q-options')!;
+    optEl.innerHTML = '';
+    q.options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'option-btn' + (state.answers[q.num] === opt.letter ? ' selected' : '');
+      btn.innerHTML = `<span class="opt-key">${opt.letter}</span><span class="opt-text">${renderMd(opt.text)}</span>`;
+      btn.onclick = () => selectOption(q.num, opt.letter);
+      optEl.appendChild(btn);
+    });
+
+    const flagBtn = document.getElementById('btn-flag')!;
+    flagBtn.classList.toggle('active', state.flagged.includes(num));
+
+    (document.getElementById('btn-prev') as HTMLButtonElement).disabled = num <= 1;
+    (document.getElementById('btn-next') as HTMLButtonElement).disabled = num >= QUESTIONS.length;
+
+    updateNavigator();
+  }
+
+  function selectOption(qNum: number, letter: string) {
+    if (state.submitted) return;
+    state.answers[qNum] = state.answers[qNum] === letter ? null : letter;
+    saveState();
+    showQuestion(qNum);
+  }
+
+  document.getElementById('btn-flag')!.onclick = () => {
+    const num = state.currentQ;
+    const idx = state.flagged.indexOf(num);
+    if (idx === -1) state.flagged.push(num);
+    else state.flagged.splice(idx, 1);
+    saveState();
+    showQuestion(num);
+  };
+
+  document.getElementById('btn-prev')!.onclick = () => {
+    if (state.currentQ > 1) showQuestion(state.currentQ - 1);
+  };
+  document.getElementById('btn-next')!.onclick = () => {
+    if (state.currentQ < QUESTIONS.length) showQuestion(state.currentQ + 1);
+  };
+
+  document.getElementById('btn-submit')!.onclick = () => {
+    const answered  = QUESTIONS.filter(q => state.answers[q.num]).length;
+    const unanswered = QUESTIONS.length - answered;
+    const flagged   = state.flagged.length;
+    document.getElementById('confirm-stats')!.innerHTML =
+      `Sudah dijawab: <strong>${answered}</strong> soal<br>` +
+      `Belum dijawab: <strong>${unanswered}</strong> soal<br>` +
+      `Ditandai ragu-ragu: <strong>${flagged}</strong> soal<br><br>` +
+      (unanswered > 0 ? `⚠ Masih ada <strong>${unanswered}</strong> soal yang belum dijawab.` : '');
+    document.getElementById('confirm-overlay')!.hidden = false;
+  };
+  document.getElementById('btn-cancel-submit')!.onclick = () => {
+    document.getElementById('confirm-overlay')!.hidden = true;
+  };
+  document.getElementById('btn-confirm-submit')!.onclick = () => {
+    document.getElementById('confirm-overlay')!.hidden = true;
+    submit();
+  };
+
+  function autoSubmit() { clearInterval(timerInterval); submit(); }
+
+  function submit() {
+    state.submitted = true;
+    saveState();
+    clearInterval(timerInterval);
+    showScoreDashboard();
+  }
+
+  function showScoreDashboard() {
+    let correct = 0;
+    const topicStats: Record<string, { correct: number; total: number }> = {};
+
+    QUESTIONS.forEach(q => {
+      const ok = state.answers[q.num] === q.answer;
+      if (ok) correct++;
+      const topic = q.topic ?? 'Lainnya';
+      if (!topicStats[topic]) topicStats[topic] = { correct: 0, total: 0 };
+      topicStats[topic].total++;
+      if (ok) topicStats[topic].correct++;
+    });
+
+    const pct  = Math.round((correct / QUESTIONS.length) * 100);
+    const pass = pct >= 60;
+
+    document.getElementById('score-value')!.textContent = `${correct} / ${QUESTIONS.length}`;
+    document.getElementById('score-pct')!.textContent   = `${pct}%`;
+    const verdict = document.getElementById('score-verdict')!;
+    verdict.textContent = pass ? 'LULUS' : 'BELUM LULUS';
+    verdict.className   = `score-verdict ${pass ? 'pass' : 'fail'}`;
+
+    document.getElementById('topic-tbody')!.innerHTML = Object.entries(topicStats)
+      .sort((a, b) => b[1].total - a[1].total)
+      .map(([topic, s]) => {
+        const pctT = Math.round(s.correct / s.total * 100);
+        return `<tr><td>${topic}</td><td>${s.correct}/${s.total}</td><td>${pctT}%</td></tr>`;
+      }).join('');
+
+    document.getElementById('score-overlay')!.hidden = false;
+  }
+
+  document.getElementById('btn-review')!.onclick = () => {
+    document.getElementById('score-overlay')!.hidden = true;
+    document.getElementById('review-overlay')!.hidden = false;
+    buildReviewStrip();
+    showReviewQuestion(1);
+  };
+  document.getElementById('rv-back')!.onclick = () => {
+    document.getElementById('review-overlay')!.hidden = true;
+    document.getElementById('score-overlay')!.hidden = false;
+  };
+
+  document.getElementById('btn-retake')!.onclick = () => {
+    state = freshState();
+    saveState();
+    document.getElementById('score-overlay')!.hidden = true;
+    showQuestion(1);
+    timerInterval = setInterval(updateTimer, 1000);
+    updateTimer();
+  };
+
+  function buildReviewStrip() {
+    const strip = document.getElementById('rv-nav-strip')!;
+    strip.innerHTML = '';
+    QUESTIONS.forEach(q => {
+      const btn = document.createElement('button');
+      btn.className = 'rv-nav-btn';
+      btn.textContent = String(q.num);
+      btn.title = `No. ${q.num}`;
+      const ans = state.answers[q.num];
+      if (!ans) btn.classList.add('rv-skip');
+      else if (ans === q.answer) btn.classList.add('rv-correct');
+      else btn.classList.add('rv-wrong');
+      btn.onclick = () => showReviewQuestion(q.num);
+      strip.appendChild(btn);
+    });
+  }
+
+  function showReviewQuestion(num: number) {
+    const q = QUESTIONS.find(q => q.num === num)!;
+    const userAnswer = state.answers[q.num];
+
+    document.getElementById('rv-num')!.textContent = `No. ${q.num}`;
+    document.getElementById('rv-meta')!.textContent =
+      [q.difficulty, q.topic].filter(Boolean).join(' · ');
+    document.getElementById('rv-counter')!.textContent = `${num} / ${QUESTIONS.length}`;
+    document.getElementById('rv-body')!.innerHTML = renderMd(q.text);
+
+    const optEl = document.getElementById('rv-options')!;
+    optEl.innerHTML = '';
+    q.options.forEach(opt => {
+      const btn = document.createElement('button');
+      let cls = 'option-btn';
+      if (opt.letter === q.answer) cls += ' correct';
+      else if (opt.letter === userAnswer) cls += ' wrong';
+      btn.className = cls;
+      btn.innerHTML = `<span class="opt-key">${opt.letter}</span><span class="opt-text">${renderMd(opt.text)}</span>`;
+      btn.disabled = true;
+      optEl.appendChild(btn);
+    });
+
+    document.querySelectorAll('.rv-nav-btn').forEach(b => b.classList.remove('rv-current'));
+    const cur = document.querySelectorAll('.rv-nav-btn')[num - 1];
+    if (cur) cur.classList.add('rv-current');
+
+    (document.getElementById('rv-prev') as HTMLButtonElement).disabled = num <= 1;
+    (document.getElementById('rv-next') as HTMLButtonElement).disabled = num >= QUESTIONS.length;
+  }
+
+  document.getElementById('rv-prev')!.onclick = () => {
+    const cur = parseInt(document.getElementById('rv-num')!.textContent!.replace('No. ', ''));
+    if (cur > 1) showReviewQuestion(cur - 1);
+  };
+  document.getElementById('rv-next')!.onclick = () => {
+    const cur = parseInt(document.getElementById('rv-num')!.textContent!.replace('No. ', ''));
+    if (cur < QUESTIONS.length) showReviewQuestion(cur + 1);
+  };
+
+  showQuestion(state.currentQ);
+</script>

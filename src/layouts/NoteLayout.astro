@@ -9,7 +9,6 @@ const hasToc = Astro.slots.has('toc');
   <header class="header">
     <a href="/" class="header-logo-block">
       <div class="header-logo">Aktu<br/>Notes</div>
-      <div class="header-logo-sub">PAI · AAMAI · 2026</div>
     </a>
     <button class="mob-menu-btn" id="mob-menu-btn" aria-label="Menu">☰</button>
     <div class="header-search-block">
@@ -18,7 +17,7 @@ const hasToc = Astro.slots.has('toc');
       <div class="search-results" id="search-results" hidden></div>
     </div>
     <div class="header-badge-block">
-      <div class="header-badge-text">Aktuaria<br/>Indonesia</div>
+      <div class="header-badge-text">Aktu<br/>Notes</div>
     </div>
   </header>
 
@@ -48,7 +47,7 @@ const hasToc = Astro.slots.has('toc');
       <a href="/CF4"  class={`nav-item ${mod === 'CF4'  ? 'active' : ''}`}>CF4 — Akuntansi</a>
       <a href="/TA1"  class={`nav-item ${mod === 'TA1'  ? 'active' : ''}`}>TA1 — Statistika</a>
       <a href="/TA2"  class={`nav-item ${mod === 'TA2'  ? 'active' : ''}`}>TA2 — Teori Risiko</a>
-      <a href="/TA3"  class={`nav-item ${mod === 'TA3'  ? 'active' : ''}`}>TA3 — Mat. Aktuaria</a>
+      <a href="/TA3"  class={`nav-item ${mod === 'TA3'  ? 'active' : ''}`}>TA3 — Matematika Aktuaria</a>
       <a href="/BA4G" class={`nav-item ${mod === 'BA4G' ? 'active' : ''}`}>BA4G — Asuransi Umum</a>
 
       <div class="nav-section-header">▸ AAMAI</div>
@@ -61,6 +60,7 @@ const hasToc = Astro.slots.has('toc');
       <a href="/formula-sheet" class="nav-item">Formula Sheet CF1</a>
       <a href="/study-log"     class="nav-item">Study Log</a>
       <a href="/exam-sim"      class="nav-item nav-item-sim">Simulasi Ujian CF1</a>
+      <a href="/exam-sim/cf2" class="nav-item nav-item-sim">Simulasi Ujian CF2</a>
     </aside>
 
     <!-- Main content -->
@@ -83,13 +83,13 @@ const hasToc = Astro.slots.has('toc');
     <nav class="mob-nav-panel" id="mob-nav-panel">
       <button class="mob-nav-close" id="mob-nav-close">✕ &nbsp;Tutup</button>
       <div class="nav-section-header">▸ PAI Exams</div>
-      <a href="/CF1"    class="nav-item">CF1 — Mat. Keuangan</a>
+      <a href="/CF1"    class="nav-item">CF1 — Matematika Keuangan</a>
       <a href="/CF2"    class="nav-item">CF2 — Probabilitas</a>
       <a href="/CF3"    class="nav-item">CF3 — Ekonomi</a>
       <a href="/CF4"    class="nav-item">CF4 — Akuntansi</a>
       <a href="/TA1"    class="nav-item">TA1 — Statistika</a>
       <a href="/TA2"    class="nav-item">TA2 — Teori Risiko</a>
-      <a href="/TA3"    class="nav-item">TA3 — Mat. Aktuaria</a>
+      <a href="/TA3"    class="nav-item">TA3 — Matematika Aktuaria</a>
       <a href="/BA4G"   class="nav-item">BA4G — Asuransi Umum</a>
       <div class="nav-section-header">▸ AAMAI</div>
       <a href="/AAMAI101" class="nav-item">AAMAI 101</a>
@@ -545,7 +545,7 @@ const hasToc = Astro.slots.has('toc');
     { code: 'CF1', title: 'Matematika Keuangan', url: '/CF1', tags: 'anuitas annuity bunga interest bond obligasi derivatif matematika keuangan' },
     { code: 'CF2', title: 'Probabilitas & Statistika', url: '/CF2', tags: 'probabilitas statistika distribusi variabel acak peluang estimasi hipotesis' },
     { code: 'CF3', title: 'Ekonomi & Pasar Keuangan', url: '/CF3', tags: 'ekonomi makro mikro pasar keuangan' },
-    { code: 'CF4', title: 'Akuntansi & Manaj. Keuangan', url: '/CF4', tags: 'akuntansi laporan keuangan manajemen modal rasio' },
+    { code: 'CF4', title: 'Akuntansi & Manajemen Keuangan', url: '/CF4', tags: 'akuntansi laporan keuangan manajemen modal rasio' },
     { code: 'TA1', title: 'Metode Statistika', url: '/TA1', tags: 'regresi linear model statistika analisis data' },
     { code: 'TA2', title: 'Teori Risiko', url: '/TA2', tags: 'risiko kredibilitas ruin theory model' },
     { code: 'TA3', title: 'Matematika Aktuaria', url: '/TA3', tags: 'aktuaria asuransi jiwa anuitas hidup mortalitas' },

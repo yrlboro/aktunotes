@@ -1,41 +1,37 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 
-const CF1_PACKAGES = [
-  { slug: 'p1',  label: 'Paket 1',  soal: 40, durasi: '3 jam' },
-  { slug: 'p2',  label: 'Paket 2',  soal: 40, durasi: '3 jam' },
-  { slug: 'p3',  label: 'Paket 3',  soal: 40, durasi: '3 jam' },
-  { slug: 'p4',  label: 'Paket 4',  soal: 40, durasi: '3 jam' },
-  { slug: 'p5',  label: 'Paket 5',  soal: 40, durasi: '3 jam' },
-  { slug: 'p6',  label: 'Paket 6',  soal: 40, durasi: '3 jam' },
-  { slug: 'p7',  label: 'Paket 7',  soal: 40, durasi: '3 jam' },
-  { slug: 'p8',  label: 'Paket 8',  soal: 40, durasi: '3 jam' },
-  { slug: 'p9',  label: 'Paket 9',  soal: 40, durasi: '3 jam' },
-  { slug: 'p10', label: 'Paket 10', soal: 40, durasi: '3 jam' },
-  { slug: 'p11', label: 'Paket 11', soal: 40, durasi: '3 jam' },
+const CF2_PACKAGES = [
+  { slug: 'p1', label: 'Paket 1', soal: 35, durasi: '3 jam' },
+  { slug: 'p2', label: 'Paket 2', soal: 35, durasi: '3 jam' },
+  { slug: 'p3', label: 'Paket 3', soal: 35, durasi: '3 jam' },
+  { slug: 'p4', label: 'Paket 4', soal: 35, durasi: '3 jam' },
+  { slug: 'p5', label: 'Paket 5', soal: 35, durasi: '3 jam' },
+  { slug: 'p6', label: 'Paket 6', soal: 35, durasi: '3 jam' },
+  { slug: 'p7', label: 'Paket 7', soal: 35, durasi: '3 jam' },
 ];
 ---
 
-<BaseLayout title="Simulasi Ujian CF1" description="Pilih paket soal simulasi ujian CF1">
+<BaseLayout title="Simulasi Ujian CF2" description="Pilih paket soal simulasi ujian CF2">
   <div class="sel-wrap">
     <div class="sel-header">
-      <a href="/CF1" class="sel-back">← CF1</a>
+      <a href="/CF2" class="sel-back">← CF2</a>
       <div class="sel-title-block">
         <div class="sel-eyebrow">Simulasi Ujian</div>
-        <h1 class="sel-h1">CF1 — Matematika Keuangan</h1>
+        <h1 class="sel-h1">CF2 — Probabilitas &amp; Statistika</h1>
       </div>
     </div>
 
     <p class="sel-desc">
-      Pilih paket soal di bawah ini untuk memulai simulasi. Setiap paket terdiri dari 40 soal
+      Pilih paket soal di bawah ini untuk memulai simulasi. Setiap paket terdiri dari soal
       pilihan ganda dengan durasi 3 jam, sesuai format ujian PAI sesungguhnya.
     </p>
 
     <div class="pkg-grid">
-      {CF1_PACKAGES.map(pkg => (
-        <a href={`/exam-sim/${pkg.slug}`} class="pkg-card">
+      {CF2_PACKAGES.map(pkg => (
+        <a href={`/exam-sim/cf2/${pkg.slug}`} class="pkg-card">
           <div class="pkg-label">{pkg.label}</div>
-          <div class="pkg-meta">{pkg.soal} soal · {pkg.durasi}</div>
+          <div class="pkg-meta">{pkg.durasi}</div>
           <div class="pkg-arrow">Mulai →</div>
         </a>
       ))}
