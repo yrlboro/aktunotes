@@ -93,30 +93,6 @@ const asmExams = allEntries
     </>
   )}
 
-  <h2>▸ Formula Kunci</h2>
-
-  <div class="formula-card">
-    <div class="formula-label">Present Value (Lump Sum)</div>
-    <div class="formula-body">
-      <code>PV = FV · (1 + i)⁻ⁿ</code>
-    </div>
-  </div>
-
-  <div class="formula-card">
-    <div class="formula-label">Anuitas Tetap (Immediate Annuity)</div>
-    <div class="formula-body">
-      <code>a&#818;n&#773;|i = (1 − vⁿ) / i</code>
-      &nbsp; di mana &nbsp; <code>v = 1/(1+i)</code>
-    </div>
-  </div>
-
-  <div class="formula-card">
-    <div class="formula-label">Harga Obligasi</div>
-    <div class="formula-body">
-      <code>P = Fr · a&#818;n&#773;|j + C · vⁿ</code>
-    </div>
-    <div class="formula-note">F = face value, r = coupon rate, C = redemption value, j = yield</div>
-  </div>
 
 </NoteLayout>
 
@@ -180,27 +156,4 @@ const asmExams = allEntries
     .topic-arrow { font-size: 0.7rem; }
   }
 
-  .formula-card {
-    border: 2px solid var(--ink);
-    background: var(--cream2);
-    padding: 0.9rem 1.1rem;
-    margin-bottom: 0.6rem;
-  }
-  .formula-label {
-    font-family: var(--mono); font-size: 0.58rem;
-    color: var(--ink4); letter-spacing: 0.12em; text-transform: uppercase;
-    margin-bottom: 0.4rem;
-  }
-  .formula-body {
-    font-family: var(--mono); font-size: 1rem;
-    color: var(--ink);
-  }
-  .formula-body code {
-    background: none; border: none; padding: 0;
-    font-size: 1rem; color: var(--teal);
-  }
-  .formula-note {
-    font-family: var(--ss4); font-size: 0.78rem;
-    color: var(--ink4); margin-top: 0.4rem; font-style: italic;
-  }
 </style>

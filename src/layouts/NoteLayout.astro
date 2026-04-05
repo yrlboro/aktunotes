@@ -141,12 +141,13 @@ const hasToc = Astro.slots.has('toc');
   .header-search:focus { border-bottom-color: var(--pink); }
   .header-search::placeholder { color: var(--ink4); font-style: italic; }
   .header-badge-block {
-    background: var(--yellow); padding: 0.35rem 0.8rem;
+    background: var(--yellow); padding: 0.3rem 0.5rem;
     display: flex; flex-direction: column;
     justify-content: center; align-items: center; width: 175px;
+    border-left: 3px solid var(--ink);
   }
   .header-logo-img {
-    width: 140px;
+    width: 100%;
     height: auto;
     display: block;
     mix-blend-mode: multiply;
@@ -251,6 +252,7 @@ const hasToc = Astro.slots.has('toc');
     padding: 2.5rem 3rem 4rem;
     overflow-y: auto;
   }
+  .content h1 { text-align: center; }
   .back-link {
     display: inline-flex; align-items: center; gap: 0.3rem;
     font-family: var(--mono); font-size: 0.62rem;
