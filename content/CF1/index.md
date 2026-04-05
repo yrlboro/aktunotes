@@ -84,16 +84,16 @@ Modul CF1 mencakup konsep nilai waktu uang, anuitas, pinjaman, obligasi, dan der
 
 | Periode  | Soal            | Pembahasan               |
 | -------- | --------------- | ------------------------ |
-| Nov 2025 | [[2025-11-CF1]] | [[2025-11-CF1-answered]] |
-| Agu 2025 | [[2025-08-CF1]] | [[2025-08-CF1-answered]] |
-| Mei 2025 | [[2025-05-CF1]] | [[2025-05-CF1-answered]] |
-| Okt 2024 | [[2024-10-CF1]] | [[2024-10-CF1-answered]] |
-| Jul 2024 | [[2024-07-CF1]] | [[2024-07-CF1-answered]] |
-| Apr 2024 | [[2024-04-CF1]] | [[2024-04-CF1-answered]] |
-| Nov 2023 | [[2023-11-CF1]] | [[2023-11-CF1-answered]] |
-| Agu 2023 | [[2023-08-CF1]] | [[2023-08-CF1-answered]] |
-| Mei 2023 | [[2023-05-CF1]] | [[2023-05-CF1-answered]] |
-| Des 2022 | [[2022-12-CF1]] | [[2022-12-CF1-answered]] |
-| Agu 2022 | [[2022-08-cf1]] | [[2022-08-CF1-answered]] |
+| Nov 2025 | [[2025-11-CF1]] | [[13. 2025-11-CF1-answered]] |
+| Agu 2025 | [[2025-08-CF1]] | [[12. 2025-08-CF1-answered]] |
+| Mei 2025 | [[2025-05-CF1]] | [[11. 2025-05-CF1-answered]] |
+| Okt 2024 | [[2024-10-CF1]] | [[10. 2024-10-CF1-answered]] |
+| Jul 2024 | [[2024-07-CF1]] | [[9. 2024-07-CF1-answered]] |
+| Apr 2024 | [[2024-04-CF1]] | [[8. 2024-04-CF1-answered]] |
+| Nov 2023 | [[2023-11-CF1]] | [[7. 2023-11-CF1-answered]] |
+| Agu 2023 | [[2023-08-CF1]] | [[6. 2023-08-CF1-answered]] |
+| Mei 2023 | [[2023-05-CF1]] | [[5. 2023-05-CF1-answered]] |
+| Des 2022 | [[2022-12-CF1]] | [[4. 2022-12-CF1-answered]] |
+| Agu 2022 | [[2022-08-cf1]] | [[3. 2022-08-CF1-Answered]] |
 | Apr 2022 | [[2022-04-CF1]] | —                        |
 | Nov 2021 | [[2021-11-cf1]] | —                        |

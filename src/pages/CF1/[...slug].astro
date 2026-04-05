@@ -35,7 +35,8 @@ function formatTitle(id: string): string {
     .replace(/\b\w/g, c => c.toUpperCase());
 }
 
-const title  = entry.data.topic  || entry.data.title  || formatTitle(entry.id);
+const firstH1 = headings.find(h => h.depth === 1);
+const title  = entry.data.topic  || entry.data.title  || (isSolution ? firstH1?.text : undefined) || formatTitle(entry.id);
 const module = 'CF1';
 const tags: string[]   = Array.isArray(entry.data.tags) ? entry.data.tags : [];
 ---
@@ -94,7 +95,7 @@ const tags: string[]   = Array.isArray(entry.data.tags) ? entry.data.tags : [];
   )}
 
   {/* Main content */}
-  <div class="note-body">
+  <div class={`note-body${isSolution ? ' solution-body' : ''}`}>
     <Content />
   </div>
 
@@ -208,6 +209,9 @@ const tags: string[]   = Array.isArray(entry.data.tags) ? entry.data.tags : [];
     background: none; border: none; padding: 0;
     color: inherit; font-size: inherit;
   }
+
+  /* Hide markdown H1 in solution pages — template already renders it */
+  .solution-body :global(h1:first-child) { display: none; }
 
   /* Exam question separators */
   .note-body :global(hr) {

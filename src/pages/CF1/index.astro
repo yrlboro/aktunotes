@@ -11,7 +11,11 @@ const exams = allEntries
   .sort((a, b) => b.id.localeCompare(a.id));
 const solutions = allEntries
   .filter(e => e.id.includes('solutions/'))
-  .sort((a, b) => b.id.localeCompare(a.id));
+  .sort((a, b) => {
+    const numA = parseInt(a.id.split('/').pop() ?? '0');
+    const numB = parseInt(b.id.split('/').pop() ?? '0');
+    return numA - numB;
+  });
 const asmExams = allEntries
   .filter(e => e.id.startsWith('asm-soa-practice-exams/'))
   .sort((a, b) => a.id.localeCompare(b.id));
