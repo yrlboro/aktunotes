@@ -3,35 +3,35 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
-// ── Package → file mapping ──
-const CF1_PACKAGES: Record<string, { file: string; label: string }> = {
-  p1:  { file: '2025-11-CF1-answered.md', label: 'CF1 · Paket 1' },
-  p2:  { file: '2025-08-CF1-answered.md', label: 'CF1 · Paket 2' },
-  p3:  { file: '2025-05-CF1-answered.md', label: 'CF1 · Paket 3' },
-  p4:  { file: '2024-10-CF1-answered.md', label: 'CF1 · Paket 4' },
-  p5:  { file: '2024-07-CF1-answered.md', label: 'CF1 · Paket 5' },
-  p6:  { file: '2024-04-CF1-answered.md', label: 'CF1 · Paket 6' },
-  p7:  { file: '2023-11-CF1-answered.md', label: 'CF1 · Paket 7' },
-  p8:  { file: '2023-08-CF1-answered.md', label: 'CF1 · Paket 8' },
-  p9:  { file: '2023-05-CF1-answered.md', label: 'CF1 · Paket 9' },
-  p10: { file: '2022-12-CF1-answered.md', label: 'CF1 · Paket 10' },
-  p11: { file: '2022-08-CF1-answered.md', label: 'CF1 · Paket 11' },
-};
-
 export function getStaticPaths() {
-  return Object.keys(CF1_PACKAGES).map(pkg => ({ params: { package: pkg } }));
+  const PACKAGES = [
+    { slug: 'p1',  file: '2025-11-CF1-answered.md', label: 'CF1 · Paket 1' },
+    { slug: 'p2',  file: '2025-08-CF1-answered.md', label: 'CF1 · Paket 2' },
+    { slug: 'p3',  file: '2025-05-CF1-answered.md', label: 'CF1 · Paket 3' },
+    { slug: 'p4',  file: '2024-10-CF1-answered.md', label: 'CF1 · Paket 4' },
+    { slug: 'p5',  file: '2024-07-CF1-answered.md', label: 'CF1 · Paket 5' },
+    { slug: 'p6',  file: '2024-04-CF1-answered.md', label: 'CF1 · Paket 6' },
+    { slug: 'p7',  file: '2023-11-CF1-answered.md', label: 'CF1 · Paket 7' },
+    { slug: 'p8',  file: '2023-08-CF1-answered.md', label: 'CF1 · Paket 8' },
+    { slug: 'p9',  file: '2023-05-CF1-answered.md', label: 'CF1 · Paket 9' },
+    { slug: 'p10', file: '2022-12-CF1-answered.md', label: 'CF1 · Paket 10' },
+    { slug: 'p11', file: '2022-08-CF1-answered.md', label: 'CF1 · Paket 11' },
+  ];
+  return PACKAGES.map(p => ({
+    params: { package: p.slug },
+    props:  { file: p.file, label: p.label },
+  }));
 }
 
 const { package: pkg } = Astro.params;
-const meta = CF1_PACKAGES[pkg!];
-if (!meta) return Astro.redirect('/exam-sim');
+const { file, label }  = Astro.props;
 
-const EXAM_ID       = `CF1-${pkg}`;
-const EXAM_LABEL    = meta.label;
-const DURATION_SEC  = 10800; // 180 min
+const EXAM_ID      = `CF1-${pkg}`;
+const EXAM_LABEL   = label;
+const DURATION_SEC = 10800; // 180 min
 
 const raw = readFileSync(
-  resolve(`./content/CF1/Exams/Solutions/${meta.file}`),
+  resolve(`./content/CF1/Exams/Solutions/${file}`),
   'utf-8'
 );
 
