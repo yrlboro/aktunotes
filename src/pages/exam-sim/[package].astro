@@ -5,17 +5,17 @@ import { resolve } from 'path';
 
 export function getStaticPaths() {
   const PACKAGES = [
-    { slug: 'p1',  file: '2025-11-CF1-answered.md', label: 'CF1 · Paket 1' },
-    { slug: 'p2',  file: '2025-08-CF1-answered.md', label: 'CF1 · Paket 2' },
-    { slug: 'p3',  file: '2025-05-CF1-answered.md', label: 'CF1 · Paket 3' },
-    { slug: 'p4',  file: '2024-10-CF1-answered.md', label: 'CF1 · Paket 4' },
-    { slug: 'p5',  file: '2024-07-CF1-answered.md', label: 'CF1 · Paket 5' },
-    { slug: 'p6',  file: '2024-04-CF1-answered.md', label: 'CF1 · Paket 6' },
-    { slug: 'p7',  file: '2023-11-CF1-answered.md', label: 'CF1 · Paket 7' },
-    { slug: 'p8',  file: '2023-08-CF1-answered.md', label: 'CF1 · Paket 8' },
-    { slug: 'p9',  file: '2023-05-CF1-answered.md', label: 'CF1 · Paket 9' },
-    { slug: 'p10', file: '2022-12-CF1-answered.md', label: 'CF1 · Paket 10' },
-    { slug: 'p11', file: '2022-08-CF1-answered.md', label: 'CF1 · Paket 11' },
+    { slug: 'p1',  file: '13. 2025-11-CF1-answered.md', label: 'CF1 · Paket 1' },
+    { slug: 'p2',  file: '12. 2025-08-CF1-answered.md', label: 'CF1 · Paket 2' },
+    { slug: 'p3',  file: '11. 2025-05-CF1-answered.md', label: 'CF1 · Paket 3' },
+    { slug: 'p4',  file: '10. 2024-10-CF1-answered.md', label: 'CF1 · Paket 4' },
+    { slug: 'p5',  file: '9. 2024-07-CF1-answered.md',  label: 'CF1 · Paket 5' },
+    { slug: 'p6',  file: '8. 2024-04-CF1-answered.md',  label: 'CF1 · Paket 6' },
+    { slug: 'p7',  file: '7. 2023-11-CF1-answered.md',  label: 'CF1 · Paket 7' },
+    { slug: 'p8',  file: '6. 2023-08-CF1-answered.md',  label: 'CF1 · Paket 8' },
+    { slug: 'p9',  file: '5. 2023-05-CF1-answered.md',  label: 'CF1 · Paket 9' },
+    { slug: 'p10', file: '4. 2022-12-CF1-answered.md',  label: 'CF1 · Paket 10' },
+    { slug: 'p11', file: '3. 2022-08-CF1-Answered.md',  label: 'CF1 · Paket 11' },
   ];
   return PACKAGES.map(p => ({
     params: { package: p.slug },
