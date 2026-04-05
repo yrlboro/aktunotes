@@ -17,7 +17,7 @@ const hasToc = Astro.slots.has('toc');
       <div class="search-results" id="search-results" hidden></div>
     </div>
     <div class="header-badge-block">
-      <div class="header-badge-text">Aktu<br/>Notes</div>
+      <img src="/logo-aktunotes.png" class="header-logo-img" alt="AktuNotes" />
     </div>
   </header>
 
@@ -141,14 +141,15 @@ const hasToc = Astro.slots.has('toc');
   .header-search:focus { border-bottom-color: var(--pink); }
   .header-search::placeholder { color: var(--ink4); font-style: italic; }
   .header-badge-block {
-    background: var(--yellow); padding: 0.7rem 1.2rem;
+    background: var(--yellow); padding: 0.35rem 0.8rem;
     display: flex; flex-direction: column;
     justify-content: center; align-items: center; width: 175px;
   }
-  .header-badge-text {
-    font-family: var(--mono); font-size: 0.6rem; color: var(--ink);
-    letter-spacing: 0.1em; text-transform: uppercase;
-    text-align: center; line-height: 1.6; font-weight: 600;
+  .header-logo-img {
+    width: 140px;
+    height: auto;
+    display: block;
+    mix-blend-mode: multiply;
   }
 
   /* ── Search results dropdown ── */

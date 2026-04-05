@@ -12,6 +12,10 @@ const notes = allEntries
 const exams = allEntries
   .filter(e => e.id.startsWith('exams/') && !e.id.includes('solutions/'))
   .sort((a, b) => b.id.localeCompare(a.id));
+
+const solutions = allEntries
+  .filter(e => e.id.includes('solutions/'))
+  .sort((a, b) => b.id.localeCompare(a.id));
 ---
 
 <NoteLayout title="CF2 — Probabilitas & Statistika" module="CF2">
@@ -53,6 +57,21 @@ const exams = allEntries
     </>
   )}
 
+  {solutions.length > 0 && (
+    <>
+      <h2 id="solutions">▸ Past Exam Solutions</h2>
+      <div class="topic-list">
+        {solutions.map(entry => (
+          <a href={`/CF2/${entry.id}`} class="topic-item topic-solution">
+            <span class="topic-num solution-icon">✔</span>
+            <span class="topic-name">{entry.id.split('/').pop()?.replace(/-/g, ' ').toUpperCase()}</span>
+            <span class="topic-arrow">→</span>
+          </a>
+        ))}
+      </div>
+    </>
+  )}
+
 </NoteLayout>
 
 <style>
@@ -69,6 +88,8 @@ const exams = allEntries
   .topic-exam:hover { background: var(--cream3); }
   .topic-num { font-family: var(--mono); font-size: 0.6rem; color: var(--ink4); letter-spacing: 0.08em; min-width: 2.5rem; }
   .exam-icon { color: var(--teal); }
+  .topic-solution:hover { background: #d1fae5; }
+  .solution-icon { color: #059669; }
   .topic-name { font-family: var(--ss4); font-size: 0.95rem; font-weight: 500; color: var(--ink); flex: 1; }
   .topic-diff { font-family: var(--mono); font-size: 0.54rem; color: var(--ink4); background: var(--cream3); padding: 0.08rem 0.4rem; }
   .topic-arrow { font-family: var(--mono); font-size: 0.8rem; color: var(--pink); }
