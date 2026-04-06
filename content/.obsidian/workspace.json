@@ -60,6 +60,20 @@
             }
           },
           {
+            "id": "51e128822f9aa2ae",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CF1/Exams/Solutions/1. 2021-11-cf1-answered.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1. 2021-11-cf1-answered"
+            }
+          },
+          {
             "id": "f2d53a15ee9a4079",
             "type": "leaf",
             "state": {
@@ -74,49 +88,21 @@
             }
           },
           {
-            "id": "069d59277421b12a",
+            "id": "08538f49a9f8d504",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CF1/ASM-SOA - Practice Exams/ASM FM - Practice Exam 2.md",
+                "file": "CF1/Exams/Solutions/11. 2025-05-CF1-answered.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ASM FM - Practice Exam 2"
-            }
-          },
-          {
-            "id": "d734328887512f39",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CF1/ASM-SOA - Practice Exams/ASM FM - Practice Exam 3.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ASM FM - Practice Exam 3"
-            }
-          },
-          {
-            "id": "3eb043ac8c2f7b64",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CF1/ASM-SOA - Practice Exams/ASM FM - Practice Exam 4.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ASM FM - Practice Exam 4"
+              "title": "11. 2025-05-CF1-answered"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -278,18 +264,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "942706ddee5cac2b",
+  "active": "08538f49a9f8d504",
   "lastOpenFiles": [
+    "CF1/Exams/Solutions/1. 2021-11-cf1-answered.md",
+    "CF1/Exams/Solutions/11. 2025-05-CF1-answered.md",
     "CF1/Exams/Solutions/13. 2025-11-CF1-answered.md",
+    "CF1/ASM-SOA - Practice Exams/ASM FM - Practice Exam 4.md",
+    "CF1/ASM-SOA - Practice Exams/ASM FM - Practice Exam 3.md",
     "CF1/ASM-SOA - Practice Exams/ASM FM - Practice Exam 2.md",
     "CF1/Exams/Solutions/12. 2025-08-CF1-answered.md",
-    "CF1/Exams/Solutions/1. 2021-11-cf1-answered.md",
     "CF1/Exams/Solutions/2021-11-cf1-answered.md",
     "CF1/index.md",
     "CF1/Exams/Solutions/3. 2022-08-CF1-Answered.md",
     "CF1/Exams/Solutions/2. 2022-04-cf1-answered.md",
     "CF1/Exams/Solutions/2022-04-cf1-answered.md",
-    "CF1/Exams/Solutions/11. 2025-05-CF1-answered.md",
     "CF1/Exams/Solutions/10. 2024-10-CF1-answered.md",
     "CF1/Exams/Solutions/9. 2024-07-CF1-answered.md",
     "CF1/Exams/Solutions/8. 2024-04-CF1-answered.md",
@@ -298,8 +286,6 @@
     "CF1/Exams/Solutions/5. 2023-05-CF1-answered.md",
     "CF1/Exams/Solutions/4. 2022-12-CF1-answered.md",
     "CF1/ASM-SOA - Practice Exams/ASM FM - Practice Exam 1.md",
-    "CF1/ASM-SOA - Practice Exams/ASM FM - Practice Exam 3.md",
-    "CF1/ASM-SOA - Practice Exams/ASM FM - Practice Exam 4.md",
     "CF1/ASM-SOA - Practice Exams/ASM FM - Practice Exam 1 (2nd).md",
     "Prompt_Pembahasan_Exam_CF1_FINAL_v3.md",
     "Prompt_Pembahasan_Exam_CF1_FINAL_v2.md",
