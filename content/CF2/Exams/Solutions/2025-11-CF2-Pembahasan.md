@@ -796,6 +796,7 @@ e. $1$
 > | **Referensi** | — |
 >
 > > [!warning]+ **Keterangan Soal Dianulir**
+> > 
 > > Soal No. 11 **dianulir oleh PAI** dalam kunci jawaban resmi.   
 > > Analisis masalah: Pertanyaan meminta varians dari "banyaknya ban yang tidak layak pakai" dengan kondisi $Y=1$ (satu ban belakang tidak layak). Namun soal tidak mendefinisikan secara jelas apakah yang dimaksud adalah varians dari $X \mid Y=1$ atau varians dari total $(X+Y) \mid Y=1$. Ketidakjelasan frasa "banyaknya ban mobil yang sudah tidak layak pakai dari mobil-mobil yang terpilih dengan satu ban belakang tidak layak pakai" menghasilkan interpretasi ganda yang tidak menghasilkan jawaban tunggal konsisten dengan pilihan yang tersedia.
 >
