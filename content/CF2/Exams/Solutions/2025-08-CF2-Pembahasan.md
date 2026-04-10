@@ -2334,3 +2334,649 @@ e. $0{,}8$
 > > > - Selalu cek apakah gabungan dua kejadian bisa disederhanakan menjadi $\Omega$ atau irisan menjadi $\emptyset$ — ini sering menghasilkan solusi yang elegan tanpa perlu variabel tambahan.
 
 ---
+
+## **No. 25**
+
+Sampel yang terdiri dari 3 bilangan diambil secara acak dan tanpa pengembalian dari populasi $\{1, 2, 3, 4, 5\}$. Berapakah peluang bahwa jangkauan (range) dari sampel yang terpilih sebesar 3?
+
+a. $\dfrac{1}{15}$  
+b. $\dfrac{24}{125}$  
+c. $\dfrac{2}{10}$  
+d. $\dfrac{3}{10}$  
+e. $\dfrac{2}{5}$
+
+> [!summary]+ **Jawaban No. 25**
+> 
+> **(e). $\dfrac{2}{5}$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 1 — Probabilitas Dasar |
+> | **Sub-topik** | [[1_3_Metode_Enumerasi]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[1_2_Aksioma_dan_Perhitungan_Probabilitas]] |
+> | **Connected Topics** | [[1_4_Probabilitas_Bersyarat]] |
+> | **Referensi** | Wackerly, Mendenhall & Scheaffer — Ch. 3 |
+>
+> > [!info]+ **Rumus**
+> >
+> > **Peluang Klasik (Ruang Sampel Seragam):**
+> >
+> > $$P(A) = \frac{|A|}{|S|}$$
+> >
+> > **Jangkauan (Range) sampel:**
+> >
+> > $$\text{Range} = X_{(n)} - X_{(1)}$$
+> >
+> > di mana $X_{(1)}$ = nilai terkecil dan $X_{(n)}$ = nilai terbesar dalam sampel.
+> >
+> > **Kombinasi (sampling tanpa pengembalian):**
+> >
+> > $$\binom{n}{k} = \frac{n!}{k!(n-k)!}$$
+>
+> **Diketahui:**
+> - Populasi: $\{1, 2, 3, 4, 5\}$, ukuran $N = 5$
+> - Ukuran sampel: $n = 3$, diambil **tanpa pengembalian** (urutan tidak diperhatikan)
+> - Target: $P(\text{Range} = 3)$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung total ruang sampel**
+> >
+> > Karena pengambilan tanpa pengembalian dan urutan tidak diperhatikan, total cara memilih 3 bilangan dari 5 adalah:
+> >
+> > $$|S| = \binom{5}{3} = \frac{5!}{3!\,2!} = 10$$
+> >
+> > **Langkah 2: Identifikasi syarat Range = 3**
+> >
+> > Range $= X_{\max} - X_{\min} = 3$.
+> >
+> > Kita cari semua pasangan $(X_{\min}, X_{\max})$ sehingga $X_{\max} - X_{\min} = 3$:
+> >
+> > | $X_{\min}$ | $X_{\max}$ | Selisih |
+> > |:-:|:-:|:-:|
+> > | $1$ | $4$ | $3$ ✓ |
+> > | $2$ | $5$ | $3$ ✓ |
+> >
+> > Jadi hanya ada 2 pasangan ujung yang memenuhi.
+> >
+> > **Langkah 3: Hitung kejadian yang memenuhi**
+> >
+> > Untuk setiap pasangan ujung, nilai tengah (elemen ke-3 sampel) harus berada **di antara** $X_{\min}$ dan $X_{\max}$.
+> >
+> > **Kasus 1:** $X_{\min} = 1$, $X_{\max} = 4$
+> >
+> > Nilai tengah yang mungkin dari populasi, dengan syarat $1 < x < 4$ dan $x \in \{1,2,3,4,5\}$:
+> > → $x \in \{2, 3\}$ → **2 sampel**: $\{1,2,4\}$ dan $\{1,3,4\}$
+> >
+> > **Kasus 2:** $X_{\min} = 2$, $X_{\max} = 5$
+> >
+> > Nilai tengah dengan syarat $2 < x < 5$ dan $x \in \{1,2,3,4,5\}$:
+> > → $x \in \{3, 4\}$ → **2 sampel**: $\{2,3,5\}$ dan $\{2,4,5\}$
+> >
+> > Total kejadian yang memenuhi: $|A| = 2 + 2 = 4$
+> >
+> > **Langkah 4: Hitung peluang**
+> >
+> > $$P(\text{Range} = 3) = \frac{|A|}{|S|} = \frac{4}{10} = \frac{2}{5}$$
+> >
+> > **Hasil Akhir:** **(e)**. $\dfrac{2}{5}$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengasumsikan sampling **dengan** pengembalian sehingga menggunakan $5^3 = 125$ sebagai ruang sampel — ini menghasilkan opsi (b) yang merupakan jebakan.
+> > > - Lupa bahwa nilai tengah harus **benar-benar berada di antara** $X_{\min}$ dan $X_{\max}$, bukan sama dengan salah satunya.
+> > > - Menghitung pasangan ujung tetapi lupa menghitung berapa elemen tengah yang tersedia untuk masing-masing kasus.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Menafsirkan "jangkauan = 3" sebagai "ada 3 nilai yang berbeda" — padahal jangkauan adalah $X_{\max} - X_{\min}$.
+> > > - Mengira soal meminta urutan sampel diperhatikan (permutasi), sehingga membagi $|S|$ dengan $3!$ atau sebaliknya.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal menyebut **"tanpa pengembalian"** dan tidak menyebut urutan → gunakan **kombinasi** $\binom{n}{k}$, bukan permutasi.
+> > > - Jika soal menyebut **"range"** → identifikasi semua pasangan $(X_{\min}, X_{\max})$ terlebih dahulu, lalu hitung elemen tengah yang valid.
+> > > - Opsi (b) $\frac{24}{125}$ adalah jebakan untuk yang menghitung dengan sampling **dengan** pengembalian.
+
+---
+
+## **No. 26**
+
+Suatu kotak memuat 35 buah permata yang berisi 10 permata asli dan 25 permata tiruan. Permata diambil secara acak dari kotak, satu permata setiap kali pengambilan, tanpa pengembalian. Berapakah peluang tepat 2 permata tiruan terpilih sebelum permata asli yang kedua terpilih?
+
+a. $\dfrac{225}{5236}$  
+b. $\dfrac{675}{5236}$  
+c. $\dfrac{\dbinom{25}{2}\dbinom{10}{2}}{\dbinom{35}{4}}$  
+d. $\dbinom{3}{2}\!\left(\dfrac{10}{35}\right)^{\!2}\!\left(\dfrac{25}{35}\right)^{\!2}$  
+e. $\dbinom{4}{2}\!\left(\dfrac{10}{35}\right)^{\!2}\!\left(\dfrac{25}{35}\right)^{\!2}$
+
+> [!summary]+ **Jawaban No. 26**
+> 
+> **(b). $\dfrac{675}{5236}$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 1 — Probabilitas Dasar |
+> | **Sub-topik** | [[1_3_Metode_Enumerasi]], [[1_4_Probabilitas_Bersyarat]] |
+> | **Difficulty** | Hard |
+> | **Prerequisite** | [[1_2_Aksioma_dan_Perhitungan_Probabilitas]], [[1_3_Metode_Enumerasi]] |
+> | **Connected Topics** | [[2_5_Distribusi_Diskrit_Umum]] (Distribusi Negatif Hipergeometrik) |
+> | **Referensi** | Wackerly, Mendenhall & Scheaffer — Ch. 3–4 |
+>
+> > [!info]+ **Rumus**
+> >
+> > **Aturan perkalian probabilitas bersyarat (sampling tanpa pengembalian):**
+> >
+> > $$P(A_1 \cap A_2 \cap \cdots \cap A_k) = P(A_1)\cdot P(A_2|A_1)\cdot P(A_3|A_1,A_2)\cdots$$
+> >
+> > **Kunci soal "tepat $r$ sukses sebelum sukses ke-$k$":** Pengambilan ke-$n$ **pasti** merupakan sukses ke-$k$, sehingga di antara $n-1$ pengambilan sebelumnya terdapat tepat $k-1$ sukses dan sisanya gagal.
+>
+> **Diketahui:**
+> - Total permata: $N = 35$
+> - Permata asli (A): $10$; permata tiruan (T): $25$
+> - Sampling: **tanpa pengembalian**, satu per satu
+> - Kejadian: tepat **2 tiruan** terpilih **sebelum** asli ke-2 terpilih
+> - Target: probabilitas kejadian tersebut
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Pahami struktur kejadian**
+> >
+> > Kita ingin: tepat 2 tiruan muncul **sebelum** asli ke-2.
+> >
+> > Artinya, proses berhenti saat permata asli ke-2 terpilih. Pada saat berhenti, urutan pengambilan telah menghasilkan:
+> > - 4 pengambilan total
+> > - Pengambilan ke-4 **pasti** = asli (asli ke-2)
+> > - Di antara 3 pengambilan pertama: tepat **1 asli** dan tepat **2 tiruan**
+> >
+> > Ini adalah **Distribusi Negatif Hipergeometrik**: berapa peluang asli ke-2 muncul tepat pada pengambilan ke-4?
+> >
+> > **Langkah 2: Hitung jumlah susunan di 3 posisi pertama**
+> >
+> > Di posisi 1, 2, 3 harus ada tepat 1 asli dan 2 tiruan.
+> >
+> > Jumlah cara memilih posisi untuk 1 asli di antara 3 slot:
+> >
+> > $$\binom{3}{1} = 3$$
+> >
+> > **Langkah 3: Hitung probabilitas tiap susunan**
+> >
+> > Kita hitung probabilitas salah satu urutan spesifik, misalnya: T, T, A, A (tiruan, tiruan, asli, asli).
+> >
+> > $$P(\text{T, T, A, A}) = \frac{25}{35} \cdot \frac{24}{34} \cdot \frac{10}{33} \cdot \frac{9}{32}$$
+> >
+> > Untuk urutan lain yang memenuhi syarat (1 A dan 2 T di 3 posisi pertama, lalu A di posisi ke-4), probabilitas tiap urutannya **berbeda** karena sampling tanpa pengembalian. Kita harus menghitungnya secara langsung.
+> >
+> > **Tiga urutan yang memenuhi** (A di posisi ke-4 selalu):
+> >
+> > **(i) T, T, A, A:**
+> >
+> > $$\frac{25}{35} \cdot \frac{24}{34} \cdot \frac{10}{33} \cdot \frac{9}{32}$$
+> >
+> > **(ii) T, A, T, A:**
+> >
+> > $$\frac{25}{35} \cdot \frac{10}{34} \cdot \frac{24}{33} \cdot \frac{9}{32}$$
+> >
+> > **(iii) A, T, T, A:**
+> >
+> > $$\frac{10}{35} \cdot \frac{25}{34} \cdot \frac{24}{33} \cdot \frac{9}{32}$$
+> >
+> > **Langkah 4: Amati bahwa ketiga peluang identik**
+> >
+> > Perhatikan bahwa pembilang ketiga ekspresi di atas sama persis:
+> >
+> > $$25 \cdot 24 \cdot 10 \cdot 9$$
+> >
+> > dan penyebutnya pun sama: $35 \cdot 34 \cdot 33 \cdot 32$.
+> >
+> > Ini karena perkalian bersifat komutatif — urutan faktor tidak mengubah hasil perkalian.
+> >
+> > Sehingga total peluang:
+> >
+> > $$P = 3 \cdot \frac{25 \cdot 24 \cdot 10 \cdot 9}{35 \cdot 34 \cdot 33 \cdot 32}$$
+> >
+> > **Langkah 5: Hitung nilai numerik**
+> >
+> > Pembilang:
+> >
+> > $$3 \cdot 25 \cdot 24 \cdot 10 \cdot 9 = 3 \cdot 54{.}000 = 162{.}000$$
+> >
+> > Penyebut:
+> >
+> > $$35 \cdot 34 \cdot 33 \cdot 32 = 35 \cdot 34 = 1{.}190;\quad 1{.}190 \cdot 33 = 39{.}270;\quad 39{.}270 \cdot 32 = 1{.}256{.}640$$
+> >
+> > Sederhanakan:
+> >
+> > $$P = \frac{162{.}000}{1{.}256{.}640}$$
+> >
+> > Bagi keduanya dengan $\gcd$. Coba bagi dengan $240$:
+> >
+> > $$\frac{162{.}000 \div 240}{1{.}256{.}640 \div 240} = \frac{675}{5{.}236}$$
+> >
+> > Verifikasi: $162{.}000 / 240 = 675$ ✓; $1{.}256{.}640 / 240 = 5{.}236$ ✓
+> >
+> > $$\boxed{P = \frac{675}{5{.}236}}$$
+> >
+> > **Hasil Akhir:** **(b)**. $\dfrac{675}{5236}$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menggunakan formula **Hipergeometrik biasa** seperti opsi (c): $\frac{\binom{25}{2}\binom{10}{2}}{\binom{35}{4}}$ — ini menghitung peluang tepat 2 tiruan DAN 2 asli dalam 4 pengambilan **tanpa syarat urutan**. Soal ini berbeda karena posisi ke-4 **harus** asli ke-2.
+> > > - Menggunakan formula **Binomial** seperti opsi (d) atau (e) — padahal sampling dilakukan **tanpa pengembalian**, bukan dengan pengembalian, sehingga probabilitas tidak konstan.
+> > > - Salah menghitung jumlah urutan: ada $\binom{3}{1} = 3$ cara (bukan $\binom{4}{2} = 6$) karena posisi ke-4 sudah terkunci sebagai asli ke-2.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Menafsirkan "sebelum asli kedua" sebagai "di antara 4 pengambilan bebas" — padahal frasa ini berarti proses **berhenti** saat asli ke-2 muncul, sehingga posisi terakhir sudah terkunci.
+> > > - Lupa bahwa "tepat 2 tiruan sebelum asli ke-2" berarti total pengambilan = 4 (2 tiruan + 2 asli), bukan lebih.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal menyebut **"tanpa pengembalian"** dan ada kondisi "sukses ke-$k$ muncul tepat pada pengambilan ke-$n$" → gunakan pendekatan **Negatif Hipergeometrik**, bukan Binomial atau Hipergeometrik biasa.
+> > > - Jika melihat opsi berbentuk $\binom{n}{k}p^k(1-p)^{n-k}$ → itu formula Binomial (dengan pengembalian), langsung eliminasi untuk soal tanpa pengembalian.
+
+---
+
+## **No. 27**
+
+Misal $X$ merupakan variabel acak kontinu dengan fungsi peluang:
+
+$$f_X(x) = \begin{cases} \theta x + \dfrac{3}{2}\,\theta^{3/2}\,x^2, & 0 < x < \dfrac{1}{\sqrt{\theta}} \\ 0, & \text{selainnya} \end{cases}$$
+
+dengan $\theta > 0$. Tentukan nilai harapan dari $X$!
+
+a. $\dfrac{\theta^{5/2}}{3} + \dfrac{3\theta^{7/2}}{8}$  
+b. $1$  
+c. $\dfrac{5}{2\sqrt{\theta}}$  
+d. $\dfrac{5}{2}$  
+e. $\dfrac{17}{24\sqrt{\theta}}$
+
+> [!summary]+ **Jawaban No. 27**
+> 
+> **(e). $\dfrac{17}{24\sqrt{\theta}}$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 2 — Variabel Acak Univariat |
+> | **Sub-topik** | [[2_2_Variabel_Acak_Kontinu]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2_2_Variabel_Acak_Kontinu]], kalkulus integral |
+> | **Connected Topics** | [[2_6_Distribusi_Kontinu_Umum]] |
+> | **Referensi** | Hogg, McKean & Craig — Ch. 2 |
+>
+> > [!info]+ **Rumus**
+> >
+> > **Nilai harapan variabel acak kontinu:**
+> >
+> > $$E[X] = \int_{-\infty}^{\infty} x\, f_X(x)\, dx$$
+> >
+> > **Integral pangkat:**
+> >
+> > $$\int_0^b x^n\, dx = \frac{b^{n+1}}{n+1}$$
+>
+> **Diketahui:**
+> - $f_X(x) = \theta x + \dfrac{3}{2}\theta^{3/2} x^2$ untuk $0 < x < \dfrac{1}{\sqrt{\theta}}$, dan $0$ selainnya
+> - $\theta > 0$
+> - Target: $E[X]$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Tulis definisi nilai harapan**
+> >
+> > $$E[X] = \int_0^{1/\sqrt{\theta}} x \cdot f_X(x)\, dx = \int_0^{1/\sqrt{\theta}} x\left(\theta x + \frac{3}{2}\theta^{3/2} x^2\right) dx$$
+> >
+> > **Langkah 2: Distribusikan $x$ ke dalam kurung**
+> >
+> > $$E[X] = \int_0^{1/\sqrt{\theta}} \left(\theta x^2 + \frac{3}{2}\theta^{3/2} x^3\right) dx$$
+> >
+> > **Langkah 3: Integrasikan suku per suku**
+> >
+> > $$E[X] = \theta \cdot \frac{x^3}{3}\Bigg|_0^{1/\sqrt{\theta}} + \frac{3}{2}\theta^{3/2} \cdot \frac{x^4}{4}\Bigg|_0^{1/\sqrt{\theta}}$$
+> >
+> > $$= \frac{\theta}{3}\left(\frac{1}{\sqrt{\theta}}\right)^3 + \frac{3\theta^{3/2}}{8}\left(\frac{1}{\sqrt{\theta}}\right)^4$$
+> >
+> > **Langkah 4: Sederhanakan setiap suku**
+> >
+> > **Suku 1:**
+> >
+> > $$\frac{\theta}{3}\cdot\frac{1}{\theta^{3/2}} = \frac{\theta}{3\,\theta^{3/2}} = \frac{1}{3\,\theta^{1/2}} = \frac{1}{3\sqrt{\theta}}$$
+> >
+> > **Suku 2:**
+> >
+> > $$\frac{3\theta^{3/2}}{8}\cdot\frac{1}{\theta^2} = \frac{3}{8\,\theta^{1/2}} = \frac{3}{8\sqrt{\theta}}$$
+> >
+> > **Langkah 5: Jumlahkan kedua suku**
+> >
+> > $$E[X] = \frac{1}{3\sqrt{\theta}} + \frac{3}{8\sqrt{\theta}} = \frac{1}{\sqrt{\theta}}\left(\frac{1}{3} + \frac{3}{8}\right)$$
+> >
+> > Samakan penyebut: $\text{KPK}(3,8) = 24$
+> >
+> > $$\frac{1}{3} + \frac{3}{8} = \frac{8}{24} + \frac{9}{24} = \frac{17}{24}$$
+> >
+> > Sehingga:
+> >
+> > $$E[X] = \frac{17}{24\sqrt{\theta}}$$
+> >
+> > **Hasil Akhir:** **(e)**. $\dfrac{17}{24\sqrt{\theta}}$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Lupa mengalikan $x$ dengan $f_X(x)$ — menghitung $\int f_X(x)\,dx$ (ini adalah verifikasi bahwa $f$ adalah PDF valid, bukan $E[X]$).
+> > > - Salah menyederhanakan pangkat: $\left(\frac{1}{\sqrt{\theta}}\right)^3 = \theta^{-3/2}$, bukan $\theta^{3/2}$. Perhatikan tanda negatif pada eksponen.
+> > > - Menghitung integral dengan batas atas $\infty$ alih-alih $\frac{1}{\sqrt{\theta}}$ — batas support harus diperhatikan.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Menjawab opsi (a) karena langsung mensubstitusi batas tanpa menyederhanakan — opsi (a) adalah nilai sebelum disederhanakan.
+> > > - Mengira $E[X]$ harus berupa konstanta dan memilih opsi (b) $= 1$ tanpa perhitungan.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika batas atas PDF mengandung **parameter** (seperti $\frac{1}{\sqrt{\theta}}$) → hasil $E[X]$ juga akan mengandung parameter tersebut; eliminasi opsi yang berupa konstanta murni.
+> > > - Setelah integrasi, selalu **sederhanakan pangkat** $\theta$ secara teliti: $\frac{\theta}{\theta^{3/2}} = \theta^{1-3/2} = \theta^{-1/2}$.
+
+---
+
+## **No. 28**
+
+Banyaknya lonjakan daya yang terjadi pada suatu jaringan listrik diketahui mengikuti distribusi Poisson dengan rataan 1 lonjakan daya setiap 12 jam. Berapakah peluang bahwa tidak akan terjadi lonjakan daya lebih dari satu kali dalam 24 jam?
+
+a. $2e^{-2}$  
+b. $3e^{-2}$  
+c. $e^{-1/2}$  
+d. $\dfrac{3}{2}e^{-1/2}$  
+e. $e^{-1}$
+
+> [!summary]+ **Jawaban No. 28**
+> 
+> **(b). $3e^{-2}$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 2 — Variabel Acak Univariat |
+> | **Sub-topik** | [[2_5_Distribusi_Diskrit_Umum]] |
+> | **Difficulty** | Easy |
+> | **Prerequisite** | [[2_1_Variabel_Acak_Diskrit]] |
+> | **Connected Topics** | [[2_6_Distribusi_Kontinu_Umum]] (Eksponensial sebagai waktu antar-kejadian Poisson) |
+> | **Referensi** | Hogg, McKean & Craig — Ch. 3; Wackerly et al. — Ch. 5 |
+>
+> > [!info]+ **Rumus**
+> >
+> > **Distribusi Poisson** — $X \sim \text{Poisson}(\lambda)$:
+> >
+> > $$P(X = k) = \frac{e^{-\lambda}\,\lambda^k}{k!}, \quad k = 0, 1, 2, \ldots$$
+> >
+> > **Penskalaan parameter Poisson:** Jika rata-rata kejadian adalah $\lambda_0$ per satuan waktu $t_0$, maka untuk interval waktu $t$:
+> >
+> > $$\lambda = \lambda_0 \cdot \frac{t}{t_0}$$
+>
+> **Diketahui:**
+> - Rata-rata: $1$ lonjakan per $12$ jam → $\lambda_0 = \frac{1}{12}$ lonjakan/jam
+> - Interval yang ditanya: $t = 24$ jam
+> - $\lambda_{24} = \frac{1}{12} \times 24 = 2$ lonjakan per 24 jam
+> - Target: $P(X \leq 1)$ di mana $X \sim \text{Poisson}(2)$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Tentukan parameter $\lambda$ untuk 24 jam**
+> >
+> > Rata-rata diberikan sebagai 1 lonjakan per 12 jam.
+> >
+> > Untuk interval 24 jam (= $2 \times 12$ jam):
+> >
+> > $$\lambda = 1 \times \frac{24}{12} = 2$$
+> >
+> > Jadi $X \sim \text{Poisson}(\lambda = 2)$.
+> >
+> > **Langkah 2: Terjemahkan kalimat soal**
+> >
+> > "Tidak akan terjadi lebih dari satu kali" berarti:
+> >
+> > $$P(X \leq 1) = P(X = 0) + P(X = 1)$$
+> >
+> > **Langkah 3: Hitung $P(X = 0)$**
+> >
+> > $$P(X = 0) = \frac{e^{-2}\cdot 2^0}{0!} = e^{-2}$$
+> >
+> > **Langkah 4: Hitung $P(X = 1)$**
+> >
+> > $$P(X = 1) = \frac{e^{-2}\cdot 2^1}{1!} = 2e^{-2}$$
+> >
+> > **Langkah 5: Jumlahkan**
+> >
+> > $$P(X \leq 1) = e^{-2} + 2e^{-2} = 3e^{-2}$$
+> >
+> > **Hasil Akhir:** **(b)**. $3e^{-2}$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menggunakan $\lambda = 1$ tanpa penskalaan ke 24 jam — menghasilkan $e^{-1}$ atau $\frac{3}{2}e^{-1/2}$ (opsi c atau d).
+> > > - Salah menskalakan: menggunakan $\lambda = \frac{1}{2}$ (membagi, bukan mengalikan) — menghasilkan opsi (d).
+> > > - Hanya menghitung $P(X = 1)$ saja tanpa menjumlahkan $P(X = 0)$ — menghasilkan $2e^{-2}$ yaitu opsi (a).
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Menafsirkan "tidak lebih dari satu kali" sebagai $P(X < 1) = P(X = 0)$ saja — padahal "tidak lebih dari satu" = $P(X \leq 1)$, termasuk $X = 1$.
+> > > - Mengira "rataan 1 lonjakan per 12 jam" langsung berarti $\lambda = 12$ (membalik satuan).
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal menyebut **rata-rata per satuan waktu tertentu** tetapi menanyakan **interval berbeda** → **skalakan $\lambda$** terlebih dahulu sebelum menghitung.
+> > > - Frasa **"tidak lebih dari satu"** → $P(X \leq 1)$, harus mencakup $k = 0$ dan $k = 1$.
+
+---
+
+## **No. 29**
+
+Sebuah koin yang setimbang dilempar satu kali. Jika sisi angka muncul, maka 1 dadu setimbang digulirkan. Jika sisi gambar yang muncul, maka 2 dadu setimbang digulirkan. Jika $Y$ merupakan total angka dadu yang muncul, tentukan $P(Y = 6)$!
+
+a. $\dfrac{1}{9}$  
+b. $\dfrac{5}{36}$  
+c. $\dfrac{11}{72}$  
+d. $\dfrac{1}{6}$  
+e. $\dfrac{11}{36}$
+
+> [!summary]+ **Jawaban No. 29**
+> 
+> **(c). $\dfrac{11}{72}$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 1 — Probabilitas Dasar |
+> | **Sub-topik** | [[1_6_Teorema_Bayes_dan_Hukum_Probabilitas_Total]] |
+> | **Difficulty** | Easy |
+> | **Prerequisite** | [[1_4_Probabilitas_Bersyarat]], [[1_5_Kejadian_Independen]] |
+> | **Connected Topics** | [[3_4_Nilai_Harapan_dan_Variansi_Bersyarat]] |
+> | **Referensi** | Wackerly, Mendenhall & Scheaffer — Ch. 3 |
+>
+> > [!info]+ **Rumus**
+> >
+> > **Hukum Probabilitas Total:**
+> >
+> > $$P(B) = \sum_{i} P(B \mid A_i)\, P(A_i)$$
+> >
+> > di mana $\{A_i\}$ adalah partisi ruang sampel.
+>
+> **Diketahui:**
+> - Koin setimbang: $P(\text{Angka}) = P(\text{Gambar}) = \frac{1}{2}$
+> - Jika Angka → gulir 1 dadu; Jika Gambar → gulir 2 dadu
+> - $Y$ = total angka dadu
+> - Target: $P(Y = 6)$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Partisi ruang sampel berdasarkan hasil koin**
+> >
+> > Misalkan $A$ = muncul Angka, $G$ = muncul Gambar.
+> >
+> > $$P(Y = 6) = P(Y = 6 \mid A)\,P(A) + P(Y = 6 \mid G)\,P(G)$$
+> >
+> > $$= P(Y = 6 \mid A)\cdot\frac{1}{2} + P(Y = 6 \mid G)\cdot\frac{1}{2}$$
+> >
+> > **Langkah 2: Hitung $P(Y = 6 \mid A)$**
+> >
+> > Jika Angka muncul, hanya 1 dadu digulirkan. Dadu memiliki sisi 1–6.
+> >
+> > $Y = 6$ hanya jika dadu menunjukkan angka 6, yaitu 1 dari 6 kemungkinan:
+> >
+> > $$P(Y = 6 \mid A) = \frac{1}{6}$$
+> >
+> > **Langkah 3: Hitung $P(Y = 6 \mid G)$**
+> >
+> > Jika Gambar muncul, 2 dadu digulirkan. Total ruang sampel = $6 \times 6 = 36$.
+> >
+> > Pasangan $(d_1, d_2)$ dengan $d_1 + d_2 = 6$:
+> >
+> > | $d_1$ | $d_2$ |
+> > |:-:|:-:|
+> > | $1$ | $5$ |
+> > | $2$ | $4$ |
+> > | $3$ | $3$ |
+> > | $4$ | $2$ |
+> > | $5$ | $1$ |
+> >
+> > Jumlah pasangan = 5.
+> >
+> > $$P(Y = 6 \mid G) = \frac{5}{36}$$
+> >
+> > **Langkah 4: Terapkan Hukum Total Probabilitas**
+> >
+> > $$P(Y = 6) = \frac{1}{6}\cdot\frac{1}{2} + \frac{5}{36}\cdot\frac{1}{2}$$
+> >
+> > $$= \frac{1}{12} + \frac{5}{72}$$
+> >
+> > Samakan penyebut: $\text{KPK}(12, 72) = 72$
+> >
+> > $$= \frac{6}{72} + \frac{5}{72} = \frac{11}{72}$$
+> >
+> > **Hasil Akhir:** **(c)**. $\dfrac{11}{72}$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengabaikan hasil koin dan langsung menghitung $P(Y = 6)$ dengan 2 dadu saja — menghasilkan $\frac{5}{36}$ (opsi b).
+> > > - Tidak menggunakan Hukum Total Probabilitas — menjumlahkan langsung $\frac{1}{6} + \frac{5}{36}$ tanpa pembobotan $\frac{1}{2}$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Mengira bahwa satu dadu dan dua dadu memberikan ruang sampel yang sama — padahal jumlah dadu berbeda mengubah ruang sampel secara fundamental.
+> > > - Lupa bahwa $Y = 6$ dari 1 dadu (Angka muncul) berarti 1 dadu menunjukkan 6, bukan jumlah dua dadu.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal melibatkan **eksperimen dua tahap** (koin lalu dadu) → selalu gunakan **Hukum Total Probabilitas** dengan partisi berdasarkan hasil tahap pertama.
+> > > - Jika jumlah objek yang digunakan **bergantung pada hasil acak sebelumnya** → kondisikan setiap kasus secara terpisah.
+
+---
+
+## **No. 30**
+
+Misal $A$, $B$, dan $C$ merupakan kejadian sedemikian sehingga $A$ dan $B$ saling bebas, $B$ dan $C$ saling lepas, $P(A) = \dfrac{1}{4}$, $P(B) = \dfrac{1}{6}$, $P(C) = \dfrac{1}{2}$. Berapakah $P\!\left((A \cap B)^C \cup C\right)$?
+
+a. $\dfrac{11}{24}$  
+
+b. $\dfrac{3}{4}$  
+
+c. $\dfrac{5}{6}$  
+
+d. $\dfrac{23}{24}$  
+
+e. $1$
+
+> [!summary]+ **Jawaban No. 30**
+> 
+> **(d). $\dfrac{23}{24}$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 1 — Probabilitas Dasar |
+> | **Sub-topik** | [[1_5_Kejadian_Independen]], [[1_2_Aksioma_dan_Perhitungan_Probabilitas]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[1_2_Aksioma_dan_Perhitungan_Probabilitas]], [[1_5_Kejadian_Independen]] |
+> | **Connected Topics** | [[1_4_Probabilitas_Bersyarat]], [[1_6_Teorema_Bayes_dan_Hukum_Probabilitas_Total]] |
+> | **Referensi** | Wackerly, Mendenhall & Scheaffer — Ch. 3 |
+>
+> > [!info]+ **Rumus**
+> >
+> > **Komplemen:**
+> >
+> > $$P(E^C) = 1 - P(E)$$
+> >
+> > **Inklusi-Eksklusi untuk dua kejadian:**
+> >
+> > $$P(E \cup F) = P(E) + P(F) - P(E \cap F)$$
+> >
+> > **Independensi ($A$ dan $B$ saling bebas):**
+> >
+> > $$P(A \cap B) = P(A)\cdot P(B)$$
+> >
+> > **Saling lepas ($B$ dan $C$ mutually exclusive):**
+> >
+> > $$P(B \cap C) = 0$$
+>
+> **Diketahui:**
+> - $A \perp B$ (saling bebas): $P(A \cap B) = P(A)\cdot P(B)$
+> - $B$ dan $C$ saling lepas: $P(B \cap C) = 0$
+> - $P(A) = \frac{1}{4}$, $P(B) = \frac{1}{6}$, $P(C) = \frac{1}{2}$
+> - Target: $P\!\left((A \cap B)^C \cup C\right)$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung $P(A \cap B)$**
+> >
+> > Karena $A$ dan $B$ saling bebas:
+> >
+> > $$P(A \cap B) = P(A)\cdot P(B) = \frac{1}{4}\cdot\frac{1}{6} = \frac{1}{24}$$
+> >
+> > **Langkah 2: Hitung $P((A \cap B)^C)$**
+> >
+> > $$P((A \cap B)^C) = 1 - P(A \cap B) = 1 - \frac{1}{24} = \frac{23}{24}$$
+> >
+> > **Langkah 3: Terapkan inklusi-eksklusi**
+> >
+> > $$P\!\left((A\cap B)^C \cup C\right) = P\!\left((A\cap B)^C\right) + P(C) - P\!\left((A\cap B)^C \cap C\right)$$
+> >
+> > Kita perlu $P\!\left((A\cap B)^C \cap C\right)$.
+> >
+> > **Langkah 4: Hitung $P((A \cap B)^C \cap C)$**
+> >
+> > Gunakan hukum komplemen:
+> >
+> > $$P\!\left((A\cap B)^C \cap C\right) = P(C) - P\!\left(A\cap B\cap C\right)$$
+> >
+> > Ini karena: $(A\cap B)^C \cap C$ adalah bagian dari $C$ yang **tidak** termasuk $A \cap B$, yaitu $C \setminus (A\cap B\cap C)$.
+> >
+> > Sekarang, $P(A\cap B\cap C)$: perhatikan bahwa $B$ dan $C$ **saling lepas**, sehingga $B \cap C = \emptyset$.
+> >
+> > Maka $A \cap B \cap C \subseteq B \cap C = \emptyset$, sehingga:
+> >
+> > $$P(A\cap B\cap C) = 0$$
+> >
+> > Jadi:
+> >
+> > $$P\!\left((A\cap B)^C \cap C\right) = P(C) - 0 = P(C) = \frac{1}{2}$$
+> >
+> > **Langkah 5: Substitusikan ke inklusi-eksklusi**
+> >
+> > $$P\!\left((A\cap B)^C \cup C\right) = \frac{23}{24} + \frac{1}{2} - \frac{1}{2} = \frac{23}{24}$$
+> >
+> > Perhatikan bahwa suku $P(C)$ dan $P\!\left((A\cap B)^C \cap C\right)$ saling menghapus!
+> >
+> > $$\boxed{P\!\left((A\cap B)^C \cup C\right) = \frac{23}{24}}$$
+> >
+> > **Catatan intuitif:** Karena $B \cap C = \emptyset$, maka $C \subseteq B^C$, yang berarti $C \subseteq (A\cap B)^C$. Jadi $C$ sudah termuat di dalam $(A\cap B)^C$, sehingga $(A\cap B)^C \cup C = (A\cap B)^C$, dan peluangnya langsung $\frac{23}{24}$.
+> >
+> > **Hasil Akhir:** **(d)**. $\dfrac{23}{24}$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengacaukan **saling bebas** (independent) dengan **saling lepas** (mutually exclusive) — keduanya berbeda secara fundamental. Saling lepas: $P(B\cap C)=0$; saling bebas: $P(A\cap B)=P(A)P(B)$.
+> > > - Mengasumsikan bahwa karena $B\perp\!\!\!\perp A$ dan $B\cap C=\emptyset$, maka $A$ dan $C$ juga saling lepas — ini tidak dapat disimpulkan.
+> > > - Salah menerapkan inklusi-eksklusi: menulis $P(E\cup F) = P(E) + P(F)$ tanpa mengurangi $P(E\cap F)$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Tidak menyadari bahwa karena $C \subseteq (A\cap B)^C$ (akibat $B\cap C=\emptyset$), maka gabungan $(A\cap B)^C \cup C$ sama dengan $(A\cap B)^C$ itu sendiri — langkah ini mempersingkat perhitungan secara signifikan.
+> > > - Menjumlahkan $P((A\cap B)^C) + P(C)$ tanpa mengurangi irisan — menghasilkan $\frac{23}{24}+\frac{1}{2} = \frac{47}{24} > 1$, yang jelas salah.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika soal mencampur **"saling bebas"** dan **"saling lepas"** dalam satu soal → baca ulang dengan teliti mana pasangan yang independen dan mana yang mutually exclusive.
+> > > - Jika hasil inklusi-eksklusi lebih dari 1 → pasti ada kesalahan; periksa apakah suku irisan sudah dikurangi.
+> > > - Jika soal menyebut $B \cap C = \emptyset$ dan ada ekspresi melibatkan $C$ → langsung periksa apakah $C$ sudah termuat di dalam komplemen yang relevan.
+
+---
