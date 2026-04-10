@@ -1,3 +1,4 @@
+# CF2 Periode Agustus 2025
 ## **No. 1**
 
 PT Asuransi Gemilang Sejahtera memiliki suatu produk asuransi kendaraan bermotor yang memberikan perlindungan kepada pengendara hingga usia 65 tahun. Seorang analis aktuaria melakukan studi pengalaman mengenai peluang kecelakaan dalam suatu tahun kalender dan diperoleh statistik sebagai berikut:
@@ -18,6 +19,7 @@ d. $0{,}23$
 e. $0{,}40$
 
 > [!summary]+ **Jawaban No. 1** 
+> 
 > **$0{,}16$ (b)**
 >
 > | Field | Isi |
@@ -30,10 +32,15 @@ e. $0{,}40$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 1.4; Miller Bab 2 |
 >
 > > [!info]+ **Rumus**  
+> > 
 > > **Teorema Bayes:**
+> > 
 > > $$P(A_i \mid B) = \frac{P(B \mid A_i)\,P(A_i)}{\sum_{j} P(B \mid A_j)\,P(A_j)}$$
+> > 
 > > **Hukum Probabilitas Total:**
+> > 
 > > $$P(B) = \sum_{j} P(B \mid A_j)\,P(A_j)$$
+> >
 >
 > **Diketahui:**
 > - $A_1 = \{18\text{-}20\}$, $P(A_1) = 0{,}08$, $P(\text{Kecelakaan} \mid A_1) = 0{,}06$
@@ -47,6 +54,7 @@ e. $0{,}40$
 > > **Langkah 1: Hitung $P(\text{Kecelakaan})$ dengan Hukum Probabilitas Total**
 > >
 > > $$P(\text{Kecelakaan}) = (0{,}06)(0{,}08) + (0{,}03)(0{,}15) + (0{,}02)(0{,}49) + (0{,}04)(0{,}28)$$
+> > 
 > > $$= 0{,}0048 + 0{,}0045 + 0{,}0098 + 0{,}0112 = 0{,}0303$$
 > >
 > > **Langkah 2: Terapkan Teorema Bayes**
@@ -83,6 +91,7 @@ d. $44$
 e. $64$
 
 > [!summary]+ **Jawaban No. 2** 
+> 
 > **$20$ (b)**
 >
 > | Field | Isi |
@@ -95,9 +104,13 @@ e. $64$
 > | **Referensi** | Miller Bab 2; Hogg-Tanis-Zimm Bab 1.2 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > Karena pengambilan dari Wadah A dan B saling bebas:
+> >
 > > $$P(\text{sama warna}) = P(\text{keduanya merah}) + P(\text{keduanya biru})$$
+> >
 > > $$= P(M_A)\,P(M_B) + P(B_A)\,P(B_B)$$
+> >
 >
 > **Diketahui:**
 > - Wadah A: 4 merah, 6 biru, total 10 bola
@@ -114,8 +127,11 @@ e. $64$
 > > **Langkah 2: Sederhanakan**
 > >
 > > $$\frac{64 + 6x}{10(16+x)} = 0{,}44$$
+> >
 > > $$64 + 6x = 4{,}4(16 + x)$$
+> >
 > > $$64 + 6x = 70{,}4 + 4{,}4x$$
+> >
 > > $$1{,}6x = 6{,}4 \implies x = 4$$
 > >
 > > **Langkah 3: Hitung total bola Wadah B**
@@ -148,6 +164,7 @@ d. $\dfrac{1856}{3375}$
 e. $\dfrac{36}{65}$
 
 > [!summary]+ **Jawaban No. 3**
+> 
 > **(e). $\dfrac{36}{65}$**
 >
 > | Field | Isi |
@@ -160,12 +177,19 @@ e. $\dfrac{36}{65}$
 > | **Referensi** | Miller Bab 2; Hogg-Tanis-Zimm Bab 1.3 |
 >
 > > [!info]+ **Rumus**
+> >
 > > **Prinsip Probabilitas Klasik:**
+> >
 > > $$P(A) = \frac{\text{Jumlah cara favorable}}{\text{Total cara pengambilan}}$$
+> >
 > > **Kombinasi** (pengambilan tanpa urutan, tanpa pengembalian):
+> >
 > > $$\binom{n}{k} = \frac{n!}{k!(n-k)!}$$
+> >
 > > **Aturan Perkalian:** Jika pemilihan $k$ laki-laki dari $n_L$ dan $m$ perempuan dari $n_P$ dilakukan secara bersamaan:
+> >
 > > $$\text{Cara} = \binom{n_L}{k} \times \binom{n_P}{m}$$
+> >
 >
 > **Diketahui:**
 > - 8 laki-laki (L), 7 perempuan (P), total 15 siswa
@@ -194,11 +218,13 @@ e. $\dfrac{36}{65}$
 > > **Langkah 3: Hitung Cara Favorable untuk Kasus 2L, 1P**
 > >
 > > Pilih 2 laki-laki dari 8, dan 1 perempuan dari 7:
+> >
 > > $$\binom{8}{2} \times \binom{7}{1} = \frac{8 \times 7}{2} \times 7 = 28 \times 7 = 196$$
 > >
 > > **Langkah 4: Hitung Cara Favorable untuk Kasus 3L, 0P**
 > >
 > > Pilih 3 laki-laki dari 8, dan 0 perempuan dari 7:
+> >
 > > $$\binom{8}{3} \times \binom{7}{0} = \frac{8 \times 7 \times 6}{3 \times 2 \times 1} \times 1 = 56 \times 1 = 56$$
 > >
 > > **Langkah 5: Jumlahkan dan Hitung Probabilitas**
@@ -208,6 +234,7 @@ e. $\dfrac{36}{65}$
 > > $$P(\text{L} > \text{P}) = \frac{252}{455}$$
 > >
 > > Sederhanakan: $\gcd(252, 455)$. Coba: $252 = 7 \times 36$ dan $455 = 7 \times 65$, sehingga $\gcd = 7$:
+> >
 > > $$\frac{252}{455} = \frac{252 \div 7}{455 \div 7} = \frac{36}{65}$$
 > >
 > > **Hasil Akhir:** **(e)**. $\dfrac{36}{65}$
@@ -243,6 +270,7 @@ d. $\dfrac{28}{15}$
 e. $\dfrac{12}{5}$
 
 > [!summary]+ **Jawaban No. 4** 
+> 
 > **$\dfrac{28}{15}$ (d)**
 >
 > | Field | Isi |
@@ -255,7 +283,9 @@ e. $\dfrac{12}{5}$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 2; Miller Bab 4 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > $$E[X] = \int_{-\infty}^{\infty} x\,f(x)\,dx$$
+> >
 > > Untuk fungsi nilai mutlak: $|x| = -x$ jika $x < 0$, dan $|x| = x$ jika $x \geq 0$.
 >
 > **Diketahui:**
@@ -267,6 +297,7 @@ e. $\dfrac{12}{5}$
 > > **Langkah 1: Verifikasi PDF valid**
 > >
 > > $$\int_{-2}^{0} \frac{-x}{10}\,dx + \int_{0}^{4} \frac{x}{10}\,dx = \frac{1}{10}\left[\frac{-x^2}{2}\right]_{-2}^{0} + \frac{1}{10}\left[\frac{x^2}{2}\right]_{0}^{4}$$
+> >
 > > $$= \frac{1}{10}(2) + \frac{1}{10}(8) = \frac{2}{10} + \frac{8}{10} = 1 \checkmark$$
 > >
 > > **Langkah 2: Hitung $E[X]$ dengan memecah integral di $x = 0$**
@@ -274,9 +305,11 @@ e. $\dfrac{12}{5}$
 > > $$E[X] = \int_{-2}^{0} x \cdot \frac{-x}{10}\,dx + \int_{0}^{4} x \cdot \frac{x}{10}\,dx$$
 > >
 > > Bagian pertama ($x \in [-2, 0]$):
+> >
 > > $$\int_{-2}^{0} \frac{-x^2}{10}\,dx = \frac{-1}{10}\left[\frac{x^3}{3}\right]_{-2}^{0} = \frac{-1}{10}\left(0 - \frac{-8}{3}\right) = \frac{-1}{10} \cdot \frac{8}{3} = \frac{-8}{30}$$
 > >
 > > Bagian kedua ($x \in [0, 4]$):
+> >
 > > $$\int_{0}^{4} \frac{x^2}{10}\,dx = \frac{1}{10}\left[\frac{x^3}{3}\right]_{0}^{4} = \frac{1}{10} \cdot \frac{64}{3} = \frac{64}{30}$$
 > >
 > > **Langkah 3: Jumlahkan**
@@ -310,6 +343,7 @@ d. $817$ ribu
 e. $904$ ribu
 
 > [!summary]+ **Jawaban No. 5**
+> 
 > **(b). $699$ ribu**
 >
 > | Field | Isi |
@@ -322,9 +356,11 @@ e. $904$ ribu
 > | **Referensi** | Hogg-Tanis-Zimm Bab 3.2; Miller Bab 5.3 |
 >
 > > [!info]+ **Rumus**
+> >
 > > **PMF Poisson:** $P(N=k) = \dfrac{e^{-\lambda}\lambda^k}{k!}$ untuk $k = 0, 1, 2, \ldots$
 > >
 > > **Variansi dari variabel diskrit:**
+> >
 > > $$\text{Var}(B) = E[B^2] - (E[B])^2, \qquad \text{SD}(B) = \sqrt{\text{Var}(B)}$$
 > >
 > > **Transformasi terbatas (capped variable):** Jika $B = \min(N, c)$, maka $B$ mengambil nilai $0, 1, \ldots, c-1$ masing-masing dengan $P(N=k)$, dan nilai $c$ dengan $P(N \geq c)$.
@@ -339,8 +375,11 @@ e. $904$ ribu
 > > **Langkah 1: Hitung Probabilitas Poisson yang Diperlukan**
 > >
 > > Dengan $\lambda = 0{,}6$:
+> >
 > > $$P(N=0) = \frac{e^{-0{,}6}(0{,}6)^0}{0!} = e^{-0{,}6} \approx 0{,}5488$$
+> >
 > > $$P(N=1) = \frac{e^{-0{,}6}(0{,}6)^1}{1!} = 0{,}6\,e^{-0{,}6} \approx 0{,}3293$$
+> >
 > > $$P(N \geq 2) = 1 - P(N=0) - P(N=1) = 1 - 0{,}5488 - 0{,}3293 = 0{,}1219$$
 > >
 > > **Langkah 2: Tentukan Distribusi $B = \min(N, 2)$**
@@ -361,17 +400,21 @@ e. $904$ ribu
 > > **Langkah 3: Hitung $E[B]$**
 > >
 > > $$E[B] = 0 \times 0{,}5488 + 1 \times 0{,}3293 + 2 \times 0{,}1219$$
+> >
 > > $$= 0 + 0{,}3293 + 0{,}2438 = 0{,}5731 \text{ juta}$$
 > >
 > > **Langkah 4: Hitung $E[B^2]$**
 > >
 > > $$E[B^2] = 0^2 \times 0{,}5488 + 1^2 \times 0{,}3293 + 2^2 \times 0{,}1219$$
+> >
 > > $$= 0 + 0{,}3293 + 4 \times 0{,}1219 = 0{,}3293 + 0{,}4876 = 0{,}8169 \text{ juta}^2$$
 > >
 > > **Langkah 5: Hitung Variansi dan Deviasi Standar**
 > >
 > > $$\text{Var}(B) = E[B^2] - (E[B])^2 = 0{,}8169 - (0{,}5731)^2$$
+> >
 > > $$(0{,}5731)^2 = 0{,}3284$$
+> >
 > > $$\text{Var}(B) = 0{,}8169 - 0{,}3284 = 0{,}4885 \text{ juta}^2$$
 > >
 > > $$\text{SD}(B) = \sqrt{0{,}4885} \approx 0{,}6989 \text{ juta} = 698{,}9 \text{ ribu} \approx 699 \text{ ribu}$$
@@ -411,6 +454,7 @@ d. $g(y) = \begin{cases} 15y^{3/2}\left(1 - y^{1/2}\right), & \text{untuk } x^2 
 e. $g(y) = \begin{cases} 15y^{3/2}\left(1 - y^{1/2}\right), & \text{untuk } 0 \leq y \leq 1 \\ 0, & \text{selainnya} \end{cases}$
 
 > [!summary]+ **Jawaban No. 6**
+> 
 > **(e). $g(y) = 15y^{3/2}(1-y^{1/2})$ untuk $0 \leq y \leq 1$**
 >
 > | Field | Isi |
@@ -423,8 +467,11 @@ e. $g(y) = \begin{cases} 15y^{3/2}\left(1 - y^{1/2}\right), & \text{untuk } 0 \l
 > | **Referensi** | Hogg-McKean-Craig Bab 2.1–2.3; Miller Bab 3.5 |
 >
 > > [!info]+ **Rumus**
+> >
 > > **PDF Marginal dari $Y$** (mengintegrasikan $f(x,y)$ terhadap $x$):
+> >
 > > $$g_Y(y) = \int_{-\infty}^{\infty} f(x, y)\,dx$$
+> >
 > > Batas integrasi harus ditentukan dari **region support** $\{(x,y) : x^2 \leq y \leq x\}$ untuk nilai $y$ yang diberikan — bukan dari nilai $x$ yang diberikan.
 >
 > **Diketahui:**
@@ -456,6 +503,7 @@ e. $g(y) = \begin{cases} 15y^{3/2}\left(1 - y^{1/2}\right), & \text{untuk } 0 \l
 > > $$g_Y(y) = \int_{y}^{\sqrt{y}} 15y\,dx$$
 > >
 > > Karena $15y$ adalah konstanta terhadap $x$ (tidak mengandung $x$):
+> >
 > > $$= 15y \int_{y}^{\sqrt{y}} dx = 15y \cdot \left[x\right]_{y}^{\sqrt{y}} = 15y\left(\sqrt{y} - y\right)$$
 > >
 > > **Langkah 4: Sederhanakan Hasilnya**
@@ -463,11 +511,13 @@ e. $g(y) = \begin{cases} 15y^{3/2}\left(1 - y^{1/2}\right), & \text{untuk } 0 \l
 > > $$g_Y(y) = 15y(\sqrt{y} - y) = 15y \cdot y^{1/2} - 15y \cdot y = 15y^{3/2} - 15y^2$$
 > >
 > > Faktorkan:
+> >
 > > $$= 15y^{3/2}(1 - y^{1/2})$$
 > >
 > > **Langkah 5: Nyatakan Support Marginal**
 > >
 > > Support $g_Y$ adalah $0 \leq y \leq 1$ — **bebas dari $x$** karena $x$ sudah diintegrasikan:
+> >
 > > $$g_Y(y) = \begin{cases} 15y^{3/2}(1 - y^{1/2}), & 0 \leq y \leq 1 \\ 0, & \text{selainnya} \end{cases}$$
 > >
 > > **Verifikasi (opsional):** Seharusnya $\displaystyle\int_0^1 15y^{3/2}(1-y^{1/2})\,dy = 1$.
@@ -508,6 +558,7 @@ d. $0{,}59$
 e. $0{,}96$
 
 > [!summary]+ **Jawaban No. 7** 
+> 
 > **$0{,}41$ (b)**
 >
 > | Field | Isi |
@@ -520,9 +571,13 @@ e. $0{,}96$
 > | **Referensi** | Hogg-McKean-Craig Bab 2.1; Miller Bab 3.5 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > Perangkat gagal dalam 1 jam jika $\min(X, Y) \leq 1$:
+> >
 > > $$P(\min(X,Y) \leq 1) = 1 - P(\min(X,Y) > 1) = 1 - P(X > 1, Y > 1)$$
+> >
 > > $$P(X > 1, Y > 1) = \int_1^3 \int_1^3 f(x,y)\,dx\,dy$$
+> >
 >
 > **Diketahui:**
 > - $f(x,y) = \dfrac{x+y}{27}$ pada $(0,3) \times (0,3)$, kontinu
@@ -540,9 +595,11 @@ e. $0{,}96$
 > > $$P(X>1, Y>1) = \int_1^3 \int_1^3 \frac{x+y}{27}\,dx\,dy$$
 > >
 > > Integral dalam terhadap $x$:
+> >
 > > $$\int_1^3 \frac{x+y}{27}\,dx = \frac{1}{27}\left[\frac{x^2}{2} + yx\right]_1^3 = \frac{1}{27}\left[\left(\frac{9}{2}+3y\right)-\left(\frac{1}{2}+y\right)\right] = \frac{1}{27}(4 + 2y)$$
 > >
 > > Integral luar terhadap $y$:
+> >
 > > $$\int_1^3 \frac{4+2y}{27}\,dy = \frac{1}{27}\left[4y + y^2\right]_1^3 = \frac{1}{27}\left[(12+9)-(4+1)\right] = \frac{1}{27}(21-5) = \frac{16}{27} \approx 0{,}593$$
 > >
 > > **Langkah 3: Hitung probabilitas kegagalan**
@@ -581,6 +638,7 @@ d. $\dfrac{4}{9}$
 e. $\dfrac{1}{4}$
 
 > [!summary]+ **Jawaban No. 8** 
+> 
 > **$\dfrac{1}{4}$ (e)**
 >
 > | Field | Isi |
@@ -593,10 +651,15 @@ e. $\dfrac{1}{4}$
 > | **Referensi** | Hogg-McKean-Craig Bab 2.3; Miller Bab 3.6 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > **PDF bersyarat** $Y \mid X = x$:
+> >
 > > $$f_{Y|X}(y \mid x) = \frac{f(x,y)}{f_X(x)}$$
+> >
 > > **Probabilitas bersyarat:**
+> >
 > > $$P(Y < a \mid X = x) = \int_0^{a} f_{Y|X}(y \mid x)\,dy$$
+> >
 >
 > **Diketahui:**
 > - $f(x,y) = 24xy$ untuk $0 < x < 1$, $0 < y < 1-x$
@@ -645,6 +708,7 @@ d. $e^{2t_1 t_2}$
 e. $e^{t_1^2 + t_2^2}$
 
 > [!summary]+ **Jawaban No. 9**
+> 
 > **(e). $e^{t_1^2 + t_2^2}$**
 >
 > | Field | Isi |
@@ -657,10 +721,15 @@ e. $e^{t_1^2 + t_2^2}$
 > | **Referensi** | Hogg-McKean-Craig Bab 3.1; Hogg-Tanis-Zimm Bab 5.8 |
 >
 > > [!info]+ **Rumus**
+> >
 > > **Joint MGF dari $(W, Z)$:**
+> >
 > > $$M_{W,Z}(t_1, t_2) = E\!\left[e^{t_1 W + t_2 Z}\right]$$
+> >
 > > **Sifat Independensi:** Jika $X \perp Y$, maka untuk semua fungsi $g(X)$ dan $h(Y)$:
+> >
 > > $$E[g(X) \cdot h(Y)] = E[g(X)] \cdot E[h(Y)]$$
+> >
 > > **Substitusi MGF univariat:** $E\!\left[e^{aX}\right] = M_X(a)$ — evaluasi MGF $X$ di titik $a$.
 >
 > **Diketahui:**
@@ -674,23 +743,31 @@ e. $e^{t_1^2 + t_2^2}$
 > > **Langkah 1: Ekspresikan $t_1 W + t_2 Z$ dalam $X$ dan $Y$**
 > >
 > > Substitusi $W = X + Y$ dan $Z = Y - X$:
+> >
 > > $$t_1 W + t_2 Z = t_1(X+Y) + t_2(Y-X)$$
+> >
 > > $$= t_1 X + t_1 Y + t_2 Y - t_2 X$$
+> >
 > > $$= (t_1 - t_2)X + (t_1 + t_2)Y$$
 > >
 > > **Langkah 2: Pisahkan Ekspektasi Menggunakan Independensi $X \perp Y$**
 > >
 > > $$M_{W,Z}(t_1,t_2) = E\!\left[e^{(t_1-t_2)X + (t_1+t_2)Y}\right]$$
+> >
 > > $$= E\!\left[e^{(t_1-t_2)X} \cdot e^{(t_1+t_2)Y}\right]$$
 > >
 > > Karena $X \perp Y$, faktor yang hanya bergantung pada $X$ dan faktor yang hanya bergantung pada $Y$ dapat dipisahkan:
+> >
 > > $$= E\!\left[e^{(t_1-t_2)X}\right] \cdot E\!\left[e^{(t_1+t_2)Y}\right]$$
+> >
 > > $$= M_X(t_1-t_2) \cdot M_Y(t_1+t_2)$$
 > >
 > > **Langkah 3: Substitusi MGF**
 > >
 > > Gunakan $M_X(s) = e^{s^2/2}$ dan $M_Y(s) = e^{s^2/2}$:
+> >
 > > $$M_X(t_1-t_2) = e^{(t_1-t_2)^2/2}$$
+> >
 > > $$M_Y(t_1+t_2) = e^{(t_1+t_2)^2/2}$$
 > >
 > > $$M_{W,Z}(t_1,t_2) = e^{(t_1-t_2)^2/2} \cdot e^{(t_1+t_2)^2/2} = e^{\frac{(t_1-t_2)^2 + (t_1+t_2)^2}{2}}$$
@@ -698,13 +775,17 @@ e. $e^{t_1^2 + t_2^2}$
 > > **Langkah 4: Sederhanakan Eksponen**
 > >
 > > Ekspansi pembilang eksponen:
+> >
 > > $$(t_1-t_2)^2 = t_1^2 - 2t_1t_2 + t_2^2$$
+> >
 > > $$(t_1+t_2)^2 = t_1^2 + 2t_1t_2 + t_2^2$$
 > >
 > > Jumlahkan (perhatikan suku $\pm 2t_1t_2$ saling menghilangkan):
+> >
 > > $$(t_1-t_2)^2 + (t_1+t_2)^2 = 2t_1^2 + 2t_2^2$$
 > >
 > > Maka:
+> >
 > > $$M_{W,Z}(t_1,t_2) = e^{\frac{2t_1^2 + 2t_2^2}{2}} = e^{t_1^2 + t_2^2}$$
 > >
 > > **Catatan Bonus:** Karena joint MGF memfaktorkan menjadi $e^{t_1^2} \cdot e^{t_2^2} = M_W(t_1) \cdot M_Z(t_2)$, ini membuktikan bahwa $W$ dan $Z$ **saling bebas** — meskipun keduanya merupakan kombinasi linear dari $X$ dan $Y$ yang sama!
@@ -745,6 +826,7 @@ d. $\dfrac{2}{3}$
 e. $\dfrac{8}{9}$
 
 > [!summary]+ **Jawaban No. 10**
+> 
 > **(e). $\dfrac{8}{9}$**
 >
 > | Field | Isi |
@@ -757,12 +839,19 @@ e. $\dfrac{8}{9}$
 > | **Referensi** | Hogg-McKean-Craig Bab 2.3; Miller Bab 3.6 |
 >
 > > [!info]+ **Rumus**
+> >
 > > **PDF Bersyarat** $Y$ diketahui $X = x$:
+> >
 > > $$f_{Y|X}(y \mid x) = \frac{f(x,y)}{f_X(x)}$$
+> >
 > > **PDF Marginal** $X$:
+> >
 > > $$f_X(x) = \int_1^{\infty} f(x,y)\,dy$$
+> >
 > > **Probabilitas bersyarat** menggunakan PDF bersyarat:
+> >
 > > $$P(a < Y < b \mid X = x) = \int_a^b f_{Y|X}(y \mid x)\,dy$$
+> >
 >
 > **Diketahui:**
 > - $f(x,y) = \dfrac{2}{x^2(x-1)} \cdot y^{-\frac{2x-1}{x-1}}$ untuk $x > 1$, $y > 1$
@@ -778,11 +867,13 @@ e. $\dfrac{8}{9}$
 > > - Eksponen: $\dfrac{2x-1}{x-1}\bigg|_{x=2} = \dfrac{2(2)-1}{2-1} = \dfrac{3}{1} = 3$
 > >
 > > Sehingga:
+> >
 > > $$f(2, y) = \frac{1}{2} \cdot y^{-3}, \quad y > 1$$
 > >
 > > **Langkah 2: Hitung Marginal $f_X(2)$**
 > >
 > > $$f_X(2) = \int_1^{\infty} f(2, y)\,dy = \int_1^{\infty} \frac{1}{2} y^{-3}\,dy$$
+> >
 > > $$= \frac{1}{2} \left[\frac{y^{-2}}{-2}\right]_1^{\infty} = \frac{1}{2} \left(0 - \frac{1^{-2}}{-2}\right) = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}$$
 > >
 > > (Limit: saat $y \to \infty$, $y^{-2} \to 0$)
@@ -798,7 +889,9 @@ e. $\dfrac{8}{9}$
 > > **Langkah 4: Hitung $P(1 < Y < 3 \mid X = 2)$**
 > >
 > > $$P(1 < Y < 3 \mid X = 2) = \int_1^3 2y^{-3}\,dy$$
+> >
 > > $$= 2 \left[\frac{y^{-2}}{-2}\right]_1^3 = \left[-y^{-2}\right]_1^3$$
+> >
 > > $$= \left(-\frac{1}{3^2}\right) - \left(-\frac{1}{1^2}\right) = -\frac{1}{9} + 1 = \frac{8}{9}$$
 > >
 > > **Hasil Akhir:** **(e)**. $\dfrac{8}{9}$
@@ -831,6 +924,7 @@ d. $\dfrac{97}{144}$
 e. $\dfrac{7}{9}$
 
 > [!summary]+ **Jawaban No. 11**
+> 
 > **(c). $\dfrac{1}{2}$**
 >
 > | Field | Isi |
@@ -843,8 +937,11 @@ e. $\dfrac{7}{9}$
 > | **Referensi** | Miller Bab 2; Hogg-Tanis-Zimm Bab 1 |
 >
 > > [!info]+ **Rumus**
+> >
 > > **Normalisasi Probabilitas:** Total proporsi seluruh kelompok $= 1$:
+> >
 > > $$p_{AB} + p_{AC} + p_{BC} + p_0 = 1$$
+> >
 > > **Relasi proporsi pilihan individual dan pasangan:**
 > > - $P(\text{pilih A}) = p_{AB} + p_{AC}$ (karyawan yang memilih A pasti memilih salah satu dari AB atau AC)
 > > - $P(\text{pilih B}) = p_{AB} + p_{BC}$
@@ -868,19 +965,25 @@ e. $\dfrac{7}{9}$
 > > **Langkah 2: Tulis Sistem Persamaan dari Proporsi Individual**
 > >
 > > Karyawan yang "memilih A" berarti paket mereka mencakup A, yaitu paket AB atau AC:
+> >
 > > $$p_{AB} + p_{AC} = \frac{1}{4} \tag{1}$$
+> >
 > > $$p_{AB} + p_{BC} = \frac{1}{3} \tag{2}$$
+> >
 > > $$p_{AC} + p_{BC} = \frac{5}{12} \tag{3}$$
 > >
 > > **Langkah 3: Jumlahkan Ketiga Persamaan**
 > >
 > > $$(p_{AB} + p_{AC}) + (p_{AB} + p_{BC}) + (p_{AC} + p_{BC}) = \frac{1}{4} + \frac{1}{3} + \frac{5}{12}$$
+> >
 > > $$2(p_{AB} + p_{AC} + p_{BC}) = \frac{3}{12} + \frac{4}{12} + \frac{5}{12} = \frac{12}{12} = 1$$
+> >
 > > $$p_{AB} + p_{AC} + p_{BC} = \frac{1}{2}$$
 > >
 > > **Langkah 4: Hitung Proporsi yang Tidak Memilih**
 > >
 > > Karena total proporsi harus $= 1$:
+> >
 > > $$p_0 = 1 - (p_{AB} + p_{AC} + p_{BC}) = 1 - \frac{1}{2} = \frac{1}{2}$$
 > >
 > > **Hasil Akhir:** **(c)**. $\dfrac{1}{2}$
@@ -912,6 +1015,7 @@ d. $976{.}000$
 e. $985{.}000$
 
 > [!summary]+ **Jawaban No. 12**
+> 
 > **(e). $985{.}000$**
 >
 > | Field | Isi |
@@ -924,10 +1028,15 @@ e. $985{.}000$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 3.1; Miller Bab 5.2 |
 >
 > > [!info]+ **Rumus**
+> >
 > > **Distribusi Binomial:** $N \sim B(n, p_{\text{datang}})$ dengan $n=21$, $p_{\text{datang}} = 1 - 0{,}02 = 0{,}98$.
+> >
 > > $$P(N=k) = \binom{21}{k}(0{,}98)^k(0{,}02)^{21-k}$$
+> >
 > > **Ekspektasi dengan dua skenario:**
+> >
 > > $$E[\text{Pendapatan}] = R_1 \cdot P(\text{Skenario 1}) + R_2 \cdot P(\text{Skenario 2})$$
+> >
 >
 > **Diketahui:**
 > - 21 tiket dijual, kapasitas bus 20 kursi
@@ -959,7 +1068,9 @@ e. $985{.}000$
 > > $$P(N = 21) = \binom{21}{21}(0{,}98)^{21}(0{,}02)^0 = (0{,}98)^{21}$$
 > >
 > > Hitung $(0{,}98)^{21}$:
+> >
 > > $$\ln(0{,}98) \approx -0{,}02020 \implies 21 \times (-0{,}02020) = -0{,}4242$$
+> >
 > > $$(0{,}98)^{21} = e^{-0{,}4242} \approx 0{,}6543$$
 > >
 > > $$P(N \leq 20) = 1 - P(N=21) = 1 - 0{,}6543 = 0{,}3457$$
@@ -967,11 +1078,15 @@ e. $985{.}000$
 > > **Langkah 4: Hitung Ekspektasi Pendapatan**
 > >
 > > $$E[\text{Pendapatan}] = 1.050.000 \times P(N \leq 20) + 950.000 \times P(N=21)$$
+> >
 > > $$= 1.050.000 \times 0{,}3457 + 950.000 \times 0{,}6543$$
+> >
 > > $$= 362.985 + 621.585 = 984.570 \approx \text{Rp}985.000$$
 > >
 > > **Alternatif penghitungan yang lebih ringkas:**
+> >
 > > $$E[\text{Pendapatan}] = 1.050.000 - 100.000 \times P(N=21)$$
+> >
 > > $$= 1.050.000 - 100.000 \times 0{,}6543 = 1.050.000 - 65.430 = 984.570 \approx \text{Rp}985.000$$
 > >
 > > **Hasil Akhir:** **(e)**. $985{.}000$
@@ -1004,6 +1119,7 @@ d. $0{,}327$
 e. $0{,}514$
 
 > [!summary]+ **Jawaban No. 13**
+> 
 > **(b). $0{,}173$**
 >
 > | Field | Isi |
@@ -1016,8 +1132,11 @@ e. $0{,}514$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 1.4; Miller Bab 2 |
 >
 > > [!info]+ **Rumus**
+> >
 > > **Probabilitas Bersyarat:**
+> >
 > > $$P(A \mid B^c) = \frac{P(A \cap B^c)}{P(B^c)}$$
+> >
 > > Di mana $P(A \cap B^c) = P(A) - P(A \cap B)$ dan $P(B^c) = 1 - P(B)$.
 > >
 > > **Pendekatan counting (frekuensi relatif):** Lebih mudah bekerja langsung dengan **jumlah orang** daripada probabilitas, karena semua data diberikan dalam bentuk frekuensi absolut.
@@ -1047,6 +1166,7 @@ e. $0{,}514$
 > > Total yang meninggal karena jantung: $210$.
 > > Yang meninggal karena jantung dengan riwayat keluarga ($J \cap B$): $102$.
 > > Maka yang meninggal karena jantung **tanpa** riwayat keluarga ($J \cap B^c$):
+> >
 > > $$|J \cap B^c| = 210 - 102 = 108$$
 > >
 > > **Langkah 3: Hitung $|B^c|$ — Ukuran Kelompok Kondisi**
@@ -1094,6 +1214,7 @@ d. $0{,}95$
 e. $1{,}00$
 
 > [!summary]+ **Jawaban No. 14**
+> 
 > **(b). $0{,}82$**
 >
 > | Field | Isi |
@@ -1106,12 +1227,17 @@ e. $1{,}00$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 5.5; Miller Bab 8 |
 >
 > > [!info]+ **Rumus**
+> >
 > > **Teorema Limit Pusat (CLT):** Untuk $X_1, X_2, \ldots, X_n$ i.i.d. dengan $E[X_i] = \mu$ dan $\text{Var}(X_i) = \sigma^2$, maka untuk $n$ besar:
+> >
 > > $$S = \sum_{i=1}^n X_i \overset{a}{\sim} N(n\mu,\, n\sigma^2)$$
+> >
 > > **Sifat Poisson:** Untuk $X \sim \text{Poisson}(\lambda)$: $E[X] = \lambda$ dan $\text{Var}(X) = \lambda$ (mean = variansi).
 > >
 > > **Standarisasi:**
+> >
 > > $$Z = \frac{S - n\mu}{\sqrt{n\sigma^2}} \overset{a}{\sim} N(0,1)$$
+> >
 >
 > **Diketahui:**
 > - $n = 1250$ polis, masing-masing $X_i \sim \text{Poisson}(\lambda = 2)$, saling bebas
@@ -1124,16 +1250,21 @@ e. $1{,}00$
 > > **Langkah 1: Tentukan Parameter Distribusi $S$**
 > >
 > > Karena $X_i$ saling bebas dan identik:
+> >
 > > $$E[S] = n \cdot E[X_i] = 1250 \times 2 = 2500$$
+> >
 > > $$\text{Var}(S) = n \cdot \text{Var}(X_i) = 1250 \times 2 = 2500$$
+> >
 > > $$\text{SD}(S) = \sqrt{2500} = 50$$
 > >
 > > Karena $n = 1250$ sangat besar, oleh CLT:
+> >
 > > $$S \overset{a}{\sim} N(2500, 2500)$$
 > >
 > > **Langkah 2: Standarisasi Batas-Batas Interval**
 > >
 > > $$P(2450 \leq S \leq 2600) \approx P\!\left(\frac{2450 - 2500}{50} \leq Z \leq \frac{2600 - 2500}{50}\right)$$
+> >
 > > $$= P\!\left(\frac{-50}{50} \leq Z \leq \frac{100}{50}\right) = P(-1 \leq Z \leq 2)$$
 > >
 > > **Langkah 3: Hitung Probabilitas dari Tabel Normal Standar**
@@ -1181,6 +1312,7 @@ d. $0{,}20$
 e. $0{,}51$
 
 > [!summary]+ **Jawaban No. 15**
+> 
 > **(b). $0{,}13$**
 >
 > | Field | Isi |
@@ -1193,11 +1325,15 @@ e. $0{,}51$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 2.2; Miller Bab 4 |
 >
 > > [!info]+ **Rumus**
+> >
 > > **Normalisasi PDF:** $\displaystyle\int_{-\infty}^{\infty} f(y)\,dy = 1$ digunakan untuk menentukan konstanta $k$.
 > >
 > > **Probabilitas Bersyarat untuk variabel kontinu:**
+> >
 > > $$P(V > a \mid V > b) = \frac{P(V > a \cap V > b)}{P(V > b)}$$
+> >
 > > Jika $a > b$, maka $\{V > a\} \subset \{V > b\}$, sehingga $P(V > a \cap V > b) = P(V > a)$:
+> >
 > > $$P(V > a \mid V > b) = \frac{P(V > a)}{P(V > b)} \quad \text{untuk } a > b$$
 > >
 > > **Konversi $V$ ke $Y$:** $V = 100.000 \cdot Y$, sehingga $V > c \Leftrightarrow Y > \dfrac{c}{100.000}$.
@@ -1216,9 +1352,11 @@ e. $0{,}51$
 > > $$\int_0^1 k(1-y)^4\,dy = 1$$
 > >
 > > Hitung integralnya dengan substitusi $u = 1-y$, $du = -dy$:
+> >
 > > $$\int_0^1 (1-y)^4\,dy = \int_1^0 u^4(-du) = \int_0^1 u^4\,du = \left[\frac{u^5}{5}\right]_0^1 = \frac{1}{5}$$
 > >
 > > Sehingga:
+> >
 > > $$k \cdot \frac{1}{5} = 1 \implies k = 5$$
 > >
 > > Jadi $f(y) = 5(1-y)^4$ untuk $0 < y < 1$.
@@ -1232,6 +1370,7 @@ e. $0{,}51$
 > > $$= \left[-(1-y)^5\right]_{0{,}4}^{1} = -(1-1)^5 - (-(1-0{,}4)^5) = 0 + (0{,}6)^5$$
 > >
 > > Hitung $(0{,}6)^5$:
+> >
 > > $$(0{,}6)^2 = 0{,}36;\quad (0{,}6)^4 = 0{,}1296;\quad (0{,}6)^5 = 0{,}6 \times 0{,}1296 = 0{,}07776$$
 > >
 > > $$P(Y > 0{,}4) = 0{,}07776$$
@@ -1241,6 +1380,7 @@ e. $0{,}51$
 > > $$P(Y > 0{,}1) = \left[-(1-y)^5\right]_{0{,}1}^{1} = 0 + (1-0{,}1)^5 = (0{,}9)^5$$
 > >
 > > Hitung $(0{,}9)^5$:
+> >
 > > $$(0{,}9)^2 = 0{,}81;\quad (0{,}9)^4 = 0{,}6561;\quad (0{,}9)^5 = 0{,}9 \times 0{,}6561 = 0{,}59049$$
 > >
 > > $$P(Y > 0{,}1) = 0{,}59049$$
@@ -1288,6 +1428,7 @@ d. $9\%$
 e. $20\%$
 
 > [!summary]+ **Jawaban No. 16**
+> 
 > **(e). $20\%$**
 >
 > | Field | Isi |
@@ -1300,12 +1441,19 @@ e. $20\%$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 1.4; Miller Bab 2 |
 >
 > > [!info]+ **Rumus**
+> >
 > > **Definisi Probabilitas Bersyarat** (digunakan untuk menghitung probabilitas gabungan):
+> >
 > > $$P(A \cap B) = P(A) \cdot P(B \mid A) = P(B) \cdot P(A \mid B)$$
+> >
 > > **Hukum Probabilitas Total** (untuk partisi $\{T_1, T_2, T_3\}$ dari ruang sampel):
+> >
 > > $$P(D') = P(T_1 \cap D') + P(T_2 \cap D') + P(T_3 \cap D')$$
+> >
 > > **Komplemen:**
+> >
 > > $$P(T_{\text{rendah}} \cap D) = P(T_{\text{rendah}}) - P(T_{\text{rendah}} \cap D')$$
+> >
 >
 > **Diketahui:**
 > - Definisikan kejadian:
@@ -1327,25 +1475,33 @@ e. $20\%$
 > > **Langkah 1: Hitung $P(T_t \cap D')$ dari Kondisi (iv)**
 > >
 > > Dari definisi probabilitas bersyarat: $P(T_t \cap D') = P(D') \cdot P(T_t \mid D')$
+> >
 > > $$P(T_t \cap D') = 0{,}15 \times \frac{1}{3} = 0{,}05$$
 > >
 > > **Langkah 2: Hitung $P(T_n \cap D')$ dari Kondisi (v)**
 > >
 > > Dari definisi probabilitas bersyarat: $P(T_n \cap D') = P(T_n) \cdot P(D' \mid T_n)$
+> >
 > > $$P(T_n \cap D') = 0{,}64 \times \frac{1}{8} = 0{,}08$$
 > >
 > > **Langkah 3: Hitung $P(T_r \cap D')$ dari Hukum Probabilitas Total**
 > >
 > > Tekanan darah $\{T_t, T_r, T_n\}$ adalah **partisi** dari ruang sampel, sehingga:
+> >
 > > $$P(D') = P(T_t \cap D') + P(T_r \cap D') + P(T_n \cap D')$$
+> >
 > > $$0{,}15 = 0{,}05 + P(T_r \cap D') + 0{,}08$$
+> >
 > > $$P(T_r \cap D') = 0{,}15 - 0{,}05 - 0{,}08 = 0{,}02$$
 > >
 > > **Langkah 4: Hitung $P(T_r \cap D)$ — Target**
 > >
 > > Karena $\{D, D'\}$ adalah partisi:
+> >
 > > $$P(T_r) = P(T_r \cap D) + P(T_r \cap D')$$
+> >
 > > $$0{,}22 = P(T_r \cap D) + 0{,}02$$
+> >
 > > $$P(T_r \cap D) = 0{,}22 - 0{,}02 = 0{,}20$$
 > >
 > > **Tabel Lengkap (sebagai verifikasi):**
@@ -1387,6 +1543,7 @@ d. $2 f_X(y)$
 e. $2 f_X(2y)$
 
 > [!summary]+ **Jawaban No. 17**
+> 
 > **(a). $\dfrac{1}{2} f_X\!\left(\dfrac{y}{2}\right)$**
 >
 > | Field | Isi |
@@ -1399,6 +1556,7 @@ e. $2 f_X(2y)$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 2.7; Miller Bab 4.4 |
 >
 > > [!info]+ **Rumus**
+> >
 > > **Teknik CDF untuk Transformasi Monoton Meningkat ($Y = g(X)$):**
 > >
 > > Langkah:
@@ -1406,7 +1564,9 @@ e. $2 f_X(2y)$
 > > 2. Turunkan: $f_Y(y) = \dfrac{d}{dy} F_Y(y)$
 > >
 > > **Ekuivalen — Rumus Jacobian (Change of Variable):**
+> >
 > > $$f_Y(y) = f_X\!\left(g^{-1}(y)\right) \cdot \left|\frac{d}{dy}g^{-1}(y)\right|$$
+> >
 > > di mana $g^{-1}(y)$ adalah invers dari transformasi $y = g(x)$.
 >
 > **Diketahui:**
@@ -1439,11 +1599,15 @@ e. $2 f_X(2y)$
 > > Jacobian: $\left|\dfrac{d}{dy}\left(\dfrac{y}{2}\right)\right| = \dfrac{1}{2}$
 > >
 > > Substitusi ke rumus:
+> >
 > > $$f_Y(y) = f_X\!\left(\frac{y}{2}\right) \cdot \frac{1}{2} = \frac{1}{2} f_X\!\left(\frac{y}{2}\right)$$
 > >
 > > **Verifikasi Normalisasi (sanity check):**
+> >
 > > $$\int_{-\infty}^{\infty} \frac{1}{2} f_X\!\left(\frac{y}{2}\right) dy$$
+> >
 > > Substitusi $u = y/2$, $du = dy/2$, sehingga $dy = 2\,du$:
+> >
 > > $$= \int_{-\infty}^{\infty} \frac{1}{2} f_X(u) \cdot 2\,du = \int_{-\infty}^{\infty} f_X(u)\,du = 1 \checkmark$$
 > >
 > > **Hasil Akhir:** **(a)**. $\dfrac{1}{2} f_X\!\left(\dfrac{y}{2}\right)$
@@ -1461,7 +1625,9 @@ e. $2 f_X(2y)$
 > >
 > > > [!CAUTION] Red Flags
 > > > - **Formula umum untuk $Y = aX + b$** (transformasi linear, $a \neq 0$):
+> > >
 > > >   $$f_Y(y) = \frac{1}{|a|} f_X\!\left(\frac{y-b}{a}\right)$$
+> > >
 > > >   Untuk $Y = 2X$ (yaitu $a=2$, $b=0$): $f_Y(y) = \dfrac{1}{2} f_X\!\left(\dfrac{y}{2}\right)$ ✓
 > > > - Jika $a > 1$ (memperlebar distribusi), faktor depan $1/|a| < 1$ → PDF "menjadi lebih rendah tapi lebih lebar". Ini masuk akal secara intuitif.
 > > > - Selalu verifikasi: hasilnya harus terintegrasi ke 1 atas seluruh support.
@@ -1479,6 +1645,7 @@ d. $10{.}256$ juta
 e. $12{.}642$ juta
 
 > [!summary]+ **Jawaban No. 18**
+> 
 > **(d). $10{.}256$ juta**
 >
 > | Field | Isi |
@@ -1491,12 +1658,19 @@ e. $12{.}642$ juta
 > | **Referensi** | SOA Exam P Sample Q No. 35; Hogg-Tanis-Zimm Bab 3.3; Miller Bab 5.4 |
 >
 > > [!info]+ **Rumus**
+> >
 > > CDF distribusi Eksponensial (parametrisasi skala $\theta = 1/\lambda$):
+> >
 > > $$F(t) = 1 - e^{-t/\theta}, \quad t > 0$$
+> >
 > > Probabilitas gagal di interval $(a, b]$:
+> >
 > > $$P(a < T \leq b) = F(b) - F(a) = e^{-a/\theta} - e^{-b/\theta}$$
+> >
 > > Ekspektasi dana pengembalian untuk **satu** mesin:
+> >
 > > $$E[R] = \sum_{\text{skenario}} (\text{besar refund}) \times P(\text{skenario})$$
+> >
 >
 > **Diketahui:**
 > - $T \sim \text{Exp}(\theta = 2)$ (rata-rata masa hidup = 2 tahun)
@@ -1515,12 +1689,15 @@ e. $12{.}642$ juta
 > > Karena $T \sim \text{Exp}(\theta = 2)$, maka $F(t) = 1 - e^{-t/2}$.
 > >
 > > **Skenario 1** — Rusak di tahun ke-1, $P(T \leq 1)$:
+> >
 > > $$P(T \leq 1) = 1 - e^{-1/2} = 1 - e^{-0{,}5}$$
 > >
 > > **Skenario 2** — Rusak di tahun ke-2, $P(1 < T \leq 2)$:
+> >
 > > $$P(1 < T \leq 2) = F(2) - F(1) = e^{-1/2} - e^{-1} = e^{-0{,}5} - e^{-1}$$
 > >
 > > **Skenario 3** — Bertahan lebih dari 2 tahun, $P(T > 2)$:
+> >
 > > $$P(T > 2) = e^{-1} \quad \text{(tidak perlu dihitung, refundnya 0)}$$
 > >
 > > **Langkah 2: Hitung Ekspektasi Refund untuk Satu Mesin**
@@ -1530,18 +1707,23 @@ e. $12{.}642$ juta
 > > $$E[R] = 200 \cdot P(T \leq 1) + 100 \cdot P(1 < T \leq 2) + 0 \cdot P(T > 2)$$
 > >
 > > Substitusi:
+> >
 > > $$E[R] = 200\,(1 - e^{-0{,}5}) + 100\,(e^{-0{,}5} - e^{-1})$$
 > >
 > > **Langkah 3: Sederhanakan Secara Aljabar**
 > >
 > > Distribusikan konstanta:
+> >
 > > $$E[R] = 200 - 200e^{-0{,}5} + 100e^{-0{,}5} - 100e^{-1}$$
+> >
 > > $$E[R] = 200 - 100e^{-0{,}5} - 100e^{-1}$$
+> >
 > > $$E[R] = 200 - 100\left(e^{-0{,}5} + e^{-1}\right)$$
 > >
 > > **Langkah 4: Hitung Numerik**
 > >
 > > Nilai numerik eksak:
+> >
 > > $$e^{-0{,}5} \approx 0{,}60653, \qquad e^{-1} \approx 0{,}36788$$
 > >
 > > $$e^{-0{,}5} + e^{-1} \approx 0{,}60653 + 0{,}36788 = 0{,}97441$$
@@ -1595,6 +1777,7 @@ d. $2$
 e. $\dfrac{7}{3}$
 
 > [!summary]+ **Jawaban No. 19**
+> 
 > **(b). $\dfrac{4}{3}$**
 >
 > | Field | Isi |
@@ -1607,8 +1790,11 @@ e. $\dfrac{7}{3}$
 > | **Referensi** | Hogg-McKean-Craig Bab 4.4 |
 >
 > > [!info]+ **Rumus**
+> >
 > > **Sifat Linearitas Kovarians:** Untuk konstanta $a, b$ dan variabel acak $W, X_2, X_3$:
+> >
 > > $$\text{Cov}(aU + bV + W,\, X_j) = a\,\text{Cov}(U, X_j) + b\,\text{Cov}(V, X_j) + \text{Cov}(W, X_j)$$
+> >
 > > **Notasi Matriks Kovarians:** $\sigma_{ij} = \text{Cov}(X_i, X_j)$, dengan elemen diagonal $\sigma_{ii} = \text{Var}(X_i)$.
 >
 > **Diketahui:**
@@ -1622,26 +1808,39 @@ e. $\dfrac{7}{3}$
 > > **Langkah 1: Jabarkan Kondisi $\text{Cov}(W, X_2) = 0$**
 > >
 > > Substitusi $W = X_1 - aX_2 - bX_3$:
+> >
 > > $$\text{Cov}(X_1 - aX_2 - bX_3,\; X_2) = 0$$
+> >
 > > Gunakan linearitas kovarians:
+> >
 > > $$\text{Cov}(X_1, X_2) - a\,\text{Cov}(X_2, X_2) - b\,\text{Cov}(X_3, X_2) = 0$$
+> >
 > > $$\sigma_{12} - a\,\sigma_{22} - b\,\sigma_{32} = 0$$
+> >
 > > $$1{,}5 - a(1{,}0) - b(0{,}5) = 0$$
+> >
 > > $$a + 0{,}5b = 1{,}5 \tag{1}$$
 > >
 > > **Langkah 2: Jabarkan Kondisi $\text{Cov}(W, X_3) = 0$**
 > >
 > > $$\text{Cov}(X_1 - aX_2 - bX_3,\; X_3) = 0$$
+> >
 > > $$\sigma_{13} - a\,\sigma_{23} - b\,\sigma_{33} = 0$$
+> >
 > > $$1{,}0 - a(0{,}5) - b(1{,}0) = 0$$
+> >
 > > $$0{,}5a + b = 1{,}0 \tag{2}$$
 > >
 > > **Langkah 3: Selesaikan Sistem Persamaan Linear**
 > >
 > > Dari persamaan (2): $b = 1{,}0 - 0{,}5a$. Substitusi ke persamaan (1):
+> >
 > > $$a + 0{,}5(1{,}0 - 0{,}5a) = 1{,}5$$
+> >
 > > $$a + 0{,}5 - 0{,}25a = 1{,}5$$
+> >
 > > $$0{,}75a = 1{,}0$$
+> >
 > > $$a = \frac{1{,}0}{0{,}75} = \frac{4}{3}$$
 > >
 > > Sebagai pelengkap: $b = 1{,}0 - 0{,}5 \times \dfrac{4}{3} = 1{,}0 - \dfrac{2}{3} = \dfrac{1}{3}$.
@@ -1675,6 +1874,7 @@ d. $\dfrac{1}{2}$
 e. $1$
 
 > [!summary]+ **Jawaban No. 20**
+> 
 > **(d). $\dfrac{1}{2}$**
 >
 > | Field | Isi |
@@ -1687,10 +1887,15 @@ e. $1$
 > | **Referensi** | Hogg-McKean-Craig Bab 2.6; Hogg-Tanis-Zimm Bab 5.6 |
 >
 > > [!info]+ **Rumus**
+> >
 > > **Teknik Jacobian untuk transformasi bivariat:** Jika $(X,Y) \mapsto (U,V)$ adalah transformasi satu-satu dengan invers $(X,Y) = (h_1(U,V),\, h_2(U,V))$, maka:
+> >
 > > $$f_{U,V}(u,v) = f_{X,Y}(h_1(u,v),\, h_2(u,v)) \cdot |J|$$
+> >
 > > dengan Jacobian invers:
+> >
 > > $$J = \det\begin{pmatrix} \partial x/\partial u & \partial x/\partial v \\ \partial y/\partial u & \partial y/\partial v \end{pmatrix}$$
+> >
 >
 > **Diketahui:**
 > - $X, Y \sim U[0,1]$ independen, sehingga $f_{X,Y}(x,y) = 1$ untuk $0 \leq x, y \leq 1$
@@ -1702,13 +1907,17 @@ e. $1$
 > > **Langkah 1: Cari Transformasi Invers $(U,V) \to (X,Y)$**
 > >
 > > Dari definisi $U = X+Y$ dan $V = X/(X+Y)$:
+> >
 > > $$X = UV \quad \text{dan} \quad Y = U - X = U - UV = U(1-V)$$
+> >
 > > Jadi: $x = uv$ dan $y = u(1-v)$.
 > >
 > > **Langkah 2: Hitung Jacobian Invers**
 > >
 > > $$J = \det\begin{pmatrix} \partial x/\partial u & \partial x/\partial v \\ \partial y/\partial u & \partial y/\partial v \end{pmatrix} = \det\begin{pmatrix} v & u \\ 1-v & -u \end{pmatrix}$$
+> >
 > > $$= v \cdot (-u) - u \cdot (1-v) = -uv - u + uv = -u$$
+> >
 > > $$|J| = |-u| = u$$
 > >
 > > **Langkah 3: Tentukan Support $(U,V)$**
@@ -1721,6 +1930,7 @@ e. $1$
 > > **Langkah 4: Tulis PDF Bersama $(U,V)$**
 > >
 > > $$f_{U,V}(u,v) = f_{X,Y}(uv,\, u(1-v)) \cdot |J| = 1 \cdot u = u$$
+> >
 > > (berlaku pada support yang valid)
 > >
 > > **Langkah 5: Evaluasi di $(u,v) = (1/2, 1/2)$ dan Verifikasi Support**
@@ -1730,6 +1940,7 @@ e. $1$
 > > - $y = u(1-v) = \tfrac{1}{2} \times \tfrac{1}{2} = \tfrac{1}{4} \in [0,1]$ ✓
 > >
 > > Evaluasi:
+> >
 > > $$f_{U,V}\!\left(\tfrac{1}{2}, \tfrac{1}{2}\right) = u = \frac{1}{2}$$
 > >
 > > **Hasil Akhir:** **(d)**. $\dfrac{1}{2}$
@@ -1767,6 +1978,7 @@ d. $0{,}62$
 e. $0{,}92$
 
 > [!summary]+ **Jawaban No. 21**
+> 
 > **(e). $0{,}92$**
 >
 > | Field | Isi |
@@ -1779,8 +1991,11 @@ e. $0{,}92$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 3.1; Miller Bab 5.2 |
 >
 > > [!info]+ **Rumus**
+> >
 > > **Distribusi Binomial** $X \sim B(n, p)$:
+> >
 > > $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}, \quad k = 0, 1, \ldots, n$$
+> >
 > > Syarat: $n$ percobaan Bernoulli yang **independen** dengan peluang sukses **tetap** $p$.
 >
 > **Diketahui:**
@@ -1794,16 +2009,19 @@ e. $0{,}92$
 > > **Langkah 1: Hitung $P(X=0)$**
 > >
 > > $$P(X=0) = \binom{20}{0}(0{,}05)^0(0{,}95)^{20} = 1 \times 1 \times (0{,}95)^{20}$$
+> >
 > > $(0{,}95)^{20} = e^{20\ln(0{,}95)} = e^{20 \times (-0{,}05129)} = e^{-1{,}0258} \approx 0{,}35849$
 > >
 > > **Langkah 2: Hitung $P(X=1)$**
 > >
 > > $$P(X=1) = \binom{20}{1}(0{,}05)^1(0{,}95)^{19} = 20 \times 0{,}05 \times \frac{(0{,}95)^{20}}{0{,}95}$$
+> >
 > > $$= 1 \times \frac{0{,}35849}{0{,}95} = 20 \times 0{,}05 \times 0{,}37736 = 0{,}37736$$
 > >
 > > **Langkah 3: Hitung $P(X=2)$**
 > >
 > > $$P(X=2) = \binom{20}{2}(0{,}05)^2(0{,}95)^{18} = 190 \times 0{,}0025 \times \frac{(0{,}95)^{20}}{(0{,}95)^2}$$
+> >
 > > $$= 190 \times 0{,}0025 \times \frac{0{,}35849}{0{,}9025} = 190 \times 0{,}0025 \times 0{,}39722 = 0{,}18868$$
 > >
 > > **Langkah 4: Jumlahkan Ketiga Probabilitas**
@@ -1812,6 +2030,7 @@ e. $0{,}92$
 > >
 > > **Verifikasi via Aproksimasi Poisson** (opsional, untuk mengecek kewajaran):
 > > Dengan $\lambda = np = 20 \times 0{,}05 = 1$, dan $X \approx \text{Poisson}(1)$:
+> >
 > > $$P(X<3) \approx e^{-1}\!\left(1 + 1 + \frac{1}{2}\right) = e^{-1} \times 2{,}5 = 0{,}920 \checkmark$$
 > >
 > > **Hasil Akhir:** **(e)**. $0{,}92$
@@ -1847,6 +2066,7 @@ d. $0{,}6$
 e. $0{,}3$
 
 > [!summary]+ **Jawaban No. 22**
+> 
 > **(e). $0{,}3$**
 >
 > | Field | Isi |
@@ -1859,13 +2079,17 @@ e. $0{,}3$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 2.1; Miller Bab 4 |
 >
 > > [!info]+ **Rumus**
+> >
 > > Untuk $X \sim U[a, b]$: $E[X] = \dfrac{a+b}{2}$, $\text{Var}(X) = \dfrac{(b-a)^2}{12}$, $f(x) = \dfrac{1}{b-a}$.
 > >
 > > **Variansi transformasi linear:** $\text{Var}(cX) = c^2\,\text{Var}(X)$.
 > >
 > > **Variansi LEV** $Y_2 = \min(X, L)$:
+> >
 > > $$E[Y_2^2] = \int_a^L x^2 \cdot \frac{1}{b-a}\,dx + L^2 \cdot P(X > L)$$
+> >
 > > $$\text{Var}(Y_2) = E[Y_2^2] - (E[Y_2])^2$$
+> >
 >
 > **Diketahui:**
 > - $X \sim U[1000, 2000]$: rataan $= 1500$, variansi $= \dfrac{(1000)^2}{12} = \dfrac{10^6}{12}$
@@ -1878,20 +2102,29 @@ e. $0{,}3$
 > > **Langkah 1: Hitung $E[Y_1]$ dan $\text{Var}(Y_1)$**
 > >
 > > $$E[Y_1] = 0{,}9 \times E[X] = 0{,}9 \times 1500 = 1350$$
+> >
 > > $$\text{Var}(Y_1) = (0{,}9)^2 \times \text{Var}(X) = 0{,}81 \times \frac{10^6}{12} = \frac{810{.}000}{12} = 67{.}500$$
 > >
 > > **Langkah 2: Cari Limit $L$ dari Syarat $E[Y_2] = 1350$**
 > >
 > > Karena $L$ harus berada dalam $[1000, 2000]$, dan $f(x) = 1/1000$:
+> >
 > > $$E[\min(X,L)] = \int_{1000}^{L} x \cdot \frac{1}{1000}\,dx + L \cdot \int_L^{2000} \frac{1}{1000}\,dx$$
+> >
 > > $$= \frac{1}{1000}\cdot\frac{L^2 - 1000^2}{2} + \frac{L(2000-L)}{1000}$$
+> >
 > > $$= \frac{L^2 - 10^6}{2000} + \frac{2000L - L^2}{1000} = \frac{L^2 - 10^6 + 4000L - 2L^2}{2000}$$
+> >
 > > $$= \frac{-L^2 + 4000L - 10^6}{2000} = 1350$$
+> >
 > > $$-L^2 + 4000L - 10^6 = 2{.}700{.}000$$
+> >
 > > $$L^2 - 4000L + 3{.}700{.}000 = 0$$
 > >
 > > Gunakan rumus kuadrat:
+> >
 > > $$L = \frac{4000 \pm \sqrt{4000^2 - 4(3{.}700{.}000)}}{2} = \frac{4000 \pm \sqrt{16{.}000{.}000 - 14{.}800{.}000}}{2}$$
+> >
 > > $$= \frac{4000 \pm \sqrt{1{.}200{.}000}}{2} = \frac{4000 \pm 1095{,}4}{2}$$
 > >
 > > Dua solusi: $L \approx 2547{,}7$ (di luar $[1000,2000]$, **ditolak**) atau $L \approx 1452{,}3$ ✓
@@ -1901,14 +2134,19 @@ e. $0{,}3$
 > > Dengan $L = 1452{,}3$ dan $P(X > L) = \dfrac{2000 - 1452{,}3}{1000} = \dfrac{547{,}7}{1000} = 0{,}5477$:
 > >
 > > $$E[Y_2^2] = \frac{1}{1000}\int_{1000}^{1452{,}3} x^2\,dx + (1452{,}3)^2 \times 0{,}5477$$
+> >
 > > $$= \frac{1}{1000} \cdot \frac{(1452{,}3)^3 - (1000)^3}{3} + (1452{,}3)^2 \times 0{,}5477$$
 > >
 > > Hitung suku pertama:
+> >
 > > $$(1452{,}3)^3 \approx 3{,}0646 \times 10^9$$
+> >
 > > $$\frac{3{,}0646 \times 10^9 - 10^9}{3000} = \frac{2{,}0646 \times 10^9}{3000} \approx 688{.}200$$
 > >
 > > Hitung suku kedua:
+> >
 > > $$(1452{,}3)^2 \approx 2{,}1092 \times 10^6$$
+> >
 > > $$2{,}1092 \times 10^6 \times 0{,}5477 \approx 1{.}155{.}410$$
 > >
 > > $$E[Y_2^2] \approx 688{.}200 + 1{.}155{.}410 = 1{.}843{.}610$$
@@ -1950,6 +2188,7 @@ d. $0{,}0110$
 e. $0{,}0096$
 
 > [!summary]+ **Jawaban No. 23**
+> 
 > **(b). $0{,}0287$**
 >
 > | Field | Isi |
@@ -1962,9 +2201,13 @@ e. $0{,}0096$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 5.5; Walpole Bab 8.5 |
 >
 > > [!info]+ **Rumus**
+> >
 > > **Aproksimasi Normal dengan Koreksi Kontinuitas** untuk $X \sim B(n,p)$:
+> >
 > > $$\mu = np, \quad \sigma = \sqrt{np(1-p)}$$
+> >
 > > $$P(X \geq k) \approx P\!\left(Z \geq \frac{k - 0{,}5 - \mu}{\sigma}\right)$$
+> >
 > > Alasan koreksi: distribusi Binomial bersifat **diskrit**, sedangkan Normal bersifat **kontinu**. Nilai diskrit $X = k$ direpresentasikan sebagai interval kontinu $[k - 0{,}5,\; k + 0{,}5]$.
 >
 > **Diketahui:**
@@ -1978,6 +2221,7 @@ e. $0{,}0096$
 > > **Langkah 1: Terapkan Koreksi Kontinuitas untuk $P(X \geq 40)$**
 > >
 > > "Setidaknya 40" berarti $X \geq 40$ (inklusif). Dalam aproksimasi kontinu, ini direpresentasikan sebagai $X_{\text{kontinu}} \geq 40 - 0{,}5 = 39{,}5$:
+> >
 > > $$P(X \geq 40) \approx P\!\left(Z \geq \frac{39{,}5 - 30}{5}\right) = P\!\left(Z \geq \frac{9{,}5}{5}\right) = P(Z \geq 1{,}90)$$
 > >
 > > **Langkah 2: Hitung dari Tabel Normal Standar**
@@ -2023,6 +2267,7 @@ d. $0{,}6$
 e. $0{,}8$
 
 > [!summary]+ **Jawaban No. 24**
+> 
 > **(d). $0{,}6$**
 >
 > | Field | Isi |
@@ -2035,8 +2280,11 @@ e. $0{,}8$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 1.2; Miller Bab 2 |
 >
 > > [!info]+ **Rumus**
+> >
 > > **Identitas Probabilitas untuk Dua Kejadian:**
+> >
 > > $$P(E) + P(F) = P(E \cup F) + P(E \cap F)$$
+> >
 > > Ini adalah analog probabilitas dari identitas himpunan $|E| + |F| = |E \cup F| + |E \cap F|$.
 > >
 > > **Sifat Komplementer:** $B \cup B^c = \Omega$ dan $B \cap B^c = \emptyset$.
@@ -2053,16 +2301,21 @@ e. $0{,}8$
 > > Terapkan identitas $P(E) + P(F) = P(E \cup F) + P(E \cap F)$ dengan $E = A \cup B$ dan $F = A \cup B^c$:
 > >
 > > **Hitung gabungan:** $(A \cup B) \cup (A \cup B^c) = A \cup B \cup B^c = A \cup \Omega = \Omega$
+> >
 > > $$\therefore P((A\cup B) \cup (A \cup B^c)) = P(\Omega) = 1$$
 > >
 > > **Hitung irisan:** $(A \cup B) \cap (A \cup B^c) = A \cup (B \cap B^c) = A \cup \emptyset = A$
+> >
 > > $$\therefore P((A\cup B) \cap (A \cup B^c)) = P(A)$$
 > >
 > > **Langkah 2: Substitusi ke Identitas**
 > >
 > > $$P(A \cup B) + P(A \cup B^c) = P(\Omega) + P(A)$$
+> >
 > > $$0{,}7 + 0{,}9 = 1 + P(A)$$
+> >
 > > $$1{,}6 = 1 + P(A)$$
+> >
 > > $$P(A) = 0{,}6$$
 > >
 > > **Hasil Akhir:** **(d)**. $P(A) = 0{,}6$
