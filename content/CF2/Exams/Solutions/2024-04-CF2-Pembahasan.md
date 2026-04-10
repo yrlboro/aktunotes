@@ -9,6 +9,7 @@ d. $\dfrac{1}{2}$
 e. $\dfrac{5}{8}$
 
 > [!summary]+ **Jawaban No. 1** 
+>
 > **(a). $\dfrac{3}{8}$**
 >
 > | Field | Isi |
@@ -21,8 +22,11 @@ e. $\dfrac{5}{8}$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 2; Miller Bab 3 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > Distribusi Binomial: $X \sim B(n, p)$
+> >
 > > $$P[X = k] = \binom{n}{k} p^k (1-p)^{n-k}$$
+> >
 > > Di sini $p$ adalah probabilitas sukses (lahir perempuan), bukan proporsi populasi (konteks: distribusi diskrit).
 >
 > **Diketahui:**
@@ -36,6 +40,7 @@ e. $\dfrac{5}{8}$
 > > Setiap kelahiran independen, peluang perempuan $p = \frac{1}{2}$, dan $n = 3$ percobaan. Maka $X \sim B(3, 0{,}5)$.
 > >
 > > **Langkah 2: Hitung $P[X = 1]$**
+> >
 > > $$P[X = 1] = \binom{3}{1} \left(\frac{1}{2}\right)^1 \left(\frac{1}{2}\right)^2 = 3 \cdot \frac{1}{2} \cdot \frac{1}{4} = \frac{3}{8}$$
 > >
 > > **Hasil Akhir:** **(a)**. $\dfrac{3}{8}$
@@ -66,6 +71,7 @@ d. $0{,}6$
 e. $0{,}7$
 
 > [!summary]+ **Jawaban No. 2** 
+>
 > **(c). $0{,}5$**
 >
 > | Field | Isi |
@@ -78,7 +84,9 @@ e. $0{,}7$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 1; Miller Bab 2 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > $$P(A|B) = \frac{P(A \cap B)}{P(B)}, \quad P(A'|B') = \frac{P(A' \cap B')}{P(B')}$$
+> >
 > > Hukum Probabilitas Total: $P(A) = P(A|B)P(B) + P(A|B')P(B')$
 >
 > **Diketahui:**
@@ -90,15 +98,21 @@ e. $0{,}7$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tentukan $P(A|B')$**
+> >
 > > $$P(A'|B') = 0{,}4 \Rightarrow P(A|B') = 1 - 0{,}4 = 0{,}6$$
 > >
 > > **Langkah 2: Terapkan Hukum Probabilitas Total**
+> >
 > > $$P(A) = P(A|B)P(B) + P(A|B')P(B')$$
+> >
 > > $$0{,}5 = 0{,}4 \cdot P(B) + 0{,}6 \cdot (1 - P(B))$$
 > >
 > > **Langkah 3: Selesaikan untuk $P(B)$**
+> >
 > > $$0{,}5 = 0{,}4\,P(B) + 0{,}6 - 0{,}6\,P(B)$$
+> >
 > > $$0{,}5 - 0{,}6 = -0{,}2\,P(B)$$
+> >
 > > $$-0{,}1 = -0{,}2\,P(B) \Rightarrow P(B) = 0{,}5$$
 > >
 > > **Hasil Akhir:** **(c)**. $0{,}5$
@@ -129,6 +143,7 @@ d. $r^2$
 e. $r^{\frac{1}{3}}$
 
 > [!summary]+ **Jawaban No. 3** 
+>
 > **(c). $r^{\frac{8}{3}}$**
 >
 > | Field | Isi |
@@ -141,10 +156,15 @@ e. $r^{\frac{1}{3}}$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 2; Miller Bab 3 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > Distribusi Geometrik: $X \sim \text{Geom}(p)$ — jumlah percobaan hingga sukses pertama.
+> >
 > > $$P[X \geq k] = (1-p)^{k-1}$$
+> >
 > > Sifat memoryless (tanpa ingatan) distribusi geometrik:
+> >
 > > $$P[X \geq m+n \mid X \geq m] = P[X \geq n+1]$$
+> >
 > > Probabilitas bersyarat: $P(A|B) = \frac{P(A \cap B)}{P(B)}$
 >
 > **Diketahui:**
@@ -155,18 +175,25 @@ e. $r^{\frac{1}{3}}$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Nyatakan $r$ dalam $p$**
+> >
 > > $$r = P[X \geq 4] = (1-p)^3$$
+> >
 > > Sehingga $(1-p) = r^{1/3}$.
 > >
 > > **Langkah 2: Hitung probabilitas bersyarat**
+> >
 > > $$P[X \geq 12 \mid X \geq 4] = \frac{P[X \geq 12 \cap X \geq 4]}{P[X \geq 4]} = \frac{P[X \geq 12]}{P[X \geq 4]}$$
+> >
 > > Karena $\{X \geq 12\} \subseteq \{X \geq 4\}$.
 > >
 > > **Langkah 3: Hitung numerator dan denominator**
+> >
 > > $$P[X \geq 12] = (1-p)^{11} = \left(r^{1/3}\right)^{11} = r^{11/3}$$
+> >
 > > $$P[X \geq 4] = (1-p)^3 = r$$
 > >
 > > **Langkah 4: Hitung hasil akhir**
+> >
 > > $$P[X \geq 12 \mid X \geq 4] = \frac{r^{11/3}}{r^1} = r^{11/3 - 1} = r^{8/3}$$
 > >
 > > **Hasil Akhir:** **(c)**. $r^{8/3}$
@@ -203,6 +230,7 @@ d. Sekurang-kurangnya $85$ tapi kurang dari $90$
 e. Sekurang-kurangnya $90$
 
 > [!summary]+ **Jawaban No. 4** 
+>
 > **(d). Sekurang-kurangnya $85$ tapi kurang dari $90$**
 >
 > | Field | Isi |
@@ -215,11 +243,14 @@ e. Sekurang-kurangnya $90$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 3; Miller Bab 4 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > Fungsi Pembangkit Probabilitas (PGF): $G_X(t) = E[t^X]$
 > > Momen faktorial: $G_X^{(k)}(1) = E[X(X-1)\cdots(X-k+1)]$
 > > Untuk Binomial $B(n,p)$: $E[X] = np$, $E[X^2] = np(1-p) + n^2p^2$, $\text{Var}(X) = np(1-p)$
 > > Hubungan momen biasa dengan momen faktorial:
+> >
 > > $$E[X^3] = E[X(X-1)(X-2)] + 3E[X(X-1)] + E[X]$$
+> >
 >
 > **Diketahui:**
 > - $n = 6$, $p = 0{,}7$ (dari PGF: $0{,}3 + 0{,}7t$, sehingga $1-p = 0{,}3$, $p = 0{,}7$)
@@ -232,13 +263,19 @@ e. Sekurang-kurangnya $90$
 > >
 > > **Langkah 2: Hitung momen faktorial dari PGF**
 > > Momen faktorial ke-$k$ dari PGF Binomial:
+> >
 > > $$\mu_{(1)} = E[X] = np = 6 \cdot 0{,}7 = 4{,}2$$
+> >
 > > $$\mu_{(2)} = E[X(X-1)] = n(n-1)p^2 = 6 \cdot 5 \cdot 0{,}49 = 14{,}7$$
+> >
 > > $$\mu_{(3)} = E[X(X-1)(X-2)] = n(n-1)(n-2)p^3 = 6 \cdot 5 \cdot 4 \cdot 0{,}343 = 41{,}16$$
 > >
 > > **Langkah 3: Konversi ke $E[X^3]$**
+> >
 > > $$E[X^3] = \mu_{(3)} + 3\mu_{(2)} + \mu_{(1)}$$
+> >
 > > $$E[X^3] = 41{,}16 + 3(14{,}7) + 4{,}2$$
+> >
 > > $$E[X^3] = 41{,}16 + 44{,}1 + 4{,}2 = 89{,}46$$
 > >
 > > **Hasil Akhir:** **(d)**. Sekurang-kurangnya $85$ tapi kurang dari $90$ ($E[X^3] = 89{,}46$)
@@ -276,6 +313,7 @@ d. Sekurang-kurangnya $1$ tapi kurang dari $1{,}5$
 e. Sekurang-kurangnya $1{,}5$
 
 > [!summary]+ **Jawaban No. 5** 
+>
 > **(c). Sekurang-kurangnya $0$ tapi kurang dari $1$**
 >
 > | Field | Isi |
@@ -288,9 +326,13 @@ e. Sekurang-kurangnya $1{,}5$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 4; Miller Bab 4 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > $$\text{Cov}(U, V) = E[UV] - E[U]E[V]$$
+> >
 > > Untuk $U = X - Y$ dan $V = X + Y$:
+> >
 > > $$\text{Cov}(X-Y, X+Y) = \text{Var}(X) - \text{Var}(Y)$$
+> >
 > > karena $\text{Cov}(X-Y, X+Y) = E[X^2] - E[Y^2] - (E[X]^2 - E[Y]^2) = \text{Var}(X) - \text{Var}(Y)$
 >
 > **Diketahui:**
@@ -300,6 +342,7 @@ e. Sekurang-kurangnya $1{,}5$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Sederhanakan Kovariansi**
+> >
 > > $$\text{Cov}(X-Y, X+Y) = \text{Var}(X) - \text{Var}(Y)$$
 > >
 > > **Langkah 2: Hitung Distribusi Marginal $X$**
@@ -322,6 +365,7 @@ e. Sekurang-kurangnya $1{,}5$
 > > $\text{Var}(Y) = 1{,}6 - (1{,}0)^2 = 0{,}6$
 > >
 > > **Langkah 4: Hitung Kovariansi**
+> >
 > > $$\text{Cov}(X-Y, X+Y) = \text{Var}(X) - \text{Var}(Y) = 0{,}9275 - 0{,}6 = 0{,}3275$$
 > >
 > > **Hasil Akhir:** **(c)**. Sekurang-kurangnya $0$ tapi kurang dari $1$ ($\text{Cov} \approx 0{,}3275$)
@@ -351,6 +395,7 @@ d. Sekurang-kurangnya $0{,}85$ tapi kurang dari $0{,}9$
 e. Sekurang-kurangnya $0{,}9$
 
 > [!summary]+ **Jawaban No. 6** 
+>
 > **(b). Sekurang-kurangnya $0{,}75$ tapi kurang dari $0{,}8$**
 >
 > | Field | Isi |
@@ -363,6 +408,7 @@ e. Sekurang-kurangnya $0{,}9$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 2–3; Miller Bab 4 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > Distribusi campuran (mixture): $F(x) = w_1 F_1(x) + w_2 F_2(x)$
 > > Eksponensial dengan rata-rata $\theta$: $F(x) = 1 - e^{-x/\theta}$, $x > 0$.
 > > Di sini $\theta$ adalah parameter skala (rata-rata), bukan rate $\lambda = 1/\theta$.
@@ -376,22 +422,33 @@ e. Sekurang-kurangnya $0{,}9$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tulis CDF campuran**
+> >
 > > $$F(x) = 0{,}8(1 - e^{-x}) + 0{,}2(1 - e^{-x/2})$$
 > >
 > > **Langkah 2: Selesaikan $F(m) = 0{,}5$**
+> >
 > > $$0{,}8(1 - e^{-m}) + 0{,}2(1 - e^{-m/2}) = 0{,}5$$
+> >
 > > $$0{,}8 - 0{,}8e^{-m} + 0{,}2 - 0{,}2e^{-m/2} = 0{,}5$$
+> >
 > > $$1 - 0{,}8e^{-m} - 0{,}2e^{-m/2} = 0{,}5$$
+> >
 > > $$0{,}8e^{-m} + 0{,}2e^{-m/2} = 0{,}5$$
 > >
 > > **Langkah 3: Substitusi $u = e^{-m/2}$**
+> >
 > > $$0{,}8u^2 + 0{,}2u - 0{,}5 = 0$$
+> >
 > > Kalikan dengan $10$: $8u^2 + 2u - 5 = 0$
+> >
 > > $$u = \frac{-2 \pm \sqrt{4 + 160}}{16} = \frac{-2 \pm \sqrt{164}}{16}$$
+> >
 > > Ambil nilai positif: $u = \frac{-2 + 12{,}806}{16} \approx \frac{10{,}806}{16} \approx 0{,}6754$
 > >
 > > **Langkah 4: Hitung $m$**
+> >
 > > $$e^{-m/2} = 0{,}6754 \Rightarrow -m/2 = \ln(0{,}6754) \approx -0{,}3924$$
+> >
 > > $$m \approx 0{,}7848$$
 > >
 > > **Hasil Akhir:** **(b)**. Sekurang-kurangnya $0{,}75$ tapi kurang dari $0{,}8$ ($m \approx 0{,}7848$)
@@ -422,6 +479,7 @@ d. $\dfrac{4}{13}$
 e. $\dfrac{6}{13}$
 
 > [!summary]+ **Jawaban No. 7** 
+>
 > **(e). $\dfrac{6}{13}$**
 >
 > | Field | Isi |
@@ -434,7 +492,9 @@ e. $\dfrac{6}{13}$
 > | **Referensi** | Miller Bab 2; Hogg-Tanis-Zimm Bab 1 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > $$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
+> >
 > > Enumerasi kubus:
 > > - Kubus sudut (3 sisi merah): 8 buah
 > > - Kubus tepi bukan sudut (2 sisi merah): 12 buah
@@ -456,12 +516,15 @@ e. $\dfrac{6}{13}$
 > > Total: $8 + 12 + 6 + 1 = 27$ ✓
 > >
 > > **Langkah 2: Identifikasi kubus dengan ≥ 1 sisi merah**
+> >
 > > $$|\{B\}| = 8 + 12 + 6 = 26$$
 > >
 > > **Langkah 3: Identifikasi kubus dengan tepat 2 sisi merah**
+> >
 > > $$|\{A \cap B\}| = 12$$
 > >
 > > **Langkah 4: Hitung probabilitas bersyarat**
+> >
 > > $$P(\text{2 sisi merah} \mid \text{≥1 sisi merah}) = \frac{12}{26} = \frac{6}{13}$$
 > >
 > > **Hasil Akhir:** **(e)**. $\dfrac{6}{13}$
@@ -491,6 +554,7 @@ d. $0{,}97$
 e. $1$
 
 > [!summary]+ **Jawaban No. 8** 
+>
 > **(d). $0{,}97$**
 >
 > | Field | Isi |
@@ -503,9 +567,12 @@ e. $1$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 5; Miller Bab 7 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > Kabel tidak putus jika tenaga minimum $> 12{.}400$, yaitu $P(X > 12{.}400)$ untuk $X \sim N(12432, 25^2)$.
 > > Jumlah kabel tidak putus $K \sim B(400, p)$, gunakan pendekatan normal.
+> >
 > > $$Z = \frac{X - \mu}{\sigma}$$
+> >
 >
 > **Diketahui:**
 > - $X \sim N(\mu = 12432, \sigma = 25)$
@@ -515,7 +582,9 @@ e. $1$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung $p = P(X > 12400)$**
+> >
 > > $$Z = \frac{12400 - 12432}{25} = \frac{-32}{25} = -1{,}28$$
+> >
 > > $$p = P(X > 12400) = P(Z > -1{,}28) = \Phi(1{,}28) \approx 0{,}8997 \approx 0{,}9$$
 > >
 > > **Langkah 2: Distribusi $K$**
@@ -524,7 +593,9 @@ e. $1$
 > > $\text{Var}(K) = 400 \cdot 0{,}9 \cdot 0{,}1 = 36$, $\sigma_K = 6$
 > >
 > > **Langkah 3: Pendekatan Normal untuk $P(K \geq 349)$**
+> >
 > > $$P(K \geq 349) \approx P\left(Z \geq \frac{349 - 360}{6}\right) = P\left(Z \geq \frac{-11}{6}\right) = P(Z \geq -1{,}833)$$
+> >
 > > $$= \Phi(1{,}833) \approx 0{,}9666 \approx 0{,}97$$
 > >
 > > **Hasil Akhir:** **(d)**. $0{,}97$
@@ -558,6 +629,7 @@ d. $\dfrac{20}{9}$
 e. $\dfrac{5}{2}$
 
 > [!summary]+ **Jawaban No. 9** 
+>
 > **(d). $\dfrac{20}{9}$**
 >
 > | Field | Isi |
@@ -570,6 +642,7 @@ e. $\dfrac{5}{2}$
 > | **Referensi** | Hogg-McKean-Craig Bab 2; Miller Bab 4 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > PDF gabungan dari CDF: $f(x,y) = \dfrac{\partial^2 F}{\partial x \partial y}$
 > > PDF marginal: $f_X(x) = \int_0^5 f(x,y)\,dy$
 > > PDF bersyarat: $f_{Y|X}(y|x) = \dfrac{f(x,y)}{f_X(x)}$
@@ -582,19 +655,26 @@ e. $\dfrac{5}{2}$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung PDF gabungan**
+> >
 > > $$f(x,y) = \frac{\partial^2 F}{\partial x \partial y} = \frac{\partial}{\partial y}\left[\frac{1}{250}(20y - 2xy - y^2)\right]$$
+> >
 > > $$= \frac{1}{250}(20 - 2x - 2y)$$
 > >
 > > **Langkah 2: Hitung PDF marginal $f_X(x)$**
+> >
 > > $$f_X(x) = \int_0^5 \frac{20 - 2x - 2y}{250}\,dy = \frac{1}{250}\left[(20-2x)y - y^2\right]_0^5$$
+> >
 > > $$= \frac{1}{250}\left[5(20-2x) - 25\right] = \frac{75 - 10x}{250} = \frac{15 - 2x}{50}$$
 > >
 > > **Langkah 3: PDF bersyarat $f_{Y|X}(y|x=0)$**
 > > Pada $x = 0$:
+> >
 > > $$f_{Y|X}(y|0) = \frac{f(0,y)}{f_X(0)} = \frac{(20-2y)/250}{15/50} = \frac{(20-2y)/250}{15/50} = \frac{20-2y}{250} \cdot \frac{50}{15} = \frac{20-2y}{75}$$
 > >
 > > **Langkah 4: Hitung $E[Y|X=0]$**
+> >
 > > $$E[Y|X=0] = \int_0^5 y \cdot \frac{20-2y}{75}\,dy = \frac{1}{75}\int_0^5 (20y - 2y^2)\,dy$$
+> >
 > > $$= \frac{1}{75}\left[10y^2 - \frac{2y^3}{3}\right]_0^5 = \frac{1}{75}\left[250 - \frac{250}{3}\right] = \frac{1}{75} \cdot \frac{500}{3} = \frac{500}{225} = \frac{20}{9}$$
 > >
 > > **Hasil Akhir:** **(d)**. $\dfrac{20}{9}$
@@ -630,6 +710,7 @@ d. $0{,}5$
 e. $0{,}4$
 
 > [!summary]+ **Jawaban No. 10** 
+>
 > **(c). $0{,}7$**
 >
 > | Field | Isi |
@@ -642,8 +723,11 @@ e. $0{,}4$
 > | **Referensi** | Miller Bab 3; Hogg-Tanis-Zimm Bab 1 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > $$E[X] = \sum x \cdot p_X(x), \quad E[X^2] = \sum x^2 \cdot p_X(x)$$
+> >
 > > $$\text{Var}(X) = E[X^2] - (E[X])^2, \quad \sigma_X = \sqrt{\text{Var}(X)}$$
+> >
 >
 > **Diketahui:**
 > - Tabel PMF seperti di atas
@@ -652,15 +736,21 @@ e. $0{,}4$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung $\mu_X$**
+> >
 > > $$\mu_X = 10(0{,}1) + 20(0{,}1) + 30(0{,}4) + 40(0{,}3) + 50(0{,}1) = 1+2+12+12+5 = 32$$
 > >
 > > **Langkah 2: Hitung $\sigma_X$**
+> >
 > > $$E[X^2] = 100(0{,}1)+400(0{,}1)+900(0{,}4)+1600(0{,}3)+2500(0{,}1)$$
+> >
 > > $$= 10+40+360+480+250 = 1140$$
+> >
 > > $$\text{Var}(X) = 1140 - 32^2 = 1140 - 1024 = 116$$
+> >
 > > $$\sigma_X = \sqrt{116} \approx 10{,}77$$
 > >
 > > **Langkah 3: Tentukan interval $[\mu_X - \sigma_X, \mu_X + \sigma_X]$**
+> >
 > > $$[32 - 10{,}77,\ 32 + 10{,}77] = [21{,}23,\ 42{,}77]$$
 > >
 > > **Langkah 4: Identifikasi nilai $X$ dalam interval**
@@ -696,6 +786,7 @@ d. Sekurang-kurangnya $5$ tapi kurang dari $6$
 e. Sekurang-kurangnya $6$
 
 > [!summary]+ **Jawaban No. 11** 
+>
 > **(d). Sekurang-kurangnya $5$ tapi kurang dari $6$**
 >
 > | Field | Isi |
@@ -708,9 +799,12 @@ e. Sekurang-kurangnya $6$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 5; Miller Bab 6 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > CDF dari maksimum: $F_Y(y) = F_{X_1}(y) \cdot F_{X_2}(y) \cdot F_{X_3}(y)$ (karena independen)
 > > Untuk $X_i \sim \text{Exp}(\theta_i)$ (rata-rata $\theta_i$): $F_{X_i}(y) = 1 - e^{-y/\theta_i}$
+> >
 > > $$E[Y] = \int_0^\infty [1 - F_Y(y)]\,dy = \int_0^\infty P(Y > y)\,dy$$
+> >
 > > Di sini $\theta_i$ adalah parameter skala (rata-rata), berbeda dari rate $\lambda_i = 1/\theta_i$.
 >
 > **Diketahui:**
@@ -721,19 +815,27 @@ e. Sekurang-kurangnya $6$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: CDF dari $Y$**
+> >
 > > $$F_Y(y) = (1-e^{-y/2})(1-e^{-y/3})(1-e^{-y/4})$$
 > >
 > > **Langkah 2: Ekspansi $P(Y > y) = 1 - F_Y(y)$**
 > > Gunakan inklusi-eksklusi:
+> >
 > > $$P(Y > y) = P(X_1>y) + P(X_2>y) + P(X_3>y)$$
+> >
 > > $$- P(X_1>y, X_2>y) - P(X_1>y, X_3>y) - P(X_2>y, X_3>y)$$
+> >
 > > $$+ P(X_1>y, X_2>y, X_3>y)$$
+> >
 > > $$= e^{-y/2} + e^{-y/3} + e^{-y/4} - e^{-5y/6} - e^{-3y/4} - e^{-7y/12} + e^{-13y/12}$$
 > >
 > > **Langkah 3: Hitung $E[Y] = \int_0^\infty P(Y > y)\,dy$**
 > > Gunakan $\int_0^\infty e^{-ay}\,dy = 1/a$:
+> >
 > > $$E[Y] = 2 + 3 + 4 - \frac{6}{5} - \frac{4}{3} - \frac{12}{7} + \frac{12}{13}$$
+> >
 > > $$= 9 - 1{,}2 - 1{,}3333 - 1{,}7143 + 0{,}9231$$
+> >
 > > $$= 9 - 3{,}3243 = 5{,}676$$
 > >
 > > **Hasil Akhir:** **(d)**. Sekurang-kurangnya $5$ tapi kurang dari $6$ ($E[Y] \approx 5{,}676$)
@@ -765,6 +867,7 @@ d. $16$
 e. $17$
 
 > [!summary]+ **Jawaban No. 12** 
+>
 > **(b). $14$**
 >
 > | Field | Isi |
@@ -777,6 +880,7 @@ e. $17$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 5; Miller Bab 7 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > $X \sim B(200, 0{,}5)$, pendekatan normal: $X \approx N(\mu, \sigma^2)$
 > > Koreksi kesinambungan (continuity correction): $P(a \leq X \leq b) \approx P(a - 0{,}5 < Z\sigma + \mu < b + 0{,}5)$
 > > Untuk $P(100-k \leq X \leq 100+k)$: setelah koreksi → $P\left(Z \leq \frac{k+0{,}5}{\sigma}\right) - P\left(Z \leq \frac{-(k+0{,}5)}{\sigma}\right)$
@@ -789,12 +893,17 @@ e. $17$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Pendekatan normal dengan koreksi kesinambungan**
+> >
 > > $$P(100-k \leq X \leq 100+k) \approx P\left(\frac{-(k+0{,}5)}{7{,}071} \leq Z \leq \frac{k+0{,}5}{7{,}071}\right) \geq 0{,}95$$
+> >
 > > Karena distribusi simetris: $2\Phi\left(\frac{k+0{,}5}{7{,}071}\right) - 1 \geq 0{,}95$
 > >
 > > **Langkah 2: Selesaikan**
+> >
 > > $$\Phi\left(\frac{k+0{,}5}{7{,}071}\right) \geq 0{,}975$$
+> >
 > > Nilai $z$ untuk $\Phi(z) = 0{,}975$: $z = 1{,}96$
+> >
 > > $$\frac{k+0{,}5}{7{,}071} \geq 1{,}96 \Rightarrow k + 0{,}5 \geq 13{,}859 \Rightarrow k \geq 13{,}359$$
 > >
 > > **Langkah 3: Ambil bilangan bulat terkecil**
@@ -827,6 +936,7 @@ d. $90$
 e. $70$
 
 > [!summary]+ **Jawaban No. 13** 
+>
 > **(d). $90$**
 >
 > | Field | Isi |
@@ -839,9 +949,12 @@ e. $70$
 > | **Referensi** | Miller Bab 4; Hogg-Tanis-Zimm Bab 2 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > $L \sim U(0, 2000)$, $f_L(l) = \frac{1}{2000}$
 > > Bonus: $B = 0{,}25(1200 - L)$ jika $L < 1200$, dan $B = 0$ jika $L \geq 1200$
+> >
 > > $$E[B] = \int_0^{1200} 0{,}25(1200 - l) \cdot \frac{1}{2000}\,dl$$
+> >
 >
 > **Diketahui:**
 > - $L \sim U(0, 2000)$
@@ -851,11 +964,15 @@ e. $70$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Setup integral**
+> >
 > > $$E[B] = \int_0^{1200} 0{,}25(1200 - l) \cdot \frac{1}{2000}\,dl$$
 > >
 > > **Langkah 2: Hitung integral**
+> >
 > > $$= \frac{0{,}25}{2000} \int_0^{1200} (1200 - l)\,dl = \frac{0{,}25}{2000} \left[1200l - \frac{l^2}{2}\right]_0^{1200}$$
+> >
 > > $$= \frac{0{,}25}{2000} \left[1{.}440{.}000 - 720{.}000\right] = \frac{0{,}25}{2000} \cdot 720{.}000$$
+> >
 > > $$= \frac{180{.}000}{2000} = 90$$
 > >
 > > **Hasil Akhir:** **(d)**. $90$
@@ -885,6 +1002,7 @@ d. $16$
 e. $18$
 
 > [!summary]+ **Jawaban No. 14** 
+>
 > **(c). $14$**
 >
 > | Field | Isi |
@@ -897,8 +1015,11 @@ e. $18$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 1; Miller Bab 2 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > Teorema Bayes:
+> >
 > > $$P(K \mid B) = \frac{P(B \mid K) P(K)}{P(B \mid K)P(K) + P(B \mid K^c)P(K^c)}$$
+> >
 > > di mana $K$ = tahu jawaban, $B$ = benar.
 >
 > **Diketahui:**
@@ -911,12 +1032,17 @@ e. $18$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Terapkan Teorema Bayes**
+> >
 > > $$0{,}824 = \frac{1 \cdot \frac{N}{20}}{1 \cdot \frac{N}{20} + \frac{1}{2} \cdot \frac{20-N}{20}} = \frac{N}{N + \frac{20-N}{2}} = \frac{N}{\frac{N+20}{2}} = \frac{2N}{N+20}$$
 > >
 > > **Langkah 2: Selesaikan**
+> >
 > > $$0{,}824(N + 20) = 2N$$
+> >
 > > $$0{,}824N + 16{,}48 = 2N$$
+> >
 > > $$16{,}48 = 1{,}176N$$
+> >
 > > $$N = \frac{16{,}48}{1{,}176} \approx 14$$
 > >
 > > **Hasil Akhir:** **(c)**. $14$
@@ -952,6 +1078,7 @@ d. Sekurang-kurangnya $3{,}2$ tapi kurang dari $3{,}3$
 e. Sekurang-kurangnya $3{,}3$
 
 > [!summary]+ **Jawaban No. 15** 
+>
 > **(b). Sekurang-kurangnya $3$ tapi kurang dari $3{,}1$**
 >
 > | Field | Isi |
@@ -964,6 +1091,7 @@ e. Sekurang-kurangnya $3{,}3$
 > | **Referensi** | Miller Bab 3; Hogg-Tanis-Zimm Bab 2 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > $X \sim B(3, 0{,}4)$: $P(X=k) = \binom{3}{k}(0{,}4)^k(0{,}6)^{3-k}$
 > > Jumlah anggota keluarga $M = 1 + X \in \{1, 2, 3, 4\}$
 > > $E[g(M)] = \sum_{m} g(m) P(M = m)$
@@ -982,7 +1110,9 @@ e. Sekurang-kurangnya $3{,}3$
 > > $P(X=3) = (0{,}4)^3 = 0{,}064$ → $M=4$
 > >
 > > **Langkah 2: Hitung ekspektasi biaya**
+> >
 > > $$E[g(M)] = 2(0{,}216) + 3(0{,}432) + 3{,}75(0{,}288) + 4{,}25(0{,}064)$$
+> >
 > > $$= 0{,}432 + 1{,}296 + 1{,}08 + 0{,}272 = 3{,}08$$
 > >
 > > **Hasil Akhir:** **(b)**. Sekurang-kurangnya $3$ tapi kurang dari $3{,}1$ ($E = 3{,}08$)
@@ -1012,6 +1142,7 @@ d. $1{,}5$
 e. $1{,}625$
 
 > [!summary]+ **Jawaban No. 16** 
+>
 > **(b). $1{,}25$**
 >
 > | Field | Isi |
@@ -1024,8 +1155,11 @@ e. $1{,}625$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 4; Miller Bab 4 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > Hukum ekspektasi total (Law of Total Expectation):
+> >
 > > $$E[T] = E[E[T|X]]$$
+> >
 > > Jika $T|X=x \sim U(0, 1+x)$, maka $E[T|X=x] = \frac{1+x}{2}$
 >
 > **Diketahui:**
@@ -1036,10 +1170,13 @@ e. $1{,}625$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung $E[T|X]$**
+> >
 > > $$E[T|X=x] = \frac{0 + (1+x)}{2} = \frac{1+x}{2}$$
 > >
 > > **Langkah 2: Hitung $E[T]$ via hukum ekspektasi total**
+> >
 > > $$E[T] = E\left[\frac{1+X}{2}\right] = \frac{1 + E[X]}{2} = \frac{1 + 1{,}5}{2} = \frac{2{,}5}{2} = 1{,}25$$
+> >
 > > (di mana $E[X] = (1+2)/2 = 1{,}5$ untuk $X \sim U(1,2)$)
 > >
 > > **Hasil Akhir:** **(b)**. $1{,}25$
@@ -1069,6 +1206,7 @@ d. $42\%$
 e. $45\%$
 
 > [!summary]+ **Jawaban No. 17** 
+>
 > **(b). $35\%$**
 >
 > | Field | Isi |
@@ -1081,6 +1219,7 @@ e. $45\%$
 > | **Referensi** | Miller Bab 2; Hogg-Tanis-Zimm Bab 1 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > Misalkan $S$ = telepon seluler, $R$ = telepon rumah.
 > > $P(S|R) = 0{,}75$: $P(S \cap R) = 0{,}75\,P(R)$
 > > $P(R|S) = 0{,}40$: $P(S \cap R) = 0{,}40\,P(S)$
@@ -1096,12 +1235,15 @@ e. $45\%$
 > >
 > > **Langkah 1: Ekspresikan dalam variabel $P(R)$**
 > > Dari $P(S \cap R) = 0{,}75\,P(R)$ dan $P(S \cap R) = 0{,}40\,P(S)$:
+> >
 > > $$P(S) = \frac{0{,}75}{0{,}40}\,P(R) = 1{,}875\,P(R)$$
 > >
 > > **Langkah 2: Hitung $P(S \cup R)$**
+> >
 > > $$P(S \cup R) = P(S) + P(R) - P(S \cap R) = 1{,}875\,P(R) + P(R) - 0{,}75\,P(R) = 2{,}125\,P(R)$$
 > >
 > > **Langkah 3: Hitung persentase**
+> >
 > > $$\frac{P(S \cap R)}{P(S \cup R)} = \frac{0{,}75\,P(R)}{2{,}125\,P(R)} = \frac{0{,}75}{2{,}125} \approx 0{,}3529 \approx 35\%$$
 > >
 > > **Hasil Akhir:** **(b)**. $35\%$
@@ -1135,6 +1277,7 @@ d. $\dfrac{1 - 2e^{-\lambda}}{2 - 2e^{-\lambda}}$
 e. $\dfrac{1 - e^{-\lambda}}{1 - 2e^{-\lambda}}$
 
 > [!summary]+ **Jawaban No. 18** 
+>
 > **(b). $\dfrac{2 - e^{-\lambda}}{2 - 2e^{-\lambda}}$**
 >
 > | Field | Isi |
@@ -1147,6 +1290,7 @@ e. $\dfrac{1 - e^{-\lambda}}{1 - 2e^{-\lambda}}$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 2; Miller Bab 3 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > Axiom normalisasi: $\sum_{k=0}^\infty P[X=k] = 1$
 > > Poisson: $P[Y=k] = \frac{e^{-\lambda}\lambda^k}{k!}$, maka $P[Y=0] = e^{-\lambda}$ dan $\sum_{k=1}^\infty P[Y=k] = 1 - e^{-\lambda}$.
 > > Di sini $\lambda$ adalah parameter mean distribusi Poisson (konteks: distribusi diskrit).
@@ -1159,12 +1303,17 @@ e. $\dfrac{1 - e^{-\lambda}}{1 - 2e^{-\lambda}}$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Gunakan syarat normalisasi**
+> >
 > > $$\sum_{k=0}^\infty P[X=k] = 1$$
+> >
 > > $$\frac{e^{-\lambda}}{2} + c\sum_{k=1}^\infty P[Y=k] = 1$$
+> >
 > > $$\frac{e^{-\lambda}}{2} + c(1 - e^{-\lambda}) = 1$$
 > >
 > > **Langkah 2: Selesaikan untuk $c$**
+> >
 > > $$c(1 - e^{-\lambda}) = 1 - \frac{e^{-\lambda}}{2} = \frac{2 - e^{-\lambda}}{2}$$
+> >
 > > $$c = \frac{2 - e^{-\lambda}}{2(1 - e^{-\lambda})} = \frac{2 - e^{-\lambda}}{2 - 2e^{-\lambda}}$$
 > >
 > > **Hasil Akhir:** **(b)**. $\dfrac{2 - e^{-\lambda}}{2 - 2e^{-\lambda}}$
@@ -1194,6 +1343,7 @@ d. $c\lambda - c\lambda^2 - c^2\lambda^2$
 e. $-c\lambda + c\lambda^2 + c^2\lambda^2$
 
 > [!summary]+ **Jawaban No. 19** 
+>
 > **(c). $c\lambda + c\lambda^2 - c^2\lambda^2$**
 >
 > | Field | Isi |
@@ -1206,6 +1356,7 @@ e. $-c\lambda + c\lambda^2 + c^2\lambda^2$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 2; Miller Bab 3 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > $\text{Var}(X) = E[X^2] - (E[X])^2$
 > > Kontribusi $k=0$: $P[X=0] = e^{-\lambda}/2$ → suku $k=0$ tidak berkontribusi pada $E[X]$ atau $E[X^2]$.
 > > Untuk $k \geq 1$: $P[X=k] = c \cdot \frac{e^{-\lambda}\lambda^k}{k!}$
@@ -1218,14 +1369,19 @@ e. $-c\lambda + c\lambda^2 + c^2\lambda^2$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung $E[X]$**
+> >
 > > $$E[X] = \sum_{k=0}^\infty k \cdot P[X=k] = 0 \cdot P[X=0] + \sum_{k=1}^\infty k \cdot c\,P[Y=k]$$
+> >
 > > $$= c\sum_{k=1}^\infty k\,P[Y=k] = c\sum_{k=0}^\infty k\,P[Y=k] = c\,E[Y] = c\lambda$$
 > >
 > > **Langkah 2: Hitung $E[X^2]$**
+> >
 > > $$E[X^2] = \sum_{k=1}^\infty k^2 \cdot c\,P[Y=k] = c\,E[Y^2] = c(\lambda + \lambda^2)$$
 > >
 > > **Langkah 3: Hitung $\text{Var}[X]$**
+> >
 > > $$\text{Var}(X) = E[X^2] - (E[X])^2 = c(\lambda + \lambda^2) - (c\lambda)^2$$
+> >
 > > $$= c\lambda + c\lambda^2 - c^2\lambda^2$$
 > >
 > > **Hasil Akhir:** **(c)**. $c\lambda + c\lambda^2 - c^2\lambda^2$
@@ -1255,6 +1411,7 @@ d. Sekurang-kurangnya $0{,}3$ tapi kurang dari $0{,}4$
 e. Sekurang-kurangnya $0{,}5$
 
 > [!summary]+ **Jawaban No. 20** 
+>
 > **(c). Sekurang-kurangnya $0{,}2$ tapi kurang dari $0{,}3$**
 >
 > | Field | Isi |
@@ -1267,8 +1424,11 @@ e. Sekurang-kurangnya $0{,}5$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 5; Miller Bab 6 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > PDF order statistik ke-$k$ dari $n$ sampel dengan PDF $f(x)$ dan CDF $F(x)$:
+> >
 > > $$f_{Y_k}(y) = \frac{n!}{(k-1)!(n-k)!} [F(y)]^{k-1}[1-F(y)]^{n-k} f(y)$$
+> >
 > > Untuk $X_i \sim U(0,2)$: $f(x) = 1/2$, $F(x) = x/2$ untuk $0 \leq x \leq 2$.
 > > $Y_2$ adalah median ($k=2$, $n=3$).
 >
@@ -1279,18 +1439,25 @@ e. Sekurang-kurangnya $0{,}5$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: PDF dari $Y_2$**
+> >
 > > $$f_{Y_2}(y) = \frac{3!}{1! \cdot 1!}\left(\frac{y}{2}\right)^1\left(1-\frac{y}{2}\right)^1 \cdot \frac{1}{2} = 6 \cdot \frac{y}{2} \cdot \frac{2-y}{2} \cdot \frac{1}{2} = \frac{3y(2-y)}{4}$$
+> >
 > > untuk $0 \leq y \leq 2$.
 > >
 > > **Langkah 2: Hitung $E[Y_2]$**
+> >
 > > $$E[Y_2] = \int_0^2 y \cdot \frac{3y(2-y)}{4}\,dy = \frac{3}{4}\int_0^2 (2y^2 - y^3)\,dy$$
+> >
 > > $$= \frac{3}{4}\left[\frac{2y^3}{3} - \frac{y^4}{4}\right]_0^2 = \frac{3}{4}\left[\frac{16}{3} - 4\right] = \frac{3}{4} \cdot \frac{4}{3} = 1$$
 > >
 > > **Langkah 3: Hitung $E[Y_2^2]$**
+> >
 > > $$E[Y_2^2] = \int_0^2 y^2 \cdot \frac{3y(2-y)}{4}\,dy = \frac{3}{4}\int_0^2 (2y^3 - y^4)\,dy$$
+> >
 > > $$= \frac{3}{4}\left[\frac{y^4}{2} - \frac{y^5}{5}\right]_0^2 = \frac{3}{4}\left[8 - \frac{32}{5}\right] = \frac{3}{4} \cdot \frac{8}{5} = \frac{6}{5} = 1{,}2$$
 > >
 > > **Langkah 4: Hitung $\text{Var}(Y_2)$**
+> >
 > > $$\text{Var}(Y_2) = E[Y_2^2] - (E[Y_2])^2 = 1{,}2 - 1 = 0{,}2$$
 > >
 > > **Hasil Akhir:** **(c)**. Sekurang-kurangnya $0{,}2$ tapi kurang dari $0{,}3$ ($\text{Var}(Y_2) = 0{,}2$)
@@ -1320,6 +1487,7 @@ d. Sekurang-kurangnya $0{,}85$ tapi kurang dari $0{,}9$
 e. Sekurang-kurangnya $0{,}9$ tapi kurang dari $1$
 
 > [!summary]+ **Jawaban No. 21** 
+>
 > **(e). Sekurang-kurangnya $0{,}9$ tapi kurang dari $1$**
 >
 > | Field | Isi |
@@ -1332,6 +1500,7 @@ e. Sekurang-kurangnya $0{,}9$ tapi kurang dari $1$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 4; Miller Bab 4 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > $X \sim U(8,12)$, $Y \sim U(10,18)$, independen.
 > > $P(X < Y) = \int\int_{x < y} f_X(x)f_Y(y)\,dx\,dy$
 > > Perlu hitung area $\{(x,y): x < y\}$ pada persegi $[8,12] \times [10,18]$.
@@ -1354,10 +1523,15 @@ e. Sekurang-kurangnya $0{,}9$ tapi kurang dari $1$
 > >   - Jika $y < 8$: tidak mungkin karena $y \geq 10 > 8$
 > >
 > > **Langkah 3: Hitung probabilitas**
+> >
 > > $$P(X < Y) = \int_{10}^{12}\int_8^y \frac{1}{4} \cdot \frac{1}{8}\,dx\,dy + \int_{12}^{18}\int_8^{12} \frac{1}{4} \cdot \frac{1}{8}\,dx\,dy$$
+> >
 > > $$= \frac{1}{32}\int_{10}^{12}(y-8)\,dy + \frac{1}{32}\int_{12}^{18} 4\,dy$$
+> >
 > > $$= \frac{1}{32}\left[\frac{(y-8)^2}{2}\right]_{10}^{12} + \frac{1}{32}[4y]_{12}^{18}$$
+> >
 > > $$= \frac{1}{32}\left[\frac{16}{2} - \frac{4}{2}\right] + \frac{1}{32}[72 - 48]$$
+> >
 > > $$= \frac{1}{32}[8-2] + \frac{24}{32} = \frac{6}{32} + \frac{24}{32} = \frac{30}{32} = \frac{15}{16} = 0{,}9375$$
 > >
 > > **Hasil Akhir:** **(e)**. Sekurang-kurangnya $0{,}9$ tapi kurang dari $1$ ($P(X<Y) = 0{,}9375$)
@@ -1387,6 +1561,7 @@ d. Sekurang-kurangnya $0{,}02$ tapi kurang dari $0{,}025$
 e. Sekurang-kurangnya $0{,}025$
 
 > [!summary]+ **Jawaban No. 22** 
+>
 > **(b). Sekurang-kurangnya $0{,}01$ tapi kurang dari $0{,}015$**
 >
 > | Field | Isi |
@@ -1399,8 +1574,11 @@ e. Sekurang-kurangnya $0{,}025$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 4; Miller Bab 4 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > Misalkan $Z$ = jumlah pasien kosmetik. Kondisi pada $X$: $Z|X=n \sim B(n, 0{,}2)$.
+> >
 > > $$P(Z \geq 3) = \sum_{n=3}^4 P(X=n) \cdot P(Z \geq 3 \mid X=n)$$
+> >
 > > (jika $X=2$: $Z$ maks 2, tidak bisa $Z \geq 3$)
 >
 > **Diketahui:**
@@ -1413,14 +1591,19 @@ e. Sekurang-kurangnya $0{,}025$
 > > **Langkah 1: $X = 2$: $Z \leq 2$, jadi $P(Z \geq 3 | X=2) = 0$**
 > >
 > > **Langkah 2: $X = 3$: $Z \sim B(3, 0{,}2)$**
+> >
 > > $$P(Z = 3 | X=3) = (0{,}2)^3 = 0{,}008$$
 > >
 > > **Langkah 3: $X = 4$: $Z \sim B(4, 0{,}2)$**
+> >
 > > $$P(Z \geq 3 | X=4) = P(Z=3) + P(Z=4)$$
+> >
 > > $$= \binom{4}{3}(0{,}2)^3(0{,}8) + (0{,}2)^4 = 4(0{,}008)(0{,}8) + 0{,}0016 = 0{,}0256 + 0{,}0016 = 0{,}0272$$
 > >
 > > **Langkah 4: Hitung $P(Z \geq 3)$**
+> >
 > > $$P(Z \geq 3) = 0{,}6 \cdot 0{,}008 + 0{,}3 \cdot 0{,}0272$$
+> >
 > > $$= 0{,}0048 + 0{,}00816 = 0{,}01296$$
 > >
 > > **Hasil Akhir:** **(b)**. Sekurang-kurangnya $0{,}01$ tapi kurang dari $0{,}015$ ($P \approx 0{,}01296$)
@@ -1450,6 +1633,7 @@ d. $6{,}6$
 e. $6{,}8$
 
 > [!summary]+ **Jawaban No. 23** 
+>
 > **(d). $6{,}6$**
 >
 > | Field | Isi |
@@ -1462,6 +1646,7 @@ e. $6{,}8$
 > | **Referensi** | Hogg-McKean-Craig Bab 2; Miller Bab 4 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > Perhatikan bahwa $X$ dan $Y$ **tidak independen** karena berbagi lemparan yang sama.
 > > $p_5 = 1/6$ (peluang muncul 5), $p_2 = 1/6$ (peluang muncul 2).
 > > Kondisi $Y=2$: angka 2 pertama muncul pada lemparan ke-2 → lemparan ke-1 bukan 2, lemparan ke-2 adalah 2.
@@ -1524,6 +1709,7 @@ d. Sekurang-kurangnya $0{,}8$ tapi kurang dari $0{,}9$
 e. Sekurang-kurangnya $0{,}9$
 
 > [!summary]+ **Jawaban No. 24** 
+>
 > **(a). Kurang dari $0{,}6$**
 >
 > | Field | Isi |
@@ -1536,6 +1722,7 @@ e. Sekurang-kurangnya $0{,}9$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 2; Miller Bab 4 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > $X$ adalah variabel acak campuran (mixed): memiliki massa diskrit di $x=0$ dan $x=1$, serta bagian kontinu.
 > > Syarat normalisasi: massa diskrit + integral kontinu = 1.
 > > Probabilitas bersyarat: $P(A|B) = P(A \cap B)/P(B)$.
@@ -1548,22 +1735,31 @@ e. Sekurang-kurangnya $0{,}9$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Tentukan $c$ dari normalisasi**
+> >
 > > $$0{,}2 + 0{,}1 + \int_0^1 x\,dx + \int_1^c 2x\,dx = 1$$
+> >
 > > $$0{,}3 + \frac{1}{2} + [x^2]_1^c = 1$$
+> >
 > > $$0{,}3 + 0{,}5 + c^2 - 1 = 1$$
+> >
 > > $$c^2 = 1{,}2 \Rightarrow c = \sqrt{1{,}2} \approx 1{,}095$$
 > >
 > > **Langkah 2: Hitung $P(X > 0{,}5)$**
 > > Massa di $X=0$: tidak masuk (karena $0 < 0{,}5$). Massa di $X=1$: masuk ($1 > 0{,}5$).
+> >
 > > $$P(X > 0{,}5) = \int_{0{,}5}^1 x\,dx + P(X=1) + \int_1^c 2x\,dx$$
+> >
 > > $$= \left[\frac{x^2}{2}\right]_{0{,}5}^1 + 0{,}1 + [x^2]_1^c$$
+> >
 > > $$= \frac{1-0{,}25}{2} + 0{,}1 + (1{,}2 - 1) = 0{,}375 + 0{,}1 + 0{,}2 = 0{,}675$$
 > >
 > > **Langkah 3: Hitung $P(X < 1 \text{ dan } X > 0{,}5)$**
 > > Massa di $X=0$: tidak masuk. Massa di $X=1$: tidak masuk ($X < 1$ ketat).
+> >
 > > $$P(0{,}5 < X < 1) = \int_{0{,}5}^1 x\,dx = 0{,}375$$
 > >
 > > **Langkah 4: Hitung probabilitas bersyarat**
+> >
 > > $$P(X < 1 | X > 0{,}5) = \frac{P(0{,}5 < X < 1)}{P(X > 0{,}5)} = \frac{0{,}375}{0{,}675} \approx 0{,}5556$$
 > >
 > > **Hasil Akhir:** **(a)**. Kurang dari $0{,}6$ ($\approx 0{,}556$)
@@ -1593,6 +1789,7 @@ d. $\sqrt{e^{\mu^2}(e^{\sigma^2} - 1)}$
 e. $\sqrt{e^{\sigma^2} - 1}$
 
 > [!summary]+ **Jawaban No. 25** 
+>
 > **(e). $\sqrt{e^{\sigma^2} - 1}$**
 >
 > | Field | Isi |
@@ -1605,6 +1802,7 @@ e. $\sqrt{e^{\sigma^2} - 1}$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 3; Miller Bab 5 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > $Y = e^X$ dengan $X \sim N(\mu, \sigma^2)$ → $Y$ berdistribusi Log-Normal.
 > > MGF normal: $M_X(t) = e^{\mu t + \sigma^2 t^2/2}$
 > > $E[Y^k] = E[e^{kX}] = M_X(k) = e^{k\mu + k^2\sigma^2/2}$
@@ -1617,13 +1815,17 @@ e. $\sqrt{e^{\sigma^2} - 1}$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung $E[Y]$ dan $E[Y^2]$**
+> >
 > > $$E[Y] = E[e^X] = M_X(1) = e^{\mu + \sigma^2/2}$$
+> >
 > > $$E[Y^2] = E[e^{2X}] = M_X(2) = e^{2\mu + 2\sigma^2}$$
 > >
 > > **Langkah 2: Hitung $\text{Var}(Y)$**
+> >
 > > $$\text{Var}(Y) = E[Y^2] - (E[Y])^2 = e^{2\mu + 2\sigma^2} - e^{2\mu + \sigma^2} = e^{2\mu + \sigma^2}(e^{\sigma^2} - 1)$$
 > >
 > > **Langkah 3: Hitung $CV(Y)$**
+> >
 > > $$CV(Y) = \frac{\sqrt{\text{Var}(Y)}}{E[Y]} = \frac{\sqrt{e^{2\mu+\sigma^2}(e^{\sigma^2}-1)}}{e^{\mu+\sigma^2/2}} = \frac{e^{\mu+\sigma^2/2}\sqrt{e^{\sigma^2}-1}}{e^{\mu+\sigma^2/2}} = \sqrt{e^{\sigma^2}-1}$$
 > >
 > > **Hasil Akhir:** **(e)**. $\sqrt{e^{\sigma^2} - 1}$
@@ -1657,6 +1859,7 @@ d. $\dfrac{1}{2}$
 e. $\dfrac{5}{8}$
 
 > [!summary]+ **Jawaban No. 26** 
+>
 > **(a). $\dfrac{1}{4}$**
 >
 > | Field | Isi |
@@ -1669,8 +1872,11 @@ e. $\dfrac{5}{8}$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 3; Miller Bab 4 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > MGF untuk variabel diskrit pada $\{0, 1, 2\}$:
+> >
 > > $$M_X(t) = P(X=0) + P(X=1)e^t + P(X=2)e^{2t}$$
+> >
 > > Koefisien $e^{kt}$ dalam $M_X(t)$ adalah $P(X=k)$.
 >
 > **Diketahui:**
@@ -1680,12 +1886,17 @@ e. $\dfrac{5}{8}$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung $M_X(t)$**
+> >
 > > $$M_X(t) = \frac{(M_X + M_Y) + (M_X - M_Y)}{2}$$
+> >
 > > $$= \frac{1}{2}\left[\left(\frac{3}{4} + \frac{3}{4}e^t + \frac{1}{2}e^{2t}\right) + \left(\frac{1}{4} - \frac{1}{4}e^t\right)\right]$$
+> >
 > > $$= \frac{1}{2}\left[1 + \frac{1}{2}e^t + \frac{1}{2}e^{2t}\right] = \frac{1}{2} + \frac{1}{4}e^t + \frac{1}{4}e^{2t}$$
 > >
 > > **Langkah 2: Baca koefisien $e^t$**
+> >
 > > $$P(X=0) = \frac{1}{2}, \quad P(X=1) = \frac{1}{4}, \quad P(X=2) = \frac{1}{4}$$
+> >
 > > Verifikasi: $\frac{1}{2} + \frac{1}{4} + \frac{1}{4} = 1$ ✓
 > >
 > > **Hasil Akhir:** **(a)**. $P(X=1) = \dfrac{1}{4}$
@@ -1723,6 +1934,7 @@ d. Sekurang-kurangnya $0{,}6$ tapi kurang dari $0{,}8$
 e. Sekurang-kurangnya $0{,}8$
 
 > [!summary]+ **Jawaban No. 27** 
+>
 > **(c). Sekurang-kurangnya $0{,}4$ tapi kurang dari $0{,}6$**
 >
 > | Field | Isi |
@@ -1735,8 +1947,11 @@ e. Sekurang-kurangnya $0{,}8$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 1; Miller Bab 2 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > Teorema Bayes:
+> >
 > > $$P(M|B) = \frac{P(B|M)P(M)}{P(B|M)P(M) + P(B|H)P(H)}$$
+> >
 > > di mana $M$ = mobil merah, $H$ = mobil hijau, $B$ = klaim $> 10$ juta.
 >
 > **Diketahui:**
@@ -1754,6 +1969,7 @@ e. Sekurang-kurangnya $0{,}8$
 > > - Hijau: $700 \times 0{,}04 = 28$ klaim
 > >
 > > **Langkah 2: Terapkan Bayes**
+> >
 > > $$P(M|B) = \frac{300 \times 0{,}09}{300 \times 0{,}09 + 700 \times 0{,}04} = \frac{27}{27 + 28} = \frac{27}{55} \approx 0{,}4909$$
 > >
 > > **Hasil Akhir:** **(c)**. Sekurang-kurangnya $0{,}4$ tapi kurang dari $0{,}6$ ($\approx 0{,}491$)
@@ -1783,6 +1999,7 @@ d. Sekurang-kurangnya $0{,}33$ tapi kurang dari $0{,}44$
 e. Sekurang-kurangnya $0{,}44$
 
 > [!summary]+ **Jawaban No. 28** 
+>
 > **(e). Sekurang-kurangnya $0{,}44$**
 >
 > | Field | Isi |
@@ -1795,6 +2012,7 @@ e. Sekurang-kurangnya $0{,}44$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 2; Miller Bab 3 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > Misalkan $A$ = kejadian bahwa suatu kelompok memiliki $\geq 9$ peserta selesai.
 > > $Z_i \sim B(10, 0{,}8)$ (jumlah yang selesai di kelompok $i$, karena $p_{\text{selesai}} = 1 - 0{,}2 = 0{,}8$).
 > > $P(A) = P(Z_i \geq 9) = P(Z_i = 9) + P(Z_i = 10)$
@@ -1807,7 +2025,9 @@ e. Sekurang-kurangnya $0{,}44$
 > > [!example]- Langkah Pengerjaan
 > >
 > > **Langkah 1: Hitung $P(Z \geq 9)$ untuk satu kelompok**
+> >
 > > $$P(Z=9) = \binom{10}{9}(0{,}8)^9(0{,}2)^1 = 10 \cdot (0{,}8)^9 \cdot 0{,}2$$
+> >
 > > $(0{,}8)^9 = 0{,}134217728$
 > > $P(Z=9) = 10 \cdot 0{,}134217728 \cdot 0{,}2 = 0{,}268435456$
 > >
@@ -1817,6 +2037,7 @@ e. Sekurang-kurangnya $0{,}44$
 > >
 > > **Langkah 2: Probabilitas tepat satu kelompok memiliki $\geq 9$**
 > > Misalkan $q = P(Z \geq 9) \approx 0{,}3758$.
+> >
 > > $$P(\text{tepat satu}) = 2q(1-q) = 2(0{,}3758)(0{,}6242) \approx 2(0{,}2346) = 0{,}4693$$
 > >
 > > **Hasil Akhir:** **(e)**. Sekurang-kurangnya $0{,}44$ ($\approx 0{,}4693$)
@@ -1847,6 +2068,7 @@ d. Sekurang-kurangnya $0{,}07$ tapi kurang dari $0{,}08$
 e. Sekurang-kurangnya $0{,}08$
 
 > [!summary]+ **Jawaban No. 29** 
+>
 > **(d). Sekurang-kurangnya $0{,}07$ tapi kurang dari $0{,}08$**
 >
 > | Field | Isi |
@@ -1859,8 +2081,11 @@ e. Sekurang-kurangnya $0{,}08$
 > | **Referensi** | Hogg-Tanis-Zimm Bab 4; Miller Bab 5 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > Jika $J \sim N(\mu_J, \sigma_J^2)$ dan $S \sim N(\mu_S, \sigma_S^2)$ independen, maka:
+> >
 > > $$D = J - S \sim N(\mu_J - \mu_S,\ \sigma_J^2 + \sigma_S^2)$$
+> >
 > > Target: $P(|D| \leq 1) = P(-1 \leq D \leq 1)$
 >
 > **Diketahui:**
@@ -1875,12 +2100,16 @@ e. Sekurang-kurangnya $0{,}08$
 > > $E[D] = 25 - 20 = 5$, $\text{Var}(D) = 25 + 64 = 89$, $\sigma_D = \sqrt{89} \approx 9{,}434$
 > >
 > > **Langkah 2: Standardisasi**
+> >
 > > $$P(-1 \leq D \leq 1) = P\left(\frac{-1-5}{9{,}434} \leq Z \leq \frac{1-5}{9{,}434}\right) = P\left(-0{,}636 \leq Z \leq -0{,}424\right)$$
 > >
 > > **Langkah 3: Hitung dari tabel Normal**
+> >
 > > $$P(-0{,}636 \leq Z \leq -0{,}424) = \Phi(-0{,}424) - \Phi(-0{,}636)$$
+> >
 > > $\Phi(-0{,}424) = 1 - \Phi(0{,}424) \approx 1 - 0{,}6642 = 0{,}3358$
 > > $\Phi(-0{,}636) = 1 - \Phi(0{,}636) \approx 1 - 0{,}7375 = 0{,}2625$
+> >
 > > $$P = 0{,}3358 - 0{,}2625 = 0{,}0733$$
 > >
 > > **Hasil Akhir:** **(d)**. Sekurang-kurangnya $0{,}07$ tapi kurang dari $0{,}08$ ($\approx 0{,}0733$)
@@ -1910,6 +2139,7 @@ d. Sekurang-kurangnya $2$ tapi kurang dari $2{,}25$
 e. Sekurang-kurangnya $2{,}25$
 
 > [!summary]+ **Jawaban No. 30** 
+>
 > **(c). Sekurang-kurangnya $1{,}75$ tapi kurang dari $2$**
 >
 > | Field | Isi |
@@ -1922,6 +2152,7 @@ e. Sekurang-kurangnya $2{,}25$
 > | **Referensi** | Miller Bab 4; Hogg-Tanis-Zimm Bab 2 |
 >
 > > [!info]+ **Rumus**  
+> >
 > > Persentil ke-$p$ dari transformasi monoton: jika $Y = g(X)$ dengan $g$ monoton meningkat, maka persentil ke-$p$ dari $Y$ adalah $g$ dari persentil ke-$p$ dari $X$.
 > > $X \sim U(-1,1)$: persentil ke-80 dari $X$ adalah $x_{0{,}8}$ di mana $F_X(x_{0{,}8}) = 0{,}8$.
 >
@@ -1934,9 +2165,11 @@ e. Sekurang-kurangnya $2{,}25$
 > > **Langkah 1: Hitung persentil ke-80 dari $X$**
 > > $F_X(x) = \frac{x-(-1)}{1-(-1)} = \frac{x+1}{2}$
 > > Selesaikan $F_X(x_{0{,}8}) = 0{,}8$:
+> >
 > > $$\frac{x_{0{,}8}+1}{2} = 0{,}8 \Rightarrow x_{0{,}8} = 2(0{,}8) - 1 = 0{,}6$$
 > >
 > > **Langkah 2: Transformasikan ke persentil $Y$**
+> >
 > > $$y_{0{,}8} = e^{x_{0{,}8}} = e^{0{,}6} \approx 1{,}8221$$
 > >
 > > **Hasil Akhir:** **(c)**. Sekurang-kurangnya $1{,}75$ tapi kurang dari $2$ ($y_{0{,}8} \approx 1{,}822$)
