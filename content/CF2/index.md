@@ -70,16 +70,27 @@ Modul CF2 mencakup teori probabilitas, variabel acak, distribusi gabungan, dan s
 
 | Periode | Soal | Pembahasan |
 |---------|------|------------|
-| Nov 2025 | [[2025-11-CF2]] | [[2025-11-CF2-Pembahasan]] |
-| Agu 2025 | [[2025-08-CF2]] | [[2025-08-CF2-Pembahasan]] |
-| Mei 2025 | [[2025-05-CF2]] | [[2025-05-CF2-Pembahasan]] |
-| Okt 2024 | [[2024-10-CF2]] | [[2024-10-CF2-Pembahasan]] |
-| Jul 2024 | [[2024-07-CF2]] | [[2024-07-CF2-Pembahasan]] |
-| Apr 2024 | [[2024-04-CF2]] | [[2024-04-CF2-Pembahasan]] |
+| Nov 2025 | [[2025-11-CF2]] | [[12. 2025-11-CF2-Pembahasan]] |
+| Agu 2025 | [[2025-08-CF2]] | [[11. 2025-08-CF2-Pembahasan]] |
+| Mei 2025 | [[2025-05-CF2]] | [[10. 2025-05-CF2-Pembahasan]] |
+| Okt 2024 | [[2024-10-CF2]] | [[9. 2024-10-CF2-Pembahasan]] |
+| Jul 2024 | [[2024-07-CF2]] | [[8. 2024-07-CF2-Pembahasan]] |
+| Apr 2024 | [[2024-04-CF2]] | [[7. 2024-04-CF2-Pembahasan]] |
 | Nov 2023 | [[2023-11-CF2]] | — |
-| Agu 2023 | [[2023-08-CF2]] | [[2023-08-CF2-Pembahasan]] |
-| Mei 2023 | [[2023-05-CF2]] | — |
-| Des 2022 | [[2022-12-CF2]] | — |
-| Agu 2022 | [[2022-08-CF2]] | — |
-| Apr 2022 | [[2022-04-CF2]] | — |
+| Agu 2023 | [[2023-08-CF2]] | [[6. 2023-08-CF2-Pembahasan]] |
+| Mei 2023 | [[2023-05-CF2]] | [[5. 2023-05-CF2-Pembahasan]] |
+| Des 2022 | [[2022-12-CF2]] | [[4. 2022-12-CF2-Pembahasan]] |
+| Agu 2022 | [[2022-08-CF2]] | [[3. 2022-08-CF2-Pembahasan]] |
+| Apr 2022 | [[2022-04-CF2]] | [[2. 2022-04-CF2-Pembahasan]] |
 | Nov 2021 | [[2021-11-CF2]] | — |
+
+### SOA Sample Questions (Exam P)
+
+| # | Soal |
+|---|------|
+| 1 | [[SOA Exam P Samples Part 1]] |
+| 2 | [[SOA Exam P Samples Part 2]] |
+| 3 | [[SOA Exam P Samples Part 3]] |
+| 4 | [[SOA Exam P Samples Part 4]] |
+| 5 | [[SOA Exam P Samples Part 5]] |
+| 6 | [[SOA Exam P Samples Part 6]] |

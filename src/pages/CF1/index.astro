@@ -4,7 +4,7 @@ import NoteLayout from '../../layouts/NoteLayout.astro';
 
 const allEntries = await getCollection('cf1');
 const notes = allEntries
-  .filter(e => !e.id.startsWith('exams/') && !e.id.startsWith('asm-soa-practice-exams/'))
+  .filter(e => !e.id.startsWith('exams/') && !e.id.startsWith('soa-asm-practice-exams/'))
   .sort((a, b) => a.id.localeCompare(b.id));
 const exams = allEntries
   .filter(e => e.id.startsWith('exams/') && !e.id.includes('solutions/'))
@@ -17,7 +17,7 @@ const solutions = allEntries
     return numA - numB;
   });
 const asmExams = allEntries
-  .filter(e => e.id.startsWith('asm-soa-practice-exams/'))
+  .filter(e => e.id.startsWith('soa-asm-practice-exams/'))
   .sort((a, b) => a.id.localeCompare(b.id));
 ---
 
@@ -84,7 +84,7 @@ const asmExams = allEntries
 
   {asmExams.length > 0 && (
     <>
-      <h2 id="asm-soa">▸ ASM-SOA Practice Exams</h2>
+      <h2 id="soa-asm">▸ SOA-ASM Practice Exams</h2>
       <div class="topic-list">
         {asmExams.map(entry => (
           <a href={`/CF1/${entry.id}`} class="topic-item topic-asm">

@@ -23,6 +23,9 @@ function remarkWikiLink() {
       .replace(/-\//g, '/');
   }
 
+  /** Collections that can appear as the first path segment in a wikilink. */
+  const KNOWN_COLLECTIONS = new Set(['CF1', 'CF2', 'AAMAI-101', 'AAMAI101']);
+
   /**
    * @param {string} link  — the raw link text inside [[ ]]
    * @param {string} collection — current file's collection (CF1, CF2, etc.)
@@ -30,13 +33,13 @@ function remarkWikiLink() {
   function wikiLinkToUrl(link, collection) {
     const trimmed = link.trim();
     const parts = trimmed.split('/');
-    if (parts.length >= 2) {
-      // Cross-collection: [[CF2/Note Name]] or [[AAMAI-101/Note]]
+    if (parts.length >= 2 && KNOWN_COLLECTIONS.has(parts[0].toUpperCase())) {
+      // Cross-collection or explicit prefix: [[CF2/Note]] or [[CF1/Exams/Note]]
       const base = parts[0].toUpperCase().replace('AAMAI-101', 'AAMAI101');
       const rest = parts.slice(1).join('/');
       return `/${base}/${makeSlug(rest)}`;
     }
-    // Same-collection: [[Note Name]]
+    // Same-collection (may include subfolder): [[Note Name]] or [[Exams/Note]]
     if (collection) return `/${collection}/${makeSlug(trimmed)}`;
     return `/${makeSlug(trimmed)}`;
   }
