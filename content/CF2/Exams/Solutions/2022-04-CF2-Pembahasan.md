@@ -1,0 +1,2150 @@
+## **No. 1**
+
+Sebuah kotak terdiri atas $30$ bola merah dan $70$ bola hijau.
+
+Tentukan probabilitas peluang terambilnya $8$ bola merah tepat dalam sampel berukuran $20$, jika pengambilan sampel dilakukan tanpa pengembalian (pengulangan tidak diperbolehkan).
+
+a. $0{,}12$  
+b. $0{,}24$  
+c. $0{,}36$  
+d. $0{,}48$  
+e. $0{,}6$
+
+> [!summary]+ **Jawaban No. 1**
+>
+> **(a). $0{,}12$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 1 — Dasar-Dasar Probabilitas |
+> | **Sub-topik** | [[1.3 Metode Enumerasi]] |
+> | **Difficulty** | Easy |
+> | **Prerequisite** | [[1.2 Aksioma dan Perhitungan Probabilitas]] |
+> | **Connected Topics** | [[2.5 Distribusi Diskrit Umum]] |
+> | **Referensi** | Miller Bab 2; Hogg-Tanis-Zimm Bab 1.2–1.4 |
+>
+> > [!info]+ **Rumus**
+> >
+> > **Distribusi Hipergeometrik**: sampling tanpa pengembalian dari populasi dengan dua kategori.
+> >
+> > $$P[X=k] = \frac{\dbinom{K}{k}\dbinom{N-K}{n-k}}{\dbinom{N}{n}}$$
+> >
+> > $N$ = total populasi, $K$ = jumlah "sukses" dalam populasi, $n$ = ukuran sampel, $k$ = jumlah "sukses" dalam sampel.
+>
+> **Diketahui:**
+> - $N = 100$ bola total: $K = 30$ bola merah, $N-K = 70$ bola hijau
+> - $n = 20$ sampel diambil tanpa pengembalian
+> - Target: $P[X = 8]$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Verifikasi Model**
+> >
+> > Pengambilan tanpa pengembalian dari populasi terbatas dengan dua kategori (merah/hijau) → Hipergeometrik.
+> >
+> > **Langkah 2: Hitung Probabilitas**
+> >
+> > $$P[X=8] = \frac{\dbinom{30}{8}\dbinom{70}{12}}{\dbinom{100}{20}}$$
+> >
+> > Secara numerik (menggunakan kalkulator/tabel):
+> >
+> > $$P[X=8] \approx 0{,}116 \approx \mathbf{0{,}12}$$
+> >
+> > **Hasil Akhir:** **(a)**. $0{,}12$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menggunakan Binomial dengan $p = 30/100 = 0{,}3$ — Binomial berlaku untuk sampling *dengan* pengembalian. Karena populasi terbatas dan pengambilan tanpa pengembalian, gunakan Hipergeometrik.
+> > > - Salah menghitung $\binom{100}{20}$ — manfaatkan simetri atau kalkulator.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "$8$ bola merah **tepat**" berarti $k = 8$, bukan $k \geq 8$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - "Tanpa pengembalian" + populasi terbatas → selalu Hipergeometrik, bukan Binomial.
+
+---
+
+## **No. 2**
+
+Perusahaan asuransi membayar klaim rumah sakit. Jumlah klaim yang berisikan biaya IGD atau biaya operasi adalah $85\%$ dari total jumlah klaim. Jumlah klaim yang tidak termasuk biaya IGD adalah $25\%$ dari total jumlah klaim. Terjadinya biaya IGD tidak tergantung pada terjadinya biaya operasi pada klaim rumah sakit.
+
+Tentukan probabilitas bahwa klaim yang diajukan ke perusahaan asuransi termasuk biaya operasi.
+
+a. $0{,}8$  
+b. $0{,}4$  
+c. $0{,}25$  
+d. $0{,}2$  
+e. $0{,}1$
+
+> [!summary]+ **Jawaban No. 2**
+>
+> **(b). $0{,}4$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 1 — Dasar-Dasar Probabilitas |
+> | **Sub-topik** | [[1.5 Kejadian Independen]] |
+> | **Difficulty** | Easy |
+> | **Prerequisite** | [[1.2 Aksioma dan Perhitungan Probabilitas]] |
+> | **Connected Topics** | [[1.4 Probabilitas Bersyarat]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 1.3; Miller Bab 2 |
+>
+> > [!info]+ **Rumus**
+> >
+> > Inklusi-Eksklusi untuk dua kejadian:
+> >
+> > $$P[A \cup B] = P[A] + P[B] - P[A \cap B]$$
+> >
+> > Independensi: $P[A \cap B] = P[A] \cdot P[B]$
+>
+> **Diketahui:**
+> - $P[I \cup O] = 0{,}85$ (IGD atau Operasi)
+> - $P[I^c] = 0{,}25$ → $P[I] = 0{,}75$ (biaya IGD)
+> - $I$ dan $O$ **independen**
+> - Target: $P[O]$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Terapkan Independensi ke Inklusi-Eksklusi**
+> >
+> > Karena $I \perp O$:
+> >
+> > $$P[I \cup O] = P[I] + P[O] - P[I]\cdot P[O]$$
+> >
+> > $$0{,}85 = 0{,}75 + P[O] - 0{,}75\,P[O]$$
+> >
+> > **Langkah 2: Selesaikan untuk $P[O]$**
+> >
+> > $$0{,}85 - 0{,}75 = P[O](1 - 0{,}75) = 0{,}25\,P[O]$$
+> >
+> > $$P[O] = \frac{0{,}10}{0{,}25} = 0{,}4$$
+> >
+> > **Hasil Akhir:** **(b)**. $0{,}4$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengabaikan syarat independensi dan menggunakan $P[I \cap O] = 0$ (saling eksklusif) — dua kejadian independen tidak berarti saling eksklusif.
+> > > - Mengira $P[O] = P[I \cup O] - P[I] = 0{,}10$ (mengabaikan irisan).
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Tidak termasuk biaya IGD" = $P[I^c] = 0{,}25$, bukan $P[I] = 0{,}25$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Independen ≠ saling eksklusif. Gunakan $P[I \cap O] = P[I] \cdot P[O]$ untuk kejadian independen.
+
+---
+
+## **No. 3**
+
+Seorang aktuaris sedang mempelajari tiga penyakit, dilambangkan dengan $A$, $B$, dan $C$. Untuk masing-masing dari ketiga penyakit tersebut, probabilitasnya adalah $0{,}1$ bahwa seseorang dalam populasi hanya memiliki penyakit tersebut (dan tidak ada penyakit lain). Untuk setiap dua dari tiga penyakit, probabilitasnya adalah $0{,}12$ bahwa dia memiliki tepat dua penyakit tersebut. Probabilitas bahwa seseorang memiliki ketiga penyakit, dengan diketahui bahwa dia memiliki $A$ dan $B$ adalah $\dfrac{1}{3}$.
+
+Tentukan probabilitas bahwa seseorang tidak memiliki salah satu dari ketiga penyakit tersebut, dengan diketahui dia tidak memiliki penyakit $A$.
+
+a. $0{,}280$  
+b. $0{,}311$  
+c. $0{,}467$  
+d. $0{,}584$  
+e. $0{,}700$
+
+> [!summary]+ **Jawaban No. 3**
+>
+> **(c). $0{,}467$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 1 — Dasar-Dasar Probabilitas |
+> | **Sub-topik** | [[1.4 Probabilitas Bersyarat]] |
+> | **Difficulty** | Hard |
+> | **Prerequisite** | [[1.2 Aksioma dan Perhitungan Probabilitas]], [[1.6 Teorema Bayes dan Hukum Probabilitas Total]] |
+> | **Connected Topics** | [[1.3 Metode Enumerasi]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 1.4; Miller Bab 2 |
+>
+> > [!info]+ **Rumus**
+> >
+> > Inklusi-Eksklusi tiga kejadian:
+> >
+> > $$P[A \cup B \cup C] = \sum P[A_i] - \sum P[A_i \cap A_j] + P[A \cap B \cap C]$$
+> >
+> > Probabilitas bersyarat: $P[\text{Tidak ada} \mid A^c] = \dfrac{P[\text{Tidak ada}]}{P[A^c]}$
+>
+> **Diketahui:**
+> - $P[\text{hanya } A] = P[\text{hanya } B] = P[\text{hanya } C] = 0{,}1$
+> - $P[\text{tepat } A \cap B] = P[\text{tepat } A \cap C] = P[\text{tepat } B \cap C] = 0{,}12$
+> - $P[A \cap B \cap C \mid A \cap B] = \dfrac{1}{3}$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Cari $P[A \cap B \cap C]$**
+> >
+> > Misalkan $r = P[A \cap B]$ dan $s = P[A \cap B \cap C]$.
+> >
+> > "Tepat $A$ dan $B$" (tanpa $C$) $= P[A \cap B] - P[A \cap B \cap C] = r - s = 0{,}12$
+> >
+> > $P[A \cap B \cap C \mid A \cap B] = \dfrac{s}{r} = \dfrac{1}{3}$, sehingga $s = \dfrac{r}{3}$
+> >
+> > Substitusi: $r - \dfrac{r}{3} = \dfrac{2r}{3} = 0{,}12 \implies r = 0{,}18$, $s = 0{,}06$
+> >
+> > **Langkah 2: Cari $P[A]$**
+> >
+> > $$P[A] = P[\text{hanya }A] + P[\text{tepat }AB] + P[\text{tepat }AC] + P[ABC]$$
+> >
+> > $$= 0{,}1 + 0{,}12 + 0{,}12 + 0{,}06 = 0{,}40$$
+> >
+> > **Langkah 3: Cari $P[A \cup B \cup C]$**
+> >
+> > $$P[A \cup B \cup C] = 3(0{,}40) - 3(0{,}18) + 0{,}06 = 1{,}20 - 0{,}54 + 0{,}06 = 0{,}72$$
+> >
+> > **Langkah 4: Cari $P[\text{Tidak ada penyakit}]$**
+> >
+> > $$P[\text{Tidak ada}] = 1 - 0{,}72 = 0{,}28$$
+> >
+> > **Langkah 5: Terapkan Probabilitas Bersyarat**
+> >
+> > $P[A^c] = 1 - P[A] = 1 - 0{,}40 = 0{,}60$
+> >
+> > Peristiwa "tidak ada penyakit" $\subseteq A^c$, sehingga:
+> >
+> > $$P[\text{Tidak ada} \mid A^c] = \frac{P[\text{Tidak ada}]}{P[A^c]} = \frac{0{,}28}{0{,}60} = \frac{7}{15} \approx 0{,}467$$
+> >
+> > **Hasil Akhir:** **(c)**. $0{,}467$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengira $P[A] = 0{,}1$ (hanya yang "hanya A") — $P[A]$ mencakup semua kasus: hanya A, tepat AB, tepat AC, dan ABC.
+> > > - Lupa bahwa "tepat dua penyakit" $= P[A \cap B] - P[A \cap B \cap C]$, bukan $P[A \cap B]$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Tidak memiliki salah satu dari ketiga" = tidak memiliki A, B, maupun C = komplemen dari $A \cup B \cup C$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Soal tipe "tepat $k$ dari $n$ kejadian" → bangun tabel probabilitas regional secara hati-hati sebelum menerapkan inklusi-eksklusi.
+
+---
+
+## **No. 4**
+
+Diberikan moment generating function untuk fungsi gabungan dari variabel acak $X$ dan $Y$ sebagai berikut:
+
+$$M_{X,Y}(t_1, t_2) = \frac{1}{3(1-t_2)} + \frac{2}{3}e^{t_1} \times \frac{2}{(2-t_2)}, \quad \text{untuk } t_2 < 1$$
+
+Tentukan $\text{Var}[X]$.
+
+a. $\dfrac{1}{18}$  
+b. $\dfrac{1}{9}$  
+c. $\dfrac{1}{6}$  
+d. $\dfrac{2}{9}$  
+e. $\dfrac{2}{3}$
+
+> [!summary]+ **Jawaban No. 4**
+>
+> **(d). $\dfrac{2}{9}$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 3 — Variabel Acak Multivariat |
+> | **Sub-topik** | [[3.1 Distribusi Gabungan]] |
+> | **Difficulty** | Hard |
+> | **Prerequisite** | [[2.3 Fungsi Pembangkit]], [[3.7 Distribusi Majemuk]] |
+> | **Connected Topics** | [[3.2 Distribusi Marginal]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 4.4; Miller Bab 4.4 |
+>
+> > [!info]+ **Rumus**
+> >
+> > MGF marginal $X$: $M_X(t_1) = M_{X,Y}(t_1, 0)$
+> >
+> > Momen dari MGF: $E[X] = M_X'(0)$, $E[X^2] = M_X''(0)$
+> >
+> > $\text{Var}(X) = E[X^2] - (E[X])^2$
+>
+> **Diketahui:**
+> - $M_{X,Y}(t_1,t_2) = \dfrac{1}{3(1-t_2)} + \dfrac{2}{3}e^{t_1}\cdot\dfrac{2}{2-t_2}$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Identifikasi Struktur MGF**
+> >
+> > Tulis MGF dalam bentuk:
+> >
+> > $$M_{X,Y}(t_1,t_2) = \frac{1}{3} \cdot \underbrace{e^{0 \cdot t_1}}_{X=0} \cdot \underbrace{\frac{1}{1-t_2}}_{Y \sim \text{Exp}(1)} + \frac{2}{3} \cdot \underbrace{e^{t_1}}_{X=1} \cdot \underbrace{\frac{2}{2-t_2}}_{Y \sim \text{Exp}(2)}$$
+> >
+> > Ini adalah **distribusi campuran**: dengan probabilitas $\frac{1}{3}$, $(X,Y) = (0,\; Y_1)$ dengan $Y_1 \sim \text{Exp}(1)$; dengan probabilitas $\frac{2}{3}$, $(X,Y) = (1,\; Y_2)$ dengan $Y_2 \sim \text{Exp}(2)$.
+> >
+> > **Langkah 2: Distribusi Marginal $X$**
+> >
+> > $X$ adalah variabel Bernoulli: $P[X=0] = \frac{1}{3}$, $P[X=1] = \frac{2}{3}$.
+> >
+> > **Langkah 3: Hitung $E[X]$ dan $E[X^2]$**
+> >
+> > $$E[X] = 0 \cdot \frac{1}{3} + 1 \cdot \frac{2}{3} = \frac{2}{3}$$
+> >
+> > $$E[X^2] = 0^2 \cdot \frac{1}{3} + 1^2 \cdot \frac{2}{3} = \frac{2}{3}$$
+> >
+> > **Langkah 4: Hitung Variansi**
+> >
+> > $$\text{Var}(X) = E[X^2] - (E[X])^2 = \frac{2}{3} - \left(\frac{2}{3}\right)^2 = \frac{2}{3} - \frac{4}{9} = \frac{6}{9} - \frac{4}{9} = \frac{2}{9}$$
+> >
+> > **Hasil Akhir:** **(d)**. $\dfrac{2}{9}$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menghitung variansi $Y$ bukan variansi $X$ — soal menanyakan $\text{Var}[X]$.
+> > > - Menggunakan turunan MGF bersama secara langsung tanpa memisahkan marginal $X$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - MGF bersama ini adalah campuran dua komponen; faktor $e^{t_1}$ dan $e^{0 \cdot t_1}$ mencerminkan $X=1$ dan $X=0$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika MGF berbentuk penjumlahan terbobot $\sum w_i \cdot M_{X_i}(t)$, ini distribusi campuran — identifikasi bobot dan komponen sebelum menghitung momen.
+
+---
+
+## **No. 5**
+
+Misalkan $X$ menyatakan status kesehatan seseorang ($0$ = tidak terkena kanker, $1$ = terkena kanker) dan $Y$ menyatakan hasil diagnosa pada orang tersebut ($0$ = hasil negatif, $1$ = hasil positif). Diketahui fungsi densitas bersama dari $X$ dan $Y$ sebagai berikut:
+
+$$P[X=0, Y=0] = 0{,}77 \qquad P[X=1, Y=0] = 0{,}2$$
+$$P[X=0, Y=1] = 0{,}01 \qquad P[X=1, Y=1] = 0{,}02$$
+
+Tentukan $\text{Var}(Y \mid X = 1)$.
+
+a. $0{,}08$  
+b. $0{,}13$  
+c. $0{,}17$  
+d. $0{,}2$  
+e. $0{,}25$
+
+> [!summary]+ **Jawaban No. 5**
+>
+> **(a). $0{,}08$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 3 — Variabel Acak Multivariat |
+> | **Sub-topik** | [[3.3 Distribusi Bersyarat]] |
+> | **Difficulty** | Easy |
+> | **Prerequisite** | [[3.1 Distribusi Gabungan]], [[3.2 Distribusi Marginal]] |
+> | **Connected Topics** | [[3.4 Nilai Harapan dan Variansi Bersyarat]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 4.2; Miller Bab 3.5 |
+>
+> > [!info]+ **Rumus**
+> >
+> > $$P[Y=y \mid X=1] = \frac{P[X=1, Y=y]}{P[X=1]}$$
+> >
+> > $$\text{Var}(Y \mid X=1) = E[Y^2 \mid X=1] - (E[Y \mid X=1])^2$$
+>
+> **Diketahui:**
+> - $P[X=1, Y=0] = 0{,}2$; $P[X=1, Y=1] = 0{,}02$
+> - Target: $\text{Var}(Y \mid X=1)$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung $P[X=1]$**
+> >
+> > $$P[X=1] = P[X=1, Y=0] + P[X=1, Y=1] = 0{,}2 + 0{,}02 = 0{,}22$$
+> >
+> > **Langkah 2: Distribusi Bersyarat $Y \mid X=1$**
+> >
+> > $$P[Y=0 \mid X=1] = \frac{0{,}2}{0{,}22} = \frac{10}{11}$$
+> >
+> > $$P[Y=1 \mid X=1] = \frac{0{,}02}{0{,}22} = \frac{1}{11}$$
+> >
+> > **Langkah 3: Hitung $E[Y \mid X=1]$**
+> >
+> > $$E[Y \mid X=1] = 0 \cdot \frac{10}{11} + 1 \cdot \frac{1}{11} = \frac{1}{11}$$
+> >
+> > **Langkah 4: Hitung $E[Y^2 \mid X=1]$**
+> >
+> > Karena $Y \in \{0,1\}$: $Y^2 = Y$, sehingga $E[Y^2 \mid X=1] = \dfrac{1}{11}$.
+> >
+> > **Langkah 5: Hitung Variansi Bersyarat**
+> >
+> > $$\text{Var}(Y \mid X=1) = \frac{1}{11} - \left(\frac{1}{11}\right)^2 = \frac{1}{11}\left(1 - \frac{1}{11}\right) = \frac{1}{11} \cdot \frac{10}{11} = \frac{10}{121} \approx 0{,}0826 \approx 0{,}08$$
+> >
+> > **Hasil Akhir:** **(a)**. $0{,}08$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menggunakan $P[X=1] = 1$ — ini bukan kondisi "diberikan bahwa $X=1$" dalam arti probabilitas, melainkan kita perlu menormalisasi distribusi bersama.
+> > > - Untuk $Y \in \{0,1\}$ (Bernoulli): $\text{Var}(Y) = p(1-p)$ di mana $p = P[Y=1]$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Menggunakan $P[X=1] = 0{,}02$ saja (hanya satu baris) — harus jumlahkan semua nilai $Y$ untuk mendapat $P[X=1]$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Variansi Bernoulli$(p)$ $= p(1-p)$: di sini $p = 1/11$ sehingga $\text{Var} = \frac{10}{121} \approx 0{,}083$.
+
+---
+
+## **No. 6**
+
+Misalkan terdapat variabel acak $X$ yang berdistribusi eksponensial sedemikian sehingga $P[X \leq 2] = 2\, P[X > 4]$.
+
+Tentukan $\text{Var}[X]$.
+
+a. $\dfrac{2}{\ln 2}$  
+b. $\dfrac{2}{(\ln 2)^2}$  
+c. $\dfrac{4}{\ln 2}$  
+d. $\dfrac{4}{(\ln 2)^2}$  
+e. $\dfrac{4}{\ln 4}$
+
+> [!summary]+ **Jawaban No. 6**
+>
+> **(d). $\dfrac{4}{(\ln 2)^2}$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 2 — Variabel Acak Univariat |
+> | **Sub-topik** | [[2.6 Distribusi Kontinu Umum]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.2 Variabel Acak Kontinu]] |
+> | **Connected Topics** | [[2.3 Fungsi Pembangkit]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 3.2; Miller Bab 5.3 |
+>
+> > [!info]+ **Rumus**
+> >
+> > $X \sim \text{Exp}(\lambda)$ (rate $\lambda > 0$):
+> >
+> > $$P[X \leq t] = 1 - e^{-\lambda t}, \qquad P[X > t] = e^{-\lambda t}$$
+> >
+> > $$\text{Var}(X) = \frac{1}{\lambda^2}$$
+>
+> **Diketahui:**
+> - $X \sim \text{Exp}(\lambda)$
+> - Syarat: $P[X \leq 2] = 2\,P[X > 4]$
+> - Target: $\text{Var}(X)$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Nyatakan Syarat dalam $\lambda$**
+> >
+> > $$1 - e^{-2\lambda} = 2\,e^{-4\lambda}$$
+> >
+> > **Langkah 2: Substitusi $u = e^{-2\lambda}$ ($0 < u < 1$)**
+> >
+> > $$1 - u = 2u^2 \implies 2u^2 + u - 1 = 0 \implies (2u - 1)(u + 1) = 0$$
+> >
+> > Karena $u > 0$: $u = \dfrac{1}{2}$
+> >
+> > **Langkah 3: Cari $\lambda$**
+> >
+> > $$e^{-2\lambda} = \frac{1}{2} \implies -2\lambda = \ln\frac{1}{2} = -\ln 2 \implies \lambda = \frac{\ln 2}{2}$$
+> >
+> > **Langkah 4: Hitung Variansi**
+> >
+> > $$\text{Var}(X) = \frac{1}{\lambda^2} = \frac{1}{(\ln 2/2)^2} = \frac{4}{(\ln 2)^2}$$
+> >
+> > **Hasil Akhir:** **(d)**. $\dfrac{4}{(\ln 2)^2}$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengacaukan koefisien: soal ini memakai $2\,P[X>4]$ (koefisien 2), sehingga persamaan kuadrat menjadi $2u^2+u-1=0$ → $u=1/2$ → $\lambda=\ln2/2$ → Var $= 4/(\ln2)^2$.
+> > > - Bandingkan dengan soal Agustus 2022 yang koefisiennya $\frac{1}{2}P[X>4]$ → $u^2+2u-2=0$ → $\lambda \approx \ln2$ → Var $\approx 1/(\ln2)^2$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Mengira persamaan adalah $P[X \leq 2] = 2\,P[X \leq 4]$ — perhatikan $P[X > 4]$ (ekor kanan), bukan $P[X \leq 4]$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Substitusi $u = e^{-2\lambda}$ mengubah persamaan transendental menjadi polinomial kuadrat — teknik standar untuk distribusi Eksponensial.
+
+---
+
+## **No. 7**
+
+Jika $E_1, E_2, E_3$ merupakan kejadian dimana $P[E_i]$ dilambangkan sebagai peluang terjadinya kejadian $E_i$. Diketahui juga bahwa:
+
+$$P[E_1 | E_2] = P[E_2 | E_3] = P[E_3 | E_2] = p$$
+$$P[E_1 \cap E_2] = P[E_2 \cap E_3] = P[E_3 \cap E_1] = r$$
+$$P[E_1 \cap E_2 \cap E_3] = s$$
+
+Tentukan probabilitas bahwa setidaknya satu dari ketiga kejadian tersebut terjadi.
+
+a. $\dfrac{3r}{p} - 3r + s$  
+b. $\dfrac{3p}{r} - r + s$  
+c. $1 - \dfrac{r^3}{p^3}$  
+d. $\dfrac{3p}{r} - 6r + s$  
+e. $\dfrac{3r}{p} - r + s$
+
+> [!summary]+ **Jawaban No. 7**
+>
+> **(a). $\dfrac{3r}{p} - 3r + s$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 1 — Dasar-Dasar Probabilitas |
+> | **Sub-topik** | [[1.2 Aksioma dan Perhitungan Probabilitas]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[1.4 Probabilitas Bersyarat]] |
+> | **Connected Topics** | [[1.3 Metode Enumerasi]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 1.1–1.3; Miller Bab 2 |
+>
+> > [!info]+ **Rumus**
+> >
+> > Inklusi-Eksklusi tiga kejadian:
+> >
+> > $$P[E_1 \cup E_2 \cup E_3] = \sum_{i} P[E_i] - \sum_{i<j} P[E_i \cap E_j] + P[E_1 \cap E_2 \cap E_3]$$
+> >
+> > Dari definisi probabilitas bersyarat: $P[E_1 \cap E_2] = P[E_1 | E_2] \cdot P[E_2]$ → $P[E_2] = \dfrac{r}{p}$
+>
+> **Diketahui:**
+> - $P[E_i \mid E_j] = p$ untuk setiap pasangan yang disebutkan
+> - $P[E_i \cap E_j] = r$ untuk setiap pasangan
+> - $P[E_1 \cap E_2 \cap E_3] = s$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Cari $P[E_i]$ dari Definisi Bersyarat**
+> >
+> > $$P[E_1 \mid E_2] = \frac{P[E_1 \cap E_2]}{P[E_2]} = \frac{r}{P[E_2]} = p \implies P[E_2] = \frac{r}{p}$$
+> >
+> > Demikian pula: $P[E_1] = P[E_2] = P[E_3] = \dfrac{r}{p}$ (simetri kondisi yang diberikan).
+> >
+> > **Langkah 2: Terapkan Inklusi-Eksklusi**
+> >
+> > $$P[E_1 \cup E_2 \cup E_3] = 3 \cdot \frac{r}{p} - 3r + s = \frac{3r}{p} - 3r + s$$
+> >
+> > **Hasil Akhir:** **(a)**. $\dfrac{3r}{p} - 3r + s$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengira $P[E_i] = p$ — $p$ adalah probabilitas *bersyarat*, bukan marginal. Marginal $P[E_i] = r/p$.
+> > > - Lupa mengurangkan $\sum P[E_i \cap E_j] = 3r$ dan menambahkan $P[E_1 \cap E_2 \cap E_3] = s$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Soal memberikan $P[E_3 \mid E_2] = p$ (dan $P[E_2 \mid E_3] = p$), yang konsisten dengan $P[E_2 \cap E_3] = r$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Selalu bedakan probabilitas bersyarat ($p = r/P[E_j]$) dengan probabilitas marginal ($P[E_i] = r/p$).
+
+---
+
+## **No. 8**
+
+Misalkan terdapat variabel acak $X$ yang berdistribusi normal sedemikian sehingga $P[X < 500] = 0{,}5$ dan $P[X > 650] = 0{,}0228$.
+
+Tentukan standar deviasi dari $X$.
+
+a. $75$  
+b. $150$  
+c. $300$  
+d. $5{.}625$  
+e. $2{.}500$
+
+> [!summary]+ **Jawaban No. 8**
+>
+> **(a). $75$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 2 — Variabel Acak Univariat |
+> | **Sub-topik** | [[2.6 Distribusi Kontinu Umum]] |
+> | **Difficulty** | Easy |
+> | **Prerequisite** | [[2.2 Variabel Acak Kontinu]] |
+> | **Connected Topics** | [[4.3 Teorema Limit Pusat]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 3.4; Miller Bab 6 |
+>
+> > [!info]+ **Rumus**
+> >
+> > $X \sim N(\mu, \sigma^2)$; standarisasi: $Z = \dfrac{X - \mu}{\sigma} \sim N(0,1)$
+> >
+> > Nilai standar: $\Phi(2) = 0{,}9772 \implies P[Z > 2] = 0{,}0228$
+>
+> **Diketahui:**
+> - $P[X < 500] = 0{,}5$ → $\mu = 500$ (median = mean untuk distribusi Normal)
+> - $P[X > 650] = 0{,}0228$
+> - Target: $\sigma$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Tentukan $\mu$**
+> >
+> > $P[X < 500] = 0{,}5$ → titik $500$ adalah median = mean, sehingga $\mu = 500$.
+> >
+> > **Langkah 2: Standarisasi Syarat Kedua**
+> >
+> > $$P[X > 650] = P\!\left[Z > \frac{650 - 500}{\sigma}\right] = P\!\left[Z > \frac{150}{\sigma}\right] = 0{,}0228$$
+> >
+> > **Langkah 3: Identifikasi Nilai $z$**
+> >
+> > Dari tabel normal: $P[Z > 2] = 0{,}0228$, sehingga:
+> >
+> > $$\frac{150}{\sigma} = 2 \implies \sigma = \frac{150}{2} = 75$$
+> >
+> > **Hasil Akhir:** **(a)**. $75$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengabaikan bahwa $P[X<500] = 0{,}5$ langsung menyatakan $\mu = 500$ — tidak perlu diasumsikan.
+> > > - Menggunakan $z = 1{,}96$ (dua sisi 5%) alih-alih $z = 2$ (satu sisi 2{,}28%).
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Standar deviasi $\sigma$ bukan variansi $\sigma^2$ — jawaban adalah $75$, bukan $5{.}625$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - $P[Z > 2] = 0{,}0228$: nilai standar yang wajib hafal ($\Phi(2) = 0{,}9772$).
+
+---
+
+## **No. 9**
+
+Ketika suatu bencana terjadi, sebuah perusahaan asuransi melakukan estimasi klaim awal $X$, sebagai perkiraan besaran klaim yang akan diberikan. Akan tetapi ketika proses klaim telah diselesaikan, perusahaan asuransi akhirnya membayar klaim sebesar $Y$ kepada tertanggung. Jika fungsi densitas bersama dari $X$ dan $Y$ sebagai berikut:
+
+$$f(x, y) = \frac{2}{x^2(x-1)}\, y^{-(2x-1)/(x-1)}, \quad x > 1,\ y > 1$$
+
+Diberikan bahwa estimasi klaim awal yang diperkirakan sebesar $2$, tentukan probabilitas bahwa besar klaim yang dibayarkan berada di antara $1$ dan $3$.
+
+a. $\dfrac{1}{9}$  
+b. $\dfrac{6}{9}$  
+c. $\dfrac{1}{3}$  
+d. $\dfrac{2}{3}$  
+e. $\dfrac{8}{9}$
+
+> [!summary]+ **Jawaban No. 9**
+>
+> **(e). $\dfrac{8}{9}$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 3 — Variabel Acak Multivariat |
+> | **Sub-topik** | [[3.3 Distribusi Bersyarat]] |
+> | **Difficulty** | Hard |
+> | **Prerequisite** | [[3.1 Distribusi Gabungan]], [[3.2 Distribusi Marginal]] |
+> | **Connected Topics** | [[2.2 Variabel Acak Kontinu]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 4.2; Miller Bab 3.5 |
+>
+> > [!info]+ **Rumus**
+> >
+> > Distribusi bersyarat: $f_{Y|X}(y \mid x) = \dfrac{f(x,y)}{f_X(x)}$
+> >
+> > $$P[1 < Y < 3 \mid X=2] = \int_1^3 f_{Y|X}(y \mid 2)\,dy$$
+>
+> **Diketahui:**
+> - $f(x,y) = \dfrac{2}{x^2(x-1)}\,y^{-(2x-1)/(x-1)}$ untuk $x>1$, $y>1$
+> - Kondisi: $X = 2$
+> - Target: $P[1 < Y < 3 \mid X=2]$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Substitusi $x = 2$**
+> >
+> > Eksponen $Y$: $-\dfrac{2(2)-1}{2-1} = -\dfrac{3}{1} = -3$
+> >
+> > Konstanta: $\dfrac{2}{2^2(2-1)} = \dfrac{2}{4} = \dfrac{1}{2}$
+> >
+> > $$f(2, y) = \frac{1}{2}\,y^{-3}, \quad y > 1$$
+> >
+> > **Langkah 2: Hitung Marginal $f_X(2)$**
+> >
+> > $$f_X(2) = \int_1^{\infty} \frac{1}{2}\,y^{-3}\,dy = \frac{1}{2}\left[-\frac{1}{2y^2}\right]_1^{\infty} = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}$$
+> >
+> > **Langkah 3: Distribusi Bersyarat $f_{Y|X}(y \mid 2)$**
+> >
+> > $$f_{Y|X}(y \mid 2) = \frac{f(2,y)}{f_X(2)} = \frac{\frac{1}{2}y^{-3}}{\frac{1}{4}} = 2\,y^{-3}, \quad y > 1$$
+> >
+> > **Langkah 4: Hitung Probabilitas**
+> >
+> > $$P[1 < Y < 3 \mid X=2] = \int_1^3 2\,y^{-3}\,dy = 2\left[-\frac{1}{2y^2}\right]_1^3 = \left[-\frac{1}{y^2}\right]_1^3 = -\frac{1}{9} + 1 = \frac{8}{9}$$
+> >
+> > **Hasil Akhir:** **(e)**. $\dfrac{8}{9}$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengintegrasikan $f(2,y)$ langsung tanpa normalisasi — $f(2,y)$ bukan PDF bersyarat; harus dibagi $f_X(2)$.
+> > > - Salah menghitung eksponen: $-(2 \cdot 2 - 1)/(2-1) = -3/1 = -3$, bukan $-5$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Diberikan $X=2$" → gunakan distribusi bersyarat $f_{Y|X}(y|2)$, bukan $f(x,y)$ langsung.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Selalu normalisasi untuk mendapatkan distribusi bersyarat: $f_{Y|X}(y|x) = f(x,y)/f_X(x)$.
+
+---
+
+## **No. 10**
+
+Misalkan harga sebuah mobil setelah pemakaian selama 3 tahun, sebesar $100(0{,}5)^X$ dimana $X$ merupakan variabel acak yang memiliki MGF $M_X(t) = \dfrac{1}{1-2t}$ untuk $t < \dfrac{1}{2}$.
+
+Tentukan ekspektasi harga mobil tersebut setelah pemakaian selama 3 tahun.
+
+a. $12{,}5$  
+b. $25$  
+c. $41{,}9$  
+d. $83{,}8$  
+e. $88{,}9$
+
+> [!summary]+ **Jawaban No. 10**
+>
+> **(c). $41{,}9$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 2 — Variabel Acak Univariat |
+> | **Sub-topik** | [[2.3 Fungsi Pembangkit]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.2 Variabel Acak Kontinu]], [[2.4 Transformasi Variabel Acak Univariat]] |
+> | **Connected Topics** | [[2.6 Distribusi Kontinu Umum]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 2.3; Miller Bab 4.4 |
+>
+> > [!info]+ **Rumus**
+> >
+> > $M_X(t) = E[e^{tX}]$, sehingga:
+> >
+> > $$E[(0{,}5)^X] = E[e^{X \ln(0{,}5)}] = M_X(\ln 0{,}5)$$
+>
+> **Diketahui:**
+> - Harga $= 100 \cdot (0{,}5)^X$; $M_X(t) = \dfrac{1}{1-2t}$
+> - Target: $E[100 \cdot (0{,}5)^X]$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Nyatakan $(0{,}5)^X$ dalam Bentuk Eksponensial**
+> >
+> > $$(0{,}5)^X = e^{X \ln(0{,}5)} = e^{-X \ln 2}$$
+> >
+> > **Langkah 2: Gunakan MGF**
+> >
+> > $$E[(0{,}5)^X] = E[e^{-X \ln 2}] = M_X(-\ln 2) = M_X(\ln 0{,}5)$$
+> >
+> > **Langkah 3: Hitung**
+> >
+> > $$M_X(\ln 0{,}5) = \frac{1}{1 - 2\ln 0{,}5} = \frac{1}{1 - 2(-\ln 2)} = \frac{1}{1 + 2\ln 2}$$
+> >
+> > $1 + 2\ln 2 = 1 + 2(0{,}6931) = 1 + 1{,}3863 = 2{,}3863$
+> >
+> > $$E[(0{,}5)^X] = \frac{1}{2{,}3863} \approx 0{,}4191$$
+> >
+> > **Langkah 4: Hitung Ekspektasi Harga**
+> >
+> > $$E[100 \cdot (0{,}5)^X] = 100 \times 0{,}4191 \approx 41{,}9$$
+> >
+> > **Hasil Akhir:** **(c)**. $41{,}9$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengira $E[(0{,}5)^X] = (0{,}5)^{E[X]}$ — ekspektasi fungsi $\neq$ fungsi ekspektasi (kecuali fungsi linear).
+> > > - Mengira $M_X(t) = 1/(1-2t)$ adalah MGF distribusi Eksponensial rate $1/2$ (memang benar: $X \sim \text{Exp}(1/2)$), tapi $E[(0{,}5)^X]$ dihitung via MGF dievaluasi di $t = \ln(0{,}5)$, bukan $E[X] \cdot \ln(0{,}5)$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Harga setelah 3 tahun adalah $100(0{,}5)^X$ bukan $100 \cdot 0{,}5 \cdot X$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - $E[a^X] = M_X(\ln a)$: kunci identitas untuk mengonversi ekspektasi fungsi pangkat ke MGF.
+
+---
+
+## **No. 11**
+
+Diberikan distribusi $Z$ pada interval $[0, 1)$ dan memiliki fungsi densitas kumulatif sebagai berikut:
+
+$$F_Z(z) = \begin{cases} 0, & z < 0 \\ 0{,}5, & z = 0 \\ 0{,}5 + \dfrac{1}{2}z^2, & 0 < z < 1 \\ 1, & z \geq 1 \end{cases}$$
+
+Tentukan $E[Z]$.
+
+a. $0$  
+b. $\dfrac{1}{2}$  
+c. $\dfrac{1}{3}$  
+d. $\dfrac{1}{4}$  
+e. $1$
+
+> [!summary]+ **Jawaban No. 11**
+>
+> **(c). $\dfrac{1}{3}$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 2 — Variabel Acak Univariat |
+> | **Sub-topik** | [[2.2 Variabel Acak Kontinu]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.1 Variabel Acak Diskrit]] |
+> | **Connected Topics** | [[2.4 Transformasi Variabel Acak Univariat]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 2.1; Miller Bab 4.1 |
+>
+> > [!info]+ **Rumus**
+> >
+> > **Distribusi campuran**: massa diskrit di $Z=0$ dan bagian kontinu di $(0,1)$.
+> >
+> > $$E[Z] = \underbrace{0 \cdot P[Z=0]}_{\text{komponen diskrit}} + \underbrace{\int_0^1 z\,f_Z(z)\,dz}_{\text{komponen kontinu}}$$
+>
+> **Diketahui:**
+> - $P[Z=0] = F_Z(0) - F_Z(0^-) = 0{,}5 - 0 = 0{,}5$ (lompatan di $z=0$)
+> - PDF kontinu: $f_Z(z) = F_Z'(z) = z$ untuk $0 < z < 1$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Identifikasi Komponen**
+> >
+> > Lompatan CDF di $z=0$: $\Delta F = 0{,}5 - 0 = 0{,}5$ → massa titik $P[Z=0] = 0{,}5$.
+> >
+> > CDF pada $(0,1)$: $F_Z(z) = 0{,}5 + \frac{1}{2}z^2$ → PDF kontinu $f_Z(z) = z$.
+> >
+> > **Langkah 2: Hitung Kontribusi Diskrit**
+> >
+> > $$0 \times P[Z=0] = 0 \times 0{,}5 = 0$$
+> >
+> > **Langkah 3: Hitung Kontribusi Kontinu**
+> >
+> > $$\int_0^1 z \cdot z\,dz = \int_0^1 z^2\,dz = \left[\frac{z^3}{3}\right]_0^1 = \frac{1}{3}$$
+> >
+> > **Langkah 4: Total $E[Z]$**
+> >
+> > $$E[Z] = 0 + \frac{1}{3} = \frac{1}{3}$$
+> >
+> > **Hasil Akhir:** **(c)**. $\dfrac{1}{3}$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengira CDF kontinu berarti tidak ada massa titik — lompatan pada CDF ($F(0) - F(0^-) = 0{,}5 > 0$) menandakan adanya massa titik diskrit.
+> > > - Lupa bahwa $z=0$ memberikan kontribusi $0 \cdot 0{,}5 = 0$ terhadap $E[Z]$, sehingga hanya perlu menghitung integral kontinu.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Menggunakan $F_Z(z)$ langsung dalam integral $\int z\,dF_Z(z)$ tanpa memisahkan massa titik dan bagian kontinu.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Jika CDF memiliki lompatan → ada komponen diskrit. Pisahkan dan hitung kontribusinya secara terpisah.
+
+---
+
+## **No. 12**
+
+Dua buah alat digunakan untuk mengukur tinggi sebuah bangunan $h$. Eror (ralat) yang dihasilkan alat I memiliki distribusi normal dengan mean $0$ dan standar deviasi $0{,}0056h$. Eror (ralat) yang dihasilkan alat II memiliki distribusi normal dengan mean $0$ dan standar deviasi $0{,}0044h$. Misalkan kedua alat tersebut saling independen, tentukanlah probabilitas bahwa rata-rata eror (ralat) dari kedua alat tersebut memiliki maksimal eror (ralat) sebesar $0{,}005h$.
+
+a. $0{,}38$  
+b. $0{,}47$  
+c. $0{,}68$  
+d. $0{,}84$  
+e. $0{,}90$
+
+> [!summary]+ **Jawaban No. 12**
+>
+> **⚠️ DIANULIR oleh PAI**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 2 — Variabel Acak Univariat |
+> | **Sub-topik** | [[2.6 Distribusi Kontinu Umum]] |
+> | **Difficulty** | — |
+> | **Prerequisite** | — |
+> | **Connected Topics** | — |
+> | **Referensi** | — |
+>
+> > [!warning]+ **Keterangan Soal Dianulir**
+> > Soal No. 12 **dianulir oleh PAI**. Berdasarkan kunci jawaban resmi sesi April 2022, status soal ini adalah **ANULIR** — kemungkinan terdapat ambiguitas dalam framing soal (apakah "rata-rata eror" berarti rata-rata aritmetika dua eror, atau estimator lainnya) yang mengakibatkan tidak ada satu jawaban yang disepakati tepat.
+>
+> **Status:** Semua peserta mendapat nilai penuh untuk soal ini.
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Rata-rata dua Normal independen: $\bar{E} = (E_1+E_2)/2 \sim N(0,\, \sigma_{\bar{E}}^2)$ dengan $\sigma_{\bar{E}}^2 = (\sigma_1^2+\sigma_2^2)/4$.
+> > > - Nilai numerik: $\sigma_{\bar{E}} = h\sqrt{(0{,}0056^2+0{,}0044^2)/4} \approx 0{,}00356h$ → $P[|\bar{E}| \leq 0{,}005h] = P[|Z| \leq 1{,}4] \approx 0{,}84$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Soal dianulir — tidak perlu menghafal jawaban ini. Pahami teknik dasarnya: distribusi rata-rata dua Normal independen.
+
+---
+
+## **No. 13**
+
+Jika $X$ berdistribusi seragam pada interval $(0, 10)$, tentukanlah probabilitas $P\left[X + \dfrac{10}{X} > 7\right]$.
+
+a. $\dfrac{3}{10}$  
+b. $\dfrac{31}{70}$  
+c. $\dfrac{1}{2}$  
+d. $\dfrac{39}{70}$  
+e. $\dfrac{7}{10}$
+
+> [!summary]+ **Jawaban No. 13**
+>
+> **(e). $\dfrac{7}{10}$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 2 — Variabel Acak Univariat |
+> | **Sub-topik** | [[2.2 Variabel Acak Kontinu]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.6 Distribusi Kontinu Umum]] |
+> | **Connected Topics** | [[2.4 Transformasi Variabel Acak Univariat]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 2.1; Miller Bab 4.1 |
+>
+> > [!info]+ **Rumus**
+> >
+> > $X \sim U(0,10)$: $f(x) = 1/10$ untuk $0 < x < 10$.
+> >
+> > $$P[A] = \int_{\{x : A\}} \frac{1}{10}\,dx = \frac{\text{panjang interval memenuhi } A}{10}$$
+>
+> **Diketahui:**
+> - $X \sim U(0, 10)$
+> - Target: $P\!\left[X + \dfrac{10}{X} > 7\right]$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Ubah Pertidaksamaan**
+> >
+> > Kalikan kedua sisi dengan $X > 0$:
+> >
+> > $$X + \frac{10}{X} > 7 \implies X^2 - 7X + 10 > 0$$
+> >
+> > **Langkah 2: Faktorkan**
+> >
+> > $$X^2 - 7X + 10 = (X-2)(X-5) > 0$$
+> >
+> > Solusi: $X < 2$ atau $X > 5$
+> >
+> > **Langkah 3: Identifikasi Region dalam Support**
+> >
+> > Karena $X \in (0, 10)$:
+> >
+> > - $X < 2$: interval $(0, 2)$, panjang $= 2$
+> > - $X > 5$: interval $(5, 10)$, panjang $= 5$
+> >
+> > **Langkah 4: Hitung Probabilitas**
+> >
+> > $$P\!\left[X + \frac{10}{X} > 7\right] = \frac{2 + 5}{10} = \frac{7}{10}$$
+> >
+> > **Hasil Akhir:** **(e)**. $\dfrac{7}{10}$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengalikan dengan $X$ dan tidak memperhatikan tanda — karena $X > 0$ dalam support, perkalian aman tanpa membalik pertidaksamaan.
+> > > - Salah memfaktorkan: $(X-2)(X-5) > 0$ → $X < 2$ **atau** $X > 5$ (bukan $2 < X < 5$).
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Support $X \in (0,10)$ membatasi region: hanya bagian yang memotong $(0,10)$ yang dihitung.
+> >
+> > > [!CAUTION] Red Flags
+> > > - $(a-x)(b-x) > 0$ dengan $a < b$: solusinya $x < a$ **atau** $x > b$ (bukan daerah tengah).
+
+---
+
+## **No. 14**
+
+Diketahui statistik pasien pada suatu rumah sakit sebagai berikut:
+
+| Umur Pasien | Probabilitas seseorang terkena kanker | Distribusi Pasien |
+|:-:|:-:|:-:|
+| $1$-$20$ | $0{,}06$ | $0{,}04$ |
+| $21$-$40$ | $0{,}03$ | $0{,}23$ |
+| $41$-$60$ | $0{,}02$ | $0{,}25$ |
+| $61$-$99$ | $0{,}04$ | $0{,}48$ |
+
+Seorang pasien yang terkena kanker akan dipilih secara acak. Tentukanlah probabilitas pasien tersebut berumur $21$-$40$.
+
+a. $0{,}04$  
+b. $0{,}07$  
+c. $0{,}15$  
+d. $0{,}21$  
+e. $0{,}54$
+
+> [!summary]+ **Jawaban No. 14**
+>
+> **(d). $0{,}21$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 1 — Dasar-Dasar Probabilitas |
+> | **Sub-topik** | [[1.6 Teorema Bayes dan Hukum Probabilitas Total]] |
+> | **Difficulty** | Easy |
+> | **Prerequisite** | [[1.4 Probabilitas Bersyarat]] |
+> | **Connected Topics** | [[1.2 Aksioma dan Perhitungan Probabilitas]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 1.4; Miller Bab 2 |
+>
+> > [!info]+ **Rumus**
+> >
+> > Teorema Bayes:
+> >
+> > $$P[\text{Umur} \mid \text{Kanker}] = \frac{P[\text{Kanker} \mid \text{Umur}] \cdot P[\text{Umur}]}{P[\text{Kanker}]}$$
+> >
+> > Hukum Total: $P[\text{Kanker}] = \sum_i P[\text{Kanker} \mid U_i] \cdot P[U_i]$
+>
+> **Diketahui:**
+> - $P[K \mid U_i]$: probabilitas kanker per kelompok umur
+> - $P[U_i]$: distribusi pasien per kelompok umur
+> - Target: $P[U_{21-40} \mid K]$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung $P[\text{Kanker}]$ via Hukum Total**
+> >
+> > $$P[K] = 0{,}06(0{,}04) + 0{,}03(0{,}23) + 0{,}02(0{,}25) + 0{,}04(0{,}48)$$
+> >
+> > $$= 0{,}0024 + 0{,}0069 + 0{,}005 + 0{,}0192 = 0{,}0335$$
+> >
+> > **Langkah 2: Terapkan Teorema Bayes**
+> >
+> > $$P[U_{21-40} \mid K] = \frac{P[K \mid U_{21-40}] \cdot P[U_{21-40}]}{P[K]} = \frac{0{,}03 \times 0{,}23}{0{,}0335} = \frac{0{,}0069}{0{,}0335} \approx 0{,}206 \approx 0{,}21$$
+> >
+> > **Hasil Akhir:** **(d)**. $0{,}21$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menjawab $P[K \mid U_{21-40}] = 0{,}03$ — ini likelihood, bukan posterior yang ditanyakan.
+> > > - Lupa mengalikan $P[K \mid U_i]$ dengan $P[U_i]$ sebelum menjumlahkan untuk mendapat $P[K]$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Distribusi Pasien" adalah $P[U_i]$ (prior), bukan $P[U_i \mid K]$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Bayes: likelihood × prior / marginal = posterior. Selalu hitung $P[K]$ via hukum total terlebih dulu.
+
+---
+
+## **No. 15**
+
+Sebuah soal ujian berisikan $10$ pertanyaan, dimana setiap pertanyaan memiliki $5$ pilihan jawaban (hanya terdapat $1$ jawaban yang benar). Seorang peserta menebak jawaban secara acak pada semua pertanyaan ujian. Misalkan ekspektasi banyak jawaban yang benar jika ditebak secara acak adalah $E[N]$.
+
+Tentukan peluang peserta tersebut akan mendapatkan jawaban benar paling sedikit sebesar $E[N]$.
+
+a. $0{,}624$  
+b. $0{,}591$  
+c. $0{,}430$  
+d. $0{,}322$  
+e. $0{,}302$
+
+> [!summary]+ **Jawaban No. 15**
+>
+> **(a). $0{,}624$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 2 — Variabel Acak Univariat |
+> | **Sub-topik** | [[2.5 Distribusi Diskrit Umum]] |
+> | **Difficulty** | Easy |
+> | **Prerequisite** | [[2.1 Variabel Acak Diskrit]] |
+> | **Connected Topics** | [[4.3 Teorema Limit Pusat]] |
+> | **Referensi** | Miller Bab 5.1; Hogg-Tanis-Zimm Bab 3.1 |
+>
+> > [!info]+ **Rumus**
+> >
+> > $N \sim B(n=10,\, p=0{,}2)$ (menebak acak: $p = 1/5$).
+> >
+> > $E[N] = np = 10 \times 0{,}2 = 2$
+> >
+> > Target: $P[N \geq E[N]] = P[N \geq 2]$
+>
+> **Diketahui:**
+> - $N \sim B(10,\, 0{,}2)$; $E[N] = 2$
+> - Target: $P[N \geq 2]$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung $P[N \leq 1]$**
+> >
+> > $$P[N=0] = (0{,}8)^{10} = 0{,}1074$$
+> >
+> > $$P[N=1] = \binom{10}{1}(0{,}2)^1(0{,}8)^9 = 10 \times 0{,}2 \times 0{,}1342 = 0{,}2684$$
+> >
+> > $$P[N \leq 1] = 0{,}1074 + 0{,}2684 = 0{,}3758$$
+> >
+> > **Langkah 2: Hitung $P[N \geq 2]$**
+> >
+> > $$P[N \geq 2] = 1 - P[N \leq 1] = 1 - 0{,}3758 = 0{,}6242 \approx 0{,}624$$
+> >
+> > **Hasil Akhir:** **(a)**. $0{,}624$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - "Paling sedikit $E[N]$" = $N \geq 2$ (inklusif) karena $E[N] = 2$.
+> > > - Menggunakan $p = 1/5$ dengan benar — 5 pilihan, hanya 1 benar.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Paling sedikit sebesar $E[N]$" = $N \geq E[N] = 2$, bukan $N > 2$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Hitung $P[N \geq k]$ via komplemen: $1 - P[N \leq k-1]$ untuk efisiensi komputasi.
+
+---
+
+## **No. 16**
+
+Diketahui bahwa:
+
+$$\text{Var}[X] = 25, \quad \text{Var}[Y] = 100$$
+$$\text{Cov}(X, Y) = -10, \quad \text{Cov}(X, Z) = 2{,}5$$
+
+Misalkan $Z = X + cY$, tentukanlah nilai dari $c$.
+
+a. $2$  
+b. $2{,}25$  
+c. $2{,}5$  
+d. $-2$  
+e. $-2{,}25$
+
+> [!summary]+ **Jawaban No. 16**
+>
+> **(b). $2{,}25$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 3 — Variabel Acak Multivariat |
+> | **Sub-topik** | [[3.6 Matriks Variansi-Kovariansi]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[3.5 Independensi dan Korelasi]] |
+> | **Connected Topics** | [[3.1 Distribusi Gabungan]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 4.4; Miller Bab 3.5–3.8 |
+>
+> > [!info]+ **Rumus**
+> >
+> > Bilinearitas kovarians:
+> >
+> > $$\text{Cov}(X, aU + bV) = a\,\text{Cov}(X, U) + b\,\text{Cov}(X, V)$$
+> >
+> > Khususnya: $\text{Cov}(X, X) = \text{Var}(X)$
+>
+> **Diketahui:**
+> - $\text{Var}(X) = 25$, $\text{Var}(Y) = 100$
+> - $\text{Cov}(X,Y) = -10$, $\text{Cov}(X,Z) = 2{,}5$
+> - $Z = X + cY$
+> - Target: $c$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Ekspansi $\text{Cov}(X, Z)$**
+> >
+> > $$\text{Cov}(X, Z) = \text{Cov}(X,\; X + cY) = \text{Cov}(X, X) + c\,\text{Cov}(X, Y)$$
+> >
+> > $$= \text{Var}(X) + c\,\text{Cov}(X, Y) = 25 + c(-10)$$
+> >
+> > **Langkah 2: Selesaikan untuk $c$**
+> >
+> > $$25 - 10c = 2{,}5 \implies 10c = 22{,}5 \implies c = 2{,}25$$
+> >
+> > **Hasil Akhir:** **(b)**. $2{,}25$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengira $\text{Cov}(X, X+cY) = c\,\text{Cov}(X,Y)$ — lupa suku $\text{Cov}(X,X) = \text{Var}(X) = 25$.
+> > > - Mengabaikan tanda negatif $\text{Cov}(X,Y) = -10$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - $\text{Var}(Y) = 100$ tidak digunakan di sini — ia relevan jika soal menanyakan $\text{Cov}(Y,Z)$ atau $\text{Var}(Z)$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Selalu ekspansi $\text{Cov}(X, aU+bV) = a\,\text{Cov}(X,U) + b\,\text{Cov}(X,V)$ secara eksplisit sebelum substitusi angka.
+
+---
+
+## **No. 17**
+
+Sebuah kotak berisikan $10$ kelereng putih dan $15$ kelereng hitam. Misalkan $X$ merupakan banyaknya kelereng putih yang diambil, ketika dari kotak tersebut diambil $10$ kelereng secara acak dan tanpa pengembalian.
+
+Tentukan $\dfrac{\text{Var}(X)}{E(X)}$. (Gunakan distribusi hipergeometrik)
+
+a. $\dfrac{1}{8}$  
+b. $\dfrac{3}{16}$  
+c. $\dfrac{2}{8}$  
+d. $\dfrac{5}{16}$  
+e. $\dfrac{3}{8}$
+
+> [!summary]+ **Jawaban No. 17**
+>
+> **(e). $\dfrac{3}{8}$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 2 — Variabel Acak Univariat |
+> | **Sub-topik** | [[2.5 Distribusi Diskrit Umum]] |
+> | **Difficulty** | Easy |
+> | **Prerequisite** | [[2.1 Variabel Acak Diskrit]] |
+> | **Connected Topics** | [[1.3 Metode Enumerasi]] |
+> | **Referensi** | Miller Bab 5.2; Hogg-Tanis-Zimm Bab 3.1 |
+>
+> > [!info]+ **Rumus**
+> >
+> > $X \sim \text{HGeom}(N, K, n)$:
+> >
+> > $$E[X] = \frac{nK}{N}, \qquad \text{Var}(X) = n \cdot \frac{K}{N} \cdot \frac{N-K}{N} \cdot \frac{N-n}{N-1}$$
+>
+> **Diketahui:**
+> - $N = 25$ (total), $K = 10$ (putih), $N-K = 15$ (hitam), $n = 10$ (diambil)
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung $E[X]$**
+> >
+> > $$E[X] = \frac{nK}{N} = \frac{10 \times 10}{25} = \frac{100}{25} = 4$$
+> >
+> > **Langkah 2: Hitung $\text{Var}(X)$**
+> >
+> > $$\text{Var}(X) = 10 \cdot \frac{10}{25} \cdot \frac{15}{25} \cdot \frac{25-10}{25-1} = 10 \cdot \frac{10}{25} \cdot \frac{15}{25} \cdot \frac{15}{24}$$
+> >
+> > $$= 10 \cdot \frac{2}{5} \cdot \frac{3}{5} \cdot \frac{5}{8} = 10 \cdot \frac{30}{200} = \frac{300}{200} = \frac{3}{2}$$
+> >
+> > **Langkah 3: Hitung Rasio**
+> >
+> > $$\frac{\text{Var}(X)}{E[X]} = \frac{3/2}{4} = \frac{3}{8}$$
+> >
+> > **Hasil Akhir:** **(e)**. $\dfrac{3}{8}$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menggunakan formula Binomial $\text{Var}(X) = np(1-p)$ tanpa faktor koreksi berhingga $\dfrac{N-n}{N-1}$ — Hipergeometrik memerlukan faktor koreksi ini.
+> > > - Lupa faktor $(N-n)/(N-1)$: untuk $N=25, n=10$: $(25-10)/(25-1) = 15/24 = 5/8$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Soal meminta $\text{Var}/E$, bukan $\text{Var}$ saja — hitung kedua momen sebelum membagi.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Sampling tanpa pengembalian dari populasi terbatas → Hipergeometrik dengan faktor koreksi berhingga.
+
+---
+
+## **No. 18**
+
+Misalkan $X$ merupakan banyaknya pelanggan yang datang pada pagi hari dan $Y$ merupakan banyaknya pelanggan yang datang pada siang hari. Diberikan juga informasi berikut:
+
+- $X$ dan $Y$ berdistribusi Poisson.
+- Momen pertama dari $X$ lebih kecil dari momen pertama dari $Y$ sebesar $8$.
+- Momen kedua dari $X$ sebesar $60\%$ dari momen kedua $Y$.
+
+Tentukan variansi dari $Y$.
+
+a. $4$  
+b. $12$  
+c. $16$  
+d. $27$  
+e. $35$
+
+> [!summary]+ **Jawaban No. 18**
+>
+> **(e). $35$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 2 — Variabel Acak Univariat |
+> | **Sub-topik** | [[2.5 Distribusi Diskrit Umum]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.3 Fungsi Pembangkit]], [[2.1 Variabel Acak Diskrit]] |
+> | **Connected Topics** | [[4.5 Estimasi Parameter]] |
+> | **Referensi** | Miller Bab 5.1; Hogg-Tanis-Zimm Bab 3.1 |
+>
+> > [!info]+ **Rumus**
+> >
+> > $X \sim \text{Poisson}(\lambda_X)$: $E[X] = \lambda_X$, $E[X^2] = \lambda_X + \lambda_X^2$
+> >
+> > $\text{Var}(X) = \lambda_X$ (sifat Poisson)
+>
+> **Diketahui:**
+> - $\lambda_Y - \lambda_X = 8$ (momen pertama $Y$ lebih besar 8)
+> - $E[X^2] = 0{,}6\,E[Y^2]$ (momen kedua $X$ sebesar 60% momen kedua $Y$)
+> - Target: $\text{Var}(Y) = \lambda_Y$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Nyatakan Momen Kedua Poisson**
+> >
+> > $$E[X^2] = \lambda_X + \lambda_X^2, \qquad E[Y^2] = \lambda_Y + \lambda_Y^2$$
+> >
+> > **Langkah 2: Substitusi Syarat**
+> >
+> > $$\lambda_X = \lambda_Y - 8 \quad \text{...(1)}$$
+> >
+> > $$\lambda_X + \lambda_X^2 = 0{,}6(\lambda_Y + \lambda_Y^2) \quad \text{...(2)}$$
+> >
+> > **Langkah 3: Substitusi (1) ke (2)**
+> >
+> > Misalkan $\lambda_Y = \lambda$ dan $\lambda_X = \lambda - 8$:
+> >
+> > $$(\lambda-8) + (\lambda-8)^2 = 0{,}6(\lambda + \lambda^2)$$
+> >
+> > $$(\lambda-8) + \lambda^2 - 16\lambda + 64 = 0{,}6\lambda + 0{,}6\lambda^2$$
+> >
+> > $$\lambda^2 - 15\lambda + 56 = 0{,}6\lambda^2 + 0{,}6\lambda$$
+> >
+> > $$0{,}4\lambda^2 - 15{,}6\lambda + 56 = 0$$
+> >
+> > $$\lambda^2 - 39\lambda + 140 = 0$$
+> >
+> > $$(\lambda - 35)(\lambda - 4) = 0$$
+> >
+> > **Langkah 4: Pilih Akar yang Valid**
+> >
+> > $\lambda = 35$ atau $\lambda = 4$. Jika $\lambda_Y = 4$ maka $\lambda_X = -4 < 0$ (tidak valid). Jadi $\lambda_Y = 35$.
+> >
+> > $$\text{Var}(Y) = \lambda_Y = 35$$
+> >
+> > **Hasil Akhir:** **(e)**. $35$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengira momen kedua Poisson $= \lambda^2$ saja — untuk Poisson: $E[X^2] = \lambda + \lambda^2$ (bukan $\lambda^2$).
+> > > - Memilih akar $\lambda_Y = 4$ yang menghasilkan $\lambda_X = -4 < 0$ — tidak valid karena parameter Poisson harus positif.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Momen pertama lebih kecil 8" berarti $E[Y] - E[X] = 8$, bukan $E[X] - E[Y] = 8$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Poisson: $E[X^2] = \text{Var}(X) + (E[X])^2 = \lambda + \lambda^2$; jangan lupa suku pertama $\lambda$.
+
+---
+
+## **No. 19**
+
+Diketahui bahwa $X$ dan $Y$ merupakan variabel acak yang memiliki fungsi densitas bersama sebagai berikut:
+
+$$f(x, y) = \begin{cases} \dfrac{2x + 2 - y}{4}, & \text{untuk } 0 < x < 1 \text{ dan } 0 < y < 2 \\ 0, & \text{untuk lainnya} \end{cases}$$
+
+Tentukan $P[X + Y \geq 1]$.
+
+a. $0{,}75$  
+b. $0{,}71$  
+c. $0{,}41$  
+d. $0{,}38$  
+e. $0{,}33$
+
+> [!summary]+ **Jawaban No. 19**
+>
+> **(b). $0{,}71$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 3 — Variabel Acak Multivariat |
+> | **Sub-topik** | [[3.1 Distribusi Gabungan]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.2 Variabel Acak Kontinu]] |
+> | **Connected Topics** | [[3.8 Transformasi Variabel Acak Gabungan]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 4.1; Miller Bab 3.5 |
+>
+> > [!info]+ **Rumus**
+> >
+> > $$P[X+Y \geq 1] = 1 - P[X+Y < 1]$$
+> >
+> > Region $\{X+Y < 1\}$ dalam support $\{0<x<1,\; 0<y<2\}$:
+> >
+> > $x \in (0,1)$, $y \in (0, 1-x)$ (karena $y < 1-x < 1 < 2$)
+>
+> **Diketahui:**
+> - $f(x,y) = (2x+2-y)/4$ pada $(0,1)\times(0,2)$
+> - Target: $P[X+Y \geq 1]$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung $P[X+Y < 1]$ via Komplemen**
+> >
+> > Region: $0 < y < 1-x$, $0 < x < 1$.
+> >
+> > $$P[X+Y<1] = \int_0^1\!\int_0^{1-x} \frac{2x+2-y}{4}\,dy\,dx$$
+> >
+> > **Langkah 2: Integrasikan terhadap $y$**
+> >
+> > $$\int_0^{1-x}\frac{2x+2-y}{4}\,dy = \frac{1}{4}\left[(2x+2)y - \frac{y^2}{2}\right]_0^{1-x}$$
+> >
+> > $$= \frac{1}{4}\left[(2x+2)(1-x) - \frac{(1-x)^2}{2}\right]$$
+> >
+> > $$= \frac{(1-x)}{4}\left[(2x+2) - \frac{1-x}{2}\right] = \frac{(1-x)}{4} \cdot \frac{4x+4-1+x}{2} = \frac{(1-x)(5x+3)}{8}$$
+> >
+> > **Langkah 3: Integrasikan terhadap $x$**
+> >
+> > $$P[X+Y<1] = \int_0^1 \frac{(1-x)(5x+3)}{8}\,dx = \frac{1}{8}\int_0^1(5x+3-5x^2-3x)\,dx$$
+> >
+> > $$= \frac{1}{8}\int_0^1(2x+3-5x^2)\,dx = \frac{1}{8}\left[x^2+3x-\frac{5x^3}{3}\right]_0^1$$
+> >
+> > $$= \frac{1}{8}\left(1+3-\frac{5}{3}\right) = \frac{1}{8}\cdot\frac{7}{3} = \frac{7}{24} \approx 0{,}2917$$
+> >
+> > **Langkah 4: Hitung $P[X+Y \geq 1]$**
+> >
+> > $$P[X+Y \geq 1] = 1 - \frac{7}{24} = \frac{17}{24} \approx 0{,}708 \approx 0{,}71$$
+> >
+> > **Hasil Akhir:** **(b)**. $0{,}71$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengintegrasikan $y$ hingga $2$ (batas support penuh) untuk region $\{X+Y<1\}$ — batas atas $y$ adalah $\min(1-x, 2) = 1-x$ karena $1-x < 1 < 2$.
+> > > - Salah memperluas kurung: $(1-x)(5x+3) = 5x+3-5x^2-3x = 2x+3-5x^2$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Menghitung $P[X+Y \geq 1]$ langsung (batas integrasi lebih kompleks) — lebih mudah via komplemen $1 - P[X+Y<1]$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Selalu cek apakah batas region yang dihitung berada dalam support PDF. Di sini $y < 1-x \leq 1 < 2$ ✓.
+
+---
+
+## **No. 20**
+
+Diberikan fungsi densitas bersama dari variabel acak $X$ dan $Y$:
+
+$$f(x, y) = \begin{cases} x + y, & 0 < x < 1,\ 0 < y < 1 \\ 0, & \text{lainnya} \end{cases}$$
+
+Tentukan probabilitas jika besar $X$ lebih kecil dari $2$ kali lipat besar $Y$.
+
+a. $\dfrac{7}{32}$  
+b. $\dfrac{1}{12}$  
+c. $\dfrac{3}{4}$  
+d. $\dfrac{19}{24}$  
+e. $\dfrac{7}{8}$
+
+> [!summary]+ **Jawaban No. 20**
+>
+> **(d). $\dfrac{19}{24}$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 3 — Variabel Acak Multivariat |
+> | **Sub-topik** | [[3.1 Distribusi Gabungan]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.2 Variabel Acak Kontinu]] |
+> | **Connected Topics** | [[3.2 Distribusi Marginal]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 4.1; Miller Bab 3.5 |
+>
+> > [!info]+ **Rumus**
+> >
+> > $$P[X < 2Y] = \iint_{\{x < 2y\} \cap \text{support}} (x+y)\,dx\,dy$$
+>
+> **Diketahui:**
+> - $f(x,y) = x+y$ pada $(0,1)^2$
+> - Target: $P[X < 2Y]$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Identifikasi Region $\{X < 2Y\}$ dalam $(0,1)^2$**
+> >
+> > Garis $x = 2y$ membagi unit square. Titik potong dengan batas: $(0,0)$ dan $(1, 0{,}5)$.
+> >
+> > - Untuk $y \in (0, 0{,}5)$: $x$ dari $0$ hingga $2y$ (karena $2y < 1$)
+> > - Untuk $y \in (0{,}5, 1)$: $x$ dari $0$ hingga $1$ (karena $2y > 1$, jadi seluruh $x \in (0,1)$ memenuhi)
+> >
+> > **Langkah 2: Integrasikan**
+> >
+> > $$P[X<2Y] = \int_0^{1/2}\!\int_0^{2y}(x+y)\,dx\,dy + \int_{1/2}^1\!\int_0^1(x+y)\,dx\,dy$$
+> >
+> > **Integral pertama** ($y \in (0, 1/2)$):
+> >
+> > $$\int_0^{2y}(x+y)\,dx = \left[\frac{x^2}{2}+xy\right]_0^{2y} = 2y^2+2y^2 = 4y^2$$
+> >
+> > $$\int_0^{1/2}4y^2\,dy = 4 \cdot \frac{(1/2)^3}{3} = \frac{4}{24} = \frac{1}{6}$$
+> >
+> > **Integral kedua** ($y \in (1/2, 1)$):
+> >
+> > $$\int_0^1(x+y)\,dx = \left[\frac{x^2}{2}+xy\right]_0^1 = \frac{1}{2}+y$$
+> >
+> > $$\int_{1/2}^1\left(\frac{1}{2}+y\right)\,dy = \left[\frac{y}{2}+\frac{y^2}{2}\right]_{1/2}^1 = \left(\frac{1}{2}+\frac{1}{2}\right)-\left(\frac{1}{4}+\frac{1}{8}\right) = 1 - \frac{3}{8} = \frac{5}{8}$$
+> >
+> > **Langkah 3: Total**
+> >
+> > $$P[X<2Y] = \frac{1}{6} + \frac{5}{8} = \frac{4}{24} + \frac{15}{24} = \frac{19}{24}$$
+> >
+> > **Hasil Akhir:** **(d)**. $\dfrac{19}{24}$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menggunakan batas $x$ dari $0$ ke $2y$ tanpa mempertimbangkan batas support $x \leq 1$ — untuk $y > 1/2$, batas $2y > 1$ melampaui support.
+> > > - Lupa membagi integral menjadi dua kasus berdasarkan $y < 1/2$ dan $y > 1/2$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "$X$ lebih kecil dari 2 kali $Y$" = $X < 2Y$, bukan $X < Y/2$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Selalu gambar region integrasi dan identifikasi di mana garis batas memotong batas support sebelum mengintegrasikan.
+
+---
+
+## **No. 21**
+
+Misalkan $T_1$ dan $T_2$ merepresentasikan lama waktu hidup (dalam jam) dari $2$ komponen dalam suatu peralatan elektronik. Fungsi densitas bersama dari $T_1$ dan $T_2$ berdistribusi seragam dalam suatu wilayah (region) $0 \leq t_1 \leq t_2 \leq L$ dimana $L$ merupakan suatu konstanta real positif.
+
+Tentukan nilai ekspektasi dari $T_1^2 + T_2^2$.
+
+a. $\dfrac{L^2}{3}$  
+b. $\dfrac{L^2}{2}$  
+c. $\dfrac{2L^2}{3}$  
+d. $\dfrac{3L^2}{4}$  
+e. $L^2$
+
+> [!summary]+ **Jawaban No. 21**
+>
+> **(c). $\dfrac{2L^2}{3}$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 3 — Variabel Acak Multivariat |
+> | **Sub-topik** | [[3.1 Distribusi Gabungan]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.2 Variabel Acak Kontinu]], [[3.2 Distribusi Marginal]] |
+> | **Connected Topics** | [[3.8 Transformasi Variabel Acak Gabungan]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 4.1; Miller Bab 3.5 |
+>
+> > [!info]+ **Rumus**
+> >
+> > Luas segitiga $\{0 \leq t_1 \leq t_2 \leq L\}$: $= L^2/2$
+> >
+> > PDF seragam: $f(t_1, t_2) = \dfrac{2}{L^2}$ pada region tersebut.
+> >
+> > $$E[T_1^2 + T_2^2] = \frac{2}{L^2}\int_0^L\!\int_0^{t_2}(t_1^2 + t_2^2)\,dt_1\,dt_2$$
+>
+> **Diketahui:**
+> - $f(t_1, t_2) = 2/L^2$ untuk $0 \leq t_1 \leq t_2 \leq L$
+> - Target: $E[T_1^2 + T_2^2]$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Integrasikan terhadap $t_1$**
+> >
+> > $$\int_0^{t_2}(t_1^2+t_2^2)\,dt_1 = \left[\frac{t_1^3}{3}+t_2^2\,t_1\right]_0^{t_2} = \frac{t_2^3}{3}+t_2^3 = \frac{4t_2^3}{3}$$
+> >
+> > **Langkah 2: Integrasikan terhadap $t_2$**
+> >
+> > $$E[T_1^2+T_2^2] = \frac{2}{L^2}\int_0^L \frac{4t_2^3}{3}\,dt_2 = \frac{2}{L^2}\cdot\frac{4}{3}\cdot\frac{L^4}{4} = \frac{2}{L^2}\cdot\frac{L^4}{3} = \frac{2L^2}{3}$$
+> >
+> > **Hasil Akhir:** **(c)**. $\dfrac{2L^2}{3}$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menggunakan $f(t_1,t_2) = 1/L^2$ — luas region segitiga $= L^2/2$, bukan $L^2$, sehingga $f = 2/L^2$.
+> > > - Batas integrasi: untuk $t_2$ tetap, $t_1$ dari $0$ hingga $t_2$ (bukan $0$ hingga $L$).
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - $E[T_1^2+T_2^2] = E[T_1^2]+E[T_2^2]$ (linearitas) — keduanya dapat dihitung terpisah jika perlu.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Distribusi seragam pada segitiga: $f = 1/\text{luas} = 2/L^2$, bukan $1/L^2$.
+
+---
+
+## **No. 22**
+
+Sebuah asuransi kesehatan untuk $3$ orang dalam suatu keluarga, dapat mencakup hingga $2$ klaim per orang dalam setahun. Fungsi densitas gabungan untuk banyak klaim dari $3$ anggota keluarga adalah $f(x, y, z) = \dfrac{6 - x - y - z}{81}$ dimana masing-masing $x, y, z$ hanya bisa bernilai $0, 1, 2$ dan $X, Y, Z$ merupakan banyak klaim dari orang pertama, kedua, dan ketiga dalam keluarga tersebut.
+
+Tentukan probabilitas bahwa total klaim dari keluarga tersebut sebanyak $2$ dalam tahun tersebut, dengan diketahui bahwa orang pertama tidak memiliki klaim dalam setahun itu.
+
+a. $\dfrac{1}{2}$  
+b. $\dfrac{1}{3}$  
+c. $\dfrac{12}{81}$  
+d. $\dfrac{1}{9}$  
+e. $\dfrac{36}{81}$
+
+> [!summary]+ **Jawaban No. 22**
+>
+> **(b). $\dfrac{1}{3}$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 3 — Variabel Acak Multivariat |
+> | **Sub-topik** | [[3.3 Distribusi Bersyarat]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[3.1 Distribusi Gabungan]], [[1.4 Probabilitas Bersyarat]] |
+> | **Connected Topics** | [[3.2 Distribusi Marginal]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 4.2; Miller Bab 3.5 |
+>
+> > [!info]+ **Rumus**
+> >
+> > $$P[X+Y+Z=2 \mid X=0] = \frac{P[X=0,\, Y+Z=2]}{P[X=0]}$$
+>
+> **Diketahui:**
+> - $f(x,y,z) = (6-x-y-z)/81$; $x,y,z \in \{0,1,2\}$
+> - Kondisi: $X=0$; target: $P[Y+Z=2 \mid X=0]$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung $P[X=0]$**
+> >
+> > $$P[X=0] = \sum_{y=0}^{2}\sum_{z=0}^{2} \frac{6-0-y-z}{81} = \frac{1}{81}\sum_{y,z}(6-y-z)$$
+> >
+> > Nilai $(6-y-z)$ untuk semua $(y,z) \in \{0,1,2\}^2$:
+> >
+> > | $y \backslash z$ | $0$ | $1$ | $2$ |
+> > |:---:|:---:|:---:|:---:|
+> > | $0$ | $6$ | $5$ | $4$ |
+> > | $1$ | $5$ | $4$ | $3$ |
+> > | $2$ | $4$ | $3$ | $2$ |
+> >
+> > Jumlah $= 6+5+4+5+4+3+4+3+2 = 36$
+> >
+> > $$P[X=0] = \frac{36}{81}$$
+> >
+> > **Langkah 2: Hitung $P[X=0,\, Y+Z=2]$**
+> >
+> > Pasangan $(Y,Z)$ dengan $Y+Z=2$: $(0,2),(1,1),(2,0)$
+> >
+> > $$P[X=0, Y+Z=2] = \frac{(6-0-0-2)+(6-0-1-1)+(6-0-2-0)}{81} = \frac{4+4+4}{81} = \frac{12}{81}$$
+> >
+> > **Langkah 3: Probabilitas Bersyarat**
+> >
+> > $$P[Y+Z=2 \mid X=0] = \frac{12/81}{36/81} = \frac{12}{36} = \frac{1}{3}$$
+> >
+> > **Hasil Akhir:** **(b)**. $\dfrac{1}{3}$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menjawab $12/81$ (pilihan c) — ini adalah $P[X=0, Y+Z=2]$, bukan probabilitas bersyarat.
+> > > - Lupa membagi dengan $P[X=0] = 36/81$ untuk mendapat probabilitas bersyarat.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Total klaim sebanyak $2$, diketahui $X=0$" → $Y+Z=2$ (karena $X=0$, total $= 0+Y+Z = Y+Z$).
+> >
+> > > [!CAUTION] Red Flags
+> > > - Selalu hitung $P[X=0]$ sebagai penyebut; $12/81$ adalah probabilitas bersama, bukan bersyarat.
+
+---
+
+## **No. 23**
+
+Perusahaan asuransi mengeluarkan dua polis independen untuk individu dengan usia yang sama. Perusahaan asuransi tersebut memodelkan distribusi lama waktu hingga terjadi kematian (dalam tahun) untuk setiap individu (dimisalkan dengan $k$), dengan menggunakan distribusi geometrik $P[N = k] = (0{,}99)^k \times 0{,}01$, $k = 0, 1, 2, \ldots$
+
+Tentukan probabilitas bahwa kedua individu akan meninggal di tahun yang sama.
+
+a. $0{,}001$  
+b. $0{,}003$  
+c. $0{,}005$  
+d. $0{,}007$  
+e. $0{,}009$
+
+> [!summary]+ **Jawaban No. 23**
+>
+> **(c). $0{,}005$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 2 — Variabel Acak Univariat |
+> | **Sub-topik** | [[2.5 Distribusi Diskrit Umum]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[1.5 Kejadian Independen]], [[2.1 Variabel Acak Diskrit]] |
+> | **Connected Topics** | [[2.3 Fungsi Pembangkit]] |
+> | **Referensi** | Miller Bab 5; Hogg-Tanis-Zimm Bab 3.1 |
+>
+> > [!info]+ **Rumus**
+> >
+> > $N_1, N_2$ i.i.d. dengan $P[N=k] = (0{,}99)^k(0{,}01)$.
+> >
+> > $$P[N_1=N_2] = \sum_{k=0}^{\infty}[P[N=k]]^2 = \frac{p^2}{1-(1-p)^2}$$
+> >
+> > dengan $p = 0{,}01$.
+>
+> **Diketahui:**
+> - $p = 0{,}01$, $q = 0{,}99$
+> - Target: $P[N_1 = N_2]$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Ekspansi**
+> >
+> > $$P[N_1=N_2] = \sum_{k=0}^{\infty}(0{,}01)^2(0{,}99)^{2k} = (0{,}01)^2 \cdot \frac{1}{1-(0{,}99)^2}$$
+> >
+> > **Langkah 2: Hitung**
+> >
+> > $1 - (0{,}99)^2 = 1 - 0{,}9801 = 0{,}0199$
+> >
+> > $$P[N_1=N_2] = \frac{(0{,}01)^2}{0{,}0199} = \frac{0{,}0001}{0{,}0199} \approx 0{,}005025 \approx 0{,}005$$
+> >
+> > **Hasil Akhir:** **(c)**. $0{,}005$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menggunakan $p = 0{,}99$ sebagai parameter keberhasilan — dalam soal ini $P[N=k]=(0{,}99)^k(0{,}01)$, sehingga $p = 0{,}01$ adalah probabilitas "kematian" dan $q = 0{,}99$.
+> > > - Formula cepat: $P[N_1=N_2] = p^2/(1-q^2)$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Bandingkan: soal Agustus 2022 ($p=0{,}02$) → $P = 1/99 \approx 0{,}010$; soal ini ($p=0{,}01$) → $P \approx 0{,}005$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Semakin kecil $p$, semakin kecil pula probabilitas keduanya mati di tahun yang sama.
+
+---
+
+## **No. 24**
+
+Sebuah perusahaan asuransi memiliki $5$ polis asuransi jiwa berjangka satu tahun yang saling independen. Nilai manfaat pada setiap polis adalah $100{.}000$. Probabilitas klaim yang terjadi pada suatu tahun untuk setiap polis yang diberikan adalah $0{,}2$.
+
+Tentukan probabilitas bahwa perusahaan asuransi tersebut harus membayar lebih besar dari total ekspektasi klaim dalam suatu tahun ($E[X]$).
+
+a. $0{,}06$  
+b. $0{,}11$  
+c. $0{,}16$  
+d. $0{,}21$  
+e. $0{,}26$
+
+> [!summary]+ **Jawaban No. 24**
+>
+> **(e). $0{,}26$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 2 — Variabel Acak Univariat |
+> | **Sub-topik** | [[2.5 Distribusi Diskrit Umum]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.1 Variabel Acak Diskrit]] |
+> | **Connected Topics** | [[3.7 Distribusi Majemuk]] |
+> | **Referensi** | Miller Bab 5.1; Hogg-Tanis-Zimm Bab 3.1 |
+>
+> > [!info]+ **Rumus**
+> >
+> > $K \sim B(5, 0{,}2)$; total klaim $= 100{.}000\,K$.
+> >
+> > $E[K] = 5 \times 0{,}2 = 1$ → $E[\text{Total}] = 100{.}000$
+> >
+> > Target: $P[100{.}000\,K > 100{.}000] = P[K > 1] = P[K \geq 2]$
+>
+> **Diketahui:**
+> - $K \sim B(5,\, 0{,}2)$; $E[K] = 1$
+> - "Lebih besar dari $E[X]$" = $K > 1$ (eksklusif)
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Tentukan Syarat**
+> >
+> > $E[\text{Total klaim}] = 100{.}000$. Soal menanyakan $P[\text{Total} > 100{.}000] = P[K > 1] = P[K \geq 2]$.
+> >
+> > **Langkah 2: Hitung $P[K \leq 1]$**
+> >
+> > $$P[K=0] = (0{,}8)^5 = 0{,}3277$$
+> >
+> > $$P[K=1] = 5(0{,}2)(0{,}8)^4 = 5 \times 0{,}2 \times 0{,}4096 = 0{,}4096$$
+> >
+> > $$P[K \leq 1] = 0{,}3277 + 0{,}4096 = 0{,}7373$$
+> >
+> > **Langkah 3: Hitung $P[K \geq 2]$**
+> >
+> > $$P[K \geq 2] = 1 - 0{,}7373 = 0{,}2627 \approx 0{,}26$$
+> >
+> > **Hasil Akhir:** **(e)**. $0{,}26$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menggunakan "$\geq E[X]$" alih-alih "$> E[X]$" — soal ini menggunakan "**lebih besar dari**" (eksklusif), bukan "paling sedikit" (inklusif). Karena $E[K]=1$ bilangan bulat, $K > 1$ setara $K \geq 2$.
+> > > - Bandingkan soal Agustus 2022 ($p=0{,}3$, $E[K]=1{,}5$, target $K \geq 2$): hasilnya berbeda karena parameter berbeda.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Ekspektasi total klaim $= np \times 100{.}000 = 1 \times 100{.}000 = 100{.}000$; syarat "$> 100{.}000$" berarti $K \geq 2$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Perhatikan "lebih besar dari" ($>$) vs "sekurang-kurangnya" ($\geq$) — keduanya menghasilkan batas $K \geq 2$ di sini, karena $E[K]=1$ adalah bilangan bulat.
+
+---
+
+## **No. 25**
+
+Misalkan $X_1$ dan $X_2$ berdistribusi binomial dan saling bebas, dengan parameter $n_1 = 7$, $p_1 = 0{,}4$ dan $n_2 = 8$, $1 - p_2 = 0{,}6$ secara berturut-turut.
+
+Tentukan distribusi dari $Y$ dimana $Y = 15 - X_1 - X_2$.
+
+a. Binomial dengan parameter $n_y = 1$ dan $p_y = 0{,}4$  
+b. Binomial dengan parameter $n_y = 15$ dan $p_y = 0{,}4$  
+c. Binomial dengan parameter $n_y = 30$ dan $p_y = 0{,}4$  
+d. Binomial dengan parameter $n_y = 15$ dan $p_y = 0{,}6$  
+e. Binomial dengan parameter $n_y = 30$ dan $p_y = 0{,}6$
+
+> [!summary]+ **Jawaban No. 25**
+>
+> **(d). Binomial dengan parameter $n_y = 15$ dan $p_y = 0{,}6$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 2 — Variabel Acak Univariat |
+> | **Sub-topik** | [[2.5 Distribusi Diskrit Umum]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.3 Fungsi Pembangkit]], [[1.5 Kejadian Independen]] |
+> | **Connected Topics** | [[3.7 Distribusi Majemuk]] |
+> | **Referensi** | Miller Bab 5.1; Hogg-Tanis-Zimm Bab 3.1 |
+>
+> > [!info]+ **Rumus**
+> >
+> > Sifat komplemen Binomial: jika $X \sim B(n, p)$, maka $n - X \sim B(n, 1-p)$.
+> >
+> > Sifat reproduktif Binomial: jika $U \sim B(m, p)$ dan $V \sim B(n, p)$ independen, maka $U + V \sim B(m+n, p)$.
+>
+> **Diketahui:**
+> - $X_1 \sim B(7, 0{,}4)$; $X_2 \sim B(8, p_2)$ dengan $1-p_2 = 0{,}6$ → $p_2 = 0{,}4$
+> - $Y = 15 - X_1 - X_2 = (7 - X_1) + (8 - X_2)$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Terapkan Sifat Komplemen**
+> >
+> > $$7 - X_1 \sim B(7,\; 1-0{,}4) = B(7,\; 0{,}6)$$
+> >
+> > $$8 - X_2 \sim B(8,\; 1-0{,}4) = B(8,\; 0{,}6)$$
+> >
+> > **Langkah 2: Terapkan Sifat Reproduktif**
+> >
+> > Karena $X_1 \perp X_2$ → $(7-X_1) \perp (8-X_2)$, keduanya dengan $p = 0{,}6$:
+> >
+> > $$Y = (7-X_1) + (8-X_2) \sim B(7+8,\; 0{,}6) = B(15,\; 0{,}6)$$
+> >
+> > **Hasil Akhir:** **(d)**. Binomial dengan $n_y = 15$ dan $p_y = 0{,}6$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengira $p_2 = 0{,}6$ karena "$(1-p_2) = 0{,}6$" — justru $p_2 = 1 - 0{,}6 = 0{,}4$. Keduanya $X_1$ dan $X_2$ memiliki $p = 0{,}4$.
+> > > - Sifat reproduktif hanya berlaku jika $p$ sama untuk kedua distribusi — di sini keduanya $p = 0{,}4$ sehingga sifat dapat diterapkan pada komplemen ($p = 0{,}6$).
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - $Y = 15 - X_1 - X_2 = (7-X_1) + (8-X_2)$ — pecah menjadi dua komplemen terpisah sebelum menggabungkan.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Komplemen $B(n,p)$ adalah $B(n, 1-p)$; reproduktif memerlukan $p$ identik.
+
+---
+
+## **No. 26**
+
+Diberikan moment generating function untuk variabel acak $X$ sebagai berikut:
+
+$$M_X(t) = \frac{1}{1+t}$$
+
+Tentukan $E[(X-2)^3]$.
+
+a. $6$  
+b. $-6$  
+c. $25$  
+d. $-38$  
+e. $38$
+
+> [!summary]+ **Jawaban No. 26**
+>
+> **(d). $-38$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 2 — Variabel Acak Univariat |
+> | **Sub-topik** | [[2.3 Fungsi Pembangkit]] |
+> | **Difficulty** | Hard |
+> | **Prerequisite** | [[2.2 Variabel Acak Kontinu]] |
+> | **Connected Topics** | [[2.4 Transformasi Variabel Acak Univariat]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 2.3; Miller Bab 4.4 |
+>
+> > [!info]+ **Rumus**
+> >
+> > $E[X^n] = M_X^{(n)}(0)$ (turunan ke-$n$ dari MGF dievaluasi di $t=0$)
+> >
+> > $$E[(X-2)^3] = E[X^3 - 6X^2 + 12X - 8] = E[X^3] - 6E[X^2] + 12E[X] - 8$$
+>
+> **Diketahui:**
+> - $M_X(t) = \dfrac{1}{1+t} = (1+t)^{-1}$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung Momen-Momen via Turunan MGF**
+> >
+> > $$M_X'(t) = -(1+t)^{-2} \implies E[X] = M_X'(0) = -1$$
+> >
+> > $$M_X''(t) = 2(1+t)^{-3} \implies E[X^2] = M_X''(0) = 2$$
+> >
+> > $$M_X'''(t) = -6(1+t)^{-4} \implies E[X^3] = M_X'''(0) = -6$$
+> >
+> > **Langkah 2: Ekspansi Binomial $(X-2)^3$**
+> >
+> > $$(X-2)^3 = X^3 - 3(2)X^2 + 3(2^2)X - 2^3 = X^3 - 6X^2 + 12X - 8$$
+> >
+> > **Langkah 3: Terapkan Nilai Harapan**
+> >
+> > $$E[(X-2)^3] = E[X^3] - 6E[X^2] + 12E[X] - 8$$
+> >
+> > $$= (-6) - 6(2) + 12(-1) - 8 = -6 - 12 - 12 - 8 = -38$$
+> >
+> > **Hasil Akhir:** **(d)**. $-38$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengira $M_X(t) = 1/(1+t)$ adalah MGF distribusi Eksponensial — MGF Exp$(1)$ adalah $1/(1-t)$. Di sini tandanya terbalik ($+t$, bukan $-t$), menghasilkan momen negatif.
+> > > - Salah tanda: $M_X'(0) = -(1+0)^{-2} = -1$ (negatif!), bukan $+1$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Lupa menggunakan ekspansi binomial; mengira $E[(X-2)^3] = (E[X]-2)^3 = (-1-2)^3 = -27$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Selalu hitung turunan MGF secara eksplisit. Jangan asumsikan distribusi hanya dari bentuk MGF tanpa verifikasi tanda.
+
+---
+
+## **No. 27**
+
+Suatu pabrik pakaian memiliki $3$ mesin tipe $A$ dan $2$ mesin tipe $B$. Mesin $A$ dapat menghasilkan sebuah baju dengan probabilitas baju tersebut tidak cacat sebesar $0{,}6$. Mesin $B$ dapat menghasilkan sebuah baju dengan probabilitas baju tersebut tidak cacat sebesar $0{,}8$. Jika sebuah mesin dipilih dan $5$ buah baju dihasilkan (probabilitas untuk menghasilkan setiap baju saling independen), tentukan probabilitas mesin tersebut merupakan mesin $B$, dengan diketahui $2$ dari $5$ baju yang dihasilkan adalah baju yang cacat.
+
+a. $0{,}2048$  
+b. $0{,}3456$  
+c. $0{,}2832$  
+d. $0{,}7168$  
+e. $0{,}6519$
+
+> [!summary]+ **Jawaban No. 27**
+>
+> **(c). $0{,}2832$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 1 — Dasar-Dasar Probabilitas |
+> | **Sub-topik** | [[1.6 Teorema Bayes dan Hukum Probabilitas Total]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[1.4 Probabilitas Bersyarat]], [[2.5 Distribusi Diskrit Umum]] |
+> | **Connected Topics** | [[1.5 Kejadian Independen]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 1.4; Miller Bab 2 |
+>
+> > [!info]+ **Rumus**
+> >
+> > $$P[B \mid D] = \frac{P[D \mid B]\,P[B]}{P[D \mid A]\,P[A] + P[D \mid B]\,P[B]}$$
+>
+> **Diketahui:**
+> - Prior: $P[A] = 3/5$, $P[B] = 2/5$
+> - Mesin A: $P[\text{cacat}] = 0{,}4$; Mesin B: $P[\text{cacat}] = 0{,}2$
+> - $D$ = "tepat $2$ dari $5$ cacat"
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Likelihood $P[D \mid A]$**
+> >
+> > $$P[D \mid A] = \binom{5}{2}(0{,}4)^2(0{,}6)^3 = 10(0{,}16)(0{,}216) = 0{,}3456$$
+> >
+> > **Langkah 2: Likelihood $P[D \mid B]$**
+> >
+> > $$P[D \mid B] = \binom{5}{2}(0{,}2)^2(0{,}8)^3 = 10(0{,}04)(0{,}512) = 0{,}2048$$
+> >
+> > **Langkah 3: $P[D]$ via Hukum Total**
+> >
+> > $$P[D] = 0{,}3456(0{,}6) + 0{,}2048(0{,}4) = 0{,}20736 + 0{,}08192 = 0{,}28928$$
+> >
+> > **Langkah 4: Posterior $P[B \mid D]$**
+> >
+> > $$P[B \mid D] = \frac{0{,}2048 \times 0{,}4}{0{,}28928} = \frac{0{,}08192}{0{,}28928} \approx 0{,}2832$$
+> >
+> > **Hasil Akhir:** **(c)**. $0{,}2832$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Menjawab $P[D \mid B] = 0{,}2048$ (pilihan a) — ini likelihood, bukan posterior.
+> > > - Soal ini menanyakan $P[B \mid D]$ (mesin $B$ yang terpilih), berbeda dengan soal Agustus 2022 yang menanyakan $P[A \mid D]$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - $P[B \mid D] + P[A \mid D] = 1$. Dari Agustus 2022: $P[A \mid D] = 0{,}7168$, sehingga $P[B \mid D] = 1 - 0{,}7168 = 0{,}2832$ ✓.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Soal ini serupa dengan Agustus 2022 tetapi menanyakan mesin $B$, bukan $A$. Komplementer: $P[B|D] = 1 - P[A|D]$.
+
+---
+
+## **No. 28**
+
+Misalkan $X$ merupakan variabel acak kontinu dengan fungsi densitas $f_X(x) = x + \dfrac{1}{2}$, $0 < x < 1$. Diberikan juga fungsi densitas kondisional dari variabel acak kontinu $Y$, dengan diketahui $X = x$ sebagai berikut:
+
+$$f_{Y|X}(y \mid X = x) = \frac{x + y}{x + \dfrac{1}{2}} \quad \text{untuk } 0 < x < 1,\ 0 < y < 1$$
+
+Tentukan $f_Y(y)$ untuk $0 < y < 1$.
+
+a. $y + \dfrac{1}{2}$  
+b. $y + 1$  
+c. $y$  
+d. $y - \dfrac{1}{2}$  
+e. $y - 1$
+
+> [!summary]+ **Jawaban No. 28**
+>
+> **(a). $y + \dfrac{1}{2}$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 3 — Variabel Acak Multivariat |
+> | **Sub-topik** | [[3.2 Distribusi Marginal]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[3.3 Distribusi Bersyarat]], [[3.1 Distribusi Gabungan]] |
+> | **Connected Topics** | [[2.2 Variabel Acak Kontinu]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 4.2; Miller Bab 3.5 |
+>
+> > [!info]+ **Rumus**
+> >
+> > $$f_Y(y) = \int_{-\infty}^{\infty} f_{Y|X}(y \mid x)\,f_X(x)\,dx$$
+> >
+> > Dari definisi: $f(x,y) = f_{Y|X}(y|x) \cdot f_X(x)$
+>
+> **Diketahui:**
+> - $f_X(x) = x + 1/2$ untuk $0 < x < 1$
+> - $f_{Y|X}(y|x) = (x+y)/(x+1/2)$ untuk $0 < y < 1$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung $f(x,y)$**
+> >
+> > $$f(x,y) = f_{Y|X}(y|x) \cdot f_X(x) = \frac{x+y}{x+\frac{1}{2}} \cdot \left(x+\frac{1}{2}\right) = x + y$$
+> >
+> > **Langkah 2: Hitung Marginal $f_Y(y)$**
+> >
+> > $$f_Y(y) = \int_0^1 f(x,y)\,dx = \int_0^1 (x+y)\,dx$$
+> >
+> > $$= \left[\frac{x^2}{2} + xy\right]_0^1 = \frac{1}{2} + y$$
+> >
+> > $$= y + \frac{1}{2}$$
+> >
+> > **Hasil Akhir:** **(a)**. $y + \dfrac{1}{2}$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Lupa mengalikan $f_{Y|X}$ dengan $f_X$ sebelum mengintegrasikan — kedua faktor harus dikalikan untuk mendapat distribusi bersama.
+> > > - Perhatikan bahwa faktor $(x+1/2)$ di penyebut dan pembilang saling menghilang, menyederhanakan perhitungan.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - $f_Y(y) = \int f_{Y|X}(y|x)\,dx$ saja (tanpa $f_X$) adalah keliru — yang benar adalah $\int f_{Y|X}(y|x)\,f_X(x)\,dx$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Kanselasi $(x+1/2)$ adalah ciri soal yang "didesain" — kenali pola ini sebagai teknik soal CF2.
+
+---
+
+## **No. 29**
+
+Misalkan $X$ berdistribusi seragam pada interval $(0, 8)$. Diberikan $X = x$, sedemikian sehingga $Y$ berdistribusi seragam pada interval $(0, x)$.
+
+Tentukan $\text{Cov}(X, Y)$.
+
+a. $\dfrac{4}{3}$  
+b. $\dfrac{8}{3}$  
+c. $\dfrac{12}{3}$  
+d. $\dfrac{24}{3}$  
+e. $\dfrac{32}{3}$
+
+> [!summary]+ **Jawaban No. 29**
+>
+> **(b). $\dfrac{8}{3}$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 3 — Variabel Acak Multivariat |
+> | **Sub-topik** | [[3.4 Nilai Harapan dan Variansi Bersyarat]] |
+> | **Difficulty** | Hard |
+> | **Prerequisite** | [[3.3 Distribusi Bersyarat]], [[3.5 Independensi dan Korelasi]] |
+> | **Connected Topics** | [[3.6 Matriks Variansi-Kovariansi]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 4.4; Miller Bab 3.5–3.8 |
+>
+> > [!info]+ **Rumus**
+> >
+> > $$\text{Cov}(X,Y) = E[XY] - E[X]\,E[Y]$$
+> >
+> > Hukum ekspektasi total: $E[XY] = E[E[XY \mid X]] = E[X \cdot E[Y \mid X]]$
+> >
+> > $E[Y] = E[E[Y \mid X]]$
+>
+> **Diketahui:**
+> - $X \sim U(0,8)$: $E[X] = 4$, $E[X^2] = 64/3$
+> - $Y \mid X = x \sim U(0,x)$: $E[Y \mid X] = X/2$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Hitung $E[Y]$**
+> >
+> > $$E[Y] = E[E[Y \mid X]] = E\!\left[\frac{X}{2}\right] = \frac{E[X]}{2} = \frac{4}{2} = 2$$
+> >
+> > **Langkah 2: Hitung $E[XY]$**
+> >
+> > $$E[XY] = E[E[XY \mid X]] = E\!\left[X \cdot E[Y \mid X]\right] = E\!\left[X \cdot \frac{X}{2}\right] = \frac{E[X^2]}{2}$$
+> >
+> > $$E[X^2] = \text{Var}(X) + (E[X])^2 = \frac{(8-0)^2}{12} + 16 = \frac{64}{12} + 16 = \frac{16}{3} + 16 = \frac{64}{3}$$
+> >
+> > $$E[XY] = \frac{64/3}{2} = \frac{32}{3}$$
+> >
+> > **Langkah 3: Hitung Kovarians**
+> >
+> > $$\text{Cov}(X,Y) = E[XY] - E[X]\,E[Y] = \frac{32}{3} - 4 \times 2 = \frac{32}{3} - 8 = \frac{32-24}{3} = \frac{8}{3}$$
+> >
+> > **Hasil Akhir:** **(b)**. $\dfrac{8}{3}$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Mengira $E[XY] = E[X] \cdot E[Y]$ (karena salah mengira $X \perp Y$) — $X$ dan $Y$ **tidak** independen karena $Y$ bergantung pada $X$.
+> > > - Salah menghitung $E[X^2] = (E[X])^2 = 16$ — Var$(U(0,8)) = 64/12 \neq 0$, jadi $E[X^2] = 64/3 \neq 16$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - Var$(U(0,a)) = a^2/12$; untuk $a=8$: Var $= 64/12 = 16/3$.
+> >
+> > > [!CAUTION] Red Flags
+> > > - Gunakan Hukum Total Ekspektasi ($E[g(X,Y)] = E[E[g(X,Y)|X]]$) setiap kali distribusi bersyarat diberikan.
+
+---
+
+## **No. 30**
+
+Misalkan variabel acak $X$ dengan fungsi densitas sebagai berikut:
+
+$$f(x) = \begin{cases} \dfrac{2{,}5 \cdot (200)^{2{,}5}}{x^{3{,}5}}, & \text{untuk } x \geq 200 \\ 0, & \text{lainnya} \end{cases}$$
+
+Tentukan selisih antara persentil ke-30 dan persentil ke-70 dari $X$.
+
+a. $35$  
+b. $93$  
+c. $124$  
+d. $131$  
+e. $298$
+
+> [!summary]+ **Jawaban No. 30**
+>
+> **(b). $93$**
+>
+> | Field | Isi |
+> |-------|-----|
+> | **Topik CF2** | Topik 2 — Variabel Acak Univariat |
+> | **Sub-topik** | [[2.2 Variabel Acak Kontinu]] |
+> | **Difficulty** | Medium |
+> | **Prerequisite** | [[2.4 Transformasi Variabel Acak Univariat]] |
+> | **Connected Topics** | [[2.6 Distribusi Kontinu Umum]] |
+> | **Referensi** | Hogg-Tanis-Zimm Bab 2.1; Miller Bab 4.2 |
+>
+> > [!info]+ **Rumus**
+> >
+> > Distribusi Pareto: $\alpha = 2{,}5$, $\theta = 200$.
+> >
+> > $$F(x) = 1 - \left(\frac{200}{x}\right)^{2{,}5}, \quad x \geq 200$$
+> >
+> > Persentil ke-$p$: $x_p = \dfrac{200}{(1-p)^{1/2{,}5}} = \dfrac{200}{(1-p)^{0{,}4}}$
+>
+> **Diketahui:**
+> - Pareto $\alpha=2{,}5$, $\theta=200$
+> - Target: $x_{0{,}70} - x_{0{,}30}$
+>
+> > [!example]- Langkah Pengerjaan
+> >
+> > **Langkah 1: Persentil ke-30 ($p=0{,}30$)**
+> >
+> > $$x_{0{,}30} = \frac{200}{(0{,}70)^{0{,}4}}$$
+> >
+> > $(0{,}70)^{0{,}4} = e^{0{,}4 \ln 0{,}70} = e^{0{,}4 \times (-0{,}3567)} = e^{-0{,}1427} \approx 0{,}8670$
+> >
+> > $$x_{0{,}30} \approx \frac{200}{0{,}8670} \approx 230{,}7$$
+> >
+> > **Langkah 2: Persentil ke-70 ($p=0{,}70$)**
+> >
+> > $$x_{0{,}70} = \frac{200}{(0{,}30)^{0{,}4}}$$
+> >
+> > $(0{,}30)^{0{,}4} = e^{0{,}4 \ln 0{,}30} = e^{0{,}4 \times (-1{,}2040)} = e^{-0{,}4816} \approx 0{,}6178$
+> >
+> > $$x_{0{,}70} \approx \frac{200}{0{,}6178} \approx 323{,}7$$
+> >
+> > **Langkah 3: Selisih**
+> >
+> > $$x_{0{,}70} - x_{0{,}30} \approx 323{,}7 - 230{,}7 = 93{,}0 \approx 93$$
+> >
+> > **Hasil Akhir:** **(b)**. $93$
+>
+> > [!tip] Jebakan Umum
+> >
+> > > [!BUG] Kesalahan Konseptual
+> > > - Bandingkan dengan soal Agustus 2022 (persentil ke-40 dan ke-80) → selisih $\approx 136$; dan soal April 2022 ini (persentil ke-30 dan ke-70) → selisih $\approx 93$. Distribusi Pareto yang sama tetapi kuantil berbeda.
+> > > - Menggunakan eksponen $1/2{,}5 = 0{,}4$ dengan benar — bukan $2{,}5$.
+> >
+> > > [!BUG] Kesalahan Interpretasi Soal
+> > > - "Selisih antara persentil ke-30 dan ke-70" = $x_{0{,}70} - x_{0{,}30}$ (persentil lebih tinggi dikurangi lebih rendah, hasilnya positif).
+> >
+> > > [!CAUTION] Red Flags
+> > > - Rumus Pareto: $x_p = \theta/(1-p)^{1/\alpha}$. Untuk $\alpha = 2{,}5$: eksponen $= 1/2{,}5 = 0{,}4$.
