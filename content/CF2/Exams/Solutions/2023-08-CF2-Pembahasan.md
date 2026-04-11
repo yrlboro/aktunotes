@@ -1,3 +1,4 @@
+# CF2 Periode Agustus 2023
 ## **No. 1**
 
 Enam orang masuk ke lift dari lantai dasar sebuah hotel yang memiliki 10 lantai diatasnya. Dengan asumsi setiap orang turun di lantai yang dipilih secara acak, tentukanlah probabilitas bahwa semua orang turun di lantai yang berbeda.

@@ -1,3 +1,4 @@
+# CF2 Periode Mei 2025
 ## **No. 1**
 
 Kerugian yang disebabkan oleh kebakaran pada gedung komersial dimodelkan dengan menggunakan variabel acak $X$ dengan fungsi kepadatan peluang sebagai berikut:

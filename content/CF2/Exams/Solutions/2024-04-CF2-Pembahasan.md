@@ -1,3 +1,4 @@
+# CF2 Periode April 2024
 ## **No. 1**
 
 Jika setiap kelahiran bayi laki-laki dan perempuan memiliki peluang yang sama untuk dilahirkan, tentukan peluang bahwa dalam sebuah keluarga yang mempunyai tiga anak, tepat satu diantaranya perempuan.

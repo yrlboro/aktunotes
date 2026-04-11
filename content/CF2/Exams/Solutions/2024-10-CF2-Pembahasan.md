@@ -1,3 +1,4 @@
+# CF2 Periode Oktober 2024
 ## **No. 1**
 
 Ada dua puluh empat angka 4-digit yang menggunakan masing-masing dari empat digit 2, 4, 5, dan 7 tepat satu kali. Diurutkan berdasarkan urutan angka dari yang terkecil hingga terbesar, tentukanlah angka pada posisi ke-17 dalam daftar.

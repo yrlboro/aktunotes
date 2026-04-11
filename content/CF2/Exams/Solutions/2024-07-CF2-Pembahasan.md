@@ -1,3 +1,4 @@
+# CF2 Periode Juli 2024
 ## **No. 1**
 
 Diketahui ada $6$ pilihan jalan yang dapat digunakan untuk berpergian dari kota $A$ ke kota $B$ dan ada $8$ pilihan jalan yang dapat digunakan untuk berpergian dari kota $B$ ke kota $C$. Jika seseorang akan berpergian dari kota $A$ ke kota $C$ melalui kota $B$ dan pulang kembali lagi ke kota $A$ melalui jalan-jalan yang berbeda dari ketika saat pergi, tentukanlah banyaknya cara memilih jalan yang dapat dilalui.
