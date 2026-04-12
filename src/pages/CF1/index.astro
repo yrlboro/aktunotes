@@ -89,7 +89,7 @@ const asmExams = allEntries
         {asmExams.map(entry => (
           <a href={`/CF1/${entry.id}`} class="topic-item topic-asm">
             <span class="topic-num asm-icon">◉</span>
-            <span class="topic-name">{entry.data.title || entry.id.split('/').pop()?.replace(/-/g, ' ')}</span>
+            <span class="topic-name">{entry.data.title || entry.id.split('/').pop()?.replace(/-/g, ' ').toUpperCase()}</span>
             <span class="topic-arrow">→</span>
           </a>
         ))}
