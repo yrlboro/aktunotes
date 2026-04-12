@@ -53,7 +53,7 @@ const soaExams = allEntries
         {exams.map(entry => (
           <a href={`/CF2/${entry.id}`} class="topic-item topic-exam">
             <span class="topic-num exam-icon">✎</span>
-            <span class="topic-name">{entry.id.split('/').pop()?.replace(/-/g, ' ').toUpperCase()}</span>
+            <span class="topic-name">{entry.id.split('/').pop()?.toUpperCase()}</span>
             <span class="topic-arrow">→</span>
           </a>
         ))}
@@ -68,7 +68,7 @@ const soaExams = allEntries
         {solutions.map(entry => (
           <a href={`/CF2/${entry.id}`} class="topic-item topic-solution">
             <span class="topic-num solution-icon">✔</span>
-            <span class="topic-name">{entry.id.split('/').pop()?.replace(/-/g, ' ').toUpperCase()}</span>
+            <span class="topic-name">{entry.id.split('/').pop()?.toUpperCase()}</span>
             <span class="topic-arrow">→</span>
           </a>
         ))}
@@ -83,7 +83,7 @@ const soaExams = allEntries
         {soaExams.map(entry => (
           <a href={`/CF2/${entry.id}`} class="topic-item topic-soa">
             <span class="topic-num soa-icon">◉</span>
-            <span class="topic-name">{entry.data.title || entry.id.split('/').pop()?.replace(/-/g, ' ').toUpperCase()}</span>
+            <span class="topic-name">{entry.data.title || entry.id.split('/').pop()?.toUpperCase()}</span>
             <span class="topic-arrow">→</span>
           </a>
         ))}

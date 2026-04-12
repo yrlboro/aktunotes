@@ -59,7 +59,7 @@ const asmExams = allEntries
         {exams.map(entry => (
           <a href={`/CF1/${entry.id}`} class="topic-item topic-exam">
             <span class="topic-num exam-icon">✎</span>
-            <span class="topic-name">{entry.id.split('/').pop()?.replace(/-/g, ' ').toUpperCase()}</span>
+            <span class="topic-name">{entry.id.split('/').pop()?.toUpperCase()}</span>
             <span class="topic-arrow">→</span>
           </a>
         ))}
@@ -74,7 +74,7 @@ const asmExams = allEntries
         {solutions.map(entry => (
           <a href={`/CF1/${entry.id}`} class="topic-item topic-solution">
             <span class="topic-num solution-icon">✔</span>
-            <span class="topic-name">{entry.id.split('/').pop()?.replace(/-/g, ' ').toUpperCase()}</span>
+            <span class="topic-name">{entry.id.split('/').pop()?.toUpperCase()}</span>
             <span class="topic-arrow">→</span>
           </a>
         ))}
@@ -89,7 +89,7 @@ const asmExams = allEntries
         {asmExams.map(entry => (
           <a href={`/CF1/${entry.id}`} class="topic-item topic-asm">
             <span class="topic-num asm-icon">◉</span>
-            <span class="topic-name">{entry.data.title || entry.id.split('/').pop()?.replace(/-/g, ' ').toUpperCase()}</span>
+            <span class="topic-name">{entry.data.title || entry.id.split('/').pop()?.toUpperCase()}</span>
             <span class="topic-arrow">→</span>
           </a>
         ))}
