@@ -21,29 +21,37 @@ import NoteLayout from '../layouts/NoteLayout.astro';
     <div class="widget widget-countdown">
       <div class="countdown-left">
         <div class="countdown-label">Ujian Berikutnya</div>
-        <div class="countdown-exam-name">PAI — CF1 Examination</div>
+        <div class="countdown-exam-name" id="exam-name-display">PAI — CF1 Examination</div>
         <div class="countdown-exam-date" id="exam-date-display">Memuat tanggal…</div>
       </div>
       <div class="countdown-divider"></div>
-      <div class="countdown-units">
-        <div class="countdown-unit">
-          <span class="countdown-number pink" id="cd-days">--</span>
-          <span class="countdown-unit-label">Hari</span>
+      <div class="countdown-center">
+        <div class="countdown-units">
+          <div class="countdown-unit">
+            <span class="countdown-number pink" id="cd-days">--</span>
+            <span class="countdown-unit-label">Hari</span>
+          </div>
+          <div class="countdown-colon">:</div>
+          <div class="countdown-unit">
+            <span class="countdown-number" id="cd-hours">--</span>
+            <span class="countdown-unit-label">Jam</span>
+          </div>
+          <div class="countdown-colon">:</div>
+          <div class="countdown-unit">
+            <span class="countdown-number" id="cd-minutes">--</span>
+            <span class="countdown-unit-label">Menit</span>
+          </div>
+          <div class="countdown-colon">:</div>
+          <div class="countdown-unit">
+            <span class="countdown-number" id="cd-seconds">--</span>
+            <span class="countdown-unit-label">Detik</span>
+          </div>
         </div>
-        <div class="countdown-colon">:</div>
-        <div class="countdown-unit">
-          <span class="countdown-number" id="cd-hours">--</span>
-          <span class="countdown-unit-label">Jam</span>
-        </div>
-        <div class="countdown-colon">:</div>
-        <div class="countdown-unit">
-          <span class="countdown-number" id="cd-minutes">--</span>
-          <span class="countdown-unit-label">Menit</span>
-        </div>
-        <div class="countdown-colon">:</div>
-        <div class="countdown-unit">
-          <span class="countdown-number" id="cd-seconds">--</span>
-          <span class="countdown-unit-label">Detik</span>
+        <div class="countdown-selector">
+          <button class="cd-sel-btn active" data-period="-1">Auto</button>
+          <button class="cd-sel-btn" data-period="0">Mei</button>
+          <button class="cd-sel-btn" data-period="1">Agustus</button>
+          <button class="cd-sel-btn" data-period="2">November</button>
         </div>
       </div>
       <div class="countdown-right">
@@ -179,24 +187,6 @@ import NoteLayout from '../layouts/NoteLayout.astro';
       </div>
     </div>
 
-    <!-- 4. DAILY PROBLEM -->
-    <div class="widget widget-problem">
-      <div class="widget-label"><div class="dot"></div>Soal Harian — Past Exam CF1</div>
-      <div class="problem-header">
-        <span class="problem-badge" id="problem-badge">CF1 · 2024</span>
-        <span class="problem-source" id="problem-source"></span>
-      </div>
-      <div class="problem-text" id="problem-text">Memuat soal…</div>
-      <div class="problem-math" id="problem-math"></div>
-      <div class="problem-options" id="problem-options"></div>
-      <div class="problem-answer" id="problem-answer"></div>
-      <div class="problem-footer">
-        <button class="problem-reveal-btn" id="reveal-btn">Lihat Jawaban</button>
-        <span class="problem-day-tag" id="problem-day-tag"></span>
-        <button class="problem-next-btn" id="problem-next">Soal Lain →</button>
-      </div>
-    </div>
-
   </div>
   <!-- end widget-grid -->
 
@@ -296,7 +286,18 @@ import NoteLayout from '../layouts/NoteLayout.astro';
     font-size: 0.6rem; color: rgba(255,255,255,0.4); letter-spacing: 0.06em;
   }
   .countdown-divider { width: 2px; height: 50px; background: rgba(255,255,255,0.1); flex-shrink: 0; }
+  .countdown-center { display: flex; flex-direction: column; gap: 0.6rem; }
   .countdown-units { display: flex; gap: 1rem; align-items: flex-end; }
+  .countdown-selector { display: flex; gap: 0.35rem; }
+  .cd-sel-btn {
+    font-family: var(--mono); font-size: 0.56rem;
+    color: rgba(255,255,255,0.35); cursor: pointer;
+    background: none; border: 1px solid rgba(255,255,255,0.12);
+    padding: 0.12rem 0.5rem; letter-spacing: 0.07em;
+    transition: all 0.12s; text-transform: uppercase;
+  }
+  .cd-sel-btn:hover { color: var(--yellow); border-color: rgba(247,224,60,0.5); }
+  .cd-sel-btn.active { color: var(--yellow); border-color: var(--yellow); background: rgba(247,224,60,0.08); }
   .countdown-unit { text-align: center; }
   .countdown-number {
     font-family: var(--ss4);
@@ -327,7 +328,7 @@ import NoteLayout from '../layouts/NoteLayout.astro';
 
   /* ── Widget 2: Formula Flash ── */
   .widget-formula {
-    background: var(--cream2);
+    background: var(--yellow);
     border-right: 3px solid var(--ink);
     border-top: 3px solid var(--ink);
     min-height: 200px;
@@ -339,21 +340,22 @@ import NoteLayout from '../layouts/NoteLayout.astro';
   .formula-display {
     text-align: center; padding: 0.5rem 0.3rem;
     overflow-x: auto; font-size: 1.2rem;
+    color: var(--ink);
   }
   .formula-name {
     font-family: var(--ss4);
     font-size: 0.9rem; font-style: italic; font-weight: 500;
-    color: var(--ink2); text-align: center; margin-bottom: 0.3rem;
+    color: var(--ink); text-align: center; margin-bottom: 0.3rem;
   }
   .formula-context {
     font-family: var(--mono);
-    font-size: 0.64rem; color: var(--ink4);
+    font-size: 0.64rem; color: var(--ink2);
     text-align: center; margin-top: 0.5rem; letter-spacing: 0.06em;
   }
   .formula-refresh {
     display: flex; align-items: center; justify-content: space-between;
     margin-top: 0.8rem; padding-top: 0.6rem;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid rgba(14,10,4,0.2);
   }
   .formula-refresh-btn {
     font-family: var(--mono); font-size: 0.58rem;
@@ -362,7 +364,7 @@ import NoteLayout from '../layouts/NoteLayout.astro';
     padding: 0.2rem 0.6rem; transition: all 0.12s; letter-spacing: 0.06em;
   }
   .formula-refresh-btn:hover { background: var(--pink); color: var(--cream); }
-  .formula-counter { font-family: var(--mono); font-size: 0.55rem; color: var(--ink4); }
+  .formula-counter { font-family: var(--mono); font-size: 0.55rem; color: var(--ink2); }
 
   /* ── Widget 3: Rotating Quote ── */
   .widget-quote {
@@ -410,88 +412,6 @@ import NoteLayout from '../layouts/NoteLayout.astro';
     background: none; border: none; padding: 0; transition: color 0.12s;
   }
   .quote-nav-btn:hover { color: var(--ink); }
-
-  /* ── Widget 4: Daily Problem ── */
-  .widget-problem {
-    grid-column: 1 / -1;
-    background: var(--yellow);
-    border: none; border-top: 3px solid var(--ink);
-  }
-  .widget-problem .widget-label { color: rgba(14,10,4,0.5); }
-  .widget-problem .widget-label .dot { background: var(--pink); }
-  .problem-header {
-    display: flex; align-items: flex-start;
-    justify-content: space-between; gap: 1rem; margin-bottom: 0.8rem;
-  }
-  .problem-badge {
-    font-family: var(--mono); font-size: 0.68rem;
-    background: var(--pink); color: #fff;
-    padding: 0.15rem 0.65rem; letter-spacing: 0.08em;
-    text-transform: uppercase; flex-shrink: 0; font-weight: 600;
-  }
-  .problem-source {
-    font-family: var(--mono); font-size: 0.66rem;
-    color: rgba(14,10,4,0.45); letter-spacing: 0.06em;
-  }
-  .problem-text {
-    font-family: var(--ss4);
-    font-size: 0.95rem; line-height: 1.75;
-    color: var(--ink2); margin-bottom: 1rem;
-  }
-  .problem-math {
-    text-align: center; padding: 0.5rem;
-    overflow-x: auto; margin-bottom: 0.8rem;
-  }
-  .problem-options {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 0.4rem; margin-bottom: 0.9rem;
-  }
-  .problem-option {
-    font-family: var(--mono); font-size: 0.68rem;
-    padding: 0.4rem 0.7rem;
-    border: 2px solid rgba(14,10,4,0.2);
-    background: rgba(255,255,255,0.5);
-    color: var(--ink2); cursor: pointer;
-    transition: all 0.12s; letter-spacing: 0.02em;
-    display: flex; align-items: center; gap: 0.5rem;
-  }
-  .problem-option:hover { border-color: var(--ink); background: rgba(255,255,255,0.8); color: var(--ink); }
-  .problem-option.correct { border-color: var(--teal); background: rgba(29,122,107,0.12); color: var(--teal); }
-  .problem-option.wrong { border-color: var(--pink); background: rgba(232,23,93,0.08); color: var(--pink); text-decoration: line-through; }
-  .problem-option-key { font-weight: 500; flex-shrink: 0; width: 16px; text-align: center; }
-  .problem-answer {
-    font-family: var(--ss4);
-    font-size: 0.88rem; line-height: 1.7;
-    color: var(--ink2); padding: 0.8rem 1rem;
-    background: rgba(255,255,255,0.5);
-    border-left: 4px solid var(--teal);
-    display: none;
-  }
-  .problem-answer.visible { display: block; }
-  .problem-answer strong { color: var(--teal); }
-  .problem-footer {
-    display: flex; align-items: center;
-    justify-content: space-between; margin-top: 0.8rem;
-  }
-  .problem-reveal-btn {
-    font-family: var(--mono); font-size: 0.62rem;
-    background: var(--ink); color: var(--yellow);
-    border: none; padding: 0.38rem 0.9rem;
-    cursor: pointer; letter-spacing: 0.06em; transition: all 0.12s;
-  }
-  .problem-reveal-btn:hover { background: var(--pink); }
-  .problem-reveal-btn:disabled { opacity: 0.4; cursor: not-allowed; background: var(--ink); }
-  .problem-next-btn {
-    font-family: var(--mono); font-size: 0.58rem;
-    color: rgba(14,10,4,0.45); cursor: pointer;
-    background: none; border: 1.5px solid rgba(14,10,4,0.25);
-    padding: 0.28rem 0.7rem; transition: all 0.12s;
-  }
-  .problem-next-btn:hover { border-color: var(--ink); color: var(--ink); }
-  .problem-day-tag {
-    font-family: var(--mono); font-size: 0.56rem;
-    color: rgba(14,10,4,0.4); letter-spacing: 0.08em;
-  }
 
   /* ── Section divider ── */
   .section-divider {
@@ -559,7 +479,6 @@ import NoteLayout from '../layouts/NoteLayout.astro';
 
   @media (max-width: 600px) {
     .module-grid { grid-template-columns: 1fr; }
-    .problem-options { grid-template-columns: 1fr; }
     .widget-countdown { flex-direction: column; }
     .countdown-right { margin-left: 0; }
   }
@@ -572,12 +491,15 @@ import NoteLayout from '../layouts/NoteLayout.astro';
   // 1. EXAM COUNTDOWN
   // ═══════════════════════════════
   const examSchedule = [
-    { name: "PAI — CF1 Examination", date: new Date("2026-05-18T08:00:00+07:00") },
-    { name: "PAI — CF1 Examination", date: new Date("2026-08-14T08:00:00+07:00") },
-    { name: "PAI — CF1 Examination", date: new Date("2026-11-13T08:00:00+07:00") },
+    { name: "PAI — CF1 Examination", period: "Mei 2026",      date: new Date("2026-05-18T08:00:00+07:00") },
+    { name: "PAI — CF1 Examination", period: "Agustus 2026",  date: new Date("2026-08-14T08:00:00+07:00") },
+    { name: "PAI — CF1 Examination", period: "November 2026", date: new Date("2026-11-13T08:00:00+07:00") },
   ];
 
+  let pinnedPeriod: number | null = null;
+
   function getNextExam() {
+    if (pinnedPeriod !== null) return examSchedule[pinnedPeriod];
     const now = new Date();
     return examSchedule.find(e => e.date > now) || examSchedule[examSchedule.length - 1];
   }
@@ -586,6 +508,7 @@ import NoteLayout from '../layouts/NoteLayout.astro';
     const exam = getNextExam();
     const now = new Date();
     const diff = exam.date.getTime() - now.getTime();
+    document.getElementById('exam-name-display')!.textContent = exam.name;
     if (diff <= 0) {
       ['cd-days','cd-hours','cd-minutes','cd-seconds'].forEach(id => {
         document.getElementById(id)!.textContent = '00';
@@ -674,102 +597,20 @@ import NoteLayout from '../layouts/NoteLayout.astro';
   function resetQuoteInterval() { clearInterval(quoteInterval); quoteInterval = setInterval(nextQuote, 8000); }
 
   // ═══════════════════════════════
-  // 4. DAILY PROBLEM
-  // ═══════════════════════════════
-  const problems = [
-    {
-      badge: "CF1 · Okt 2024", source: "Past Exam PAI · Soal No. 12",
-      text: "Sebuah obligasi dengan face value F = 1.000 dan coupon rate r = 8% per tahun (dibayar semesteran) memiliki yield rate i = 6% per tahun. Jika obligasi jatuh tempo dalam 10 tahun, berapa harga obligasi tersebut?",
-      math: "", options: ["A. 1.128,97", "B. 1.148,77", "C. 1.162,22", "D. 1.100,00"], correct: 1,
-      explanation: "Per semester: r = 4%, i = 3%, n = 20. P = 40 × a(20|3%) + 1000 × v²⁰ = 595,10 + 553,68 = <strong>1.148,77</strong> (B). Karena coupon rate &gt; yield, harga &gt; par ✓"
-    },
-    {
-      badge: "CF1 · Agu 2024", source: "Past Exam PAI · Soal No. 8",
-      text: "Sebuah perpetuity-immediate membayar 500 per tahun. Jika yield rate adalah 5% per tahun efektif, berapa present value perpetuity tersebut?",
-      math: "", options: ["A. 8.000", "B. 9.500", "C. 10.000", "D. 12.500"], correct: 2,
-      explanation: "PV = CF / i = 500 / 0,05 = <strong>10.000</strong> (C). Formula: a(∞|i) = 1/i."
-    },
-    {
-      badge: "CF1 · Mei 2024", source: "Past Exam PAI · Soal No. 15",
-      text: "Investasi menghasilkan cash flows: 1.000 pada t=1, 2.000 pada t=2, dan 3.000 pada t=3. Jika force of interest δ = 0,05, berapa accumulated value pada t=3?",
-      math: "\\delta = 0{,}05 \\implies i = e^{\\delta} - 1",
-      options: ["A. 6.512,14", "B. 6.637,52", "C. 6.820,00", "D. 7.015,33"], correct: 1,
-      explanation: "i = e^0,05 - 1 = 0,05127. AV = 1000×1,10517 + 2000×1,05127 + 3000 = <strong>6.637,52</strong> (B)."
-    },
-    {
-      badge: "CF1 · Nov 2023", source: "Past Exam PAI · Soal No. 5",
-      text: "Sebuah annuity-due membayar 200 per bulan selama 5 tahun. Jika nominal rate i⁽¹²⁾ = 6% per tahun, berapa present value annuity tersebut?",
-      math: "\\ddot{a}_{\\overline{n}|} = \\frac{1 - v^n}{d}",
-      options: ["A. 10.345,11", "B. 10.398,54", "C. 10.519,20", "D. 10.620,75"], correct: 0,
-      explanation: "i/bulan = 0,5%, d = 0,004975, n = 60. PV = 200 × ä(60|0,5%) = <strong>10.345,11</strong> (A)."
-    },
-    {
-      badge: "CF1 · Agu 2023", source: "Past Exam PAI · Soal No. 19",
-      text: "Macaulay duration dari zero-coupon bond dengan maturity 8 tahun adalah…",
-      math: "", options: ["A. Kurang dari 8 tahun", "B. Sama dengan 8 tahun", "C. Lebih dari 8 tahun", "D. Bergantung pada yield rate"], correct: 1,
-      explanation: "Macaulay duration zero-coupon bond selalu <strong>sama dengan maturity-nya</strong> (B) — karena hanya ada satu cash flow di akhir."
-    },
-  ];
-
-  let currentProblem = Math.floor(Date.now() / 86400000) % problems.length;
-  let answered = false;
-
-  function renderProblem(idx: number) {
-    const p = problems[idx];
-    answered = false;
-    document.getElementById('problem-badge')!.textContent = p.badge;
-    document.getElementById('problem-source')!.textContent = p.source;
-    document.getElementById('problem-text')!.textContent = p.text;
-    const answerEl = document.getElementById('problem-answer')!;
-    answerEl.className = 'problem-answer';
-    answerEl.innerHTML = `<strong>Pembahasan:</strong><br>${p.explanation}`;
-
-    const revealBtn = document.getElementById('reveal-btn') as HTMLButtonElement;
-    revealBtn.disabled = false;
-    revealBtn.textContent = 'Lihat Jawaban';
-
-    const mathEl = document.getElementById('problem-math')!;
-    if (p.math) {
-      mathEl.style.display = 'block';
-      mathEl.innerHTML = katex.renderToString(p.math, { displayMode: true, throwOnError: false });
-    } else {
-      mathEl.style.display = 'none';
-    }
-
-    const now = new Date();
-    document.getElementById('problem-day-tag')!.textContent =
-      now.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'short' });
-
-    const optionsEl = document.getElementById('problem-options')!;
-    optionsEl.innerHTML = '';
-    p.options.forEach((opt, i) => {
-      const btn = document.createElement('button');
-      btn.className = 'problem-option';
-      btn.innerHTML = `<span class="problem-option-key">${['A','B','C','D'][i]}</span>${opt.replace(/^[A-D]\.\s*/, '')}`;
-      btn.onclick = () => selectOption(i);
-      optionsEl.appendChild(btn);
-    });
-  }
-
-  function selectOption(idx: number) {
-    if (answered) return;
-    answered = true;
-    const p = problems[currentProblem];
-    document.querySelectorAll('.problem-option').forEach((b, i) => {
-      if (i === p.correct) b.classList.add('correct');
-      else if (i === idx && idx !== p.correct) b.classList.add('wrong');
-    });
-    document.getElementById('problem-answer')!.classList.add('visible');
-    const revealBtn = document.getElementById('reveal-btn') as HTMLButtonElement;
-    revealBtn.disabled = true;
-    revealBtn.textContent = 'Jawaban Terlihat';
-  }
-
-  // ═══════════════════════════════
   // INIT
   // ═══════════════════════════════
   updateCountdown();
   setInterval(updateCountdown, 1000);
+
+  document.querySelectorAll<HTMLButtonElement>('.cd-sel-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const period = parseInt(btn.dataset.period ?? '-1', 10);
+      pinnedPeriod = period === -1 ? null : period;
+      document.querySelectorAll('.cd-sel-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateCountdown();
+    });
+  });
 
   renderFormula(currentFormula);
   document.getElementById('formula-btn')!.onclick = () => {
@@ -781,21 +622,4 @@ import NoteLayout from '../layouts/NoteLayout.astro';
   quoteInterval = setInterval(nextQuote, 8000);
   document.getElementById('quote-prev')!.onclick = prevQuote;
   document.getElementById('quote-next')!.onclick = nextQuote;
-
-  renderProblem(currentProblem);
-  document.getElementById('reveal-btn')!.onclick = () => {
-    answered = true;
-    const p = problems[currentProblem];
-    document.querySelectorAll('.problem-option').forEach((b, i) => {
-      if (i === p.correct) b.classList.add('correct');
-    });
-    document.getElementById('problem-answer')!.classList.add('visible');
-    const revealBtn = document.getElementById('reveal-btn') as HTMLButtonElement;
-    revealBtn.disabled = true;
-    revealBtn.textContent = 'Jawaban Terlihat';
-  };
-  document.getElementById('problem-next')!.onclick = () => {
-    currentProblem = (currentProblem + 1) % problems.length;
-    renderProblem(currentProblem);
-  };
 </script>
