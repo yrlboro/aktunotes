@@ -29,7 +29,7 @@ const hasToc = Astro.slots.has('toc');
       <div class="nav-section-header">▸ PAI Exams</div>
 
       <details class="nav-group" open={mod === 'CF1' ? true : undefined}>
-        <summary class={`nav-group-title${mod === 'CF1' ? ' active' : ''}`}>CF1 — Mat. Keuangan</summary>
+        <summary class={`nav-group-title${mod === 'CF1' ? ' active' : ''}`}>CF1 — Matematika Keuangan</summary>
         <a href="/CF1"             class="nav-sub-item">Materi & Topik</a>
         <a href="/CF1#past-exams"  class="nav-sub-item">Past Exams</a>
         <a href="/CF1#solutions"   class="nav-sub-item">Solutions</a>
@@ -41,6 +41,7 @@ const hasToc = Astro.slots.has('toc');
         <a href="/CF2"          class="nav-sub-item">Materi & Topik</a>
         <a href="/CF2#past-exams"  class="nav-sub-item">Past Exams</a>
         <a href="/CF2#solutions"   class="nav-sub-item">Solutions</a>
+        <a href="/CF2#soa-samples"     class="nav-sub-item">SOA Sample Questions</a>
       </details>
 
       <a href="/CF3"  class={`nav-item ${mod === 'CF3'  ? 'active' : ''}`}>CF3 — Ekonomi</a>
