@@ -442,27 +442,29 @@ const hasToc = Astro.slots.has('toc');
 
   @media (max-width: 900px) {
     /* Layout: [logo-merah] [☰] [search center] [≡] [logo-kuning] */
-    .header { grid-template-columns: auto auto 1fr auto auto; }
+    .header { grid-template-columns: auto auto minmax(0,0.6fr) auto auto; }
 
-    /* Logo merah — lebih besar di mobile */
-    .header-logo-block { padding: 0.6rem 1rem; }
-    .header-logo { font-size: 1.85rem; }
+    /* Logo merah — lebih besar & lebih lebar di mobile */
+    .header-logo-block { padding: 0.55rem 1.3rem; min-width: 100px; }
+    .header-logo { font-size: 2.1rem; }
 
-    /* Search — centered */
+    /* Search — centered, diperpendek 40% lewat max-width */
     .header-search-block {
       justify-content: center;
-      padding: 0 0.8rem;
+      padding: 0 0.6rem;
       border-right: none;
     }
+    .header-search { max-width: 160px; }
 
-    /* Logo kuning — tampil di mobile */
+    /* Logo kuning — tampil di mobile, lebih besar */
     .header-badge-block {
       display: flex;
       width: auto;
-      padding: 0.3rem 0.5rem;
-      min-width: 56px;
+      padding: 0.25rem 0.5rem;
+      min-width: 64px;
+      border-left: 3px solid var(--yellow);
     }
-    .header-logo-img { width: 44px; }
+    .header-logo-img { width: 52px; }
 
     .body-wrap { grid-template-columns: 1fr; }
     .sidebar-left { display: none; }
@@ -474,12 +476,13 @@ const hasToc = Astro.slots.has('toc');
   }
 
   @media (max-width: 600px) {
-    .header { grid-template-columns: auto auto 1fr auto auto; }
-    .header-logo { font-size: 1.65rem; }
-    .header-search-block { padding: 0 0.5rem; }
-    .header-search { font-size: 0.82rem; }
+    .header { grid-template-columns: auto auto minmax(0,0.6fr) auto auto; }
+    .header-logo-block { padding: 0.55rem 1rem; min-width: 88px; }
+    .header-logo { font-size: 1.9rem; }
+    .header-search-block { padding: 0 0.4rem; }
+    .header-search { font-size: 0.82rem; max-width: 130px; }
     .content { padding: 1.2rem 1rem 3rem; }
-    .header-logo-img { width: 36px; }
+    .header-logo-img { width: 44px; }
   }
 
   /* ══════════════════════════════════

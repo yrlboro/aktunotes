@@ -30,7 +30,8 @@ function formatTitle(id: string): string {
     .replace(/\b\w/g, c => c.toUpperCase());
 }
 
-const title = entry.data.topic || entry.data.title || formatTitle(entry.id);
+const firstH1 = headings.find(h => h.depth === 1);
+const title = entry.data.topic || entry.data.title || (isSolution ? firstH1?.text : undefined) || formatTitle(entry.id);
 const tags: string[] = Array.isArray(entry.data.tags) ? entry.data.tags : [];
 ---
 
@@ -84,7 +85,7 @@ const tags: string[] = Array.isArray(entry.data.tags) ? entry.data.tags : [];
     </div>
   )}
 
-  <div class="note-body"><Content /></div>
+  <div class={`note-body${isSolution ? ' solution-body' : ''}`}><Content /></div>
 
 </NoteLayout>
 
@@ -114,6 +115,12 @@ const tags: string[] = Array.isArray(entry.data.tags) ? entry.data.tags : [];
   .note-body :global(.katex-display) { overflow-x: auto; padding: 0.5rem 0; text-align: center; margin: 0.75rem 0; }
   .note-body :global(pre) { background: var(--ink); color: var(--yellow); padding: 1rem 1.2rem; overflow-x: auto; font-family: var(--mono); font-size: 0.82rem; line-height: 1.6; margin: 1.2rem 0; }
   .note-body :global(pre code) { background: none; border: none; padding: 0; color: inherit; font-size: inherit; }
+
+  /* Hide markdown H1 in solution pages — template already renders it */
+  .solution-body :global(h1:first-child) { display: none; }
+  :global(h1) .h1-num, :global(.h1-num) {
+    color: var(--pink); font-weight: 300; font-style: italic;
+  }
   .note-body :global(hr) { border: none; border-top: 2px solid var(--ink); margin: 2rem 0; }
   .note-body :global(ol), .note-body :global(ul) { padding-left: 1.4rem; margin-bottom: 1rem; }
   .note-body :global(li) { font-family: var(--ss4); font-size: 1rem; line-height: 1.8; color: var(--ink2); margin-bottom: 0.25rem; }

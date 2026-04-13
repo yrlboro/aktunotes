@@ -128,6 +128,10 @@ const examMeta = { id: EXAM_ID, label: EXAM_LABEL, total: questions.length, dura
         <div class="legend-item"><span class="leg-dot flagged"></span>Ragu-ragu</div>
       </div>
 
+      <div class="panel-actions">
+        <button class="panel-btn" id="btn-formula">📄 Formula Sheet</button>
+      </div>
+
       <div class="panel-stats" id="panel-stats"></div>
     </aside>
   </div>
@@ -164,6 +168,15 @@ const examMeta = { id: EXAM_ID, label: EXAM_LABEL, total: questions.length, dura
         <button class="btn-ghost" id="btn-retake">Ulangi Ujian</button>
       </div>
     </div>
+  </div>
+
+  <!-- ══ FORMULA SHEET POPUP ══ -->
+  <div class="formula-popup" id="formula-popup" hidden>
+    <div class="formula-popup-header">
+      <span>Formula Kunci CF2</span>
+      <button class="formula-close" id="formula-close">✕</button>
+    </div>
+    <div class="formula-popup-body" id="formula-popup-body"></div>
   </div>
 
   <!-- ══ REVIEW MODE ══ -->
@@ -206,11 +219,14 @@ const examMeta = { id: EXAM_ID, label: EXAM_LABEL, total: questions.length, dura
   .sim-header-left { display: flex; align-items: center; gap: 1rem; flex: 1; min-width: 0; }
 
   .sim-back {
-    font-family: var(--mono); font-size: 0.6rem; color: rgba(255,255,255,0.45);
+    font-family: var(--mono); font-size: 0.6rem; color: var(--yellow);
     text-decoration: none; letter-spacing: 0.06em; flex-shrink: 0;
     transition: color 0.1s;
+    border: 1.5px solid rgba(247,224,60,0.4);
+    padding: 0.2rem 0.6rem;
+    background: rgba(247,224,60,0.08);
   }
-  .sim-back:hover { color: var(--yellow); }
+  .sim-back:hover { color: var(--ink); background: var(--yellow); border-color: var(--yellow); }
 
   .sim-title {
     font-family: var(--mono); font-size: 0.65rem; color: rgba(255,255,255,0.6);
@@ -346,6 +362,39 @@ const examMeta = { id: EXAM_ID, label: EXAM_LABEL, total: questions.length, dura
   .panel-stats {
     font-family: var(--mono); font-size: 0.58rem; color: var(--ink4);
     line-height: 1.7; margin-top: auto;
+  }
+
+  .panel-actions { display: flex; flex-direction: column; gap: 0.4rem; }
+  .panel-btn {
+    font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.06em;
+    background: var(--cream); border: 1.5px solid var(--border);
+    padding: 0.4rem 0.7rem; cursor: pointer; color: var(--ink3);
+    transition: all 0.12s; text-align: left;
+  }
+  .panel-btn:hover { border-color: var(--ink); color: var(--ink); }
+
+  .formula-popup {
+    position: fixed; bottom: 1.5rem; right: 240px;
+    width: 340px; max-height: 65vh; overflow-y: auto;
+    background: var(--cream); border: 2px solid var(--ink);
+    box-shadow: 6px 6px 0 rgba(14,10,4,0.15); z-index: 300;
+  }
+  .formula-popup-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.5rem 0.9rem; background: var(--ink); color: var(--yellow);
+    font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .formula-close {
+    background: none; border: none; color: var(--yellow);
+    cursor: pointer; font-size: 0.8rem; padding: 0;
+  }
+  .formula-popup-body { padding: 0.8rem; display: flex; flex-direction: column; gap: 0.7rem; }
+  .formula-item { border-bottom: 1px solid var(--border); padding-bottom: 0.6rem; }
+  .formula-item:last-child { border-bottom: none; }
+  .formula-item-name {
+    font-family: var(--mono); font-size: 0.58rem; color: var(--ink4);
+    letter-spacing: 0.06em; margin-bottom: 0.3rem;
   }
 
   .modal-overlay {
@@ -781,6 +830,48 @@ const examMeta = { id: EXAM_ID, label: EXAM_LABEL, total: questions.length, dura
     const cur = parseInt(document.getElementById('rv-num')!.textContent!.replace('No. ', ''));
     if (cur < QUESTIONS.length) showReviewQuestion(cur + 1);
   };
+
+  // ── Formula sheet popup ──
+  const FORMULA_ITEMS = [
+    { name: 'PGF — Definisi', tex: 'G_X(t) = E[t^X] = \\sum_{k=0}^{\\infty} p_k t^k' },
+    { name: 'MGF — Definisi', tex: 'M_X(t) = E[e^{tX}]' },
+    { name: 'MGF Poisson', tex: 'M_X(t) = e^{\\lambda(e^t - 1)}' },
+    { name: 'PGF Poisson', tex: 'G_X(t) = e^{\\lambda(t - 1)}' },
+    { name: 'MGF Normal', tex: 'M_X(t) = e^{\\mu t + \\frac{1}{2}\\sigma^2 t^2}' },
+    { name: 'MGF Gamma(α,β)', tex: 'M_X(t) = \\left(\\frac{1}{1-\\beta t}\\right)^\\alpha' },
+    { name: 'E[X] dari MGF', tex: "E[X] = M_X'(0)" },
+    { name: 'Var(X)', tex: "\\text{Var}(X) = M_X''(0) - [M_X'(0)]^2" },
+    { name: 'CLT', tex: '\\frac{\\bar{X} - \\mu}{\\sigma/\\sqrt{n}} \\xrightarrow{d} N(0,1)' },
+    { name: 'Bayes', tex: 'P(A|B) = \\frac{P(B|A)P(A)}{P(B)}' },
+    { name: 'Total Probabilitas', tex: 'P(B) = \\sum_i P(B|A_i)P(A_i)' },
+    { name: 'E[X] kontinu', tex: 'E[X] = \\int_{-\\infty}^{\\infty} x f(x)\\,dx' },
+    { name: 'Var(X)', tex: 'E[X^2] - (E[X])^2' },
+    { name: 'Cov(X,Y)', tex: 'E[XY] - E[X]E[Y]' },
+  ];
+
+  const formulaPopup = document.getElementById('formula-popup')!;
+  const formulaBody  = document.getElementById('formula-popup-body')!;
+  const formulaClose = document.getElementById('formula-close')!;
+  const btnFormula   = document.getElementById('btn-formula')!;
+
+  // Render formula items
+  formulaBody.innerHTML = '';
+  FORMULA_ITEMS.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'formula-item';
+    const name = document.createElement('div');
+    name.className = 'formula-item-name';
+    name.textContent = item.name;
+    const math = document.createElement('div');
+    try { katex.render(item.tex, math, { throwOnError: false, displayMode: true }); }
+    catch { math.textContent = item.tex; }
+    div.appendChild(name);
+    div.appendChild(math);
+    formulaBody.appendChild(div);
+  });
+
+  btnFormula.onclick = () => { formulaPopup.hidden = !formulaPopup.hidden; };
+  formulaClose.onclick = () => { formulaPopup.hidden = true; };
 
   showQuestion(state.currentQ);
 </script>
