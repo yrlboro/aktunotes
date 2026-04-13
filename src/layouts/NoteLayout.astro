@@ -11,6 +11,7 @@ const hasToc = Astro.slots.has('toc');
       <div class="header-logo">Aktu<br/>Notes</div>
     </a>
     <button class="mob-menu-btn" id="mob-menu-btn" aria-label="Menu">☰</button>
+    <button class="mob-toc-btn" id="mob-toc-btn" aria-label="Daftar Isi">≡</button>
     <div class="header-search-block">
       <span class="header-search-icon">⌕</span>
       <input class="header-search" id="site-search" type="text" placeholder="Cari topik, rumus, soal ujian…" autocomplete="off" />
@@ -83,21 +84,56 @@ const hasToc = Astro.slots.has('toc');
   <div class="mob-nav-overlay" id="mob-nav-overlay">
     <nav class="mob-nav-panel" id="mob-nav-panel">
       <button class="mob-nav-close" id="mob-nav-close">✕ &nbsp;Tutup</button>
+
+      <!-- Konten sama persis dengan sidebar-left -->
       <div class="nav-section-header">▸ PAI Exams</div>
-      <a href="/CF1"    class="nav-item">CF1 — Matematika Keuangan</a>
-      <a href="/CF2"    class="nav-item">CF2 — Probabilitas</a>
-      <a href="/CF3"    class="nav-item">CF3 — Ekonomi</a>
-      <a href="/CF4"    class="nav-item">CF4 — Akuntansi</a>
-      <a href="/TA1"    class="nav-item">TA1 — Statistika</a>
-      <a href="/TA2"    class="nav-item">TA2 — Teori Risiko</a>
-      <a href="/TA3"    class="nav-item">TA3 — Matematika Aktuaria</a>
-      <a href="/BA4G"   class="nav-item">BA4G — Asuransi Umum</a>
+
+      <details class="nav-group" open={mod === 'CF1' ? true : undefined}>
+        <summary class={`nav-group-title${mod === 'CF1' ? ' active' : ''}`}>CF1 — Matematika Keuangan</summary>
+        <a href="/CF1"            class="nav-sub-item">Materi & Topik</a>
+        <a href="/CF1#past-exams" class="nav-sub-item">Past Exams</a>
+        <a href="/CF1#solutions"  class="nav-sub-item">Solutions</a>
+        <a href="/CF1#asm-soa"    class="nav-sub-item">ASM-SOA Practice</a>
+      </details>
+
+      <details class="nav-group" open={mod === 'CF2' ? true : undefined}>
+        <summary class={`nav-group-title${mod === 'CF2' ? ' active' : ''}`}>CF2 — Probabilitas</summary>
+        <a href="/CF2"             class="nav-sub-item">Materi & Topik</a>
+        <a href="/CF2#past-exams"  class="nav-sub-item">Past Exams</a>
+        <a href="/CF2#solutions"   class="nav-sub-item">Solutions</a>
+        <a href="/CF2#soa-samples" class="nav-sub-item">SOA Sample Questions</a>
+      </details>
+
+      <a href="/CF3"  class={`nav-item ${mod === 'CF3'  ? 'active' : ''}`}>CF3 — Ekonomi</a>
+      <a href="/CF4"  class={`nav-item ${mod === 'CF4'  ? 'active' : ''}`}>CF4 — Akuntansi</a>
+      <a href="/TA1"  class={`nav-item ${mod === 'TA1'  ? 'active' : ''}`}>TA1 — Statistika</a>
+      <a href="/TA2"  class={`nav-item ${mod === 'TA2'  ? 'active' : ''}`}>TA2 — Teori Risiko</a>
+      <a href="/TA3"  class={`nav-item ${mod === 'TA3'  ? 'active' : ''}`}>TA3 — Matematika Aktuaria</a>
+      <a href="/BA4G" class={`nav-item ${mod === 'BA4G' ? 'active' : ''}`}>BA4G — Asuransi Umum</a>
+
       <div class="nav-section-header">▸ AAMAI</div>
-      <a href="/AAMAI101" class="nav-item">AAMAI 101</a>
+      <details class="nav-group" open={mod === 'AAMAI101' ? true : undefined}>
+        <summary class={`nav-group-title${mod === 'AAMAI101' ? ' active' : ''}`}>AAMAI 101</summary>
+        <a href="/AAMAI101" class="nav-sub-item">Materi & Topik</a>
+      </details>
+
       <div class="nav-section-header">▸ Resources</div>
       <a href="/formula-sheet" class="nav-item">Formula Sheet CF1</a>
+      <a href="/study-log"     class="nav-item">Study Log</a>
+      <a href="/exam-sim"      class="nav-item nav-item-sim">Simulasi Ujian CF1</a>
+      <a href="/exam-sim/cf2"  class="nav-item nav-item-sim">Simulasi Ujian CF2</a>
     </nav>
   </div>
+
+<!-- TOC overlay (mobile right panel) -->
+{hasToc && (
+  <div class="mob-toc-overlay" id="mob-toc-overlay">
+    <div class="mob-toc-panel" id="mob-toc-panel">
+      <button class="mob-nav-close" id="mob-toc-close">✕ &nbsp;Tutup</button>
+      <slot name="toc" />
+    </div>
+  </div>
+)}
 
 </BaseLayout>
 
@@ -296,7 +332,18 @@ const hasToc = Astro.slots.has('toc');
     border-left: 3px solid var(--pink);
   }
 
-  /* ── Mobile nav overlay ── */
+  /* ── TOC button (mobile only, right side) ── */
+  .mob-toc-btn {
+    display: none;
+    background: var(--ink); color: var(--yellow);
+    border: none; padding: 0 1rem;
+    font-size: 1.3rem; cursor: pointer;
+    font-family: var(--mono);
+    border-right: 3px solid var(--pink);
+    margin-left: auto;
+  }
+
+  /* ── Mobile nav overlay (left) ── */
   .mob-nav-overlay {
     display: none;
     position: fixed; inset: 0; background: rgba(14,10,4,0.5);
@@ -321,6 +368,29 @@ const hasToc = Astro.slots.has('toc');
     background: var(--ink); color: var(--yellow);
     text-transform: uppercase; border: none;
     text-align: left;
+  }
+
+  /* ── TOC overlay (right) ── */
+  .mob-toc-overlay {
+    display: none;
+    position: fixed; inset: 0; background: rgba(14,10,4,0.5);
+    z-index: 150; backdrop-filter: blur(2px);
+  }
+  .mob-toc-panel {
+    position: absolute; top: 0; right: 0;
+    width: 260px; height: 100%;
+    background: var(--cream2); border-left: 3px solid var(--ink);
+    display: flex; flex-direction: column;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.22s ease;
+  }
+  .mob-toc-overlay.open { display: block; }
+  .mob-toc-overlay.open .mob-toc-panel { transform: translateX(0); }
+  .mob-toc-panel .toc-wrap {
+    position: static;
+    max-height: none;
+    padding: 1rem;
   }
 
   /* ── TOC sidebar ── */
@@ -369,26 +439,22 @@ const hasToc = Astro.slots.has('toc');
   .toc-h2-solo:hover { color: var(--pink); }
 
   @media (max-width: 900px) {
-    .header { grid-template-columns: auto 1fr auto; }
+    .header { grid-template-columns: auto auto 1fr auto; }
     .header-badge-block { display: none; }
     .body-wrap { grid-template-columns: 1fr; }
     .sidebar-left { display: none; }
     .body-wrap.body-no-toc { grid-template-columns: 1fr; }
     .mob-menu-btn { display: flex; align-items: center; }
-    .sidebar-right {
-      border-left: none; border-top: 3px solid var(--ink);
-      background: var(--cream2); padding: 1rem 1.2rem;
-      max-height: 280px;
-    }
+    .mob-toc-btn { display: flex; align-items: center; }
+    .sidebar-right { display: none; }
     .content { padding: 1.5rem 1.2rem 3rem; max-width: 100%; }
   }
 
   @media (max-width: 600px) {
-    .header { grid-template-columns: auto 1fr auto; }
+    .header { grid-template-columns: auto auto 1fr auto; }
     .header-search-block { padding: 0 0.8rem; }
     .header-search { font-size: 0.82rem; }
     .content { padding: 1.2rem 1rem 3rem; }
-    .sidebar-right { display: none; }
   }
 
   /* ══════════════════════════════════
@@ -631,13 +697,56 @@ const hasToc = Astro.slots.has('toc');
     if (searchInput.value.trim()) renderResults(searchInput.value);
   });
 
-  // ── Mobile nav ──
-  const menuBtn = document.getElementById('mob-menu-btn');
-  const overlay = document.getElementById('mob-nav-overlay');
-  const closeBtn = document.getElementById('mob-nav-close');
-  menuBtn?.addEventListener('click', () => overlay?.classList.add('open'));
-  closeBtn?.addEventListener('click', () => overlay?.classList.remove('open'));
-  overlay?.addEventListener('click', (e) => {
-    if (e.target === overlay) overlay.classList.remove('open');
-  });
+  // ── Mobile nav + TOC overlay + swipe gestures ──
+  const menuBtn    = document.getElementById('mob-menu-btn');
+  const navOverlay = document.getElementById('mob-nav-overlay');
+  const closeBtn   = document.getElementById('mob-nav-close');
+
+  const tocBtn     = document.getElementById('mob-toc-btn');
+  const tocOverlay = document.getElementById('mob-toc-overlay');
+  const tocClose   = document.getElementById('mob-toc-close');
+
+  function openNav()  { navOverlay?.classList.add('open'); }
+  function closeNav() { navOverlay?.classList.remove('open'); }
+  function openToc()  { tocOverlay?.classList.add('open'); }
+  function closeToc() { tocOverlay?.classList.remove('open'); }
+
+  menuBtn?.addEventListener('click', openNav);
+  closeBtn?.addEventListener('click', closeNav);
+  navOverlay?.addEventListener('click', (e) => { if (e.target === navOverlay) closeNav(); });
+
+  tocBtn?.addEventListener('click', openToc);
+  tocClose?.addEventListener('click', closeToc);
+  tocOverlay?.addEventListener('click', (e) => { if (e.target === tocOverlay) closeToc(); });
+
+  // ── Swipe gestures ──
+  const THRESHOLD = 50;
+  let startX = 0;
+  let startY = 0;
+
+  document.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+
+    // Abaikan scroll vertikal
+    if (Math.abs(dy) > Math.abs(dx)) return;
+    if (Math.abs(dx) < THRESHOLD) return;
+
+    const W = window.innerWidth;
+
+    if (dx > 0) {
+      // Swipe kanan
+      if (startX < 40) openNav();
+      if (tocOverlay?.classList.contains('open')) closeToc();
+    } else {
+      // Swipe kiri
+      if (startX > W - 40) openToc();
+      if (navOverlay?.classList.contains('open')) closeNav();
+    }
+  }, { passive: true });
 </script>
