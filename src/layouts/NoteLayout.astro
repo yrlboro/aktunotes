@@ -6,17 +6,19 @@ const hasToc = Astro.slots.has('toc');
 <BaseLayout title={title} description={description}>
 
   <!-- HEADER -->
+  <!-- Desktop: [logo-merah 210px] [search 1fr] [logo-kuning 175px] -->
+  <!-- Mobile:  [logo-merah] [☰] [search 1fr] [≡] [logo-kuning] -->
   <header class="header">
     <a href="/" class="header-logo-block">
       <div class="header-logo">Aktu<br/>Notes</div>
     </a>
     <button class="mob-menu-btn" id="mob-menu-btn" aria-label="Menu">☰</button>
-    <button class="mob-toc-btn" id="mob-toc-btn" aria-label="Daftar Isi">≡</button>
     <div class="header-search-block">
       <span class="header-search-icon">⌕</span>
       <input class="header-search" id="site-search" type="text" placeholder="Cari topik, rumus, soal ujian…" autocomplete="off" />
       <div class="search-results" id="search-results" hidden></div>
     </div>
+    <button class="mob-toc-btn" id="mob-toc-btn" aria-label="Daftar Isi">≡</button>
     <div class="header-badge-block">
       <img src="/logo-aktunotes.svg" class="header-logo-img" alt="AktuNotes" />
     </div>
@@ -439,8 +441,29 @@ const hasToc = Astro.slots.has('toc');
   .toc-h2-solo:hover { color: var(--pink); }
 
   @media (max-width: 900px) {
-    .header { grid-template-columns: auto auto 1fr auto; }
-    .header-badge-block { display: none; }
+    /* Layout: [logo-merah] [☰] [search center] [≡] [logo-kuning] */
+    .header { grid-template-columns: auto auto 1fr auto auto; }
+
+    /* Logo merah — lebih besar di mobile */
+    .header-logo-block { padding: 0.6rem 1rem; }
+    .header-logo { font-size: 1.85rem; }
+
+    /* Search — centered */
+    .header-search-block {
+      justify-content: center;
+      padding: 0 0.8rem;
+      border-right: none;
+    }
+
+    /* Logo kuning — tampil di mobile */
+    .header-badge-block {
+      display: flex;
+      width: auto;
+      padding: 0.3rem 0.5rem;
+      min-width: 56px;
+    }
+    .header-logo-img { width: 44px; }
+
     .body-wrap { grid-template-columns: 1fr; }
     .sidebar-left { display: none; }
     .body-wrap.body-no-toc { grid-template-columns: 1fr; }
@@ -451,10 +474,12 @@ const hasToc = Astro.slots.has('toc');
   }
 
   @media (max-width: 600px) {
-    .header { grid-template-columns: auto auto 1fr auto; }
-    .header-search-block { padding: 0 0.8rem; }
+    .header { grid-template-columns: auto auto 1fr auto auto; }
+    .header-logo { font-size: 1.65rem; }
+    .header-search-block { padding: 0 0.5rem; }
     .header-search { font-size: 0.82rem; }
     .content { padding: 1.2rem 1rem 3rem; }
+    .header-logo-img { width: 36px; }
   }
 
   /* ══════════════════════════════════
