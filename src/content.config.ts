@@ -45,6 +45,78 @@ export const collections = {
     schema: noteSchema,
   }),
 
+  cf4: defineCollection({
+    loader: glob({
+      pattern: ['**/*.md', '!index.md'],
+      base: './content/CF4',
+      generateId: ({ entry }) => makeSlug(entry),
+    }),
+    schema: noteSchema,
+  }),
+
+  ta1: defineCollection({
+    loader: glob({
+      pattern: ['**/*.md', '!index.md'],
+      base: './content/TA1',
+      generateId: ({ entry }) => makeSlug(entry),
+    }),
+    schema: noteSchema,
+  }),
+
+  ta2: defineCollection({
+    loader: glob({
+      pattern: ['**/*.md', '!index.md'],
+      base: './content/TA2',
+      generateId: ({ entry }) => makeSlug(entry),
+    }),
+    schema: noteSchema,
+  }),
+
+  ta3: defineCollection({
+    loader: glob({
+      pattern: ['**/*.md', '!index.md'],
+      base: './content/TA3',
+      generateId: ({ entry }) => makeSlug(entry),
+    }),
+    schema: noteSchema,
+  }),
+
+  ba1: defineCollection({
+    loader: glob({
+      pattern: ['**/*.md', '!index.md'],
+      base: './content/BA1',
+      generateId: ({ entry }) => makeSlug(entry),
+    }),
+    schema: noteSchema,
+  }),
+
+  ba2: defineCollection({
+    loader: glob({
+      pattern: ['**/*.md', '!index.md'],
+      base: './content/BA2',
+      generateId: ({ entry }) => makeSlug(entry),
+    }),
+    schema: noteSchema,
+  }),
+
+  ba3: defineCollection({
+    loader: glob({
+      pattern: ['**/*.md', '!index.md'],
+      base: './content/BA3',
+      generateId: ({ entry }) => makeSlug(entry),
+    }),
+    schema: noteSchema,
+  }),
+
+  ba4g: defineCollection({
+    loader: glob({
+      pattern: ['**/*.md', '!index.md'],
+      base: './content/BA4G',
+      generateId: ({ entry }) => makeSlug(entry),
+    }),
+    schema: noteSchema,
+  }),
+
   aamai101: defineCollection({
     loader: glob({
       pattern: ['**/*.md', '!index.md'],

@@ -1,0 +1,118 @@
+---
+import { getCollection, render } from 'astro:content';
+import NoteLayout from '../../layouts/NoteLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('ta3');
+  return entries.map(entry => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+
+type Heading = { depth: number; slug: string; text: string };
+const h2Groups: { h2: Heading; children: Heading[] }[] = [];
+for (const h of headings) {
+  if (h.depth === 2) {
+    h2Groups.push({ h2: h, children: [] });
+  } else if (h.depth === 3 && h2Groups.length > 0) {
+    h2Groups[h2Groups.length - 1].children.push(h);
+  }
+}
+const hasTocContent = h2Groups.length > 0;
+
+function formatTitle(id: string): string {
+  return id.split('/').pop()!
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, c => c.toUpperCase());
+}
+
+const firstH1 = headings.find(h => h.depth === 1);
+const title = entry.data.topic || entry.data.title || firstH1?.text || formatTitle(entry.id);
+const tags: string[] = Array.isArray(entry.data.tags) ? entry.data.tags : [];
+---
+
+<NoteLayout title={title} module="TA3" backHref="/TA3">
+  {hasTocContent && (
+    <div slot="toc" class="toc-wrap">
+      <div class="toc-header">Daftar Isi</div>
+      {h2Groups.map(({ h2, children }) =>
+        children.length > 0 ? (
+          <details class="toc-group" open>
+            <summary class="toc-group-title">{h2.text}</summary>
+            <div class="toc-group-items">
+              {children.map(h3 => (
+                <a href={`#${h3.slug}`} class="toc-item">{h3.text}</a>
+              ))}
+            </div>
+          </details>
+        ) : (
+          <a href={`#${h2.slug}`} class="toc-h2-solo">{h2.text}</a>
+        )
+      )}
+    </div>
+  )}
+
+  <div class="note-eyebrow">
+    TA3 · Materi
+    {entry.data.topic_id && <span class="eyebrow-id">{entry.data.topic_id}</span>}
+  </div>
+
+  <h1 set:html={title.replace(/^(\d+\.\d+)\s+—?\s*/, '<span class="h1-num">$1</span> ')} />
+
+  <div class="h1-rule">
+    <div class="h1-rule-line"></div>
+    <div class="h1-rule-dot"></div>
+    <div class="h1-rule-dot" style="background:var(--yellow)"></div>
+    <div class="h1-rule-dot" style="background:var(--ink)"></div>
+  </div>
+
+  {(entry.data.difficulty || entry.data.exam_weight) && (
+    <div class="note-meta">
+      {entry.data.difficulty  && <span class="meta-badge">{entry.data.difficulty}</span>}
+      {entry.data.exam_weight && <span>Bobot: {entry.data.exam_weight}</span>}
+      {entry.data.ref_book    && <span>{entry.data.ref_book}</span>}
+    </div>
+  )}
+
+  {tags.length > 0 && (
+    <div class="note-tags">
+      {tags.map(t => <span class="tag">{t}</span>)}
+    </div>
+  )}
+
+  <div class="note-body">
+    <Content />
+  </div>
+</NoteLayout>
+
+<style>
+  .note-eyebrow { font-family: var(--mono); font-size: 0.62rem; color: var(--pink); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.6rem; }
+  .note-eyebrow::before { content: '◆'; font-size: 0.42rem; }
+  .eyebrow-id { background: var(--ink); color: var(--yellow); font-size: 0.54rem; padding: 0.08rem 0.4rem; letter-spacing: 0.1em; }
+  :global(h1) .h1-num, :global(.h1-num) { color: var(--pink); font-weight: 300; font-style: italic; }
+  .h1-rule { display: flex; align-items: center; gap: 0.7rem; margin: 0.6rem 0 1rem; }
+  .h1-rule-line { flex: 1; height: 3px; background: var(--ink); }
+  .h1-rule-dot  { width: 8px; height: 8px; background: var(--pink); flex-shrink: 0; }
+  .note-meta { font-family: var(--mono); font-size: 0.62rem; color: var(--ink4); display: flex; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 0.8rem; align-items: center; }
+  .meta-badge { background: var(--ink); color: var(--yellow); padding: 0.1rem 0.45rem; font-size: 0.56rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .note-tags { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-bottom: 1.8rem; }
+  .tag { font-family: var(--mono); font-size: 0.58rem; padding: 0.15rem 0.55rem; background: var(--ink); color: var(--yellow); letter-spacing: 0.04em; }
+  .note-body :global(h2) { display: flex; align-items: center; gap: 0.8rem; margin: 2.2rem 0 0.8rem; }
+  .note-body :global(h2::after) { content: ''; flex: 1; height: 2px; background: var(--ink); }
+  .note-body :global(table) { width: 100%; border-collapse: collapse; margin: 1.3rem 0; font-size: 0.88rem; }
+  .note-body :global(th) { font-family: var(--mono); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink4); text-align: left; padding: 0.5rem 0.8rem; border-bottom: 2px solid var(--ink); }
+  .note-body :global(td) { font-family: var(--ss4); font-size: 0.9rem; line-height: 1.5; padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--border); color: var(--ink2); }
+  .note-body :global(tr:hover td) { background: var(--cream2); }
+  .note-body :global(blockquote) { border-left: 4px solid var(--pink); background: var(--cream2); padding: 0.9rem 1.2rem; margin: 1.4rem 0; }
+  .note-body :global(blockquote p:last-child) { margin-bottom: 0; }
+  .note-body :global(.katex-display) { overflow-x: auto; padding: 0.5rem 0; text-align: center; margin: 0.75rem 0; }
+  .note-body :global(pre) { background: var(--ink); color: var(--yellow); padding: 1rem 1.2rem; overflow-x: auto; font-family: var(--mono); font-size: 0.82rem; line-height: 1.6; margin: 1.2rem 0; }
+  .note-body :global(pre code) { background: none; border: none; padding: 0; color: inherit; font-size: inherit; }
+  .note-body :global(hr) { border: none; border-top: 2px solid var(--ink); margin: 2rem 0; }
+  .note-body :global(ol), .note-body :global(ul) { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .note-body :global(li) { font-family: var(--ss4); font-size: 1rem; line-height: 1.8; color: var(--ink2); margin-bottom: 0.25rem; }
+</style>
