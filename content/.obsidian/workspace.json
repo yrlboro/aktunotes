@@ -36,21 +36,77 @@
             }
           },
           {
-            "id": "7ee277f7a0038f6c",
+            "id": "7f86e15f816096a5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CF2/Exams/Past Exam Solutions/2. 2022-04-CF2-Pembahasan.md",
+                "file": "BA1/Silabus BA1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2. 2022-04-CF2-Pembahasan"
+              "title": "Silabus BA1"
+            }
+          },
+          {
+            "id": "3af5bbcec3a05e33",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TA2/1.1 Moment and Probability Generating Functions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1.1 Moment and Probability Generating Functions"
+            }
+          },
+          {
+            "id": "055529b2d583675c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TA2/Silabus TA2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Silabus TA2"
+            }
+          },
+          {
+            "id": "0001f23d01e16849",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TA2/2.1 Frequency MGF and PGF.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2.1 Frequency MGF and PGF"
+            }
+          },
+          {
+            "id": "21cd9eeb38217ed2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TA2/1.3 Techniques for Creating New Distributions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1.3 Techniques for Creating New Distributions"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -212,43 +268,43 @@
       "bases:Create new base": false
     }
   },
-  "active": "ca704a57a2230a6c",
+  "active": "055529b2d583675c",
   "lastOpenFiles": [
+    "TA2/2.2 (a,b,0) and (a,b,1) Distribution Classes.md",
+    "TA2/2.1 Frequency MGF and PGF.md",
+    "TA2/Silabus TA2.md",
+    "TA2/1.3 Techniques for Creating New Distributions.md",
+    "TA2/1.4 Tail Characteristics.md",
+    "exam-sim-soal-cf1-nov2025.md",
+    "Prompts/Prompt_Pembahasan_Exam_CF2_FINAL_v3.md",
+    "Prompts/Prompt_Pembahasan_Exam_CF1_FINAL_v3.md",
+    "Prompts/Prompt_Pembahasan_Exam_CF1_FINAL_v2.md",
+    "Prompts/Prompt_Pembahasan_Exam_CF1_FINAL.md",
+    "Prompts",
+    "New folder",
+    "actuarial-study-notes.skill",
+    "TA2/1.2 Distribution Classes and Extreme Value.md",
+    "TA2/1.1 Moment and Probability Generating Functions.md",
+    "CF1/2.1 Annuity-Immediate and Annuity-Due.md",
+    "CF1/1.1 Interest Rates and Discount Rates.md",
+    "CF1/Exams/2021-11-CF1.md",
+    "TA1/Silabus TA1.md",
+    "test_output_CF1_2.1.md",
+    "CF4/Silabus CF4.md",
+    "BA2/Silabus BA2.md",
+    "CF2/Exams/Past Exam Solutions/2. 2022-04-CF2-Pembahasan.md",
+    "CF1/Silabus CF1.md",
+    "Silabus CF1.md",
+    "BA1/Silabus BA1.md",
+    "CF2/Exams/Past Exam Solutions/1. 2021-11-CF2-Pembahasan.md",
     "CF2/Exams/Past Exam Solutions/7. 2023-11-CF2-Pembahasan.md",
     "CF2/Exams/Past Exam Solutions/2023-11-CF2-Pembahasan.md",
-    "CF2/Exams/Past Exam Solutions/8. 2024-04-CF2-Pembahasan.md",
-    "CF2/Exams/Past Exam Solutions/9. 2024-07-CF2-Pembahasan.md",
-    "CF2/Exams/Past Exam Solutions/10. 2024-10-CF2-Pembahasan.md",
-    "CF2/Exams/Past Exam Solutions/11. 2025-05-CF2-Pembahasan.md",
-    "CF2/Exams/Past Exam Solutions/12. 2025-08-CF2-Pembahasan.md",
-    "CF2/Exams/Past Exam Solutions/13. 2025-11-CF2-Pembahasan.md",
-    "CF2/Exams/Past Exam Solutions/2. 2022-04-CF2-Pembahasan.md",
-    "CF2/Exams/Past Exam Solutions/1. 2021-11-CF2-Pembahasan.md",
-    "CF1/Exams/Past Exam Solutions/13. 2025-11-CF1-Pembahasan.md",
-    "CF2/Exams/Past Exam Solutions/2021-11-CF2-Pembahasan.md",
-    "CF1/Exams/Past Exam Solutions/1. 2021-11-CF1-Pembahasan.md",
-    "Clippings/Learning All About Jamu!!.md",
-    "CF1/Exams/2025-11-CF1.md",
     "Clippings",
     "CF2/index.md.tmp.17676.1775921696485",
     "CF1/index.md.tmp.17676.1775921685335",
     "CF1/index.md.tmp.17676.1775921675773",
-    "CF2/SOA Sample Questions/SOA Exam P Samples Part 6.md",
-    "CF2/SOA Sample Questions/SOA Exam P Samples Part 5.md",
-    "CF2/SOA Sample Questions/SOA Exam P Samples Part 4.md",
-    "CF2/SOA Sample Questions/SOA Exam P Samples Part 3.md",
-    "CF2/SOA Sample Questions/SOA Exam P Samples Part 2.md",
-    "CF2/SOA Sample Questions/SOA Exam P Samples Part 1.md",
     "CF2/SOA Sample Questions",
-    "CF1/SOA-ASM Practice Exams/ASM FM - Practice Exam 6.md",
-    "CF1/SOA-ASM Practice Exams/ASM FM - Practice Exam 5.md",
-    "CF1/SOA-ASM Practice Exams/ASM FM - Practice Exam 4.md",
-    "CF1/SOA-ASM Practice Exams/ASM FM - Practice Exam 3.md",
-    "CF1/SOA-ASM Practice Exams/ASM FM - Practice Exam 2.md",
     "CF1/SOA-ASM Practice Exams",
-    "CF1/SOA ASM Practice Exams",
-    "CF2/SOA Sample Exams",
-    "CF1/Exams/Past Exam Solutions",
-    "CF2/Exams/Past Exam Solutions"
+    "CF1/SOA ASM Practice Exams"
   ]
 }
