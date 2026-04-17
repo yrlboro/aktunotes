@@ -8,62 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b509deada91c9114",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CF1/Exams/Past Exam Solutions/13. 2025-11-CF1-Pembahasan.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "13. 2025-11-CF1-Pembahasan"
-            }
-          },
-          {
-            "id": "ca704a57a2230a6c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CF2/Exams/Past Exam Solutions/1. 2021-11-CF2-Pembahasan.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1. 2021-11-CF2-Pembahasan"
-            }
-          },
-          {
-            "id": "7f86e15f816096a5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "BA1/Silabus BA1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Silabus BA1"
-            }
-          },
-          {
-            "id": "3af5bbcec3a05e33",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TA2/1.1 Moment and Probability Generating Functions.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1.1 Moment and Probability Generating Functions"
-            }
-          },
-          {
             "id": "055529b2d583675c",
             "type": "leaf",
             "state": {
@@ -78,35 +22,34 @@
             }
           },
           {
-            "id": "0001f23d01e16849",
+            "id": "4266ac7f40f84307",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TA2/2.1 Frequency MGF and PGF.md",
+                "file": "TA2/6.3 Bayesian Parameter Estimation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2.1 Frequency MGF and PGF"
+              "title": "6.3 Bayesian Parameter Estimation"
             }
           },
           {
-            "id": "21cd9eeb38217ed2",
+            "id": "27fc5c5d7bb21830",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TA2/1.3 Techniques for Creating New Distributions.md",
+                "file": "TA2/6.2 MSE Confidence Intervals and Delta Method.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1.3 Techniques for Creating New Distributions"
+              "title": "6.2 MSE Confidence Intervals and Delta Method"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -270,35 +213,35 @@
   },
   "active": "055529b2d583675c",
   "lastOpenFiles": [
+    "TA2/7.3 Bayesian Credibility.md",
+    "TA2/7.2 Bühlmann and Bühlmann-Straub Models.md",
+    "TA2/7.1 Classical Credibility.md",
+    "TA2/6.2 MSE Confidence Intervals and Delta Method.md",
+    "TA2/6.3 Bayesian Parameter Estimation.md",
+    "TA2/Silabus TA2.md",
+    "TA2/1.3 Techniques for Creating New Distributions.md",
+    "TA2/2.1 Frequency MGF and PGF.md",
+    "TA2/4.5 Panjer Recursive Formula.md",
+    "TA2/6.1 Parameter Estimation Methods.md",
+    "TA2/6.4 Model Diagnostics and Selection.md",
+    "TA1/Silabus TA1.md",
+    "TA2/5.1 Properties of Risk Measures.md",
+    "TA2/5.2 VaR and TVaR.md",
+    "TA2/4.6 Coverage Modifications on Aggregate Models.md",
+    "TA2/4.4 Aggregate Distribution Approximation.md",
+    "TA2/4.3 Mean Variance and Stop-Loss.md",
+    "TA2/4.2 Compound Distributions.md",
+    "TA2/4.1 Individual and Collective Risk Models.md",
     "TA2/3.1 Coverage Modifications on Severity and Frequency.md",
     "TA2/2.5 Exposure Effect on Frequency.md",
     "TA2/2.4 Mixed Frequency Distributions.md",
     "TA2/2.3 Frequency Model Selection.md",
     "TA2/2.2 (a,b,0) and (a,b,1) Distribution Classes.md",
-    "TA2/2.1 Frequency MGF and PGF.md",
-    "TA2/Silabus TA2.md",
-    "TA2/1.3 Techniques for Creating New Distributions.md",
     "TA2/1.4 Tail Characteristics.md",
     "exam-sim-soal-cf1-nov2025.md",
-    "Prompts/Prompt_Pembahasan_Exam_CF2_FINAL_v3.md",
-    "Prompts/Prompt_Pembahasan_Exam_CF1_FINAL_v3.md",
-    "Prompts/Prompt_Pembahasan_Exam_CF1_FINAL_v2.md",
-    "Prompts/Prompt_Pembahasan_Exam_CF1_FINAL.md",
     "Prompts",
     "New folder",
     "actuarial-study-notes.skill",
-    "TA2/1.2 Distribution Classes and Extreme Value.md",
-    "TA2/1.1 Moment and Probability Generating Functions.md",
-    "CF1/2.1 Annuity-Immediate and Annuity-Due.md",
-    "CF1/1.1 Interest Rates and Discount Rates.md",
-    "CF1/Exams/2021-11-CF1.md",
-    "TA1/Silabus TA1.md",
-    "test_output_CF1_2.1.md",
-    "CF4/Silabus CF4.md",
-    "BA2/Silabus BA2.md",
-    "CF2/Exams/Past Exam Solutions/2. 2022-04-CF2-Pembahasan.md",
-    "CF1/Silabus CF1.md",
-    "Silabus CF1.md",
     "Clippings",
     "CF2/index.md.tmp.17676.1775921696485",
     "CF1/index.md.tmp.17676.1775921685335",
