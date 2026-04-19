@@ -8,45 +8,59 @@
         "type": "tabs",
         "children": [
           {
-            "id": "055529b2d583675c",
+            "id": "2e57deeafc783952",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TA2/Silabus TA2.md",
+                "file": "TA1/Silabus TA1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Silabus TA2"
+              "title": "Silabus TA1"
             }
           },
           {
-            "id": "4266ac7f40f84307",
+            "id": "bc65c70a0ca97f05",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TA2/6.3 Bayesian Parameter Estimation.md",
+                "file": "TA1/1.1 Survival and Lifetime Variables.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "6.3 Bayesian Parameter Estimation"
+              "title": "1.1 Survival and Lifetime Variables"
             }
           },
           {
-            "id": "27fc5c5d7bb21830",
+            "id": "b65e92f480faf9ae",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TA2/6.2 MSE Confidence Intervals and Delta Method.md",
+                "file": "TA1/1.4 Parametric Survival Models.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "6.2 MSE Confidence Intervals and Delta Method"
+              "title": "1.4 Parametric Survival Models"
+            }
+          },
+          {
+            "id": "4af44f3e6707178f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TA3/Silabus TA3.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Silabus TA3"
             }
           }
         ]
@@ -211,34 +225,34 @@
       "bases:Create new base": false
     }
   },
-  "active": "055529b2d583675c",
+  "active": "2e57deeafc783952",
   "lastOpenFiles": [
-    "TA2/7.3 Bayesian Credibility.md",
-    "TA2/7.2 Bühlmann and Bühlmann-Straub Models.md",
-    "TA2/7.1 Classical Credibility.md",
+    "TA1/3.3 Multiple Linear Regression Interpretation.md",
+    "TA1/2.3 Age-Dependent Transition Intensities.md",
+    "TA1/2.2 MLE for Transition Intensities.md",
+    "TA1/3.2 Simple Linear Regression.md",
+    "TA1/2.1 Multiple State and Markov Models.md",
+    "2.3 Age-Dependent Transition Intensities.md",
+    "TA1/Silabus TA1.md",
+    "TA1/1.6 Maximum Likelihood Estimation for Survival.md",
+    "TA1/1.5 Censoring and Non-Parametric Estimation.md",
+    "TA1/1.4 Parametric Survival Models.md",
+    "TA1/1.1 Survival and Lifetime Variables.md",
+    "TA1/1.3 Curtate Future Lifetime.md",
+    "TA1/1.2 Survival and Hazard Functions.md",
+    "TA3/Silabus TA3.md",
+    "TA2/9.3 Bornhuetter-Ferguson Method.md",
     "TA2/6.2 MSE Confidence Intervals and Delta Method.md",
     "TA2/6.3 Bayesian Parameter Estimation.md",
+    "TA2/7.1 Classical Credibility.md",
+    "TA2/7.2 Bühlmann and Bühlmann-Straub Models.md",
     "TA2/Silabus TA2.md",
-    "TA2/1.3 Techniques for Creating New Distributions.md",
-    "TA2/2.1 Frequency MGF and PGF.md",
-    "TA2/4.5 Panjer Recursive Formula.md",
-    "TA2/6.1 Parameter Estimation Methods.md",
-    "TA2/6.4 Model Diagnostics and Selection.md",
-    "TA1/Silabus TA1.md",
-    "TA2/5.1 Properties of Risk Measures.md",
-    "TA2/5.2 VaR and TVaR.md",
-    "TA2/4.6 Coverage Modifications on Aggregate Models.md",
-    "TA2/4.4 Aggregate Distribution Approximation.md",
-    "TA2/4.3 Mean Variance and Stop-Loss.md",
-    "TA2/4.2 Compound Distributions.md",
-    "TA2/4.1 Individual and Collective Risk Models.md",
-    "TA2/3.1 Coverage Modifications on Severity and Frequency.md",
-    "TA2/2.5 Exposure Effect on Frequency.md",
-    "TA2/2.4 Mixed Frequency Distributions.md",
-    "TA2/2.3 Frequency Model Selection.md",
-    "TA2/2.2 (a,b,0) and (a,b,1) Distribution Classes.md",
-    "TA2/1.4 Tail Characteristics.md",
-    "exam-sim-soal-cf1-nov2025.md",
+    "TA2/9.2 Chain Ladder Method.md",
+    "TA2/9.1 Long-Tail vs Short-Tail Business.md",
+    "TA2/8.3 Permutation Test and Bootstrap.md",
+    "TA2/8.2 Inversion Method for Random Variables.md",
+    "TA2/8.1 Monte Carlo Simulation Concepts.md",
+    "TA2/7.4 Empirical Bayesian Methods.md",
     "Prompts",
     "New folder",
     "actuarial-study-notes.skill",
