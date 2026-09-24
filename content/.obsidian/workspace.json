@@ -77,7 +77,8 @@
               "title": "Study Dashboard"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -241,10 +242,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "6d27dfb1b504059d",
+  "active": "a8075a8814e963b3",
   "lastOpenFiles": [
-    "Study Dashboard.md",
     "CF4/02 Topic Notes/1.1 Taxation Principles.md",
+    "Study Dashboard.md",
     "CF4/05 Past Exams/Solutions/2026-08-CF4-Pembahasan.md",
     "Study Dashboard v4 - Multiple Exams.md",
     "CF4/05 Past Exams/Questions/2020-09-CF4.md",
