@@ -49,11 +49,9 @@ d. [Pilihan D]
 e. [Pilihan E]
 
 > [!summary]+ **Jawaban No. [N]** 
-> 
 > **[Jawaban Belum Tersedia]**
 > 
 > > [!info]+ **Rumus**
-> > 
 
 ---
 ```
@@ -117,11 +115,9 @@ dengan **dua spasi** di akhir setiap baris agar tampil sebagai baris terpisah.
 Setiap soal diakhiri dengan callout kosong berikut — **jangan diubah formatnya**:
 ```
 > [!summary]+ **Jawaban No. [N]** 
-> 
 > **[Jawaban Belum Tersedia]**
 > 
 > > [!info]+ **Rumus**
-> > 
 ```
 > **Perhatian:** Ada **satu baris kosong** di dalam callout (`> `) sebelum nested callout dimulai.
 
@@ -163,11 +159,9 @@ d. $0{,}23$
 e. $0{,}40$
 
 > [!summary]+ **Jawaban No. 1** 
-> 
 > **[Jawaban Belum Tersedia]**
 > 
 > > [!info]+ **Rumus**
-> > 
 
 ---
 ```
@@ -191,11 +185,9 @@ d. $9\%$
 e. $20\%$
 
 > [!summary]+ **Jawaban No. 16** 
-> 
 > **[Jawaban Belum Tersedia]**
 > 
 > > [!info]+ **Rumus**
-> > 
 
 ---
 ```
@@ -213,11 +205,9 @@ e. $20\%$
 >
 > ```
 > > [!summary]+ **Jawaban No. X** 
-> > 
 > > **[Jawaban Belum Tersedia]**
 > >
 > > > [!info]+ **Rumus**
-> > > 
 > ```
 >
 > **Tugasmu: MENGISI template yang sudah ada — BUKAN menambahkan blok baru.**
@@ -247,9 +237,7 @@ e. $20\%$
 Jika suatu soal **ambigu, kekurangan informasi, atau diketahui dianulir oleh PAI**, gunakan format berikut sebagai pengganti blok Rumus + Diketahui + Langkah Pengerjaan:
 
 ```
-> [!summary]+ **Jawaban No. N** 
-> 
-> **⚠️ DIANULIR oleh PAI**
+> [!summary]+ **Jawaban No. N** **⚠️ DIANULIR oleh PAI**
 >
 > | Field | Isi |
 > |-------|-----|
@@ -580,7 +568,6 @@ Jika suatu soal **ambigu, kekurangan informasi, atau diketahui dianulir oleh PAI
 #### Baris Judul Summary
 ```
 > [!summary]+ **Jawaban No. N** 
-> 
 > **([opsi huruf]). $[\text{nilai jawaban}]$**
 ```
 Contoh: `> [!summary]+ **Jawaban No. 1**`  → baris berikutnya: `**(c). $1{,}234{,}56$**`

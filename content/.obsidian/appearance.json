@@ -1,1 +1,7 @@
-{}
+{
+  "cssTheme": "Retroma",
+  "accentColor": "#5cf5c7",
+  "enabledCssSnippets": [
+    "study-dashboard"
+  ]
+}

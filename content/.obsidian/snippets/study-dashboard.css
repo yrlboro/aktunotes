@@ -1,0 +1,370 @@
+/* ============================================================
+   STUDY DASHBOARD
+   Retro / soft green Obsidian dashboard
+   ============================================================ */
+
+.study-dashboard {
+    --dash-bg: var(--background-primary);
+    --dash-card: rgba(190, 229, 191, 0.16);
+    --dash-border: #5c8269;
+    --dash-accent: #2f6748;
+    --dash-soft: rgba(127, 176, 139, 0.18);
+
+    --exam-one-accent: #4f7d5c;
+    --exam-one-text: #3f684a;
+
+    --exam-two-accent: #4e8b86;
+    --exam-two-text: #39726e;
+}
+
+
+/* ---------- Main container ---------- */
+
+.study-command-center {
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+/* ---------- Header ---------- */
+
+.study-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    padding: 20px 24px;
+
+    border: 2px solid var(--dash-border);
+    border-radius: 14px;
+
+    background: var(--dash-card);
+
+    margin-bottom: 14px;
+}
+
+.study-eyebrow {
+    font-size: 0.7em;
+    letter-spacing: 0.16em;
+    opacity: 0.65;
+}
+
+.study-title {
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-top: 3px;
+}
+
+.study-date {
+    opacity: 0.75;
+    font-size: 0.9em;
+}
+
+
+/* ---------- Main grid ---------- */
+
+.study-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.4fr;
+
+    gap: 14px;
+
+    margin-bottom: 14px;
+}
+
+
+/* ---------- General card ---------- */
+
+.study-card {
+    border: 2px solid var(--dash-border);
+    border-radius: 14px;
+
+    background: var(--dash-card);
+
+    padding: 20px;
+
+    box-shadow:
+        inset 0 0 0 2px
+        rgba(255,255,255,0.07);
+}
+
+.card-label {
+    font-size: 0.72em;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+
+    opacity: 0.65;
+
+    margin-bottom: 14px;
+}
+
+
+/* ============================================================
+   TIMER
+   ============================================================ */
+
+.timer-card {
+    text-align: center;
+}
+
+.timer-card .card-label {
+    text-align: left;
+}
+
+.timer-display {
+    font-size: 3.4em;
+    line-height: 1;
+
+    font-weight: 700;
+
+    font-variant-numeric: tabular-nums;
+
+    margin: 25px 0 22px;
+}
+
+.timer-presets {
+    display: flex;
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-bottom: 12px;
+}
+
+.study-command-center button {
+    appearance: none;
+
+    background: var(--dash-soft);
+
+    color: var(--text-normal);
+
+    border: 1.5px solid var(--dash-border);
+
+    border-radius: 7px;
+
+    padding: 6px 13px;
+
+    font-family: inherit;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.08s ease,
+        background 0.12s ease;
+}
+
+.study-command-center button:hover {
+    background: rgba(127, 176, 139, 0.32);
+}
+
+.study-command-center button:active {
+    transform: translateY(1px);
+}
+
+.timer-actions {
+    display: flex;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+.timer-start {
+    min-width: 95px;
+}
+
+
+/* ============================================================
+   AGENDA
+   ============================================================ */
+
+.agenda-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.agenda-item {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 9px 11px;
+
+    border-radius: 8px;
+
+    background: rgba(130, 175, 140, 0.10);
+}
+
+.agenda-checkbox {
+    font-weight: bold;
+
+    color: var(--dash-accent);
+}
+
+.empty-agenda {
+    opacity: 0.55;
+    font-style: italic;
+
+    padding: 10px 0;
+}
+
+
+/* ============================================================
+   EXAM COUNTDOWN — MULTIPLE DATES
+   ============================================================ */
+
+.exam-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+
+    margin-bottom: 14px;
+}
+
+.exam-wrapper .countdown-card {
+    margin-bottom: 0;
+}
+
+.countdown-card {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.countdown-card .card-label {
+    margin-bottom: 6px;
+}
+
+.exam-date-label {
+    font-size: 1.15em;
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.countdown-subtitle {
+    font-weight: 600;
+    opacity: 0.72;
+}
+
+.countdown-number {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 8px;
+}
+
+.countdown-number span {
+    font-size: 2.6em;
+
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+.countdown-number small {
+    font-size: 0.67em;
+
+    letter-spacing: 0.14em;
+
+    opacity: 0.65;
+}
+
+
+/* Exam 1 — 23 Nov / CF1 + CF4 */
+
+.exam-one {
+    border-left: 7px solid var(--exam-one-accent);
+}
+
+.exam-one .exam-date-label,
+.exam-one .countdown-number span {
+    color: var(--exam-one-text);
+}
+
+
+/* Exam 2 — 24 Nov / CF2 */
+
+.exam-two {
+    border-left: 7px solid var(--exam-two-accent);
+}
+
+.exam-two .exam-date-label,
+.exam-two .countdown-number span {
+    color: var(--exam-two-text);
+}
+
+
+/* ============================================================
+   PROGRESS
+   ============================================================ */
+
+.progress-card {
+    margin-bottom: 16px;
+}
+
+.progress-row {
+    margin-top: 13px;
+}
+
+.progress-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 0.88em;
+
+    margin-bottom: 5px;
+
+    font-weight: 600;
+}
+
+.progress-track {
+    height: 9px;
+
+    width: 100%;
+
+    border-radius: 50px;
+
+    border: 1px solid var(--dash-border);
+
+    overflow: hidden;
+
+    background: rgba(127,176,139,0.08);
+}
+
+.progress-fill {
+    height: 100%;
+
+    border-radius: 50px;
+
+    background: var(--dash-accent);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 750px) {
+
+    .study-grid,
+    .exam-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .study-header {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 8px;
+    }
+}
